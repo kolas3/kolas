@@ -1,0 +1,783 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\KOLAS3_MAIN.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.kor\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_K3                  ICON    DISCARDABLE     "res\\cube_icon_small_32.ico"
+IDR_MOBILE              ICON    DISCARDABLE     "res\\tl_icon_small_32.ico"
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\cube_icon_small_32.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_TOOLBAR_BK          BITMAP  DISCARDABLE     "res\\ToolBarBk.bmp"
+IDB_MENUBAR_BK          BITMAP  DISCARDABLE     "res\\MenuBarBk.bmp"
+IDB_HELP_MESSAGE        BITMAP  DISCARDABLE     "res\\HelpMessage.bmp"
+IDB_TABIMAGES           BITMAP  DISCARDABLE     "res\\TabIcon.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  48, 48
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 80
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "KOLAS III 정보"
+FONT 9, "새굴림"
+BEGIN
+    ICON            IDR_K3,IDC_STATIC,11,17,20,21
+    LTEXT           "KOLAS III 버전 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "확인",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "이 프로그램은 대한민국의 저작권법과 국제 저작권\n조약으로 보호받습니다. \n사전 동의 없이 프로그램의 전부 또는 일부를 무단으로\n복제, 배포, 변경할 수 없습니다.\n",
+                    IDC_STATIC,40,41,178,33
+END
+
+IDD_KOLAS3_MAIN_FORM DIALOGEX 0, 0, 68, 69
+STYLE WS_CHILD | WS_CLIPCHILDREN
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tab1",IDC_ctlFormTab,"SysTabControl32",TCS_TOOLTIPS,7,7,
+                    54,15
+END
+
+IDD_LOGIN_FORM DIALOG DISCARDABLE  0, 0, 181, 145
+STYLE WS_POPUP
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_eID,80,58,64,14,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_ePASSWORD,80,84,64,14,ES_UPPERCASE | ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Progress1",IDC_PROGRESS_MAIN1,"msctls_progress32",
+                    PBS_SMOOTH,12,117,154,13
+    CONTROL         "",IDC_CHK_PWD,"Button",BS_AUTOCHECKBOX | BS_CENTER | 
+                    BS_VCENTER | WS_TABSTOP,150,87,8,8
+    CONTROL         "",IDC_CHK_ID,"Button",BS_AUTOCHECKBOX | BS_CENTER | 
+                    BS_VCENTER | WS_TABSTOP,150,61,8,8
+    CONTROL         218,IDC_IMGRSC,"Static",SS_BITMAP | NOT WS_VISIBLE,3,33,
+                    174,18
+    PUSHBUTTON      "GPKI 로그인",IDC_BUTTON_GPKI_LOGIN,120,14,46,19,
+                    BS_BITMAP | BS_MULTILINE | BS_FLAT
+END
+
+IDD_RC_FORM DIALOG DISCARDABLE  0, 0, 450, 348
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+END
+
+IDD_REMOTE_CONTROL DIALOG DISCARDABLE  0, 0, 153, 176
+STYLE WS_POPUP | WS_BORDER
+FONT 9, "굴림체"
+BEGIN
+    CONTROL         "",IDC_gFAVORITE,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",
+                    WS_TABSTOP,0,31,153,113
+    CONTROL         "추가",IDC_bADD_FAVORITE,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,15,155,50,14
+    CONTROL         "삭제",IDC_bDELETE_FAVORITE,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,93,155,50,14
+    CONTROL         "_",IDC_bMINIMIZE,"Button",BS_OWNERDRAW | WS_TABSTOP,110,
+                    5,15,14
+    CONTROL         "□",IDC_bMAXIMIZE,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    110,5,15,14
+    CONTROL         "X",IDC_bCLOSE,"Button",BS_OWNERDRAW | WS_TABSTOP,132,5,
+                    15,14
+    CONTROL         "",IDC_STATIC_MAIN_TITLE,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,0,0,153,31
+END
+
+IDD_SET_ACCELERATOR DIALOG DISCARDABLE  0, 0, 218, 223
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "단축키 설정"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_MSHFLEXGRID1,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,12,
+                    10,194,178
+    PUSHBUTTON      "수정",IDC_bMODIFY,95,200,50,14
+    PUSHBUTTON      "닫기",IDC_bCLOSE,152,200,50,14
+    GROUPBOX        "",IDC_STATIC,7,2,204,191
+    GROUPBOX        "",IDC_STATIC,7,191,204,25
+END
+
+IDD_SET_ACCELERATOR_MODIFY DIALOG DISCARDABLE  0, 0, 248, 69
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "단축키 수정"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "확인",IDC_bAPPLY,106,42,40,14
+    PUSHBUTTON      "닫기",IDC_bCANCEL,151,42,40,14
+    LTEXT           "단축키 : ",IDC_STATIC,15,14,35,14,SS_CENTERIMAGE
+    COMBOBOX        IDC_bSYSKEY,60,14,66,92,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_cKEY,144,14,48,81,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,7,2,234,34
+    CTEXT           "+",IDC_STATIC,125,13,15,14,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,7,34,234,25
+    PUSHBUTTON      "이전",IDC_bPREV,12,42,40,14
+    PUSHBUTTON      "다음",IDC_bNEXT,55,42,40,14
+    PUSHBUTTON      "적용",IDC_bMODIFY,196,42,40,14
+END
+
+IDD_INTERNET_NAVI DIALOG DISCARDABLE  0, 0, 451, 17
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "S",IDC_btnSTOP,"Button",BS_OWNERDRAW | WS_TABSTOP,320,0,
+                    16,17
+    CONTROL         "",IDC_cmbURL,"ComboBoxEx32",CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP,33,3,266,115
+    CONTROL         "R",IDC_btnREFLASH,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    302,0,16,17
+    EDITTEXT        IDC_edtHELP,367,1,47,15,ES_AUTOHSCROLL
+    CONTROL         "H",IDC_btnHELP,"Button",BS_OWNERDRAW | WS_TABSTOP,417,0,
+                    16,17
+    CONTROL         "PREV",IDC_btnPREV,"Button",BS_OWNERDRAW | WS_TABSTOP,0,
+                    0,16,17
+    CONTROL         "NEXT",IDC_btnNEXT,"Button",BS_OWNERDRAW | WS_TABSTOP,17,
+                    0,16,17
+    CONTROL         217,IDC_HELP_MESSAGE,"Static",SS_BITMAP,337,5,66,11
+END
+
+IDD_EXPLORER DIALOG DISCARDABLE  0, 0, 210, 121
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 10, "System"
+BEGIN
+END
+
+IDD_MENU_BAR DIALOGEX 0, 0, 451, 15
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "자동검색자료보기",IDC_btnSearch,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,423,2,26,14
+    LTEXT           "메인화면",IDC_sMENU,26,4,204,8,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    CONTROL         "",IDC_COUNT_STATIC,"Static",SS_SIMPLE | SS_CENTERIMAGE | 
+                    WS_GROUP,401,4,15,8,WS_EX_TRANSPARENT
+    CONTROL         "잠금",IDC_bLock,"Button",BS_OWNERDRAW | WS_TABSTOP,2,2,
+                    21,14
+END
+
+IDD_MENUTREEBAR DIALOG DISCARDABLE  0, 0, 456, 19
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+END
+
+IDD_AUTO_COMPLETE DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE WS_POPUP | WS_CLIPCHILDREN
+FONT 9, "새굴림"
+BEGIN
+    LISTBOX         IDC_LIST_AUTO_COMPLETE,9,3,48,40,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_TOOLBARBTN DIALOG DISCARDABLE  0, 0, 21, 46
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      ">",IDC_BUTTON_MAIN1,0,0,21,45,NOT WS_TABSTOP
+END
+
+IDD_RENEWAL_PASSWORD DIALOG DISCARDABLE  0, 0, 227, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "비밀번호 갱신기간 만료"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "변경하기",IDOK,160,212,60,14
+    PUSHBUTTON      "나중에 변경하기",IDCANCEL,7,212,60,14,NOT WS_VISIBLE
+    GROUPBOX        "비밀번호 갱신기간 만료 안내",IDC_STATIC,7,14,213,81
+    LTEXT           "비밀번호 사용기간이 6개월이상 경과 되었습니다.\r\n개인정보의 안전한 보호를 위해 새로운 비밀번호로 변경할 것을\r\n권장합니다.",
+                    IDC_staticINFO1,12,29,194,28
+    EDITTEXT        IDC_edtPASSWORD1,85,151,125,12,ES_UPPERCASE | 
+                    ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtPASSWORD2,85,169,125,12,ES_UPPERCASE | 
+                    ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "사용자 확인을 위한 이전 비밀번호와 변경할 새로운 비밀번호를\r\n입력해주세요.",
+                    IDC_staticINFO2,15,105,199,19
+    LTEXT           "이전 비밀번호",IDC_STATIC,16,154,57,13
+    EDITTEXT        IDC_edtPASSWORD3,85,187,125,12,ES_UPPERCASE | 
+                    ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "새로운 비밀번호",IDC_STATIC,16,172,57,13
+    LTEXT           "재입력",IDC_STATIC,16,189,57,13
+    GROUPBOX        "",IDC_STATIC,7,94,213,114
+    LTEXT           "<<개인정보 보호법-암호화 관련 근거>>",IDC_STATIC_LAW,12,
+                    59,126,8
+    LTEXT           "'개인정보 보호법'제24조(고유식별정보의 처리제한)\r\n   및 동법 시행령 제21조(고유식별정보의 안정성 확보 조치)",
+                    IDC_STATIC_LAW2,12,71,187,19
+    LTEXT           "비밀번호는 영문, 숫자, 특수문자 중 2개이상을 조합하여, 10자리 이상을 사용해야 합니다.",
+                    IDC_staticINFO3,15,130,199,19
+END
+
+IDD_LOGIN_FORM_GPKI DIALOG DISCARDABLE  0, 0, 224, 205
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "인증서 선택"
+FONT 9, "굴림"
+BEGIN
+    GROUPBOX        "인증서 위치",IDC_STATIC,7,11,210,39
+    LTEXT           "인증서 암호",IDC_STATIC,9,135,38,8
+    EDITTEXT        IDC_EDIT_PWD,59,132,158,14,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LOG,7,155,210,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "확인",IDC_BUTTON_OK,113,183,50,14
+    PUSHBUTTON      "취소",IDC_BUTTON_CANCEL,167,183,50,14
+    CONTROL         "",GRID_GPKI_LIST,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",
+                    WS_TABSTOP,7,57,210,67
+    EDITTEXT        IDC_EDIT_GPKI,13,26,141,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "폴더검색",IDC_BUTTON_GPKI_DIR,160,26,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2011,2,1,8
+ PRODUCTVERSION 2011,2,1,8
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "KOLAS III\0"
+            VALUE "FileVersion", "2011, 2, 1, 8\0"
+            VALUE "InternalName", "KOLAS III\0"
+            VALUE "LegalCopyright", "Copyright(C) 2007 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "KOLAS III.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "KOLAS III\0"
+            VALUE "ProductVersion", "\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_KOLAS3_MAIN_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 61
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 62
+    END
+
+    IDD_LOGIN_FORM, DIALOG
+    BEGIN
+        RIGHTMARGIN, 177
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_RC_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 443
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 341
+    END
+
+    IDD_REMOTE_CONTROL, DIALOG
+    BEGIN
+        RIGHTMARGIN, 152
+    END
+
+    IDD_SET_ACCELERATOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 211
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_SET_ACCELERATOR_MODIFY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 62
+    END
+
+    IDD_INTERNET_NAVI, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 16
+    END
+
+    IDD_EXPLORER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_MENU_BAR, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 14
+    END
+
+    IDD_AUTO_COMPLETE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_LOGIN_FORM_GPKI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "새 파일(&N)\tCtrl+N",         ID_FILE_NEW
+        MENUITEM "열기(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "저장(&S)\tCtrl+S",            ID_FILE_SAVE
+        MENUITEM "다른 이름으로 저장(&A)...",   ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "인쇄(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "인쇄 미리 보기(&V)",          ID_FILE_PRINT_PREVIEW
+        MENUITEM "인쇄 설정(&R)...",            ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "최근 파일",                   ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "종료(&X)",                    ID_APP_EXIT
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "취소(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)\tCtrl+X",        ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",        ID_EDIT_PASTE
+    END
+    POPUP "보기(&V)"
+    BEGIN
+        MENUITEM "도구 모음(&T)",               ID_VIEW_TOOLBAR
+        MENUITEM "상태 표시줄(&S)",             ID_VIEW_STATUS_BAR
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "KOLAS3_MAIN 정보(&A)...",     ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_REMOTE_CONTROL DLGINIT
+BEGIN
+    IDC_gFAVORITE, 0x37a, 443, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x17c5, 0x0000, 0x1192, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0x0008, 0x8000, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x000d, 0x0000, 0x000e, 0x8000, 0xefef, 0x00ef, 0x000f, 0x0000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0016, 
+0x0000, 0x005e, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xba54, 0xb274, 
+0xc774, 0xb984, 0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 
+0xbf80, 0x0000, 0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 
+0x0000, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 
+0x0000, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 
+0x8101, 0x0000, 0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 
+0x0000, 0x0000, 0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 
+0xb84b, 0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_SET_ACCELERATOR DLGINIT
+BEGIN
+    IDC_MSHFLEXGRID1, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2324, 0x0000, 0x1b98, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0x0008, 0x8000, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x000d, 0x0000, 0x000e, 0x8000, 0xefef, 0x00ef, 0x000f, 0x0000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_LOGIN_FORM_GPKI DLGINIT
+BEGIN
+    GRID_GPKI_LIST, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2609, 0x0000, 0x0a70, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0x0008, 0x8000, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x000d, 0x0000, 0x000e, 0x8000, 0xefef, 0x00ef, 0x000f, 0x0000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "KOLAS III"
+    AFX_IDS_IDLEMESSAGE     "KOLAS III"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "새 문서를 작성합니다\n새 파일"
+    ID_FILE_OPEN            "기존 문서를 엽니다\n열기"
+    ID_FILE_CLOSE           "현재 열린 문서를 닫습니다\n닫기"
+    ID_FILE_SAVE            "현재 열린 문서를 저장합니다\n저장"
+    ID_FILE_SAVE_AS         "현재 열린 문서를 다른 이름으로 저장합니다\n다른 이름으로 저장"
+    ID_FILE_PAGE_SETUP      "인쇄 옵션을 변경합니다\n쪽 설정"
+    ID_FILE_PRINT_SETUP     "프린터와 인쇄 옵션을 변경합니다\n인쇄 설정"
+    ID_FILE_PRINT           "현재 열린 문서를 인쇄합니다\n인쇄"
+    ID_FILE_PRINT_PREVIEW   "쪽 전체를 표시합니다\n인쇄 미리 보기"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "프로그램 정보와 버전 정보, 저작권 정보를 표시합니다\n정보"
+    ID_APP_EXIT             "응용 프로그램을 종료하기 위해 문서를 저장할 것인지 묻습니다\n종료"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE2       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE3       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE4       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE5       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE6       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE7       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE8       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE9       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE10      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE11      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE12      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE13      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE14      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE15      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE16      "이 문서를 엽니다"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "다음 창으로 전환합니다\n다음 창"
+    ID_PREV_PANE            "이전 창으로 전환합니다\n이전 창"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "현재 열린 창을 나눕니다\n나누기"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "선택 부분을 지웁니다\n지우기"
+    ID_EDIT_CLEAR_ALL       "모든 것을 지웁니다\n모두 지우기"
+    ID_EDIT_COPY            "선택 부분을 복사하여 클립보드에 넣습니다\n복사"
+    ID_EDIT_CUT             "선택 부분을 잘라내어 클립보드에 넣습니다\n잘라내기"
+    ID_EDIT_FIND            "지정한 문자열을 찾습니다\n찾기"
+    ID_EDIT_PASTE           "클립보드의 내용을 붙여 넣습니다\n붙여넣기"
+    ID_EDIT_REPEAT          "마지막으로 실행한 동작을 반복합니다\n반복"
+    ID_EDIT_REPLACE         "지정한 문자열을 다른 문자열로 바꿉니다\n바꾸기"
+    ID_EDIT_SELECT_ALL      "문서 전체를 선택합니다\n전체 선택"
+    ID_EDIT_UNDO            "마지막으로 한 동작을 취소합니다\n실행 취소"
+    ID_EDIT_REDO            "이전에 취소한 동작을 다시 수행합니다\n다시 실행"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "도구 모음을 보이거나 감춥니다\n도구 모음 전환"
+    ID_VIEW_STATUS_BAR      "상태 표시줄을 표시하거나 감춥니다\n상태 표시줄 전환"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "창의 크기를 변경합니다"
+    AFX_IDS_SCMOVE          "창의 위치를 변경합니다"
+    AFX_IDS_SCMINIMIZE      "창을 아이콘으로 줄여서 표시합니다"
+    AFX_IDS_SCMAXIMIZE      "창을 최대 크기로 확장합니다"
+    AFX_IDS_SCNEXTWINDOW    "다음 문서 창으로 전환합니다"
+    AFX_IDS_SCPREVWINDOW    "이전 문서 창으로 전환합니다"
+    AFX_IDS_SCCLOSE         "현재 열린 창을 닫고 문서를 저장할 것인지를 묻습니다"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "창을 원래 크기로 복원합니다"
+    AFX_IDS_SCTASKLIST      "작업 목록을 활성화합니다"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "인쇄 미리 보기 모드를 닫습니다\n미리 보기 취소"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_STATUS_SLIDER        " "
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      DISCARDABLE     "res\\XPTabApp.manifest"
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\KOLAS3_MAIN.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#include "l.kor\afxprint.rc"        // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

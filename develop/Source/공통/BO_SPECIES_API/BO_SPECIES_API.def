@@ -1,0 +1,7 @@
+; BO_SPECIES_API.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_SPECIES_API"
+DESCRIPTION  'BO_SPECIES_API Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

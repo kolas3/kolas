@@ -1,0 +1,7 @@
+; BO_CAT_MARC_IMPORT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_CAT_MARC_IMPORT"
+DESCRIPTION  'BO_CAT_MARC_IMPORT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

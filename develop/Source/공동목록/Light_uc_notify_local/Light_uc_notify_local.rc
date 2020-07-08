@@ -1,0 +1,347 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Light_uc_notify_local.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,19,63
+ PRODUCTVERSION 2005,8,19,63
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x10004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "Light_uc_notify_local DLL\0"
+            VALUE "FileVersion", "2005, 08, 19, 63\0"
+            VALUE "InternalName", "Light_uc_notify_local\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Light_uc_notify_local.DLL\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Light_uc_notify_local 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 19, 63\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_UC_NOTIFY_03 DIALOGEX 0, 0, 308, 177
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "첨부파일저장"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "저장할 첨부 파일",IDC_STATIC,12,14,65,8
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_LIST | WS_BORDER | WS_TABSTOP,9,27,290,85
+    LTEXT           "저장위치",IDC_STATIC,12,116,33,8
+    EDITTEXT        IDC_eSHELF_LOC,11,128,223,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    PUSHBUTTON      "저장위치지정",IDC_bFOLDER_SELECT,239,126,61,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,301,143,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "저  장",IDOK,173,154,61,15
+    PUSHBUTTON      "취  소",IDCANCEL,239,154,61,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,150,301,24,WS_EX_DLGMODALFRAME
+END
+
+IDD_UC_NOTIFY_02 DIALOGEX 0, 0, 382, 303
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "공지사항 보내기"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "받을도서관",IDC_STATIC,12,14,41,8
+    COMBOBOX        IDC_eRECEIPT_LIB,60,9,195,242,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "",IDC_PROS,258,9,62,15,0,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+    PUSHBUTTON      "도서관찾기",IDC_bSEARCH,322,9,46,15,NOT WS_TABSTOP
+    LTEXT           "제      목",IDC_STATIC,11,32,41,8
+    EDITTEXT        IDC_eTHEME,60,28,310,13,ES_AUTOHSCROLL
+    LTEXT           "첨      부",IDC_STATIC,11,48,41,8
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_SMALLICON | WS_BORDER | WS_TABSTOP,60,45,272,29
+    CONTROL         "KIM",IDC_bINCLUDE_FILE,"Button",BS_OWNERDRAW | WS_TABSTOP,339,48,30,22
+    EDITTEXT        IDC_eVIEW,10,78,360,177,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,10,257,258,12
+    PUSHBUTTON      "도서관전체보내기",IDC_bAPPEND,161,279,74,15
+    PUSHBUTTON      "확  인",IDC_bIDOK,239,279,61,15
+    PUSHBUTTON      "취  소",IDCANCEL,305,279,61,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,275,375,24,WS_EX_DLGMODALFRAME
+    LTEXT           "",IDC_sCount,273,257,86,10
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,375,269,WS_EX_DLGMODALFRAME
+END
+
+IDD_UC_NOTIFY_01 DIALOGEX 0, 0, 527, 123
+STYLE DS_MODALFRAME | WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "",IDC_PROS,557,38,191,17,NOT WS_VISIBLE,WS_EX_STATICEDGE
+    CONTROL         "",IDC_MainGrid_notify,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,3,3,508,106
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",NOT WS_VISIBLE,558,67,65,53
+END
+
+IDD_UC_NOTIFY_DETIAL DIALOG DISCARDABLE  0, 0, 425, 274
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "상세보기"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "닫 기",IDCANCEL,367,255,50,14
+    PUSHBUTTON      "이 전",IDC_bPREV,7,255,50,14
+    PUSHBUTTON      "다 음",IDC_bNEXT,61,255,50,14
+    LTEXT           "제         목 :",IDC_STATIC,9,11,41,8
+    EDITTEXT        IDC_eTHEME,54,9,363,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    LTEXT           "보낸도서관 :",IDC_STATIC,9,26,41,8
+    EDITTEXT        IDC_eSEND_LIB,54,24,128,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    LTEXT           "받는도서관 :",IDC_STATIC,207,27,41,8
+    EDITTEXT        IDC_eRECEIPT_LIB,251,24,166,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    LTEXT           "첨 부 파 일 :",IDC_STATIC,9,41,41,8
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_SMALLICON | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,54,39,335,24
+    CONTROL         "KIM",IDC_bINCLUDE_FILE,"Button",BS_OWNERDRAW | NOT WS_VISIBLE | WS_TABSTOP,631,57,30,22
+    EDITTEXT        IDC_eVIEW,7,70,410,180,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_VSCROLL | WS_HSCROLL | NOT WS_TABSTOP
+    GROUPBOX        "",IDC_line,633,89,28,25,BS_NOTIFY | BS_FLAT | NOT WS_VISIBLE
+    PUSHBUTTON      "다운\r\n로드",IDC_btnFileDownload,393,40,24,22,BS_MULTILINE
+END
+
+IDD_NOTIFY_LIB_CODE DIALOG DISCARDABLE  0, 0, 317, 217
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "도서관검색"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_eWORD,47,24,144,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "확 인",IDOK,110,198,42,15
+    PUSHBUTTON      "닫 기",IDCANCEL,154,198,42,15
+    LTEXT           "도서관명",-1,10,26,35,8
+    CONTROL         "",IDC_MainGrid_libcode,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,9,43,299,141
+    PUSHBUTTON      "검 색",IDC_bSEARCH,204,23,42,15
+    CONTROL         "Tab1",IDC_SEARCH_CODE_TAB,"SysTabControl32",0x0,3,3,311,189
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+KIMU                    BITMAP  DISCARDABLE     "filesave-2.bmp"
+KIMD                    BITMAP  DISCARDABLE     "filesave-1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_UC_NOTIFY_03, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 305
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_UC_NOTIFY_02, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 379
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 300
+    END
+
+    IDD_UC_NOTIFY_01, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 524
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_UC_NOTIFY_DETIAL, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 273
+    END
+
+    IDD_NOTIFY_LIB_CODE, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 314
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 214
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_UC_NOTIFY_01 DLGINIT
+BEGIN
+    IDC_MainGrid_notify, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x5be1, 0x0000, 0x106f, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_NOTIFY_LIB_CODE DLGINIT
+BEGIN
+    IDC_MainGrid_libcode, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x360e, 0x0000, 0x15e9, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\Light_uc_notify_local.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

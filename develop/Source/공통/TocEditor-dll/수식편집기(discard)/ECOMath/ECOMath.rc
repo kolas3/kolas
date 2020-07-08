@@ -1,0 +1,673 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ECOMath.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\EcoMath.ico"
+IDR_MATHTYPE            ICON    DISCARDABLE     "res\\ECOMathDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_VERTBMP             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_CARET               BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+UPGREEKD                BITMAP  DISCARDABLE     "res\\upgreek_on.bmp"
+ARROWSD                 BITMAP  DISCARDABLE     "res\\arrows_on.bmp"
+BARU                    BITMAP  DISCARDABLE     "res\\bar.bmp"
+BARD                    BITMAP  DISCARDABLE     "res\\bar_on.bmp"
+FENCEU                  BITMAP  DISCARDABLE     "res\\fence.bmp"
+FENCED                  BITMAP  DISCARDABLE     "res\\fence_on.bmp"
+FRACTIONU               BITMAP  DISCARDABLE     "res\\fraction.bmp"
+FRACTIOND               BITMAP  DISCARDABLE     "res\\fraction_on.bmp"
+GREEKU                  BITMAP  DISCARDABLE     "res\\greek.bmp"
+GREEKD                  BITMAP  DISCARDABLE     "res\\greek_on.bmp"
+INTEGRALU               BITMAP  DISCARDABLE     "res\\integral.bmp"
+INTEGRALD               BITMAP  DISCARDABLE     "res\\integral_on.bmp"
+LABELEDU                BITMAP  DISCARDABLE     "res\\labeled.bmp"
+LABELEDD                BITMAP  DISCARDABLE     "res\\labeled_on.bmp"
+LOGICALU                BITMAP  DISCARDABLE     "res\\logical.bmp"
+LOGICALD                BITMAP  DISCARDABLE     "res\\logical_on.bmp"
+MISCU                   BITMAP  DISCARDABLE     "res\\misc.bmp"
+ARROWSU                 BITMAP  DISCARDABLE     "res\\arrows.bmp"
+MISCD                   BITMAP  DISCARDABLE     "res\\misc_on.bmp"
+UPGREEKU                BITMAP  DISCARDABLE     "res\\upgreek.bmp"
+RELATIOND               BITMAP  DISCARDABLE     "res\\relation_on.bmp"
+RELATIONU               BITMAP  DISCARDABLE     "res\\relation.bmp"
+OPERATORU               BITMAP  DISCARDABLE     "res\\opertator.bmp"
+OPERATORD               BITMAP  DISCARDABLE     "res\\opertator_on.bmp"
+SETD                    BITMAP  DISCARDABLE     "res\\set_on.bmp"
+SETU                    BITMAP  DISCARDABLE     "res\\set.bmp"
+RADICALD                BITMAP  DISCARDABLE     "res\\radical_on.bmp"
+RADICALU                BITMAP  DISCARDABLE     "res\\radical.bmp"
+SCRIPTD                 BITMAP  DISCARDABLE     "res\\script_on.bmp"
+SCRIPTU                 BITMAP  DISCARDABLE     "res\\script.bmp"
+SUMD                    BITMAP  DISCARDABLE     "res\\sum_on.bmp"
+SUMU                    BITMAP  DISCARDABLE     "res\\sum.bmp"
+IDB_RELATION            BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\ne.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "새 수식(&N)\tCtrl+N",         ID_FILE_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "종료(&X)",                    ID_APP_EXIT
+    END
+    MENUITEM "보내기(&S)",                  ID_SEND_SOOSIK
+END
+
+IDR_BIREL_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "< (&LT)",                     ID_LT
+    MENUITEM "> (&GT)",                     ID_GT
+    MENUITEM "= (&Equal)",                  ID_EQ
+    MENUITEM "<= (\\le)",                   ID_LE
+    MENUITEM ">= (\\ge)",                   ID_GE
+    MENUITEM "(\\prec)",                    ID_PREC
+    MENUITEM "(\\succ)",                    ID_SUCC
+    MENUITEM "(\\triangleleft)",            ID_TRIANGLELEFT
+    MENUITEM "(\\triangleright)",           ID_TRIANGLERIGHT
+    MENUITEM "(\\ne)",                      ID_NE
+    MENUITEM "(\\equiv)",                   ID_EQUIV
+    MENUITEM "(\\approx)",                  ID_APPROX
+    MENUITEM "(\\cong)",                    ID_CONG
+    MENUITEM "(\\propto)",                  ID_PROPTO
+END
+
+IDR_GREEK_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(&alpha)",                    ID_ALPHA
+    MENUITEM "(&beta)",                     ID_BETA
+    MENUITEM "(&chi)",                      ID_CHI
+    MENUITEM "(&delta)",                    ID_DELTA
+    MENUITEM "(&epsilon)",                  ID_EPSILON
+    MENUITEM "(&phi)",                      ID_PHI
+    MENUITEM "(gamma)",                     ID_GAMMA
+    MENUITEM "(&eta)",                      ID_ETA
+    MENUITEM "(&iota)",                     ID_IOTA
+    MENUITEM "(&kappa)",                    ID_KAPPA
+    MENUITEM "(&lambda)",                   ID_LAMBDA
+    MENUITEM "(&mu)",                       ID_MU
+    MENUITEM "(&nu)",                       ID_NU
+    MENUITEM "(omicron)",                   ID_OMICRON
+    MENUITEM "(&pi)",                       ID_PI
+    MENUITEM "(&theta)",                    ID_THETA
+    MENUITEM "(&rho)",                      ID_RHO
+    MENUITEM "(&sigma)",                    ID_SIGMA
+    MENUITEM "(&tau)",                      ID_TAU
+    MENUITEM "(&upsilon)",                  ID_UPSILON
+    MENUITEM "(&omega)",                    ID_OMEGA
+    MENUITEM "(&xi)",                       ID_XI
+    MENUITEM "(&psi)",                      ID_PSI
+    MENUITEM "(&zeta)",                     ID_ZETA
+END
+
+IDR_UPGREEK_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(gamma)",                     ID_UPGAMMA
+    MENUITEM "(&delta)",                    ID_UPDELTA
+    MENUITEM "(theta)",                     ID_UPTHETA
+    MENUITEM "(&lambda)",                   ID_UPLAMBDA
+    MENUITEM "(xi)",                        ID_UPXI
+    MENUITEM "(pi)",                        ID_UPPI
+    MENUITEM "(&sigma)",                    ID_UPSIGMA
+    MENUITEM "(upsilon)",                   ID_UPUPSILON
+    MENUITEM "(phi)",                       ID_UPPHI
+    MENUITEM "(&psi)",                      ID_UPPSI
+    MENUITEM "(&omega)",                    ID_UPOMEGA
+END
+
+IDR_HEBREW_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(alpha)",                     ID_HE_ALPHA
+    MENUITEM "(beta)",                      ID_HE_BETA
+    MENUITEM "(daleth)",                    ID_DALETH
+    MENUITEM "(gimel)",                     ID_GIMEL
+END
+
+IDR_BIOP_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(+)",                         ID_PLUS
+    MENUITEM "(-)",                         ID_MINUS
+    MENUITEM "(\\pm)",                      ID_PM
+    MENUITEM "(\\mp)",                      ID_MP
+    MENUITEM "(\\times)",                   ID_TIMES
+    MENUITEM "(\\div)",                     ID_DIV
+    MENUITEM "(\\ast)",                     ID_AST
+    MENUITEM "(\\cdots)",                   ID_CDOTS
+    MENUITEM "(\\circ)",                    ID_CIRC
+    MENUITEM "(\\bullet)",                  ID_BULLET
+    MENUITEM "(\\otimes)",                  ID_OTIMES
+    MENUITEM "(\\oplus)",                   ID_OPLUS
+    MENUITEM "(\\langle)",                  ID_LANGLE
+    MENUITEM "(\\rangle)",                  ID_RANGLE
+END
+
+IDR_ARROW_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(\\leftarrow)",               ID_LEFTARROW
+    MENUITEM "(\\rightarrow or to)",        ID_RIGHTARROW
+    MENUITEM "(\\leftrightarrow)",          ID_LEFTRIGHTARROW
+    MENUITEM SEPARATOR
+    MENUITEM "(\\uparrow)",                 ID_UPARROW
+    MENUITEM "(\\downarrow)",               ID_DOWNARROW
+    MENUITEM "(\\updownarrow)",             ID_UPDOWNARROW
+    MENUITEM SEPARATOR
+    MENUITEM "(\\Leftarrow)",               ID_LLEFTARROW
+    MENUITEM "(\\Rightarrow)",              ID_RRIGHTARROW
+    MENUITEM "(\\Leftrightarrow)",          ID_LLEFTRIGHTARROW
+    MENUITEM SEPARATOR
+    MENUITEM "(\\Uparrow)",                 ID_UUPARROW
+    MENUITEM "(\\Downarrow)",               ID_DDOWNARROW
+    MENUITEM "(\\Updownarrow)",             ID_UUPDOWNARROW
+    MENUITEM SEPARATOR
+    MENUITEM "(\\mapsto)",                  ID_MAPSTO
+END
+
+IDR_LOGICAL_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(\\therefore)",               ID_THEREFORE
+    MENUITEM "(\\because)",                 ID_BECAUSE
+    MENUITEM "(\\exists)",                  ID_EXISTS
+    MENUITEM "(\\forall)",                  ID_FORALL
+    MENUITEM "(\\neg)",                     ID_NEG
+    MENUITEM "(\\edge)",                    ID_EDGE
+    MENUITEM "(\\vee)",                     ID_VEE
+END
+
+IDR_SET_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(\\in)",                      ID_IN
+    MENUITEM "(\\owns)",                    ID_OWNS
+    MENUITEM "(\\cup)",                     ID_CUP
+    MENUITEM "(\\cap)",                     ID_CAP
+    MENUITEM "(\\subset)",                  ID_SUBSET
+    MENUITEM "(\\supset)",                  ID_SUPSET
+    MENUITEM "(\\subseteq)",                ID_SUBSETEQ
+    MENUITEM "(\\supseteq)",                ID_SUPSETEQ
+    MENUITEM "(\\not\\subset)",             ID_NOTSUBSET
+    MENUITEM "(\\emptyset)",                ID_EMPTYSET
+END
+
+IDR_MISC_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(\\partial)",                 ID_PARTIAL
+    MENUITEM "(\\nabla)",                   ID_NABLA
+    MENUITEM "(\\Im)",                      ID_IM
+    MENUITEM "(\\Re)",                      ID_RE
+    MENUITEM "(\\aleph)",                   ID_ALEPH
+    MENUITEM "(\\angle)",                   ID_ANGLE
+    MENUITEM "(\\bot)",                     ID_BOT
+    MENUITEM "(\\diamondsuit)",             ID_DIAMONDSUIT
+    MENUITEM "(\\ell)",                     ID_ELL
+    MENUITEM "(\\wp)",                      ID_WP
+    MENUITEM "(^\\circ)",                   ID_UPCIRC
+    MENUITEM "(\\hbar)",                    ID_HBAR
+    MENUITEM "(\\smallint)",                ID_SMALLINT
+    MENUITEM "(\\sum)",                     ID_SUM
+    MENUITEM "(\\prod)",                    ID_PROD
+    MENUITEM "(\\coprod)",                  ID_COPROD
+END
+
+IDR_FENCE_TEMPLATE_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(round bracket)",             ID_ROUND_BRACKET
+    MENUITEM "(square bracket)",            ID_SQUARE_BRACKET
+    MENUITEM "(curly bracket)",             ID_CURLY_BRACKET
+    MENUITEM "(angle bracket)",             ID_ANGLE_BRACKET
+    MENUITEM "(single vertical bar)",       ID_SINGLE_VERTICAL_BAR
+    MENUITEM "(double vertical bar)",       ID_DOUBLE_VERTICAL_BAR
+    MENUITEM "(floor bracket)",             ID_FLOOR_BRACKET
+    MENUITEM "(ceiling bracket)",           ID_CEILING_BRACKET
+    MENUITEM "(upper horizental brace)",    ID_UPPER_HORIZENTAL_BRACE
+    MENUITEM "(lower horizental brace)",    ID_LOWER_HORIZENTAL_BRACE
+    MENUITEM "(left parenthesis)",          ID_LEFT_PARENTHESIS
+    MENUITEM "(right parenthesis)",         ID_RIGHT_PARENTHESIS
+    MENUITEM "(left bracket)",              ID_LEFT_BRACKET
+    MENUITEM "(right bracket)",             ID_RIGHT_BRACKET
+    MENUITEM "(left brace)",                ID_LEFT_BRACE
+    MENUITEM "(right brace)",               ID_RIGHT_BRACE
+    MENUITEM "(left angle bracket)",        ID_LEFT_ANGLE_BRACKET
+    MENUITEM "(right angle bracket)",       ID_RIGHT_ANGLE_BRACKET
+    MENUITEM "(left vertical bar)",         ID_LEFT_VERTICAL_BAR
+    MENUITEM "(right vertical bar)",        ID_RIGHT_VERTICAL_BAR
+    MENUITEM "(left double bar)",           ID_LEFT_DOUBLE_BAR
+    MENUITEM "(right double bar)",          ID_RIGHT_DOUBLE_BAR
+END
+
+IDR_FRACTION_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(fraction)",                  ID_FRACTION
+END
+
+IDR_RADICAL_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(squard root)",               ID_SQUARD_ROOT
+    MENUITEM "(nth root)",                  ID_NTH_ROOT
+END
+
+IDR_SCRIPT_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(superscript)",               ID_SUPERSCRIPT
+    MENUITEM "(subscript)",                 ID_SUBSCRIPT
+    MENUITEM "(superscript && subscript)",  ID_SUPER_SUBSCRIPT
+END
+
+IDR_SUMMATION_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(summation with no limit)",   ID_SUM_NOLIMIT
+    MENUITEM "(summation with underscript limit)", ID_SUM_UNDER
+    MENUITEM "(summation with under/overscript limit)", ID_SUM_UNDEROVER
+    MENUITEM "(summation with subscript limit)", ID_SUM_SUB
+    MENUITEM "(summation with sub/superscript limit)", ID_SUM_SUBSUPER
+END
+
+IDR_INTEGRAL_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(indefinite integral)",       ID_INDEFINITE_INTEGRAL
+    MENUITEM "(definite integral with Over/Underscript)",                         ID_INTEGRAL_OVERUNDER
+    MENUITEM "(definite integral with Sub/Superscript)",                         ID_INTEGRAL_SUBSUPER
+END
+
+IDR_BAR_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(over bar)",                  ID_OVER_BAR
+    MENUITEM "(under bar)",                 ID_UNDER_BAR
+    MENUITEM "(right arrow over bar)",      ID_RIGHTOVER_BAR
+    MENUITEM "(left arrow over bar)",       ID_LEFTOVER_BAR
+    MENUITEM "(right arrow under bar)",     ID_RIGHTUNVER_BAR
+    MENUITEM "(left arrow under bar)",      ID_LEFTUNDER_BAR
+END
+
+IDR_LABELEDARROW_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(right arrow with upper text)", ID_RIGHT_UPPER
+    MENUITEM "(left arrow with upper text)", ID_LEFT_UPPER
+    MENUITEM "(double headed arrow with upper text)", ID_DOUBLEHEAD_UPPER
+    MENUITEM "(right arrow with lower text)", ID_RIGHT_LOWER
+    MENUITEM "(left arrow with lower text)", ID_LEFT_LOWER
+    MENUITEM "(double headed arrow with lower text)", ID_DOUBLEHEAD_LOWER
+END
+
+IDR_PRODUCT_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(product with nolimit)",      ID_PRODUCT_NOLIMIT
+    MENUITEM "(product with underscript)",  ID_PRODUCT_UNDER
+    MENUITEM "(product with under / overscript)", ID_PRODUCT_UNDEROVER
+    MENUITEM "(product with subscript)",    ID_PRODUCT_SUB
+    MENUITEM "(product with sub / superscript)", ID_PRODUCT_SUBSUPER
+    MENUITEM "(coproduct with nolimit)",    ID_COPRODUCT_NOLIMIT
+    MENUITEM "(coproduct with underscript)", ID_COPRODUCT_UNDER
+    MENUITEM "(coproduct with under / overscript)", ID_COPRODUCT_UNDEROVER
+    MENUITEM "(coproduct with subscript)",  ID_COPRODUCT_SUB
+    MENUITEM "(coproduct with sub / superscript)", ID_COPRODUCT_SUBSUPER
+END
+
+IDR_SETTHEORY_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "(set with nolimit)",          ID_SETTHEORY_NOLIMIT
+    MENUITEM "(set with underscript)",      ID_SETTHEORY_UNDER
+    MENUITEM "(set with under / overscript)", ID_SETTHEORY_UNDEROVER
+    MENUITEM "(set with subscript)",        ID_SETTHEORY_SUB
+    MENUITEM "(set with sub / superscript)", ID_SETTHEORY_SUBSUPER
+    MENUITEM "(union with nolimit)",        ID_UNION_NOLIMIT
+    MENUITEM "(union with underscript)",    ID_UNION_UNDER
+    MENUITEM "(union with under / overscript)", ID_UNION_UNDEROVER
+    MENUITEM "(union with subscript)",      ID_UNION_SUB
+    MENUITEM "(union with sub / superscript)", ID_UNION_SUBSUPER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ECOMath 정보"
+FONT 9, "새굴림"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "ECOMath 버전 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2001",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "확인",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DIALOGBAR DIALOG DISCARDABLE  0, 0, 373, 38
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "Product",IDC_PRODUCT_BTN,235,22,30,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Matrix",IDC_MATRIX_BTN,301,22,30,14,NOT WS_VISIBLE
+    CONTROL         168,IDC_INTEGRAL_BTN,"Static",SS_BITMAP | SS_NOTIFY,168,20,28,16
+    CONTROL         175,IDC_ARROW_BTN,"Static",SS_BITMAP | SS_NOTIFY,69,2,28,16
+    CONTROL         160,IDC_BAR_BTN,"Static",SS_BITMAP | SS_NOTIFY,201,20,28,16
+    CONTROL         162,IDC_FENCE_TEMP_BTN,"Static",SS_BITMAP | SS_NOTIFY,3,20,28,16
+    CONTROL         164,IDC_FRACTION_BTN,"Static",SS_BITMAP | SS_NOTIFY,36,20,28,16
+    CONTROL         166,IDC_GREEK_BTN,"Static",SS_BITMAP | SS_NOTIFY,201,2,28,16
+    CONTROL         172,IDC_LOGICAL_BTN,"Static",SS_BITMAP | SS_NOTIFY,102,2,28,16
+    CONTROL         174,IDC_MISC_BTN,"Static",SS_BITMAP | SS_NOTIFY,168,2,28,16
+    CONTROL         178,IDC_UPGREEK_BTN,"Static",SS_BITMAP | SS_NOTIFY,234,2,28,16
+    CONTROL         180,IDC_BIREL_BTN,"Static",SS_BITMAP | SS_NOTIFY,3,2,28,16
+    CONTROL         181,IDC_OP_BTN,"Static",SS_BITMAP | SS_NOTIFY,36,2,28,16
+    CONTROL         184,IDC_SET_BTN,"Static",SS_BITMAP | SS_NOTIFY,135,2,28,16
+    CONTROL         186,IDC_RADICAL_BTN,"Static",SS_BITMAP | SS_NOTIFY,69,20,28,16
+    CONTROL         188,IDC_SCRIPT_BTN,"Static",SS_BITMAP | SS_NOTIFY,102,20,28,16
+    CONTROL         190,IDC_SUMMATION_BTN,"Static",SS_BITMAP | SS_NOTIFY,135,20,28,16
+    CONTROL         184,IDC_SETTHEORY_BTN,"Static",SS_BITMAP | SS_NOTIFY | NOT WS_VISIBLE,269,20,28,16
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "ECOMath MFC 응용 프로그램\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ECOMath\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ECOMath.EXE\0"
+            VALUE "ProductName", "ECOMath 응용 프로그램\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "ECOMath\n\nMath\n\n\nECOMath.Document\nMath Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ECOMath"
+    AFX_IDS_IDLEMESSAGE     "준비"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "새 수식을 작성합니다\n새 수식"
+    ID_FILE_OPEN            "기존 문서를 엽니다\n열기"
+    ID_FILE_CLOSE           "현재 열린 문서를 닫습니다\n닫기"
+    ID_FILE_SAVE            "현재 열린 문서를 저장합니다\n저장"
+    ID_FILE_SAVE_AS         "현재 열린 문서를 다른 이름으로 저장합니다\n다른 이름으로 저장"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "프로그램 정보와 버전 정보, 저작권 정보를 표시합니다\n정보"
+    ID_APP_EXIT             "응용 프로그램을 종료하기 위해 문서를 저장할 것인지 묻습니다\n종료"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE2       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE3       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE4       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE5       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE6       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE7       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE8       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE9       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE10      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE11      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE12      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE13      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE14      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE15      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE16      "이 문서를 엽니다"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "다음 창으로 전환합니다\n다음 창"
+    ID_PREV_PANE            "이전 창으로 전환합니다\n이전 창"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "현재 열린 창을 나눕니다\n나누기"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "선택 부분을 지웁니다\n지우기"
+    ID_EDIT_CLEAR_ALL       "모든 것을 지웁니다\n모두 지우기"
+    ID_EDIT_COPY            "선택 부분을 복사하여 클립보드에 넣습니다\n복사"
+    ID_EDIT_CUT             "선택 부분을 잘라내어 클립보드에 넣습니다\n잘라내기"
+    ID_EDIT_FIND            "지정한 문자열을 찾습니다\n찾기"
+    ID_EDIT_PASTE           "클립보드의 내용을 붙여 넣습니다\n붙여넣기"
+    ID_EDIT_REPEAT          "마지막으로 실행한 동작을 반복합니다\n반복"
+    ID_EDIT_REPLACE         "지정한 문자열을 다른 문자열로 바꿉니다\n바꾸기"
+    ID_EDIT_SELECT_ALL      "문서 전체를 선택합니다\n전체 선택"
+    ID_EDIT_UNDO            "마지막으로 한 동작을 취소합니다\n실행 취소"
+    ID_EDIT_REDO            "이전에 취소한 동작을 다시 수행합니다\n다시 실행"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "도구 모음을 보이거나 감춥니다\n도구 모음 전환"
+    ID_VIEW_STATUS_BAR      "상태 표시줄을 표시하거나 감춥니다\n상태 표시줄 전환"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "창의 크기를 변경합니다"
+    AFX_IDS_SCMOVE          "창의 위치를 변경합니다"
+    AFX_IDS_SCMINIMIZE      "창을 아이콘으로 줄여서 표시합니다"
+    AFX_IDS_SCMAXIMIZE      "창을 최대 크기로 확장합니다"
+    AFX_IDS_SCNEXTWINDOW    "다음 문서 창으로 전환합니다"
+    AFX_IDS_SCPREVWINDOW    "이전 문서 창으로 전환합니다"
+    AFX_IDS_SCCLOSE         "현재 열린 창을 닫고 문서를 저장할 것인지를 묻습니다"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "창을 원래 크기로 복원합니다"
+    AFX_IDS_SCTASKLIST      "작업 목록을 활성화합니다"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SEND_SOOSIK          "편집기의 현재 커서 위치로 수식태그를 보냅니다.\n하이"
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\ECOMath.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

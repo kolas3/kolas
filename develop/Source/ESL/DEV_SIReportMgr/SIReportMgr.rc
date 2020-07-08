@@ -1,0 +1,244 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SIReportMgr.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "SIReportMgr DLL\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "SIReportMgr\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SIReportMgr.DLL\0"
+            VALUE "ProductName", "SIReportMgr 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SIREPORT_PREVIEW DIALOG DISCARDABLE  0, 0, 529, 381
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Dialog"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "Print",IDC_btnPRINT,"Button",BS_OWNERDRAW | WS_TABSTOP,439,3,42,14
+    CONTROL         "닫기",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,479,3,42,14
+    CONTROL         "확대/축소",IDC_bZOOM,"Button",BS_OWNERDRAW | WS_TABSTOP,207,3,42,14
+    GROUPBOX        "",IDC_STATIC,7,45,515,330
+    CONTROL         "<<이전페이지",IDC_bPREV,"Button",BS_OWNERDRAW | WS_TABSTOP,293,3,42,14
+    CONTROL         "다음페이지>>",IDC_bNEXT,"Button",BS_OWNERDRAW | WS_TABSTOP,336,3,42,14
+    LTEXT           "Static",IDC_sPAGE,18,31,55,8
+    CONTROL         "끝으로",IDC_btnEND,"Button",BS_OWNERDRAW | WS_TABSTOP,379,3,42,14
+    CONTROL         "처음으로",IDC_btnFIRST,"Button",BS_OWNERDRAW | WS_TABSTOP,250,3,42,14
+    CONTROL         "형식수정",IDC_bMODIFY_FORM,"Button",BS_OWNERDRAW | WS_TABSTOP,121,3,42,14
+    CONTROL         "새로고침",IDC_bREFRESH,"Button",BS_OWNERDRAW | WS_TABSTOP,164,3,42,14
+    CONTROL         "값수정",IDC_bMODIFY_VALUE,"Button",BS_OWNERDRAW | WS_TABSTOP,78,3,42,14
+    COMBOBOX        IDC_cPAGELIST,15,5,54,99,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SIREPORT_PRINT DIALOG DISCARDABLE  0, 0, 261, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SIReport Print Dialog"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "출력",IDC_btnPRINT,"Button",BS_OWNERDRAW | WS_TABSTOP,142,125,50,14
+    CONTROL         "닫기",IDC_btnCLOSE,"Button",BS_OWNERDRAW | WS_TABSTOP,195,125,50,14
+    EDITTEXT        IDC_nPAPER,125,73,112,14,ES_RIGHT
+    EDITTEXT        IDC_EDIT_START_PAGE,159,35,25,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_END_PAGE,206,35,25,14,ES_RIGHT | ES_AUTOHSCROLL
+    CONTROL         "선 택",IDC_RADIO_RANGE,"Button",BS_AUTORADIOBUTTON,119,37,35,10
+    CONTROL         "전 체",IDC_RADIO_ALL,"Button",BS_AUTORADIOBUTTON,119,17,37,10
+    GROUPBOX        "출력 영역 설정",IDC_STATIC,113,6,143,48,WS_GROUP
+    LTEXT           "까지",IDC_STATIC,234,38,16,8
+    LTEXT           "부터",IDC_STATIC,187,38,18,8
+    CTEXT           "",IDC_STATIC_PAGE_COUNT,176,18,67,8
+    CONTROL         15025,IDC_STATIC,"Static",SS_BITMAP,0,0,109,196
+    LTEXT           "진행률",IDC_STATIC1,113,100,29,14,SS_CENTERIMAGE
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,145,100,111,14
+    LTEXT           "",IDC_STATIC2,114,116,142,8
+    GROUPBOX        "인쇄 매수 설정",IDC_STATIC,114,57,143,38,WS_GROUP
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_ARROWKEYS,237,73,10,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SIREPORT_PREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 522
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 374
+    END
+
+    IDD_SIREPORT_PRINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 254
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CLOSE_D             BITMAP  DISCARDABLE     "bitmap\\CLOSED.bmp"
+IDB_CLOSE_F             BITMAP  DISCARDABLE     "bitmap\\CLOSEU.bmp"
+IDB_CLOSE_U             BITMAP  DISCARDABLE     "bitmap\\CLOSEX.bmp"
+IDB_END_D               BITMAP  DISCARDABLE     "bitmap\\ENDD.bmp"
+IDB_END_F               BITMAP  DISCARDABLE     "bitmap\\ENDU.bmp"
+IDB_END_U               BITMAP  DISCARDABLE     "bitmap\\ENDX.bmp"
+IDB_FIRST_D             BITMAP  DISCARDABLE     "bitmap\\FIRSTD.bmp"
+IDB_FIRST_F             BITMAP  DISCARDABLE     "bitmap\\FIRSTU.bmp"
+IDB_FIRST_U             BITMAP  DISCARDABLE     "bitmap\\FIRSTX.bmp"
+IDB_NEXT_D              BITMAP  DISCARDABLE     "bitmap\\NEXTD.bmp"
+IDB_NEXT_F              BITMAP  DISCARDABLE     "bitmap\\NEXTU.bmp"
+IDB_NEXT_U              BITMAP  DISCARDABLE     "bitmap\\NEXTX.bmp"
+IDB_PREV_D              BITMAP  DISCARDABLE     "bitmap\\PREVD.bmp"
+IDB_PREV_F              BITMAP  DISCARDABLE     "bitmap\\PREVU.bmp"
+IDB_PREV_U              BITMAP  DISCARDABLE     "bitmap\\PREVX.bmp"
+IDB_PRINT_D             BITMAP  DISCARDABLE     "bitmap\\PRINTD.bmp"
+IDB_PRINT_F             BITMAP  DISCARDABLE     "bitmap\\PRINTU.bmp"
+IDB_PRINT_U             BITMAP  DISCARDABLE     "bitmap\\PRINTX.bmp"
+IDB_ZOOMIN_D            BITMAP  DISCARDABLE     "bitmap\\ZOOMIND.bmp"
+IDB_ZOOMIN_F            BITMAP  DISCARDABLE     "bitmap\\ZOOMINU.bmp"
+IDB_ZOOMIN_U            BITMAP  DISCARDABLE     "bitmap\\ZOOMINX.bmp"
+IDB_PRINT               BITMAP  DISCARDABLE     "bitmap\\printdialog.bmp"
+IDB_MODIFY_FORM_U       BITMAP  DISCARDABLE     "bitmap\\MODIFYFORM_X.bmp"
+IDB_MODIFY_FORM_F       BITMAP  DISCARDABLE     "bitmap\\MODIFYFORM_F.bmp"
+IDB_MODIFY_FORM_D       BITMAP  DISCARDABLE     "bitmap\\MODIFYFORM_D.bmp"
+IDB_REFRESH_D           BITMAP  DISCARDABLE     "bitmap\\REFRESHD.bmp"
+IDB_REFRESH_F           BITMAP  DISCARDABLE     "bitmap\\REFRESHU.bmp"
+IDB_REFRESH_U           BITMAP  DISCARDABLE     "bitmap\\REFRESHX.bmp"
+IDB_MODIFY_VALUE_D      BITMAP  DISCARDABLE     "bitmap\\modifyvalue_d.bmp"
+IDB_MODIFY_VALUE_F      BITMAP  DISCARDABLE     "bitmap\\modifyvalue_f.bmp"
+IDB_MODIFY_VALUE_U      BITMAP  DISCARDABLE     "bitmap\\modifyvalue_x.bmp"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\SIReportMgr.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

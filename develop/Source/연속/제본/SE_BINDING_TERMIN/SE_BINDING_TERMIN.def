@@ -1,0 +1,12 @@
+; SE_BINDING_TERMIN.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_BINDING_TERMIN"
+DESCRIPTION  'SE_BINDING_TERMIN Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

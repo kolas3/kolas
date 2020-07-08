@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<RECEIPT>
+	<ITEM>
+		<ALIAS>TITLE</ALIAS>
+		<FORWARD>[!FH][!FC]</FORWARD>
+		<VALUE>[%대_반제목% 확인증]</VALUE>
+		<BACKWARD>[!LF][!LC][!FP][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>SERIAL</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>일련번호 : %일련번호%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>USER_NO</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>회원번호 : %대출자번호%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>USER_NAME</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>성    명 : %대출자이름%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>LR_DATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>%대_반일제목% : %대_반일%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>R_DATE</ALIAS>
+		<FORWARD></FORWARD>
+		<VALUE>%반납예정일%</VALUE>
+		<BACKWARD></BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>PRINT_DATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>영수증출력일자 : %출력일시%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>	
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>CAPTION</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>번호 청구기호                 등록번호    </VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>PRINT_TYPE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>     서명/저작자                  %대_반제목%형태</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>BOOK_LIST</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>%서지정보%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>TOTAL</ALIAS>
+		<FORWARD>[!FR]</FORWARD>
+		<VALUE>합    계 : %합계% 권</VALUE>
+		<BACKWARD>[!LR][!FP][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>EXTRA_INFO</ALIAS>
+		<FORWARD></FORWARD>
+		<VALUE>%추가내용%</VALUE>
+		<BACKWARD></BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>NOTIFY</ALIAS>
+		<FORWARD></FORWARD>
+		<VALUE>%공지사항%</VALUE>
+		<BACKWARD></BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>LIB_NAME</ALIAS>
+		<FORWARD>[!FH][!FC]</FORWARD>
+		<VALUE>%도서관명%</VALUE>
+		<BACKWARD>[!LC][!LH][!FP]</BACKWARD>
+	</ITEM>
+</RECEIPT>

@@ -1,0 +1,102 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ESL"="..\..\..\ESL\ESL\ESL.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "FileManager"="..\FileManager\FileManager.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "KOLAS3_MAIN"="..\..\..\ESL\KOLAS3_MAIN\KOLAS3_MAIN.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_LIB_HOLIDAY_MGR"=".\MNG_LIB_HOLIDAY_MGR.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_LIB_HOMEPAGE_MGR"="..\..\홈페이지관리\MNG_LIB_HOMEPAGE_MGR\MNG_LIB_HOMEPAGE_MGR.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_USER_DATA_SEARCH"="..\..\검색\MNG_USER_DATA_SEARCH\MNG_USER_DATA_SEARCH.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_WORK_DATA_SEARCH"="..\..\검색\MNG_WORK_DATA_SEARCH\MNG_WORK_DATA_SEARCH.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+    {8856F961-340A-11D0-A96B-00C04FD705A2}
+}}}
+
+###############################################################################
+

@@ -1,0 +1,15 @@
+; Light_CENTERUPLOAD.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Light_CENTERUPLOAD"
+DESCRIPTION  'Light_CENTERUPLOAD Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+
+
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

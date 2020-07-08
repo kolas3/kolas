@@ -1,0 +1,7 @@
+; BO_COMMON.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_COMMON"
+DESCRIPTION  'BO_COMMON Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

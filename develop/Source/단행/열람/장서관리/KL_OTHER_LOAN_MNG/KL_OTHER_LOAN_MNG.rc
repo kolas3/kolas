@@ -1,0 +1,437 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\KL_OTHER_LOAN_MNG.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "KL_OTHER_LOAN_MNG DLL\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "KL_OTHER_LOAN_MNG\0"
+            VALUE "LegalCopyright", "Copyright (C) 2013\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "KL_OTHER_LOAN_MNG.DLL\0"
+            VALUE "ProductName", "KL_OTHER_LOAN_MNG 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_KL_OTEHR_LOAN_OFFER DIALOGEX 0, 0, 408, 129
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_grid,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,11,45,51,48
+    LTEXT           "진행상태 :",IDC_STATIC,14,9,33,8,0,WS_EX_TRANSPARENT
+    COMBOBOX        IDC_cmb,51,6,120,30,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "입수일자 :",IDC_stcDate1,195,9,33,8,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_Date1,231,7,56,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CTEXT           "~",IDC_stcDate2,289,7,8,13,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_Date2,299,7,56,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "※ 진행상태에 대한 설명",IDC_stext_state_description,14,29,343,8
+    LTEXT           "신청일자 :",IDC_stcDate3,195,9,33,8,NOT WS_VISIBLE,
+                    WS_EX_TRANSPARENT
+END
+
+IDD_KL_OTHER_LOAN_REQUEST DIALOGEX 0, 0, 412, 139
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_grid,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,11,45,51,48
+    LTEXT           "진행상태 :",IDC_STATIC,14,9,33,8,0,WS_EX_TRANSPARENT
+    COMBOBOX        IDC_cmb,51,6,120,30,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "입수일자 :",IDC_stcDate1,195,9,33,8,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_Date1,231,7,56,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CTEXT           "~",IDC_stcDate2,289,7,8,13,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_Date2,299,7,56,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "※ 진행상태에 대한 설명",IDC_stext_state_description,14,29,343,8
+    LTEXT           "신청일자 :",IDC_stcDate3,195,9,33,8,NOT WS_VISIBLE,
+                    WS_EX_TRANSPARENT
+END
+
+IDD_KL_OTHER_LOAN_MAIN DIALOGEX 0, 0, 642, 259
+STYLE WS_MAXIMIZEBOX | WS_POPUP | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "타관대출관리"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tab1",IDC_TAB_MAIN,"SysTabControl32",0x0,2,40,108,14
+    PUSHBUTTON      "발 송",IDC_BUTTON1,200,10,50,20
+    PUSHBUTTON      "입 수",IDC_BUTTON2,256,10,50,20,WS_DISABLED
+    PUSHBUTTON      "새로고침",IDC_BTN_REFRESH,361,10,38,20
+    EDITTEXT        IDC_edt_KL_RETURN_REG_NO,43,14,101,14,ES_UPPERCASE | ES_AUTOHSCROLL
+    LTEXT           "등록번호",-1,10,17,28,8
+    GROUPBOX        "",-1,3,4,188,30,0,WS_EX_TRANSPARENT
+    PUSHBUTTON      "선 정",IDC_BUTTON3,150,14,31,14
+    PUSHBUTTON      "작업취소",IDC_btnKL_ReturnCancel,405,10,38,20
+    PUSHBUTTON      "발송거절",IDC_SendRefuse,312,10,41,20
+    PUSHBUTTON      "운송장출력",IDC_btnKL_print_waybill,449,10,38,20
+    PUSHBUTTON      "메모수정",IDC_btnKL_loan_edit_memo,493,10,38,20
+    PUSHBUTTON      "이용자상세보기",IDC_btnKL_loan_user_view,536,10,55,20
+END
+
+IDD_KL_OTHER_LOAN_SEND_REFUSE DIALOG DISCARDABLE  0, 0, 187, 99
+STYLE DS_MODALFRAME | WS_POPUP | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "발송거절"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_REFUSE_REASON_EDT,10,23,169,36,ES_MULTILINE | ES_UPPERCASE | ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "발송거절 사유 입력",IDC_STATIC,9,9,60,8
+    PUSHBUTTON      "발송거절",IDC_btnSEND_REFUSE,9,81,50,14
+    PUSHBUTTON      "취소",IDC_btnOnCancel,130,81,50,14
+    CONTROL         "SMS안내시 사유포함여부",IDC_CHK_SendRefuseSMS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,65,95,10
+END
+
+IDD_KL_OTHER_LOAN_EDIT_MEMO DIALOG DISCARDABLE  0, 0, 274, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "메모수정"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "이전",IDC_BUTTON_PRE,7,160,50,14
+    PUSHBUTTON      "다음",IDC_BUTTON_NEXT,61,160,50,14
+    PUSHBUTTON      "저장",IDC_BUTTON_SAVE,163,160,50,14
+    PUSHBUTTON      "닫기",IDC_BUTTON_CLOSE,217,160,50,14
+    LTEXT           "이용자명",IDC_STATIC,17,22,28,8
+    LTEXT           "등록번호",IDC_STATIC,142,22,28,8
+    LTEXT           "도서명",IDC_STATIC,17,43,22,8
+    EDITTEXT        IDC_edt_KL_LOAN_MEMO_TITLE,48,40,209,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edt_KL_LOAN_MEMO_USERNO,48,19,75,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edt_KL_LOAN_MEMO_REGNO,172,19,85,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edt_KL_LOAN_MEMO_CONTENT,48,62,209,84,ES_MULTILINE | ES_WANTRETURN | WS_VSCROLL
+    LTEXT           "메모",IDC_STATIC,18,62,15,8
+    GROUPBOX        "",IDC_STATIC,7,7,260,146
+END
+
+IDD_KL_OTHER_APPENDIX_LIST DIALOGEX 0, 0, 429, 262
+STYLE DS_MODALFRAME | WS_POPUP | WS_CLIPCHILDREN | WS_CAPTION
+CAPTION "부록 발송"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_edtAPPENDIX_BARCODE,203,241,69,12,ES_RIGHT | ES_UPPERCASE | ES_AUTOHSCROLL
+    CONTROL         "",IDC_APPENDIX_LIST,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,8,24,413,204
+    PUSHBUTTON      "발송",IDC_btnSELECT,277,239,47,15
+    PUSHBUTTON      "미발송",IDC_btnLOAN_CANCEL,326,239,47,15
+    LTEXT           "바코드 입력",IDC_STATIC,164,243,37,8
+    GROUPBOX        "부록자료",IDC_STATIC,4,9,421,223,0,WS_EX_TRANSPARENT
+    PUSHBUTTON      "발송취소",IDC_btnSEND_CANCEL,376,239,47,15
+END
+
+IDD_KL_OTHER_LOAN_USER_DETAILVIEW DIALOG DISCARDABLE  0, 0, 374, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "이용자 상세보기"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "이전",IDC_BUTTON_PRE,7,125,50,14
+    PUSHBUTTON      "다음",IDC_BUTTON_NEXT,61,125,50,14
+    PUSHBUTTON      "닫기",IDC_BUTTON_CLOSE,317,125,50,14
+    CONTROL         "",IDC_grid_userview,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,7,7,360,111
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_KL_OTEHR_LOAN_OFFER DLGINIT
+BEGIN
+    IDC_grid, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x0933, 0x0000, 0x0771, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0001, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0100, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_KL_OTHER_LOAN_REQUEST DLGINIT
+BEGIN
+    IDC_grid, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x0933, 0x0000, 0x0771, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0001, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0100, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_KL_OTHER_APPENDIX_LIST DLGINIT
+BEGIN
+    IDC_APPENDIX_LIST, 0x37a, 437, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4ab9, 0x0000, 0x1fa0, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0006, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0101, 0x0001, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0006, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 0x0be3, 
+0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 0x0190, 
+0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 0x0400, 
+0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 
+0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_KL_OTHER_LOAN_USER_DETAILVIEW DLGINIT
+BEGIN
+    IDC_grid_userview, 0x37a, 437, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x411d, 0x0000, 0x1143, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0006, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0101, 0x0001, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0006, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 0x0be3, 
+0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 0x0190, 
+0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 0x0400, 
+0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 
+0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_KL_OTEHR_LOAN_OFFER, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 94
+        HORZGUIDE, 25
+        HORZGUIDE, 45
+    END
+
+    IDD_KL_OTHER_LOAN_REQUEST, DIALOG
+    BEGIN
+        HORZGUIDE, 25
+        HORZGUIDE, 45
+    END
+
+    IDD_KL_OTHER_LOAN_MAIN, DIALOG
+    BEGIN
+        RIGHTMARGIN, 634
+    END
+
+    IDD_KL_OTHER_LOAN_SEND_REFUSE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 179
+    END
+
+    IDD_KL_OTHER_LOAN_EDIT_MEMO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        VERTGUIDE, 13
+        VERTGUIDE, 16
+        VERTGUIDE, 48
+        VERTGUIDE, 257
+        VERTGUIDE, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+        HORZGUIDE, 19
+        HORZGUIDE, 98
+    END
+
+    IDD_KL_OTHER_APPENDIX_LIST, DIALOG
+    BEGIN
+        RIGHTMARGIN, 428
+        BOTTOMMARGIN, 261
+    END
+
+    IDD_KL_OTHER_LOAN_USER_DETAILVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 367
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\KL_OTHER_LOAN_MNG.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

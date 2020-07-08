@@ -1,0 +1,55 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ECO_NOTICE_MANAGER - Win32 Unicode Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"ECO_NOTICE_MANAGER___Win32_Unicode_Debug/ECO_NOTICE_MANAGER.res" /d "_DEBUG" /d "_AFXDLL" "C:\Develop\KOLASIII\develop\Source\ESL\ECO_NOTICE_MANAGER\ECO_NOTICE_MANAGER.rc"" 
+Creating temporary file "C:\DOCUME~1\nl\LOCALS~1\Temp\RSP598.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_UNICODE" /D "UNICODE" /D "_AFXEXT" /Fp"ECO_NOTICE_MANAGER___Win32_Unicode_Debug/ECO_NOTICE_MANAGER.pch" /Yu"stdafx.h" /Fo"ECO_NOTICE_MANAGER___Win32_Unicode_Debug/" /Fd"ECO_NOTICE_MANAGER___Win32_Unicode_Debug/" /FD /GZ /c 
+"C:\Develop\KOLASIII\develop\Source\ESL\ECO_NOTICE_MANAGER\ECO_NOTICE_LIB_CODE.cpp"
+"C:\Develop\KOLASIII\develop\Source\ESL\ECO_NOTICE_MANAGER\ECO_NOTICE_MANAGER.cpp"
+"C:\Develop\KOLASIII\develop\Source\ESL\ECO_NOTICE_MANAGER\Eco_NoticeManager.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\nl\LOCALS~1\Temp\RSP598.tmp" 
+Creating temporary file "C:\DOCUME~1\nl\LOCALS~1\Temp\RSP599.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_UNICODE" /D "UNICODE" /D "_AFXEXT" /Fp"ECO_NOTICE_MANAGER___Win32_Unicode_Debug/ECO_NOTICE_MANAGER.pch" /Yc"stdafx.h" /Fo"ECO_NOTICE_MANAGER___Win32_Unicode_Debug/" /Fd"ECO_NOTICE_MANAGER___Win32_Unicode_Debug/" /FD /GZ /c 
+"C:\Develop\KOLASIII\develop\Source\ESL\ECO_NOTICE_MANAGER\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\nl\LOCALS~1\Temp\RSP599.tmp" 
+Creating temporary file "C:\DOCUME~1\nl\LOCALS~1\Temp\RSP59A.tmp" with contents
+[
+esl.lib rs_common.lib check_dup_api.lib rsmgr.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"../../../lib/ECO_NOTICE_MANAGER.pdb" /debug /machine:I386 /def:".\ECO_NOTICE_MANAGER.def" /out:"..\..\..\..\dll\COMMON\ECO_NOTICE_MANAGER.dll" /implib:"../../../lib/ECO_NOTICE_MANAGER.lib" /pdbtype:sept 
+.\ECO_NOTICE_MANAGER___Win32_Unicode_Debug\ECO_NOTICE_LIB_CODE.obj
+.\ECO_NOTICE_MANAGER___Win32_Unicode_Debug\ECO_NOTICE_MANAGER.obj
+.\ECO_NOTICE_MANAGER___Win32_Unicode_Debug\Eco_NoticeManager.obj
+.\ECO_NOTICE_MANAGER___Win32_Unicode_Debug\StdAfx.obj
+.\ECO_NOTICE_MANAGER___Win32_Unicode_Debug\ECO_NOTICE_MANAGER.res
+]
+Creating command line "link.exe @C:\DOCUME~1\nl\LOCALS~1\Temp\RSP59A.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ECO_NOTICE_LIB_CODE.cpp
+ECO_NOTICE_MANAGER.cpp
+Eco_NoticeManager.cpp
+C:\Develop\KOLASIII\develop\Source\ESL\ECO_NOTICE_MANAGER\Eco_NoticeManager.cpp(84) : warning C4101: 'ids' : unreferenced local variable
+C:\Develop\KOLASIII\develop\Source\ESL\ECO_NOTICE_MANAGER\Eco_NoticeManager.cpp(166) : warning C4101: 'ids' : unreferenced local variable
+Generating Code...
+C:\Develop\KOLASIII\develop\Source\ESL\ECO_NOTICE_MANAGER\Eco_NoticeManager.cpp(613) : warning C4700: local variable 'ids' used without having been initialized
+Linking...
+   Creating library ../../../lib/ECO_NOTICE_MANAGER.lib and object ../../../lib/ECO_NOTICE_MANAGER.exp
+
+
+
+<h3>Results</h3>
+ECO_NOTICE_MANAGER.dll - 0 error(s), 3 warning(s)
+</pre>
+</body>
+</html>

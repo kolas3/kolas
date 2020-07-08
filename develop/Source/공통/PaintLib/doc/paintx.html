@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+  <TITLE>paintlib - paintX</TITLE>
+  <meta name="robots" content="noindex">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="#8000FF" ALINK="#FF00FF">
+<accessed silent>
+<table width="350" border="0" cellspacing="0" cellpadding="0" align=right>
+  <tr>
+    <td>
+    <img src="pics/paintX.gif" width=350 height=60 border=0    
+         alt="" hspace=0 vspace=0>
+    <img src="pics/whitept.gif" width=31 height=21 hspace=0 vspace=0 border=0 alt="">
+    </td>
+  </tr>
+</table>
+<br clear=all>
+<p align=left>
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td width="22">
+      <img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+    </td>
+    <td>
+      <p>
+      <b>Using paintX</b>
+      <p>&nbsp; 
+      <p> paintX is actually pretty easy to use. It can be used together with 
+        any activeX control which exposes a picture propertry (type: IPictureDisp). 
+        Basically, you need to call Set <I>object</I>.picture = PicDecoder.LoadPicture(FileName). 
+        The decoder does (almost) everything else, if it's installed. 
+      <p> Note that paintX is an image <i>decoder</i>, not an image displayer 
+        - that's why paintX isn't an activeX control, it's an activeX <i>component</i> 
+        (or automation server, or ole automation server - MS keeps changing the 
+        names), which means it does not have a user interface and cannot be simply 
+        dropped into a dialogbox. 
+      <p>The standard error handling methods work with paintX. This means that 
+        from Visual Basic, you can use On Error GoTo to specify a routine that 
+        will be called when something goes wrong while decoding. 
+      <p>
+      <b>Installation</b>
+      <p>
+      To install paintX, you need to download paintX.zip and unpack it to the directory
+      you'd like it to be in. WinZip is a good choice for a program to use to unpack it.
+      After it's unpacked, paintX needs to be registered with windows. To do this,
+      choose "Run..." from the start menu. Type 'c:\windows\system\regsvr32
+      c:\paintlib\paintX.dll', replacing the path names with the appropriate
+      values for your system. To verify that it's installed, open paintX.xls
+      with Excel97 and click on the bitmap. You should get a dialog asking for
+      a directory. After you press 'go', all images in that directory should
+      get displayed.
+      <p>
+      <b>Visual Basic - LoadPicture</b>
+      <p>
+      In this sample, MyImage is the image control that will display the picture.
+      The pictures are always delivered in 256-color (8
+      bit) or true-color (32 bit) format. Pictures in other formats get promoted to the
+      next higher format. For instance, 16-color pictures are delivered as 256-color
+      pictures. As an exception, black-and-white tiff images are delivered as 2-color
+      pictures. (This exception was coded because of the large number of fax viewers
+      which need to display b/w tiffs.)
+      <pre>
+
+      <FONT color="green">' This sub assumes an Image Control named MyImage is on the form</FONT>
+      Sub LoadPictureTest( Filename As String )
+        <FONT color="green">' create the decoder</FONT>
+        Dim PicDecoder As New PaintX.PictureDecoder
+
+        <FONT color="green">' trap errors</FONT>
+        On Error Goto LoadError
+            
+        <FONT color="green">' load the picture</FONT>
+        Set MyImage.Picture = PicDecoder.LoadPicture(Filename)
+
+        <FONT color="green">' redraw the form</FONT>
+        DoEvents
+        Repaint
+
+        <FONT color="green">' done!</FONT>
+        Exit Sub
+
+        <FONT color="green">' Handle Errors</FONT>
+      LoadError:
+        MsgBox Hex(Err.Number) & ":" & Err.Description
+      End Sub
+      </pre>
+      <p>
+      <b>Visual Basic - LoadResPicture</b>
+      <p>
+      You can also load a picture from a windows resource using LoadResPicture (ID).
+      <pre>
+      <FONT color="green">' This sub assumes an Image Control named MyImage is on the form</FONT>
+      Sub LoadPictureResTest( ResID as Integer )
+        <FONT color="green">' create the decoder</FONT>
+        Dim PicDecoder As New PaintX.PictureDecoder
+
+        <FONT color="green">' trap errors</FONT>
+        On Error Goto LoadError
+            
+        <FONT color="green">' load the picture</FONT>
+        Set MyImage.Picture = PicDecoder.LoadResPicture(ResID)
+
+        <FONT color="green">' redraw the form</FONT>
+        DoEvents
+        Repaint
+
+        <FONT color="green">' done!</FONT>
+        Exit Sub
+
+        <FONT color="green">' Handle Errors</FONT>
+      LoadError:
+        MsgBox Hex(Err.Number) & ":" & Err.Description
+      End Sub
+      </pre>
+      <p> LoadResPicture first looks for a resource of type RCDATA. Unfortunatly, 
+        the Visual Basic Resource Editor cannot insert RCDATA into a resource 
+        file. LoadResPicture will also look for a custom resource of type "PAINTX", 
+        if no resource of type RCDATA could be found. 
+      <p>
+      One problem is that LoadResPicture always looks for the resource in the
+      current *.exe. When you run from the IDE, you're not really running your 
+      program, you're running VB6.exe. If you call, say PictureDecoder.LoadResPicture(25), 
+      PaintX will get resource 25 from VB6.exe, or more likely nothing at all. 
+      The app will run correctly once compiled and run as a normal .exe.
+       
+      <p><b>VBPaintX Demo</b> 
+      <p>
+       Take a look at the VB example project VBPaintX. It demonstrates the following:
+       <UL>
+         <LI> loading multiple images with LoadPicture into a MSFlexGrid control 
+              (this control is freely distributable and comes with Visual Basic)
+         <LI> loading a picture from a resource with LoadResPicture 
+              (works only when run as an .exe)
+         <LI> error handling with the Err object
+       </UL>
+       
+      <p><b>Using paintX from C++</b> 
+      <p>In general, it's easier to just use paintlib directly from Visual C++. 
+        But if you're more comfortable using an ActiveX. component, this is how 
+        you do it: Create an image control on your form or dialogbox. (Insert 
+        activeX control "Microsoft Forms 2.0 Image"). Then add an #import "..\PaintX\paintx.dll" 
+        directive just after your #include directives. Now you can just use: 
+      <pre>  
+      <FONT color="green">// Create the Decoder</FONT>
+      PAINTXLib::IPictureDecoderPtr 
+        pIPictureDecoder(__uuidof(PAINTXLib::PictureDecoder));
+
+
+      <FONT color="green">// decode the picture</FONT>
+      IPictureDispPtr MyPicture = 
+        (IPictureDispPtr)pIPictureDecoder->LoadPicture(_bstr_t("TEST.JPG"));
+
+      <FONT color="green">// set the image</FONT>
+      m_Image.SetPicture(MyPicture);
+      </pre>
+      <p>See the <A HREF="http://msdn.microsoft.com/library/welcome/dsmsdn/msdn_drguion020298.htm#drguion020298_p8">
+      Dr. Gui Article "Dr. GUI on Components, COM, and ATL", Part 8 </A>
+      in the MSDN library for more information about using ActiveX components in VC++ with "smart 
+      pointers". 
+      <p>
+      <p><b>Error handling</b>
+      <p>COM error codes are a bit hard to use. Encoded in the HRESULT is the
+      severity, the facility and the error code itself (SCODE). 
+      <p>
+      If the facility is FACILITY_ITF (upper word 0x8004) then we have a
+      third-party error code and we have to look at the error source ( VC++:
+      _com_error::Source(), VB: Err.Source ) to determine <I>which</I> third-party
+      caused the error condition. All PaintX errors have "PAINTX" as the error
+      source. See except.h for a complete listing of the decoder errors.
+      <pre>
+      HRESULT      FACILITY     SCODE   Error
+      0x80040001   FACILITY_ITF     1   wrong signature
+      0x80040002   FACILITY_ITF     2   format unknown
+      0x80040006   FACILITY_ITF     6   format not supported
+      0x80040007   FACILITY_ITF     7   internal error of some sort
+      0x80040008   FACILITY_ITF     8   unknown file type
+      0x80040009   FACILITY_ITF     9   DIB too large
+      0x8004000B   FACILITY_ITF    11   end of file
+      </pre>
+      <p>
+      In case you're wondering where errors 3,4,5 and 10 are: these errors are
+      mapped to the Win32 error codes:
+
+      <p>
+      If the upper word is SEVERITY_ERROR & FACILITY_WIN32 (0x8007), then we have
+      an Win32-error.
+      <pre>
+      HRESULT      FACILITY       SCODE   Error
+      0x80070002   FACILITY_WIN32     2   file not found
+      0x80070003   FACILITY_WIN32     3   path not found
+      0x80070005   FACILITY_WIN32     5   access denied
+      0x8007000E   FACILITY_WIN32    14   out of memory
+      </pre>
+
+
+    </td>
+    <td width="22">
+      <img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+    </td>
+
+  </tr>
+</table>
+
+
+</body>
+</html>

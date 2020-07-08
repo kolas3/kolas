@@ -1,0 +1,124 @@
+/* common/config.h.in.  Generated from configure.in by autoheader.  */
+
+/* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_DIRENT_H
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define to 1 if you have the `getpagesize' function. */
+#undef HAVE_GETPAGESIZE
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the `c' library (-lc). */
+#undef HAVE_LIBC
+
+/* Define to 1 if you have the `m' library (-lm). */
+#undef HAVE_LIBM
+
+/* Define to 1 if you have the `stdc' library (-lstdc). */
+#undef HAVE_LIBSTDC
+
+/* Define to 1 if you have the `stdcx' library (-lstdcx). */
+#undef HAVE_LIBSTDCX
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have a working `mmap' system call. */
+#undef HAVE_MMAP
+
+/* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
+#undef HAVE_NDIR_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <sys/dir.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_SYS_DIR_H
+
+/* Define to 1 if you have the <sys/ndir.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_SYS_NDIR_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Version number of package */
+#undef VERSION
+
+/* Define to 1 if your processor stores words with the most significant byte
+   first (like Motorola and SPARC, unlike Intel and VAX). */
+#undef WORDS_BIGENDIAN
+
+// Byte order in a 32 bit word
+#ifdef WORDS_BIGENDIAN
+#define MSB_FIRST  // Motorola et al.
+#else
+#define LSB_FIRST // Intel et al.
+#endif
+
+#undef PL_SUPPORT_TGA
+#undef PL_SUPPORT_BMP
+#undef PL_SUPPORT_TIFF
+#undef PL_SUPPORT_PICT
+#undef PL_SUPPORT_JPEG
+#undef PL_SUPPORT_PNG
+#undef PL_SUPPORT_GIF
+#ifdef _WINDOWS
+  #define PL_SUPPORT_WEMF
+#endif
+#undef PL_SUPPORT_PCX
+#undef PL_SUPPORT_PGM
+#undef PL_SUPPORT_PPM
+#undef PL_SUPPORT_PSD
+
+// The following lines can be used to define maximum memory useage
+// for a single BITMAP. If we need more, we assume something went wrong.
+// If MAX_BITMAP_SIZE isn't defined, the code doesn't check for huge
+// bitmaps and just tries to allocate the memory. This can take a
+// long time.
+// #ifndef MAX_BITMAP_SIZE
+// #define MAX_BITMAP_SIZE 8L*1024*1024
+// #endif
+

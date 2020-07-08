@@ -1,0 +1,7 @@
+; BL_SE_LOC_1500.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BL_SE_LOC_1500"
+DESCRIPTION  'BL_SE_LOC_1500 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

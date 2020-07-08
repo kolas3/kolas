@@ -1,0 +1,7 @@
+; MNG_CAT_MINI_POPUP.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_CAT_MINI_POPUP"
+DESCRIPTION  'MNG_CAT_MINI_POPUP Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

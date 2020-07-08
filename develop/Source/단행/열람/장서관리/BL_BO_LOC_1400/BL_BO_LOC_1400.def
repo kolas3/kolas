@@ -1,0 +1,7 @@
+; BL_BO_LOC_1400.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BL_BO_LOC_1400"
+DESCRIPTION  'BL_BO_LOC_1400 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

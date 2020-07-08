@@ -1,0 +1,7 @@
+; BO_ACQ_SPECIES_FORM.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_ACQ_SPECIES_FORM"
+DESCRIPTION  'BO_ACQ_SPECIES_FORM Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

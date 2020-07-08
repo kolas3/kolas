@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by CAT_MARC_EXPORT.mak
+
+.\CAT_MARC_EXPORT.cpp : \
+	".\StdAfx.h"\
+	
+
+.\CAT_MARC_EXPORT.rc : \
+	".\res\CAT_MARC_EXPORT.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

@@ -1,0 +1,22 @@
+# Microsoft Developer Studio Generated Dependency File, included by Loader.mak
+
+.\Loader.cpp : \
+	".\Loader.h"\
+	".\LoaderDlg.h"\
+	".\StdAfx.h"\
+	
+
+.\Loader.rc : \
+	".\res\Loader.ico"\
+	".\res\Loader.rc2"\
+	
+
+.\LoaderDlg.cpp : \
+	".\Loader.h"\
+	".\LoaderDlg.h"\
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

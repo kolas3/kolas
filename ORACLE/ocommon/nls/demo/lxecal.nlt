@@ -1,0 +1,133 @@
+/* Copyright (c) Oracle Corporation 1987,1994, 1998, 1999. All Rights Reserved. */
+/*
+NAME
+    lxecal
+FUNCTION
+    define external loadable calendar era(s) and deviation(s) 
+NOTES
+
+    This file contains loadable era and deviation information for 
+    calendar(s). The information shall be entered calendar by calendar
+    under following format,
+
+ 	 DEFINE calendar
+
+           calendar_name              = text_string
+
+           DEFINE calendar_era
+	      era_full_name	      = hex_string
+	      era_abbr_name           = hex_string
+	      ruler_full_name	      = hex_string
+	      ruler_abbr_name         = hex_string
+	      start_date 	      = date_string
+	      end_date   	      = date_string
+	   ENDDEFINE calendar_era
+
+	   DEFINE calendar_deviation
+             deviation_data =         {       
+				      <start_date [end_date]>:deviation_days 
+				      <start_date [end_date]>:deviation_days
+				      <start_date >:deviation_days
+                                      } 
+
+	   ENDDEFINE calendar_deviation
+
+	 ENDDEFINE calendar
+
+    Each calendar item shall be defined under token and vlaue 
+    relationship with proper type and size lxsted in following:
+  
+	 Value name     Value type/size Value Format
+         -------------- --------------- -------------------------------------
+	 hex_string     raw(30)         "quoted string" if more than one word
+					"quoted string" if one non-numeric 
+					word which starts with a digit
+         text_string    char(30)        "quoted string" if more than one word
+					"quoted string" if one non-numeric 
+					word which starts with a digit
+	 start_date     date_string
+         end_date       date_string
+         date_string    date(14)        Gregorian "mon-dd-yyyy ad"
+         deviation_days integer
+
+    
+    Currently, there are limited number of calendars being supported, which
+    are lxsted below. An error will be issued if incorrect calendar name 
+    being used.
+
+         Calendar Name       Emperors
+         ------------------  -------------------------------------------
+         Arabic Hijrah       Meiji, Taisho, Showa, Heisei
+         Japanese Imperial
+         Persian
+         ROC Official
+         Thai Buddha
+
+    Please place this file under proper directory pre-defined for your
+    platform once you finished your modification.
+ 
+         UNIX : $ORACLE_HOME/ocommon/nls     
+
+    And finally, run Calendar Utility (lxegen) to register your modification 
+    to Oracle calendar system.
+
+    Note that you can only define era and deviation for future period.
+    Also the the date before start date of an external new era will
+    be treaded as the end date for the last internal era.
+
+MODIFIED
+    wzhang    09/14/99 -  add description for hex_string, text_string format
+    chaowang  03/26/98 -  fix 634615: Previously, in Japanese imperial 
+                          example, 'end_date' was left blank, which causes 
+                          the era period ended at the first day of current 
+                          system date that .nlb file is generated. Customers 
+                          asked us to change it to an obvious date and
+                          document it. Here it is. Change it to an abitrary 
+                          date since it is an example. Users should define it 
+                          properly accroding to their needs.
+    pma       08/17/94 -  Correct ruller to era in Japanese Imperial examples
+    SCHENG    02/20/94 -  Creation
+*/
+
+-- ***************************************************************************
+-- Here is an example on defining deviation days for a Lunar Calendar
+-- ***************************************************************************
+--
+--	DEFINE calendar
+--
+--         calendar_name              =       "Arabic Hijrah"
+--
+--	   DEFINE calendar_deviation
+--           deviation_data           = { 
+--				        <"Feb-01-1994 ad" "Feb-28-1994 ad">:1 
+--					<"Mar-01-1994 ad">:4 
+--				        }
+--	   ENDDEFINE calendar_deviation
+--
+--	ENDDEFINE calendar
+--
+-- ***************************************************************************
+-- Here is an example on defining Emperors for a Imperial Calendar
+-- ***************************************************************************
+--
+--	DEFINE calendar
+--
+--         calendar_name              = "Japanese Imperial"
+--
+--         DEFINE calendar_era
+--	      era_full_name	      = bebccfc2
+--	      era_abbr_name           = 53
+--	      start_date 	      = "DEC-25-1926 AD"
+--	      end_date   	      = "jAN-07-1989 AD"
+--	   ENDDEFINE calendar_era
+--
+--         DEFINE calendar_era
+--	      era_full_name	      = cabfc0ae
+--	      era_abbr_name           = 48
+--	      start_date 	      = "JAN-08-1989 AD"
+--	      end_date   	      = "DEC-31-2099 AD"
+--	   ENDDEFINE calendar_era
+--
+--	ENDDEFINE calendar
+--
+

@@ -1,0 +1,1982 @@
+#------------------------------------------------------------------------------
+#
+# Copyright (c) Oracle Corporation 1998. All Rights Reserved.
+#
+#------------------------------------------------------------------------------
+#
+# Name:          Mapping table from UDC to ISO 10646(Unicode) Private Use 
+#                Area(PUA) for
+#                KOREAN character sets of Oracle NLSRTL
+#
+# Created Date:  Tue Dec 22 15:39:02 1998
+
+#
+# Table Version: It is generated from NLSRTL Version 3.4.0.0.0 - Production.
+#
+# Table Owner:   Oracle Corporation
+#
+# Tables:        This file includes two tables
+#
+#                Table 1: Character sets which belong to KOREAN language
+#
+#                Table 2: Mapping between PUA and UDC values of all character
+#                         set which has PUA mapping (stated 'yes' in Table 1.)
+#
+# Table 1 format:
+#                Columns separated by spaces:
+#                    Column 1: (pos.  3-30) character set name
+#                    Column 2: (pos. 32-35) character set id
+#                    Column 3: (pos. 37-39) has PUA mapping (yes/no)?
+#
+#                The entries are in Oracle character set id order.
+#
+# Table 2 format:
+#                Columns separated by spaces
+#                   Column 1: (pos.  1-10) ISO 10646 code in hex
+#                   Column 2: (pos. 12-21) value of 1st character set in hex
+#                   Column 3: (pos. 23-32) value of 2nd character set in hex
+#                     :
+#                     :
+#                   Column N: (pos. xx-xx) value of Nth character set in hex
+#                The entries are in ISO 10646 code value order.
+#
+#------------------------------------------------------------------------------
+# Table 1.
+# CHARACTER SET NAME            ID  PUA?
+# ---------------------------- ---- ---
+# KO16KSC5601                   840 no
+# KO16DBCS                      842 yes
+# KO16KSCCS                     845 no
+# KO16MSWIN949                  846 yes
+# KO16TSTSET                    996 no
+# KO16KSC5601FIXED             1840 no
+# KO16DBCSFIXED                1842 yes
+#------------------------------------------------------------------------------
+# Table 2.
+# PUA      ID:842     ID:846     ID:1842   
+#--------- ---------- ---------- ----------
+E000       D441       C9A1       D441      
+E001       D442       C9A2       D442      
+E002       D443       C9A3       D443      
+E003       D444       C9A4       D444      
+E004       D445       C9A5       D445      
+E005       D446       C9A6       D446      
+E006       D447       C9A7       D447      
+E007       D448       C9A8       D448      
+E008       D449       C9A9       D449      
+E009       D44A       C9AA       D44A      
+E00A       D44B       C9AB       D44B      
+E00B       D44C       C9AC       D44C      
+E00C       D44D       C9AD       D44D      
+E00D       D44E       C9AE       D44E      
+E00E       D44F       C9AF       D44F      
+E00F       D450       C9B0       D450      
+E010       D451       C9B1       D451      
+E011       D452       C9B2       D452      
+E012       D453       C9B3       D453      
+E013       D454       C9B4       D454      
+E014       D455       C9B5       D455      
+E015       D456       C9B6       D456      
+E016       D457       C9B7       D457      
+E017       D458       C9B8       D458      
+E018       D459       C9B9       D459      
+E019       D45A       C9BA       D45A      
+E01A       D45B       C9BB       D45B      
+E01B       D45C       C9BC       D45C      
+E01C       D45D       C9BD       D45D      
+E01D       D45E       C9BE       D45E      
+E01E       D45F       C9BF       D45F      
+E01F       D460       C9C0       D460      
+E020       D461       C9C1       D461      
+E021       D462       C9C2       D462      
+E022       D463       C9C3       D463      
+E023       D464       C9C4       D464      
+E024       D465       C9C5       D465      
+E025       D466       C9C6       D466      
+E026       D467       C9C7       D467      
+E027       D468       C9C8       D468      
+E028       D469       C9C9       D469      
+E029       D46A       C9CA       D46A      
+E02A       D46B       C9CB       D46B      
+E02B       D46C       C9CC       D46C      
+E02C       D46D       C9CD       D46D      
+E02D       D46E       C9CE       D46E      
+E02E       D46F       C9CF       D46F      
+E02F       D470       C9D0       D470      
+E030       D471       C9D1       D471      
+E031       D472       C9D2       D472      
+E032       D473       C9D3       D473      
+E033       D474       C9D4       D474      
+E034       D475       C9D5       D475      
+E035       D476       C9D6       D476      
+E036       D477       C9D7       D477      
+E037       D478       C9D8       D478      
+E038       D479       C9D9       D479      
+E039       D47A       C9DA       D47A      
+E03A       D47B       C9DB       D47B      
+E03B       D47C       C9DC       D47C      
+E03C       D47D       C9DD       D47D      
+E03D       D47E       C9DE       D47E      
+E03E       D47F       C9DF       D47F      
+E03F       D481       C9E0       D481      
+E040       D482       C9E1       D482      
+E041       D483       C9E2       D483      
+E042       D484       C9E3       D484      
+E043       D485       C9E4       D485      
+E044       D486       C9E5       D486      
+E045       D487       C9E6       D487      
+E046       D488       C9E7       D488      
+E047       D489       C9E8       D489      
+E048       D48A       C9E9       D48A      
+E049       D48B       C9EA       D48B      
+E04A       D48C       C9EB       D48C      
+E04B       D48D       C9EC       D48D      
+E04C       D48E       C9ED       D48E      
+E04D       D48F       C9EE       D48F      
+E04E       D490       C9EF       D490      
+E04F       D491       C9F0       D491      
+E050       D492       C9F1       D492      
+E051       D493       C9F2       D493      
+E052       D494       C9F3       D494      
+E053       D495       C9F4       D495      
+E054       D496       C9F5       D496      
+E055       D497       C9F6       D497      
+E056       D498       C9F7       D498      
+E057       D499       C9F8       D499      
+E058       D49A       C9F9       D49A      
+E059       D49B       C9FA       D49B      
+E05A       D49C       C9FB       D49C      
+E05B       D49D       C9FC       D49D      
+E05C       D49E       C9FD       D49E      
+E05D       D49F       C9FE       D49F      
+E05E       D4A0       FEA1       D4A0      
+E05F       D4A1       FEA2       D4A1      
+E060       D4A2       FEA3       D4A2      
+E061       D4A3       FEA4       D4A3      
+E062       D4A4       FEA5       D4A4      
+E063       D4A5       FEA6       D4A5      
+E064       D4A6       FEA7       D4A6      
+E065       D4A7       FEA8       D4A7      
+E066       D4A8       FEA9       D4A8      
+E067       D4A9       FEAA       D4A9      
+E068       D4AA       FEAB       D4AA      
+E069       D4AB       FEAC       D4AB      
+E06A       D4AC       FEAD       D4AC      
+E06B       D4AD       FEAE       D4AD      
+E06C       D4AE       FEAF       D4AE      
+E06D       D4AF       FEB0       D4AF      
+E06E       D4B0       FEB1       D4B0      
+E06F       D4B1       FEB2       D4B1      
+E070       D4B2       FEB3       D4B2      
+E071       D4B3       FEB4       D4B3      
+E072       D4B4       FEB5       D4B4      
+E073       D4B5       FEB6       D4B5      
+E074       D4B6       FEB7       D4B6      
+E075       D4B7       FEB8       D4B7      
+E076       D4B8       FEB9       D4B8      
+E077       D4B9       FEBA       D4B9      
+E078       D4BA       FEBB       D4BA      
+E079       D4BB       FEBC       D4BB      
+E07A       D4BC       FEBD       D4BC      
+E07B       D4BD       FEBE       D4BD      
+E07C       D4BE       FEBF       D4BE      
+E07D       D4BF       FEC0       D4BF      
+E07E       D4C0       FEC1       D4C0      
+E07F       D4C1       FEC2       D4C1      
+E080       D4C2       FEC3       D4C2      
+E081       D4C3       FEC4       D4C3      
+E082       D4C4       FEC5       D4C4      
+E083       D4C5       FEC6       D4C5      
+E084       D4C6       FEC7       D4C6      
+E085       D4C7       FEC8       D4C7      
+E086       D4C8       FEC9       D4C8      
+E087       D4C9       FECA       D4C9      
+E088       D4CA       FECB       D4CA      
+E089       D4CB       FECC       D4CB      
+E08A       D4CC       FECD       D4CC      
+E08B       D4CD       FECE       D4CD      
+E08C       D4CE       FECF       D4CE      
+E08D       D4CF       FED0       D4CF      
+E08E       D4D0       FED1       D4D0      
+E08F       D4D1       FED2       D4D1      
+E090       D4D2       FED3       D4D2      
+E091       D4D3       FED4       D4D3      
+E092       D4D4       FED5       D4D4      
+E093       D4D5       FED6       D4D5      
+E094       D4D6       FED7       D4D6      
+E095       D4D7       FED8       D4D7      
+E096       D4D8       FED9       D4D8      
+E097       D4D9       FEDA       D4D9      
+E098       D4DA       FEDB       D4DA      
+E099       D4DB       FEDC       D4DB      
+E09A       D4DC       FEDD       D4DC      
+E09B       D4DD       FEDE       D4DD      
+E09C       D4DE       FEDF       D4DE      
+E09D       D4DF       FEE0       D4DF      
+E09E       D4E0       FEE1       D4E0      
+E09F       D4E1       FEE2       D4E1      
+E0A0       D4E2       FEE3       D4E2      
+E0A1       D4E3       FEE4       D4E3      
+E0A2       D4E4       FEE5       D4E4      
+E0A3       D4E5       FEE6       D4E5      
+E0A4       D4E6       FEE7       D4E6      
+E0A5       D4E7       FEE8       D4E7      
+E0A6       D4E8       FEE9       D4E8      
+E0A7       D4E9       FEEA       D4E9      
+E0A8       D4EA       FEEB       D4EA      
+E0A9       D4EB       FEEC       D4EB      
+E0AA       D4EC       FEED       D4EC      
+E0AB       D4ED       FEEE       D4ED      
+E0AC       D4EE       FEEF       D4EE      
+E0AD       D4EF       FEF0       D4EF      
+E0AE       D4F0       FEF1       D4F0      
+E0AF       D4F1       FEF2       D4F1      
+E0B0       D4F2       FEF3       D4F2      
+E0B1       D4F3       FEF4       D4F3      
+E0B2       D4F4       FEF5       D4F4      
+E0B3       D4F5       FEF6       D4F5      
+E0B4       D4F6       FEF7       D4F6      
+E0B5       D4F7       FEF8       D4F7      
+E0B6       D4F8       FEF9       D4F8      
+E0B7       D4F9       FEFA       D4F9      
+E0B8       D4FA       FEFB       D4FA      
+E0B9       D4FB       FEFC       D4FB      
+E0BA       D4FC       FEFD       D4FC      
+E0BB       D4FD       FEFE       D4FD      
+E0BC       D541                  D541      
+E0BD       D542                  D542      
+E0BE       D543                  D543      
+E0BF       D544                  D544      
+E0C0       D545                  D545      
+E0C1       D546                  D546      
+E0C2       D547                  D547      
+E0C3       D548                  D548      
+E0C4       D549                  D549      
+E0C5       D54A                  D54A      
+E0C6       D54B                  D54B      
+E0C7       D54C                  D54C      
+E0C8       D54D                  D54D      
+E0C9       D54E                  D54E      
+E0CA       D54F                  D54F      
+E0CB       D550                  D550      
+E0CC       D551                  D551      
+E0CD       D552                  D552      
+E0CE       D553                  D553      
+E0CF       D554                  D554      
+E0D0       D555                  D555      
+E0D1       D556                  D556      
+E0D2       D557                  D557      
+E0D3       D558                  D558      
+E0D4       D559                  D559      
+E0D5       D55A                  D55A      
+E0D6       D55B                  D55B      
+E0D7       D55C                  D55C      
+E0D8       D55D                  D55D      
+E0D9       D55E                  D55E      
+E0DA       D55F                  D55F      
+E0DB       D560                  D560      
+E0DC       D561                  D561      
+E0DD       D562                  D562      
+E0DE       D563                  D563      
+E0DF       D564                  D564      
+E0E0       D565                  D565      
+E0E1       D566                  D566      
+E0E2       D567                  D567      
+E0E3       D568                  D568      
+E0E4       D569                  D569      
+E0E5       D56A                  D56A      
+E0E6       D56B                  D56B      
+E0E7       D56C                  D56C      
+E0E8       D56D                  D56D      
+E0E9       D56E                  D56E      
+E0EA       D56F                  D56F      
+E0EB       D570                  D570      
+E0EC       D571                  D571      
+E0ED       D572                  D572      
+E0EE       D573                  D573      
+E0EF       D574                  D574      
+E0F0       D575                  D575      
+E0F1       D576                  D576      
+E0F2       D577                  D577      
+E0F3       D578                  D578      
+E0F4       D579                  D579      
+E0F5       D57A                  D57A      
+E0F6       D57B                  D57B      
+E0F7       D57C                  D57C      
+E0F8       D57D                  D57D      
+E0F9       D57E                  D57E      
+E0FA       D57F                  D57F      
+E0FB       D581                  D581      
+E0FC       D582                  D582      
+E0FD       D583                  D583      
+E0FE       D584                  D584      
+E0FF       D585                  D585      
+E100       D586                  D586      
+E101       D587                  D587      
+E102       D588                  D588      
+E103       D589                  D589      
+E104       D58A                  D58A      
+E105       D58B                  D58B      
+E106       D58C                  D58C      
+E107       D58D                  D58D      
+E108       D58E                  D58E      
+E109       D58F                  D58F      
+E10A       D590                  D590      
+E10B       D591                  D591      
+E10C       D592                  D592      
+E10D       D593                  D593      
+E10E       D594                  D594      
+E10F       D595                  D595      
+E110       D596                  D596      
+E111       D597                  D597      
+E112       D598                  D598      
+E113       D599                  D599      
+E114       D59A                  D59A      
+E115       D59B                  D59B      
+E116       D59C                  D59C      
+E117       D59D                  D59D      
+E118       D59E                  D59E      
+E119       D59F                  D59F      
+E11A       D5A0                  D5A0      
+E11B       D5A1                  D5A1      
+E11C       D5A2                  D5A2      
+E11D       D5A3                  D5A3      
+E11E       D5A4                  D5A4      
+E11F       D5A5                  D5A5      
+E120       D5A6                  D5A6      
+E121       D5A7                  D5A7      
+E122       D5A8                  D5A8      
+E123       D5A9                  D5A9      
+E124       D5AA                  D5AA      
+E125       D5AB                  D5AB      
+E126       D5AC                  D5AC      
+E127       D5AD                  D5AD      
+E128       D5AE                  D5AE      
+E129       D5AF                  D5AF      
+E12A       D5B0                  D5B0      
+E12B       D5B1                  D5B1      
+E12C       D5B2                  D5B2      
+E12D       D5B3                  D5B3      
+E12E       D5B4                  D5B4      
+E12F       D5B5                  D5B5      
+E130       D5B6                  D5B6      
+E131       D5B7                  D5B7      
+E132       D5B8                  D5B8      
+E133       D5B9                  D5B9      
+E134       D5BA                  D5BA      
+E135       D5BB                  D5BB      
+E136       D5BC                  D5BC      
+E137       D5BD                  D5BD      
+E138       D5BE                  D5BE      
+E139       D5BF                  D5BF      
+E13A       D5C0                  D5C0      
+E13B       D5C1                  D5C1      
+E13C       D5C2                  D5C2      
+E13D       D5C3                  D5C3      
+E13E       D5C4                  D5C4      
+E13F       D5C5                  D5C5      
+E140       D5C6                  D5C6      
+E141       D5C7                  D5C7      
+E142       D5C8                  D5C8      
+E143       D5C9                  D5C9      
+E144       D5CA                  D5CA      
+E145       D5CB                  D5CB      
+E146       D5CC                  D5CC      
+E147       D5CD                  D5CD      
+E148       D5CE                  D5CE      
+E149       D5CF                  D5CF      
+E14A       D5D0                  D5D0      
+E14B       D5D1                  D5D1      
+E14C       D5D2                  D5D2      
+E14D       D5D3                  D5D3      
+E14E       D5D4                  D5D4      
+E14F       D5D5                  D5D5      
+E150       D5D6                  D5D6      
+E151       D5D7                  D5D7      
+E152       D5D8                  D5D8      
+E153       D5D9                  D5D9      
+E154       D5DA                  D5DA      
+E155       D5DB                  D5DB      
+E156       D5DC                  D5DC      
+E157       D5DD                  D5DD      
+E158       D5DE                  D5DE      
+E159       D5DF                  D5DF      
+E15A       D5E0                  D5E0      
+E15B       D5E1                  D5E1      
+E15C       D5E2                  D5E2      
+E15D       D5E3                  D5E3      
+E15E       D5E4                  D5E4      
+E15F       D5E5                  D5E5      
+E160       D5E6                  D5E6      
+E161       D5E7                  D5E7      
+E162       D5E8                  D5E8      
+E163       D5E9                  D5E9      
+E164       D5EA                  D5EA      
+E165       D5EB                  D5EB      
+E166       D5EC                  D5EC      
+E167       D5ED                  D5ED      
+E168       D5EE                  D5EE      
+E169       D5EF                  D5EF      
+E16A       D5F0                  D5F0      
+E16B       D5F1                  D5F1      
+E16C       D5F2                  D5F2      
+E16D       D5F3                  D5F3      
+E16E       D5F4                  D5F4      
+E16F       D5F5                  D5F5      
+E170       D5F6                  D5F6      
+E171       D5F7                  D5F7      
+E172       D5F8                  D5F8      
+E173       D5F9                  D5F9      
+E174       D5FA                  D5FA      
+E175       D5FB                  D5FB      
+E176       D5FC                  D5FC      
+E177       D5FD                  D5FD      
+E178       D641                  D641      
+E179       D642                  D642      
+E17A       D643                  D643      
+E17B       D644                  D644      
+E17C       D645                  D645      
+E17D       D646                  D646      
+E17E       D647                  D647      
+E17F       D648                  D648      
+E180       D649                  D649      
+E181       D64A                  D64A      
+E182       D64B                  D64B      
+E183       D64C                  D64C      
+E184       D64D                  D64D      
+E185       D64E                  D64E      
+E186       D64F                  D64F      
+E187       D650                  D650      
+E188       D651                  D651      
+E189       D652                  D652      
+E18A       D653                  D653      
+E18B       D654                  D654      
+E18C       D655                  D655      
+E18D       D656                  D656      
+E18E       D657                  D657      
+E18F       D658                  D658      
+E190       D659                  D659      
+E191       D65A                  D65A      
+E192       D65B                  D65B      
+E193       D65C                  D65C      
+E194       D65D                  D65D      
+E195       D65E                  D65E      
+E196       D65F                  D65F      
+E197       D660                  D660      
+E198       D661                  D661      
+E199       D662                  D662      
+E19A       D663                  D663      
+E19B       D664                  D664      
+E19C       D665                  D665      
+E19D       D666                  D666      
+E19E       D667                  D667      
+E19F       D668                  D668      
+E1A0       D669                  D669      
+E1A1       D66A                  D66A      
+E1A2       D66B                  D66B      
+E1A3       D66C                  D66C      
+E1A4       D66D                  D66D      
+E1A5       D66E                  D66E      
+E1A6       D66F                  D66F      
+E1A7       D670                  D670      
+E1A8       D671                  D671      
+E1A9       D672                  D672      
+E1AA       D673                  D673      
+E1AB       D674                  D674      
+E1AC       D675                  D675      
+E1AD       D676                  D676      
+E1AE       D677                  D677      
+E1AF       D678                  D678      
+E1B0       D679                  D679      
+E1B1       D67A                  D67A      
+E1B2       D67B                  D67B      
+E1B3       D67C                  D67C      
+E1B4       D67D                  D67D      
+E1B5       D67E                  D67E      
+E1B6       D67F                  D67F      
+E1B7       D681                  D681      
+E1B8       D682                  D682      
+E1B9       D683                  D683      
+E1BA       D684                  D684      
+E1BB       D685                  D685      
+E1BC       D686                  D686      
+E1BD       D687                  D687      
+E1BE       D688                  D688      
+E1BF       D689                  D689      
+E1C0       D68A                  D68A      
+E1C1       D68B                  D68B      
+E1C2       D68C                  D68C      
+E1C3       D68D                  D68D      
+E1C4       D68E                  D68E      
+E1C5       D68F                  D68F      
+E1C6       D690                  D690      
+E1C7       D691                  D691      
+E1C8       D692                  D692      
+E1C9       D693                  D693      
+E1CA       D694                  D694      
+E1CB       D695                  D695      
+E1CC       D696                  D696      
+E1CD       D697                  D697      
+E1CE       D698                  D698      
+E1CF       D699                  D699      
+E1D0       D69A                  D69A      
+E1D1       D69B                  D69B      
+E1D2       D69C                  D69C      
+E1D3       D69D                  D69D      
+E1D4       D69E                  D69E      
+E1D5       D69F                  D69F      
+E1D6       D6A0                  D6A0      
+E1D7       D6A1                  D6A1      
+E1D8       D6A2                  D6A2      
+E1D9       D6A3                  D6A3      
+E1DA       D6A4                  D6A4      
+E1DB       D6A5                  D6A5      
+E1DC       D6A6                  D6A6      
+E1DD       D6A7                  D6A7      
+E1DE       D6A8                  D6A8      
+E1DF       D6A9                  D6A9      
+E1E0       D6AA                  D6AA      
+E1E1       D6AB                  D6AB      
+E1E2       D6AC                  D6AC      
+E1E3       D6AD                  D6AD      
+E1E4       D6AE                  D6AE      
+E1E5       D6AF                  D6AF      
+E1E6       D6B0                  D6B0      
+E1E7       D6B1                  D6B1      
+E1E8       D6B2                  D6B2      
+E1E9       D6B3                  D6B3      
+E1EA       D6B4                  D6B4      
+E1EB       D6B5                  D6B5      
+E1EC       D6B6                  D6B6      
+E1ED       D6B7                  D6B7      
+E1EE       D6B8                  D6B8      
+E1EF       D6B9                  D6B9      
+E1F0       D6BA                  D6BA      
+E1F1       D6BB                  D6BB      
+E1F2       D6BC                  D6BC      
+E1F3       D6BD                  D6BD      
+E1F4       D6BE                  D6BE      
+E1F5       D6BF                  D6BF      
+E1F6       D6C0                  D6C0      
+E1F7       D6C1                  D6C1      
+E1F8       D6C2                  D6C2      
+E1F9       D6C3                  D6C3      
+E1FA       D6C4                  D6C4      
+E1FB       D6C5                  D6C5      
+E1FC       D6C6                  D6C6      
+E1FD       D6C7                  D6C7      
+E1FE       D6C8                  D6C8      
+E1FF       D6C9                  D6C9      
+E200       D6CA                  D6CA      
+E201       D6CB                  D6CB      
+E202       D6CC                  D6CC      
+E203       D6CD                  D6CD      
+E204       D6CE                  D6CE      
+E205       D6CF                  D6CF      
+E206       D6D0                  D6D0      
+E207       D6D1                  D6D1      
+E208       D6D2                  D6D2      
+E209       D6D3                  D6D3      
+E20A       D6D4                  D6D4      
+E20B       D6D5                  D6D5      
+E20C       D6D6                  D6D6      
+E20D       D6D7                  D6D7      
+E20E       D6D8                  D6D8      
+E20F       D6D9                  D6D9      
+E210       D6DA                  D6DA      
+E211       D6DB                  D6DB      
+E212       D6DC                  D6DC      
+E213       D6DD                  D6DD      
+E214       D6DE                  D6DE      
+E215       D6DF                  D6DF      
+E216       D6E0                  D6E0      
+E217       D6E1                  D6E1      
+E218       D6E2                  D6E2      
+E219       D6E3                  D6E3      
+E21A       D6E4                  D6E4      
+E21B       D6E5                  D6E5      
+E21C       D6E6                  D6E6      
+E21D       D6E7                  D6E7      
+E21E       D6E8                  D6E8      
+E21F       D6E9                  D6E9      
+E220       D6EA                  D6EA      
+E221       D6EB                  D6EB      
+E222       D6EC                  D6EC      
+E223       D6ED                  D6ED      
+E224       D6EE                  D6EE      
+E225       D6EF                  D6EF      
+E226       D6F0                  D6F0      
+E227       D6F1                  D6F1      
+E228       D6F2                  D6F2      
+E229       D6F3                  D6F3      
+E22A       D6F4                  D6F4      
+E22B       D6F5                  D6F5      
+E22C       D6F6                  D6F6      
+E22D       D6F7                  D6F7      
+E22E       D6F8                  D6F8      
+E22F       D6F9                  D6F9      
+E230       D6FA                  D6FA      
+E231       D6FB                  D6FB      
+E232       D6FC                  D6FC      
+E233       D6FD                  D6FD      
+E234       D741                  D741      
+E235       D742                  D742      
+E236       D743                  D743      
+E237       D744                  D744      
+E238       D745                  D745      
+E239       D746                  D746      
+E23A       D747                  D747      
+E23B       D748                  D748      
+E23C       D749                  D749      
+E23D       D74A                  D74A      
+E23E       D74B                  D74B      
+E23F       D74C                  D74C      
+E240       D74D                  D74D      
+E241       D74E                  D74E      
+E242       D74F                  D74F      
+E243       D750                  D750      
+E244       D751                  D751      
+E245       D752                  D752      
+E246       D753                  D753      
+E247       D754                  D754      
+E248       D755                  D755      
+E249       D756                  D756      
+E24A       D757                  D757      
+E24B       D758                  D758      
+E24C       D759                  D759      
+E24D       D75A                  D75A      
+E24E       D75B                  D75B      
+E24F       D75C                  D75C      
+E250       D75D                  D75D      
+E251       D75E                  D75E      
+E252       D75F                  D75F      
+E253       D760                  D760      
+E254       D761                  D761      
+E255       D762                  D762      
+E256       D763                  D763      
+E257       D764                  D764      
+E258       D765                  D765      
+E259       D766                  D766      
+E25A       D767                  D767      
+E25B       D768                  D768      
+E25C       D769                  D769      
+E25D       D76A                  D76A      
+E25E       D76B                  D76B      
+E25F       D76C                  D76C      
+E260       D76D                  D76D      
+E261       D76E                  D76E      
+E262       D76F                  D76F      
+E263       D770                  D770      
+E264       D771                  D771      
+E265       D772                  D772      
+E266       D773                  D773      
+E267       D774                  D774      
+E268       D775                  D775      
+E269       D776                  D776      
+E26A       D777                  D777      
+E26B       D778                  D778      
+E26C       D779                  D779      
+E26D       D77A                  D77A      
+E26E       D77B                  D77B      
+E26F       D77C                  D77C      
+E270       D77D                  D77D      
+E271       D77E                  D77E      
+E272       D77F                  D77F      
+E273       D781                  D781      
+E274       D782                  D782      
+E275       D783                  D783      
+E276       D784                  D784      
+E277       D785                  D785      
+E278       D786                  D786      
+E279       D787                  D787      
+E27A       D788                  D788      
+E27B       D789                  D789      
+E27C       D78A                  D78A      
+E27D       D78B                  D78B      
+E27E       D78C                  D78C      
+E27F       D78D                  D78D      
+E280       D78E                  D78E      
+E281       D78F                  D78F      
+E282       D790                  D790      
+E283       D791                  D791      
+E284       D792                  D792      
+E285       D793                  D793      
+E286       D794                  D794      
+E287       D795                  D795      
+E288       D796                  D796      
+E289       D797                  D797      
+E28A       D798                  D798      
+E28B       D799                  D799      
+E28C       D79A                  D79A      
+E28D       D79B                  D79B      
+E28E       D79C                  D79C      
+E28F       D79D                  D79D      
+E290       D79E                  D79E      
+E291       D79F                  D79F      
+E292       D7A0                  D7A0      
+E293       D7A1                  D7A1      
+E294       D7A2                  D7A2      
+E295       D7A3                  D7A3      
+E296       D7A4                  D7A4      
+E297       D7A5                  D7A5      
+E298       D7A6                  D7A6      
+E299       D7A7                  D7A7      
+E29A       D7A8                  D7A8      
+E29B       D7A9                  D7A9      
+E29C       D7AA                  D7AA      
+E29D       D7AB                  D7AB      
+E29E       D7AC                  D7AC      
+E29F       D7AD                  D7AD      
+E2A0       D7AE                  D7AE      
+E2A1       D7AF                  D7AF      
+E2A2       D7B0                  D7B0      
+E2A3       D7B1                  D7B1      
+E2A4       D7B2                  D7B2      
+E2A5       D7B3                  D7B3      
+E2A6       D7B4                  D7B4      
+E2A7       D7B5                  D7B5      
+E2A8       D7B6                  D7B6      
+E2A9       D7B7                  D7B7      
+E2AA       D7B8                  D7B8      
+E2AB       D7B9                  D7B9      
+E2AC       D7BA                  D7BA      
+E2AD       D7BB                  D7BB      
+E2AE       D7BC                  D7BC      
+E2AF       D7BD                  D7BD      
+E2B0       D7BE                  D7BE      
+E2B1       D7BF                  D7BF      
+E2B2       D7C0                  D7C0      
+E2B3       D7C1                  D7C1      
+E2B4       D7C2                  D7C2      
+E2B5       D7C3                  D7C3      
+E2B6       D7C4                  D7C4      
+E2B7       D7C5                  D7C5      
+E2B8       D7C6                  D7C6      
+E2B9       D7C7                  D7C7      
+E2BA       D7C8                  D7C8      
+E2BB       D7C9                  D7C9      
+E2BC       D7CA                  D7CA      
+E2BD       D7CB                  D7CB      
+E2BE       D7CC                  D7CC      
+E2BF       D7CD                  D7CD      
+E2C0       D7CE                  D7CE      
+E2C1       D7CF                  D7CF      
+E2C2       D7D0                  D7D0      
+E2C3       D7D1                  D7D1      
+E2C4       D7D2                  D7D2      
+E2C5       D7D3                  D7D3      
+E2C6       D7D4                  D7D4      
+E2C7       D7D5                  D7D5      
+E2C8       D7D6                  D7D6      
+E2C9       D7D7                  D7D7      
+E2CA       D7D8                  D7D8      
+E2CB       D7D9                  D7D9      
+E2CC       D7DA                  D7DA      
+E2CD       D7DB                  D7DB      
+E2CE       D7DC                  D7DC      
+E2CF       D7DD                  D7DD      
+E2D0       D7DE                  D7DE      
+E2D1       D7DF                  D7DF      
+E2D2       D7E0                  D7E0      
+E2D3       D7E1                  D7E1      
+E2D4       D7E2                  D7E2      
+E2D5       D7E3                  D7E3      
+E2D6       D7E4                  D7E4      
+E2D7       D7E5                  D7E5      
+E2D8       D7E6                  D7E6      
+E2D9       D7E7                  D7E7      
+E2DA       D7E8                  D7E8      
+E2DB       D7E9                  D7E9      
+E2DC       D7EA                  D7EA      
+E2DD       D7EB                  D7EB      
+E2DE       D7EC                  D7EC      
+E2DF       D7ED                  D7ED      
+E2E0       D7EE                  D7EE      
+E2E1       D7EF                  D7EF      
+E2E2       D7F0                  D7F0      
+E2E3       D7F1                  D7F1      
+E2E4       D7F2                  D7F2      
+E2E5       D7F3                  D7F3      
+E2E6       D7F4                  D7F4      
+E2E7       D7F5                  D7F5      
+E2E8       D7F6                  D7F6      
+E2E9       D7F7                  D7F7      
+E2EA       D7F8                  D7F8      
+E2EB       D7F9                  D7F9      
+E2EC       D7FA                  D7FA      
+E2ED       D7FB                  D7FB      
+E2EE       D7FC                  D7FC      
+E2EF       D7FD                  D7FD      
+E2F0       D841                  D841      
+E2F1       D842                  D842      
+E2F2       D843                  D843      
+E2F3       D844                  D844      
+E2F4       D845                  D845      
+E2F5       D846                  D846      
+E2F6       D847                  D847      
+E2F7       D848                  D848      
+E2F8       D849                  D849      
+E2F9       D84A                  D84A      
+E2FA       D84B                  D84B      
+E2FB       D84C                  D84C      
+E2FC       D84D                  D84D      
+E2FD       D84E                  D84E      
+E2FE       D84F                  D84F      
+E2FF       D850                  D850      
+E300       D851                  D851      
+E301       D852                  D852      
+E302       D853                  D853      
+E303       D854                  D854      
+E304       D855                  D855      
+E305       D856                  D856      
+E306       D857                  D857      
+E307       D858                  D858      
+E308       D859                  D859      
+E309       D85A                  D85A      
+E30A       D85B                  D85B      
+E30B       D85C                  D85C      
+E30C       D85D                  D85D      
+E30D       D85E                  D85E      
+E30E       D85F                  D85F      
+E30F       D860                  D860      
+E310       D861                  D861      
+E311       D862                  D862      
+E312       D863                  D863      
+E313       D864                  D864      
+E314       D865                  D865      
+E315       D866                  D866      
+E316       D867                  D867      
+E317       D868                  D868      
+E318       D869                  D869      
+E319       D86A                  D86A      
+E31A       D86B                  D86B      
+E31B       D86C                  D86C      
+E31C       D86D                  D86D      
+E31D       D86E                  D86E      
+E31E       D86F                  D86F      
+E31F       D870                  D870      
+E320       D871                  D871      
+E321       D872                  D872      
+E322       D873                  D873      
+E323       D874                  D874      
+E324       D875                  D875      
+E325       D876                  D876      
+E326       D877                  D877      
+E327       D878                  D878      
+E328       D879                  D879      
+E329       D87A                  D87A      
+E32A       D87B                  D87B      
+E32B       D87C                  D87C      
+E32C       D87D                  D87D      
+E32D       D87E                  D87E      
+E32E       D87F                  D87F      
+E32F       D881                  D881      
+E330       D882                  D882      
+E331       D883                  D883      
+E332       D884                  D884      
+E333       D885                  D885      
+E334       D886                  D886      
+E335       D887                  D887      
+E336       D888                  D888      
+E337       D889                  D889      
+E338       D88A                  D88A      
+E339       D88B                  D88B      
+E33A       D88C                  D88C      
+E33B       D88D                  D88D      
+E33C       D88E                  D88E      
+E33D       D88F                  D88F      
+E33E       D890                  D890      
+E33F       D891                  D891      
+E340       D892                  D892      
+E341       D893                  D893      
+E342       D894                  D894      
+E343       D895                  D895      
+E344       D896                  D896      
+E345       D897                  D897      
+E346       D898                  D898      
+E347       D899                  D899      
+E348       D89A                  D89A      
+E349       D89B                  D89B      
+E34A       D89C                  D89C      
+E34B       D89D                  D89D      
+E34C       D89E                  D89E      
+E34D       D89F                  D89F      
+E34E       D8A0                  D8A0      
+E34F       D8A1                  D8A1      
+E350       D8A2                  D8A2      
+E351       D8A3                  D8A3      
+E352       D8A4                  D8A4      
+E353       D8A5                  D8A5      
+E354       D8A6                  D8A6      
+E355       D8A7                  D8A7      
+E356       D8A8                  D8A8      
+E357       D8A9                  D8A9      
+E358       D8AA                  D8AA      
+E359       D8AB                  D8AB      
+E35A       D8AC                  D8AC      
+E35B       D8AD                  D8AD      
+E35C       D8AE                  D8AE      
+E35D       D8AF                  D8AF      
+E35E       D8B0                  D8B0      
+E35F       D8B1                  D8B1      
+E360       D8B2                  D8B2      
+E361       D8B3                  D8B3      
+E362       D8B4                  D8B4      
+E363       D8B5                  D8B5      
+E364       D8B6                  D8B6      
+E365       D8B7                  D8B7      
+E366       D8B8                  D8B8      
+E367       D8B9                  D8B9      
+E368       D8BA                  D8BA      
+E369       D8BB                  D8BB      
+E36A       D8BC                  D8BC      
+E36B       D8BD                  D8BD      
+E36C       D8BE                  D8BE      
+E36D       D8BF                  D8BF      
+E36E       D8C0                  D8C0      
+E36F       D8C1                  D8C1      
+E370       D8C2                  D8C2      
+E371       D8C3                  D8C3      
+E372       D8C4                  D8C4      
+E373       D8C5                  D8C5      
+E374       D8C6                  D8C6      
+E375       D8C7                  D8C7      
+E376       D8C8                  D8C8      
+E377       D8C9                  D8C9      
+E378       D8CA                  D8CA      
+E379       D8CB                  D8CB      
+E37A       D8CC                  D8CC      
+E37B       D8CD                  D8CD      
+E37C       D8CE                  D8CE      
+E37D       D8CF                  D8CF      
+E37E       D8D0                  D8D0      
+E37F       D8D1                  D8D1      
+E380       D8D2                  D8D2      
+E381       D8D3                  D8D3      
+E382       D8D4                  D8D4      
+E383       D8D5                  D8D5      
+E384       D8D6                  D8D6      
+E385       D8D7                  D8D7      
+E386       D8D8                  D8D8      
+E387       D8D9                  D8D9      
+E388       D8DA                  D8DA      
+E389       D8DB                  D8DB      
+E38A       D8DC                  D8DC      
+E38B       D8DD                  D8DD      
+E38C       D8DE                  D8DE      
+E38D       D8DF                  D8DF      
+E38E       D8E0                  D8E0      
+E38F       D8E1                  D8E1      
+E390       D8E2                  D8E2      
+E391       D8E3                  D8E3      
+E392       D8E4                  D8E4      
+E393       D8E5                  D8E5      
+E394       D8E6                  D8E6      
+E395       D8E7                  D8E7      
+E396       D8E8                  D8E8      
+E397       D8E9                  D8E9      
+E398       D8EA                  D8EA      
+E399       D8EB                  D8EB      
+E39A       D8EC                  D8EC      
+E39B       D8ED                  D8ED      
+E39C       D8EE                  D8EE      
+E39D       D8EF                  D8EF      
+E39E       D8F0                  D8F0      
+E39F       D8F1                  D8F1      
+E3A0       D8F2                  D8F2      
+E3A1       D8F3                  D8F3      
+E3A2       D8F4                  D8F4      
+E3A3       D8F5                  D8F5      
+E3A4       D8F6                  D8F6      
+E3A5       D8F7                  D8F7      
+E3A6       D8F8                  D8F8      
+E3A7       D8F9                  D8F9      
+E3A8       D8FA                  D8FA      
+E3A9       D8FB                  D8FB      
+E3AA       D8FC                  D8FC      
+E3AB       D8FD                  D8FD      
+E3AC       D941                  D941      
+E3AD       D942                  D942      
+E3AE       D943                  D943      
+E3AF       D944                  D944      
+E3B0       D945                  D945      
+E3B1       D946                  D946      
+E3B2       D947                  D947      
+E3B3       D948                  D948      
+E3B4       D949                  D949      
+E3B5       D94A                  D94A      
+E3B6       D94B                  D94B      
+E3B7       D94C                  D94C      
+E3B8       D94D                  D94D      
+E3B9       D94E                  D94E      
+E3BA       D94F                  D94F      
+E3BB       D950                  D950      
+E3BC       D951                  D951      
+E3BD       D952                  D952      
+E3BE       D953                  D953      
+E3BF       D954                  D954      
+E3C0       D955                  D955      
+E3C1       D956                  D956      
+E3C2       D957                  D957      
+E3C3       D958                  D958      
+E3C4       D959                  D959      
+E3C5       D95A                  D95A      
+E3C6       D95B                  D95B      
+E3C7       D95C                  D95C      
+E3C8       D95D                  D95D      
+E3C9       D95E                  D95E      
+E3CA       D95F                  D95F      
+E3CB       D960                  D960      
+E3CC       D961                  D961      
+E3CD       D962                  D962      
+E3CE       D963                  D963      
+E3CF       D964                  D964      
+E3D0       D965                  D965      
+E3D1       D966                  D966      
+E3D2       D967                  D967      
+E3D3       D968                  D968      
+E3D4       D969                  D969      
+E3D5       D96A                  D96A      
+E3D6       D96B                  D96B      
+E3D7       D96C                  D96C      
+E3D8       D96D                  D96D      
+E3D9       D96E                  D96E      
+E3DA       D96F                  D96F      
+E3DB       D970                  D970      
+E3DC       D971                  D971      
+E3DD       D972                  D972      
+E3DE       D973                  D973      
+E3DF       D974                  D974      
+E3E0       D975                  D975      
+E3E1       D976                  D976      
+E3E2       D977                  D977      
+E3E3       D978                  D978      
+E3E4       D979                  D979      
+E3E5       D97A                  D97A      
+E3E6       D97B                  D97B      
+E3E7       D97C                  D97C      
+E3E8       D97D                  D97D      
+E3E9       D97E                  D97E      
+E3EA       D97F                  D97F      
+E3EB       D981                  D981      
+E3EC       D982                  D982      
+E3ED       D983                  D983      
+E3EE       D984                  D984      
+E3EF       D985                  D985      
+E3F0       D986                  D986      
+E3F1       D987                  D987      
+E3F2       D988                  D988      
+E3F3       D989                  D989      
+E3F4       D98A                  D98A      
+E3F5       D98B                  D98B      
+E3F6       D98C                  D98C      
+E3F7       D98D                  D98D      
+E3F8       D98E                  D98E      
+E3F9       D98F                  D98F      
+E3FA       D990                  D990      
+E3FB       D991                  D991      
+E3FC       D992                  D992      
+E3FD       D993                  D993      
+E3FE       D994                  D994      
+E3FF       D995                  D995      
+E400       D996                  D996      
+E401       D997                  D997      
+E402       D998                  D998      
+E403       D999                  D999      
+E404       D99A                  D99A      
+E405       D99B                  D99B      
+E406       D99C                  D99C      
+E407       D99D                  D99D      
+E408       D99E                  D99E      
+E409       D99F                  D99F      
+E40A       D9A0                  D9A0      
+E40B       D9A1                  D9A1      
+E40C       D9A2                  D9A2      
+E40D       D9A3                  D9A3      
+E40E       D9A4                  D9A4      
+E40F       D9A5                  D9A5      
+E410       D9A6                  D9A6      
+E411       D9A7                  D9A7      
+E412       D9A8                  D9A8      
+E413       D9A9                  D9A9      
+E414       D9AA                  D9AA      
+E415       D9AB                  D9AB      
+E416       D9AC                  D9AC      
+E417       D9AD                  D9AD      
+E418       D9AE                  D9AE      
+E419       D9AF                  D9AF      
+E41A       D9B0                  D9B0      
+E41B       D9B1                  D9B1      
+E41C       D9B2                  D9B2      
+E41D       D9B3                  D9B3      
+E41E       D9B4                  D9B4      
+E41F       D9B5                  D9B5      
+E420       D9B6                  D9B6      
+E421       D9B7                  D9B7      
+E422       D9B8                  D9B8      
+E423       D9B9                  D9B9      
+E424       D9BA                  D9BA      
+E425       D9BB                  D9BB      
+E426       D9BC                  D9BC      
+E427       D9BD                  D9BD      
+E428       D9BE                  D9BE      
+E429       D9BF                  D9BF      
+E42A       D9C0                  D9C0      
+E42B       D9C1                  D9C1      
+E42C       D9C2                  D9C2      
+E42D       D9C3                  D9C3      
+E42E       D9C4                  D9C4      
+E42F       D9C5                  D9C5      
+E430       D9C6                  D9C6      
+E431       D9C7                  D9C7      
+E432       D9C8                  D9C8      
+E433       D9C9                  D9C9      
+E434       D9CA                  D9CA      
+E435       D9CB                  D9CB      
+E436       D9CC                  D9CC      
+E437       D9CD                  D9CD      
+E438       D9CE                  D9CE      
+E439       D9CF                  D9CF      
+E43A       D9D0                  D9D0      
+E43B       D9D1                  D9D1      
+E43C       D9D2                  D9D2      
+E43D       D9D3                  D9D3      
+E43E       D9D4                  D9D4      
+E43F       D9D5                  D9D5      
+E440       D9D6                  D9D6      
+E441       D9D7                  D9D7      
+E442       D9D8                  D9D8      
+E443       D9D9                  D9D9      
+E444       D9DA                  D9DA      
+E445       D9DB                  D9DB      
+E446       D9DC                  D9DC      
+E447       D9DD                  D9DD      
+E448       D9DE                  D9DE      
+E449       D9DF                  D9DF      
+E44A       D9E0                  D9E0      
+E44B       D9E1                  D9E1      
+E44C       D9E2                  D9E2      
+E44D       D9E3                  D9E3      
+E44E       D9E4                  D9E4      
+E44F       D9E5                  D9E5      
+E450       D9E6                  D9E6      
+E451       D9E7                  D9E7      
+E452       D9E8                  D9E8      
+E453       D9E9                  D9E9      
+E454       D9EA                  D9EA      
+E455       D9EB                  D9EB      
+E456       D9EC                  D9EC      
+E457       D9ED                  D9ED      
+E458       D9EE                  D9EE      
+E459       D9EF                  D9EF      
+E45A       D9F0                  D9F0      
+E45B       D9F1                  D9F1      
+E45C       D9F2                  D9F2      
+E45D       D9F3                  D9F3      
+E45E       D9F4                  D9F4      
+E45F       D9F5                  D9F5      
+E460       D9F6                  D9F6      
+E461       D9F7                  D9F7      
+E462       D9F8                  D9F8      
+E463       D9F9                  D9F9      
+E464       D9FA                  D9FA      
+E465       D9FB                  D9FB      
+E466       D9FC                  D9FC      
+E467       D9FD                  D9FD      
+E468       DA41                  DA41      
+E469       DA42                  DA42      
+E46A       DA43                  DA43      
+E46B       DA44                  DA44      
+E46C       DA45                  DA45      
+E46D       DA46                  DA46      
+E46E       DA47                  DA47      
+E46F       DA48                  DA48      
+E470       DA49                  DA49      
+E471       DA4A                  DA4A      
+E472       DA4B                  DA4B      
+E473       DA4C                  DA4C      
+E474       DA4D                  DA4D      
+E475       DA4E                  DA4E      
+E476       DA4F                  DA4F      
+E477       DA50                  DA50      
+E478       DA51                  DA51      
+E479       DA52                  DA52      
+E47A       DA53                  DA53      
+E47B       DA54                  DA54      
+E47C       DA55                  DA55      
+E47D       DA56                  DA56      
+E47E       DA57                  DA57      
+E47F       DA58                  DA58      
+E480       DA59                  DA59      
+E481       DA5A                  DA5A      
+E482       DA5B                  DA5B      
+E483       DA5C                  DA5C      
+E484       DA5D                  DA5D      
+E485       DA5E                  DA5E      
+E486       DA5F                  DA5F      
+E487       DA60                  DA60      
+E488       DA61                  DA61      
+E489       DA62                  DA62      
+E48A       DA63                  DA63      
+E48B       DA64                  DA64      
+E48C       DA65                  DA65      
+E48D       DA66                  DA66      
+E48E       DA67                  DA67      
+E48F       DA68                  DA68      
+E490       DA69                  DA69      
+E491       DA6A                  DA6A      
+E492       DA6B                  DA6B      
+E493       DA6C                  DA6C      
+E494       DA6D                  DA6D      
+E495       DA6E                  DA6E      
+E496       DA6F                  DA6F      
+E497       DA70                  DA70      
+E498       DA71                  DA71      
+E499       DA72                  DA72      
+E49A       DA73                  DA73      
+E49B       DA74                  DA74      
+E49C       DA75                  DA75      
+E49D       DA76                  DA76      
+E49E       DA77                  DA77      
+E49F       DA78                  DA78      
+E4A0       DA79                  DA79      
+E4A1       DA7A                  DA7A      
+E4A2       DA7B                  DA7B      
+E4A3       DA7C                  DA7C      
+E4A4       DA7D                  DA7D      
+E4A5       DA7E                  DA7E      
+E4A6       DA7F                  DA7F      
+E4A7       DA81                  DA81      
+E4A8       DA82                  DA82      
+E4A9       DA83                  DA83      
+E4AA       DA84                  DA84      
+E4AB       DA85                  DA85      
+E4AC       DA86                  DA86      
+E4AD       DA87                  DA87      
+E4AE       DA88                  DA88      
+E4AF       DA89                  DA89      
+E4B0       DA8A                  DA8A      
+E4B1       DA8B                  DA8B      
+E4B2       DA8C                  DA8C      
+E4B3       DA8D                  DA8D      
+E4B4       DA8E                  DA8E      
+E4B5       DA8F                  DA8F      
+E4B6       DA90                  DA90      
+E4B7       DA91                  DA91      
+E4B8       DA92                  DA92      
+E4B9       DA93                  DA93      
+E4BA       DA94                  DA94      
+E4BB       DA95                  DA95      
+E4BC       DA96                  DA96      
+E4BD       DA97                  DA97      
+E4BE       DA98                  DA98      
+E4BF       DA99                  DA99      
+E4C0       DA9A                  DA9A      
+E4C1       DA9B                  DA9B      
+E4C2       DA9C                  DA9C      
+E4C3       DA9D                  DA9D      
+E4C4       DA9E                  DA9E      
+E4C5       DA9F                  DA9F      
+E4C6       DAA0                  DAA0      
+E4C7       DAA1                  DAA1      
+E4C8       DAA2                  DAA2      
+E4C9       DAA3                  DAA3      
+E4CA       DAA4                  DAA4      
+E4CB       DAA5                  DAA5      
+E4CC       DAA6                  DAA6      
+E4CD       DAA7                  DAA7      
+E4CE       DAA8                  DAA8      
+E4CF       DAA9                  DAA9      
+E4D0       DAAA                  DAAA      
+E4D1       DAAB                  DAAB      
+E4D2       DAAC                  DAAC      
+E4D3       DAAD                  DAAD      
+E4D4       DAAE                  DAAE      
+E4D5       DAAF                  DAAF      
+E4D6       DAB0                  DAB0      
+E4D7       DAB1                  DAB1      
+E4D8       DAB2                  DAB2      
+E4D9       DAB3                  DAB3      
+E4DA       DAB4                  DAB4      
+E4DB       DAB5                  DAB5      
+E4DC       DAB6                  DAB6      
+E4DD       DAB7                  DAB7      
+E4DE       DAB8                  DAB8      
+E4DF       DAB9                  DAB9      
+E4E0       DABA                  DABA      
+E4E1       DABB                  DABB      
+E4E2       DABC                  DABC      
+E4E3       DABD                  DABD      
+E4E4       DABE                  DABE      
+E4E5       DABF                  DABF      
+E4E6       DAC0                  DAC0      
+E4E7       DAC1                  DAC1      
+E4E8       DAC2                  DAC2      
+E4E9       DAC3                  DAC3      
+E4EA       DAC4                  DAC4      
+E4EB       DAC5                  DAC5      
+E4EC       DAC6                  DAC6      
+E4ED       DAC7                  DAC7      
+E4EE       DAC8                  DAC8      
+E4EF       DAC9                  DAC9      
+E4F0       DACA                  DACA      
+E4F1       DACB                  DACB      
+E4F2       DACC                  DACC      
+E4F3       DACD                  DACD      
+E4F4       DACE                  DACE      
+E4F5       DACF                  DACF      
+E4F6       DAD0                  DAD0      
+E4F7       DAD1                  DAD1      
+E4F8       DAD2                  DAD2      
+E4F9       DAD3                  DAD3      
+E4FA       DAD4                  DAD4      
+E4FB       DAD5                  DAD5      
+E4FC       DAD6                  DAD6      
+E4FD       DAD7                  DAD7      
+E4FE       DAD8                  DAD8      
+E4FF       DAD9                  DAD9      
+E500       DADA                  DADA      
+E501       DADB                  DADB      
+E502       DADC                  DADC      
+E503       DADD                  DADD      
+E504       DADE                  DADE      
+E505       DADF                  DADF      
+E506       DAE0                  DAE0      
+E507       DAE1                  DAE1      
+E508       DAE2                  DAE2      
+E509       DAE3                  DAE3      
+E50A       DAE4                  DAE4      
+E50B       DAE5                  DAE5      
+E50C       DAE6                  DAE6      
+E50D       DAE7                  DAE7      
+E50E       DAE8                  DAE8      
+E50F       DAE9                  DAE9      
+E510       DAEA                  DAEA      
+E511       DAEB                  DAEB      
+E512       DAEC                  DAEC      
+E513       DAED                  DAED      
+E514       DAEE                  DAEE      
+E515       DAEF                  DAEF      
+E516       DAF0                  DAF0      
+E517       DAF1                  DAF1      
+E518       DAF2                  DAF2      
+E519       DAF3                  DAF3      
+E51A       DAF4                  DAF4      
+E51B       DAF5                  DAF5      
+E51C       DAF6                  DAF6      
+E51D       DAF7                  DAF7      
+E51E       DAF8                  DAF8      
+E51F       DAF9                  DAF9      
+E520       DAFA                  DAFA      
+E521       DAFB                  DAFB      
+E522       DAFC                  DAFC      
+E523       DAFD                  DAFD      
+E524       DB41                  DB41      
+E525       DB42                  DB42      
+E526       DB43                  DB43      
+E527       DB44                  DB44      
+E528       DB45                  DB45      
+E529       DB46                  DB46      
+E52A       DB47                  DB47      
+E52B       DB48                  DB48      
+E52C       DB49                  DB49      
+E52D       DB4A                  DB4A      
+E52E       DB4B                  DB4B      
+E52F       DB4C                  DB4C      
+E530       DB4D                  DB4D      
+E531       DB4E                  DB4E      
+E532       DB4F                  DB4F      
+E533       DB50                  DB50      
+E534       DB51                  DB51      
+E535       DB52                  DB52      
+E536       DB53                  DB53      
+E537       DB54                  DB54      
+E538       DB55                  DB55      
+E539       DB56                  DB56      
+E53A       DB57                  DB57      
+E53B       DB58                  DB58      
+E53C       DB59                  DB59      
+E53D       DB5A                  DB5A      
+E53E       DB5B                  DB5B      
+E53F       DB5C                  DB5C      
+E540       DB5D                  DB5D      
+E541       DB5E                  DB5E      
+E542       DB5F                  DB5F      
+E543       DB60                  DB60      
+E544       DB61                  DB61      
+E545       DB62                  DB62      
+E546       DB63                  DB63      
+E547       DB64                  DB64      
+E548       DB65                  DB65      
+E549       DB66                  DB66      
+E54A       DB67                  DB67      
+E54B       DB68                  DB68      
+E54C       DB69                  DB69      
+E54D       DB6A                  DB6A      
+E54E       DB6B                  DB6B      
+E54F       DB6C                  DB6C      
+E550       DB6D                  DB6D      
+E551       DB6E                  DB6E      
+E552       DB6F                  DB6F      
+E553       DB70                  DB70      
+E554       DB71                  DB71      
+E555       DB72                  DB72      
+E556       DB73                  DB73      
+E557       DB74                  DB74      
+E558       DB75                  DB75      
+E559       DB76                  DB76      
+E55A       DB77                  DB77      
+E55B       DB78                  DB78      
+E55C       DB79                  DB79      
+E55D       DB7A                  DB7A      
+E55E       DB7B                  DB7B      
+E55F       DB7C                  DB7C      
+E560       DB7D                  DB7D      
+E561       DB7E                  DB7E      
+E562       DB7F                  DB7F      
+E563       DB81                  DB81      
+E564       DB82                  DB82      
+E565       DB83                  DB83      
+E566       DB84                  DB84      
+E567       DB85                  DB85      
+E568       DB86                  DB86      
+E569       DB87                  DB87      
+E56A       DB88                  DB88      
+E56B       DB89                  DB89      
+E56C       DB8A                  DB8A      
+E56D       DB8B                  DB8B      
+E56E       DB8C                  DB8C      
+E56F       DB8D                  DB8D      
+E570       DB8E                  DB8E      
+E571       DB8F                  DB8F      
+E572       DB90                  DB90      
+E573       DB91                  DB91      
+E574       DB92                  DB92      
+E575       DB93                  DB93      
+E576       DB94                  DB94      
+E577       DB95                  DB95      
+E578       DB96                  DB96      
+E579       DB97                  DB97      
+E57A       DB98                  DB98      
+E57B       DB99                  DB99      
+E57C       DB9A                  DB9A      
+E57D       DB9B                  DB9B      
+E57E       DB9C                  DB9C      
+E57F       DB9D                  DB9D      
+E580       DB9E                  DB9E      
+E581       DB9F                  DB9F      
+E582       DBA0                  DBA0      
+E583       DBA1                  DBA1      
+E584       DBA2                  DBA2      
+E585       DBA3                  DBA3      
+E586       DBA4                  DBA4      
+E587       DBA5                  DBA5      
+E588       DBA6                  DBA6      
+E589       DBA7                  DBA7      
+E58A       DBA8                  DBA8      
+E58B       DBA9                  DBA9      
+E58C       DBAA                  DBAA      
+E58D       DBAB                  DBAB      
+E58E       DBAC                  DBAC      
+E58F       DBAD                  DBAD      
+E590       DBAE                  DBAE      
+E591       DBAF                  DBAF      
+E592       DBB0                  DBB0      
+E593       DBB1                  DBB1      
+E594       DBB2                  DBB2      
+E595       DBB3                  DBB3      
+E596       DBB4                  DBB4      
+E597       DBB5                  DBB5      
+E598       DBB6                  DBB6      
+E599       DBB7                  DBB7      
+E59A       DBB8                  DBB8      
+E59B       DBB9                  DBB9      
+E59C       DBBA                  DBBA      
+E59D       DBBB                  DBBB      
+E59E       DBBC                  DBBC      
+E59F       DBBD                  DBBD      
+E5A0       DBBE                  DBBE      
+E5A1       DBBF                  DBBF      
+E5A2       DBC0                  DBC0      
+E5A3       DBC1                  DBC1      
+E5A4       DBC2                  DBC2      
+E5A5       DBC3                  DBC3      
+E5A6       DBC4                  DBC4      
+E5A7       DBC5                  DBC5      
+E5A8       DBC6                  DBC6      
+E5A9       DBC7                  DBC7      
+E5AA       DBC8                  DBC8      
+E5AB       DBC9                  DBC9      
+E5AC       DBCA                  DBCA      
+E5AD       DBCB                  DBCB      
+E5AE       DBCC                  DBCC      
+E5AF       DBCD                  DBCD      
+E5B0       DBCE                  DBCE      
+E5B1       DBCF                  DBCF      
+E5B2       DBD0                  DBD0      
+E5B3       DBD1                  DBD1      
+E5B4       DBD2                  DBD2      
+E5B5       DBD3                  DBD3      
+E5B6       DBD4                  DBD4      
+E5B7       DBD5                  DBD5      
+E5B8       DBD6                  DBD6      
+E5B9       DBD7                  DBD7      
+E5BA       DBD8                  DBD8      
+E5BB       DBD9                  DBD9      
+E5BC       DBDA                  DBDA      
+E5BD       DBDB                  DBDB      
+E5BE       DBDC                  DBDC      
+E5BF       DBDD                  DBDD      
+E5C0       DBDE                  DBDE      
+E5C1       DBDF                  DBDF      
+E5C2       DBE0                  DBE0      
+E5C3       DBE1                  DBE1      
+E5C4       DBE2                  DBE2      
+E5C5       DBE3                  DBE3      
+E5C6       DBE4                  DBE4      
+E5C7       DBE5                  DBE5      
+E5C8       DBE6                  DBE6      
+E5C9       DBE7                  DBE7      
+E5CA       DBE8                  DBE8      
+E5CB       DBE9                  DBE9      
+E5CC       DBEA                  DBEA      
+E5CD       DBEB                  DBEB      
+E5CE       DBEC                  DBEC      
+E5CF       DBED                  DBED      
+E5D0       DBEE                  DBEE      
+E5D1       DBEF                  DBEF      
+E5D2       DBF0                  DBF0      
+E5D3       DBF1                  DBF1      
+E5D4       DBF2                  DBF2      
+E5D5       DBF3                  DBF3      
+E5D6       DBF4                  DBF4      
+E5D7       DBF5                  DBF5      
+E5D8       DBF6                  DBF6      
+E5D9       DBF7                  DBF7      
+E5DA       DBF8                  DBF8      
+E5DB       DBF9                  DBF9      
+E5DC       DBFA                  DBFA      
+E5DD       DBFB                  DBFB      
+E5DE       DBFC                  DBFC      
+E5DF       DBFD                  DBFD      
+E5E0       DC41                  DC41      
+E5E1       DC42                  DC42      
+E5E2       DC43                  DC43      
+E5E3       DC44                  DC44      
+E5E4       DC45                  DC45      
+E5E5       DC46                  DC46      
+E5E6       DC47                  DC47      
+E5E7       DC48                  DC48      
+E5E8       DC49                  DC49      
+E5E9       DC4A                  DC4A      
+E5EA       DC4B                  DC4B      
+E5EB       DC4C                  DC4C      
+E5EC       DC4D                  DC4D      
+E5ED       DC4E                  DC4E      
+E5EE       DC4F                  DC4F      
+E5EF       DC50                  DC50      
+E5F0       DC51                  DC51      
+E5F1       DC52                  DC52      
+E5F2       DC53                  DC53      
+E5F3       DC54                  DC54      
+E5F4       DC55                  DC55      
+E5F5       DC56                  DC56      
+E5F6       DC57                  DC57      
+E5F7       DC58                  DC58      
+E5F8       DC59                  DC59      
+E5F9       DC5A                  DC5A      
+E5FA       DC5B                  DC5B      
+E5FB       DC5C                  DC5C      
+E5FC       DC5D                  DC5D      
+E5FD       DC5E                  DC5E      
+E5FE       DC5F                  DC5F      
+E5FF       DC60                  DC60      
+E600       DC61                  DC61      
+E601       DC62                  DC62      
+E602       DC63                  DC63      
+E603       DC64                  DC64      
+E604       DC65                  DC65      
+E605       DC66                  DC66      
+E606       DC67                  DC67      
+E607       DC68                  DC68      
+E608       DC69                  DC69      
+E609       DC6A                  DC6A      
+E60A       DC6B                  DC6B      
+E60B       DC6C                  DC6C      
+E60C       DC6D                  DC6D      
+E60D       DC6E                  DC6E      
+E60E       DC6F                  DC6F      
+E60F       DC70                  DC70      
+E610       DC71                  DC71      
+E611       DC72                  DC72      
+E612       DC73                  DC73      
+E613       DC74                  DC74      
+E614       DC75                  DC75      
+E615       DC76                  DC76      
+E616       DC77                  DC77      
+E617       DC78                  DC78      
+E618       DC79                  DC79      
+E619       DC7A                  DC7A      
+E61A       DC7B                  DC7B      
+E61B       DC7C                  DC7C      
+E61C       DC7D                  DC7D      
+E61D       DC7E                  DC7E      
+E61E       DC7F                  DC7F      
+E61F       DC81                  DC81      
+E620       DC82                  DC82      
+E621       DC83                  DC83      
+E622       DC84                  DC84      
+E623       DC85                  DC85      
+E624       DC86                  DC86      
+E625       DC87                  DC87      
+E626       DC88                  DC88      
+E627       DC89                  DC89      
+E628       DC8A                  DC8A      
+E629       DC8B                  DC8B      
+E62A       DC8C                  DC8C      
+E62B       DC8D                  DC8D      
+E62C       DC8E                  DC8E      
+E62D       DC8F                  DC8F      
+E62E       DC90                  DC90      
+E62F       DC91                  DC91      
+E630       DC92                  DC92      
+E631       DC93                  DC93      
+E632       DC94                  DC94      
+E633       DC95                  DC95      
+E634       DC96                  DC96      
+E635       DC97                  DC97      
+E636       DC98                  DC98      
+E637       DC99                  DC99      
+E638       DC9A                  DC9A      
+E639       DC9B                  DC9B      
+E63A       DC9C                  DC9C      
+E63B       DC9D                  DC9D      
+E63C       DC9E                  DC9E      
+E63D       DC9F                  DC9F      
+E63E       DCA0                  DCA0      
+E63F       DCA1                  DCA1      
+E640       DCA2                  DCA2      
+E641       DCA3                  DCA3      
+E642       DCA4                  DCA4      
+E643       DCA5                  DCA5      
+E644       DCA6                  DCA6      
+E645       DCA7                  DCA7      
+E646       DCA8                  DCA8      
+E647       DCA9                  DCA9      
+E648       DCAA                  DCAA      
+E649       DCAB                  DCAB      
+E64A       DCAC                  DCAC      
+E64B       DCAD                  DCAD      
+E64C       DCAE                  DCAE      
+E64D       DCAF                  DCAF      
+E64E       DCB0                  DCB0      
+E64F       DCB1                  DCB1      
+E650       DCB2                  DCB2      
+E651       DCB3                  DCB3      
+E652       DCB4                  DCB4      
+E653       DCB5                  DCB5      
+E654       DCB6                  DCB6      
+E655       DCB7                  DCB7      
+E656       DCB8                  DCB8      
+E657       DCB9                  DCB9      
+E658       DCBA                  DCBA      
+E659       DCBB                  DCBB      
+E65A       DCBC                  DCBC      
+E65B       DCBD                  DCBD      
+E65C       DCBE                  DCBE      
+E65D       DCBF                  DCBF      
+E65E       DCC0                  DCC0      
+E65F       DCC1                  DCC1      
+E660       DCC2                  DCC2      
+E661       DCC3                  DCC3      
+E662       DCC4                  DCC4      
+E663       DCC5                  DCC5      
+E664       DCC6                  DCC6      
+E665       DCC7                  DCC7      
+E666       DCC8                  DCC8      
+E667       DCC9                  DCC9      
+E668       DCCA                  DCCA      
+E669       DCCB                  DCCB      
+E66A       DCCC                  DCCC      
+E66B       DCCD                  DCCD      
+E66C       DCCE                  DCCE      
+E66D       DCCF                  DCCF      
+E66E       DCD0                  DCD0      
+E66F       DCD1                  DCD1      
+E670       DCD2                  DCD2      
+E671       DCD3                  DCD3      
+E672       DCD4                  DCD4      
+E673       DCD5                  DCD5      
+E674       DCD6                  DCD6      
+E675       DCD7                  DCD7      
+E676       DCD8                  DCD8      
+E677       DCD9                  DCD9      
+E678       DCDA                  DCDA      
+E679       DCDB                  DCDB      
+E67A       DCDC                  DCDC      
+E67B       DCDD                  DCDD      
+E67C       DCDE                  DCDE      
+E67D       DCDF                  DCDF      
+E67E       DCE0                  DCE0      
+E67F       DCE1                  DCE1      
+E680       DCE2                  DCE2      
+E681       DCE3                  DCE3      
+E682       DCE4                  DCE4      
+E683       DCE5                  DCE5      
+E684       DCE6                  DCE6      
+E685       DCE7                  DCE7      
+E686       DCE8                  DCE8      
+E687       DCE9                  DCE9      
+E688       DCEA                  DCEA      
+E689       DCEB                  DCEB      
+E68A       DCEC                  DCEC      
+E68B       DCED                  DCED      
+E68C       DCEE                  DCEE      
+E68D       DCEF                  DCEF      
+E68E       DCF0                  DCF0      
+E68F       DCF1                  DCF1      
+E690       DCF2                  DCF2      
+E691       DCF3                  DCF3      
+E692       DCF4                  DCF4      
+E693       DCF5                  DCF5      
+E694       DCF6                  DCF6      
+E695       DCF7                  DCF7      
+E696       DCF8                  DCF8      
+E697       DCF9                  DCF9      
+E698       DCFA                  DCFA      
+E699       DCFB                  DCFB      
+E69A       DCFC                  DCFC      
+E69B       DCFD                  DCFD      
+E69C       DD41                  DD41      
+E69D       DD42                  DD42      
+E69E       DD43                  DD43      
+E69F       DD44                  DD44      
+E6A0       DD45                  DD45      
+E6A1       DD46                  DD46      
+E6A2       DD47                  DD47      
+E6A3       DD48                  DD48      
+E6A4       DD49                  DD49      
+E6A5       DD4A                  DD4A      
+E6A6       DD4B                  DD4B      
+E6A7       DD4C                  DD4C      
+E6A8       DD4D                  DD4D      
+E6A9       DD4E                  DD4E      
+E6AA       DD4F                  DD4F      
+E6AB       DD50                  DD50      
+E6AC       DD51                  DD51      
+E6AD       DD52                  DD52      
+E6AE       DD53                  DD53      
+E6AF       DD54                  DD54      
+E6B0       DD55                  DD55      
+E6B1       DD56                  DD56      
+E6B2       DD57                  DD57      
+E6B3       DD58                  DD58      
+E6B4       DD59                  DD59      
+E6B5       DD5A                  DD5A      
+E6B6       DD5B                  DD5B      
+E6B7       DD5C                  DD5C      
+E6B8       DD5D                  DD5D      
+E6B9       DD5E                  DD5E      
+E6BA       DD5F                  DD5F      
+E6BB       DD60                  DD60      
+E6BC       DD61                  DD61      
+E6BD       DD62                  DD62      
+E6BE       DD63                  DD63      
+E6BF       DD64                  DD64      
+E6C0       DD65                  DD65      
+E6C1       DD66                  DD66      
+E6C2       DD67                  DD67      
+E6C3       DD68                  DD68      
+E6C4       DD69                  DD69      
+E6C5       DD6A                  DD6A      
+E6C6       DD6B                  DD6B      
+E6C7       DD6C                  DD6C      
+E6C8       DD6D                  DD6D      
+E6C9       DD6E                  DD6E      
+E6CA       DD6F                  DD6F      
+E6CB       DD70                  DD70      
+E6CC       DD71                  DD71      
+E6CD       DD72                  DD72      
+E6CE       DD73                  DD73      
+E6CF       DD74                  DD74      
+E6D0       DD75                  DD75      
+E6D1       DD76                  DD76      
+E6D2       DD77                  DD77      
+E6D3       DD78                  DD78      
+E6D4       DD79                  DD79      
+E6D5       DD7A                  DD7A      
+E6D6       DD7B                  DD7B      
+E6D7       DD7C                  DD7C      
+E6D8       DD7D                  DD7D      
+E6D9       DD7E                  DD7E      
+E6DA       DD7F                  DD7F      
+E6DB       DD81                  DD81      
+E6DC       DD82                  DD82      
+E6DD       DD83                  DD83      
+E6DE       DD84                  DD84      
+E6DF       DD85                  DD85      
+E6E0       DD86                  DD86      
+E6E1       DD87                  DD87      
+E6E2       DD88                  DD88      
+E6E3       DD89                  DD89      
+E6E4       DD8A                  DD8A      
+E6E5       DD8B                  DD8B      
+E6E6       DD8C                  DD8C      
+E6E7       DD8D                  DD8D      
+E6E8       DD8E                  DD8E      
+E6E9       DD8F                  DD8F      
+E6EA       DD90                  DD90      
+E6EB       DD91                  DD91      
+E6EC       DD92                  DD92      
+E6ED       DD93                  DD93      
+E6EE       DD94                  DD94      
+E6EF       DD95                  DD95      
+E6F0       DD96                  DD96      
+E6F1       DD97                  DD97      
+E6F2       DD98                  DD98      
+E6F3       DD99                  DD99      
+E6F4       DD9A                  DD9A      
+E6F5       DD9B                  DD9B      
+E6F6       DD9C                  DD9C      
+E6F7       DD9D                  DD9D      
+E6F8       DD9E                  DD9E      
+E6F9       DD9F                  DD9F      
+E6FA       DDA0                  DDA0      
+E6FB       DDA1                  DDA1      
+E6FC       DDA2                  DDA2      
+E6FD       DDA3                  DDA3      
+E6FE       DDA4                  DDA4      
+E6FF       DDA5                  DDA5      
+E700       DDA6                  DDA6      
+E701       DDA7                  DDA7      
+E702       DDA8                  DDA8      
+E703       DDA9                  DDA9      
+E704       DDAA                  DDAA      
+E705       DDAB                  DDAB      
+E706       DDAC                  DDAC      
+E707       DDAD                  DDAD      
+E708       DDAE                  DDAE      
+E709       DDAF                  DDAF      
+E70A       DDB0                  DDB0      
+E70B       DDB1                  DDB1      
+E70C       DDB2                  DDB2      
+E70D       DDB3                  DDB3      
+E70E       DDB4                  DDB4      
+E70F       DDB5                  DDB5      
+E710       DDB6                  DDB6      
+E711       DDB7                  DDB7      
+E712       DDB8                  DDB8      
+E713       DDB9                  DDB9      
+E714       DDBA                  DDBA      
+E715       DDBB                  DDBB      
+E716       DDBC                  DDBC      
+E717       DDBD                  DDBD      
+E718       DDBE                  DDBE      
+E719       DDBF                  DDBF      
+E71A       DDC0                  DDC0      
+E71B       DDC1                  DDC1      
+E71C       DDC2                  DDC2      
+E71D       DDC3                  DDC3      
+E71E       DDC4                  DDC4      
+E71F       DDC5                  DDC5      
+E720       DDC6                  DDC6      
+E721       DDC7                  DDC7      
+E722       DDC8                  DDC8      
+E723       DDC9                  DDC9      
+E724       DDCA                  DDCA      
+E725       DDCB                  DDCB      
+E726       DDCC                  DDCC      
+E727       DDCD                  DDCD      
+E728       DDCE                  DDCE      
+E729       DDCF                  DDCF      
+E72A       DDD0                  DDD0      
+E72B       DDD1                  DDD1      
+E72C       DDD2                  DDD2      
+E72D       DDD3                  DDD3      
+E72E       DDD4                  DDD4      
+E72F       DDD5                  DDD5      
+E730       DDD6                  DDD6      
+E731       DDD7                  DDD7      
+E732       DDD8                  DDD8      
+E733       DDD9                  DDD9      
+E734       DDDA                  DDDA      
+E735       DDDB                  DDDB      
+E736       DDDC                  DDDC      
+E737       DDDD                  DDDD      
+E738       DDDE                  DDDE      
+E739       DDDF                  DDDF      
+E73A       DDE0                  DDE0      
+E73B       DDE1                  DDE1      
+E73C       DDE2                  DDE2      
+E73D       DDE3                  DDE3      
+E73E       DDE4                  DDE4      
+E73F       DDE5                  DDE5      
+E740       DDE6                  DDE6      
+E741       DDE7                  DDE7      
+E742       DDE8                  DDE8      
+E743       DDE9                  DDE9      
+E744       DDEA                  DDEA      
+E745       DDEB                  DDEB      
+E746       DDEC                  DDEC      
+E747       DDED                  DDED      
+E748       DDEE                  DDEE      
+E749       DDEF                  DDEF      
+E74A       DDF0                  DDF0      
+E74B       DDF1                  DDF1      
+E74C       DDF2                  DDF2      
+E74D       DDF3                  DDF3      
+E74E       DDF4                  DDF4      
+E74F       DDF5                  DDF5      
+E750       DDF6                  DDF6      
+E751       DDF7                  DDF7      
+E752       DDF8                  DDF8      
+E753       DDF9                  DDF9      
+E754       DDFA                  DDFA      
+E755       DDFB                  DDFB      
+E756       DDFC                  DDFC      
+E757       DDFD                  DDFD      
+F843       505E                  505E      
+F844       50D1                  50D1      
+F845       5181                  5181      
+F846       5286                  5286      
+F847       5384                  5384      
+F848       539A                  539A      
+F849       53BE                  53BE      
+F84A       53CB                  53CB      
+F84B       55B1                  55B1      
+F84C       55CA                  55CA      
+F84D       564C                  564C      
+F84E       578F                  578F      
+F84F       57FD                  57FD      
+F850       5869                  5869      
+F851       58E3                  58E3      
+F852       58F5                  58F5      
+F853       5950                  5950      
+F854       597C                  597C      
+F855       599A                  599A      
+F856       5A70                  5A70      
+F857       5A74                  5A74      
+F858       5A85                  5A85      
+F859       5A8C                  5A8C      
+F85A       5AA0                  5AA0      
+F85B       5AA5                  5AA5      
+F85C       5B5B                  5B5B      
+F85D       5B72                  5B72      
+F85E       5BCE                  5BCE      
+F85F       5C4F                  5C4F      
+F860       5CBC                  5CBC      
+F861       5D4C                  5D4C      
+F862       5D6B                  5D6B      
+F863       616A                  616A      
+F864       61F9                  61F9      
+F865       62C2                  62C2      
+F866       63AF                  63AF      
+F867       63CC                  63CC      
+F868       63E2                  63E2      
+F869       6449                  6449      
+F86A       64C2                  64C2      
+F86B       6590                  6590      
+F86C       65C5                  65C5      
+F86D       6673                  6673      
+F86E       667F                  667F      
+#------------------------------------------------------------------------------

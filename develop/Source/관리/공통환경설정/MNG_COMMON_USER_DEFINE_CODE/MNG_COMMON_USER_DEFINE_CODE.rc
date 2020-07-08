@@ -1,0 +1,198 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MNG_COMMON_USER_DEFINE_CODE.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,31,39
+ PRODUCTVERSION 2005,8,31,39
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "MNG_COMMON_USER_DEFINE_CODE DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 39\0"
+            VALUE "InternalName", "MNG_COMMON_USER_DEFINE_CODE\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MNG_COMMON_USER_DEFINE_CODE.DLL\0"
+            VALUE "ProductName", "MNG_COMMON_USER_DEFINE_CODE 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 39\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MNG_COMMON_USER_DEFINE_CODE_DLG DIALOG DISCARDABLE  0, 0, 613, 300
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_BOOK_CODE1_USE_Y,"Button",BS_AUTORADIOBUTTON | WS_GROUP,256,60,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_BOOK_CODE1_USE_N,"Button",BS_AUTORADIOBUTTON,279,60,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_BOOK_CODE2_USE_Y,"Button",BS_AUTORADIOBUTTON | WS_GROUP,256,75,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_BOOK_CODE2_USE_N,"Button",BS_AUTORADIOBUTTON,279,75,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_BOOK_CODE3_USE_Y,"Button",BS_AUTORADIOBUTTON | WS_GROUP,256,91,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_BOOK_CODE3_USE_N,"Button",BS_AUTORADIOBUTTON,279,91,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_LOANER_CODE1_USE_Y,"Button",BS_AUTORADIOBUTTON | WS_GROUP,256,117,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_LOANER_CODE1_USE_N,"Button",BS_AUTORADIOBUTTON,279,117,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_LOANER_CODE2_USE_Y,"Button",BS_AUTORADIOBUTTON | WS_GROUP,256,133,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_LOANER_CODE2_USE_N,"Button",BS_AUTORADIOBUTTON,279,133,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_LOANER_CODE3_USE_Y,"Button",BS_AUTORADIOBUTTON | WS_GROUP,256,149,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_LOANER_CODE3_USE_N,"Button",BS_AUTORADIOBUTTON,279,149,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_SERIES_CODE1_USE_Y,"Button",BS_AUTORADIOBUTTON | WS_GROUP,255,186,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_SERIES_CODE1_USE_N,"Button",BS_AUTORADIOBUTTON,279,186,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_SERIES_CODE2_USE_Y,"Button",BS_AUTORADIOBUTTON | WS_GROUP,255,202,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_SERIES_CODE2_USE_N,"Button",BS_AUTORADIOBUTTON,279,202,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_SERIES_CODE3_USE_Y,"Button",BS_AUTORADIOBUTTON | WS_GROUP,255,218,9,8
+    CONTROL         "Radio1",IDC_radUSER_DEFINE_SERIES_CODE3_USE_N,"Button",BS_AUTORADIOBUTTON,279,218,9,8
+    LTEXT           "도서 분류 코드 1",IDC_STATIC,90,56,66,14,SS_CENTERIMAGE
+    LTEXT           "도서 분류 코드 2",IDC_STATIC,90,72,66,14,SS_CENTERIMAGE
+    LTEXT           "사용 여부\r\n(Y     N)",IDC_STATIC,254,31,37,17
+    LTEXT           "도서 분류 코드 3",IDC_STATIC,90,88,66,14,SS_CENTERIMAGE
+    LTEXT           "대출자 분류 코드 1",IDC_STATIC,85,114,73,14,SS_CENTERIMAGE
+    LTEXT           "대출자 분류 코드 2",IDC_STATIC,85,130,73,14,SS_CENTERIMAGE
+    LTEXT           "대출자 분류 코드 3",IDC_STATIC,85,146,73,14,SS_CENTERIMAGE
+    LTEXT           "도  서",IDC_STATIC,31,75,28,8,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC_BORDER,8,23,598,213
+    CONTROL         "",IDC_imgDIVISION_LONG1,"Static",SS_ETCHEDVERT,80,27,1,208
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,9,107,597,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,9,50,596,1
+    LTEXT           "구 분",IDC_STATIC,31,35,26,8,SS_CENTERIMAGE
+    LTEXT           "기본 설명",IDC_STATIC,103,35,37,8,SS_CENTERIMAGE
+    CONTROL         "",IDC_imgDIVISION_LONG2,"Static",SS_ETCHEDVERT,162,27,1,209
+    CONTROL         "",IDC_imgDIVISION_LONG3,"Static",SS_ETCHEDVERT,301,27,1,208
+    LTEXT           "설 명",IDC_STATIC,448,33,44,8,SS_CENTERIMAGE
+    LTEXT           "대출자",IDC_STATIC,31,133,28,8,SS_CENTERIMAGE
+    LTEXT           "☞ 수서단계 입력/수정화면에서 사용자가 정의한 코드별로 도서를\r\n   분류할 수 있습니다.\r\n☞ 사용자정의코드별로 가격합산, 통계가 가능합니다.",IDC_STATIC,311,60,265,34
+    LTEXT           "☞ 사용자 정의 코드값을 통해 대출자에 대해 관리할 수 있는 항목을\r\n   추가할 수 있습니다.",IDC_STATIC,312,118,285,34
+    CTEXT           "사용자 정의 설명\r\n(한글 5자 이하)",IDC_STATIC,169,31,68,18
+    CONTROL         "",IDC_imgDIVISION_LONG4,"Static",SS_ETCHEDVERT,243,27,1,208
+    LTEXT           "☞ 사용자 정의 코드의 이름을 정의할 수 있고 사용여부를 결정할 수 있습니다.",IDC_STATIC,8,10,337,8
+    EDITTEXT        IDC_edtCODE_ALIAS1,170,56,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtCODE_ALIAS2,170,72,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtCODE_ALIAS3,170,88,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtCODE_ALIAS4,170,114,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtCODE_ALIAS5,170,130,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtCODE_ALIAS6,170,146,65,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,8,171,597,1
+    LTEXT           "연  속",IDC_STATIC,31,198,28,8,SS_CENTERIMAGE
+    LTEXT           "연속 분류 코드 1",IDC_STATIC,85,182,73,14,SS_CENTERIMAGE
+    LTEXT           "연속 분류 코드 2",IDC_STATIC,85,198,73,14,SS_CENTERIMAGE
+    LTEXT           "연속 분류 코드 3",IDC_STATIC,85,214,73,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_edtCODE_ALIAS7,169,182,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtCODE_ALIAS8,169,198,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtCODE_ALIAS9,169,214,65,14,ES_AUTOHSCROLL
+    LTEXT           "☞ 사용자 정의 코드값을 통해 연속 간행물에 대해 관리할 수 있는 \r\n   항목을 추가할 수 있습니다.",IDC_STATIC,313,187,285,34
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MNG_COMMON_USER_DEFINE_CODE.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

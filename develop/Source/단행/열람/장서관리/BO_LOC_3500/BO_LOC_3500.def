@@ -1,0 +1,11 @@
+; BO_LOC_3500.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_LOC_3500"
+DESCRIPTION  'BO_LOC_3500 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

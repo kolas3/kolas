@@ -1,0 +1,2778 @@
+<HTML>
+
+<HEAD>
+  <TITLE>paintlib - C++ - Reference</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="#8000FF" ALINK="#FF00FF">
+<accessed silent>
+
+<table width=350 border=0 cellspacing=0 cellpadding=0 align=right>
+  <tr>
+    <td>
+    <img src="pics/cppreference.gif" width=350 height=60 border=0
+         alt="" hspace=0 vspace=0>
+    <img src="pics/whitept.gif" width=350 height=21 hspace=0 vspace=0 border=0 alt="">
+    </td>
+  </tr>
+</table>
+<br clear=all>
+<p align=left>
+<table cellspacing=0 cellpadding=0 border=0>
+<tr>
+    <td width=22>
+      <img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+    </td>
+    <td>
+<P>This reference describes the interfaces provided by the classes in
+paintlib. It is sorted by class name. You can jump to a particular entry
+by using the links below.
+
+<P>Library version: 2.5.0
+<p align=center>
+    [       <A HREF="#PLAnyBmp">PLAnyBmp</A> | 
+      <A HREF="#PLAnyPicDecoder">PLAnyPicDecoder</A> | 
+      <A HREF="#PLBmp">PLBmp</A> | 
+      <A HREF="#PLBmpDecoder">PLBmpDecoder</A> | 
+      <A HREF="#PLBmpEncoder">PLBmpEncoder</A> | 
+      <A HREF="#PLBmpInfo">PLBmpInfo</A> | 
+      <A HREF="#PLDDrawBmp">PLDDrawBmp</A> | 
+      <A HREF="#PLDIBSection">PLDIBSection</A> | 
+      <A HREF="#PLDataSink">PLDataSink</A> | 
+      <A HREF="#PLDataSource">PLDataSource</A> | 
+      <A HREF="#PLFileSink">PLFileSink</A> | 
+      <A HREF="#PLFileSource">PLFileSource</A> | 
+      <A HREF="#PLFilter">PLFilter</A> | 
+      <A HREF="#PLFilterContrast">PLFilterContrast</A> | 
+      <A HREF="#PLFilterCrop">PLFilterCrop</A> | 
+      <A HREF="#PLFilterFill">PLFilterFill</A> | 
+      <A HREF="#PLFilterFlip">PLFilterFlip</A> | 
+      <A HREF="#PLFilterGetAlpha">PLFilterGetAlpha</A> | 
+      <A HREF="#PLFilterGrayscale">PLFilterGrayscale</A> | 
+      <A HREF="#PLFilterIntensity">PLFilterIntensity</A> | 
+      <A HREF="#PLFilterLightness">PLFilterLightness</A> | 
+      <A HREF="#PLFilterMirror">PLFilterMirror</A> | 
+      <A HREF="#PLFilterQuantize">PLFilterQuantize</A> | 
+      <A HREF="#PLFilterResize">PLFilterResize</A> | 
+      <A HREF="#PLFilterResizeBilinear">PLFilterResizeBilinear</A> | 
+      <A HREF="#PLFilterResizeBox">PLFilterResizeBox</A> | 
+      <A HREF="#PLFilterResizeGaussian">PLFilterResizeGaussian</A> | 
+      <A HREF="#PLFilterResizeHamming">PLFilterResizeHamming</A> | 
+      <A HREF="#PLFilterThreshold">PLFilterThreshold</A> | 
+      <A HREF="#PLFilterVideoInvert">PLFilterVideoInvert</A> | 
+      <A HREF="#PLGIFDecoder">PLGIFDecoder</A> | 
+      <A HREF="#PLIProgressNotification">PLIProgressNotification</A> | 
+      <A HREF="#PLJPEGDecoder">PLJPEGDecoder</A> | 
+      <A HREF="#PLJPEGEncoder">PLJPEGEncoder</A> | 
+      <A HREF="#PLMemSink">PLMemSink</A> | 
+      <A HREF="#PLMemSource">PLMemSource</A> | 
+      <A HREF="#PLPCXDecoder">PLPCXDecoder</A> | 
+      <A HREF="#PLPGMDecoder">PLPGMDecoder</A> | 
+      <A HREF="#PLPNGDecoder">PLPNGDecoder</A> | 
+      <A HREF="#PLPNGEncoder">PLPNGEncoder</A> | 
+      <A HREF="#PLPPMDecoder">PLPPMDecoder</A> | 
+      <A HREF="#PLPSDDecoder">PLPSDDecoder</A> | 
+      <A HREF="#PLPicDecoder">PLPicDecoder</A> | 
+      <A HREF="#PLPicEncoder">PLPicEncoder</A> | 
+      <A HREF="#PLPictDecoder">PLPictDecoder</A> | 
+      <A HREF="#PLPixel24">PLPixel24</A> | 
+      <A HREF="#PLPixel32">PLPixel32</A> | 
+      <A HREF="#PLPixel8">PLPixel8</A> | 
+      <A HREF="#PLPoint">PLPoint</A> | 
+      <A HREF="#PLRect">PLRect</A> | 
+      <A HREF="#PLResourceSource">PLResourceSource</A> | 
+      <A HREF="#PLStreamSink">PLStreamSink</A> | 
+      <A HREF="#PLTGADecoder">PLTGADecoder</A> | 
+      <A HREF="#PLTIFFDecoder">PLTIFFDecoder</A> | 
+      <A HREF="#PLTIFFEncoder">PLTIFFEncoder</A> | 
+      <A HREF="#PLTIFFEncoderEx">PLTIFFEncoderEx</A> | 
+      <A HREF="#PLTextException">PLTextException</A> | 
+      <A HREF="#PLWEMFDecoder">PLWEMFDecoder</A> | 
+      <A HREF="#PLWinBmp">PLWinBmp</A> | 
+      <A HREF="#Globals">Globals</A>
+    ]
+</p>
+
+<P><BR><A NAME="PLAnyBmp"><FONT SIZE=4><B>PLAnyBmp</B></FONT></A>
+
+<PRE>
+<B>#include "planybmp.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLBmp">PLBmp</A>
+
+
+<P>
+ Manipulates uncompressed device- and platform-independent bitmaps.
+ Supported data formats are 8 and 32 bpp. The data is stored
+ sequentially without padding in the bitmap. The class implements exactly
+ the interface defined by PLBmp without additions.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLAnyBmp ();</TT></B><BR>
+<P> Creates an empty bitmap.
+<BR><BR>
+
+<B><TT> virtual ~PLAnyBmp ();</TT></B><BR>
+<P> Destroys the bitmap.
+<BR><BR>
+
+<B><TT> PLAnyBmp ( const PLBmp &amp;Orig );</TT></B><BR>
+<P> Copy constructor
+<BR><BR>
+
+<B><TT> PLAnyBmp ( const PLAnyBmp &amp;Orig );</TT></B><BR>
+<P> Copy constructor
+<BR><BR>
+
+<B><TT> PLAnyBmp &amp;operator= ( const PLBmp &amp;Orig );</TT></B><BR>
+<P> Assignment operator.
+<BR><BR>
+
+<B><TT> PLAnyBmp &amp;operator= ( const PLAnyBmp &amp;Orig );</TT></B><BR>
+<P> Assignment operator.
+<BR><BR>
+
+<B><TT> long GetMemUsed ();</TT></B><BR>
+<P> Returns the amount of memory used by the object.
+<BR><BR>
+
+<B><TT> long GetBytesPerLine ();</TT></B><BR>
+<P> Returns number of bytes used per line.
+<BR><BR>
+
+<B><TT> static long GetMemNeeded ( PLLONG width, PLLONG height, PLWORD BitsPerPixel );</TT></B><BR>
+<P> Returns memory needed by a bitmap with the specified attributes.
+<BR><BR>
+
+<B><TT> static long GetBitsMemNeeded ( PLLONG width, PLLONG height, PLWORD BitsPerPixel );</TT></B><BR>
+<P> Returns memory needed by bitmap bits.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLAnyPicDecoder"><FONT SIZE=4><B>PLAnyPicDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "planydec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ Class which decodes pictures with any known format. It
+ auto-detects the format to use and delegates the work to one of
+ the other decoder classes.
+<P>
+ The interface to PLAnyPicDecoder is the same as PLPicDecoder.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLAnyPicDecoder ();</TT></B><BR>
+<P> Creates a decoder.
+<BR><BR>
+
+<B><TT> ~PLAnyPicDecoder ();</TT></B><BR>
+<P> Destroys the decoder.
+<BR><BR>
+
+<B><TT> int GetFileFormat ();</TT></B><BR>
+<P> Called after open. Returns the actual file type loaded.
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLBmp"><FONT SIZE=4><B>PLBmp</B></FONT></A>
+
+<PRE>
+<B>#include "plbitmap.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLBmpInfo">PLBmpInfo</A>
+
+
+<P>
+ Device- and OS-independent bitmap class. Manipulates uncompressed
+ bitmaps of all color depths.
+<P>
+ This class is an abstract base class. It exists to define a
+ format-independent interface for bitmap manipulation and to
+ provide common routines. Derived classes must support at least
+ the color depths 1, 8 and 32 bpp. PLBmp defines a public interface
+ for general use and a protected interface for use by derived
+ classes.
+<P>
+ For 32 bpp, alpha channel information is stored in one byte
+ (PL_RGBA_ALPHA) of each 4-byte pixel. To allow for optimizations
+ when no alpha channel is present, a flag is set whenever the
+ alpha information is valid. The complete alpha channel of a
+ bitmap can be replaced by a different one by calling
+ SetAlphaChannel(). A 0 in an alpha channel entry is completely
+ transparent; a 255 is completely opaque.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLBmp ();</TT></B><BR>
+<P> Empty constructor. Constructors in derived classes create a
+ small empty bitmap to ensure that the object is always in a
+ sane state.
+<BR><BR>
+
+<B><TT> virtual ~PLBmp ();</TT></B><BR>
+<P> Empty destructor.
+<BR><BR>
+
+<B><TT> PLBmp &amp;operator= ( PLBmp const &amp;Orig );</TT></B><BR>
+<P> Assignment operator. Note that assignment between different derived
+ classes is possible and results in a format conversion.
+<BR><BR>
+
+<B><TT> bool const operator == ( PLBmp const &amp;Other );</TT></B><BR>
+<P> Test for equality. This function actually tests every pixel, so
+ it's not fast. It's meant mainly for use in asserts and such.
+<BR><BR>
+
+<B><TT> virtual void Create ( PLLONG Width, PLLONG Height, PLWORD BitsPerPixel, bool bAlphaChannel, bool bIsGreyscale, const PLPoint&amp; Resolution = PLPoint (0,0) );</TT></B><BR>
+<P> Creates a new empty bitmap. Memory for the bits is allocated
+ but not initialized. Previous contents of the bitmap object are
+ discarded. If bAlphaChannel is true, the bitmap is assumed to
+ contain a valid alpha channel.
+<BR><BR>
+
+<B><TT> void CreateCopy ( const PLBmp &amp; rSrPLBmp, int BPPWanted = 0 );</TT></B><BR>
+<P> Creates a copy of rSrPLBmp, converting color depth if nessesary.
+ Supports 1, 8 and 32 BPP. Alpha channel information is preserved.
+<BR><BR>
+
+<B><TT> void CreateFilteredCopy (PLBmp &amp; rSrPLBmp, const PLFilter &amp; rFilter);</TT></B><BR>
+<P> Creates a copy of rSrPLBmp, applying rFilter on the way. Depending
+ on the filter called, this is often much faster than CreateCopy()
+ followed by ApplyFilter().
+<BR><BR>
+
+<B><TT> void SetQuantizationMode ( int DitherType, int DitherPaletteType );</TT></B><BR>
+<P> Sets quality of conversion to 8 bpp. Valid parameters are
+ defined in FilterQuantize.h.
+<BR><BR>
+
+<B><TT> void SetGrayPalette ();</TT></B><BR>
+<P> Fills the color table with a grayscale palette. This function
+ is only useable for bitmaps containing a color table. Index 0
+ contains black (0) and the last index contains white (255). The
+ alpha channel is set to opaque (255) for every palette entry.
+<BR><BR>
+
+<B><TT> void SetPalette ( PLPixel32 * pPal );</TT></B><BR>
+<P> Sets the color table to pPal. The contents or pPal are copied.
+<BR><BR>
+
+<B><TT> void SetPaletteEntry ( PLBYTE Entry, PLBYTE r, PLBYTE g, PLBYTE b, PLBYTE a );</TT></B><BR>
+<P> Sets one entry in the color table. The function may only be
+ called if there is a color table stored with the bitmap. The
+ color table entry is set to the red, green, blue, and alpha
+ values specified.
+<BR><BR>
+
+<B><TT> void SetPaletteEntry ( PLBYTE Entry, PLPixel32 Value );</TT></B><BR>
+<P> Sets one entry in the color table. The function may only be
+ called if there is a color table stored with the bitmap. The
+ color table entry is set to the red, green, blue, and alpha
+ values specified.
+<BR><BR>
+
+<B><TT> void SetAlphaChannel ( PLBmp * pAlphaBmp );</TT></B><BR>
+<P> Replaces the alpha channel of the bitmap with a new one. This
+ only works for bitmaps with 32 bpp. pAlphaBmp must point to an
+ 8 bpp bitmap with the same dimensions as the object. The alpha
+ channel information is physically copied into the bitmap.
+<BR><BR>
+
+<B><TT> void ApplyFilter ( const PLFilter&amp; Filter );</TT></B><BR>
+<P> Applies a filter to the bitmap.
+<BR><BR>
+
+<B><TT> void SetPixel ( int x, int y, PLPixel32 pixel );</TT></B><BR>
+<P> Slow but simple function to set a single pixel. 32 bpp only.
+<BR><BR>
+
+<B><TT> PLPixel32 GetPixel ( int x, int y ) const;</TT></B><BR>
+<P> Slow but simple function to get a single pixel. 32 bpp only.
+<BR><BR>
+
+<B><TT> PLBYTE FindNearestColor ( PLPixel32 cr );</TT></B><BR>
+<P> Find the nearest color to cr in the palette used by this bitmap
+ Only works for 8 bpp bitmaps.
+<BR><BR>
+
+<B><TT> virtual long GetMemUsed () = 0;</TT></B><BR>
+<BR>
+<B><TT> int GetNumColors ();</TT></B><BR>
+<BR>
+<B><TT> void SetHasAlpha (bool b );</TT></B><BR>
+<BR>
+<B><TT> virtual long GetBytesPerLine () = 0;</TT></B><BR>
+<P> Returns number of bytes used per line.
+<BR><BR>
+
+<B><TT> PLPixel32 * GetPalette () const;</TT></B><BR>
+<P> Returns the address of the color table of the bitmap or NULL if
+ no color table exists. The color table is stored as an array of
+ consecutive PLPixel32 objects.
+<BR><BR>
+
+<B><TT> PLBYTE ** GetLineArray () const;</TT></B><BR>
+<P> Returns pointer to an array containing the starting addresses of
+ the bitmap lines. This array should be used whenever the bitmap
+ bits need to be manipulated directly.
+<BR><BR>
+
+<B><TT> PLPixel32 ** GetLineArray32 () const;</TT></B><BR>
+<P> Returns pointer to an array containing the starting addresses of
+ the bitmap lines. This array should be used whenever the bitmap
+ bits need to be manipulated directly.
+<BR><BR>
+
+<B><TT> PLPixel24 ** GetLineArray24 () const;</TT></B><BR>
+<P> Returns pointer to an array containing the starting addresses of
+ the bitmap lines. This array should be used whenever the bitmap
+ bits need to be manipulated directly.
+<BR><BR>
+
+<B><TT> virtual void Lock ( bool bReadable, bool bWriteable );</TT></B><BR>
+<P> Locks bitmap. GetLineArray() and other direct-access methods should
+ only be called if the bitmap is locked. Lock and Unlock keep a lock
+ count. In most cases (currently: all but PLDDrawBmp), the lock count
+ will always be >= 1, so access is always possible.
+<BR><BR>
+
+<B><TT> virtual void Unlock ();</TT></B><BR>
+<P> Unlocks the Bitmap surface.
+<BR><BR>
+
+<B><TT> void SetResolution (const PLPoint&amp; Resolution);</TT></B><BR>
+<P> Sets the bitmap resolution in pixels per inch.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void internalCreate ( PLLONG Width, PLLONG Height, PLWORD BitsPerPixel, bool bAlphaChannel, bool bIsGreyscale ) = 0;</TT></B><BR>
+<P> Create a new bitmap with uninitialized bits. (Assume no memory
+ is allocated yet.)
+<BR><BR>
+
+<B><TT> virtual void freeMembers () = 0;</TT></B><BR>
+<P> Delete memory allocated by member variables.
+<BR><BR>
+
+<B><TT> virtual void initLineArray () = 0;</TT></B><BR>
+<P> Initialize internal table of line addresses.
+<BR><BR>
+
+<B><TT> void internalCopy ( const PLBmp &amp; rSrPLBmp );</TT></B><BR>
+<P> Creates a new PLBmp as copy of rSrPLBmp. Assumes there is no memory
+ allocated yet.
+<BR><BR>
+
+<B><TT> void initLocals ( PLLONG Width, PLLONG Height, PLWORD BitsPerPixel, bool bAlphaChannel, bool bIsGreyscale );</TT></B><BR>
+<P> Can be called from internalCreate() to initialize object state.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLBmpDecoder"><FONT SIZE=4><B>PLBmpDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plbmpdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ Windows bitmap file decoder. Decodes bitmap files (compressed and
+ uncompressed) of all bit depths. Returns an 8
+ or 32 bpp bitmap.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLBmpDecoder ();</TT></B><BR>
+<P> Creates a decoder
+<BR><BR>
+
+<B><TT> virtual ~PLBmpDecoder ();</TT></B><BR>
+<P> Destroys a decoder
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<P> Fills the bitmap with the main image. 
+<BR><BR>
+
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLBmpEncoder"><FONT SIZE=4><B>PLBmpEncoder</B></FONT></A>
+
+<PRE>
+<B>#include "plbmpenc.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicEncoder">PLPicEncoder</A>
+
+
+<P>
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLBmpEncoder ();</TT></B><BR>
+<P> Creates an encoder
+<BR><BR>
+
+<B><TT> ~PLBmpEncoder ();</TT></B><BR>
+<P> Destroys a encoder
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLBmpInfo"><FONT SIZE=4><B>PLBmpInfo</B></FONT></A>
+
+<PRE>
+<B>#include "plbmpinfo.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLObject">PLObject</A>
+
+
+<P>
+ This is a simple base class that holds bitmap metainformation. It is
+ used as a base class by PLPicDecoder and PLBmp.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLBmpInfo (const PLPoint&amp; Size, int bpp, const PLPoint&amp; Resolution, bool bAlphaChannel, bool bIsGreyscale);</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> PLBmpInfo ();</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> PLBmpInfo (const char * pszInfo);</TT></B><BR>
+<BR>
+<B><TT> const PLPoint&amp; GetSize () const;</TT></B><BR>
+<BR>
+<B><TT> int GetWidth () const;</TT></B><BR>
+<BR>
+<B><TT> int GetHeight () const;</TT></B><BR>
+<BR>
+<B><TT> int GetBitsPerPixel () const;</TT></B><BR>
+<BR>
+<B><TT> bool HasAlpha () const;</TT></B><BR>
+<BR>
+<B><TT> bool IsGreyscale () const;</TT></B><BR>
+<BR>
+<B><TT> const PLPoint&amp; GetResolution () const;</TT></B><BR>
+<P> Gets the bitmap resolution in pixels per inch. Returns 0 if the
+ resolution is unknown.
+<BR><BR>
+
+<B><TT> void AsString (char * psz, int len) const;</TT></B><BR>
+<BR>
+<B><TT> bool operator == (const PLBmpInfo &amp; Other) const;</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLDDrawBmp"><FONT SIZE=4><B>PLDDrawBmp</B></FONT></A>
+
+<PRE>
+<B>#include "plddrawbmp.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLBmp">PLBmp</A>
+
+
+<P>
+ 
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLDDrawBmp ( IDirectDraw * pDDraw );</TT></B><BR>
+<P> Creates an empty bitmap.
+<BR><BR>
+
+<B><TT> virtual ~PLDDrawBmp ();</TT></B><BR>
+<P> Destroys the bitmap.
+<BR><BR>
+
+<B><TT> virtual long GetMemUsed ();</TT></B><BR>
+<P> Returns the amount of memory used by the object.
+<BR><BR>
+
+<B><TT> long GetBytesPerLine ();</TT></B><BR>
+<P> Returns number of bytes used per line.
+<BR><BR>
+
+<B><TT> SIZE GetSize ();</TT></B><BR>
+<P> Returns the size of the bitmap in pixels
+<BR><BR>
+
+<B><TT> virtual void Lock ( bool bReadable, bool bWriteable );</TT></B><BR>
+<P> Draws the bitmap.
+ Locks the DirectDraw surface and fills the line array. GetLineArray() 
+ returns NULL if the surface isn't locked.
+<BR><BR>
+
+<B><TT> virtual void Unlock ();</TT></B><BR>
+<P> Unlocks the DirectDraw surface.
+<BR><BR>
+
+<B><TT> IDirectDrawSurface * GetSurface ();</TT></B><BR>
+<P> Gets a pointer to the directdraw surface used.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void internalCreate ( LONG Width, LONG Height, WORD BitsPerPixel, bool bAlphaChannel, bool bIsGreyscale );</TT></B><BR>
+<P> Create a new empty DIB. Bits are uninitialized.
+ Assumes that no memory is allocated before the call.
+<BR><BR>
+
+<B><TT> virtual void freeMembers ();</TT></B><BR>
+<P> Deletes memory allocated by member variables.
+<BR><BR>
+
+<B><TT> virtual void initLineArray ();</TT></B><BR>
+<P> Initializes internal table of line addresses.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLDIBSection"><FONT SIZE=4><B>PLDIBSection</B></FONT></A>
+
+<PRE>
+<B>#include "pldibsect.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLWinBmp">PLWinBmp</A>
+
+
+<P>
+ This is a windows DIBSection wrapped in a PLBmp-derived class.
+ It can be used just like a PLWinBmp can be used. In addition,
+ PLDIBSection can give access to the bitmap as a GDI bitmap handle.
+ This bitmap handle can be selected into a device context. All
+ normal GDI drawing functions can be used to write on the bitmap
+ in this way.
+<P>
+ Internally, PLDIBSections are stored with header and bits in two
+ separate buffers.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLDIBSection ();</TT></B><BR>
+<P> Creates an empty bitmap.
+<BR><BR>
+
+<B><TT> virtual ~PLDIBSection ();</TT></B><BR>
+<P> Destroys the bitmap.
+<BR><BR>
+
+<B><TT> PLDIBSection ( const PLBmp &amp;Orig );</TT></B><BR>
+<P> Copy constructor
+<BR><BR>
+
+<B><TT> PLDIBSection ( const PLDIBSection &amp;Orig );</TT></B><BR>
+<P> Copy constructor
+<BR><BR>
+
+<B><TT> PLDIBSection &amp;operator= ( PLBmp const &amp;Orig );</TT></B><BR>
+<P> Assignment operator.
+<BR><BR>
+
+<B><TT> PLDIBSection &amp;operator= ( PLDIBSection const &amp;Orig );</TT></B><BR>
+<P> Assignment operator.
+<BR><BR>
+
+<B><TT> virtual void Detach ();</TT></B><BR>
+<P> Calling this function causes the windows DIBSection to be detached
+ from the PLDIBSection object. The bitmap data are not deleted in
+ this function. This means that the bitmap handle and
+ the bitmap memory (bits and BMI) must be deleted by some other object.
+ The PLDIBSection object is in the same state as after a constructor
+ call after this function is called.
+<BR><BR>
+
+<B><TT> virtual void Draw ( HDC hDC, int x, int y, DWORD rop = SRCCOPY );</TT></B><BR>
+<P> Draws the bitmap on the given device context using
+ BitBlt.
+<BR><BR>
+
+<B><TT> virtual BOOL DrawExtract ( HDC hDC, POINT pntDest, RECT rcSrc );</TT></B><BR>
+<P> Draws a portion of the bitmap on the given device context
+<BR><BR>
+
+<B><TT> HBITMAP GetHandle ();</TT></B><BR>
+<P> Returns a GDI handle to the bitmap. This handle can be selected
+ into a DC and used in normal GDI operations.
+ Under Windows NT, GDI operations can be queued. This means that
+ a program running under NT must call GdiFlush() before the
+ DIBSection can be used again after GetHandle() has been called.
+ See the documentation for GdiFlush() for details.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void internalCreate ( LONG Width, LONG Height, WORD BitsPerPixel, bool bAlphaChannel, bool bIsGreyscale );</TT></B><BR>
+<P> Create a new empty DIB. Bits are uninitialized.
+ Assumes that no memory is allocated before the call.
+<BR><BR>
+
+<B><TT> virtual void freeMembers ();</TT></B><BR>
+<P> Deletes memory allocated by member variables.
+<BR><BR>
+
+<B><TT> virtual HANDLE createCopyHandle ();</TT></B><BR>
+<P> Creates a copy of the current bitmap in a global memory block
+ and returns a handle to this block.
+<BR><BR>
+
+<B><TT> virtual void initPointers ();</TT></B><BR>
+<P> Set color table pointer & pointer to bits based on m_pBMI.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLDataSink"><FONT SIZE=4><B>PLDataSink</B></FONT></A>
+
+<PRE>
+<B>#include "pldatasink.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLObject">PLObject</A>
+
+
+<P>
+ This is a base class for a destination of picture data.
+ It defines methods to open, write to, close data sinks.
+<P>
+ Restriction: actually writes to a memory buffer that needs
+ to be foreseen large enough by user (descendant class)
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> void Open ( const char* pszName, PLBYTE* pData, size_t MaxDataSize );</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+<B><TT> char* GetName ();</TT></B><BR>
+<BR>
+<B><TT> PLBYTE* GetBufferPtr ();</TT></B><BR>
+<BR>
+<B><TT> size_t GetDataSize ();</TT></B><BR>
+<BR>
+<B><TT> size_t GetMaxDataSize ();</TT></B><BR>
+<BR>
+<B><TT> size_t WriteNBytes ( size_t n, PLBYTE* pData );</TT></B><BR>
+<BR>
+<B><TT> void Skip ( size_t n );</TT></B><BR>
+<BR>
+<B><TT> void CheckEOF ();</TT></B><BR>
+<P> Test to see if we didn't go past the "end of the file"
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLDataSink ();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLDataSink ();</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLDataSource"><FONT SIZE=4><B>PLDataSource</B></FONT></A>
+
+<PRE>
+<B>#include "pldatasrc.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLObject">PLObject</A>
+
+
+<P>
+ This is a base class for a source of picture data.
+ It defines methods to open, close, and read from data sources.
+ Does byte-order-conversions in the ReadByte, ReadWord, and
+ ReadLong routines.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLDataSource ( PLIProgressNotification * pNotification = NULL );</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLDataSource ();</TT></B><BR>
+<BR>
+<B><TT> virtual void Open ( const char * pszName, int FileSize );</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+<B><TT> char * GetName ();</TT></B><BR>
+<BR>
+<B><TT> virtual PLBYTE * GetBufferPtr ( int MinBytesInBuffer ) = 0;</TT></B><BR>
+<P> Read but don't advance file pointer.
+<BR><BR>
+
+<B><TT> virtual PLBYTE * ReadNBytes ( int n );</TT></B><BR>
+<P> This needs to be overridden in derived classes.
+<BR><BR>
+
+<B><TT> int GetFileSize ();</TT></B><BR>
+<BR>
+<B><TT> virtual PLBYTE * ReadEverything () = 0;</TT></B><BR>
+<P> This is a legacy routine that interferes with progress notifications.
+ Don't call it!
+<BR><BR>
+
+<B><TT> PLBYTE * Read1Byte ();</TT></B><BR>
+<BR>
+<B><TT> PLBYTE * Read2Bytes ();</TT></B><BR>
+<BR>
+<B><TT> PLBYTE * Read4Bytes ();</TT></B><BR>
+<BR>
+<B><TT> void OProgressNotification ( double part );</TT></B><BR>
+<P> handles progress notification from other libs
+<BR><BR>
+
+<B><TT> void AlignToWord ();</TT></B><BR>
+<BR>
+<B><TT> void Skip ( int n );</TT></B><BR>
+<BR>
+<B><TT> void CheckEOF ();</TT></B><BR>
+<P> Test to see if we didn't go past the end of the file
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFileSink"><FONT SIZE=4><B>PLFileSink</B></FONT></A>
+
+<PRE>
+<B>#include "plfilesink.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLDataSink">PLDataSink</A>
+
+
+<P>
+ This is a class which takes a file as a destination of picture data.
+<P>
+ Restriction: needs to allocate a buffer large enough to hold a complete
+ image file. But we don't know its size before it's actually encoded, so
+ we have to be generous or "accidents will happen"
+ A better implementation would rely on memory-mapped files or implement
+ dynamic buffering.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFileSink ();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLFileSink ();</TT></B><BR>
+<BR>
+<B><TT> virtual int Open ( const char * pszFName, int MaxFileSize );</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFileSource"><FONT SIZE=4><B>PLFileSource</B></FONT></A>
+
+<PRE>
+<B>#include "plfilesrc.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLDataSource">PLDataSource</A>
+
+
+<P>
+ This is a class which takes a file as a source of picture data.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFileSource ( PLIProgressNotification * pNotification = NULL );</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLFileSource ();</TT></B><BR>
+<BR>
+<B><TT> virtual int Open ( const char * pszFName );</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+<B><TT> virtual PLBYTE * GetBufferPtr ( int MinBytesInBuffer );</TT></B><BR>
+<P> Read but don't advance file pointer.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilter"><FONT SIZE=4><B>PLFilter</B></FONT></A>
+
+<PRE>
+<B>#include "plfilter.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLObject">PLObject</A>
+
+
+<P>
+ Base class for filters that operate on bitmaps. Derived classes need
+ to override either the ApplyInPlace or the Apply function.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilter();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLFilter() = 0;</TT></B><BR>
+<BR>
+<B><TT> virtual void ApplyInPlace(PLBmp * pBmp) const;</TT></B><BR>
+<P> In-Place Apply. Applies the filter to pBmp. The base-class
+ version copies the bitmap after calling Apply (pBmp, pTempBmp).
+<BR><BR>
+
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<P> Applies the Filter to pBmpSource and stores the result in
+ pBmpDest. The base-class version copies the bitmap before calling
+ ApplyInPlace (pBmpDest).
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterContrast"><FONT SIZE=4><B>PLFilterContrast</B></FONT></A>
+
+<PRE>
+<B>#include "plfiltercontrast.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Enhances or reduces the image contrast using a linear mapping
+ between input and output. The zero point (i. e., the intensity
+ that is neither enhanced nor reduced) has to be provided.
+ (A Contrast filter is defined in the following way: It lowers all
+ intensity values below a given threshold, and it raises them
+ beyond. Most applications position the threshold at 50 %. This
+ does not always yield the best results, especially if you have an
+ unbalanced dark/light ratio of pixels. The best you can do here
+ is play around with the threshold.)
+ Works for 24 and 32 bpp bitmaps.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterContrast(double contrast, PLBYTE offset);</TT></B><BR>
+<P> contrast is the slope of the function. offset is the intensity
+ at which the color stays the same. Above this value, intensities
+ are increased. Below it, they are reduced. With offset 128 and
+ contrast 1, the image stays unchanged.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterCrop"><FONT SIZE=4><B>PLFilterCrop</B></FONT></A>
+
+<PRE>
+<B>#include "plfiltercrop.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Filter that cuts part of the image off. XMin and YMin are included
+ in the rectangle, XMax and YMax aren't.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterCrop(int XMin, int YMin, int XMax, int YMax);</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLFilterCrop();</TT></B><BR>
+<BR>
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterFill"><FONT SIZE=4><B>PLFilterFill</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterfill.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Fills a 32 bpp Bitmap completely with a color.
+<BR>
+<P><BR><A NAME="PLFilterFlip"><FONT SIZE=4><B>PLFilterFlip</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterflip.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Flips a 32 bpp bitmap upside-down
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterFlip();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLFilterFlip();</TT></B><BR>
+<BR>
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterGetAlpha"><FONT SIZE=4><B>PLFilterGetAlpha</B></FONT></A>
+
+<PRE>
+<B>#include "plfiltergetalpha.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Returns an 8 bpp grayscale bitmap containing only the alpha channel
+ of the source bitmap.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterGetAlpha();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLFilterGetAlpha();</TT></B><BR>
+<BR>
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<P> 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterGrayscale"><FONT SIZE=4><B>PLFilterGrayscale</B></FONT></A>
+
+<PRE>
+<B>#include "plfiltergrayscale.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Creates a grayscale version of a 32 bpp bitmap.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterGrayscale();</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual ~PLFilterGrayscale();</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<P> 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterIntensity"><FONT SIZE=4><B>PLFilterIntensity</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterintensity.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Changes the intensity of a 24 or 32 bpp bitmap. 
+ Applies the factor intensityFactor = 1.0 + csupp * pow((v-m_offset), m_exponent)
+ with csupp = intensity/pow(255.0, m_exponent);
+ on the v-Value of the image after a HSV transform.
+ The bitmap stays unchanged for intensity = 20, offset = 128, exponent = 1.
+<BR>
+<P><BR><A NAME="PLFilterLightness"><FONT SIZE=4><B>PLFilterLightness</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterlightness.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Filter that changes the lightness of a 32 bpp bitmap. lightness
+ values must be in the range -100..100. A value of 0 leaves the 
+ image unchanged.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterLightness (int lightness);</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLFilterLightness();</TT></B><BR>
+<BR>
+<B><TT> virtual void Apply(PLBmp *pBmpSource, PLBmp* pBmpDest) const;</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterMirror"><FONT SIZE=4><B>PLFilterMirror</B></FONT></A>
+
+<PRE>
+<B>#include "plfiltermirror.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Creates a mirror image of a bitmap.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterMirror();</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual ~PLFilterMirror();</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<P> 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterQuantize"><FONT SIZE=4><B>PLFilterQuantize</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterquantize.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Returns an 8 bpp bitmap containing a best-fit representation of the
+ source 32 bpp bitmap.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterQuantize (int DitherPaletteType, int DitherType);</TT></B><BR>
+<P> DitherPaletteType and DitherType determine the type of quantization:
+<P>
+ PLDTHPAL_MEDIAN (0): Median cut
+<P>
+ PLDTHPAL_POPULARITY (1): Popularity sort
+<P>
+ PLDTHPAL_DEFAULT (2): Use default palette
+<P>
+ PLDTHPAL_USERDEFINED (3): Use palette defined by SetUserPalette();
+<P>
+<P>
+ PLDTH_NONE (0): No dithering
+<P>
+ PLDTH_ORDERED (1): Ordered dithering
+<P>
+ PLDTH_FS (2): Floyd-Steinberg dithering
+<BR><BR>
+
+<B><TT> virtual ~PLFilterQuantize();</TT></B><BR>
+<BR>
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<BR>
+<B><TT> void SetUserPalette(const PLPixel32* pPal);</TT></B><BR>
+<P> For PLDTHPAL_USERDEFINED, sets the palette to use.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterResize"><FONT SIZE=4><B>PLFilterResize</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterresize.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Base class for filters that resize the image.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterResize(int NewXSize, int NewYSize);</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual ~PLFilterResize();</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> void SetNewSize(int NewXSize, int NewYSize);</TT></B><BR>
+<P> 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterResizeBilinear"><FONT SIZE=4><B>PLFilterResizeBilinear</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterresizebilinear.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilterResize">PLFilterResize</A>
+
+
+<P>
+ Resizes a 32 bpp bitmap using bilinear interpolation. This is the best-optimized
+ of the resize filters.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterResizeBilinear (int NewXSize, int NewYSize);</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<P> 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterResizeBox"><FONT SIZE=4><B>PLFilterResizeBox</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterresizebox.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilterResize">PLFilterResize</A>
+
+
+<P>
+ Resizes a 32 bpp bitmap using a box filter to calculate results.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterResizeBox (int NewXSize, int NewYSize);</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<P> 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterResizeGaussian"><FONT SIZE=4><B>PLFilterResizeGaussian</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterresizegaussian.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilterResize">PLFilterResize</A>
+
+
+<P>
+ Resizes a 32 bpp bitmap using a gaussian filter to determine result pixels.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterResizeGaussian (int NewXSize, int NewYSize, double NewRadius);</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<P> 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterResizeHamming"><FONT SIZE=4><B>PLFilterResizeHamming</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterresizehamming.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilterResize">PLFilterResize</A>
+
+
+<P>
+ Resizes a 32 bpp bitmap using a hamming filter to determine result pixels.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterResizeHamming (int NewXSize, int NewYSize, double NewRadius);</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<P> 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterThreshold"><FONT SIZE=4><B>PLFilterThreshold</B></FONT></A>
+
+<PRE>
+<B>#include "plfilterthreshold.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+ Returns an 8 bpp grayscale bitmap that contains only the channel
+ selected and is black wherever this channel has values <= threshold_min
+ or >= threshold_max.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterThreshold(int threshold_min,int threshold_max, int channel);</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual ~PLFilterThreshold();</TT></B><BR>
+<P> 
+<BR><BR>
+
+<B><TT> virtual void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<P> 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLFilterVideoInvert"><FONT SIZE=4><B>PLFilterVideoInvert</B></FONT></A>
+
+<PRE>
+<B>#include "plfiltervideoinvert.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLFilter">PLFilter</A>
+
+
+<P>
+
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLFilterVideoInvert();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLFilterVideoInvert();</TT></B><BR>
+<BR>
+<B><TT> void Apply(PLBmp * pBmpSource, PLBmp * pBmpDest) const;</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLGIFDecoder"><FONT SIZE=4><B>PLGIFDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plgifdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ Compuserve gif file decoder using libungif to do the actual work. The
+ bitmap returned always has 8 bpp. If the gif has a transparent color,
+ the palette of the bitmap has alpha=0 for this color and HasAlpha=true.
+ Does not support loading more than one image from a multi-image gif.
+ (One issue with gifs is that you don't know whether the image has a 
+ transparent color until it's been decoded completely. For this reason,
+ calling HasAlpha for the decoder before GetImage() will always return
+ false.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLIProgressNotification"><FONT SIZE=4><B>PLIProgressNotification</B></FONT></A>
+
+<PRE>
+<B>#include "plprognot.h"</B>
+</PRE>
+
+<P>
+ Defines an interface for progress notifications.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void OnProgress ( double Part ) = 0;</TT></B><BR>
+<P> Called during decoding as progress gets made.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLJPEGDecoder"><FONT SIZE=4><B>PLJPEGDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "pljpegdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ JPEG file decoder. Uses the independent JPEG group's library
+ to do the actual conversion.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLJPEGDecoder ();</TT></B><BR>
+<P> Creates a decoder
+<BR><BR>
+
+<B><TT> ~PLJPEGDecoder ();</TT></B><BR>
+<P> Destroys a decoder
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<P> Fills the bitmap with the image. 
+<BR><BR>
+
+<B><TT> void SetFast ( bool bFast );</TT></B><BR>
+<P> true (the default) selects fast but sloppy decoding.
+<BR><BR>
+
+<B><TT> static void JNotification (j_common_ptr cinfo );</TT></B><BR>
+<P> callback for jpeglib's progress notification
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLJPEGEncoder"><FONT SIZE=4><B>PLJPEGEncoder</B></FONT></A>
+
+<PRE>
+<B>#include "pljpegenc.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicEncoder">PLPicEncoder</A>
+
+
+<P>
+ JPEG file encoder. Uses the independent JPEG group's library
+ to do the actual conversion.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLJPEGEncoder ();</TT></B><BR>
+<P> Creates an encoder
+<BR><BR>
+
+<B><TT> ~PLJPEGEncoder ();</TT></B><BR>
+<P> Destroys a encoder
+<BR><BR>
+
+<B><TT> void SetQuality(int iQuality);</TT></B><BR>
+<P> Set the compression quality on a scale from 0 to 100.
+<BR><BR>
+
+<B><TT> void SetOptimizeCoding(bool bOptimizeCoding);</TT></B><BR>
+<P> Enable or disable the generation of optimal Huffmann coding tables.
+<BR><BR>
+
+<B><TT> void SetSmoothingFactor(int iSmoothingFactor);</TT></B><BR>
+<P> Set the smoothing factor (<=100). 0 turns it off.
+<BR><BR>
+
+<B><TT> void SetDensity(unsigned int uiX, unsigned int uiY);</TT></B><BR>
+<P> Set the resolution information (DPI) for the image.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLMemSink"><FONT SIZE=4><B>PLMemSink</B></FONT></A>
+
+<PRE>
+<B>#include "plmemsink.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLDataSink">PLDataSink</A>
+
+
+<P>
+ This is a class which takes a memory region as a destination of picture data.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLMemSink ();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLMemSink ();</TT></B><BR>
+<BR>
+<B><TT> virtual int Open ( const char * pszFName, int MaxFileSize );</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLMemSource"><FONT SIZE=4><B>PLMemSource</B></FONT></A>
+
+<PRE>
+<B>#include "plmemsrc.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLDataSource">PLDataSource</A>
+
+
+<P>
+ This is a class which takes a memory pointer as a source of
+ picture data.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLMemSource ();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLMemSource ();</TT></B><BR>
+<BR>
+<B><TT> virtual int Open( unsigned char *pek, int size);</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+<B><TT> virtual PLBYTE * GetBufferPtr ( int MinBytesInBuffer );</TT></B><BR>
+<P> Read but don't advance file pointer.
+<BR><BR>
+
+<B><TT> virtual PLBYTE * ReadEverything ();</TT></B><BR>
+<P> This is a legacy routine that interferes with progress notifications.
+ Don't call it!
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPCXDecoder"><FONT SIZE=4><B>PLPCXDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plpcxdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ PCX file decoder. Decodes 8, 15, 16, 24 and 32 bpp
+ PCX files (compressed and uncompressed) and returns an 8 or 32
+ bpp CBitmap. Preserves the alpha channel.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPCXDecoder();</TT></B><BR>
+<P> Creates a decoder
+<BR><BR>
+
+<B><TT> virtual ~PLPCXDecoder ();</TT></B><BR>
+<P> Destroys a decoder
+<BR><BR>
+
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<P> Fills the bitmap with the image. 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPGMDecoder"><FONT SIZE=4><B>PLPGMDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plpgmdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ Portable Graymap file decoder. Delivers an 8 bpp grayscale image.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPGMDecoder ();</TT></B><BR>
+<P> Creates a decoder
+<BR><BR>
+
+<B><TT> virtual ~PLPGMDecoder ();</TT></B><BR>
+<P> Destroys a decoder
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPNGDecoder"><FONT SIZE=4><B>PLPNGDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plpngdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ PNG file decoder. Uses LibPng to do the actual decoding.
+ PNG supports many pixel formats not supported by paintlib. These
+ pixel formats are converted to the nearest paintlib equivalent.
+ Images with less or more than 8 bits per channel are converted to 
+ 8 bits per channel. Images with 16-bit palettes or grayscale 
+ images with an alpha channel are returned as full 32-bit RGBA 
+ bitmaps.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPNGDecoder ();</TT></B><BR>
+<P> Creates a decoder
+<BR><BR>
+
+<B><TT> virtual ~PLPNGDecoder ();</TT></B><BR>
+<P> Destroys a decoder
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<P> Fills the bitmap with the image. 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPNGEncoder"><FONT SIZE=4><B>PLPNGEncoder</B></FONT></A>
+
+<PRE>
+<B>#include "plpngenc.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicEncoder">PLPicEncoder</A>
+
+
+<P>
+ PNG file encoder. Uses LIBPNG to do the actual conversion.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPNGEncoder ();</TT></B><BR>
+<P> Creates an encoder
+<BR><BR>
+
+<B><TT> virtual ~PLPNGEncoder ();</TT></B><BR>
+<P> Destroys a encoder
+<BR><BR>
+
+<B><TT> void SetCompressionLevel(unsigned short Level);</TT></B><BR>
+<P> Sets compression level for PNG, range is 0-9, 9 is hardest compression
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void DoEncode ( PLBmp* pBmp, PLDataSink* pDataSnk );</TT></B><BR>
+<P> Sets up LIBPNG environment and calls LIBPNG to encode an image.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPPMDecoder"><FONT SIZE=4><B>PLPPMDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plppmdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ Portable Pixmap file decoder. Delivers a 24 bit true color image.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPPMDecoder ();</TT></B><BR>
+<P> Creates a decoder
+<BR><BR>
+
+<B><TT> virtual ~PLPPMDecoder ();</TT></B><BR>
+<P> Destroys a decoder
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPSDDecoder"><FONT SIZE=4><B>PLPSDDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plpsddec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ Photoshop file decoder. Besides having the MakeBmpFromFile interface
+ that the other decoders have, the photoshop decoder loads the layers
+ of the image into separate bitmaps so they can be manipulated separately:
+ <pre>
+   vector&lt;PLAnyBmp&gt; Bmp;
+   PLAnyBmp BaseBmp);
+   Decoder-&gt;OpenFile ("face.psd");
+   int NumLayers = Decoder-&gt;GetNumLayers();
+   for (int i=0; i&lt;NumLayers; i++)
+   {
+     GetNextLayer (Bmp[i]);
+     LayerOffset = GetLayerOffset();
+   }
+   GetImage (&BaseBmp);
+   Close();
+ </pre>
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPSDDecoder ();</TT></B><BR>
+<P> Creates a decoder
+<BR><BR>
+
+<B><TT> virtual ~PLPSDDecoder ();</TT></B><BR>
+<P> Destroys a decoder
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; pBmp);</TT></B><BR>
+<P> Fills the bitmap with the main image. This image is a flattened 
+ version of the layers.
+<BR><BR>
+
+<B><TT> int GetNumLayers ();</TT></B><BR>
+<P> Returns number of layers in the image.
+<BR><BR>
+
+<B><TT> void GetNextLayer ( PLBmp&amp; Bmp );</TT></B><BR>
+<P> Fills the bitmap with the layer data.
+<BR><BR>
+
+<B><TT> PLPoint GetLayerOffset ();</TT></B><BR>
+<P> Returns the origin of the layer data in the image.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPicDecoder"><FONT SIZE=4><B>PLPicDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plpicdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLBmpInfo">PLBmpInfo</A>
+
+
+<P>
+ PLPicDecoder is an abstract base class. It defines common routines
+ for all decoders. Decoders for specific file formats can be
+ derived from this class. Objects of this class interact with a
+ PLDataSource to decode bitmaps.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPicDecoder ();</TT></B><BR>
+<P> Empty constructor. The actual initialization takes place in a
+ derived class.
+<BR><BR>
+
+<B><TT> virtual ~PLPicDecoder ();</TT></B><BR>
+<P> Destructor. Frees memory allocated.
+<BR><BR>
+
+<B><TT> virtual void MakeBmpFromFile ( const char * pszFName, PLBmp * pBmp, int BPPWanted = 0, PLIProgressNotification * pProgNot = NULL );</TT></B><BR>
+<P> Decodes a picture in a file and stores the results in pBmp.
+ BPPWanted is the number of bits per pixel in the bitmap
+ returned. Valid values for BPPWanted are 8, 24, and 0.
+ 0 means 'keep the input format'. Decoding a true-color image
+ to 8 bpp is not supported. As an exception, BPPWanted can be
+ 1 for b/w tiff files.
+<BR><BR>
+
+<B><TT> virtual void MakeBmpFromResource ( HINSTANCE hInstResource, int ResourceID, PLBmp * pBmp, int BPPWanted = 0, const char* ResType = NULL, HMODULE hResModule = 0 );</TT></B><BR>
+<P> Decodes a picture in a resource by creating a resource data
+ source and calling MakeBmp with this data source.
+ BPPWanted is the number of bits per pixel in the bitmap
+ returned. Valid values for BPPWanted are 8, 24, and 0.
+ 0 means 'keep the input format'. Decoding a true-color image
+ to 8 bpp is not supported. As an exception, BPPWanted can be
+ 1 for b/w tiff files.
+ ResType is the windows resource type (e.g. "JPEG") to be used.
+<P>
+ New optional parameter: hResModule (04.01.2000 ms)
+ If a module handle is passed as hResModule, then the resource
+ will be loaded from this module, otherwise, the resource
+ will be searched for by AfxFindResourceHandle (! MFC dependent!)
+<BR><BR>
+
+<B><TT> virtual void PLPicDecoder::MakeBmpFromMemory ( unsigned char * ucMemSrc, int MemSrcSize, PLBmp * pBmp, int BPPWanted = 0, PLIProgressNotification * pProgNot = NULL );</TT></B><BR>
+<P> Decodes a picture from a memory location which directly resembles
+ the image file as it would be on disc. The result is stored in pBmp.
+ BPPWanted is the number of bits per pixel in the bitmap
+ returned. Valid values for BPPWanted are 8, 24, and 0.
+ 0 means 'keep the input format'. Decoding a true-color image
+ to 8 bpp is not supported. As an exception, BPPWanted can be
+ 1 for b/w tiff files.
+<BR><BR>
+
+<B><TT> virtual void MakeBmp ( PLBmp * pBmp, int BPPWanted = 0 );</TT></B><BR>
+<P> Decodes a picture by getting the encoded data from pDataSrc.
+ Open should be called before, close after this routine is called.
+ Stores the results in pBmp. BPPWanted is the number of bits
+ per pixel in the bitmap returned. Valid values for BPPWanted
+ are 8, 24, and 0. 0 means 'keep the input format'. Decoding a
+ true-color image to 8 bpp is not supported.
+<BR><BR>
+
+<B><TT> static void SetTraceConfig ( int Level, char * pszFName );</TT></B><BR>
+<P> Sets the amount and destination of debug traces output by the
+ debug version. pszFName contains either a valid file name or is
+ NULL. If it contains a file name, this file is used to store
+ debug information. If pszFName is NULL, the destination is
+ either the MSVC debug console or stderr depending on the
+ version of the library. Valid values for Level are: <BR>
+ <BR>
+ 0: Trace only errors.<BR>
+ 1: Trace top-level calls.<BR>
+ 2: Trace picture format information<BR>
+ 3: Trace all miscellaneous info.<BR>
+ <BR>
+ The trace configuration is global to all decoders.
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc)=0;</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp) = 0;</TT></B><BR>
+<BR>
+<B><TT> static void Trace ( int TraceLevel, const char * pszMessage );</TT></B><BR>
+<P> Called to output status messages to the current debug console
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLBYTE * unpackPictRow ( PLBYTE * pLineBuf, PLDataSource * pDataSrc, int Width, int rowBytes, int SrcBytes );</TT></B><BR>
+<P> Implements the actual decoding process. Uses variables local to
+ the object to retrieve and store the data. Implemented in
+ derived classes.
+<P>
+ This routine should never be called. It's here so derived classes
+ can override MakeDIB directly if they want to. (CAnyDecoder does
+ this).
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPicEncoder"><FONT SIZE=4><B>PLPicEncoder</B></FONT></A>
+
+<PRE>
+<B>#include "plpicenc.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLObject">PLObject</A>
+
+
+<P>
+ PLPicEncoder is an abstract base class. It defines common routines
+ for all encoders. Encoders for specific file formats can be
+ derived from this class. Objects of this class interact with a
+ PLDataSink to encode bitmaps.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPicEncoder ();</TT></B><BR>
+<P> Empty constructor. The actual initialization takes place in a
+ derived class.
+<BR><BR>
+
+<B><TT> virtual ~PLPicEncoder ();</TT></B><BR>
+<P> Destructor. Frees memory allocated.
+<BR><BR>
+
+<B><TT> virtual void MakeFileFromBmp( const char *, PLBmp* );</TT></B><BR>
+<P> Encodes a bitmap to a file and stores.
+<BR><BR>
+
+<B><TT> virtual void SaveBmp( PLBmp*, PLDataSink* );</TT></B><BR>
+<P> Encodes a picture to a pre-existing data destination (sink).
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void DoEncode ( PLBmp* pBmp, PLDataSink* pDataSrc ) = 0;</TT></B><BR>
+<P> Implements the actual encoding process. Uses variables local to the
+ object to retrieve and store the data. Implemented in derived classes.
+<P>
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPictDecoder"><FONT SIZE=4><B>PLPictDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plpictdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ This class decodes macintosh PICT files with 1,2,4,8,16 and 32
+ bits per pixel as well as PICT/JPEG. If an alpha channel is
+ present in a 32-bit-PICT, it is decoded as well.
+ The PICT format is a general picture file format and can
+ contain a lot of other elements besides bitmaps. These elements
+ are ignored.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPictDecoder ( PLJPEGDecoder * pJPEGDecoder );</TT></B><BR>
+<P> Creates a decoder. A JPEG decoder is needed to decode PICT
+ files containing JPEGs.
+<BR><BR>
+
+<B><TT> virtual ~PLPictDecoder ();</TT></B><BR>
+<P> Destroys a decoder.
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<P> Fills the bitmap with the image.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPixel24"><FONT SIZE=4><B>PLPixel24</B></FONT></A>
+
+<PRE>
+<B>#include "plpixel24.h"</B>
+</PRE>
+
+<P>
+ 24 bit pixel class. A pixel in this class contains 8 bits each of
+ red, green and blue. The order of the color components is
+ OS-dependent and defined in config.h. This class is meant to be
+ fast, so all methods are inlined.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPixel24 ();</TT></B><BR>
+<BR>
+<B><TT> PLPixel24 (PLBYTE r, PLBYTE g, PLBYTE b);</TT></B><BR>
+<BR>
+<B><TT> void Set (PLBYTE r, PLBYTE g, PLBYTE b);</TT></B><BR>
+<BR>
+<B><TT> void SetR (PLBYTE r);</TT></B><BR>
+<BR>
+<B><TT> void SetG (PLBYTE g);</TT></B><BR>
+<BR>
+<B><TT> void SetB (PLBYTE b);</TT></B><BR>
+<BR>
+<B><TT> PLBYTE GetR () const;</TT></B><BR>
+<BR>
+<B><TT> PLBYTE GetG () const;</TT></B><BR>
+<BR>
+<B><TT> PLBYTE GetB () const;</TT></B><BR>
+<BR>
+<B><TT> PLPixel24 operator = (const PLPixel32 Pix);</TT></B><BR>
+<BR>
+<B><TT> bool operator ==(const PLPixel24&amp;) const;</TT></B><BR>
+<BR>
+<B><TT> bool operator !=(const PLPixel24&amp;) const;</TT></B><BR>
+<BR>
+<B><TT> int BoxDist (const PLPixel24 Pix) const;</TT></B><BR>
+<P> Simple and fast 'distance' between two pixels. Just adds the
+ distances between the color components and treats colors
+ equally.
+<BR><BR>
+
+<B><TT> static PLPixel24 Blend (int Factor, const PLPixel24 Pix1, const PLPixel24 Pix2);</TT></B><BR>
+<P> Returns a weighed average between two pixels. Factor must be 
+ between 0 and 256. Factor=256 means Pix1 is the result, Factor=0 
+ means Pix2 is the result.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPixel32"><FONT SIZE=4><B>PLPixel32</B></FONT></A>
+
+<PRE>
+<B>#include "plpixel32.h"</B>
+</PRE>
+
+<P>
+ 32 bit pixel class. A pixel in this class contains 8 bits each of
+ red, green, blue and alpha. The order of the color components is
+ OS-dependent and defined in config.h. This class is meant to be
+ fast, so all methods are inlined.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPixel32 ();</TT></B><BR>
+<BR>
+<B><TT> PLPixel32 (PLBYTE r, PLBYTE g, PLBYTE b, PLBYTE a);</TT></B><BR>
+<BR>
+<B><TT> PLPixel32 (PLBYTE r, PLBYTE g, PLBYTE b);</TT></B><BR>
+<BR>
+<B><TT> void Set (PLBYTE r, PLBYTE g, PLBYTE b, PLBYTE a);</TT></B><BR>
+<BR>
+<B><TT> void Set (PLBYTE r, PLBYTE g, PLBYTE b);</TT></B><BR>
+<BR>
+<B><TT> void SetR (PLBYTE r);</TT></B><BR>
+<BR>
+<B><TT> void SetG (PLBYTE g);</TT></B><BR>
+<BR>
+<B><TT> void SetB (PLBYTE b);</TT></B><BR>
+<BR>
+<B><TT> void SetA (PLBYTE a);</TT></B><BR>
+<BR>
+<B><TT> PLBYTE GetR () const;</TT></B><BR>
+<BR>
+<B><TT> PLBYTE GetG () const;</TT></B><BR>
+<BR>
+<B><TT> PLBYTE GetB () const;</TT></B><BR>
+<BR>
+<B><TT> PLBYTE GetA () const;</TT></B><BR>
+<BR>
+<B><TT> bool operator ==(const PLPixel32 Pix) const;</TT></B><BR>
+<BR>
+<B><TT> bool operator !=(const PLPixel32 Pix) const;</TT></B><BR>
+<BR>
+<B><TT> int BoxDist (const PLPixel32 Pix) const;</TT></B><BR>
+<P> Simple and fast 'distance' between two pixels. Just adds the
+ distances between the color components and treats colors
+ equally.
+<BR><BR>
+
+<B><TT> static PLPixel32 Blend (int Factor, const PLPixel32 Pix1, const PLPixel32 Pix2);</TT></B><BR>
+<P> Returns a weighed average between two pixels. Factor must be 
+ between 0 and 256. Factor=256 means Pix1 is the result, Factor=0 
+ means Pix2 is the result.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPixel8"><FONT SIZE=4><B>PLPixel8</B></FONT></A>
+
+<PRE>
+<B>#include "plpixel8.h"</B>
+</PRE>
+
+<P>
+ 8 bit pixel class. A pixel in this class contains 8 bits of
+ image data. This class is meant to be
+ fast, so all methods are inlined.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPixel8 ();</TT></B><BR>
+<BR>
+<B><TT> PLPixel8 (PLBYTE val);</TT></B><BR>
+<BR>
+<B><TT> void Set (PLBYTE val);</TT></B><BR>
+<BR>
+<B><TT> PLBYTE Get () const;</TT></B><BR>
+<BR>
+<B><TT> bool operator ==(const PLPixel8&amp;);</TT></B><BR>
+<BR>
+<B><TT> bool operator !=(const PLPixel8&amp;);</TT></B><BR>
+<BR>
+<B><TT> int BoxDist (PLPixel8 Pix);</TT></B><BR>
+<P> Simple and fast 'distance' between two pixels.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLPoint"><FONT SIZE=4><B>PLPoint</B></FONT></A>
+
+<PRE>
+<B>#include "plpoint.h"</B>
+</PRE>
+
+<P>
+ Simple point class for 2d coordinate manipulations. This class
+ contains only inline functions and nothing virtual. Its member variables
+ are public.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLPoint ();</TT></B><BR>
+<BR>
+<B><TT> PLPoint ( int X, int Y );</TT></B><BR>
+<BR>
+<B><TT> bool operator == ( const PLPoint &amp; pt ) const;</TT></B><BR>
+<BR>
+<B><TT> bool operator != ( const PLPoint &amp; pt ) const;</TT></B><BR>
+<BR>
+<B><TT> void operator += ( const PLPoint &amp; pt );</TT></B><BR>
+<BR>
+<B><TT> void operator -= ( const PLPoint &amp; pt );</TT></B><BR>
+<BR>
+<B><TT> PLPoint operator - () const;</TT></B><BR>
+<BR>
+<B><TT> PLPoint operator + ( const PLPoint &amp; pt ) const;</TT></B><BR>
+<BR>
+<B><TT> PLPoint operator - ( const PLPoint &amp; pt ) const;</TT></B><BR>
+<BR>
+<B><TT> PLPoint operator / ( double f ) const;</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLRect"><FONT SIZE=4><B>PLRect</B></FONT></A>
+
+<PRE>
+<B>#include "plrect.h"</B>
+</PRE>
+
+<P>
+
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLRect ();</TT></B><BR>
+<BR>
+<B><TT> PLRect ( int left, int top, int right, int bottom );</TT></B><BR>
+<BR>
+<B><TT> PLRect ( const PLPoint&amp; TL, const PLPoint&amp; BR );</TT></B><BR>
+<BR>
+<B><TT> bool operator == ( const PLRect &amp; rect ) const;</TT></B><BR>
+<BR>
+<B><TT> bool operator != ( const PLRect &amp; rect ) const;</TT></B><BR>
+<BR>
+<B><TT> int Width () const;</TT></B><BR>
+<BR>
+<B><TT> int Height () const;</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLResourceSource"><FONT SIZE=4><B>PLResourceSource</B></FONT></A>
+
+<PRE>
+<B>#include "plressrc.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLDataSource">PLDataSource</A>
+
+
+<P>
+ This is a class which takes a windows resource as a source of
+ picture data.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLResourceSource ();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLResourceSource ();</TT></B><BR>
+<BR>
+<B><TT> virtual int Open ( HINSTANCE lh_ResInst, int ResourceID, const char * pResType = NULL );</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+<B><TT> virtual PLBYTE * GetBufferPtr ( int MinBytesInBuffer );</TT></B><BR>
+<P> Read but don't advance file pointer.
+<BR><BR>
+
+<B><TT> virtual PLBYTE * ReadEverything ();</TT></B><BR>
+<P> This is a legacy routine that interferes with progress notifications.
+ Don't call it!
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLStreamSink"><FONT SIZE=4><B>PLStreamSink</B></FONT></A>
+
+<PRE>
+<B>#include "plStreamSink.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLDataSink">PLDataSink</A>
+
+
+<P>
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual int Open ( int MaxFileSize );</TT></B><BR>
+<BR>
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLTGADecoder"><FONT SIZE=4><B>PLTGADecoder</B></FONT></A>
+
+<PRE>
+<B>#include "pltgadec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ Targa file decoder. Decodes 8, 15, 16, 24 and 32 bpp
+ targa files (compressed and uncompressed) and returns an 8 or 32
+ bpp CBitmap. Preserves the alpha channel.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLTGADecoder ();</TT></B><BR>
+<P> Creates a decoder
+<BR><BR>
+
+<B><TT> virtual ~PLTGADecoder ();</TT></B><BR>
+<P> Destroys a decoder
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<P> Fills the bitmap with the image. 
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLTIFFDecoder"><FONT SIZE=4><B>PLTIFFDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "pltiffdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ TIFF file decoder. Uses LIBTIFF to do the actual conversion.
+ Supports 1, 8 and 24 bits per pixel as output formats.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLTIFFDecoder ();</TT></B><BR>
+<P> Creates a decoder
+<BR><BR>
+
+<B><TT> virtual ~PLTIFFDecoder ();</TT></B><BR>
+<P> Destroys a decoder
+<BR><BR>
+
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<BR>
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<P> Fills the bitmap with the image. 
+<BR><BR>
+
+<B><TT> virtual void Close ();</TT></B><BR>
+<BR>
+<B><TT> TIFF* GetTIFFHandle();</TT></B><BR>
+<P> this is this first argument to most libtiff's routines
+ use at your own risk; you've been warned!
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLTIFFEncoder"><FONT SIZE=4><B>PLTIFFEncoder</B></FONT></A>
+
+<PRE>
+<B>#include "pltiffenc.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicEncoder">PLPicEncoder</A>
+
+
+<P>
+ TIFF file encoder. Uses LIBTIFF to do the actual conversion.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLTIFFEncoder ();</TT></B><BR>
+<P> Creates an encoder
+<BR><BR>
+
+<B><TT> virtual ~PLTIFFEncoder ();</TT></B><BR>
+<P> Destroys a encoder
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void DoEncode ( PLBmp* pBmp, PLDataSink* pDataSnk );</TT></B><BR>
+<P> Sets up LIBTIFF environment and calls LIBTIFF to encode an image.
+<BR><BR>
+
+<B><TT> virtual void DoTiffEncode ( PLBmp* pBmp, TIFF* tif );</TT></B><BR>
+<P> this one mostly useful for the "extended" decoder
+<BR><BR>
+
+<B><TT> int SetBaseTags( TIFF*, PLBmp* );</TT></B><BR>
+<P> According to the characteristics of the given bitmap,
+ set the baseline tags
+<BR><BR>
+
+<B><TT> int SetField( TIFF*, int tag_id, ... );</TT></B><BR>
+<P> Set tag value in directory; also, "pseudo-tags" are interpreted by
+ LIBTIFF as modifiers to certain algorithms (compression....).
+ We do _not_ support multiple images by file, nor tiling nor stripping.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLTIFFEncoderEx"><FONT SIZE=4><B>PLTIFFEncoderEx</B></FONT></A>
+
+<PRE>
+<B>#include "pltiffencex.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLTIFFEncoder">PLTIFFEncoder</A>
+
+
+<P>
+ Basic tiff output is available via "PLTIFFEncoder::MakeFileFromBmp()".
+ This does not compress data or allow any informative tag to be set.
+ For those who need greater control, PLTIFFDecoderEx is provided.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLTIFFEncoderEx();</TT></B><BR>
+<P> Creates an encoder
+<BR><BR>
+
+<B><TT> virtual ~PLTIFFEncoderEx();</TT></B><BR>
+<P> Destroys an encoder
+<BR><BR>
+
+<B><TT> bool Associate( PLDataSink* );</TT></B><BR>
+<P> Bind DataSink to Encoder (the link is the TIFF* member)
+<BR><BR>
+
+<B><TT> void Dissociate( void );</TT></B><BR>
+<P> Flush the output
+<BR><BR>
+
+<B><TT> int SetBaseTags( PLBmp* );</TT></B><BR>
+<P> SetBaseTabs and SetField make their base class equivalent usable,
+ without requiring the user to know about the libtiff internals (TIFF*)
+<BR><BR>
+
+<B><TT> int SetField( int tag_id, ... );</TT></B><BR>
+<P> SetBaseTabs and SetField make their base class equivalent usable,
+ without requiring the user to know about the libtiff internals (TIFF*)
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void DoEncode( PLBmp*, PLDataSink* = 0 );</TT></B><BR>
+<P> Sets up LIBTIFF environment and calls LIBTIFF to encode an image.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLTextException"><FONT SIZE=4><B>PLTextException</B></FONT></A>
+
+<PRE>
+<B>#include "plexcept.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLObject">PLObject</A>
+
+
+<P>
+ An object of this class is thrown by other classes when an error
+ occurs. It contains an error code and a string describing the
+ error. The error code is meant to be used internally in the
+ program; the descriptive string can be output to the user. Error
+ codes and strings do not correspond 1:1. The strings are more
+ precise.
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLTextException ( int Code, const char * pszErr );</TT></B><BR>
+<P> Creates an exception.
+<BR><BR>
+
+<B><TT> PLTextException ( const PLTextException&amp; ex );</TT></B><BR>
+<P> Copy constructor.
+<BR><BR>
+
+<B><TT> virtual ~PLTextException ();</TT></B><BR>
+<P> Destroys an exception
+<BR><BR>
+
+<B><TT> virtual int GetCode () const;</TT></B><BR>
+<P> Returns the code of the error that caused the exception. Valid
+ error codes are:
+<P>
+ PL_ERRWRONG_SIGNATURE (1): Expected file signature not found.
+<P>
+ PL_ERRFORMAT_UNKNOWN (2): Unexpected data encountered. This
+ probably indicates a corrupt file or an unknown file
+ sub-format.
+<P>
+ PL_ERRPATH_NOT_FOUND (3), PL_ERRFILE_NOT_FOUND (4),
+ PL_ERRACCESS_DENIED (5): Problems with the file system.
+<P>
+ PL_ERRFORMAT_NOT_SUPPORTED (6): Known but unsupported format.
+<P>
+ PL_ERRINTERNAL (7): Kaputt. Tell me about it.
+<P>
+ PL_ERRUNKNOWN_FILE_TYPE (8): Couldn't recognize the file type.
+<P>
+ PL_ERRDIB_TOO_LARGE (9): Maximum size for 1 bmp was exceeded.
+ (See MAX_BITMAP_SIZE above for an explanation).
+<P>
+ PL_ERRNO_MEMORY (10): Out of memory.
+<P>
+ PL_ERREND_OF_FILE (11): End of file reached before end of image.
+<BR><BR>
+
+<B><TT> virtual operator const char * () const;</TT></B><BR>
+<P> This operator allows the exception to be treated as a string
+ whenever needed. The string contains the error message.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLWEMFDecoder"><FONT SIZE=4><B>PLWEMFDecoder</B></FONT></A>
+
+<PRE>
+<B>#include "plwemfdec.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLPicDecoder">PLPicDecoder</A>
+
+
+<P>
+ Decoder for 16-Bit Windows Metafiles (*.wmf) and 16-Bit Adobe 
+ Placeable Metafiles (*,wmf) and 32-Bit Enhanced Windows 
+ Metafiles (*.emf) for Windows 95, Windows 98 and Windows NT 
+ >= 3.1.
+<P>
+ Comments by the author, Mario Westphal:<BR>
+   <I>It can handle at least the 500 tested images I've got
+   from various free and commercial clipart sources. If
+   you find a WMF/EMF file it cannot handle, attach it to
+   an email and send it to mw@mwlabs.de. I'll see what I
+   can do. But, please, test it with another program
+   before you send itin to see if it is really a valid 
+   metafile.</I>
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLWEMFDecoder();</TT></B><BR>
+<BR>
+<B><TT> virtual ~PLWEMFDecoder();</TT></B><BR>
+<BR>
+<B><TT> virtual void Open (PLDataSource * pDataSrc);</TT></B><BR>
+<P> Fills the PLBmpInfo fields. To do this, the routine reads the complete
+ file.
+<BR><BR>
+
+<B><TT> virtual void GetImage (PLBmp &amp; Bmp);</TT></B><BR>
+<P> Fills the bitmap with the image. 
+<BR><BR>
+
+<B><TT> void Close();</TT></B><BR>
+<BR>
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="PLWinBmp"><FONT SIZE=4><B>PLWinBmp</B></FONT></A>
+
+<PRE>
+<B>#include "plwinbmp.h"</B>
+</PRE>
+
+<P>Derived from:  public <A HREF="#PLBmp">PLBmp</A>
+
+
+<P>
+ This is the windows version of PLBmp. The internal storage format
+ is a windows DIB. It supports all color depths allowed by
+ windows: 1, 4, 8, 16, 24, and 32 bpp. The bits are always accessible:
+ m_LockCount is always > 0 and IsLocked always returns true.
+<P>
+ The subset of the windows DIB format supported is as follows: The
+ DIB is stored so that header, palette, and bits are in one
+ buffer. The bottom line is stored first (biHeight must be > 0)
+ and the data is uncompressed (BI_RGB). Color tables for 16, 24,
+ and 32 bpp are not supported. biClrUsed is always 0. The palette
+ mode is DIB_RGB_COLORS. DIB_PAL_COLORS is not supported.
+<P>
+ Note that almost all real-life DIBs conform to this subset
+ anyway, so there shouldn't be any problems.
+<P>
+ <i>In the current version, some functions (notably CreateCopy) only
+ support 1, 8 and 32 bpp. Sorry!</i>
+<BR>
+<P><B>Public Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> PLWinBmp ( const PLWinBmp &amp;Orig );</TT></B><BR>
+<P> Copy constructor
+<BR><BR>
+
+<B><TT> PLWinBmp ( const PLBmp &amp;Orig );</TT></B><BR>
+<P> Copy constructor
+<BR><BR>
+
+<B><TT> virtual ~PLWinBmp ();</TT></B><BR>
+<P> Destroys the bitmap.
+<BR><BR>
+
+<B><TT> PLWinBmp &amp;operator= (PLBmp const &amp;Orig);</TT></B><BR>
+<P> Assignment operator.
+<BR><BR>
+
+<B><TT> PLWinBmp &amp;operator= (PLWinBmp const &amp;Orig);</TT></B><BR>
+<P> Assignment operator.
+<BR><BR>
+
+<B><TT> virtual long GetMemUsed ();</TT></B><BR>
+<P> Returns the amount of memory used by the object.
+<BR><BR>
+
+<B><TT> virtual long GetBytesPerLine ();</TT></B><BR>
+<P> Returns number of bytes used per line.
+<BR><BR>
+
+<B><TT> virtual void CreateRes (HINSTANCE lh_ResInst, int ID);</TT></B><BR>
+<P> Loads a bitmap from a windows resource (.rc or .res linked to
+ the exe). Fails if the bitmap is compressed.
+<BR><BR>
+
+<B><TT> void CreateFromHBitmap (HBITMAP hBitMap);</TT></B><BR>
+<P> Takes a HBITMAP and converts it to a PLWinBmp.
+<BR><BR>
+
+<B><TT> void CreateFromHDIBBitmap(BITMAPINFOHEADER* pBIH, HPALETTE hPal = NULL);</TT></B><BR>
+<P> Takes an existing device-independent bitmap and converts it
+ to a PLWinBmp.
+<BR><BR>
+
+<B><TT> SIZE GetSize ();</TT></B><BR>
+<P> Returns the size of the bitmap in pixels
+<BR><BR>
+
+<B><TT> BITMAPINFOHEADER * GetBMI ();</TT></B><BR>
+<P> Access the windows bitmap structure. Using this structure, all
+ standard DIB manipulations can be performed.
+<BR><BR>
+
+<B><TT> virtual void Draw (HDC hDC, int x, int y, DWORD rop = SRCCOPY);</TT></B><BR>
+<P> Draws the bitmap on the given device context using
+ StretchDIBits.
+<BR><BR>
+
+<B><TT> virtual void StretchDraw (HDC hDC, int x, int y, double Factor, DWORD rop = SRCCOPY);</TT></B><BR>
+<P> Draws the bitmap on the given device context using
+ StretchDIBits. Scales the bitmap by Factor.
+<BR><BR>
+
+<B><TT> virtual void StretchDraw (HDC hDC, int x, int y, int w, int h, DWORD rop = SRCCOPY);</TT></B><BR>
+<P> Draws the bitmap on the given device context using
+ StretchDIBits. Scales the bitmap so w is the width and
+ h the height.
+<BR><BR>
+
+<B><TT> virtual BOOL DrawExtract (HDC hDC, POINT pntDest, RECT rcSrc);</TT></B><BR>
+<P> Draws a portion of the bitmap on the given device context
+<BR><BR>
+
+<B><TT> void ToClipboard ();</TT></B><BR>
+<P> Puts a copy of the bitmap in the clipboard
+<BR><BR>
+
+<B><TT> bool FromClipboard (UINT uFormat = CF_BITMAP);</TT></B><BR>
+<P> Reads the clipboard into the bitmap. uFormat can be either
+ CF_BITMAP or CF_DIB.
+<BR><BR>
+
+<B><TT> BYTE * GetBits ();</TT></B><BR>
+<P> Gets a pointer to the bitmap bits. (Usually, using GetLineArray()
+ is much easier!)
+<BR><BR>
+
+<B><TT> void CopyPalette (PLWinBmp * pSrPLBmp);</TT></B><BR>
+<P> Copies the palette over from pSrPLBmp.
+<BR><BR>
+
+<B><TT> void TracePalette();</TT></B><BR>
+<P> Traces the values in the palette via PLTRACE();
+<BR><BR>
+
+<B><TT> static long GetMemNeeded (LONG width, LONG height, WORD BitsPerPixel);</TT></B><BR>
+<P> Returns memory needed by a bitmap with the specified attributes.
+<BR><BR>
+
+<B><TT> static long GetBitsMemNeeded (LONG width, LONG height, WORD BitsPerPixel);</TT></B><BR>
+<P> Returns memory needed by bitmap bits.
+<BR><BR>
+
+<B><TT> static int GetLineMemNeeded (LONG width, WORD BitsPerPixel);</TT></B><BR>
+<P> Returns memory needed by one line.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><B>Protected Members</B>
+<BR><BR>
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<B><TT> virtual void internalCreate (LONG Width, LONG Height, WORD BitsPerPixel, bool bAlphaChannel, bool bIsGreyscale);</TT></B><BR>
+<P> Create a new empty DIB. Bits are uninitialized.
+ Assumes that no memory is allocated before the call.
+<BR><BR>
+
+<B><TT> virtual void internalCreate (BITMAPINFOHEADER* pBMI);</TT></B><BR>
+<P> Creates a PLWinBmp from an existing bitmap pointer.
+ Assumes that no memory is allocated before the call.
+<BR><BR>
+
+<B><TT> virtual void freeMembers ();</TT></B><BR>
+<P> Deletes memory allocated by member variables.
+<BR><BR>
+
+<B><TT> virtual void initLineArray ();</TT></B><BR>
+<P> Initializes internal table of line addresses.
+<BR><BR>
+
+</TD></TR></TABLE></CENTER>
+<P><BR><A NAME="Globals"><FONT SIZE=4><B>Globals</B></FONT></A>
+
+<PRE>
+<B>#include "jmemdest.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Defines a custom data source for LIBJPEG
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "jmemsrc.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Defines a custom data source for LIBJPEG
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "plbitmap.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<PRE>
+<B>PL_RGBA_BLUE, PL_RGBA_GREEN, PL_RGBA_RED, and PL_RGBA_ALPHA</B>
+</PRE>
+
+<P>
+These constants define the order of the channels in an image.
+To reference a particular channel in a pixel, add one of these
+constants to the pixel address. The constants can be changed if
+nessesary to change the channel ordering. The contents of PL_RGBA_ALPHA
+are only valid if HasAlpha() is TRUE.
+
+<PRE>
+<B>PL_PIXEL_BGRA_ORDER</B>
+</PRE>
+<P>
+If this is defined, the PL_RGBA_XXX constants are defined so that their 
+ordering is equal to the ordering that windows expects.
+
+<PRE>
+<B>PL_PIXEL_RGBA_ORDER</B>
+</PRE>
+<P>
+If this is defined, the PL_RGBA_XXX constants are defined so that red is 
+first.
+
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "ploptable.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Table of the first 200 or so PICT opcodes with size & description.
+ Mostly stolen from pict2pbm. I hope they don't mind.
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "plpaintlibdefs.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Contains common datatype definitions.
+<P>
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "plpgm.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Defines structures and constants present in PGM files.
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "plppm.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Defines structures and constants present in PGM files.
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "plstdpch.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Contains most system-specific includes and definitions. On windows
+ systems, it corresponds to stdafx.h. On other systems, the
+ appropriate data types and macros are declared here.
+<B>BYTE</B>
+</PRE>
+
+<P>
+8 bits of unsigned data.
+<PRE>
+<B>WORD</B>
+</PRE>
+
+<P>
+An unsigned integer with 16 bits. Due to windows madness, <I>this is
+not nessesarily the size of a machine word!</I>
+<PRE>
+<B>LONG</B>
+</PRE>
+
+<P>
+A signed 32-bit integer.
+<PRE>
+<B>ULONG</B>
+</PRE>
+
+<P>
+An unsigned 32-bit integer.
+<PRE>
+<B>PLTRACE (char * pszFormat, ...);</B>
+</PRE>
+
+<P>
+In the debug version (_DEBUG defined), this macro outputs a string
+to the current debug console. In the release version, it expands
+to nothing. The parameters correspond to those of printf.
+<PRE>
+<B>PLASSERT (BOOL b);</B>
+</PRE>
+
+<P>
+This is an assert for debug purposes. In the debug version (_DEBUG
+defined), it causes a program halt if b is FALSE. In the release
+version, nothing is done. (Note: The parameter is not evaluated
+in release mode, so constructs like ASSERT (pF = fopen (&quot;bla&quot;))
+will not do what is expected.)
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "pltga.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Defines structures and constants present in TGA files.
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "plwindefs.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Windows Bitmap Struct Definitions
+<P>
+ Contains the definitions for the data structures used in
+ windows bitmap files. For windows apps, they are already
+ defined - but not with these names.
+<P>
+ The WINRGBQUAD, WINBITMAPFILEHEADER, WINBITMAPINFOHEADER,
+ and WINBITMAPINFO structs are defined as RGBQUAD etc. in
+ the windows header files. See the windows documentation
+ for details.
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "qdraw.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> This file defines the data structures used in pict files. They
+ correspond to the appropriate MAC QuickDraw structs. See
+ QuickDraw docs for an explanation of these structs.
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+<PRE>
+<B>#include "tif_msrc.h"</B>
+</PRE>
+
+<CENTER><TABLE width=90%><TR><TD width=99% align=left>
+<P> Custom data source for libtiff. Assumes all data is in memory at
+ start.
+</TD></TR></TABLE></CENTER>
+<BR><BR>
+
+      <p><br>
+    </td>
+    <td width=22>
+      <img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+    </td>
+  </tr>
+</table>
+
+</BODY>
+
+</HTML>

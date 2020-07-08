@@ -1,0 +1,7 @@
+; CenterUpload_Api.def : Declares the module parameters for the DLL.
+
+LIBRARY      "CenterUpload_Api"
+DESCRIPTION  'CenterUpload_Api Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

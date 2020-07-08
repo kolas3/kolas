@@ -1,0 +1,15 @@
+EXPORTS
+    WlxActivateUserShell
+    WlxDisplayLockedNotice
+    WlxDisplaySASNotice
+    WlxInitialize
+    WlxIsLockOk
+    WlxIsLogoffOk
+    WlxLoggedOnSAS
+    WlxLoggedOutSAS
+    WlxLogoff
+    WlxNegotiate
+    WlxScreenSaverNotify
+    WlxShutdown
+    WlxStartApplication
+    WlxWkstaLockedSAS

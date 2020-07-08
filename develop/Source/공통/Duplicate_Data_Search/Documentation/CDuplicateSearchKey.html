@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CDuplicateSearchKey</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file D:\KOLAS2UP\Develop\Source\공통\Duplicate_Data_Search\DuplicateSearchKey.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CDuplicateSearchKey</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>중복/복본조사를 위한 키값을 읽어들이거나 화일에 저장하는 클래스이다. </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=35>
+<param name=classes value="CCDuplicateSearchKey,MCDuplicateSearchKey.html">
+<param name=before value="M">
+<param name=after value="M">
+<param name=indent value="0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.149.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Constructor / Destructor</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.149.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>기타메소드</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.149.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>키값을 파일에 저장하거나 파일에서 읽어들이는 메소드</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.149.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>키설정값을 참조하거나 특수 속성을 변경하는 메소드</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.149.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>키설정값을 파일에서 읽어들이기 위한 메소드</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.149.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CObList </TD><TD><B>m_SearchKeys</B> <BR>
+<I>중복/본본조사를 위한 키 설정값을 저장하는 리스트 각 키값은 CDuplicateSearchField클래스의 형태로 리스트에 저장된다</I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+중복/복본조사를 위한 키값을 읽어들이거나 화일에 저장하는 클래스이다.<br>
+키값들을 화일에 저장하거나 화일에서 읽기위해서 키이름과 각 키에 해당하는 필드명을 파싱하는 메소드를 포함한다.<br>
+키에 해당하는 트수한 필드에 직접접근할 수 있는 메소드를 포함한다.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Constructor / Destructor"></A>
+<A NAME="DOC.149.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Constructor / Destructor</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CDuplicateSearchKey"></A>
+<A NAME="DOC.149.1.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CDuplicateSearchKey()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="~CDuplicateSearchKey"></A>
+<A NAME="DOC.149.1.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CDuplicateSearchKey()</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="키값을 파일에 저장하거나 파일에서 읽어들이는 메소드"></A>
+<A NAME="DOC.149.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 키값을 파일에 저장하거나 파일에서 읽어들이는 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetSearchKeys"></A>
+<A NAME="DOC.149.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSearchKeys( CString filename )</B></TT>
+<DD>
+사용자가 지정한 키설정값(m_SearchKeys에 저장된)들을 파일에 저장한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>filename</B> -  [in] 키설정값을 저장할 파일의 패스를 포함한 스트링<BR><DT><B>Returns:</B><DD>  >= 0 - 파일저장 성공
+<BR>  <  0 - 파일저장 실패
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearchField.html">CDuplicateSearchField</A>
+<BR><DD></DL><P>
+<A NAME="SetSearchKeys"></A>
+<A NAME="DOC.149.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetSearchKeys( CString filename )</B></TT>
+<DD>
+파일에 저장되어진 키설정값을 읽어 m_SearchKeys에 저장한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>filename</B> -  [in] 키설정값을 읽어올 파일의 패스를 포함한 스트링<BR><DT><B>Returns:</B><DD>  >= 0 - 파일읽기 성공
+<BR>  <  0 - 파일읽기 실패
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearchField.html">CDuplicateSearchField</A>, <!1><A HREF="CDuplicateSearchKey.html#DOC.149.3.5">SetDefaultSearchKeys</A>(), <!1><A HREF="CDuplicateSearchKey.html#DOC.149.3.4">CheckString</A>(), <!1><A HREF="CDuplicateSearchKey.html#DOC.149.3.2">GetAliasAndValue</A>(), <!1><A HREF="CDuplicateSearchKey.html#DOC.149.3.3">GetKeyName</A>()
+<BR><DD></DL><P></DL>
+
+<A NAME="키설정값을 파일에서 읽어들이기 위한 메소드"></A>
+<A NAME="DOC.149.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 키설정값을 파일에서 읽어들이기 위한 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetDMCMAlias"></A>
+<A NAME="DOC.149.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetDMCMAlias( CString fieldName,  CString &amp;DMAlias,  CString &amp;CMAlias )</B></TT>
+<DD>
+해당필드명에 해당하는 DM/CM알리아스를 추출한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>fieldName</B> -  [in] CM/DM을 추출할 키필드명 예)본표제
+<BR><B>DMAlias</B> -  [out] 추출된 DM알리아스
+<BR><B>CMAlias</B> -  [out] 추출된 CM알리아스<BR><DT><B>Returns:</B><DD>  >= 0 - 추출 성공
+<BR>  <  0 - 추출 실패
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="GetAliasAndValue"></A>
+<A NAME="DOC.149.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetAliasAndValue( CString &amp;alias,  CString &amp;tmpvalue,  CString str )</B></TT>
+<DD>
+전달된 문자열에서 '='으로 구분하여 알리아스와 그에 해당하는 값을 추출하는 메소드
+
+<DL><DT><DT><B>Parameters:</B><DD><B>alias</B> -  [out] 추출된 알리아스
+<BR><B>tmpvalue</B> -  [out] 추출된 값
+<BR><B>str</B> -  [in] 입력문자열 예)DMALIAS='DM_LIGHT_종'<BR><DT><B>Returns:</B><DD>  >= 0 - 추출 성공
+<BR>  <  0 - 추출 실패
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="GetKeyName"></A>
+<A NAME="DOC.149.3.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetKeyName( CString str )</B></TT>
+<DD>
+전달된 문자열에서 '['와 ']'으로 구분하여 키필드명을 추출하는 메소드
+
+<DL><DT><DT><B>Parameters:</B><DD><B>str</B> -  [in] 입력스트링 예) [본표제]<BR><DT><B>Returns:</B><DD>  - 추출된 문자열 실패시 공백리턴
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="CheckString"></A>
+<A NAME="DOC.149.3.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT CheckString( CString str )</B></TT>
+<DD>
+전달된 문자열을 검사하여 새로운 CDuplicateSearchField를 만들것인지 혹은 무시할 것인지 아니면 필드의
+값인지를 판단하는 메소드
+
+<DL><DT><DT><B>Parameters:</B><DD><B>str</B> -  [in] 입력스트링 예) [본표제], .주석, DMALIAS=DM_LIGHT_종<BR><DT><B>Returns:</B><DD>  -1 : 입력으로 전달된 문자열이 공백이거나 주석임
+<BR>  0 : '['으로 시작하는 문자열 새로운 CDuplicateSearchField클래스를 생성해야함을 의미
+<BR>  1 : CDuplicateSearchField의 각 속성값임을 의미
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="SetDefaultSearchKeys"></A>
+<A NAME="DOC.149.3.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetDefaultSearchKeys()</B></TT>
+<DD>
+초기 파일에 저장된 키설정값이 없을 경우 디폴트 키설정값을 설정한다.
+
+<DL><DT><DT><B>Returns:</B><DD>  0 : 초기값설정 성공
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME="키설정값을 참조하거나 특수 속성을 변경하는 메소드"></A>
+<A NAME="DOC.149.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 키설정값을 참조하거나 특수 속성을 변경하는 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="SetFieldKeySettingInfo"></A>
+<A NAME="DOC.149.4.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetFieldKeySettingInfo( CString fieldName,  BOOL useYN,  INT searchType,  BOOL articleSearchYN )</B></TT>
+<DD>
+해당필드명에 인자로 전달된 사용여부, 검색타입, 절취검색여부를 설정한다. 즉 m_SearchKeys필드에 해당 팔드명을
+갖는 CDuplicateSearchField클래스에 해당 속성값들을 설정한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>fieldName</B> -  [in] 필드명
+<BR><B>useYN</B> -  [in] 사용여부
+<BR><B>searchType</B> -  [in] 검색타입
+<BR><B>articleSearchYN</B> -  [in] 절취검색여부<BR><DT><B>Returns:</B><DD>  -1 : 설정실패
+<BR>  0 : 설정성공
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="GetFieldKeySettingInfo"></A>
+<A NAME="DOC.149.4.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetFieldKeySettingInfo( CString fieldName,  BOOL* pUseYN,  INT* pSearchType,  BOOL* pArticleSearchYN )</B></TT>
+<DD>
+해당필드명에 해당하는 사용여부, 검색타입, 절취검색여부를 추출한다. 즉 m_SearchKeys필드에 해당 팔드명을
+갖는 CDuplicateSearchField클래스의 해당 값들을 추출한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>fieldName</B> -  [in] 필드명
+<BR><B>pUseYN</B> -  [out] 사용여부
+<BR><B>pSearchType</B> -  [out] 검색타입
+<BR><B>pArticleSearchYN</B> -  [out] 절취검색여부<BR><DT><B>Returns:</B><DD>  -1 : 추출실패
+<BR>  0 : 추출성공
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="GetSearchFieldKeySettingInfo"></A>
+<A NAME="DOC.149.4.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSearchFieldKeySettingInfo( CString FieldName,  CString &amp;searchPlace,  CString &amp;searchField )</B></TT>
+<DD>
+해당필드명에 해당하는 DB테이블과 컬럼명을 추출한다. 즉 m_SearchKeys필드에 해당 팔드명을
+갖는 CDuplicateSearchField클래스의 DB테이블과 컬럼명을 추출한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>FieldName</B> -  [in] 필드명
+<BR><B>searchPlace</B> -  [out] DB테이블명
+<BR><B>searchField</B> -  [out] 컬럼명<BR><DT><B>Returns:</B><DD>  -1 : 추출실패
+<BR>  0 : 추출성공
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME="기타메소드"></A>
+<A NAME="DOC.149.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 기타메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="DeleteAllList"></A>
+<A NAME="DOC.149.5.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DeleteAllList()</B></TT>
+<DD>
+멤버변수 m_SearchKeys의 내용을 지우는 메소드
+
+<DL><DT><DT><B>Returns:</B><DD>  -1 : 초기화실패
+<BR>  0 : 초기화성공
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME="m_SearchKeys"></A>
+<A NAME="DOC.149.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CObList m_SearchKeys</B></TT>
+<DD>중복/본본조사를 위한 키 설정값을 저장하는 리스트 각 키값은 CDuplicateSearchField클래스의 형태로 리스트에 저장된다
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearchField.html">CDuplicateSearchField</A>, <!1><A HREF="CDUP_KEY_SETTING.html">CDUP_KEY_SETTING</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

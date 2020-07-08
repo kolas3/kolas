@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by BO_SPECIES_FORM.mak
+
+.\BO_SPECIES_FORM.cpp : \
+	".\StdAfx.h"\
+	
+
+.\BO_SPECIES_FORM.rc : \
+	".\res\BO_SPECIES_FORM.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by MNG_ILL_WEB.mak
+
+.\MNG_ILL_WEB.cpp : \
+	".\StdAfx.h"\
+	
+
+.\MNG_ILL_WEB.rc : \
+	".\res\MNG_ILL_WEB.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

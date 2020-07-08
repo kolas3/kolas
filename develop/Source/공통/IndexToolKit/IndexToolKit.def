@@ -1,0 +1,7 @@
+; IndexToolKit.def : Declares the module parameters for the DLL.
+
+LIBRARY      "IndexToolKit"
+DESCRIPTION  'IndexToolKit Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

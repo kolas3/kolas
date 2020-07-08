@@ -1,0 +1,63 @@
+Unix/Linux instructions:
+
+- If you want to configure TIFF, PNG or JPEG support you have to:
+
+  Just install in your system the libs. On GNU/Linux it usually are 
+  intalled on /usr (lib and include). The configure script just 
+  detects the libraries and compile the decoders onto the paintlib
+  library. At this moment there is no check of the correct version of 
+  the libraries so you have to be sure of the versions.
+
+     libtiff (http://www.libtiff.org/tiff-v3.5.4.zip)
+     
+     libjpeg (ftp://ftp.uu.net/graphics/jpeg/jpegsrc.v6b.tar.gz)
+
+     libpng  (ftp://swrinde.nde.swri.edu/pub/png/src/lpng103.zip)
+
+     libz (ftp://swrinde.nde.swri.edu/pub/png/src/zlib113.zip)
+
+- If there is no system installed libraries the configure script disable this 
+  support.
+
+  You can verify the result of executing the configure script just looking at
+  paintlib/common/config.h.
+
+- The steps for do that are:
+
+    $ cd paintlib
+    
+    ¡¡ if you change some Makefile.am or configure.in or acheader.h
+    to recreate the configure script !!:
+
+    $ ./reconfig 
+
+       
+    If you only want to compile the package:
+
+    $ ./configure 
+    $ make
+
+- To install the package:
+
+    $ make install
+   
+    The default prefix directory to install is /usr/local. So the libraries
+    (shared and static versions) are installed on $(prefix)/lib and the 
+    header files are installed on $(prefix)/include/paintlib.
+
+    Optionally you can change the prefix directory to install the package
+    just like this:
+
+    $ ./configure --prefix=/usr (for example).
+
+    If you have compiled your own copies of libtiff, libjpeg or libpng and
+    libz, you have to install it manually. Just go to the apropiate directories
+    and follow the instructions.
+
+- There is some test programs in paintlib/gnu/im2*
+
+- To link against paintlib libraries you have to use the script paintlib-config:
+
+  CFLAGS='paintlib-config --cflags'
+  LDFLAGS='paintlib-config --libs'
+    

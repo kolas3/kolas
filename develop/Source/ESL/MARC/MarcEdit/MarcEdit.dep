@@ -1,0 +1,160 @@
+# Microsoft Developer Studio Generated Dependency File, included by MarcEdit.mak
+
+.\ColorPicker.cpp : \
+	".\ColorPicker.h"\
+	".\ColorPopup.h"\
+	
+
+.\ColorPopup.cpp : \
+	".\ColorPicker.h"\
+	".\ColorPopup.h"\
+	
+
+.\DlgMarcSyntaxError.cpp : \
+	"..\..\..\..\include\ESL\mshflexgrid.h"\
+	".\DlgMarcSyntaxError.h"\
+	
+
+.\DlgSymbolColor.cpp : \
+	"..\..\..\..\include\ESL\Marc.h"\
+	"..\..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\..\include\ESL\Tag.h"\
+	".\ColorPicker.h"\
+	".\ColorPopup.h"\
+	".\DlgMarcSyntaxError.h"\
+	".\DlgSymbolColor.h"\
+	".\MarcEditCtrl.h"\
+	
+
+.\GridCombo.cpp : \
+	".\GridCombo.h"\
+	
+
+.\GridEdit.cpp : \
+	".\GridEdit.h"\
+	
+
+.\MarcEdit.rc : \
+	".\res\MarcEdit.rc2"\
+	
+
+.\MarcEditCtrl.cpp : \
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\..\include\esl\db_struct.h"\
+	"..\..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\..\include\ESL\Except.h"\
+	"..\..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\..\include\ESL\Marc.h"\
+	"..\..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\..\include\esl\mysql.h"\
+	"..\..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\..\include\esl\oci_api.h"\
+	"..\..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\..\include\ESL\Tag.h"\
+	"..\..\..\관리\전거\ACMarcGetter\ACMARCGetterDlg.h"\
+	"..\..\ESL\ESLDlg_Confirm.h"\
+	"..\..\ESL\ESLDlg_Work.h"\
+	".\ColorPicker.h"\
+	".\ColorPopup.h"\
+	".\DlgMarcSyntaxError.h"\
+	".\DlgSymbolColor.h"\
+	".\GridCombo.h"\
+	".\GridEdit.h"\
+	".\MarcEditCtrl.h"\
+	".\MarcEditor.h"\
+	".\MarcGridCtrl.h"\
+	
+
+.\MarcEditor.cpp : \
+	"..\..\..\..\include\ESL\Marc.h"\
+	"..\..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\..\include\ESL\Tag.h"\
+	".\DlgMarcSyntaxError.h"\
+	".\GridCombo.h"\
+	".\GridEdit.h"\
+	".\MarcEditCtrl.h"\
+	".\MarcEditor.h"\
+	".\MarcGridCtrl.h"\
+	
+
+.\MarcGridCtrl.cpp : \
+	"..\..\..\..\include\ESL\Marc.h"\
+	"..\..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\..\include\ESL\Tag.h"\
+	".\DlgMarcSyntaxError.h"\
+	".\GridCombo.h"\
+	".\GridEdit.h"\
+	".\MarcEditCtrl.h"\
+	".\MarcEditor.h"\
+	".\MarcGridCtrl.h"\
+	
+
+.\mshflexgrid.cpp : \
+	"..\..\..\..\include\ESL\font.h"\
+	"..\..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\..\include\ESL\picture.h"\
+	"..\..\..\..\include\ESL\recordset.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	

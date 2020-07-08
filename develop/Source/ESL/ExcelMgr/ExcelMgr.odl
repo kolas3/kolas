@@ -1,0 +1,44 @@
+// ExcelMgr.odl : type library source for ExcelMgr.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (ExcelMgr.tlb).
+
+[ uuid(5E732707-1C75-4F50-9065-881425293819), version(1.0) ]
+library ExcelMgr
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CExportToExcel
+	
+	[ uuid(3BEF26D9-5712-4CF9-9E2C-2F2CFAEED52B) ]
+	dispinterface IExportToExcel
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CExportToExcel)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CExportToExcel)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CExportToExcel
+
+	[ uuid(BD8DCBF3-1E07-4E65-8F92-937A4BA722BC) ]
+	coclass ExportToExcel
+	{
+		[default] dispinterface IExportToExcel;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

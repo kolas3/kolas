@@ -1,0 +1,7 @@
+; ERROR_ADJUST_MGR.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ERROR_ADJUST_MGR"
+DESCRIPTION  'ERROR_ADJUST_MGR Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

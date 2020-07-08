@@ -1,0 +1,124 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by SE_API.rc
+//
+#define IDC_gridCHK_BOOK_INFO           1016
+#define IDC_btnBUDGET_CANCEL            9219
+#define IDC_btnBUDGET_EXECUTION         9220
+#define IDC_gridDUP                     12011
+#define IDD_CHECKIN_RECEIPT             9547
+#define IDD_CHECKIN_NEW_RECEIPT         9548
+#define IDC_btnRECEIPT_INSERT           15025
+#define IDC_btnRECEIPT_DELETE           15026
+#define IDC_edtRECEIPT_ACQ_TYPE         15027
+#define IDC_edtRECEIPT_ACQ_YEAR         15028
+#define IDC_btnRECEIPT_SEARCH           15029
+#define IDC_edtCHECKIN_NEW_RECEIPT      15033
+#define IDC_stcCHECKIN_NEW_RECEIPT      15034
+#define IDC_gridFILE_ERR                19000
+#define IDC_gridFILE_OK                 19001
+#define IDC_MSHFLEXGRID_OK2             19002
+#define IDC_gridBUDGET_MGR              19003
+#define IDC_gridFILE_SUCCESS            19004
+#define IDC_gridAPI_SPECIES_DELETE      19004
+#define IDC_gridDUPLICATE_TITLE         23001
+#define IDC_gridCHECKIN_RECEIPT         23002
+#define IDD_DUPLICATED_VOL              9549
+#define IDC_btnDUP_NEWVOL               26000
+#define IDC_edtDUP_VOL_TITLE            26001
+#define IDC_stcDUP_INSPECT_RESULT       26002
+#define IDD_APPENDIX_EXP                9550
+#define IDD_BUDGET_MGR                  9551
+#define IDC_btnAPPENDIX_EXP             26004
+#define IDD_SE_MEMO                     9552
+#define IDC_edtAPPENDIX_EXP_VOL_TITLE   26005
+#define IDD_SE_MARC_IMPORT              9553
+#define IDC_stcAPPENDIX_EXP_RESULT      26006
+#define IDC_gridAPPENDIX_EXP_RESULT     26007
+#define IDD_SE_MARC_IMPORT_MARC_VIEWER  9554
+#define IDC_btnMEMO_PREV                26008
+#define IDD_FILE_IMPORT                 9555
+#define IDC_btnMEMO_NEXT                26009
+#define IDC_richeditSE_MEMO             26010
+#define IDD_FILE_IMPORT_MARC_EDIT       9556
+#define IDC_edtMARC_IMPORT_TITLE        26011
+#define IDD_PURCHASE_NO_MGR             9557
+#define IDC_edtMARC_IMPORT_KEYWORD      26012
+#define IDC_edtMARC_IMPORT_CLASS_TYPE1  26013
+#define IDD_PURCHASE_NO_MGR_INSERT      9558
+#define IDC_edtMARC_IMPORT_CLASS_TYPE2  26014
+#define IDD_DUPLICATE_TITLE             9559
+#define IDC_edtMARC_IMPORT_ISSN1        26015
+#define IDC_edtMARC_IMPORT_ISSN2        26016
+#define IDD_CHECKIN_RECEIPT_BOOK_INFO   9560
+#define IDC_cmbMARC_IMPORT_CLASS_TYPE   26017
+#define IDC_cmbMARC_IMPORT_PUB_FREQ     26018
+#define IDD_SPECIES_DELETE              9561
+#define IDC_cmbMARC_IMPORT_MEDIA_CODE   26019
+#define IDC_btnMARC_IMPORT_SEARCH       26020
+#define IDC_btnMARC_IMPORT_CLEAR        26021
+#define IDC_btnMARC_IMPORT_MARC_VIEW    26022
+#define IDC_radMARC_IMPORT1             26023
+#define IDC_radMARC_IMPORT2             26024
+#define IDC_gridMARC_IMPORT             26025
+#define IDC_edtMARC_IMPORT_PUBLISHER    26026
+#define IDC_richeditMARC_IMPORT_MARC_VIEWER 26027
+#define IDC_radFILE_TYPE1               26028
+#define IDC_radFILE_TYPE2               26029
+#define IDC_btnFILE_OPEN                26030
+#define IDC_edtFILE_NAME                26031
+#define IDC_btnFILE_MARC                26032
+#define IDC_btnFILE_EXPORT              26033
+#define IDC_edtFILE_ORDER_YEAR          26034
+#define IDC_cmbFILE_ORDER_NO            26035
+#define IDC_cmbFILE_WORK_NO             26036
+#define IDC_btnFILE_ORDER               26037
+#define IDC_cmbFILE_CONTROL_MAT_CODE    26038
+#define IDC_cmbFILE_REG_CODE            26039
+#define IDC_cmbFILE_CLASS_NO_TYPE       26040
+#define IDC_cmbFILE_FORM_CODE           26041
+#define IDC_cmbFILE_MEDIA_CODE          26042
+#define IDC_cmbFILE_SUB_REG_CODE        26043
+#define IDC_cmbFILE_USE_OBJ_CODE        26044
+#define IDC_cmbFILE_MAT_CODE            26045
+#define IDC_cmbFILE_MANAGE_CODE         26046
+#define IDC_cmbFILE_USE_LIMIT_CODE      26047
+#define IDC_tabFILE_IMPORT              26048
+#define IDC_richeditFILE_MARC           26049
+#define IDC_btnFILE_MARC_PREV           26050
+#define IDC_btnFILE_MARC_NEXT           26051
+#define IDC_cmbFILE_PROVIDER_CODE       26052
+#define IDC_btnPUR_NO_MGR_INSERT        26053
+#define IDC_btnPUR_NO_MGR_DELETE        26054
+#define IDC_edtPUR_NO_MGR_YEAR          26055
+#define IDC_cmbPUR_NO_MGR_STATUS        26056
+#define IDC_btnPUR_NO_MGR_SEARCH        26057
+#define IDC_gridPUR_NO_MGR              26058
+#define IDC_edtPUR_NO_INSERT_YEAR       26059
+#define IDC_edtPUR_NO_INSERT_SEQ_NO     26060
+#define IDC_edtPUR_NO_INSERT_STATUS     26061
+#define IDC_edtPUR_NO_INSERT_CREATE_DATE 26062
+#define IDC_edtPUR_NO_INSERT_WORKER     26063
+#define IDC_edtPUR_NO_INSERT_WORK_NO    26064
+#define IDC_chkPUR_NO_INSERT_USE_WORKNO 26065
+#define IDC_edtFILE_ORDER_NO            26066
+#define IDC_edtFILE_ACQ_BOOK_CNT        26067
+#define IDC_stcDUPLICATE_TITLE          26068
+#define IDC_edtDUPLICATE_TITLE          26069
+#define IDC_edtCHK_BOOK_ACQCODE         26070
+#define IDC_edtCHK_BOOK_ACQYEAR         26071
+#define IDC_edtCHK_BOOK_RECEIPT_NO      26072
+#define IDC_btnRECEIPT_BOOK_INFO        26073
+#define IDC_edtCHK_BOOK_COUNT           26074
+#define IDC_btnPRINT                    26091
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        26023
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         26092
+#define _APS_NEXT_SYMED_VALUE           26004
+#endif
+#endif

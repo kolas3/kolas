@@ -1,0 +1,7 @@
+; BO_LOC_3000.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_LOC_3000"
+DESCRIPTION  'BO_LOC_3000 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,12 @@
+; BO_STATISTICS_1200.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_STATISTICS_1200"
+DESCRIPTION  'BO_STATISTICS_1200 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

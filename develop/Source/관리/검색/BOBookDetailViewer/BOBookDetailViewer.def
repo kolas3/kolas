@@ -1,0 +1,7 @@
+; BOBookDetailViewer.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BOBookDetailViewer"
+DESCRIPTION  'BOBookDetailViewer Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

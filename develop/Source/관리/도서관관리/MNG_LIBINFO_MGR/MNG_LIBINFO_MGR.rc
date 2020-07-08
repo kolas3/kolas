@@ -1,0 +1,277 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MNG_LIBINFO_MGR.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,19,20
+ PRODUCTVERSION 2005,8,19,20
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "MNG_LIBINFO_MGR DLL\0"
+            VALUE "FileVersion", "2005, 08, 19, 20\0"
+            VALUE "InternalName", "MNG_LIBINFO_MGR\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MNG_LIBINFO_MGR.DLL\0"
+            VALUE "ProductName", "MNG_LIBINFO_MGR 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 19, 20\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MNG_LIBINFO_MGR_1000 DIALOG DISCARDABLE  0, 0, 425, 361
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_mngGRID_1,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,7,43,411,244
+    COMBOBOX        IDC_cMANAGE_CODE,3,2,97,107,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_MNG_LIBINFO_MGR_2000 DIALOG DISCARDABLE  0, 0, 234, 219
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "입력"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_eLIB_NAME,85,29,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_DIRECTOR_NAME,85,48,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_ZIP_CODE,85,67,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_ADDRESS,85,86,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_TEL,85,105,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_FAX,85,124,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_URL,85,143,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_EMAIL,85,162,132,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "저장",IDOK,60,191,50,14
+    GROUPBOX        "",IDC_STATIC,7,181,220,30
+    PUSHBUTTON      "취소",IDCANCEL,123,191,50,14
+    GROUPBOX        "",IDC_STATIC,6,2,221,179
+    LTEXT           "도서관이름 :",IDC_STATIC,14,29,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관장 이름 :",IDC_STATIC,14,48,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관우편번호:",IDC_STATIC,14,67,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관주소:",IDC_STATIC,14,86,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관전화번호:",IDC_STATIC,14,105,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관팩스:",IDC_STATIC,14,124,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관홈페이지:",IDC_STATIC,14,143,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관대표EMAIL:",IDC_STATIC,14,162,66,14,SS_CENTERIMAGE
+    COMBOBOX        IDC_cMANAGE_CODE,85,11,132,66,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "관리구분 :",IDC_STATIC,14,14,66,14
+END
+
+IDD_MNG_LIBINFO_MGR_3000 DIALOG DISCARDABLE  0, 0, 234, 243
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "수정"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cMANAGE_CODE,85,13,132,66,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_eLIB_NAME2,85,32,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_DIRECTOR_NAME2,85,51,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_CODE2,85,70,132,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_eLIB_ZIP_CODE2,85,89,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_ADDRESS2,85,108,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_TEL2,85,127,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_FAX2,85,146,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_URL2,85,165,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eLIB_EMAIL2,85,184,132,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "<< 이전",IDC_bPREV,15,217,36,14
+    DEFPUSHBUTTON   "다음 >>",IDC_bNEXT,58,217,36,14
+    DEFPUSHBUTTON   "저장",IDOK,120,217,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,174,217,50,14
+    GROUPBOX        "",IDC_STATIC,6,2,221,204
+    LTEXT           "관리구분 :",IDC_STATIC,14,16,66,14
+    LTEXT           "도서관이름 :",IDC_STATIC,14,32,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관장 이름 :",IDC_STATIC,14,51,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관부호 :",IDC_STATIC,14,70,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관우편번호:",IDC_STATIC,14,89,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관주소:",IDC_STATIC,14,108,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관전화번호:",IDC_STATIC,14,127,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관팩스:",IDC_STATIC,14,146,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관홈페이지:",IDC_STATIC,14,165,66,14,SS_CENTERIMAGE
+    LTEXT           "도서관대표EMAIL:",IDC_STATIC,14,184,66,14,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,7,206,220,30
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MNG_LIBINFO_MGR_1000 DLGINIT
+BEGIN
+    IDC_mngGRID_1, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4a50, 0x0000, 0x25d4, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xbb06, 0xb1f5, 0xb8bc, 0x00b2, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MNG_LIBINFO_MGR_1000, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 418
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 354
+    END
+
+    IDD_MNG_LIBINFO_MGR_2000, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 212
+    END
+
+    IDD_MNG_LIBINFO_MGR_3000, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 236
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MNG_LIBINFO_MGR.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

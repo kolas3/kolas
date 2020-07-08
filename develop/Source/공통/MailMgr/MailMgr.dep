@@ -1,0 +1,52 @@
+# Microsoft Developer Studio Generated Dependency File, included by MailMgr.mak
+
+.\Base64.cpp : \
+	".\Base64.h"\
+	".\StdAfx.h"\
+	
+
+.\HtmlCtrl.cpp : \
+	".\HtmlCtrl.h"\
+	
+
+.\MailMgr.rc : \
+	".\res\MailMgr.rc2"\
+	
+
+.\RegKey.cpp : \
+	".\RegKey.h"\
+	
+
+.\RotatingLog.cpp : \
+	".\RotatingLog.h"\
+	
+
+.\SelectMailServer.cpp : \
+	".\RegKey.h"\
+	".\SelectMailServer.h"\
+	
+
+.\SendMailMgr.cpp : \
+	".\Base64.h"\
+	".\HtmlCtrl.h"\
+	".\RegKey.h"\
+	".\RotatingLog.h"\
+	".\SelectMailServer.h"\
+	".\SendMailMgr.h"\
+	".\Smtp.h"\
+	".\xySplitterWnd.h"\
+	
+
+.\Smtp.cpp : \
+	".\Base64.h"\
+	".\RotatingLog.h"\
+	".\Smtp.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	
+
+.\xySplitterWnd.cpp : \
+	".\xySplitterWnd.h"\
+	

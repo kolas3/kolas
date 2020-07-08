@@ -1,0 +1,7 @@
+; REG_NO_CHANGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "REG_NO_CHANGER"
+DESCRIPTION  'REG_NO_CHANGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

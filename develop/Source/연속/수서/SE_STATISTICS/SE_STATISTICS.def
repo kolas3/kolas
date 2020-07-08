@@ -1,0 +1,11 @@
+; SE_STATISTICS.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_STATISTICS"
+DESCRIPTION  'SE_STATISTICS Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

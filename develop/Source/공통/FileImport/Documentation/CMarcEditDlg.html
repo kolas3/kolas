@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CMarcEditDlg</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file C:\Kolas2UP\Develop\Source\공통\FileImport\MarcEditDlg.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CMarcEditDlg</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>파일 반입에서 마크를 편집해서 오류를 수정하는 다이얼로그 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCESL_Mgr,M,CCMarcEditDlg,MCMarcEditDlg.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CMarcEditDlg</B> (CESL_Mgr* pParent = NULL)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>Create</B> (CWnd* pParentWnd)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>Display</B> ()<BR>
+<I>마크 편집화면을 보여준다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>Init</B> ()<BR>
+<I>Init</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Set/Get ShowErrorDlg : TRUE 보여준다. FALSE : 숨긴다.</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>SetParentInfo</B> (CESL_DataMgr* pDM_Parent, CESL_Grid* pGrid_Parent, CString strMarcFieldAlias, CString strMarcErrorFieldAlias = "")<BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Members</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>enum </TD><TD><B></B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DECLARE_MESSAGE_MAP</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>m_bShowErrorDlg</B> <BR>
+<I>에러 보여주기/숨기기</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CMarc </TD><TD><B>m_marc</B> <BR>
+<I>Marc</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="CMarcEditor.html">CMarcEditor</A> </TD><TD><B>m_marcEditor</B> <BR>
+<I>Marc Editor</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>수정을 위한 부모 연결</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void </TD><TD><B>DoDataExchange</B> (CDataExchange* pDX)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   BOOL </TD><TD><B>OnInitDialog</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnbAPPLYMARC</B> ()<BR>
+<I>편집한 마크를 적용시킨다.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnbNEXT</B> ()<BR>
+<I>다음 자료의 마크 편집을 한다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.85.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnbPREV</B> ()<BR>
+<I>이전 자료의 마크 편집을 한다</I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+파일 반입에서 마크를 편집해서 오류를 수정하는 다이얼로그
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CMarcEditDlg"></A>
+<A NAME="DOC.85.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CMarcEditDlg(CESL_Mgr* pParent = NULL)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="Create"></A>
+<A NAME="DOC.85.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL Create(CWnd* pParentWnd)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="Set/Get ShowErrorDlg : TRUE 보여준다. FALSE : 숨긴다."></A>
+<A NAME="DOC.85.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Set/Get ShowErrorDlg : TRUE 보여준다. FALSE : 숨긴다.</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="SetShowErrorDlg"></A>
+<A NAME="DOC.85.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetShowErrorDlg(BOOL bShowErrorDlg)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetShowErrorDlg"></A>
+<A NAME="DOC.85.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL GetShowErrorDlg() const </B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="m_bShowErrorDlg"></A>
+<A NAME="DOC.85.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_bShowErrorDlg</B></TT>
+<DD>에러 보여주기/숨기기
+<DL><DT><DD></DL><P>
+<A NAME="m_marcEditor"></A>
+<A NAME="DOC.85.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CMarcEditor.html">CMarcEditor</A> m_marcEditor</B></TT>
+<DD>Marc Editor
+<DL><DT><DD></DL><P>
+<A NAME="m_marc"></A>
+<A NAME="DOC.85.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CMarc m_marc</B></TT>
+<DD>Marc
+<DL><DT><DD></DL><P>
+<A NAME="수정을 위한 부모 연결"></A>
+<A NAME="DOC.85.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 수정을 위한 부모 연결</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_pDM_Parent"></A>
+<A NAME="DOC.85.7.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_DataMgr* m_pDM_Parent</B></TT>
+<DD>부모의 DM 포인터
+<DL><DT><DD></DL><P>
+<A NAME="m_pGrid_Parent"></A>
+<A NAME="DOC.85.7.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_Grid* m_pGrid_Parent</B></TT>
+<DD>부모의 GRID 포인터
+<DL><DT><DD></DL><P>
+<A NAME="m_strMarcFieldAlias"></A>
+<A NAME="DOC.85.7.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strMarcFieldAlias</B></TT>
+<DD>부모 DM의 Marc Alias
+<DL><DT><DD></DL><P>
+<A NAME="m_strMarcErrorFieldAlias"></A>
+<A NAME="DOC.85.7.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strMarcErrorFieldAlias</B></TT>
+<DD>무모 DM의 Marc Error Check Alias 
+<DL><DT><DD></DL><P>
+<A NAME="m_nParentSelectedDMIdx"></A>
+<A NAME="DOC.85.7.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nParentSelectedDMIdx</B></TT>
+<DD>부모 DM의 선택된 로우
+<DL><DT><DD></DL><P></DL>
+
+<A NAME=""></A>
+<A NAME="DOC.85.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>enum </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="IDD"></A>
+<A NAME="DOC.85.8.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> IDD</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="DoDataExchange"></A>
+<A NAME="DOC.85.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void DoDataExchange(CDataExchange* pDX)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="Init"></A>
+<A NAME="DOC.85.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT Init()</B></TT>
+<DD>Init
+<DL><DT><DD></DL><P>
+<A NAME="SetParentInfo"></A>
+<A NAME="DOC.85.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetParentInfo(CESL_DataMgr* pDM_Parent, CESL_Grid* pGrid_Parent, CString strMarcFieldAlias, CString strMarcErrorFieldAlias = "")</B></TT>
+<DD>
+부모정보 세팅
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - *pDM_Parent		       부모 DM Pointer
+<BR><B></B> - *pGrid_Parent		   부모 Grid Pointer
+<BR><B>strMarcFieldAlias</B> - 	   DM의 MarcStream이 있는 Field Alias
+<BR><B>strMarcErrorFieldAlias</B> -  DM의 MarcError가 있는 Field Alias<BR><DD></DL><P>
+<A NAME="Display"></A>
+<A NAME="DOC.85.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT Display()</B></TT>
+<DD>마크 편집화면을 보여준다
+<DL><DT><DD></DL><P>
+<A NAME="OnInitDialog"></A>
+<A NAME="DOC.85.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   BOOL OnInitDialog()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnbPREV"></A>
+<A NAME="DOC.85.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbPREV()</B></TT>
+<DD>이전 자료의 마크 편집을 한다
+<DL><DT><DD></DL><P>
+<A NAME="OnbNEXT"></A>
+<A NAME="DOC.85.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbNEXT()</B></TT>
+<DD>다음 자료의 마크 편집을 한다
+<DL><DT><DD></DL><P>
+<A NAME="OnbAPPLYMARC"></A>
+<A NAME="DOC.85.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbAPPLYMARC()</B></TT>
+<DD>편집한 마크를 적용시킨다. 문법 오류가 없으면 오류필드의 데이터를 지운다.
+<DL><DT><DD></DL><P>
+<A NAME="DECLARE_MESSAGE_MAP"></A>
+<A NAME="DOC.85.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DECLARE_MESSAGE_MAP()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>이종은
+
+<DT><B>Since:</B><DD>2003-04-10 오후 5:34:01
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

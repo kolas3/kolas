@@ -1,0 +1,96 @@
+BODY {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+P {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+H1 {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+H2 {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+H3 {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+H4 {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+H5 {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+H6 {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+CENTER {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+TD {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+TH {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+UL {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+DL {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+DIV {
+	FONT-FAMILY: arial,helvetica,sans-serif
+}
+BODY {
+	BACKGROUND: white; COLOR: black
+}
+DIV.kopfzeile {
+	FONT-SIZE: small; TEXT-ALIGN: center
+}
+H1 {
+	COLOR: navy
+}
+H2 {
+	COLOR: navy
+}
+H3 {
+	COLOR: navy
+}
+H1 {
+	FONT-SIZE: x-large
+}
+H2 {
+	FONT-SIZE: large
+}
+SPAN.filename {
+	FONT-FAMILY: monospace
+}
+SPAN.class {
+	FONT-FAMILY: monospace
+}
+SPAN.aclass {
+	FONT-FAMILY: monospace
+}
+SPAN.code {
+	FONT-FAMILY: monospace
+}
+SPAN.aclass {
+	FONT-STYLE: italic
+}
+DIV.important {
+	BORDER-RIGHT: black thin solid; BORDER-TOP: black thin solid; BORDER-LEFT: black thin solid; BORDER-BOTTOM: black thin solid
+}
+SPAN.math {
+	COLOR: gray
+}
+PRE {
+	FONT-FAMILY: monospace; WHITE-SPACE: pre
+}
+PRE.code {
+	BORDER-TOP-WIDTH: thin; PADDING-RIGHT: 1em; PADDING-LEFT: 1em; BORDER-LEFT-WIDTH: thin; BACKGROUND: #eeeeee; BORDER-BOTTOM-WIDTH: thin; PADDING-BOTTOM: 1em; PADDING-TOP: 1em; WHITE-SPACE: pre; BORDER-RIGHT-WIDTH: thin
+}
+PRE.output {
+	BORDER-TOP-WIDTH: thin; PADDING-RIGHT: 1em; PADDING-LEFT: 1em; BORDER-LEFT-WIDTH: thin; BACKGROUND: #eeeeee; BORDER-BOTTOM-WIDTH: thin; PADDING-BOTTOM: 1em; PADDING-TOP: 1em; WHITE-SPACE: pre; BORDER-RIGHT-WIDTH: thin
+}
+PRE.math {
+	COLOR: gray; WHITE-SPACE: nowrap; TEXT-ALIGN: center
+}

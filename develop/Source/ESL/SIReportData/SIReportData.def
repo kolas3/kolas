@@ -1,0 +1,7 @@
+; SIReportData.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SIReportData"
+DESCRIPTION  'SIReportData Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

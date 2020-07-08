@@ -1,0 +1,285 @@
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=D:\Kolas2up_uni\bin\Kalendar.exe)(HOST=CJY)(USER=cjy))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 28-FEB-2008 09:14:44
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ù
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ùÀÔ´Ï´Ù
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=D:\Kolas2up_uni\bin\Kalendar.exe)(HOST=CJY)(USER=cjy))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 28-FEB-2008 09:14:44
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ù
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ùÀÔ´Ï´Ù
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=D:\Kolas2up_uni\bin\Kalendar.exe)(HOST=CJY)(USER=cjy))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 28-FEB-2008 09:14:48
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ù
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ùÀÔ´Ï´Ù
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=D:\Kolas2up_uni\bin\Kalendar.exe)(HOST=CJY)(USER=cjy))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 28-FEB-2008 09:14:53
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ù
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ùÀÔ´Ï´Ù
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=D:\Kolas2up_uni\bin\Kalendar.exe)(HOST=CJY)(USER=cjy))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 28-FEB-2008 09:15:13
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ù
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ùÀÔ´Ï´Ù
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=D:\Kolas2up_uni\bin\Kalendar.exe)(HOST=CJY)(USER=cjy))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 28-FEB-2008 09:15:19
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ù
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ùÀÔ´Ï´Ù
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=D:\Kolas2up_uni\bin\Kalendar.exe)(HOST=CJY)(USER=cjy))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 02-MAR-2008 18:17:22
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ù
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ùÀÔ´Ï´Ù
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=D:\Kolas2up_uni\bin\Kalendar.exe)(HOST=CJY)(USER=cjy))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 02-MAR-2008 18:17:26
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ù
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ùÀÔ´Ï´Ù
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=G:\kolas3\bin\Kalendar.exe)(HOST=PDJ)(USER=ParkDJ))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 17-MAR-2008 02:14:27
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:í”„ë¡œí† ì½œ ì–´ëŒ‘í„° ì˜¤ë¥˜
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: í”„ë¡œí† ì½œ ì–´ëŒ‘í„° ì˜¤ë¥˜ìž…ë‹ˆë‹¤
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=211.185.62.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=KOLAS3)(CID=(PROGRAM=G:\kolas3\bin\Kalendar.exe)(HOST=PDJ)(USER=ParkDJ))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 17-MAR-2008 02:15:46
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:í”„ë¡œí† ì½œ ì–´ëŒ‘í„° ì˜¤ë¥˜
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NETWORK; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=211.185.62.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=KOLAS3)(CID=(PROGRAM=G:\kolas3\bin\Kalendar.exe)(HOST=PDJ)(USER=ParkDJ))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 17-MAR-2008 02:15:48
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:í”„ë¡œí† ì½œ ì–´ëŒ‘í„° ì˜¤ë¥˜
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NETWORK; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=211.185.62.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=KOLAS3)(CID=(PROGRAM=G:\kolas3\bin\Kalendar.exe)(HOST=PDJ)(USER=ParkDJ))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 17-MAR-2008 02:22:28
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:í”„ë¡œí† ì½œ ì–´ëŒ‘í„° ì˜¤ë¥˜
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NETWORK; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=211.185.62.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=KOLAS3)(CID=(PROGRAM=G:\kolas3\bin\Kalendar.exe)(HOST=PDJ)(USER=ParkDJ))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 17-MAR-2008 02:24:24
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:í”„ë¡œí† ì½œ ì–´ëŒ‘í„° ì˜¤ë¥˜
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NETWORK; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=211.185.62.25)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=KOLAS3)(CID=(PROGRAM=G:\kolas3\bin\Kalendar.exe)(HOST=PDJ)(USER=ParkDJ))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 17-MAR-2008 02:24:49
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:í”„ë¡œí† ì½œ ì–´ëŒ‘í„° ì˜¤ë¥˜
+    ns secondary err code: 0
+    nt main err code: 538
+    TNS-00538: Message 538 not found;  product=NETWORK; facility=TNS
+
+    nt secondary err code: 65
+    nt OS err code: 0

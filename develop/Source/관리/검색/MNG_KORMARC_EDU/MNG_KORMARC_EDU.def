@@ -1,0 +1,11 @@
+; MNG_KORMARC_EDU.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_KORMARC_EDU"
+DESCRIPTION  'MNG_KORMARC_EDU Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

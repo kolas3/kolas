@@ -1,0 +1,6 @@
+# Microsoft Developer Studio Generated Dependency File, included by BO_CAT_PROC.mak
+
+.\BO_CAT_PROC.rc : \
+	".\cursor1.cur"\
+	".\res\BO_CAT_PROC.rc2"\
+	

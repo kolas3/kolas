@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  CDuplicateSearchField</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file D:\KOLAS2UP\Develop\Source\공통\Duplicate_Data_Search\DuplicateSearchField.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  <A HREF="#DOC.DOCU">CDuplicateSearchField</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>키 설정 필드들의 속성과 관련 메소드를 정의 한다. </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=35>
+<param name=classes value="CCDuplicateSearchField,MCDuplicateSearchField.html">
+<param name=before value="M">
+<param name=after value="M">
+<param name=indent value="0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.148.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>멤버변수 Get/Set 메소드</B> <BR>
+<I>해당 필드의 사용여부를 설정하거나 추출한다.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.148.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>생성자/소멸자</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.148.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>멤버변수 </B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+CDuplicateSearchField 클래스는 kolas2up light버전의 구입 및 주문자료 입력 및 자료들에 대하여
+중복 및 복본조사를 수행하기 위한 키 설정 필드들의 속성과 관련 메소드를 정의 한다.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="멤버변수 "></A>
+<A NAME="DOC.148.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 멤버변수 </B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_UseYN"></A>
+<A NAME="DOC.148.1.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_UseYN</B></TT>
+<DD>해당 필드의 사용여부를 나타냄 TRUE:사용함, FALSE:사용하지 않음
+<DL><DT><DD></DL><P>
+<A NAME="m_ArticleSearchYN"></A>
+<A NAME="DOC.148.1.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_ArticleSearchYN</B></TT>
+<DD>본표제 전단어검색시 관칭을 포함/불포함하여 두번검색
+<DL><DT><DD></DL><P>
+<A NAME="해당 필드의 사용시 검색타입을 나타냄 0:(전단어검색)우절단, 1:(전단어검색)일치,"></A>
+<A NAME="DOC.148.1.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 해당 필드의 사용시 검색타입을 나타냄 0:(전단어검색)우절단, 1:(전단어검색)일치,</B></TT>
+<DD>해당 필드의 사용시 검색타입을 나타냄 0:(전단어검색)우절단, 1:(전단어검색)일치,
+<DL><DT><DD></DL><P>
+<A NAME="m_SearchType"></A>
+<A NAME="DOC.148.1.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_SearchType</B></TT>
+<DD>2:(본표제항목)절취검색
+<DL><DT><DD></DL><P>
+<A NAME="m_CMAlias"></A>
+<A NAME="DOC.148.1.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_CMAlias</B></TT>
+<DD>해당 필드의 CM알리아스
+<DL><DT><DD></DL><P>
+<A NAME="m_DMAlias"></A>
+<A NAME="DOC.148.1.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_DMAlias</B></TT>
+<DD>해당 필드의 DM알리아스
+<DL><DT><DD></DL><P>
+<A NAME="m_ColumnName"></A>
+<A NAME="DOC.148.1.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_ColumnName</B></TT>
+<DD>해당 필드의 DB 컬럼명
+<DL><DT><DD></DL><P>
+<A NAME="m_SearchPlace"></A>
+<A NAME="DOC.148.1.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_SearchPlace</B></TT>
+<DD>해당 필드를 검색할 테이블 명
+<DL><DT><DD></DL><P>
+<A NAME="m_KeyName"></A>
+<A NAME="DOC.148.1.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_KeyName</B></TT>
+<DD>해당 필드의 KEY이름
+<DL><DT><DD></DL><P>
+<A NAME="m_AttrAliases"></A>
+<A NAME="DOC.148.1.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_AttrAliases[8]</B></TT>
+<DD>해당필드의 검색속성 알리아스
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="생성자/소멸자"></A>
+<A NAME="DOC.148.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 생성자/소멸자</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CDuplicateSearchField"></A>
+<A NAME="DOC.148.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CDuplicateSearchField()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="~CDuplicateSearchField"></A>
+<A NAME="DOC.148.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CDuplicateSearchField()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="멤버변수 Get/Set 메소드"></A>
+<A NAME="DOC.148.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 멤버변수 Get/Set 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="SetUseYN"></A>
+<A NAME="DOC.148.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetUseYN(BOOL useYN)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetArticleSearchYN"></A>
+<A NAME="DOC.148.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetArticleSearchYN(BOOL articleSearchYN)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetSearchType"></A>
+<A NAME="DOC.148.3.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetSearchType(INT searchType)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetCMAlias"></A>
+<A NAME="DOC.148.3.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetCMAlias(CString cmalias)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetDMAlias"></A>
+<A NAME="DOC.148.3.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetDMAlias(CString dmalias)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetColumnName"></A>
+<A NAME="DOC.148.3.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetColumnName(CString columnname)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetSearchPlace"></A>
+<A NAME="DOC.148.3.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetSearchPlace(CString searchPlace)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetKeyName"></A>
+<A NAME="DOC.148.3.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetKeyName(CString keyname)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetUseYN"></A>
+<A NAME="DOC.148.3.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL GetUseYN()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetArticleSearchYN"></A>
+<A NAME="DOC.148.3.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL GetArticleSearchYN()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetSearchType"></A>
+<A NAME="DOC.148.3.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSearchType()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetCMAlias"></A>
+<A NAME="DOC.148.3.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetCMAlias()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetDMAlias"></A>
+<A NAME="DOC.148.3.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetDMAlias()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetColumnName"></A>
+<A NAME="DOC.148.3.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetColumnName()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetSearchPlace"></A>
+<A NAME="DOC.148.3.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetSearchPlace()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetKeyName"></A>
+<A NAME="DOC.148.3.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetKeyName()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetFieldDataString"></A>
+<A NAME="DOC.148.3.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetFieldDataString()</B></TT>
+<DD>각 Field Data를 통합한 String을 생성하여 반환한다
+<DL><DT><DD></DL><P>
+<A NAME="SetFieldDataString"></A>
+<A NAME="DOC.148.3.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetFieldDataString( CString strData )</B></TT>
+<DD>Field Data를 통합한 String을 받아서 각 Field에 해당 값을 설정한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>strData</B> -  [in] Field Data를 통합한 String<BR><DD></DL><P>
+<A NAME="SetDefaultValue"></A>
+<A NAME="DOC.148.3.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetDefaultValue( CString keyName,  CString searchPlace,  CString columnName,  CString DMAlias,  CString CMAlias,  INT searchType,  BOOL articleSearchYN,  BOOL useYN )</B></TT>
+<DD>각 필드들을 초기값으로 설정한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>keyName</B> -  [in] 키네임 기본값
+<BR><B>searchPlace</B> -  [in] 검색위치 기본값
+<BR><B>columnName</B> -  [in] 컬럼네임 기본값
+<BR><B>DMAlias</B> -  [in] DM알리아스 기본값
+<BR><B>CMAlias</B> -  [in] CM알리아스 기본값
+<BR><B>searchType</B> -  [in] 검색타입 기본값
+<BR><B>articleSearchYN</B> -  [in] 절취검색여부 기본값
+<BR><B>useYN</B> -  [in] 사용여부 기본값<BR><DD></DL><P>
+<A NAME="SetAliasAndValue"></A>
+<A NAME="DOC.148.3.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetAliasAndValue( CString alias,  CString value )</B></TT>
+<DD>해달 필드알리아스를 갖는 필드에 전달된 값을 저장한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>alias</B> -  [in] 설정할 필드의 알리아스
+<BR><B>value</B> -  [in] 설정할 값<BR><DD></DL><P></DL>
+</DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)
+
+<DT><B>Version:</B><DD>0.0.1
+
+<DT><B>Since:</B><DD>2002-11.14(ECO, kolas2up)
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearchKey.html">CDuplicateSearchKey</A>, <!1><A HREF="CDUP_KEY_SETTING.html">CDUP_KEY_SETTING</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

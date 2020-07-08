@@ -1,0 +1,137 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "BL_LOC_LOAN"="..\..\단행\열람\장서관리\BL_LOC_LOAN\BL_LOC_LOAN.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_API"=".\BO_ACQ_API.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_COMMON"="..\BO_ACQ_COMMON\BO_ACQ_COMMON.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_DONATE_DATA_MANAGER"="..\..\단행\수서\BO_ACQ_DONATE_DATA_MANAGER\BO_ACQ_DONATE_DATA_MANAGER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_PURCHASE_DATA_MANAGER"="..\..\단행\수서\BO_ACQ_PURCHASE_DATA_MANAGER\BO_ACQ_PURCHASE_DATA_MANAGER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_REQUEST_DATA_MANAGER"="..\..\단행\수서\BO_ACQ_REQUEST_DATA_MANAGER\BO_ACQ_REQUEST_DATA_MANAGER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_SPECIES_FORM"="..\BO_ACQ_SPECIES_FORM\BO_ACQ_SPECIES_FORM.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_SPECIES_API"="..\BO_SPECIES_API\BO_SPECIES_API.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_VOLUME_FORM"="..\BO_VOLUME_FORM\BO_VOLUME_FORM.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Duplicate_Data_Search"="..\Duplicate_Data_Search\Duplicate_Data_Search.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

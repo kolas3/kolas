@@ -1,0 +1,483 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CSendMailMgr</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.9">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file D:\KOLAS2UP\Develop\Source\공통\MailMgrTest\..\MailMgr\SendMailMgr.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CSendMailMgr</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE> Send Mail Manager Class 메일 매니저.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCDialog,M,CCSendMailMgr,MCSendMailMgr.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CListCtrl </TD><TD><B>m_ctrlMail</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sMailAddress</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sMailServer</B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>AddMailRecord 메일 레코드를 추가 </B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Constructor / Destructor </B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>GetCountMailSended / GetCountMailFailed 메일 전송여부 확인 </B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>GetMailSever / GetMailSendAddress 보내는 메일 서버, 메일계정 가져오기 </B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Log file path 가져오기 </B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SendMail 메일 보내기 </B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Members</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>enum </TD><TD><B></B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.37"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DECLARE_MESSAGE_MAP</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.24"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CHtmlCtrl </TD><TD><B>m_Html</B> <BR>
+<I>HTML View Control</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="_SYSTEM_OS.html">_SYSTEM_OS</A> </TD><TD><B>m_SystemOS</B> <BR>
+<I>System OS Version </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.27"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>m_nCntFailed</B> <BR>
+<I>전송실패한 메일 개수</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.26"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>m_nCntSended</B> <BR>
+<I>보내진 메일 개수</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.21"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>m_nRecordCount</B> <BR>
+<I>메일 레코드 개수</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.22"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>m_nRecordIndex</B> <BR>
+<I>메일 레코드 인덱스</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.23"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="SendMailRecord.html">SendMailRecord</A>* </TD><TD><B>m_pRecord</B> <BR>
+<I>메일 레코드 array</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.20"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sDefaultMailAddress</B> <BR>
+<I>Default Mail Account</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.19"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sDefaultMailServer</B> <BR>
+<I>Default Mail Server</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.28"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sLogFilepath</B> <BR>
+<I>Log File path</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.18"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sMailAccountPath</B> <BR>
+<I>Registry의 mail account path - OS version에 따라 다르다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.25"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CySplitterWnd </TD><TD><B>m_ySplitter</B> <BR>
+<I>Window Splitter</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>VOID </TD><TD><B>ButtonStatus</B> ()<BR>
+<I>메일 레코드의 개수(m_nRecordCount)에 따라 버튼을 Enable/Disable함</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>VOID </TD><TD><B>CutNameAndAddress</B> (CString sCutObject,  CString&amp; sName,  CString&amp; sAddress )<BR>
+<I> "이름" <주소> 형식의 문자열(sCutObject)에서 이름(sName)과 주소(sAddress)를 떼어 가져옴.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>VOID </TD><TD><B>DisplayMailBody</B> (INT nIndex)<BR>
+<I> List control에서 선택된 메일의 내용(body)를 HTML control에 보여줌.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>VOID </TD><TD><B>DisplaySendMailRecord</B> ()<BR>
+<I>메일 레코드를 List control에 추가하여 보여줌</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void </TD><TD><B>DoDataExchange</B> (CDataExchange* pDX)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.33"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void </TD><TD><B>OnCancel</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.30"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnClicklMAIL</B> (NMHDR* pNMHDR, LRESULT* pResult)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.34"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnDestroy</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.29"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   BOOL </TD><TD><B>OnInitDialog</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.32"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void </TD><TD><B>OnOK</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.35"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnShowWindow</B> (BOOL bShow, UINT nStatus)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.36"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg LONG </TD><TD><B>OnWmSplitterMoved</B> (UINT wParam, LONG lParam)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.31"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnbSELECTSMTPSERVER</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.36.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Registry and System 정보 가져오기 </B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Send Mail Manager Class 메일 매니저.
+<br>1. Registry에서 시스템에 설정된 메일 서버와 이메일 주소를 가져옴.(GetDefaultMailServerInfo)
+<br>1. 또는 메일 서버와 이메일 주소를 직접 설정.(SetDefaultMailServer)
+<br>2. 보낼 메일 레코드를 추가.(AddMailRecord)
+<br>3. Dialog List Control에서 선택된(checked) 메일 전송.( SendMail(TRUE,TRUE) )
+<br>3. 또는 Background 모드로 메일 전송.( SendMail(FALSE,FALSE) )
+<br>4. 메일 전송여부 확인.(GetCountMailSended, GetCountMailFailed)
+<br>*  메일전송에 대한 로그파일 : ..../tunning/(YYYYMMDD)SmtpLog.txt</BLOCKQUOTE>
+<DL>
+
+<A NAME="Constructor / Destructor "></A>
+<A NAME="DOC.36.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Constructor / Destructor </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CSendMailMgr"></A>
+<A NAME="DOC.36.1.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CSendMailMgr(CWnd* pParent = NULL)</B></TT>
+<DD>생성자
+<DL><DT><DD></DL><P>
+<A NAME="~CSendMailMgr"></A>
+<A NAME="DOC.36.1.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CSendMailMgr()</B></TT>
+<DD>소멸자
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="AddMailRecord 메일 레코드를 추가 "></A>
+<A NAME="DOC.36.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> AddMailRecord 메일 레코드를 추가 </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="AddMailRecord"></A>
+<A NAME="DOC.36.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT AddMailRecord(CString sSubject,  CString sRecipientName,  CString sRecipientAddress,  CString sBody,  CString sEncoding,  CString pFileAttach,  INT nFileAttachCnt,  CString sCCName,  CString sCCAddress )</B></TT>
+<DD>
+메일 레코드의 내용을 직접 매개변수로 전달하여 메일 레코드를 추가.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>sSubject</B> -  메일제목
+<BR><B>sRecipientName</B> -  메일 수신자 이름
+<BR><B>sRecipientAddress</B> -  수신자 이메일계정
+<BR><B>sBody</B> -  메일 내용
+<BR><B>sEncoding</B> -  메일 인코딩 형식 : "text/html" or else
+<BR><B>pFileAttach</B> -  메일 첨부파일명(Path)
+<BR><B>nFileAttachCnt</B> -  메일 첨부파일 개수
+<BR><B>sCCName</B> -  메일 참조 수신자 이름(Carbon Copy recipients)
+<BR><B>sCCAddress</B> -  메일 참조 수신자 이메일계정<BR><DT><B>Returns:</B><DD>  -1					: 내부 오류. 메모리 할당 오류
+<BR>  0					: 정상종료
+<BR><DD></DL><P>
+<A NAME="AddMailRecord"></A>
+<A NAME="DOC.36.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT AddMailRecord(<!1><A HREF="SendMailRecord.html">SendMailRecord</A>* pMailRecord)</B></TT>
+<DD>
+호출자가 메일 레코드 객체를 생성/전달하여 메일 레코드를 추가.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>pMailRecord</B> - 			<!1><A HREF="SendMailRecord.html">SendMailRecord</A> 객체. 호출자가 내용을 설정하여 매개변수로 전달한다.
+<BR><DT><B>Returns:</B><DD>  -1					: 내부 오류. 메모리 할당 오류
+<BR>  0					: 정상종료<BR><DD></DL><P></DL>
+
+<A NAME="GetCountMailSended / GetCountMailFailed 메일 전송여부 확인 "></A>
+<A NAME="DOC.36.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GetCountMailSended / GetCountMailFailed 메일 전송여부 확인 </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetCountMailSended"></A>
+<A NAME="DOC.36.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   INT GetCountMailSended()</B></TT>
+<DD>메일전송여부확인 : 전송된 메일의 개수 가져오기
+<DL><DT><DD></DL><P>
+<A NAME="GetCountMailFailed"></A>
+<A NAME="DOC.36.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   INT GetCountMailFailed()</B></TT>
+<DD>메일전송여부확인 : 전송실패한 메일의 개수 가져오기
+<DL><DT><DD></DL><P>
+<A NAME="GetMailRecordSendState"></A>
+<A NAME="DOC.36.3.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetMailRecordSendState(INT nRecordIdx)</B></TT>
+<DD>각 메일레코드 전송여부확인.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>nRecordIdx</B> -  메일레코드의 인덱스
+<BR><DT><B>Returns:</B><DD>  -9 : 잘못된 메일레코드 인덱스
+<BR>  -1 : 메일레코드 전송실패
+<BR>  0 : 메일레코드 전송성공
+<BR>  1 : 메일레코드 전송하지 않음<BR><DD></DL><P></DL>
+
+<A NAME="GetMailSever / GetMailSendAddress 보내는 메일 서버, 메일계정 가져오기 "></A>
+<A NAME="DOC.36.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GetMailSever / GetMailSendAddress 보내는 메일 서버, 메일계정 가져오기 </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetCountMailRecord"></A>
+<A NAME="DOC.36.4.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   INT GetCountMailRecord()</B></TT>
+<DD>메일레코드 개수 가져오기
+<DL><DT><DD></DL><P>
+<A NAME="GetMailSever"></A>
+<A NAME="DOC.36.4.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   CString GetMailSever()</B></TT>
+<DD>보내는 메일 서버 주소 가져오기
+<DL><DT><DD></DL><P>
+<A NAME="GetMailSendAddress"></A>
+<A NAME="DOC.36.4.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   CString GetMailSendAddress()</B></TT>
+<DD>보내는 사람 메일주소 가져오기
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="SendMail 메일 보내기 "></A>
+<A NAME="DOC.36.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> SendMail 메일 보내기 </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="SetDefaultMailServer"></A>
+<A NAME="DOC.36.5.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID SetDefaultMailServer(CString sMailServer, CString sMailAddress)</B></TT>
+<DD>메일서버와 메일계정을 직접 설정. System Registry를 뒤지지 않음.
+<DL><DT><DD></DL><P>
+<A NAME="GetDefaultMailServerInfo"></A>
+<A NAME="DOC.36.5.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetDefaultMailServerInfo(BOOL bBackground=FALSE)</B></TT>
+<DD>
+Registry에서 시스템에 설정된 메일 서버와 이메일 주소를 가져옴.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>bBackground</B> -  Dialog를 띄우지 않고 Background모드로 메일을 보내는 경우 TRUE (default:FALSE)<BR><DD></DL><P>
+<A NAME="SendMail"></A>
+<A NAME="DOC.36.5.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SendMail(BOOL bSendMailChecked=TRUE,  BOOL bBackground=FALSE )</B></TT>
+<DD>Dialog를 띄울 때와 Background로 메일을 보낼 때의 매개변수가 다르다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>bSendMailChecked</B> -  List에서 선택된 메일만 보낼려면 TRUE (default:TRUE) bBackground가 TRUE이면 FALSE가 된다.
+<BR><B>bBackground</B> -  Dialog를 띄우지 않고 Background모드로 메일을 보낼려면 TRUE (default:FALSE)<BR><DT><B>Returns:</B><DD>  n<0	: 메일서버나 메일계정이 설정되지 않는 경우 등 메일을 보낼 수 없는 환경일 때
+<BR>  0		: 정상종료. 보낸 메일 개수와 전송 실패한 메일 개수는 GetCountMailSended, GetCountMailFailed로 확인한다.
+<BR><DD></DL><P></DL>
+
+<A NAME="Log file path 가져오기 "></A>
+<A NAME="DOC.36.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Log file path 가져오기 </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetLogFilepaht"></A>
+<A NAME="DOC.36.6.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   CString GetLogFilepaht()</B></TT>
+<DD>Log file path 가져오기
+<DL><DT><DD></DL><P></DL>
+
+<A NAME=""></A>
+<A NAME="DOC.36.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>enum </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="IDD"></A>
+<A NAME="DOC.36.7.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> IDD</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="m_ctrlMail"></A>
+<A NAME="DOC.36.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CListCtrl m_ctrlMail</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sMailAddress"></A>
+<A NAME="DOC.36.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sMailAddress</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sMailServer"></A>
+<A NAME="DOC.36.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sMailServer</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="DoDataExchange"></A>
+<A NAME="DOC.36.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void DoDataExchange(CDataExchange* pDX)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="DisplaySendMailRecord"></A>
+<A NAME="DOC.36.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID DisplaySendMailRecord()</B></TT>
+<DD>메일 레코드를 List control에 추가하여 보여줌
+<DL><DT><DD></DL><P>
+<A NAME="DisplayMailBody"></A>
+<A NAME="DOC.36.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID DisplayMailBody(INT nIndex)</B></TT>
+<DD>
+List control에서 선택된 메일의 내용(body)를 HTML control에 보여줌.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>nIndex</B> -  List control에서 선택된 메일레코드의 인덱스<BR><DD></DL><P>
+<A NAME="CutNameAndAddress"></A>
+<A NAME="DOC.36.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID CutNameAndAddress(CString sCutObject,  CString&amp; sName,  CString&amp; sAddress )</B></TT>
+<DD>
+"이름" <주소> 형식의 문자열(sCutObject)에서 이름(sName)과 주소(sAddress)를 떼어 가져옴.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>sCutObject</B> -  [in ] "이름" <주소> 형식의 수신자 이메일계정 문자열
+<BR><B>sName</B> -  [out] 이름 - 큰 따옴표를 뗀다.
+<BR><B>sAddress</B> -  [out] 주소 - <>를 뗀다.<BR><DD></DL><P>
+<A NAME="ButtonStatus"></A>
+<A NAME="DOC.36.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID ButtonStatus()</B></TT>
+<DD>메일 레코드의 개수(m_nRecordCount)에 따라 버튼을 Enable/Disable함
+<DL><DT><DD></DL><P>
+<A NAME="Registry and System 정보 가져오기 "></A>
+<A NAME="DOC.36.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Registry and System 정보 가져오기 </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetSystemInfo"></A>
+<A NAME="DOC.36.16.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSystemInfo()</B></TT>
+<DD>시스템 OS 버전(GetSystemVersion)과 Registry의 메일 account path를 가져옴(GetMailAccountPath)
+<DL><DT><DD></DL><P>
+<A NAME="GetSystemVersion"></A>
+<A NAME="DOC.36.16.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSystemVersion()</B></TT>
+<DD>시스템 OS 버전을 구함
+<DL><DT><DD></DL><P>
+<A NAME="GetMailAccountPath"></A>
+<A NAME="DOC.36.16.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetMailAccountPath()</B></TT>
+<DD>Registry의 메일 account path를 구함 - OS version에 따라 다르다
+<DL><DT><DD></DL><P>
+<A NAME="GetWindowTempDirectory"></A>
+<A NAME="DOC.36.16.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetWindowTempDirectory()</B></TT>
+<DD>시스템의 Windows temp directory path를 가져옴
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="m_SystemOS"></A>
+<A NAME="DOC.36.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="_SYSTEM_OS.html">_SYSTEM_OS</A> m_SystemOS</B></TT>
+<DD>System OS Version 
+<DL><DT><DD></DL><P>
+<A NAME="m_sMailAccountPath"></A>
+<A NAME="DOC.36.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sMailAccountPath</B></TT>
+<DD>Registry의 mail account path - OS version에 따라 다르다
+<DL><DT><DD></DL><P>
+<A NAME="m_sDefaultMailServer"></A>
+<A NAME="DOC.36.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sDefaultMailServer</B></TT>
+<DD>Default Mail Server
+<DL><DT><DD></DL><P>
+<A NAME="m_sDefaultMailAddress"></A>
+<A NAME="DOC.36.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sDefaultMailAddress</B></TT>
+<DD>Default Mail Account
+<DL><DT><DD></DL><P>
+<A NAME="m_nRecordCount"></A>
+<A NAME="DOC.36.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nRecordCount</B></TT>
+<DD>메일 레코드 개수
+<DL><DT><DD></DL><P>
+<A NAME="m_nRecordIndex"></A>
+<A NAME="DOC.36.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nRecordIndex</B></TT>
+<DD>메일 레코드 인덱스
+<DL><DT><DD></DL><P>
+<A NAME="m_pRecord"></A>
+<A NAME="DOC.36.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="SendMailRecord.html">SendMailRecord</A>* m_pRecord</B></TT>
+<DD>메일 레코드 array
+<DL><DT><DD></DL><P>
+<A NAME="m_Html"></A>
+<A NAME="DOC.36.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CHtmlCtrl m_Html</B></TT>
+<DD>HTML View Control
+<DL><DT><DD></DL><P>
+<A NAME="m_ySplitter"></A>
+<A NAME="DOC.36.25"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CySplitterWnd m_ySplitter</B></TT>
+<DD>Window Splitter
+<DL><DT><DD></DL><P>
+<A NAME="m_nCntSended"></A>
+<A NAME="DOC.36.26"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nCntSended</B></TT>
+<DD>보내진 메일 개수
+<DL><DT><DD></DL><P>
+<A NAME="m_nCntFailed"></A>
+<A NAME="DOC.36.27"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nCntFailed</B></TT>
+<DD>전송실패한 메일 개수
+<DL><DT><DD></DL><P>
+<A NAME="m_sLogFilepath"></A>
+<A NAME="DOC.36.28"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sLogFilepath</B></TT>
+<DD>Log File path
+<DL><DT><DD></DL><P>
+<A NAME="OnInitDialog"></A>
+<A NAME="DOC.36.29"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   BOOL OnInitDialog()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnClicklMAIL"></A>
+<A NAME="DOC.36.30"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnClicklMAIL(NMHDR* pNMHDR, LRESULT* pResult)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnbSELECTSMTPSERVER"></A>
+<A NAME="DOC.36.31"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbSELECTSMTPSERVER()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnOK"></A>
+<A NAME="DOC.36.32"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void OnOK()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnCancel"></A>
+<A NAME="DOC.36.33"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void OnCancel()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnDestroy"></A>
+<A NAME="DOC.36.34"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnDestroy()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnShowWindow"></A>
+<A NAME="DOC.36.35"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnShowWindow(BOOL bShow, UINT nStatus)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnWmSplitterMoved"></A>
+<A NAME="DOC.36.36"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg LONG OnWmSplitterMoved(UINT wParam, LONG lParam)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="DECLARE_MESSAGE_MAP"></A>
+<A NAME="DOC.36.37"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DECLARE_MESSAGE_MAP()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

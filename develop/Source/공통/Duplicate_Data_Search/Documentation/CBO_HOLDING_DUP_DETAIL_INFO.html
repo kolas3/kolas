@@ -1,0 +1,537 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  CBO_HOLDING_DUP_DETAIL_INFO</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file D:\KOLAS2UP\Develop\Source\공통\Duplicate_Data_Search\BO_HOLDING_DUP_DETAIL_INFO.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  <A HREF="#DOC.DOCU">CBO_HOLDING_DUP_DETAIL_INFO</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>일괄복본조사 결과자료 상세보기 다이얼로그 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCESL_Mgr,M,CCBO_HOLDING_DUP_DETAIL_INFO,MCBO_HOLDING_DUP_DETAIL_INFO.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.137.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>멤버변수</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.137.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Constructor / Destructor</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.137.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>기타메소드</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.137.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>복본추기/해제 관련 메소드</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Members</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.137.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>enum </TD><TD><B></B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.137.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DECLARE_MESSAGE_MAP</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.137.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void </TD><TD><B>DoDataExchange</B> (CDataExchange* pDX)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.137.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>이벤트처리 메소드</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+일괄복본조사 결과자료 다이얼로그에서 상세보기 버튼 클릭시 출력되는 다이얼로그 <br>
+원본자료와 그에대한 복본자료의 마크정보를 확인할 수 있다. 또한 중복자료 선정 기능을 이용하여 
+복본자료를 선정처리할 수 있다.<br> 권별정보보기 버튼을 이용하여 해당 종의 권별정보를 확인할 수 있다.<br>
+정리일괄 복본조사 시에 복본추기 및 해제 동작을 수행할 수 있다.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Constructor / Destructor"></A>
+<A NAME="DOC.137.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Constructor / Destructor</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CBO_HOLDING_DUP_DETAIL_INFO"></A>
+<A NAME="DOC.137.1.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CBO_HOLDING_DUP_DETAIL_INFO( CESL_Mgr* pParent = NULL )</B></TT>
+<DD>생성자
+
+<DL><DT><DT><B>Parameters:</B><DD><B>pParent</B> -  [in] 부모 윈도우의 포인터<BR><DD></DL><P></DL>
+
+<A NAME="복본추기/해제 관련 메소드"></A>
+<A NAME="DOC.137.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 복본추기/해제 관련 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="UpdateDuplicateBookInsertMarc"></A>
+<A NAME="DOC.137.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString UpdateDuplicateBookInsertMarc( CString srcReckey,  CString dupReckey,  CMarc*  pMarc,  INT mode )</B></TT>
+<DD>
+mode에 따라서 DM 'DM_BO_CAT_PROC_0373_책'에 책정보를 구축하여 새로운 049태그를 추가하여 마크를 생성한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>srcReckey</B> -  [in] 원본자료의 종키
+<BR><B>dupReckey</B> -  [in] 중복자료의 종키
+<BR><B>pMarc</B> -  [in] 갱신될 마크 포인터
+<BR><B>mode</B> -  [in] 모드 1:복본추기, -1:복본해제<BR><DT><B>Returns:</B><DD>  마크스트링
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_HOLDING_DUP_DETAIL_INFO.html#DOC.137.2.5">DivideToDuplicateData</A>(), <!1><A HREF="CBO_HOLDING_DUP_DETAIL_INFO.html#DOC.137.2.6">InsertToDuplicateData</A>()
+<BR><DD></DL><P>
+<A NAME="ShowDuplicateDataInsertButtonCtrl"></A>
+<A NAME="DOC.137.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID ShowDuplicateDataInsertButtonCtrl()</B></TT>
+<DD>
+복본추기/해제 버튼은 IsEnableDivideDuplicateData()과 IsEnableInsertDuplicateData()에 의해서 
+Enable/Disable된다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_HOLDING_DUP_DETAIL_INFO.html#DOC.137.2.3">IsEnableDivideDuplicateData</A>(), <!1><A HREF="CBO_HOLDING_DUP_DETAIL_INFO.html#DOC.137.2.4">IsEnableInsertDuplicateData</A>()<BR><DD></DL><P>
+<A NAME="IsEnableDivideDuplicateData"></A>
+<A NAME="DOC.137.2.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL IsEnableDivideDuplicateData()</B></TT>
+<DD>
+복본해제가 가능하기 위해서는 원본 자료의 'UDF_원본플래그'와 복본자료의 'BS_복본플래그'가 'V'로 
+설정되어 있어야 하며 동시에 원본자료의 'UDF_복본자료KEY'와 복본자료의 'IBS_종KEY'가 같아야 한다.
+
+<DL><DT><DT><B>Returns:</B><DD>  TRUE : 복본해제 가능함을 나타냄
+<BR>  FALSE : 복본해제 불가능함을 나타냄
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="IsEnableInsertDuplicateData"></A>
+<A NAME="DOC.137.2.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL IsEnableInsertDuplicateData()</B></TT>
+<DD>
+복본추기가 가능하기 위해서는 복본자료의 자료상태가 소장자료이어야 하며, 
+원본 자료의 'UDF_원본플래그'와 'BS_복본플래그'가 'V'로 설정되어 있으면 안된다. 이와 동시에
+원본자료에 포함된 책중에서 수서상태에 있는 자료가 있어서는 안된다.
+
+<DL><DT><DT><B>Returns:</B><DD>  TRUE : 복본추기 가능함을 나타냄
+<BR>  FALSE : 복본추기 불가능함을 나타냄
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="DivideToDuplicateData"></A>
+<A NAME="DOC.137.2.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID DivideToDuplicateData()</B></TT>
+<DD>
+복본해제 동작은 먼저 복본자료의 복본추기된 책중에서 자료상태가 가장 큰값을 추출하여 원본자료의 
+색인과 종의 자료상태를 설정한다. <br>
+복본추기되어진 책들의 종키(SPECIES_KEY)를 원본자료의 종키로 설정하고 DUP_SPECIES_KEY필드를 NULL로 설정한다.<br>
+복본자료의 종정보에 마크와 복본추기필드(DUP_FLAG)를 갱신한다. 즉 복본추기되어질때 추가되어진 049태그를 
+UpdateDuplicateBookInsertMarc() 메소드를 이용, 재생성하여 갱신하며 복본추기필드를 NULL로 설정한다.<br>
+위의 DB갱신 작업을 DM의 SendFrame메소드로 수행한다.<br>
+복본추기 해제후 복본자료의 마크를 재 구성하여 마크에디터에 출력하고 DM의 원본자료 행의 'UDF_원본플래그', 
+'UDF_복본자료KEY'필드를 공백으로 설정하고 복본자료 행의 'BS_복본플래그'필드를 공백으로 설정한다.<br>
+마지막으로 갱신된 정보로 화면을 재 구성하고(Display) 복본추기동작이 일어났음을 나타내는 m_bIsProcDuplicateInsert
+멤버변수를 FALSE로 설정한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_HOLDING_DUP_DETAIL_INFO.html#DOC.137.2.1">UpdateDuplicateBookInsertMarc</A>()<BR><DD></DL><P>
+<A NAME="InsertToDuplicateData"></A>
+<A NAME="DOC.137.2.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID InsertToDuplicateData()</B></TT>
+<DD>
+복본추기 동작은 먼저 원본자료의 책들을 복본자료의 책으로 설정한다. 
+즉 원본자료의 책의 SPECIES_KEY필드를 복본자료 종키로 설정하고 DUP_SPECIES_KEY필드에 원본자료 종키를 설정한다.<br>
+원본자료의 종과 색인정보의 자료상태 값을 'BOC114N'으로 설정한다. <br>
+복본자료의 마크를 갱신하기 위해서 UpdateDuplicateBookInsertMarc()메소드를 이용, 추가된 책들을 포함하는
+049태그가 추가된 마크를 갱신하고 종정보의 DUP_FLAG를 'V'로 설정한다. 또한 해당정보를 복본자료의 DM에 설정한다.<br>
+위의 DB갱신 작업을 DM의 SendFrame메소드로 수행한다.<br> 
+복본추기 후 복본자료의 마크를 재 구성하여 마크에디터에 출력하고 DM의 원본자료 행의 'UDF_원본플래그', 
+'UDF_복본자료KEY'필드를 'V'와 복본자료의 종키로 설정하고 복본자료 행의 'BS_복본플래그'필드를 'V'로 설정한다.<br>
+마지막으로 갱신된 정보로 화면을 재 구성하고(Display) 복본추기동작이 일어났음을 나타내는 m_bIsProcDuplicateInsert
+멤버변수를 TRUE로 설정한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_HOLDING_DUP_DETAIL_INFO.html#DOC.137.2.1">UpdateDuplicateBookInsertMarc</A>()<BR><DD></DL><P></DL>
+
+<A NAME="기타메소드"></A>
+<A NAME="DOC.137.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 기타메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="SetInfoType"></A>
+<A NAME="DOC.137.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID SetInfoType( INT infoType )</B></TT>
+<DD>
+인자로 전달된 상세보기 타입을 멤버변수 m_InfoType에 설정하고, 그 타입에 따라서 CM알리아스(MainCMAlias)
+를 결정한다.<br>
+상세보기타입 HOLDING_DUPLICATE_SEARCH -> CM_복본조사	<br>
+상세보기타입 TITLE_DUPLICATE_SEARCH -> CM_서명복본조사	<br>
+상세보기타입 CAT_DUPLICATE_SEARCH -> CM_서명복본조사	<br>
+
+<DL><DT><DT><B>Parameters:</B><DD><B>infoType</B> -  [in] 새로이 설정될 상세보기 타입<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="Display"></A>
+<A NAME="DOC.137.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID Display( INT sourceIdx,  INT DuplicateIdx )</B></TT>
+<DD>
+인자로 전달된 원복-복본자료 인덱스에 해당하는 정보로 화면을 출력한다.<br>
+우선 컨트롤과 연결된 정보를 DM에서 추출하여 출력하고 마크를 추출하여 마크에디터를 출력한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>sourceIdx</B> -  [in] 원본자료 DM인덱스
+<BR><B>DuplicateIdx</B> -  [in] 복본자료 DM인덱스<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="SetDuplicateDataIdx"></A>
+<A NAME="DOC.137.3.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID SetDuplicateDataIdx( INT idx )</B></TT>
+<DD>
+인자로 전달된 복본자료 DM인덱스로 멤버변수 m_DuplicateIdx를  설정한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>idx</B> -  [in] 복본자료 DM인덱스<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="SetSourceDataIdx"></A>
+<A NAME="DOC.137.3.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID SetSourceDataIdx( INT idx )</B></TT>
+<DD>
+인자로 전달된 원본자료 DM인덱스로 멤버변수 m_SourceIdx를 설정한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>idx</B> -  [in] 원본자료 DM인덱스<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="ShowVolumeDlg"></A>
+<A NAME="DOC.137.3.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID ShowVolumeDlg( BOOL isSource )</B></TT>
+<DD>
+
+<DL><DT><DT><B>Parameters:</B><DD><B>isSource</B> -  [in] 원본자료인지 여부<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME=""></A>
+<A NAME="DOC.137.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>enum </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="IDD"></A>
+<A NAME="DOC.137.4.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> IDD</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="멤버변수"></A>
+<A NAME="DOC.137.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 멤버변수</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_SrcFormCode"></A>
+<A NAME="DOC.137.5.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_SrcFormCode</B></TT>
+<DD>상세보기화면 원본자료 형태구분 에디트 박스에 연결된 변수
+<DL><DT><DD></DL><P>
+<A NAME="m_DupFormCode"></A>
+<A NAME="DOC.137.5.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_DupFormCode</B></TT>
+<DD>상세보기화면 복본자료 형태구분 에디트 박스에 연결된 변수
+<DL><DT><DD></DL><P>
+<A NAME="m_srcStatus"></A>
+<A NAME="DOC.137.5.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_srcStatus</B></TT>
+<DD>상세보기화면 원본자료 자료상태 에디트 박스에 연결된 변수
+<DL><DT><DD></DL><P>
+<A NAME="m_dupStatus"></A>
+<A NAME="DOC.137.5.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_dupStatus</B></TT>
+<DD>상세보기화면 복본자료 자료상태 에디트 박스에 연결된 변수
+<DL><DT><DD></DL><P>
+<A NAME="m_SrcMediaCode"></A>
+<A NAME="DOC.137.5.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_SrcMediaCode</B></TT>
+<DD>상세보기화면 원본자료 매체구분 에디트 박스에 연결된 변수
+<DL><DT><DD></DL><P>
+<A NAME="m_DupMediaCode"></A>
+<A NAME="DOC.137.5.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_DupMediaCode</B></TT>
+<DD>상세보기화면 복본자료 매체구분 에디트 박스에 연결된 변수
+<DL><DT><DD></DL><P>
+<A NAME="m_DupAllData"></A>
+<A NAME="DOC.137.5.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_DupAllData</B></TT>
+<DD>상세보기화면 복본자료 전체건수 에디트 박스에 연결된 변수
+<DL><DT><DD></DL><P>
+<A NAME="m_DupSelData"></A>
+<A NAME="DOC.137.5.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_DupSelData</B></TT>
+<DD>상세보기화면 복본자료 현재건수 에디트 박스에 연결된 변수
+<DL><DT><DD></DL><P>
+<A NAME="m_SrcManageNo"></A>
+<A NAME="DOC.137.5.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_SrcManageNo</B></TT>
+<DD>상세보기화면 원본자료의 종키
+<DL><DT><DD></DL><P>
+<A NAME="m_DupManageNo"></A>
+<A NAME="DOC.137.5.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_DupManageNo</B></TT>
+<DD>상세보기화면 복본자료의 종키
+<DL><DT><DD></DL><P>
+<A NAME="m_marc_src"></A>
+<A NAME="DOC.137.5.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CMarc m_marc_src</B></TT>
+<DD>상세보기화면 원본자료의 마크
+<DL><DT><DD></DL><P>
+<A NAME="m_marc_dup"></A>
+<A NAME="DOC.137.5.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CMarc m_marc_dup</B></TT>
+<DD>상세보기화면 복본자료의 마크
+<DL><DT><DD></DL><P>
+<A NAME="m_marceditor_src"></A>
+<A NAME="DOC.137.5.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CMarcEditor.html">CMarcEditor</A> m_marceditor_src</B></TT>
+<DD>상세보기화면 원본자료의 마크에디터
+<DL><DT><DD></DL><P>
+<A NAME="m_marceditor_dup"></A>
+<A NAME="DOC.137.5.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CMarcEditor.html">CMarcEditor</A> m_marceditor_dup</B></TT>
+<DD>상세보기화면 복본자료의 마크에디터
+<DL><DT><DD></DL><P>
+<A NAME="m_DuplicateIdx"></A>
+<A NAME="DOC.137.5.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_DuplicateIdx</B></TT>
+<DD>상세보기화면 원본자료의 DM인덱스
+<DL><DT><DD></DL><P>
+<A NAME="m_SourceIdx"></A>
+<A NAME="DOC.137.5.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_SourceIdx</B></TT>
+<DD>상세보기화면 복본자료의 DM인덱스
+<DL><DT><DD></DL><P>
+<A NAME="m_bIsProcDuplicateInsert"></A>
+<A NAME="DOC.137.5.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_bIsProcDuplicateInsert</B></TT>
+<DD>상세보기화면 복본추기 동작 수행여부
+<DL><DT><DD></DL><P>
+<A NAME="MainCMAlias"></A>
+<A NAME="DOC.137.5.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString MainCMAlias</B></TT>
+<DD>상세보기화면의 부모윈도우의 CM알리아스
+<DL><DT><DD></DL><P>
+<A NAME="m_InfoType"></A>
+<A NAME="DOC.137.5.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_InfoType</B></TT>
+<DD>상세보기화면 타입
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="DoDataExchange"></A>
+<A NAME="DOC.137.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void DoDataExchange(CDataExchange* pDX)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="이벤트처리 메소드"></A>
+<A NAME="DOC.137.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 이벤트처리 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="OnClose"></A>
+<A NAME="DOC.137.7.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnClose()</B></TT>
+<DD>닫기버튼의 이벤트 처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnInitDialog"></A>
+<A NAME="DOC.137.7.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   BOOL OnInitDialog()</B></TT>
+<DD>
+원본/복본 자료에대한 마크에디터와 리치에디터를 연결하고 그리드에서 선정된 원본/중복자료 인덱스로
+상세보기 화면을 Display한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnPRESEL"></A>
+<A NAME="DOC.137.7.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnPRESEL()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnNEXTSEL"></A>
+<A NAME="DOC.137.7.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnNEXTSEL()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnPREV"></A>
+<A NAME="DOC.137.7.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnPREV()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnNEXT"></A>
+<A NAME="DOC.137.7.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnNEXT()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnSHOWSRCVOL"></A>
+<A NAME="DOC.137.7.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnSHOWSRCVOL()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnSHOWDUPVOL"></A>
+<A NAME="DOC.137.7.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnSHOWDUPVOL()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnDUPDATAINSERT"></A>
+<A NAME="DOC.137.7.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnDUPDATAINSERT()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_HOLDING_DUP_DETAIL_INFO.html#DOC.137.2.6">InsertToDuplicateData</A>()<BR><DD></DL><P>
+<A NAME="OnbtnDUPDATAINSERTCANCEL"></A>
+<A NAME="DOC.137.7.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnDUPDATAINSERTCANCEL()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_HOLDING_DUP_DETAIL_INFO.html#DOC.137.2.5">DivideToDuplicateData</A>()<BR><DD></DL><P></DL>
+
+<A NAME="DECLARE_MESSAGE_MAP"></A>
+<A NAME="DOC.137.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DECLARE_MESSAGE_MAP()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_HOLDING_ALL_DUP_SEARCH.html">CBO_HOLDING_ALL_DUP_SEARCH</A>, <!1><A HREF="CDuplicateSearchMgr.html">CDuplicateSearchMgr</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

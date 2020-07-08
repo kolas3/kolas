@@ -1,0 +1,89 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "CO_CENTER_USER_MANAGE"="..\대출관리\CO_CENTER_USER_MANAGE\CO_CENTER_USER_MANAGE.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "LOAN_INFO_SHARE_MANAGER"="..\대출관리\LOAN_INFO_SHARE_MANAGER\LOAN_INFO_SHARE_MANAGER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_LIB_CENTER_MANAGER"="..\관리\대출자,도서관 통합 관리\MNG_LIB_CENTER_MANAGER\MNG_LIB_CENTER_MANAGER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_SET_DUPLICATEKEY_MGR"="..\관리\대출자,도서관 통합 관리\MNG_SET_DUPLICATEKEY_MGR\MNG_SET_DUPLICATEKEY_MGR.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_STATISTICS_PRINT_MGR"="..\관리\대출자,도서관 통합 관리\MNG_STATISTICS_PRINT_MGR\MNG_STATISTICS_PRINT_MGR.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "UnionUserManager"="..\단행\열람\장서관리\UnionUserManager\UnionUserManager.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

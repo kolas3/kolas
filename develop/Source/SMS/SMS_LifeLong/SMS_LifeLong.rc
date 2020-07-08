@@ -1,0 +1,418 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SMS_LifeLong.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2008,11,19,2
+ PRODUCTVERSION 2008,11,19,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "SMS_LifeLong DLL\0"
+            VALUE "FileVersion", "2008, 11, 19, 2\0"
+            VALUE "InternalName", "SMS_LifeLong\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SMS_LifeLong.DLL\0"
+            VALUE "ProductName", "SMS_LifeLong 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2008, 11, 19, 2\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SMS_LIFELONG_MAIN DIALOG DISCARDABLE  0, 0, 315, 345
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_gMAIN_GRID,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,10,10,285,59
+    CONTROL         "",IDC_gMAIN_GRID2,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,13,88,285,59
+    CONTROL         "",IDC_gMAIN_GRID3,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,14,174,285,59
+END
+
+IDD_SMS_LIFELONG_SEARCH DIALOG DISCARDABLE  0, 0, 435, 303
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "검색"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cSMS,52,11,94,250,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cPROGRAM_CODE,64,46,65,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cPROGRAM_COM,210,46,31,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ePROGRAM_NAME,64,65,177,12,ES_AUTOHSCROLL
+    CONTROL         "DateTimePicker1",IDC_dPROGRAM_OPEN1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,64,82,65,13
+    CONTROL         "DateTimePicker1",IDC_dPROGRAM_OPEN2,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,156,82,65,13
+    CONTROL         "DateTimePicker1",IDC_dPROGRAM_END1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,64,100,65,13
+    CONTROL         "DateTimePicker1",IDC_dPROGRAM_END2,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,156,100,65,13
+    COMBOBOX        IDC_cUSER_SEX,64,141,31,91,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cUSER_GROUP,64,158,65,91,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_eUSER_ID,64,176,65,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eUSER_NAME1,64,193,65,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eUSER_NAME2,157,193,65,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eUSER_AGE1,64,210,65,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eUSER_AGE2,157,210,65,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eUSER_ADDRESS,64,227,177,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eUSER_PHONE,64,244,65,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eUSER_PHONE2,176,244,65,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "검색",IDOK,129,276,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,188,276,50,14
+    LTEXT           "회 원 아이디",IDC_STATIC,12,178,43,8
+    LTEXT           "회   원   명",IDC_STATIC,12,195,43,8
+    LTEXT           "부터",IDC_STATIC,131,195,17,8
+    LTEXT           "까지",IDC_STATIC,227,195,17,8
+    GROUPBOX        "회원 정보 ",IDC_STATIC,4,127,246,137
+    GROUPBOX        "강좌 정보 ",IDC_STATIC,4,35,246,87
+    LTEXT           "강 좌  구 분",IDC_STATIC,12,49,45,8
+    LTEXT           "강   좌   명",IDC_STATIC,12,67,45,8
+    LTEXT           "강좌개설날짜",IDC_STATIC,12,84,45,8
+    LTEXT           "부터",IDC_STATIC,131,84,17,8
+    LTEXT           "까지",IDC_STATIC,227,84,15,8
+    GROUPBOX        "",IDC_STATIC,4,0,246,32
+    LTEXT           "SMS 종류",IDC_STATIC,12,13,37,8
+    LTEXT           "성        별",IDC_STATIC,12,143,43,8
+    LTEXT           "회 원  나 이",IDC_STATIC,12,212,43,8
+    LTEXT           "부터",IDC_STATIC,131,212,17,8
+    LTEXT           "까지",IDC_STATIC,227,212,17,8
+    LTEXT           "전        화",IDC_STATIC,12,246,43,8
+    LTEXT           "주        소",IDC_STATIC,13,229,43,8
+    LTEXT           "수료  여부",IDC_STATIC,159,49,39,8
+    LTEXT           "핸  드  폰",IDC_STATIC,133,246,39,8
+    LTEXT           "강좌완료날짜",IDC_STATIC,13,102,45,8
+    LTEXT           "부터",IDC_STATIC,131,102,17,8
+    LTEXT           "까지",IDC_STATIC,227,102,15,8
+    LTEXT           "그        룹",IDC_STATIC,12,161,43,8
+    GROUPBOX        "",IDC_STATIC,4,267,246,28
+    LTEXT           "프로그램 조건",IDC_STATIC,275,18,53,12
+    EDITTEXT        IDC_eTest1,274,32,146,17,ES_AUTOHSCROLL
+    LTEXT           "정상회원 조건",IDC_STATIC,275,56,51,12
+    EDITTEXT        IDC_eTest2,274,70,146,17,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eTest3,274,110,146,17,ES_AUTOHSCROLL
+    LTEXT           "비회원 조건",IDC_STATIC,275,96,44,12
+    LTEXT           "화면 모드",IDC_STATIC,275,136,44,12
+    EDITTEXT        IDC_eTest4,275,150,146,17,ES_AUTOHSCROLL
+    LTEXT           "그룹 코드",IDC_STATIC,275,174,44,12
+    EDITTEXT        IDC_eTest5,275,188,146,17,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eTest6,275,228,146,17,ES_AUTOHSCROLL
+    LTEXT           "SMS 키",IDC_STATIC,275,214,130,12
+    GROUPBOX        "개발자정보",IDC_STATIC,264,0,166,258
+END
+
+IDD_SMS_LIFELONG_CONTENTS_EDIT DIALOGEX 0, 0, 401, 389
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "문자 편집"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_cSMS_TYPE,15,19,103,397,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_eSMS_CONTENTS,8,74,174,56,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+    EDITTEXT        IDC_eRECEIVE_NUMBER,15,279,71,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "DB에 변경적용",IDOK,13,362,60,14,NOT WS_VISIBLE
+    PUSHBUTTON      "적 용",IDC_bSAVE,99,362,40,14
+    PUSHBUTTON      "닫 기",IDCANCEL,143,362,40,14
+    LTEXT           "",IDC_sSMS_TYPE,15,19,163,8,NOT WS_VISIBLE
+    GROUPBOX        "문자 종류",IDC_STATIC,4,3,183,35
+    GROUPBOX        "BYTE",IDC_sSMS_CONTENTS,4,44,183,91
+    GROUPBOX        "전화 번호",IDC_STATIC,4,254,183,42
+    GROUPBOX        "",IDC_STATIC,4,354,184,27
+    LTEXT           "회신번호",IDC_STATIC,15,268,33,8
+    EDITTEXT        IDC_eRECEIVE_NUMBER2,101,279,71,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "수신번호",IDC_sRECEIVER_NUM,101,268,33,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_eURL,47,331,135,14,ES_AUTOHSCROLL
+    GROUPBOX        "URL설정",IDC_STATIC,4,300,183,52
+    LTEXT           "URL",IDC_STATIC,10,334,13,8
+    LTEXT           "발송방식",IDC_sRECEIVER_NUM2,10,313,33,8
+    COMBOBOX        IDC_COMBO1,47,312,135,86,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "MN_SMS_TYPE_ENV_TBL 정보",IDC_STATIC,213,24,181,92
+    LTEXT           "REC_KEY",IDC_STATIC,223,40,41,8
+    LTEXT           "TYPE",IDC_STATIC,223,57,41,8
+    LTEXT           "AUTO SEND",IDC_STATIC,223,74,41,8
+    EDITTEXT        IDC_TypeInfo1,290,37,93,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_TypeInfo2,290,54,93,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TypeInfo3,290,71,93,13,ES_AUTOHSCROLL
+    GROUPBOX        "MN_SMS_TOTAL_ENV_TBL",IDC_STATIC,213,134,181,138
+    LTEXT           "REC_KEY",IDC_STATIC,223,149,41,8
+    LTEXT           "SEND_DIVIDE_YN",IDC_STATIC,223,166,60,8
+    LTEXT           "BIND_ID",IDC_STATIC,223,183,41,8
+    LTEXT           "BIND_PWD",IDC_STATIC,223,200,41,8
+    LTEXT           "SMS_TYPE",IDC_STATIC,223,217,41,8
+    EDITTEXT        IDC_TotalInfo1,290,149,93,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_TotalInfo2,290,165,93,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TotalInfo3,290,181,93,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TotalInfo4,290,197,93,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TotalInfo5,290,213,93,13,ES_AUTOHSCROLL
+    LTEXT           "◆◆ 적용시 개발자 정보도 반영된다 ◆◆",IDC_STATIC,227,7,163,10
+    GROUPBOX        "",IDC_sSMS_CONTENTS2,4,130,183,119
+    CONTROL         "1. 도서관이름",IDC_chkLibName,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,178,146,11
+    CONTROL         "2. 수신자명",IDC_chkReciever,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,192,146,11
+    CONTROL         "3. 강좌명",IDC_chkProgram,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,206,146,11
+    CONTROL         "4. 개강일",IDC_chkOpen,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,220,146,11
+    LTEXT           "NAME",IDC_STATIC,224,91,41,8
+    EDITTEXT        IDC_TypeInfo4,290,89,93,13,ES_AUTOHSCROLL
+    CONTROL         "5. 기본메세지",IDC_chkDefaultMsg,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,234,146,11
+    LTEXT           "MSG_GB",IDC_STATIC,223,234,41,8
+    EDITTEXT        IDC_TotalInfo6,290,229,93,13,ES_AUTOHSCROLL
+    LTEXT           "기본 문자",IDC_STATIC,8,58,174,12,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    LTEXT           "문자 구성",IDC_STATIC,8,141,174,12,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    EDITTEXT        IDC_edtLibName,290,246,93,11,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "▶ 수신자명, 강좌명은 BYTE 계산이 지원되지     않습니다.",IDC_STATIC,8,157,174,16
+    LTEXT           "도서관명",IDC_STATIC,223,248,41,8
+END
+
+IDD_SMS_LIFELONG_SENDER DIALOG DISCARDABLE  0, 0, 123, 169
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "발 송"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "발 송",IDOK,10,142,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,63,142,50,14
+    EDITTEXT        IDC_eMAILNAME,8,16,105,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Progress1",IDC_pProgress,"msctls_progress32",WS_BORDER,8,120,105,9
+    EDITTEXT        IDC_eSMS,7,149,62,12,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | NOT WS_VISIBLE | WS_VSCROLL
+    LTEXT           "SMS 종류 :",IDC_STSMS,16,17,40,12,NOT WS_VISIBLE
+    GROUPBOX        "미리보기",IDC_stPreView,5,36,112,81
+    GROUPBOX        "SMS 종류",IDC_STATIC,5,4,112,30
+    GROUPBOX        "",IDC_STATIC,5,112,112,21
+    GROUPBOX        "",IDC_STATIC,5,133,112,28
+    CONTROL         "",IDC_reSMS,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP,8,48,105,61
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SMS_LIFELONG_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 308
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 338
+    END
+
+    IDD_SMS_LIFELONG_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 428
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 296
+    END
+
+    IDD_SMS_LIFELONG_CONTENTS_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 382
+    END
+
+    IDD_SMS_LIFELONG_SENDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 116
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SMS_LIFELONG_MAIN DLGINIT
+BEGIN
+    IDC_gMAIN_GRID, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x3393, 0x0000, 0x0933, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x000f, 0x8000, 0x000f, 0x8000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    IDC_gMAIN_GRID2, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x3393, 0x0000, 0x0933, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x000f, 0x8000, 0x000f, 0x8000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    IDC_gMAIN_GRID3, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x3393, 0x0000, 0x0933, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x000f, 0x8000, 0x000f, 0x8000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\SMS_LifeLong.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

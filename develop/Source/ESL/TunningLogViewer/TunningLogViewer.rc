@@ -1,0 +1,261 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TunningLogViewer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\TunningLogViewer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 324
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "TunningLogViewer 정보"
+FONT 9, "굴림"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,9,17,20,20
+    LTEXT           "TunningLogViewer 버전 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "이씨오의 비밀임(Confidential)\r\nCopyright @2008 by ECO, Inc. All rights reserved",IDC_STATIC,40,25,179,16
+    DEFPUSHBUTTON   "확인",IDOK,172,7,50,14,WS_GROUP
+    LTEXT           "\r\n [지원되는 단축키]\r\n\r\n F1 : TunningLogViewer 정보\r\n\r\n F3 : 찾기(현재 찾기방향)\r\n\r\n Shift + F3 :  찾기(현재 찾기의 반대방향)\r\n\r\n F4 : 현재 커서라인 선택 \r\n\r\n F5 : 새로고침\r\n\r\n Ctrl + O : 튜닝파일 열기\r\n\r\n Ctrl + S : 텍스트 파일로 저장하기\r\n\r\n Ctrl + F : 찾기 대화상자\r\n\r\n Ctrl + C : 복사하기\r\n\r\n Ctrl + A : 전체선택",IDC_STATIC_HOTKEY,9,136,213,180,0,WS_EX_STATICEDGE
+    LTEXT           "\r\n 이 프로그램을 TUNNING파일의 연결 프로그램으로 지정해놓으면 TUNNING파일을 더블클릭하여 읽을 수 있습니다.\r\n\r\n 프로그램 실행중 에디트박스에 TUNNING파일을 드래그하면 해당 파일을 읽을 수 있습니다.\r\n\r\n 프로그램 실행파일에 TUNNING파일을 드래그하면 해당 파일을 읽을 수 있습니다.\r\n",IDC_STATIC_INFO,9,49,213,80,0,WS_EX_STATICEDGE
+END
+
+IDD_TUNNINGLOGVIEWER_DIALOG DIALOGEX 0, 0, 474, 404
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_ACCEPTFILES | WS_EX_APPWINDOW
+CAPTION "튜닝 로그 뷰어"
+MENU IDR_MAINMENU
+FONT 9, "굴림", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,485,-9,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "취소",IDCANCEL,485,0,50,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_TEXT,0,17,474,311,ES_MULTILINE | ES_READONLY | WS_VSCROLL | WS_HSCROLL | NOT WS_TABSTOP
+    LTEXT           "파일이 변경되었습니다.  F5키를 누르면 해당 파일을 새로고침 할 수 있습니다.",IDC_STATIC_MSG,3,3,242,8,NOT WS_VISIBLE
+    CONTROL         138,IDC_STATIC_2,"Static",SS_BITMAP | NOT WS_VISIBLE,366,377,108,27
+    CONTROL         136,IDC_STATIC_1,"Static",SS_BITMAP | NOT WS_VISIBLE,0,377,179,28
+END
+
+IDD_SEARCH DIALOG DISCARDABLE  0, 0, 255, 62
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "검색하기"
+FONT 9, "굴림"
+BEGIN
+    LTEXT           "찾을 내용(&N)",IDC_STATIC,4,10,42,8
+    EDITTEXT        IDC_EDIT_SEARCH_TEXT,68,7,127,14,ES_AUTOHSCROLL
+    CONTROL         "대/소문자 구분(&C)",IDC_CHECK_LOWER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,42,74,10
+    GROUPBOX        "방향",IDC_STATIC,84,28,102,27
+    CONTROL         "위로(&U)",IDC_RADIO_UP,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,91,39,40,10
+    CONTROL         "아래로(&D)",IDC_RADIO_DOWN,"Button",BS_AUTORADIOBUTTON,136,39,47,10
+    PUSHBUTTON      "다음 찾기(&F)",IDC_BTN_FIND,201,7,48,14
+    PUSHBUTTON      "취소",IDC_BUTTON_CLOSE,201,28,48,14
+    DEFPUSHBUTTON   "OK",IDOK,428,281,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,428,298,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "TunningLogViewer MFC 응용 프로그램\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "TunningLogViewer\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "TunningLogViewer.EXE\0"
+            VALUE "ProductName", "TunningLogViewer 응용 프로그램\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 317
+    END
+
+    IDD_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "열기(&O)",                    IDM_READ_TUNNING_FILE
+        MENUITEM "텍스트 파일로 저장(&S) ",     IDM_SAVE_TUNNING_FILE_FOR_TEXT
+
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "찾기(&F)",                    IDM_FIND
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "도움말(&H)",                  IDM_HELP
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CONFIDENTIAL        BITMAP  DISCARDABLE     "res\\eco-confidential.bmp"
+IDB_ECOMARC             BITMAP  DISCARDABLE     "res\\ECOMARC.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "TunningLogViewer 정보(&A)..."
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\TunningLogViewer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

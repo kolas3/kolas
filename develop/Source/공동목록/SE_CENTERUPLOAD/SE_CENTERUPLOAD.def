@@ -1,0 +1,13 @@
+; SE_CENTERUPLOAD.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_CENTERUPLOAD"
+DESCRIPTION  'SE_CENTERUPLOAD Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

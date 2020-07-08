@@ -1,0 +1,13 @@
+; Light_uc_notify_local.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Light_uc_notify_local"
+DESCRIPTION  'Light_uc_notify_local Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

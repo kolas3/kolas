@@ -1,0 +1,303 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\KOLAS2UP_SETUP.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETUP_MAIN DIALOG DISCARDABLE  0, 0, 339, 168
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "KOLAS III 환경설정"
+FONT 9, "새굴림"
+BEGIN
+END
+
+IDD_TNS_SETUP_PAGE DIALOG DISCARDABLE  0, 0, 300, 167
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "서버 설정"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "파일경로",IDC_STATIC,17,18,33,8
+    LTEXT           "",IDC_sORACLE_FILE_PATH,79,18,206,8
+    LTEXT           "TNS이름",IDC_STATIC,17,33,29,8
+    COMBOBOX        IDC_cORACLE_SERVICE,79,31,100,81,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "서버아이피",IDC_STATIC,17,48,41,8
+    CONTROL         "IPAddress1",IDC_ipORACLE,"SysIPAddress32",WS_TABSTOP,79,45,100,14
+    LTEXT           "서버포트",IDC_STATIC,17,63,33,8
+    EDITTEXT        IDC_eORACLE_PORT,79,60,50,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "서비스이름",IDC_STATIC,15,78,41,8
+    EDITTEXT        IDC_eORACLE_SERVICE,79,75,50,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "+",IDC_bADD_ORACLE_SERVICE,241,71,21,18,NOT WS_VISIBLE
+    PUSHBUTTON      "수정",IDC_bMODIFY_ORACLE_SERVICE,183,31,32,14,NOT WS_VISIBLE
+    PUSHBUTTON      "-",IDC_bDELETE_ORACLE_SERVICE,265,71,21,18,NOT WS_VISIBLE
+    LTEXT           "파일경로",IDC_STATIC,16,111,33,8,NOT WS_VISIBLE
+    LTEXT           "",IDC_sDEAMON_FILE_PATH,82,111,198,8,NOT WS_VISIBLE
+    LTEXT           "IP :",IDC_STATIC,161,122,17,14,SS_CENTERIMAGE | NOT WS_VISIBLE
+    CONTROL         "IPAddress2",IDC_ipDEAMON,"SysIPAddress32",NOT WS_VISIBLE | WS_TABSTOP,187,122,100,14
+    LTEXT           "PORT :",IDC_STATIC,17,138,31,14,SS_CENTERIMAGE | NOT WS_VISIBLE
+    EDITTEXT        IDC_eDEAMON_PORT,58,138,50,14,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_VISIBLE
+    GROUPBOX        "오라클 서버",IDC_STATIC,7,7,286,87
+    GROUPBOX        "데몬서버",IDC_STATIC,7,97,286,63,NOT WS_VISIBLE
+    LTEXT           "TIMEOUT :",IDC_STATIC,114,138,37,14,SS_CENTERIMAGE | NOT WS_VISIBLE
+    EDITTEXT        IDC_eDEAMON_TIMEOUT,158,138,50,14,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_VISIBLE
+    LTEXT           "RETRY :",IDC_STATIC,215,138,29,14,SS_CENTERIMAGE | NOT WS_VISIBLE
+    EDITTEXT        IDC_eDEAMON_RETRY,247,138,40,14,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_VISIBLE
+    LTEXT           "종류 : ",IDC_STATIC,17,122,23,14,SS_CENTERIMAGE | NOT WS_VISIBLE
+    COMBOBOX        IDC_cDEAMON,58,122,86,66,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_GRID_SETUP_PAGE DIALOG DISCARDABLE  0, 0, 300, 167
+STYLE WS_CHILD | WS_CAPTION | WS_THICKFRAME
+CAPTION "그리드 설정"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "그리드 제목 폰트",IDC_STATIC1,32,24,98,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_cISBOLD,140,24,131,90,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "그리드 행 높이",IDC_STATIC2,32,42,98,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_eHEIGHT,140,42,120,14,ES_AUTOHSCROLL
+    LTEXT           "그리드 데이타 폰트",IDC_STATIC3,32,60,98,12,SS_CENTERIMAGE
+    LTEXT           "그리드 셀간 선색",IDC_STATIC4,32,78,98,12,SS_CENTERIMAGE
+    LTEXT           "그리드 셀 배경색",IDC_STATIC5,32,96,98,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_eFONT,140,60,100,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "변경",IDC_bCH_LINEFONT,243,60,28,14
+    PUSHBUTTON      "변경",IDC_bCH_LINECOLOR,140,78,131,14
+    PUSHBUTTON      "변경",IDC_bCH_BACKCOLOR,140,96,131,14
+    CONTROL         "Spin1",IDC_sHEIGHT,"msctls_updown32",UDS_ARROWKEYS,260,42,11,14
+    GROUPBOX        "그리드 설정",IDC_STATIC_GROUP1,7,7,286,117
+END
+
+IDD_CONNECT_SETUP_PAGE DIALOG DISCARDABLE  0, 0, 319, 189
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "접속설정"
+FONT 9, "새굴림"
+BEGIN
+    GROUPBOX        "오라클 접속설정",IDC_STATIC,7,7,305,84
+    LTEXT           "오라클아이디",IDC_STATIC,15,21,49,8
+    EDITTEXT        IDC_eORACLE_ID,71,18,71,14,ES_AUTOHSCROLL
+    LTEXT           "패스워드",IDC_STATIC,161,21,33,8
+    EDITTEXT        IDC_eORACLE_PASSWORD,203,18,71,14,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "오라클서비스",IDC_STATIC,15,40,49,8
+    EDITTEXT        IDC_eORACLE_SID,71,37,71,14,ES_AUTOHSCROLL
+    LTEXT           "DBMS",IDC_STATIC,161,40,36,8
+    EDITTEXT        IDC_DMBS,203,37,71,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "오라클 접속 테스트",IDC_bORACLE_CONNECT_TEST,14,58,79,14
+    PUSHBUTTON      "레지스트리 테스트",IDC_bORACLE_REG_TEST,365,9,79,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_eORACLE_TEST_RESULT,99,58,175,26,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY
+    GROUPBOX        "K3 접속설정",IDC_STATIC_K3,7,101,305,53,NOT WS_VISIBLE
+    LTEXT           "오라클아이디",IDC_STATIC_K3_ID,15,115,49,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_eORACLE_ID2,71,111,71,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "패스워드",IDC_STATIC_K3_PASSWORD,161,115,33,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_eORACLE_PASSWORD2,203,111,71,14,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "오라클서비스",IDC_STATIC_K3_SERVICE,15,133,49,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_eORACLE_SID2,71,131,71,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "DBMS",IDC_STATIC_K3_DBMS,161,133,36,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_DMBS2,203,131,71,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+END
+
+IDD_ETC_SETUP_PAGE DIALOG DISCARDABLE  0, 0, 300, 167
+STYLE WS_CHILD | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "기타 설정"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_eLAST_PATCH_PK,134,7,140,14,ES_AUTOHSCROLL
+    LTEXT           "마지막 패치 키 : ",IDC_STATIC,7,7,71,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_eAUTOEXTRACT_LAST_PATCH_PK,134,43,140,14,ES_AUTOHSCROLL
+    LTEXT           "AutoExtract 마지막 패치 키 : ",IDC_STATIC,7,43,119,14,SS_CENTERIMAGE
+    LTEXT           "DB 정보 변환기능 : ",IDC_STATIC,7,61,116,14,SS_CENTERIMAGE | NOT WS_VISIBLE
+    CONTROL         "예",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,134,61,33,14
+    CONTROL         "아니오",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,190,61,40,14
+    LTEXT           "마지막 버젼 : ",IDC_STATIC,7,25,119,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_eAUTOEXTRACT_VERSION,134,25,95,14,ES_AUTOHSCROLL
+    LTEXT           "_",IDC_STATIC,233,27,8,10,NOT WS_VISIBLE
+    EDITTEXT        IDC_eAUTOEXTRACT_PK,243,25,19,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+END
+
+IDD_VER_INFO DIALOG DISCARDABLE  0, 0, 305, 151
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "프로그램 정보"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "설치일자 : ",IDC_Text_Date,16,35,224,9
+    LTEXT           "설치버젼 :",IDC_Text_Version,16,52,225,9
+    GROUPBOX        "프로그램 정보",IDC_Text_Title,6,13,293,65
+END
+
+IDD_USER_INFO DIALOG DISCARDABLE  0, 0, 305, 151
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "사용자 정보 변경"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_EDIT1,55,11,71,16,ES_UPPERCASE | ES_AUTOHSCROLL
+    LTEXT           "ID",IDC_STATIC,12,16,9,8
+    LTEXT           "비밀번호",IDC_STATIC,12,37,33,8
+    EDITTEXT        IDC_EDIT2,55,33,71,14,ES_UPPERCASE | ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "로그인",IDC_bSign,135,12,50,14
+END
+
+IDD_DAEMON_SETUP_PAGE DIALOGEX 0, 0, 308, 109
+STYLE WS_CHILD | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "데몬접속 설정"
+FONT 9, "굴림체", 0, 0, 0x1
+BEGIN
+    LTEXT           "아 이 피",IDC_SET_SERVER_stcIP,74,18,47,8
+    PUSHBUTTON      "접속테스트",IDC_SET_SERVER_btnTest,76,62,50,15
+    EDITTEXT        IDC_SET_SERVER_edtTest,128,63,100,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "▒ SEARCH SERVER IP를 설정하고 접속테스트 \r\n   버튼으로 접속여부를 확인해주십시오.",IDC_STATIC,74,37,202,17
+    CONTROL         "IPAddress1",IDC_SET_DAEMON_SERVER_IP,"SysIPAddress32",WS_TABSTOP,127,12,100,15
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "\0"
+            VALUE "FileVersion", "1, 0, 0, 0\0"
+            VALUE "InternalName", "KOLAS Setup\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Setup.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Setup 응용 프로그램\0"
+            VALUE "ProductVersion", "1, 0, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ESLUserConfig.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "KOLASIII SETUP 정보(&A)..."
+    IDS_PRE_SETUP           "KOLAS III  설치전 설정"
+    IDS_SETUP               "KOLAS III 설정"
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\KOLAS2UP_SETUP.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

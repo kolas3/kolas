@@ -1,0 +1,11 @@
+; COOPERATIVE_STATISTICS.def : Declares the module parameters for the DLL.
+
+LIBRARY      "COOPERATIVE_STATISTICS"
+DESCRIPTION  'COOPERATIVE_STATISTICS Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

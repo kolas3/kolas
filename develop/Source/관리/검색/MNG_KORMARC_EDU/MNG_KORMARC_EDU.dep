@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by MNG_KORMARC_EDU.mak
+
+.\MNG_KORMARC_EDU.cpp : \
+	".\StdAfx.h"\
+	
+
+.\MNG_KORMARC_EDU.rc : \
+	".\res\MNG_KORMARC_EDU.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

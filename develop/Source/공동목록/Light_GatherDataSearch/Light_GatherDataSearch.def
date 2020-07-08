@@ -1,0 +1,8 @@
+; Light_GatherDataSearch.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Light_GatherDataSearch"
+DESCRIPTION  'Light_GatherDataSearch Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+

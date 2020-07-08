@@ -1,0 +1,57 @@
+Multi ComboBox Control 사용법
+
+p = new CESL_ControlMultiComboBox;
+p->SubclassDlgItem(IDC_COMBO1, this);
+p->InitMultiComboBox(3,DT_LEFT,FALSE,EDGE);
+CString data1[3] = {"1", "코드2", "설명1"};
+CString data2[3] = {"2", "코드2", "설명2"};
+p->SetData(data1, 3);
+p->SetData(data2, 3);
+
+p->SelectItem("2");
+
+
+
+Date Control 사용법
+
+CECO_ControlDateEdit * p = new CECO_ControlDateEdit;
+p->m_Control_ID = IDC_EDIT1;
+p->m_ControlStyle = 0;		// Edit 가능 Style
+p->m_ControlStyle = 4;		// Read Only 가능 Style
+p->SubclassDlgItem(IDC_EDIT1, this);
+p->InitEdit();
+p->SetYear("2002");
+p->SetMonth("4");
+p->SetDay("26");
+
+
+Edit Control 사용법
+
+CESL_ControlEdit *p = new CESL_ControlEdit;
+p->SubclassDlgItem(IDC_EDIT1, this);
+p->InitControl();	
+p->SetData("1234");
+
+CNewButton
+b = new CNewButton;
+b->Create(_T("My button"), WS_CHILD|WS_VISIBLE|BS_PUSHBUTTON, CRect(300,10,100,30), this, 30001);	
+UINT uStyle = b->GetButtonStyle();
+uStyle = uStyle | BS_OWNERDRAW;
+b->SetButtonStyle(uStyle);
+b->LoadBitmap("up.bmp", "down.bmp", "focus.bmp");
+
+CMenu 만드는법
+CMenu m_ContextMenu;
+	
+m_ContextMenu.CreatePopupMenu();
+m_ContextMenu.AppendMenu( MF_STRING , 4005 , "냠냠냠" );
+m_ContextMenu.AppendMenu(MF_SEPARATOR);
+m_ContextMenu.AppendMenu( MF_STRING , 4000 , "냐하하하" );
+m_ContextMenu.AppendMenu( MF_STRING , 4001 , "푸하하" );
+CPoint pos;
+GetCursorPos(&pos);
+CRect rect;
+b->GetWindowRect(&rect);
+//m_ContextMenu.TrackPopupMenu(TPM_LEFTALIGN,pos.x,pos.y,this);		
+m_ContextMenu.TrackPopupMenu(TPM_LEFTALIGN,rect.left,rect.bottom,this);	
+	

@@ -1,0 +1,11 @@
+; KL_OTHER_LOAN_MNG.def : Declares the module parameters for the DLL.
+
+LIBRARY      "KL_OTHER_LOAN_MNG"
+DESCRIPTION  'KL_OTHER_LOAN_MNG Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

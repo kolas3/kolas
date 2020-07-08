@@ -1,0 +1,11 @@
+; LOAN_INFO_SHARE_MANAGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "LOAN_INFO_SHARE_MANAGER"
+DESCRIPTION  'LOAN_INFO_SHARE_MANAGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

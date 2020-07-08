@@ -1,0 +1,11 @@
+; SMS_05.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SMS_05"
+DESCRIPTION  'SMS_05 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

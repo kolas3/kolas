@@ -1,0 +1,58 @@
+/*
+/--------------------------------------------------------------------
+|
+|      $id$
+|      IDL source for PaintX.dll
+|
+|      Copyright (c) 1996-1998 Ulrich von Zadow
+|
+\--------------------------------------------------------------------
+*/
+// PaintX.idl : IDL source for PaintX.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PaintX.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+	[
+		object,
+		uuid(B69FE5D2-9F53-11D2-B13F-444553540000),
+		dual,
+		helpstring("PictureDecoder Interface"),
+		pointer_default(unique)
+	]
+	interface IPictureDecoder : IDispatch
+	{
+		[id(1), helpstring("method LoadPicture")] HRESULT LoadPicture([in] BSTR Filename, [out, retval] IUnknown ** ppUnk);
+		[id(2), helpstring("method LoadResPicture")] HRESULT LoadResPicture([in] int ResourceID, [out, retval] IUnknown ** ppUnk);
+	};
+[
+	uuid(B69FE5C4-9F53-11D2-B13F-444553540000),
+	version(1.0),
+	helpstring("PaintX 1.0 Type Library")
+]
+library PAINTXLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(B69FE5D3-9F53-11D2-B13F-444553540000),
+		helpstring("PictureDecoder Class")
+	]
+	coclass PictureDecoder
+	{
+		[default] interface IPictureDecoder;
+	};
+};
+
+/*
+/--------------------------------------------------------------------
+|
+|      $log$
+|
+--------------------------------------------------------------------
+*/

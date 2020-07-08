@@ -1,0 +1,7 @@
+; ESL.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ESL"
+DESCRIPTION  'ESL Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

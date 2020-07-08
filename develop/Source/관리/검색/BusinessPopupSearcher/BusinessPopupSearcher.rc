@@ -1,0 +1,246 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BusinessPopupSearcher.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,08,19,71
+ PRODUCTVERSION 2005,08,19,71
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BusinessPopupSearcher DLL\0"
+            VALUE "FileVersion", "2005, 08, 19, 71\0"
+            VALUE "InternalName", "BusinessPopupSearcher\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BusinessPopupSearcher.DLL\0"
+            VALUE "ProductName", "BusinessPopupSearcher 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 19, 71\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BusinessPopupSearcherDlg DIALOGEX 0, 0, 367, 345
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "자료 검색"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_COMBO1,104,12,80,320,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,275,12,80,320,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_eTITLE,104,44,251,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "전 거",IDC_ACBUTTON_1,4,0,35,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_KEYWORD1,104,62,45,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO12,158,62,40,320,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_KEYWORD2,207,62,45,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO13,261,62,40,320,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_KEYWORD3,310,62,45,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,104,80,251,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "전 거",IDC_ACBUTTON_2,4,36,35,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT6,104,98,251,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,104,116,75,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,224,116,43,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,293,116,35,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO3,104,134,80,320,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT15,192,134,92,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "분류기호 참조",IDC_BUTTON7,285,134,70,14
+    COMBOBOX        IDC_COMBO4,104,166,80,320,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT16,192,166,163,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO5,104,183,80,320,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT18,192,183,35,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT19,234,183,35,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT20,276,183,35,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT21,318,183,35,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT17,192,183,163,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,104,200,65,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT11,275,200,65,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,104,218,75,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO6,104,236,80,320,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO7,275,236,80,320,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO8,104,268,80,320,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO9,275,268,80,320,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT13,104,285,65,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT14,275,285,65,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO10,104,303,80,320,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO11,275,303,80,320,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "화면 지우기",IDC_bCLEAR,4,326,50,14
+    PUSHBUTTON      "간략검색",IDC_bDETAIL,60,326,50,14
+    DEFPUSHBUTTON   "검 색",IDOK,258,326,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,313,326,50,14
+    PUSHBUTTON      "화면 지우기",IDC_bCLEAR2,4,160,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "상세검색",IDC_bDETAIL2,60,160,50,14,NOT WS_VISIBLE
+    DEFPUSHBUTTON   "검 색",IDOK2,258,160,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "닫 기",IDCANCEL2,313,160,50,14,NOT WS_VISIBLE
+    LTEXT           "학위논문( 학과, 전공 )",IDC_STATIC,10,221,90,8
+    LTEXT           "자      료",IDC_STATIC,35,15,65,8
+    LTEXT           "자 료 형 태",IDC_STATIC,206,15,65,8
+    LTEXT           "표      제",IDC_STATIC,35,47,65,8
+    LTEXT           "키  워  드",IDC_STATIC,35,65,65,8
+    LTEXT           "저  자  명",IDC_STATIC,35,83,65,8
+    LTEXT           "발  행  자",IDC_STATIC,35,101,65,8
+    LTEXT           "등 록 번 호",IDC_STATIC,35,119,65,8
+    LTEXT           "분 류 기 호",IDC_STATIC,35,137,65,8
+    LTEXT           "표 준 부 호",IDC_STATIC_2,35,169,65,8
+    LTEXT           "기 타 부 호",IDC_STATIC,35,186,65,8
+    LTEXT           "한국 대학교명",IDC_STATIC,35,203,65,8
+    LTEXT           "이용 제한 구분",IDC_STATIC,35,239,65,8
+    LTEXT           "한국 정부 기관명",IDC_STATIC,206,203,65,8
+    LTEXT           "이용 대상 구분",IDC_STATIC,206,239,65,8
+    LTEXT           "매 체 구 분",IDC_STATIC,35,271,65,8
+    LTEXT           "본 문 언 어",IDC_STATIC,35,288,65,8
+    LTEXT           "간 행 빈 도",IDC_STATIC,35,306,65,8
+    LTEXT           "학 위 구 분",IDC_STATIC,206,271,65,8
+    LTEXT           "요약문 언어",IDC_STATIC,206,288,65,8
+    LTEXT           "자  료  실",IDC_STATIC,206,306,65,8
+    PUSHBUTTON      "☜",IDC_BUTTON_UNV,169,200,15,13,BS_CENTER | BS_VCENTER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "☜",IDC_BUTTON_GOV,340,200,15,13,BS_CENTER | BS_VCENTER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "☜",IDC_BUTTON4,169,285,15,13,BS_CENTER | BS_VCENTER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "☜",IDC_BUTTON5,340,285,15,13,BS_CENTER | BS_VCENTER,WS_EX_CLIENTEDGE
+    LTEXT           "발행년도",IDC_STATIC,184,119,35,8
+    LTEXT           "부터",IDC_STATIC,272,119,16,8
+    LTEXT           "까지",IDC_STATIC,333,119,20,8
+    GROUPBOX        "",IDC_STATIC_1,4,157,360,100
+    GROUPBOX        "",IDC_STATIC,4,256,360,66
+    GROUPBOX        "",IDC_STATIC,4,32,360,126
+    GROUPBOX        "",IDC_STATIC,4,2,360,31
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BusinessPopupSearcherDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 360
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 338
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP  DISCARDABLE     "bitmap1.bmp"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BusinessPopupSearcher.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

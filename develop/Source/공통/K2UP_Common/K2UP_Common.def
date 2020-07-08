@@ -1,0 +1,7 @@
+; K2UP_Common.def : Declares the module parameters for the DLL.
+
+LIBRARY      "K2UP_Common"
+DESCRIPTION  'K2UP_Common Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

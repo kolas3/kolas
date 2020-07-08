@@ -1,0 +1,9 @@
+; TrackBar.def : Declares the module parameters for the DLL.
+
+LIBRARY      "TrackBar"
+DESCRIPTION  'TrackBar Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateSlider
+SetMaxPosition

@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by CAT_FIXED_FIELD.mak
+
+.\CAT_FIXED_FIELD.cpp : \
+	".\StdAfx.h"\
+	
+
+.\CAT_FIXED_FIELD.rc : \
+	".\res\CAT_FIXED_FIELD.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

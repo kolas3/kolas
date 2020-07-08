@@ -1,0 +1,10 @@
+rabit_thread started
+rabit_thread started
+rabit_thread started
+StartWhiteRabits: threads running
+check_version: BehaviorTypeDoNothing
+check_version: BehaviorTypeDoNothing
+authenticate_key: BehaviorTypeDoNothing
+do_nothing
+do_nothing
+do_nothing

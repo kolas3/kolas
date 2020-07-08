@@ -1,0 +1,11 @@
+; SE_CAT_REG.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_CAT_REG"
+DESCRIPTION  'SE_CAT_REG Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

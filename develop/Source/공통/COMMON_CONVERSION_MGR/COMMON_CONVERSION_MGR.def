@@ -1,0 +1,7 @@
+; COMMON_CONVERSION_MGR.def : Declares the module parameters for the DLL.
+
+LIBRARY      "COMMON_CONVERSION_MGR"
+DESCRIPTION  'COMMON_CONVERSION_MGR Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

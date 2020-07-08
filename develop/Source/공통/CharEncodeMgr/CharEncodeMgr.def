@@ -1,0 +1,8 @@
+; CharEncodeMgr.def : Declares the module parameters for the DLL.
+
+LIBRARY      "CharEncodeMgr"
+DESCRIPTION  'CharEncodeMgr Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+

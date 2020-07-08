@@ -1,0 +1,177 @@
+# 
+#  Copyright (c) 1994 by Oracle Corporation 
+#    NAME
+#      nw00003.d - Example language object file
+#    DESCRIPTION
+#      This is an example of a text-format language definition.
+#    NOTES
+#      This example is take from the definition of French.
+#    MODIFIED   (MM/DD/YY)
+#     pma        03/01/95 -  Add word wrapping project & incr ver. number
+#     tlai       08/27/94 -  Increment version number
+#     tlai       07/25/94 -  Creation
+
+#
+# Version number.  Refers to the file format version.
+#
+version = 1.1.0.0.0
+
+#
+# Type.  Must be "language".
+#
+type = language
+
+#
+# Information field.  You may put anything you want in here, up to 70 bytes
+# (including the null terminator).
+#
+info = ""
+
+#
+# Language ID
+#
+langid = 3
+
+#
+# ID of default territory for this language
+#
+langte = 4
+
+#
+# ID of default character set for this language
+#
+langch = 31
+
+#
+# ID of default linguistic definition for this language.  0 = BINARY.
+#
+langli = 12
+
+#
+# ID of default spelling object for this language.  Not used.
+#
+langsp = 0
+
+#
+# ID of character set that the text strings in this file are specified in.
+#
+langct = 31
+
+#
+# Capitalize initial letter of month names?  1 = yes, 0 = no
+#
+langmi = 1
+
+#
+# Capitalize initial letter of day names?  1 = yes, 0 = no
+#
+langdi = 1
+
+#
+# Writing direction flags (bit field):
+#   0x0001 = Left to right
+#   0x0002 = Horizontal
+#   0x0004 = Vertical
+#   0x0008 = Right to left
+#
+langfl = 3
+
+#
+# Array of characters that cannot be at the beginning of a line.
+# (The array is in wide char format.)
+#
+langnb={0x5d, 0x2c, 0x29, 0x3a}
+
+#
+# Array of characters that cannot be at the end of a line.
+# (The array is in wide char format.)
+#
+LANGNE={0x28,0x5b,0x7b}
+
+#
+# Array of characters which are dangling characters.
+# (The array is in wide char format.)
+#
+LANGDG={0x2c,0x2e}
+
+#
+# Language name
+#
+langna = "FRENCH"
+
+#
+# ISO abbreviation for language name
+#
+langan = "F"
+
+#
+# Abbreviated day names ("sun", "mon", etc.), starting with "sun".
+#
+langa1 = "di"
+langa2 = "lu"
+langa3 = "ma"
+langa4 = "me"
+langa5 = "je"
+langa6 = "ve"
+langa7 = "sa"
+
+#
+# Full day names ("sunday", "monday", etc.), starting with "sunday"
+#
+langf1 = "dimanche"
+langf2 = "lundi"
+langf3 = "mardi"
+langf4 = "mercredi"
+langf5 = "jeudi"
+langf6 = "vendredi"
+langf7 = "samedi"
+
+#
+# Abbreviated month names ("jan", "feb", etc.), starting with "jan".
+#
+langm1 = "jan"
+langm2 = "fev"
+langm3 = "mar"
+langm4 = "avr"
+langm5 = "mai"
+langm6 = "jun"
+langm7 = "jul"
+langm8 = "aou"
+langm9 = "sep"
+langma = "oct"
+langmb = "nov"
+langmc = "dec"
+
+#
+# Full month names ("january", "february", etc.), starting with "january"
+#
+langl1 = "janvier"
+langl2 = "f\351vrier"
+langl3 = "mars"
+langl4 = "avril"
+langl5 = "mai"
+langl6 = "juin"
+langl7 = "juillet"
+langl8 = "ao\373t"
+langl9 = "septembre"
+langla = "octobre"
+langlb = "novembre"
+langlc = "d\351cembre"
+
+#
+# Affirmative and negative responses for YES/NO queries
+#
+langye = "oui"
+langno = "non"
+
+#
+# Local AM and PM equivalents
+#
+langam = "AM"
+langpm = "PM"
+
+#
+# Local AD and BC equivalents
+#
+langad = "ap. J.C."
+langbc = "av. J.C."

@@ -1,0 +1,11 @@
+; BO_CAT_REG_CONTROL.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_CAT_REG_CONTROL"
+DESCRIPTION  'BO_CAT_REG_CONTROL Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

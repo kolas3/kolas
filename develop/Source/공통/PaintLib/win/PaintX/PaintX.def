@@ -1,0 +1,9 @@
+; PaintX.def : Declares the module parameters.
+
+LIBRARY      "PaintX.DLL"
+
+EXPORTS
+	DllCanUnloadNow      PRIVATE
+	DllGetClassObject    PRIVATE
+	DllRegisterServer    PRIVATE
+	DllUnregisterServer	 PRIVATE

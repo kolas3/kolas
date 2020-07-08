@@ -1,0 +1,334 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SE_VOL.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,30,27
+ PRODUCTVERSION 2005,8,30,27
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "SE_VOL DLL\0"
+            VALUE "FileVersion", "2005, 08, 30, 27\0"
+            VALUE "InternalName", "SE_VOL\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SE_VOL.DLL\0"
+            VALUE "ProductName", "SE_VOL 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 30, 27\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VOL DIALOG DISCARDABLE  0, 0, 392, 277
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "권호 정보"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtVOL_VOL_SORT_NO,231,8,80,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_TITLE,49,35,332,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    COMBOBOX        IDC_cmbVOL_FORM_CODE,49,62,95,80,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL
+    COMBOBOX        IDC_cmbVOL_MEDIA_CODE,190,62,95,89,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL
+    COMBOBOX        IDC_cmbVOL_VOLUME_CLASS,330,62,54,67,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL
+    EDITTEXT        IDC_edtVOL_VOL_TITLE,49,88,130,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_OTHER_VOL_TITLE,231,88,153,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_PUBLISH_DATE,49,104,80,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_ACQ_DATE,308,104,77,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_ACQ_EXP_BOOK_CNT,69,121,39,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_ACQ_BOOK_CNT,249,121,46,13,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_MISS_BOOK_CNT,339,121,45,14,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_PAGE,49,149,105,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_PHYSICAL_PROPERTY,203,149,107,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_SIZE,49,165,105,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_ACCOMP_MAT,203,165,107,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    COMBOBOX        IDC_cmbVOL_CURRENCY_CODE,49,181,59,65,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL
+    EDITTEXT        IDC_edtVOL_PRICE,109,181,45,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    COMBOBOX        IDC_cmbVOL_PRICE_CHARACTER,203,182,85,58,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL
+    EDITTEXT        IDC_edtVOL_ALTERNATIVE_TITLE,49,198,336,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_REMARK,49,213,336,41,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    LTEXT           "서  명",IDC_STATIC,12,38,24,8
+    DEFPUSHBUTTON   "확인",IDOK,289,261,50,15
+    PUSHBUTTON      "닫기",IDCANCEL,341,261,50,15
+    PUSHBUTTON      "부록정보",IDC_btnVOL_APPENDIX_INFO,6,261,50,15
+    PUSHBUTTON      "책정보",IDC_btnVOL_BOOK_INFO,59,261,50,15
+    PUSHBUTTON      "이전",IDC_btnVOL_PREV,151,261,50,15
+    PUSHBUTTON      "다음",IDC_btnVOL_NEXT,204,261,50,15
+    EDITTEXT        IDC_edtVOL_CONTROL_NO,49,9,80,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_ACQ_EXP_DATE,182,104,80,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_REG_BOOK_CNT,150,121,52,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtVOL_CHECKIN_STATUS,339,181,45,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    CONTROL         "열람우선여부",IDC_chkVOL_READ_FIRST_YN,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,319,151,62,10
+    CONTROL         "제본대상",IDC_chkVOL_BINDING_YN,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,319,167,46,9
+    LTEXT           "제어번호",IDC_STATIC,10,12,32,8
+    LTEXT           "권호일련번호",IDC_STATIC,175,11,48,8
+    LTEXT           "형식구분",IDC_STATIC,12,65,32,8
+    LTEXT           "매체구분",IDC_STATIC,151,65,32,8
+    LTEXT           "권호명",IDC_STATIC,12,91,24,8
+    LTEXT           "부차적권호명",IDC_STATIC,181,91,48,8
+    LTEXT           "발행일",IDC_STATIC,12,107,24,8
+    LTEXT           "입수예정일",IDC_STATIC,137,107,40,10
+    LTEXT           "입수일",IDC_STATIC,276,107,24,8
+    LTEXT           "입수예정책수",IDC_STATIC,11,123,48,8
+    LTEXT           "등록책수",IDC_STATIC,115,124,32,8
+    LTEXT           "입수책수",IDC_STATIC,208,123,32,8
+    LTEXT           "결호책수",IDC_STATIC,303,124,32,9
+    LTEXT           "면장수",IDC_STATIC,12,151,24,8
+    LTEXT           "물리적특성",IDC_STATIC,159,152,40,8
+    LTEXT           "크기",IDC_STATIC,12,167,16,8
+    LTEXT           "가격",IDC_STATIC,11,183,16,8
+    LTEXT           "딸린자료",IDC_STATIC,160,169,32,8
+    LTEXT           "가격성격",IDC_STATIC,160,185,32,8
+    LTEXT           "입수상태",IDC_STATIC,301,184,32,8
+    LTEXT           "권호별서명",IDC_STATIC,7,201,40,10
+    LTEXT           "비고",IDC_STATIC,14,229,16,8
+    GROUPBOX        "",IDC_STATIC,4,1,385,24
+    GROUPBOX        "",IDC_STATIC,4,26,384,28
+    GROUPBOX        "",IDC_STATIC,4,54,385,25
+    GROUPBOX        "",IDC_STATIC,4,79,385,60
+    GROUPBOX        "",IDC_STATIC,3,139,386,120
+    LTEXT           "권호구분",IDC_STATIC,295,65,32,8
+END
+
+IDD_APPENDIX DIALOG DISCARDABLE  0, 0, 440, 279
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "부록정보"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "저장",IDOK,332,260,50,15
+    PUSHBUTTON      "닫기",IDCANCEL,386,260,50,15
+    EDITTEXT        IDC_edtAPPENDIX_VOL_TITLE,53,5,374,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_gridAPPENDIX,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,3,23,433,85
+    EDITTEXT        IDC_edtAPPENDIX_APPENDIX_NAME,54,178,375,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbAPPENDIX_FORM_CODE,193,147,90,101,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbAPPENDIX_MEDIA_CODE,339,147,90,81,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtAPPENDIX_REMARK,54,195,375,24,ES_AUTOHSCROLL
+    CONTROL         "폐기여부",IDC_chkAPPENDIX_DISCARD_YN,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,7,227,44,8
+    EDITTEXT        IDC_edtAPPENDIX_DISCARD_DATE,57,236,68,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtAPPENDIX_DISCARD_REASON,170,236,259,13,ES_AUTOHSCROLL
+    LTEXT           "부록명",IDC_STATIC,19,181,24,8
+    LTEXT           "형식구분",IDC_STATIC,155,149,32,8
+    LTEXT           "매체구분",IDC_STATIC,301,150,32,8
+    LTEXT           "비고",IDC_STATIC,19,203,16,8
+    LTEXT           "폐기일자",IDC_STATIC,19,239,32,8
+    LTEXT           "폐기사유",IDC_STATIC,132,239,32,8
+    LTEXT           "권호명",IDC_STATIC,22,7,24,8
+    GROUPBOX        "",IDC_STATIC,4,167,433,58
+    GROUPBOX        "",IDC_STATIC,4,226,433,29
+    PUSHBUTTON      "추가",IDC_btnAPPENDIX_INSERT,7,260,50,15
+    PUSHBUTTON      "수정",IDC_btnAPPENDIX_MODIFY,62,260,50,15
+    PUSHBUTTON      "삭제",IDC_btnAPPENDIX_DELETE,117,260,50,15
+    PUSHBUTTON      "화면지우기",IDC_btnAPPENDIX_CLEAR,173,260,50,15
+    CONTROL         "단행본등록여부",IDC_chkAPPENDIX_REG_FLAG,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,327,119,82,8
+    COMBOBOX        IDC_cmbAPPENDIX_REG_CODE,55,147,90,114,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "등록구분",IDC_STATIC,19,149,32,8
+    COMBOBOX        IDC_cmbAPPENDIX_WORKING_STATUS,56,117,140,102,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "자료상태",IDC_STATIC,18,121,32,8
+    GROUPBOX        "",IDC_STATIC,4,109,433,26
+    GROUPBOX        "",IDC_STATIC,4,136,433,30
+END
+
+IDD_BOOK DIALOG DISCARDABLE  0, 0, 412, 277
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "책정보관리"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "저장",IDOK,299,257,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,354,257,50,14
+    CONTROL         "",IDC_gridBOOK,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,3,20,407,119
+    EDITTEXT        IDC_edtBOOK_VOL_TITLE,71,4,259,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtBOOK_ACQ_DATE,173,150,67,13,ES_CENTER | ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbBOOK_SHELF_LOC_CODE,41,150,96,83,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtBOOK_REMARK,40,186,362,60,ES_AUTOHSCROLL
+    LTEXT           "권호명:",IDC_STATIC,31,6,28,8
+    LTEXT           "입수일",IDC_STATIC_BOOK_ACQ_DATE,143,153,24,8
+    LTEXT           "자료실",IDC_STATIC,9,153,24,8
+    LTEXT           "비고",IDC_STATIC_BOOK_REMARK,13,209,16,8
+    GROUPBOX        "",IDC_STATIC_UP_OUTLINE,4,140,404,30
+    GROUPBOX        "",IDC_STATIC_DOWN_OUTLINE,4,174,404,77
+    PUSHBUTTON      "접수번호변경",IDC_btnBOOK_RECEIPT,194,257,54,14
+    PUSHBUTTON      "수정",IDC_btnLINE_MODFY,82,257,50,14
+    COMBOBOX        IDC_cmbBOOK_WORKING_STATUS,286,150,117,195,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "자료상태",IDC_STATIC_BOOK_WORKING_STATUS,247,153,32,8
+    PUSHBUTTON      "삭제",IDC_btnBOOK_DELETE,137,257,52,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_APPENDIX DLGINIT
+BEGIN
+    IDC_gridAPPENDIX, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4e57, 0x0000, 0x0d3b, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_BOOK DLGINIT
+BEGIN
+    IDC_gridBOOK, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4996, 0x0000, 0x1280, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\SE_VOL.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

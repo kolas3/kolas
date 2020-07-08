@@ -1,0 +1,7 @@
+; BO_CAT_REGNO_DLG.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_CAT_REGNO_DLG"
+DESCRIPTION  'BO_CAT_REGNO_DLG Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

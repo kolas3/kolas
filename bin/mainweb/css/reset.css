@@ -1,0 +1,111 @@
+
+
+* {
+    text-decoration: none;
+    list-style-type: none;
+}
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../common/font/font/NanumBarunGothic.eot);
+  src: local('Nanum Barun Gothic'),
+       local('NanumBarunGothic'),
+       url(../../common/font/NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
+       url(../../common/font/NanumBarunGothic.woff) format('woff'),
+       url(../../common/font/NanumBarunGothic.ttf) format('truetype');
+   }
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NanumGothic.eot);
+  src: local('Nanum Gothic'),
+       local('NanumGothic'),
+       url(../fonts/NanumGothic.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NanumGothic.woff) format('woff'),
+       url(../fonts/NanumGothic.ttf) format('truetype');
+}
+/* 여백 초기화 */
+body,div,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,legend,textarea,p,
+select,button,figure,pre,input,blockquote,th,td,em,span,option{margin: 0; padding: 0;}
+
+/* 폰트 초기화 */
+body,input,textarea,select,button,table{
+   font-family: 'Nanum Gothic', '맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif; 
+   font-size: 12px; line-height: 1.5;}
+
+/* 폰트 스타일 초기화 */
+em, address {font-style: normal;}
+
+/* list-style 초기화 */
+ul,li,ol {list-style: none;}
+
+/* 제목 태그 초기화 */
+h1,h2,h3,h4,h5,h6 {font-size: 12px; font-weight: normal;  }
+
+/* a 링크 초기화 */
+a {color: #333; text-decoration: none;}
+
+/* 이미지 초기화  */
+img {border:0;}
+
+/* table 초기화 */
+table {width: 100%; border-spacing: 0; border-collapse: collapse;}
+
+/* ir 효과 */
+.ir {width: 0; height: 0; font-size: 0; line-height: 0; position: absolute; left: 0; top: 0; overflow: hidden;}
+
+/* border 초기화 */
+form, fieldset, img {
+    border: none;
+}
+
+/* for screen reader */
+legend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+
+input[type="button"]{
+  border: none;
+  padding:0;
+  background:transparent;
+  appearance: none;
+  box-shadow:none;
+  cursor:pointer;
+  border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
+  white-space: nowrap;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  -webkit-box-shadow:none;
+  -webkit-user-select: none;
+  overflow:visible;
+
+}
+
+button{
+   border: none;
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+    cursor:pointer;
+    border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
+    white-space: nowrap;
+    appearance: none;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    -webkit-box-shadow:none;
+    -webkit-user-select: none;
+     overflow:visible;
+}
+
+

@@ -1,0 +1,11 @@
+; SE_LOC_1500.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_LOC_1500"
+DESCRIPTION  'SE_LOC_1500 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

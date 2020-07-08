@@ -1,0 +1,11 @@
+; BO_ACQ_PURCHASE_STATISTICS.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_ACQ_PURCHASE_STATISTICS"
+DESCRIPTION  'BO_ACQ_PURCHASE_STATISTICS Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

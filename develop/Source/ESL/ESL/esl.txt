@@ -1,0 +1,51 @@
+#define MYSQL_CONNECT \
+	if(m_pMysql == NULL) \
+	{\
+		m_pMysql  = mysql_init((MYSQL*)NULL);\
+		mysql_options(m_pMysql,MYSQL_SET_CHARSET_NAME,MYSQL_CHAR_SET);\
+		mysql_real_connect(m_pMysql, m_dbhost.GetBuffer(0), m_dbid.GetBuffer(0), m_dbpwd.GetBuffer(0), NULL, MYSQL_PORT, NULL, 0); \
+		QueryLog( "MySQL 접속 시도[0]" ); \
+		if (mysql_ping(m_pMysql) != 0) \
+		{\
+			QueryLog( "MySQL 접속 재시도[1]" ); \
+			UINT nMErrorCode = mysql_errno(m_pMysql); \
+			CString sMEMsg; \
+			sMEMsg.Format( "MySQL ErrorCode : %d " , nMErrorCode ); \
+			QueryLog( sMEMsg.GetBuffer(0) ); \
+			\
+			mysql_real_connect(m_pMysql, m_dbhost.GetBuffer(0), m_dbid.GetBuffer(0), m_dbpwd.GetBuffer(0), NULL, MYSQL_PORT, NULL, 0); \
+			if (mysql_ping(m_pMysql) != 0) \
+			{\
+				QueryLog( "MySQL 접속 실패[2]" ); \
+				UINT nMErrorCode = mysql_errno(m_pMysql); \
+				CString sMEMsg; \
+				sMEMsg.Format( "MySQL ErrorCode : %d " , nMErrorCode ); \
+				QueryLog( sMEMsg.GetBuffer(0) ); \
+				return -4100; \
+			}\
+		}\
+	} \
+	else \
+	{ \
+		if(mysql_ping(m_pMysql) != 0) \
+		{ \
+			QueryLog( "MySQL 재 접속 실패[3]" ); \
+			UINT nMErrorCode = mysql_errno(m_pMysql); \
+			CString sMEMsg; \
+			sMEMsg.Format( "MySQL ErrorCode : %d " , nMErrorCode ); \
+			QueryLog( sMEMsg.GetBuffer(0) ); \
+			mysql_real_connect(m_pMysql, m_dbhost.GetBuffer(0), m_dbid.GetBuffer(0), m_dbpwd.GetBuffer(0), NULL, MYSQL_PORT, NULL, 0); \
+			QueryLog( "MySQL 접속 재시도[4]" ); \
+			if (mysql_ping(m_pMysql) != 0) \
+			{\
+				QueryLog( "MySQL 재 접속 재시도[5]" ); \
+				UINT nMErrorCode = mysql_errno(m_pMysql); \
+				CString sMEMsg; \
+				sMEMsg.Format( "MySQL ErrorCode : %d " , nMErrorCode ); \
+				QueryLog( sMEMsg.GetBuffer(0) ); \
+				return -4101; \
+			}\
+		} \
+	} \
+
+

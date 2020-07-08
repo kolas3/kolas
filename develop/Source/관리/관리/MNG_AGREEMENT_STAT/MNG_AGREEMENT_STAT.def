@@ -1,0 +1,12 @@
+; MNG_AGREEMENT_STAT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_AGREEMENT_STAT"
+DESCRIPTION  'MNG_AGREEMENT_STAT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+CreateForm
+ResizeForm
+DeleteForm
+CreateModelessDlg

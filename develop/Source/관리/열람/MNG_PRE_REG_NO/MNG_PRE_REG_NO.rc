@@ -1,0 +1,217 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MNG_PRE_REG_NO.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,31,90
+ PRODUCTVERSION 2005,8,31,90
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "MNG_PRE_REG_NO DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 90\0"
+            VALUE "InternalName", "MNG_PRE_REG_NO\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MNG_PRE_REG_NO.DLL\0"
+            VALUE "ProductName", "MNG_PRE_REG_NO 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 90\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MNG_PRE_REG_NO_DLG DIALOG DISCARDABLE  0, 0, 421, 284
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_gridREG_NO,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,20,20,375,231
+END
+
+IDD_MNG_PRE_REG_NO_INPUT_DLG DIALOG DISCARDABLE  0, 0, 317, 337
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "입력/수정"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbMANAGE_CODE,53,6,95,208,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtPRE_REG_CODE,77,39,62,13,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREG_CNT,77,55,62,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbREG_CODE,243,48,62,208,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "저 장",IDC_btnSAVE_REG_NO,209,314,48,19
+    PUSHBUTTON      "닫 기",IDC_btnCLOSE_REG_NO,263,314,48,19
+    DEFPUSHBUTTON   "이 전",IDC_btnPREV_REG_NO,7,314,48,19
+    DEFPUSHBUTTON   "다 음",IDC_btnNEXT_REG_NO,61,314,48,19
+    LTEXT           "등록 구분",IDC_STATIC,15,41,37,8
+    LTEXT           "등록번호 자리수",IDC_STATIC,15,57,61,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,307,363,1
+    GROUPBOX        "KOLAS III 이전 시스템",IDC_STATIC,6,29,143,44
+    LTEXT           "3. 이전의 숫자 7자리의 등록번호를 KOLAS III 에서는 ",IDC_STATIC,21,131,272,8
+    LTEXT           "==>",IDC_STATIC,158,48,13,8
+    GROUPBOX        "KOLAS III",IDC_STATIC,187,30,125,44
+    LTEXT           "등록 구분",IDC_STATIC,200,50,37,8
+    GROUPBOX        "예제",IDC_STATIC,6,80,306,222
+    LTEXT           "   등록구분 EM으로 사용시",IDC_STATIC,22,144,272,8
+    LTEXT           "      이전등록구분       : 입력할 필요 없습니다.",IDC_STATIC,22,157,272,8
+    LTEXT           "      ==> '1234567'입력시 'EM0001234567'로 변환",IDC_STATIC,22,197,272,8
+    LTEXT           "      이전등록번호자리수 : 7",IDC_STATIC,22,170,272,8
+    LTEXT           "      KOLAS III 등록구분  : EM",IDC_STATIC,22,184,272,8
+    LTEXT           "4. 이전의 등록구분 'N' , 숫자 6자리의 등록번호를 KOLAS III에서는 ",IDC_STATIC,21,215,272,8
+    LTEXT           "등록구분 NB로 사용시",IDC_STATIC,34,228,194,8
+    LTEXT           "      이전등록구분       : N",IDC_STATIC,22,241,272,8
+    LTEXT           "      ==> 'N123456'입력시 'NB0000123456'로 변환",IDC_STATIC,22,281,272,8
+    LTEXT           "      이전등록번호자리수 : 7",IDC_STATIC,22,254,272,8
+    LTEXT           "      KOLAS III 등록구분  : NB",IDC_STATIC,22,268,272,8
+    LTEXT           "관리 구분",IDC_STATIC,7,8,37,8,NOT WS_VISIBLE
+    LTEXT           "1. 관리구분이 적용안함인 이전등록번호 룰은 항상 적용됩니다.",IDC_STATIC,21,93,272,8
+    LTEXT           "2. 관리구분이 존재하는 이전등록번호 룰은 프로그램 사용자의 관리구분과 일치할 경우만 적용됩니다.",IDC_STATIC,21,107,272,18
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MNG_PRE_REG_NO_DLG DLGINIT
+BEGIN
+    IDC_gridREG_NO, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x43cd, 0x0000, 0x23dd, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MNG_PRE_REG_NO.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

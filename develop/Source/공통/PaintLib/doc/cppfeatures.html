@@ -1,0 +1,127 @@
+<HTML>
+
+<HEAD>
+  <TITLE>paintlib - C++ - Features</TITLE>
+  <meta name="robots" content="noindex">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="#8000FF" ALINK="#FF00FF">
+<accessed silent>
+<table width="350" border="0" cellspacing="0" cellpadding="0" align=right>
+  <tr>
+    <td>
+	  <img src="pics/cppfeatures.gif" width=350 height=60 border=0 	 
+         alt="" hspace=0 vspace=0>
+    <img src="pics/whitept.gif" width=31 height=21 hspace=0 vspace=0 border=0 alt="">
+    </td>
+  </tr>
+</table>
+<br clear=all>
+<p align=left>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+    <td width="22">
+      <img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+    </td>
+    <td> 
+      <P> 
+      <P><B>Bitmap Operations</B> 
+      <P> paintlib works on bitmaps. The abstract class PLBmp defines an interface 
+        for bitmap storage and manipulation. The actual details of storage are 
+        defined in derived classes. The contents of a bitmap can be changed either 
+        via Filter objects or by directly accessing the bits. Among others, filters 
+        for resizing, cropping, rotating and blurring an image are included. PLBmp 
+        implements color depth conversion from and to 1,8,24 and 32 bpp. The standard 
+        equality and assignment operators are implemented as well and convert 
+        between the derived classes transparently. paintlib provides basic classes 
+        for pixels, points and rectangles.
+      <P>Currently, four classes derived from PLBmp are defined: PLWinBmp for 
+        windows DIBs (Device Independent Bitmaps), PLAnyBmp for simple OS-independent 
+        storage, PLDIBSection for windows DIB sections and the experimental PLDDrawBmp 
+        class that stores images in DirectDraw system memory surfaces. New classes 
+        can be defined for other operating systems and storage formats, the only 
+        restriction being that pixels in one line are stored consecutively and 
+        not as separate planes. To be compatible with the decoders, a bitmap class 
+        must define formats with 1, 8 and 32 bpp. Bitmaps with alpha channels 
+        are supported. 
+      <P> [Bernard Delmées piclook (one of the sample programs) contains PLDrawDibBmp, 
+        a derived bitmap class that uses the windows DrawDIB api for blitting.] 
+      <P> There is virtually no difference in speed between using the OS-independent 
+        interface and directly accessing OS-dependent data. The power of this 
+        design is demonstrated by the testdib demo. This demo includes classes 
+        which implement complex bitblts with alpha information, resizing, and 
+        transparency in an OS-independent fashion. The classes are documented 
+        in the read.me file in the testdib directory. 
+      <P><b>Filters</b>
+      <P>Filters encapsulate operations on bitmaps. To the user of the library, 
+        a filter is similar to a function that can be called for a bitmap. However, 
+        filters are independent of the actual bitmap class: Each filter works 
+        with every bitmap class. In addition, putting filters in separate classes 
+        allows you to use filters as part of a command pattern: you can put filters 
+        in a queue and parameterize algorithms with different filters, among others. 
+        Here is a list of some of the filters currently included with paintlib: 
+      <ul>
+        <li>Contrast</li>
+        <li>Crop</li>
+        <li>Extract alpha channel</li>
+        <li>Convert to grayscale</li>
+        <li>Intensity</li>
+        <li>Lightness</li>
+        <li>Color quantization (conversion of true-color images to 256 colors)</li>
+        <li>Bilinear resize</li>
+        <li>Gaussian blur</li>
+        <li>Threshold</li>
+      </ul>
+      <p><B>Image File Decoding</B> </p>
+      <P> paintlib can decode image files and store the data in an object of any 
+        of the PLBmp-derived classes. Supported file formats are GIF, PGM, PPM, 
+        PNG, TGA, TIFF, JPEG, PCX, Photoshop PSD, Windows BMP, and Mac PICT as 
+        well as TIFF previews in EPS files. Support for PNG is through the PNG 
+        reference library libpng. TIFF is supported through use of Sam Leffler's 
+        libtiff. This library is the most complete implementation of the TIFF 
+        standard that I know of. The Independent JPEG Group's libjpeg provides 
+        solid support for the JPEG/JFIF format. The GIF decoder uses libungif 
+        (maintained by Eric Raymond). The Photoshop decoder allows access to the 
+        individual layers saved in the file as separate bitmaps..
+      <P>Be aware that using a gif decoder in your program can might cause legal 
+        problems - see the libungif documentation for details. If you'd like to 
+        use paintlib without gif support, you can compile it without this support. 
+        In fact, you can exclude support for any file types you don't need. 
+      <P> The library is capable of auto-detection of the image file type. This 
+        is done by actually examining the file contents, not by checking the extension. 
+        Input data can come from memory or disk - or from a custom data source. 
+        Under windows, images linked into the .exe as resources can also be loaded. 
+        All data is converted to 32 bpp or 8 bpp before being handed to the application. 
+        1 bpp tiffs are an exception to this rule - they get handed to the application 
+        as 1 bpp. 
+      <P>paintlib allows you to get image information (size, bit depth,...) before 
+        the actual decoding process starts. 
+      <P><B>Image File Encoding</B> 
+      <P> The encoding classes store images. Currently implemented are BMP, TIFF 
+        (via libtiff), JPEG (via libjpeg) and PNG (via libpng). Data storage is 
+        handled by data sink classes. A data sink for disk files is provided; 
+        others can be implemented. 
+      <P><B>Open Design</B> 
+      <P> One of the primary design goals for paintlib was openness for expansion. 
+        Implementing additional en- and decoders is simple because many basic 
+        operations (data source management, MSB/LSB conversion, error handling,...) 
+        have been taken care of already. Integrating libpng, for example, took 
+        Gilles and me about two days (total) of work. The data sources and sinks 
+        and the bitmap format can be tailored to suit the needs of the users. 
+        The filter interface is very thin, so creating new filters is easy. 
+      <P> While most of the development is being done under Microsoft Visual C++, 
+        paintlib is plattform-independent and *nix configure files are available. 
+        This plattform independence causes no performance degradation that we 
+        know of. 
+      <p><br>
+    </td>
+    <td width="22">
+      <img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+    </td>
+
+  </tr>
+</table>
+
+</BODY>
+
+</HTML>

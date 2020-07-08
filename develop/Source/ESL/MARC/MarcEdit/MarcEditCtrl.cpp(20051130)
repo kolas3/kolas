@@ -1,0 +1,3016 @@
+// MarcEditCtrl.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "MarcEditCtrl.h"
+#include "MarcEditor.h"
+#include "DlgSymbolColor.h"
+
+//#include "..\..\..\관리\전거\ACMarcGetter\ACMARCGetterDlg.h"
+
+//#include "..\..\..\..\관리\전거\MNG_AC_MANAGER\ACMARCGetterDlg.h"
+
+#include "..\..\esl\LIB_F2KEY_SpecialChar.h"
+#include "..\..\esl\ConvertToHanjaDlg.h"
+
+#include "efs.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+#define WM_LINE_LOCATION	WM_USER + 100
+
+/////////////////////////////////////////////////////////////////////////////
+// CMarcEditCtrl
+
+CMarcEditCtrl::CMarcEditCtrl()
+{
+	m_pParentEditor = NULL;
+	m_pMarcMgr = NULL;
+	m_pMarc = NULL;
+
+	m_pDlgMarcSyntaxError = NULL;		// error dialog
+
+	m_changeType = ctUndo;
+	
+	m_bInForcedChange = FALSE;
+	
+	// set format..
+	SetTextColor(RGB(0, 0, 0), FALSE);
+	SetNumberColor(RGB(0, 0, 0), FALSE);
+	SetTagCodeColor(RGB(0, 0, 255), FALSE);
+	SetIndicatorCodeColor(RGB(255, 0, 255), FALSE);
+	SetSubfieldCodeColor(RGB(255, 0, 128), FALSE);
+	SetFieldTerminatorColor(RGB(0, 255, 0), FALSE);
+	SetRecordTerminatorColor(RGB(0, 255, 0), FALSE);
+	SetErrorColor(RGB(255, 0, 0), FALSE);
+
+	m_clrBkColor = RGB(255, 255, 255);
+	
+	// create marc syntax error dialog
+	CreateSyntaxErrorDialog();
+
+	m_strEditorFormatConfFile = _T("..\\cfg\\MarcEditor\\EditorFormat.cfg");
+	m_strSubfieldWrapConfFile = _T("..\\cfg\\MarcEditor\\SubfieldWrap.cfg");
+
+	m_pFRDlg = NULL;
+
+	ZeroMemory(&m_osvi, sizeof(OSVERSIONINFOEX));
+	m_osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
+	GetVersionEx ((OSVERSIONINFO*) &m_osvi);
+}
+
+void CMarcEditCtrl::PreSubclassWindow() 
+{
+	EFS_BEGIN
+
+	// para
+	PARAFORMAT pf;
+	pf.cbSize = sizeof(PARAFORMAT);
+	pf.dwMask = PFM_TABSTOPS;
+	pf.cTabCount = MAX_TAB_STOPS;
+	for (INT iTab = 0; iTab < pf.cTabCount; iTab++)
+		pf.rgxTabs[iTab] = (iTab + 1) * 1440 / 5;
+
+	SetParaFormat(pf);
+	
+	// character
+	CHARFORMAT cf;
+	cf.cbSize = sizeof(cf);
+	cf.dwMask = CFM_BOLD | CFM_ITALIC | CFM_SIZE | CFM_CHARSET | CFM_PROTECTED | CFM_FACE;
+	cf.dwEffects = CFE_PROTECTED;
+	cf.yHeight = 200;
+	cf.bCharSet = DEFAULT_CHARSET;
+	_tcscpy(cf.szFaceName, "굴림체");
+
+	SetDefaultCharFormat(cf);
+	SetEventMask(ENM_CHANGE | ENM_SELCHANGE | ENM_PROTECTED);
+
+	LoadEditorFormatConfig();
+	LoadSubfieldWrapConfig();
+
+	CRichEditCtrl::PreSubclassWindow();
+
+	EFS_END
+}
+
+void CMarcEditCtrl::LoadSubfieldWrapConfig()
+{
+	EFS_BEGIN
+
+	CStdioFile file;
+	if (!file.Open(m_strSubfieldWrapConfFile, CFile::modeRead | CFile::typeBinary))
+		return;
+
+	TCHAR cUni;
+	file.Read( &cUni, sizeof(TCHAR) );
+	if( 0xFEFF != cUni )
+	{
+		file.SeekToBegin();
+	}
+	
+	CString *pStrAlias = NULL;
+	
+	INT nFind = -1;
+	CString strLine;
+	while (file.ReadString(strLine))
+	{
+		strLine.TrimLeft();
+		strLine.TrimRight();
+
+		if (strLine.IsEmpty() || strLine.Left(1) == "#") continue;
+
+		strLine.Replace('$', SUBFIELD_CODE);
+
+		pStrAlias = new CString;
+		if (pStrAlias == NULL) continue;
+		pStrAlias->Format("%s", strLine);
+		m_listSubfieldWordWrap.AddTail((CObject*)pStrAlias);
+	}
+
+	file.Close();
+
+	EFS_END
+}
+
+BOOL CMarcEditCtrl::IsWrapSubfield(CString strAlias)
+{
+	EFS_BEGIN
+
+	if (strAlias.IsEmpty()) return FALSE;
+
+	CString *pStr;
+	POSITION pos = m_listSubfieldWordWrap.GetHeadPosition();
+	while(pos)
+	{
+		pStr = (CString*)m_listSubfieldWordWrap.GetNext(pos);
+		if (pStr == NULL) continue;
+
+		if (pStr->CompareNoCase(strAlias) == 0) return TRUE;
+	}
+
+	return FALSE;
+
+	EFS_END
+	return FALSE;
+
+}
+
+void CMarcEditCtrl::LoadEditorFormatConfig()
+{
+	EFS_BEGIN
+
+	CStdioFile file;
+	if (!file.Open(m_strEditorFormatConfFile, CFile::modeRead | CFile::typeBinary))
+		return;
+
+	TCHAR cUni;
+	file.Read( &cUni, sizeof(TCHAR) );
+	if( 0xFEFF != cUni )
+	{
+		file.SeekToBegin();
+	}
+	
+	CString strKey;
+	CString strLParam;
+	CString strRParam;
+
+	INT nFind = -1;
+	CString strLine;
+	while (file.ReadString(strLine))
+	{
+		strLine.TrimLeft();
+		strLine.TrimRight();
+
+		if (strLine.IsEmpty() || strLine.Left(1) == "#") continue;
+
+
+		nFind = strLine.Find("=");
+		if (nFind == -1) continue;
+
+		strKey = strLine.Left(nFind);
+		strKey.TrimLeft();
+		strKey.TrimRight();
+
+		strLine = strLine.Mid(nFind + 1);
+		strLine.TrimLeft();
+		strLine.TrimRight();
+
+		nFind = strLine.Find(",");
+		if (nFind < 0) continue;
+
+		strLParam = strLine.Left(nFind);
+		strRParam = strLine.Mid(nFind + 1);
+
+		strLParam.TrimLeft();
+		strLParam.TrimRight();
+
+		strRParam.TrimLeft();
+		strRParam.TrimRight();
+
+		if (strKey.CompareNoCase("BK_COLOR") == 0)
+		{
+			SetBkColor(atoi(strLParam), atoi(strRParam));
+		}
+		else if (strKey.CompareNoCase("TEXT") == 0)
+		{
+			SetTextColor(atoi(strLParam), atoi(strRParam));
+		}
+		else if (strKey.CompareNoCase("NUMBER") == 0)
+		{
+			SetNumberColor(atoi(strLParam), atoi(strRParam));
+		}
+		else if (strKey.CompareNoCase("TAG_CODE") == 0)
+		{
+			SetTagCodeColor(atoi(strLParam), atoi(strRParam));
+		}
+		else if (strKey.CompareNoCase("INDICATOR") == 0)
+		{
+			SetIndicatorCodeColor(atoi(strLParam), atoi(strRParam));
+		}
+		else if (strKey.CompareNoCase("SUBFIELD_CODE") == 0)
+		{
+			SetSubfieldCodeColor(atoi(strLParam), atoi(strRParam));
+		}
+		else if (strKey.CompareNoCase("FIELD_TERMINATOR") == 0)
+		{
+			SetFieldTerminatorColor(atoi(strLParam), atoi(strRParam));
+		}
+		else if (strKey.CompareNoCase("RECORD_TERMINATOR") == 0)
+		{
+			SetRecordTerminatorColor(atoi(strLParam), atoi(strRParam));
+		}
+		else if (strKey.CompareNoCase("ERROR") == 0)
+		{
+			SetErrorColor(atoi(strLParam), atoi(strRParam));
+		}
+		else if (strKey.CompareNoCase("FONT") == 0)
+		{
+			CHARFORMAT cf;
+			GetDefaultCharFormat(cf);
+
+			cf.yHeight = atoi(strLParam);
+			_tcscpy(cf.szFaceName, strRParam);
+
+			SetDefaultCharFormat(cf);
+		}
+	}
+
+	file.Close();
+
+	EFS_END
+}
+
+void CMarcEditCtrl::SaveEditorFormatConfig()
+{
+	EFS_BEGIN
+
+	CStdioFile file;
+	if (!file.Open(m_strEditorFormatConfFile, CFile::modeWrite | CFile::modeCreate | CFile::typeBinary))
+		return;
+
+	if( 0 == file.GetLength() )
+	{			
+		TCHAR cUni = 0xFEFF;
+		file.Write( &cUni, sizeof(TCHAR));
+	}
+	
+	CString strLine;
+	CString strKey;
+	CString strLParam;
+	CString strRParam;
+
+	COLORREF clr;
+	BOOL bBold;
+
+	GetBkColor(clr, bBold);	
+	strKey = "BK_COLOR";
+	strLParam.Format("%d", clr);
+	strRParam.Format("%d", bBold);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	GetTextColor(clr, bBold);
+	strKey = "TEXT";
+	strLParam.Format("%d", clr);
+	strRParam.Format("%d", bBold);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	GetNumberColor(clr, bBold);
+	strKey = "NUMBER";
+	strLParam.Format("%d", clr);
+	strRParam.Format("%d", bBold);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	GetTagCodeColor(clr, bBold);
+	strKey = "TAG_CODE";
+	strLParam.Format("%d", clr);
+	strRParam.Format("%d", bBold);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	GetIndicatorCodeColor(clr, bBold);
+	strKey = "INDICATOR";
+	strLParam.Format("%d", clr);
+	strRParam.Format("%d", bBold);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	GetSubfieldCodeColor(clr, bBold);
+	strKey = "SUBFIELD_CODE";
+	strLParam.Format("%d", clr);
+	strRParam.Format("%d", bBold);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	GetFieldTerminatorColor(clr, bBold);
+	strKey = "FIELD_TERMINATOR";
+	strLParam.Format("%d", clr);
+	strRParam.Format("%d", bBold);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	GetRecordTerminatorColor(clr, bBold);
+	strKey = "RECORD_TERMINATOR";
+	strLParam.Format("%d", clr);
+	strRParam.Format("%d", bBold);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	GetErrorColor(clr, bBold);
+	strKey = "ERROR";
+	strLParam.Format("%d", clr);
+	strRParam.Format("%d", bBold);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	CHARFORMAT cf;
+	GetDefaultCharFormat(cf);
+
+	strKey = "FONT";
+	strLParam.Format("%d", cf.yHeight);
+	strRParam.Format("%s", cf.szFaceName);
+	strLine = strKey + " = " + strLParam + ", " + strRParam + "\r\n";
+	file.WriteString(strLine);
+
+	file.Close();
+
+	EFS_END
+}
+
+CMarcEditCtrl::~CMarcEditCtrl()
+{
+	FreeSaveTagList();
+	FreeSubfieldWordWrapList();
+	if (m_pDlgMarcSyntaxError != NULL)
+	{
+		m_pDlgMarcSyntaxError->DestroyWindow();
+		delete m_pDlgMarcSyntaxError;
+		m_pDlgMarcSyntaxError = NULL;
+	}
+}
+
+INT CMarcEditCtrl::FreeSaveTagList()
+{
+	EFS_BEGIN
+
+	INT nListCount = m_listSavedTag.GetCount();
+	if (nListCount == 0) return 0;
+	CTag *pTag;
+	for (INT i = 0; i < nListCount; i++)
+	{
+		pTag = (CTag*)m_listSavedTag.RemoveHead();
+		if (pTag) delete pTag;
+	}
+	m_listSavedTag.RemoveAll();
+	return nListCount;
+
+	EFS_END
+	return -1;
+
+}
+
+INT CMarcEditCtrl::FreeSubfieldWordWrapList()
+{
+	EFS_BEGIN
+
+	INT nListCount = m_listSubfieldWordWrap.GetCount();
+	if (nListCount == 0) return 0;
+	CString *pStr;
+	for (INT i = 0; i < nListCount; i++)
+	{
+		pStr = (CString*)m_listSubfieldWordWrap.RemoveHead();
+		if (pStr) delete pStr;
+	}
+	m_listSubfieldWordWrap.RemoveAll();
+	return nListCount;
+
+	EFS_END
+	return -1;
+
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// CMarcEditCtrl Proc
+void CMarcEditCtrl::Init(CMarcMgr *pMarcMgr, CMarc *pMarc)
+{
+	EFS_BEGIN
+
+	// Limit Tag
+	//InitLimitTag();
+
+	// marc mgr
+	SetMarcMgr(pMarcMgr);
+	SetMarc(pMarc);	
+
+	m_pDlgMarcSyntaxError->m_pMarcMgr = pMarcMgr;
+
+	EFS_END
+}
+
+void CMarcEditCtrl::InitLimitTag()
+{
+	EFS_BEGIN
+
+	m_arrayLimitTag.RemoveAll();
+
+	EFS_END
+}
+
+void CMarcEditCtrl::AddLimitTag(CString strTagCode, CString strIndicator /* = "__"*/)
+{
+	EFS_BEGIN
+
+	if (strTagCode.GetLength() != 3) return;
+
+	if (strIndicator.GetLength() != 2)
+		strIndicator = _T("__");
+
+	m_arrayLimitTag.Add(strTagCode + strIndicator);
+
+	EFS_END
+}
+
+BOOL CMarcEditCtrl::IsLimitTag(CString strTagCode, CString strIndicator /*= _T("__")*/)
+{
+	EFS_BEGIN
+	
+	if (strTagCode.GetLength() != 3) return FALSE;
+
+	if (strIndicator.GetLength() != 2)
+		strIndicator = _T("__");
+
+	INT nCount = m_arrayLimitTag.GetSize();
+
+	CString strLimitTag;
+	for (INT idx = 0; idx < nCount; idx++)
+	{
+		strLimitTag = m_arrayLimitTag.GetAt(idx);
+		if (strLimitTag.Right(2) == _T("__"))
+		{
+			if (strTagCode == strLimitTag.Left(3)) return TRUE;
+		}
+		else
+		{
+			if (strTagCode + strIndicator == strLimitTag) return TRUE;
+		}
+	}
+	
+	return FALSE;
+
+	EFS_END
+
+	return FALSE;
+}
+
+void CMarcEditCtrl::FormatAll()
+{
+	EFS_BEGIN
+
+	//LockWindowUpdate();
+	FormatTextRange(0, GetTextLength());
+	//UnlockWindowUpdate();
+
+	EFS_END
+}
+
+void CMarcEditCtrl::FormatTextLines(INT nLineStart, INT nLineEnd)
+{
+	EFS_BEGIN
+
+	LONG nStart = LineIndex(LineFromChar(nLineStart));
+	LONG nEnd = LineIndex(LineFromChar(nLineEnd));
+	nEnd += LineLength(nLineEnd);
+
+	GetFieldRange(nStart, nEnd);
+	FormatTextRange(nStart, nEnd);
+	CheckSimpleSyntax(nStart, nEnd);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::GetFieldRange(LONG &nStart, LONG &nEnd)
+{
+	EFS_BEGIN
+
+	CString strText;
+	GetWindowText(strText);
+
+	BOOL bFindFieldTerminator = FALSE;
+	LONG nTextLength = GetTextLength();
+	LONG idx;
+	// Find Preveous Field Terminator or first char
+	TCHAR ch;
+	for (idx = nStart - 1; idx >= 0; idx --)
+	{
+		//SetSel(idx, idx + 1);
+		//GetSelText(&ch);
+		ch = strText.GetAt(idx);
+
+		if (ch == FIELD_TERMINATOR) 
+		{
+			nStart = idx + 1;
+			bFindFieldTerminator = TRUE;
+			break;
+		}
+	}
+	if (!bFindFieldTerminator)
+		nStart = 0;
+
+	// Find Next Field Terminator
+	if (nEnd == 0) return;
+	for (idx = nEnd - 1; idx < nTextLength; idx++)
+	{
+		//SetSel(idx, idx + 1);
+		//GetSelText(&ch);
+		ch = strText.GetAt(idx);
+
+		if (ch == FIELD_TERMINATOR)
+		{
+			nEnd = idx + 1;
+			break;
+		}
+	}
+	//UnlockWindowUpdate();
+
+	EFS_END
+}
+
+void CMarcEditCtrl::FormatTextRange(INT nStart, INT nEnd)
+{
+	EFS_BEGIN
+
+	if (nStart > nEnd)
+		return;
+
+	HideSelection(TRUE, FALSE);
+
+	m_bInForcedChange = TRUE;
+
+	CHARRANGE crOldSel;
+	GetSel(crOldSel);
+	//LockWindowUpdate();
+	::LockWindowUpdate(GetParentFrame()->m_hWnd);
+	
+	try
+	{
+		SetSel(nStart, nEnd);
+		TCHAR *pBuffer = new TCHAR[nEnd - nStart +1];
+		LONG nLen = GetSelText(pBuffer);
+		ASSERT(nLen <= nEnd - nStart);
+		pBuffer[nLen] = 0;
+
+		TCHAR *pStart, *pPtr;
+		pStart = pPtr = pBuffer;
+		TCHAR *pSymbolStart = NULL;
+
+		CSymbolFormat sf;
+
+		// 디폴트로 돌려놓고 작업한다.
+		CHARFORMAT cf;
+		GetDefaultCharFormat(cf);
+		SetSelectionCharFormat(cf);
+		
+		BOOL bIsTagColored = FALSE;
+		BOOL bISIndColored = FALSE;
+
+		TCHAR szTagCode[3];
+		ZeroMemory(szTagCode, sizeof(TCHAR) * 3);
+		INT n = -1;
+
+		BOOL bSpecial = FALSE;
+
+		while(*pPtr != 0)
+		{
+			TCHAR ch = *pPtr;
+
+			// CRLF를 제거
+			if (ch == 13 || ch == 10)
+				pPtr++;
+			// tag
+			else if (!bIsTagColored)
+			{
+				if (_istdigit(ch))
+				{
+					pSymbolStart = pPtr;
+					n = 0;
+					do 
+					{
+						wmemcpy(szTagCode + n, pPtr, sizeof(TCHAR));
+						ch = *(++pPtr);						
+						n++;
+					}
+					while(_istdigit(ch) && n < 3);
+
+					
+										
+					sf = m_sfTagCode;
+				}
+				else
+					sf = m_sfNumber;
+				bIsTagColored = TRUE;
+				bISIndColored = FALSE;
+			}
+			// indicator
+			else if (!bISIndColored)
+			{
+				// determine control field
+				if (bIsTagColored)
+				{					
+					if (!m_pMarcMgr->IsControlField(szTagCode))
+					{
+						if (_istdigit(ch) || _istspace(ch))
+						{
+							pSymbolStart = pPtr;
+							n = 0;
+							do 
+							{
+								ch = *(++pPtr);
+								n++;
+							}
+							while((_istdigit(ch) || _istspace(ch)) && n < 2);
+							sf = m_sfIndicator;
+						}
+						else sf = m_sfNumber;
+					}
+					else sf = m_sfNumber;
+				}
+				
+				bISIndColored = TRUE;
+			}
+			// number
+			else if (_istdigit(ch))
+			{
+				pSymbolStart = pPtr;
+				_tcstod(pSymbolStart, &pPtr);
+				sf = m_sfNumber;
+			}
+			// subfield code
+			else if (ch == SUBFIELD_CODE)
+			{
+				pSymbolStart = pPtr;
+				pPtr = pPtr + 2;
+				sf = m_sfSubfieldCode;
+				bSpecial = TRUE;
+			}
+			// field terminator
+			else if (ch == FIELD_TERMINATOR)
+			{
+				pSymbolStart = pPtr;
+				pPtr++;
+				sf = m_sfFieldTerminator;
+				bIsTagColored = FALSE;
+				bSpecial = TRUE;
+			}
+			// record terminator
+			else if (ch == RECORD_TERMINATOR)
+			{
+				pSymbolStart = pPtr;
+				pPtr++;
+				sf = m_sfRecordTerminator;
+				bSpecial = TRUE;
+			}
+			else
+			{
+				pSymbolStart = pPtr;
+				pPtr++;
+				sf = m_sfText;
+			}
+			
+			if (pSymbolStart != NULL) 
+			{
+				ASSERT(pSymbolStart < pPtr);
+				//SetFormatRange(nStart + pStart - pBuffer, nStart + pSymbolStart - pBuffer, FALSE, FALSE, RGB(0,0,0));
+				SetFormatRange(nStart + pSymbolStart - pBuffer, nStart + pPtr - pBuffer, sf.m_bBold, FALSE, sf.m_clrSymbol, bSpecial);
+				pStart = pPtr;
+				pSymbolStart = 0;
+				bSpecial = FALSE;
+			} 
+			else if (*pPtr == 0)
+				SetFormatRange(nStart + pStart - pBuffer, nStart + pPtr - pBuffer, FALSE, FALSE, RGB(0,0,0));
+		}
+
+		delete [] pBuffer;
+	}
+	catch (...)
+	{
+	}
+
+	SetSel(crOldSel);
+	HideSelection(FALSE, FALSE);
+	UnlockWindowUpdate();
+	m_bInForcedChange = FALSE;
+	
+
+	EFS_END
+}
+
+void CMarcEditCtrl::SetFormatRange(INT nStart, INT nEnd, BOOL bBold, BOOL bUnderLine, COLORREF clr, BOOL bSpecial /*= FALSE*/)
+{
+	EFS_BEGIN
+
+	if (nStart >= nEnd)
+		return;
+
+	SetSel(nStart, nEnd);
+
+	DWORD dwEffects = 0;
+	dwEffects = bBold?CFE_BOLD:0;
+	if (bUnderLine)	dwEffects |= CFE_UNDERLINE;
+
+	CHARFORMAT cf;
+	cf.cbSize = sizeof(cf);
+    GetSelectionCharFormat(cf);
+	
+	if ((cf.dwMask & CFM_COLOR)  && cf.crTextColor == clr && 
+		(cf.dwMask & CFM_BOLD) && (cf.dwEffects & CFE_BOLD) == dwEffects)
+		return;
+	
+	cf.crTextColor = clr;
+	cf.dwEffects = dwEffects;
+	cf.dwMask = CFM_FACE | CFM_BOLD | CFM_COLOR;
+	if (bUnderLine)	cf.dwMask |= CFM_UNDERLINE;
+
+	if (bSpecial && m_osvi.dwMajorVersion == 5 && m_osvi.dwMinorVersion == 1)
+	{
+		_tcscpy(cf.szFaceName, "Terminal");
+	}
+
+	SetSelectionCharFormat(cf);
+
+
+	EFS_END
+}
+
+void CMarcEditCtrl::InsertMarcCode(UINT nType, UINT nChar /*=NULL*/)
+{
+	EFS_BEGIN
+
+	CHARRANGE crCurSel;
+	GetSel(crCurSel);
+
+	TCHAR szSubfieldCode[3];
+	ZeroMemory(szSubfieldCode, 3);
+	
+	if (nChar == NULL)
+		sprintf(szSubfieldCode, "%c\0", nType);
+	else 
+		sprintf(szSubfieldCode, "%c%c\0", nType, nChar);
+	
+	ReplaceSel(szSubfieldCode, TRUE);
+	FormatTextLines(m_crOldSel.cpMin, crCurSel.cpMax);
+
+	EFS_END
+}
+
+BOOL CMarcEditCtrl::Acceclerator(UINT nChar)
+{
+	EFS_BEGIN
+
+	// ReadOnly 이면 처리안한다.
+	if (GetStyle() & ES_READONLY) return FALSE;
+
+	if (GetAsyncKeyState(VK_CONTROL))
+	{
+		switch(nChar)
+		{
+		// field terminator Ctrl + Y
+		case 89:
+			OnPopupInsertFieldTerminator();
+			return TRUE;
+		// record terminator Ctrl + R
+		case 82:
+			OnPopupInsertRecordTerminator();
+			return TRUE;
+		// Print Ctrl + P
+		case 80:
+			OnPopupPrint();
+			return TRUE;
+		// Find Ctrl + F
+		case 70: 
+			OnPopupEditFind();
+			return TRUE;
+		// Replace Ctrl + H
+		case 72:
+			OnPopupEditReplace();
+			return TRUE;
+		case VK_F7:
+			CheckFullSyntax();
+			return TRUE;
+		case VK_F2:
+			ApplyEdit();
+			return TRUE;
+		case VK_F11:
+			m_pDlgMarcSyntaxError->ShowWindow(SW_SHOW);
+			m_pDlgMarcSyntaxError->SetFocus();
+			return TRUE;
+		default:
+			return FALSE;
+		}
+	}
+	else
+	{
+		switch(nChar)
+		{
+		case VK_F2:
+			InsertSpecialChar();
+			return TRUE;
+		case VK_F3:
+			ConvertCharToHira();
+			return TRUE;
+		case VK_F4:
+			ConvertCharToKata();
+			return TRUE;
+		case VK_F5:
+			ConvertCharToRoma();
+			return TRUE;
+		case VK_F6:
+			ConvertWordKorToChi();
+			return TRUE;
+		case VK_F7:
+			CheckFullSyntax();
+			return TRUE;
+		case VK_F8:
+			ShowACMarcGetter_SubJect();
+			return TRUE;
+		case VK_F9:
+			ShowACMarcGetter();
+			return TRUE;
+		case VK_F11:	// 2003.03.07 제거
+			//m_pDlgMarcSyntaxError->ShowWindow(SW_SHOW);
+			//m_pDlgMarcSyntaxError->SetFocus();
+			//return TRUE;
+		default:
+			return FALSE;
+		}
+	}
+	return FALSE;
+
+	EFS_END
+	return FALSE;
+
+}
+
+void CMarcEditCtrl::CreateSyntaxErrorDialog()
+{
+	EFS_BEGIN
+
+	CRect rect;
+	CWnd* pWnd = GetDesktopWindow();
+	pWnd->GetWindowRect(&rect);
+	
+	m_pDlgMarcSyntaxError = new CDlgMarcSyntaxError(this);
+	m_pDlgMarcSyntaxError->Create(this);
+	m_pDlgMarcSyntaxError->MoveWindow(rect.right - 550, rect.top , 550, 200);
+
+	EFS_END
+}
+
+INT CMarcEditCtrl::ApplyEdit(INT nMode /*= 0*/)
+{
+	EFS_BEGIN
+
+	if (!GetModify()) return 0;
+
+	BOOL bShowError = TRUE;
+	
+	if (nMode == 1)
+	{
+		bShowError = FALSE;
+	}
+
+	BOOL bIsCheck = CheckFullSyntax(bShowError);
+
+	// TODO : not completed error handling
+
+	INT ids = GetMarc(m_pMarc);
+	if (ids < 0) return -1;
+	
+	//((CMarcEditor*)m_pParentEditor)->UpdateEditCtrls(GRID_CTRL);
+
+	if (!bIsCheck)
+		return -1;
+
+	return 0;
+
+	EFS_END
+	return -1;
+
+}
+
+void CMarcEditCtrl::SetMarc(CMarc *pMarc)
+{
+	EFS_BEGIN
+
+	FreeSaveTagList();
+	m_pMarc = pMarc;
+
+	if (m_pMarc == NULL) return;
+
+	// Limit tag to Save Tag
+	INT nCount = m_arrayLimitTag.GetSize();
+	if (nCount == 0) return;
+
+	CString strLimitTag;
+	CString strInd;
+	CTag *pTag = NULL;
+	CTag *pTagClone = NULL;
+	POSITION pos = NULL;
+	for (INT idx = 0; idx < nCount; idx++)
+	{
+		strLimitTag = m_arrayLimitTag.GetAt(idx);
+
+		pos = m_pMarc->m_listTag.GetHeadPosition();
+		while (pos)
+		{
+			pTag = reinterpret_cast<CTag*>(m_pMarc->m_listTag.GetNext(pos));
+			if (pTag == NULL) continue;
+			
+			// Check Tag Code
+			if (pTag->GetTagCode() != strLimitTag.Left(3)) continue;		
+			
+			// Check Indicator -->  지시기호가 '__'이면 체크하지 않는다.
+			strInd = strLimitTag.Right(2);
+			if (strInd != _T("__")) 
+				if (pTag->GetFirstIndicator() + pTag->GetSecondIndicator() != strInd) continue;
+			
+			// Make Tag Clone And Save to Tag List
+			pTagClone = pTag->Clone();
+			if (pTagClone)
+				m_listSavedTag.AddTail(reinterpret_cast<CObject*>(pTagClone));
+		}
+
+	}
+
+	EFS_END
+}
+
+INT CMarcEditCtrl::GetMarc(CMarc *pMarc)
+{
+	EFS_BEGIN
+
+	if (pMarc == NULL) return -1;
+	if (m_pMarcMgr == NULL) return -1;
+
+	// 마크를 초기화
+	pMarc->Init();
+	
+	CString strEditMarcText;
+	GetWindowText(strEditMarcText);
+	strEditMarcText.TrimLeft();
+	strEditMarcText.TrimRight();
+	
+	// 필드 종단기호 단위로 패치 시작
+	CString strField;
+	CString strTagCode;
+	CTag *pTag = NULL;
+	INT ids = -1;
+	INT nStart = 0;
+	INT nEnd = strEditMarcText.Find(FIELD_TERMINATOR);
+
+	while (nEnd > 0)
+	{
+		strField = strEditMarcText.Mid(nStart, nEnd - nStart + 1);
+
+		nStart = nEnd + 1;
+		nEnd = strEditMarcText.Find(FIELD_TERMINATOR, nStart);
+
+		strField.TrimLeft();
+		strField.TrimRight();
+		RemoveCRLFSpace(strField);
+
+		pTag = NULL;
+		strTagCode.Empty();
+
+		// Field 길이가 3보다 작으면 continue;
+		if (strField.GetLength() < 3) continue;
+				
+		// 테그코드
+		CString strTagCode = strField.Left(3);
+
+		// 지시기호
+		CString strInd;
+		if (strField.GetLength() >= 5)
+			strInd = strField.Mid(3, 2);
+
+		// 제한 테그이면 저장하지 않는다.
+		if (IsLimitTag(strTagCode, strInd)) continue;
+
+		// 필드의 길이가 3보다 작거나 같으면 continue
+		if (strField.GetLength() <= 3) continue;
+
+		// 필드를 패치하여 저장한다.
+		pTag = new CTag;
+		if (pTag == NULL) continue;
+		
+		ids = m_pMarcMgr->FetchField(pTag, strTagCode, strField.Mid(3));
+		if (ids < 0)
+			delete pTag;
+		else
+			pMarc->AddTag(pTag);
+	}
+
+	// 저장했던 제한테그를 넣는다.
+	POSITION pos = m_listSavedTag.GetHeadPosition();
+	while (pos)
+	{
+		pTag = (CTag*)m_listSavedTag.GetNext(pos);
+		if (pTag == NULL) continue;
+
+		pMarc->AddTag(pTag->Clone());
+	}
+	
+	// record terminator --> auto
+	pMarc->SetRecordTerminator(RECORD_TERMINATOR);
+
+	m_pMarcMgr->SortMarc(pMarc);
+
+	return 0;
+
+	EFS_END
+	return -1;
+
+}
+
+INT CMarcEditCtrl::GetMarc(CMarc &marc)
+{
+	EFS_BEGIN
+
+	return GetMarc(&marc);
+
+	EFS_END
+	return -1;
+
+}
+
+void CMarcEditCtrl::RemoveCRLFSpace(CString &strSrc)
+{
+	EFS_BEGIN
+
+	CString strReturn;
+	INT nCount = strSrc.GetLength();
+	for (INT idx = 0; idx < nCount; idx++)
+	{
+		if (strSrc.GetAt(idx) == '\r')
+		{
+			if (idx < nCount && strSrc.GetAt(idx + 1) == '\n')
+			{
+				idx++;
+
+				do
+				{
+					idx++;	
+				}
+				while ((idx < nCount) && strSrc.GetAt(idx) == ' ');
+
+			}		
+		}
+		if (idx < nCount)
+			strReturn += strSrc.GetAt(idx);
+	}
+
+	strSrc = strReturn;
+
+	EFS_END
+}
+
+BOOL CMarcEditCtrl::Display()
+{
+	EFS_BEGIN
+
+	if (m_pMarcMgr == NULL) return FALSE;
+	if (m_pMarc == NULL)	return FALSE;
+
+	CHARRANGE cr;
+	GetSel(cr);
+
+	m_pMarcMgr->SortMarc(m_pMarc);
+
+	// 추가..
+	SetMarc(m_pMarc);
+
+	SetWindowText("");
+	//UpdateWindow();
+
+	CString strText;
+
+	INT n = 0;
+	CTag *pTag = NULL;
+	CSubfield *pSubfield;
+	BOOL bIsFirstSubfield = TRUE;
+
+	POSITION posTag = m_pMarc->m_listTag.GetHeadPosition();
+	CString strField;
+	while (posTag)
+	{
+		n = 0;
+		strField.Empty();
+		pTag = (CTag*)m_pMarc->m_listTag.GetNext(posTag);
+				
+		// tag code
+		strField = pTag->GetTagCode();
+
+		// indicator
+		if (m_pMarcMgr->IsControlField(pTag->GetTagCode()))
+		{
+		}
+		else
+		{
+			strField += pTag->GetFirstIndicator();
+			strField += pTag->GetSecondIndicator();
+		}
+		
+		bIsFirstSubfield = TRUE;
+		POSITION posSubfield = pTag->m_listSubfield.GetHeadPosition();
+		// subfield
+		while (posSubfield)
+		{
+			pSubfield = (CSubfield*)pTag->m_listSubfield.GetNext(posSubfield);
+
+			if (pSubfield->GetSubfieldCode().IsEmpty()) continue;
+
+			// check first subfield
+			if (!bIsFirstSubfield)
+			{
+				if (IsWrapSubfield(pTag->GetTagCode() + pSubfield->GetSubfieldCode()))
+				{
+					strField += "\r\n     ";
+				}
+			}
+
+			// 첫번째는 보여주지 않음
+			// punctuation mark
+			if (n++ != 0)
+				strField += pSubfield->GetPunctuationMark();
+			
+			// subfield code
+			strField += pSubfield->GetSubfieldCode();
+
+			// subfield data
+			strField += pSubfield->GetItemData();
+
+			bIsFirstSubfield = FALSE;
+		}
+
+		strField += pTag->GetItemData();
+		strField += pTag->GetFieldTerminator();
+
+	//	InsertLine(strField);
+		
+		strText += strField + "\r\n";
+	}
+
+	//InsertLine(m_pMarc->GetRecordTerminator());
+	strText += m_pMarc->GetRecordTerminator();
+
+	//LockWindowUpdate();
+	::LockWindowUpdate(GetParentFrame()->m_hWnd);
+	SetWindowText(strText);
+	UnlockWindowUpdate();
+	//UnlockWindowUpdate();
+	
+	SetSel(cr);
+	//SetSel
+
+	SetModify(FALSE);
+
+	return TRUE;
+
+	EFS_END
+	return FALSE;
+
+}
+
+void CMarcEditCtrl::InsertLine(CString strLine)
+{
+	EFS_BEGIN
+
+	strLine += "\r\n";
+
+	m_bInForcedChange = FALSE;
+	ReplaceSel(strLine.GetBuffer(0), TRUE);
+
+	//FormatAll();
+
+	EFS_END
+}
+
+void CMarcEditCtrl::InsertSpecialChar()
+{
+	EFS_BEGIN
+
+	CLIB_F2KEY_SpecialChar sp;
+	CString strSpecialChar;
+	if (sp.DoModal() == IDOK)
+	{
+		sp.GetStringData(strSpecialChar);
+
+		ReplaceSel(strSpecialChar, TRUE);
+	}
+
+	EFS_END
+}
+
+void CMarcEditCtrl::ConvertCharToHira()
+{
+	EFS_BEGIN
+
+	CHARRANGE crOldSel;
+
+	GetSel(crOldSel);
+
+	if (crOldSel.cpMax == crOldSel.cpMin)
+	{
+		SetSel(crOldSel.cpMin - 2, crOldSel.cpMax);
+	}
+
+	CString strSelText = GetSelText();
+
+	if (strSelText.IsEmpty()) return;
+
+	strSelText.TrimLeft();
+	strSelText.TrimRight();
+
+	CESL_CharSetMgr charSetMgr;
+	charSetMgr.InitData("KOREAN_CHAR", "HIRA_CHAR");
+
+	INT ids;
+	CString strTo;
+	ids = charSetMgr.Find(strSelText, strTo);
+	if (ids < 0 || strTo.IsEmpty()) 
+	{
+		SetSel(crOldSel);
+		return;
+	}
+
+	ReplaceSel(strTo, TRUE);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::ConvertCharToKata()
+{
+	EFS_BEGIN
+
+	CHARRANGE crOldSel;
+
+	GetSel(crOldSel);
+
+	if (crOldSel.cpMax == crOldSel.cpMin)
+	{
+		SetSel(crOldSel.cpMin - 2, crOldSel.cpMax);
+	}
+
+	CString strSelText = GetSelText();
+
+	if (strSelText.IsEmpty()) return;
+
+	strSelText.TrimLeft();
+	strSelText.TrimRight();
+
+	CESL_CharSetMgr charSetMgr;
+	charSetMgr.InitData("KOREAN_CHAR", "KATA_CHAR");
+
+	INT ids;
+	CString strTo;
+	ids = charSetMgr.Find(strSelText, strTo);
+	if (ids < 0 || strTo.IsEmpty()) 
+	{
+		SetSel(crOldSel);
+		return;
+	}
+
+	ReplaceSel(strTo, TRUE);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::ConvertCharToRoma()
+{
+	EFS_BEGIN
+
+	CHARRANGE crOldSel;
+
+	GetSel(crOldSel);
+
+	if (crOldSel.cpMax == crOldSel.cpMin)
+	{
+		SetSel(crOldSel.cpMin - 2, crOldSel.cpMax);
+	}
+
+	CString strSelText = GetSelText();
+
+	if (strSelText.IsEmpty()) return;
+
+	strSelText.TrimLeft();
+	strSelText.TrimRight();
+
+	CESL_CharSetMgr charSetMgr;
+	charSetMgr.InitData("KOREAN_CHAR", "ROMA_CHAR");
+
+	INT ids;
+	CString strTo;
+	ids = charSetMgr.Find(strSelText, strTo);
+	if (ids < 0 || strTo.IsEmpty()) 
+	{
+		SetSel(crOldSel);
+		return;
+	}
+
+	ReplaceSel(strTo, TRUE);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::ConvertWordKorToChi()
+{
+	EFS_BEGIN
+
+	CHARRANGE crOldSel;
+	GetSel(crOldSel);
+
+	HideSelection(TRUE, TRUE);
+
+	CString strLine;
+	CString strSelText;
+	CString strHangul;
+	
+	if (crOldSel.cpMax == crOldSel.cpMin)
+	{
+		SetSel(LineIndex(), crOldSel.cpMax);
+		strLine = GetSelText();
+
+		INT i = 0;
+		for (i = strLine.GetLength() - 1; i >= 0; i--)
+		{
+			TCHAR ch = strLine.GetAt(i);
+			if (ch == ' '  ||
+				ch == '\0' ||
+				ch == '('  ||
+				ch == ')'  ||
+				(unsigned char)ch < 0x80)
+			{
+				break;
+			}
+		}
+
+		strSelText = strLine.Mid(i + 1);
+	}
+	else
+		strSelText = GetSelText();
+
+	unsigned char ch1 = 0;
+	unsigned char ch2 = 0;
+	for (INT i = strSelText.GetLength() - 1; i > 0; i--)
+	{
+		if ((unsigned char)strSelText.GetAt(i) >= 0x80)
+		{
+			ch1 = (unsigned char)strSelText.GetAt(i - 1);
+			ch2 = (unsigned char)strSelText.GetAt(i);
+			if( ch1 >= 0xCA && ch2 >= 0xA1 && ch1 <= 0xFD && ch2 <= 0xFE )
+			{
+				break;
+			}
+			i--;
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	strSelText = strSelText.Mid(i + 1);
+	SetSel(crOldSel.cpMax - strSelText.GetLength(), crOldSel.cpMax);
+	
+	HideSelection(FALSE, TRUE);
+
+	if (strSelText.IsEmpty()) return;
+
+	CConvertToHanjaDlg dlg;
+	dlg.m_strInput = strSelText;
+	if (dlg.DoModal() == IDOK)
+	{
+		if (!dlg.m_strSelChi.IsEmpty())
+		{
+			ReplaceSel(dlg.m_strSelChi, TRUE);
+		}
+	}
+
+	EFS_END
+}
+
+
+
+void CMarcEditCtrl::AddErrorLog(INT nMode /*=1*/)
+{
+	EFS_BEGIN
+
+	if (m_pMarcMgr == NULL) return;
+
+	INT nLineNumber;
+	POSITION pos = m_pMarcMgr->m_listErrMsg.GetHeadPosition();
+	while (pos != NULL)
+	{
+		CErrorMessage* pErrMsg = (CErrorMessage*)m_pMarcMgr->m_listErrMsg.GetNext(pos);
+		if (pErrMsg == NULL) continue;
+		if (nMode == 1)
+		{
+			nLineNumber = LineFromChar(-1);
+		}
+		else if (nMode == 2)
+		{
+			if (!FindLineNumber(pErrMsg->m_strTagCode, nLineNumber)) continue;
+		}
+
+		m_pDlgMarcSyntaxError->AddErrorMessage(nLineNumber, pErrMsg->m_strTagCode, pErrMsg->m_strErrMsg, pErrMsg->m_strHelpMsg);
+	}
+
+	EFS_END
+}
+
+BOOL CMarcEditCtrl::CheckFullSyntax(BOOL bShowError /*=TRUE*/)
+{
+	EFS_BEGIN
+
+	INT ids;
+	INT nLineCount;
+	BOOL bError = FALSE;
+	
+	m_pDlgMarcSyntaxError->RemoveAll();
+	INT nTextLength = GetTextLength();
+
+	// 먼저 구두점 자동생성을 위해 돌려준당
+	GetMarc(m_pMarc);
+	m_pMarcMgr->CheckSimpleSyntax(m_pMarc);
+	Display();
+		
+	LONG nStart = 0;
+	LONG nEnd = 0;
+	LONG nOldStart = 0;
+	LONG nOldEnd = 0;
+
+	INT nLineLength = 0;
+
+	HideSelection(TRUE, FALSE);
+	CHARRANGE crOldSel;
+	GetSel(crOldSel);
+	//LockWindowUpdate();
+	
+	CMap <CString, LPCTSTR, INT, INT> mapTagCode;
+	CString strField;
+	CString strTagCode;
+	CString strTemp;
+	INT nTemp;
+
+	nLineCount = GetLineCount();
+	for (INT i = 0; i < nLineCount; i++)
+	{
+		nLineLength = LineLength(LineIndex(i));
+		nStart = LineIndex(i);
+		nEnd = LineIndex(i) + nLineLength;
+		GetFieldRange(nStart, nEnd);
+		if (nStart == nOldStart, nEnd == nOldEnd) 
+			continue;
+
+		nOldStart = nStart;
+		nOldEnd = nEnd;
+		
+		if (!CheckSimpleSyntax(nStart, nEnd, TRUE, FALSE))
+			bError = TRUE;
+
+		// for repeat Tag
+		//HideSelection(TRUE, FALSE);
+		SetSel(nStart, nEnd);
+		strField = GetSelText();
+		RemoveCRLFSpace(strField);
+		if (strField.GetLength() >= 3)
+		{
+			if (mapTagCode.Lookup(strField.Left(3), nTemp))
+			{
+				mapTagCode.SetAt(strField.Left(3), ++nTemp);
+			}
+			else 
+				mapTagCode.SetAt(strField.Left(3), 1);
+		}
+	}
+
+	// Find Repeat Tag And Check
+	POSITION pos = mapTagCode.GetStartPosition();
+	while (pos)
+	{
+		mapTagCode.GetNextAssoc(pos, strTagCode, nTemp);
+		if (nTemp > 1)
+		{
+			ids = m_pMarcMgr->CheckSimpleSyntax(strTagCode, CHK_REPEAT_TAG, strTemp, FALSE);
+			if (ids < 0)
+			{
+				AddErrorLog(2);
+				bError = TRUE;
+			}
+		}
+	}
+
+	SetSel(crOldSel);
+	HideSelection(FALSE, FALSE);
+	//UnlockWindowUpdate();
+
+	// deep check 하지 않는다.
+	//if (!CheckDeepSyntax())
+	//bError = TRUE;
+	Display();
+
+	// 변경 적용
+	((CMarcEditor*)m_pParentEditor)->UpdateEditCtrls(EDIT_CTRL);
+
+	if (bError && bShowError) 
+	{
+		m_pDlgMarcSyntaxError->ShowWindow(SW_SHOW);
+		m_pDlgMarcSyntaxError->SetFocus();
+	}
+
+	if (bError)
+		return FALSE;
+	else
+		return TRUE;
+
+	EFS_END
+	return FALSE;
+
+}
+
+INT CMarcEditCtrl::GetSubfieldIdx(CString strField, INT nOrder)
+{
+	EFS_BEGIN
+
+	BOOL bFind = FALSE;
+	INT n = 0;
+	INT nLength = strField.GetLength();
+	for (INT idx = 0; idx < nLength; idx++)
+	{
+		if (strField.GetAt(idx) == SUBFIELD_CODE && nOrder == ++n) 
+		{
+			bFind = TRUE;
+			break;
+		}
+	}
+	
+	if (bFind)
+		return idx;
+	else
+		return -1;
+
+	EFS_END
+	return -1;
+
+}
+
+INT CMarcEditCtrl::ErrorShowProc(INT nErrorStart, INT nErrorEnd, BOOL bIsLogError)
+{
+	EFS_BEGIN
+
+	SetFormatRange(nErrorStart, nErrorEnd, FALSE, TRUE, m_sfError.m_clrSymbol, TRUE);
+
+	if (bIsLogError)
+		AddErrorLog();	
+
+	return 0;
+
+	EFS_END
+	return -1;
+
+}
+
+BOOL CMarcEditCtrl::CheckSimpleSyntax(INT nStart, INT nEnd, BOOL bIsLogError /*= FALSE*/, BOOL bIsHideSelection /*= TRUE*/)
+{
+	EFS_BEGIN
+
+	// Check Validation
+	if (m_pMarcMgr == NULL || !m_pMarcMgr->m_bUseRelation) return FALSE;
+	if (nEnd - nStart < 3) return FALSE;
+
+	// Pre Check...
+	m_bInForcedChange = TRUE;
+	CHARRANGE crOldSel;
+	GetSel(crOldSel);
+	//LockWindowUpdate();
+	if (bIsHideSelection) HideSelection(TRUE, FALSE);
+
+	// 에러가 발생했는지.
+	BOOL bIsErrorOccured = FALSE;
+	INT ids = -1;
+	INT nErrorStart = -1;
+
+	// 결과 값
+	CString strResult;
+
+	// 키밸류
+	CString strKeyValue;
+	
+	// 테그
+	CTag *pTag = NULL;
+
+	// 서브필드
+	CSubfield *pSubfield = NULL;
+
+	// 테크코드
+	CString strTagCode;
+
+	// 테크코드를 제외한 필드..
+	CString strField;
+
+	// 서브필드코드
+	CString strSubfieldCode;
+	CString strSubfieldCode2;
+
+	// 구두점
+	CString strPuncMarc;
+
+	// 포지션 
+	POSITION pos = NULL;
+	POSITION pos2 = NULL;
+
+	// 서브필드 idx
+	INT n = 0;
+	INT n2 = 0;
+
+
+	// 텍스트 가져오기
+	SetSel(nStart, nEnd);
+	CString strSelText = GetSelText();
+	if (strSelText.GetLength() < 2) goto END;
+
+	// CR/LF를 제거한다.
+	if (strSelText.GetAt(0) == '\r')
+	{
+		if (strSelText.GetAt(1) == '\n')
+		{
+			nStart += 2;
+			strSelText.TrimLeft();
+		}
+	}
+
+	strSelText.TrimRight();
+	if (strSelText.GetLength() < 3) goto END;
+
+	strTagCode = strSelText.Left(3);
+	strField = strSelText.Mid(3);
+
+	// 먼저 테그 코드를 체크해서 에러가 발생하면 리턴한다.
+	ids = m_pMarcMgr->CheckSimpleSyntax(strTagCode, CHK_TAG, strResult);
+	if (ids == 0)
+	{
+		// 예제를 보여준다.
+		((CMarcEditor*)m_pParentEditor)->ShowExample(strResult);
+	}
+	else if (ids < 0)
+	{
+		// 에러를 보여주고 종료한다.
+		ErrorShowProc(nStart, nStart + 3, bIsLogError);
+		bIsErrorOccured = TRUE;
+		goto END;
+	}
+
+	pTag = new CTag;
+	m_pMarcMgr->FetchField(pTag, strTagCode, strField);
+
+	// 제어필드가 아니면 지시기호 체크한다.
+	if (!m_pMarcMgr->IsControlField(strTagCode))
+	{
+		CString strIndicator;
+		strIndicator.Format(_T("%s%s"), pTag->GetFirstIndicator(), pTag->GetSecondIndicator());
+	
+		// ' ' -> '_'
+		strIndicator.Replace(' ', '_');
+
+		strKeyValue = strTagCode + strIndicator;
+		
+
+		ids = m_pMarcMgr->CheckSimpleSyntax(strKeyValue, CHK_INDICATOR, strResult);
+		if (ids < 0)
+		{
+			bIsErrorOccured = TRUE;
+			ErrorShowProc(nStart + 3, nStart + 5, bIsLogError);
+		}
+	}
+
+	pos = pTag->m_listSubfield.GetHeadPosition();
+	pos2 = NULL;
+	while (pos)
+	{
+		pSubfield = (CSubfield*)pTag->m_listSubfield.GetNext(pos);
+		if (pSubfield == NULL) continue;
+
+		n++;
+
+		strSubfieldCode = pSubfield->GetSubfieldCode();
+		strPuncMarc = pSubfield->GetPunctuationMark();
+
+		strSubfieldCode.Replace(SUBFIELD_CODE, '$');
+
+		// 식별기호
+		strKeyValue = strTagCode + strSubfieldCode;
+		ids = m_pMarcMgr->CheckSimpleSyntax(strKeyValue, CHK_SUBFIELD, strResult);
+		if (ids < 0)
+		{
+			bIsErrorOccured = TRUE;
+			nErrorStart = GetSubfieldIdx(strTagCode + strField, n);
+			if (nErrorStart >= 0)
+				ErrorShowProc(nStart + nErrorStart, nStart + nErrorStart + 2, bIsLogError);
+		}	
+		
+		// 구두점은 체크할 필요가 없다...
+		// 식별기호 반복 체크 --> 현재 식별기호가 반복이 되는것이면 체크할 필요 없다.
+		ids = m_pMarcMgr->CheckSimpleSyntax(strKeyValue, CHK_REPEAT_SUBFIELD, strResult);
+		if (ids >= 0) continue;
+
+		// 같은 식별기호를 찾아 에러로 표시한다.
+		n2 = n;
+		pos2 = pos;
+		while (pos2)
+		{
+			pSubfield = (CSubfield*)pTag->m_listSubfield.GetNext(pos2);
+			if (pSubfield == NULL) continue;
+			
+			n2++;
+
+			strSubfieldCode2 = pSubfield->GetSubfieldCode();
+			strSubfieldCode2.Replace(SUBFIELD_CODE, '$');
+
+			if ( strSubfieldCode2 == strSubfieldCode)
+			{
+				bIsErrorOccured = TRUE;
+				nErrorStart = GetSubfieldIdx(strTagCode + strField, n2);
+				if (nErrorStart >= 0)
+					ErrorShowProc(nStart + nErrorStart, nStart + nErrorStart + 2, bIsLogError);				
+			}
+
+		}
+	}
+
+END:
+	if (pTag)
+		delete pTag;
+
+	SetSel(crOldSel);
+	if (bIsHideSelection) HideSelection(FALSE, FALSE);
+	//UnlockWindowUpdate();
+
+	m_bInForcedChange = FALSE;
+
+	if (bIsLogError && bIsErrorOccured)
+		return FALSE;
+	else 
+		return TRUE;
+
+
+	EFS_END
+	return FALSE;
+
+}
+
+BOOL CMarcEditCtrl::CheckSimpleSyntax2(INT nStart, INT nEnd, BOOL bIsLog /*=FALSE*/)
+{
+	EFS_BEGIN
+
+	if (m_pMarcMgr == NULL) return FALSE;
+	if (!m_pMarcMgr->m_bUseRelation) return TRUE;
+
+	if (nEnd - nStart < 3)
+		return FALSE;
+
+	m_bInForcedChange = TRUE;
+	CHARRANGE crOldSel;
+	GetSel(crOldSel);
+	//LockWindowUpdate();
+	HideSelection(TRUE, TRUE);
+
+	INT ids;
+	INT i;
+	INT nErrorStart;
+	INT nErrorEnd;
+
+	BOOL bIsErrorOccured = FALSE;
+
+	TCHAR *pBuffer = NULL;
+
+	CString strField;
+	CString strTagCode;
+	CString strIndicator;
+	CString strSubfieldCode;
+	CString strPunctuationMark;
+	
+	CString strResult;
+	CString strTemp;
+	CString strErrMsg;
+	CString strHelpMsg;
+	
+	SetSel(nStart, nEnd);
+	strField = GetSelText();
+
+	if (strField.IsEmpty()) return FALSE;
+	
+	if (strField.GetAt(0) == '\r')
+	{
+		if (strField.GetAt(1) == '\n')
+		{
+			nStart += 2;
+			strField.TrimLeft();
+		}
+	}
+
+	strField.TrimRight();
+	
+	// 테그 코드를 체크한다.
+	if (strField.GetLength() < 3)
+		goto END;
+
+	strTagCode = strField.Left(3);
+	ids = m_pMarcMgr->CheckSimpleSyntax(strTagCode, CHK_TAG, strResult);
+	if (ids == 0)
+	{
+		// 예제를 보여준다.
+		((CMarcEditor*)m_pParentEditor)->ShowExample(strResult);
+	}
+	else if (ids < 0)
+	{
+		// 에러를 보여주고 종료한다.
+		nErrorStart = nStart;
+		nErrorEnd = nErrorStart + 3;
+		SetFormatRange(nErrorStart, nErrorEnd, FALSE, TRUE, m_sfError.m_clrSymbol);
+
+		// add error log
+		if (bIsLog)
+		{
+			AddErrorLog();
+			bIsErrorOccured = TRUE;
+		}
+
+		goto END;
+	}
+	
+	// indicator : blank indicator --> '_'
+	if (strField.GetLength() > 5) 
+	{
+		strIndicator = strField.Mid(3, 2);
+		strIndicator.Replace(" ", "_");
+		strIndicator = strTagCode + strIndicator;
+
+		// subfield & punctuation mark
+		CArray<CString, CString&> arraySubfieldCode;
+		CArray<CString, CString&> arrayPunctuationMark;
+
+		INT nSubfieldCodeStart = 0;
+
+		nSubfieldCodeStart = strField.Find(SUBFIELD_CODE, nSubfieldCodeStart);
+		while (nSubfieldCodeStart != -1)
+		{	
+			strSubfieldCode = "$" + strField.Mid(nSubfieldCodeStart +1, 1);
+			strPunctuationMark = strField.Mid(nSubfieldCodeStart - 1, 1);
+			
+			if (!m_pMarcMgr->IsPunctuationMark(strTagCode, strSubfieldCode + strPunctuationMark))
+				strPunctuationMark = "_";
+			
+			arraySubfieldCode.Add(strTagCode + strSubfieldCode);
+			arrayPunctuationMark.Add(strPunctuationMark + strTagCode + strSubfieldCode);
+
+			nSubfieldCodeStart = strField.Find(SUBFIELD_CODE, nSubfieldCodeStart + 1);
+		}
+		
+		/////////////////////////////////////////////////////////////////////////////////////
+		// check start
+
+		// 제어필드가 아니면 지시기호를 체그한다.
+		if (!m_pMarcMgr->IsControlField(strTagCode))
+		{
+			ids = m_pMarcMgr->CheckSimpleSyntax(strIndicator, CHK_INDICATOR, strResult);
+			if (ids < 0)
+			{
+				nErrorStart = nStart + 3;
+				nErrorEnd = nErrorStart + 2;
+				SetFormatRange(nErrorStart, nErrorEnd, FALSE, TRUE, m_sfError.m_clrSymbol);
+
+				// add error log
+				if (bIsLog)
+				{
+					AddErrorLog();
+					bIsErrorOccured = TRUE;
+				}
+			}
+		}
+		
+		// 식별기호 체크
+		for (i = 0 ; i < arraySubfieldCode.GetSize(); i++)
+		{
+			ids = m_pMarcMgr->CheckSimpleSyntax(arraySubfieldCode.GetAt(i), CHK_SUBFIELD, strResult);
+			if (ids < 0)
+			{
+				strTemp.Format("%c%s", SUBFIELD_CODE, arraySubfieldCode.GetAt(i).Right(1));
+				
+				INT nSubfieldStart = 0;
+				nSubfieldStart = strField.Find(strTemp);
+				while (nSubfieldStart != -1)
+				{
+					nErrorStart = nStart + nSubfieldStart;
+					nErrorEnd = nErrorStart + 2;
+					SetFormatRange(nErrorStart, nErrorEnd, FALSE, TRUE, m_sfError.m_clrSymbol);
+					nSubfieldStart = strField.Find(strTemp, nSubfieldStart + 1);
+				}
+
+				// add error log
+				if (bIsLog)
+				{
+					AddErrorLog();
+					bIsErrorOccured = TRUE;
+				}
+			}
+		}
+
+		// 구두점 체크
+		for (i = 0 ; i < arrayPunctuationMark.GetSize(); i++)
+		{
+			ids = m_pMarcMgr->CheckSimpleSyntax(arrayPunctuationMark.GetAt(i), CHK_PUNCTUATION_MARK, strResult);
+			if (ids < 0)
+			{
+				CString strTemp;
+				CString strPunctuationMark;
+				strTemp.Format("%c%s", SUBFIELD_CODE, arrayPunctuationMark.GetAt(i).Right(1));
+				strPunctuationMark = arrayPunctuationMark.GetAt(i).Left(1);
+				
+				INT nSubfieldStart = 0;
+				nSubfieldStart = strField.Find(strTemp);
+
+				CString strCheck;
+				while (nSubfieldStart != -1)
+				{
+					strCheck = strField.Mid(nSubfieldStart - 1, 1);
+					if (!m_pMarcMgr->IsPunctuationMark(strTagCode, strTemp + strCheck))
+						strCheck = _T("_");
+
+					if (strCheck == strPunctuationMark)
+					{
+						nErrorStart = nStart + nSubfieldStart - 1;
+						nErrorEnd = nErrorStart + 1;
+
+						// 자동고침 기능 없앰
+						/*if (bIsLog)// && strPunctuationMark == "_")
+						{
+							SetSel(nErrorEnd, nErrorEnd);
+							ReplaceSel(strResult.Left(1), TRUE);
+						}
+						else
+						*/
+						SetFormatRange(nErrorStart, nErrorEnd, FALSE, TRUE, m_sfError.m_clrSymbol);
+					}
+					nSubfieldStart = strField.Find(strTemp, nSubfieldStart + 1);
+				}				
+
+				// add error log
+				if (bIsLog)
+				{
+					AddErrorLog();
+					bIsErrorOccured = TRUE;
+				}
+			}
+		}
+
+		// 반복 식별기호 체크
+		for (i = 0; i < arraySubfieldCode.GetSize(); i++)
+		{
+			INT nEqualCount = 0;
+			for (INT j = 0; j < arraySubfieldCode.GetSize(); j++)
+			{
+				if (arraySubfieldCode.GetAt(i) == arraySubfieldCode.GetAt(j))
+				{
+					nEqualCount ++;
+				}
+
+				if (nEqualCount > 1)
+				{
+					ids = m_pMarcMgr->CheckSimpleSyntax(arraySubfieldCode.GetAt(j), CHK_REPEAT_SUBFIELD, strResult);
+					if (ids < 0)
+					{
+						CString strTemp;
+						strTemp.Format("%c%s", SUBFIELD_CODE, arraySubfieldCode.GetAt(i).Right(1));
+						
+						INT nSubfieldStart = 0;
+						nSubfieldStart = strField.Find(strTemp);
+						while (nSubfieldStart != -1)
+						{
+							nErrorStart = nStart + nSubfieldStart;
+							nErrorEnd = nErrorStart + 2;
+							SetFormatRange(nErrorStart, nErrorEnd, FALSE, TRUE, m_sfError.m_clrSymbol);
+							nSubfieldStart = strField.Find(strTemp, nSubfieldStart + 1);
+						}
+
+						// add error log
+						if (bIsLog)
+						{
+							AddErrorLog();
+							bIsErrorOccured = TRUE;
+						}
+					}
+					break;
+				}
+			}
+		}
+	}
+
+END:
+	SetSel(crOldSel);
+	HideSelection(FALSE, TRUE);
+	//UnlockWindowUpdate();
+
+	m_bInForcedChange = FALSE;
+
+	if (bIsErrorOccured)
+		return FALSE;
+	else 
+		return TRUE;
+
+	EFS_END
+	return FALSE;
+
+}
+
+BOOL CMarcEditCtrl::CheckDeepSyntax()
+{
+	EFS_BEGIN
+
+	INT ids;
+	ids = GetMarc(m_pMarc);
+	if (ids < 0)
+		return FALSE;
+
+	if (m_pMarcMgr == NULL) return FALSE;
+	ids = m_pMarcMgr->CheckDeepSyntax(m_pMarc);
+	if (ids < 0)
+	{
+		AddErrorLog(2);
+		return FALSE;
+	}
+
+	return TRUE;
+
+	EFS_END
+	return FALSE;
+
+}
+
+BOOL CMarcEditCtrl::FindLineNumber(CString strTagCode, INT &nLineNumber)
+{
+	EFS_BEGIN
+
+	INT nLineCount;
+	INT nLineLength;
+	CString strLine;
+
+	nLineCount = GetLineCount();
+
+	for (INT i = 0; i < nLineCount; i++)
+	{
+		nLineLength = LineLength(LineIndex(i));
+		GetLine(i, strLine.GetBuffer(nLineLength), nLineLength);
+		strLine.ReleaseBuffer();
+				
+		if (strTagCode == strLine.Left(3))
+		{
+			nLineNumber = i;
+			return TRUE;
+		}
+	}
+	return FALSE;
+
+	EFS_END
+	return FALSE;
+
+}
+
+void CMarcEditCtrl::ShowACMarcGetter()
+{
+EFS_BEGIN
+	
+	// 이제 보여줍니다.
+	INT ids;
+	ids = GetMarc(m_pMarc);
+	if (ids < 0) return;
+	
+	CString strTagCode;
+	CString strSubfieldCode;
+	CString strItemData;
+	
+	LONG nStartChar;
+	LONG nEndChar;
+	
+	// 전거구분
+	// 1 - 저자 : 245$d
+	// 2 - 서명 : 245$a
+	// 3 - 주제 :
+	// 4 - 단어
+	
+	CString strField;
+	CString strTextFront;
+	CString strTextBack;
+	GetLine(LineFromChar(LineIndex()), strField.GetBuffer(MAX_PATH), MAX_PATH);
+	strField.ReleaseBuffer();
+	if (strField.IsEmpty()) return;
+	
+	CHARRANGE crOldSel;
+	GetSel(crOldSel);
+	
+	strTagCode = strField.Left(3);
+	if (strTagCode == "245")
+	{
+		GetSel(nStartChar, nEndChar);
+		
+		SetSel(LineIndex(), nEndChar);
+		strTextFront = GetSelText();
+		
+		SetSel(nEndChar, LineIndex() + LineLength(nEndChar));
+		strTextBack = GetSelText();
+		
+		SetSel(crOldSel);
+		
+		// Find Subfield Code Front
+		INT nFind = strTextFront.ReverseFind(SUBFIELD_CODE);
+		if (nFind < 0)
+			return;
+		
+		strSubfieldCode = strTextFront.Mid(nFind, 2);
+		strSubfieldCode.Replace(SUBFIELD_CODE, '$');
+
+		// 041006_HSS $와 기호 사이에서 누르는 경우 에러 수정 +++++
+		ids = strTextFront.GetLength();
+		if (ids < nFind + 2)
+		{
+			AfxMessageBox("전거대상을 결정할 수 없습니다.");
+			return;
+		}
+		// ---------------------------------------------------------
+
+		strTextFront = strTextFront.Mid(nFind + 2);
+		
+		// Find Subfield Code Back
+		nFind = strTextBack.Find(SUBFIELD_CODE);
+		if (nFind < 0)
+		{
+			nFind = strTextBack.Find(FIELD_TERMINATOR);
+			if (nFind < 0)
+				return;
+		}
+		
+		strTextBack = strTextBack.Left(nFind);
+		
+		
+		strItemData = strTextFront + strTextBack;
+		
+		// Find Punctuation Mark
+		if (m_pMarcMgr->IsPunctuationMark(strItemData.Right(1)))
+			strItemData = strItemData.Left(strItemData.GetLength() - 1);
+		
+		// Show AC Getter Dialog
+		// 1 - 저자 : 245$d, 245$e
+		if (strSubfieldCode == "$d" || strSubfieldCode == "$e")
+		{
+			if ( strTagCode == "245") {
+				CWnd *pParent = ((CMarcEditor*)m_pParentEditor)->m_pParentWnd;
+				if (pParent) 
+					pParent->PostMessage(WM_AC_AUTHOR, 0, 0);
+			}
+		}
+		// 2 - 서명 : 245$a, 440$a, 830$a
+		else if (strSubfieldCode == "$a")
+		{
+			if ( strTagCode == "245" || strTagCode == "440" || strTagCode == "830" )
+			{
+				CWnd *pParent = ((CMarcEditor*)m_pParentEditor)->m_pParentWnd;
+				if (pParent) 
+					pParent->PostMessage(WM_AC_TITLE, 3, 0);
+			}				
+		}
+		else
+		{
+			AfxMessageBox("전거통제 대상이 아닙니다.");
+			return;
+		}
+		
+		//if (dlg.DoModal() == IDOK)
+		//	Display();
+
+		//DestroyWindow();
+	}
+	
+EFS_END
+
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+static UINT WM_FINDREPLACE = ::RegisterWindowMessage(FINDMSGSTRING);
+
+BEGIN_MESSAGE_MAP(CMarcEditCtrl, CRichEditCtrl)
+	//{{AFX_MSG_MAP(CMarcEditCtrl)
+	ON_CONTROL_REFLECT(EN_CHANGE, OnChange)
+	ON_WM_GETDLGCODE()
+	ON_WM_CHAR()
+	ON_WM_SYSCHAR()
+	ON_WM_KEYDOWN()
+	ON_WM_RBUTTONDOWN()
+	ON_COMMAND(ID_POPUP_INSERT_FIELD_TERMINATOR, OnPopupInsertFieldTerminator)
+	ON_COMMAND(, OnPopupInsertFieldTerminator)
+	ON_COMMAND(ID_POPUP_INSERT_RECORD_TERMINATOR, OnPopupInsertRecordTerminator)
+	ON_COMMAND(ID_POPUP_SYNTAX_CHECK, OnPopupSyntaxCheck)
+	ON_COMMAND(ID_POPUP_COLOR, OnPopupColor)
+	ON_COMMAND(ID_POPUP_FONT, OnPopupFont)
+	ON_COMMAND(ID_POPUP_SHOW_ERROR, OnPopupShowError)
+	ON_COMMAND(ID_POPUP_SPECIAL_CHAR, OnPopupSpecialChar)
+	ON_COMMAND(ID_POPUP_CHINESE, OnPopupChinese)
+	ON_WM_LBUTTONDOWN()
+	ON_COMMAND(ID_POPUP_KOR_TO_HIRA, OnPopupKorToHira)
+	ON_COMMAND(ID_POPUP_KOR_TO_KATA, OnPopupKorToKata)
+	ON_COMMAND(ID_POPUP_KOR_TO_ROMA, OnPopupKorToRoma)
+	ON_COMMAND(ID_POPUP_ACMARC, OnPopupAcmarc)
+	ON_COMMAND(ID_POPUP_PRINT, OnPopupPrint)
+	ON_COMMAND(ID_POPUP_EDIT_FIND, OnPopupEditFind)
+	ON_COMMAND(ID_POPUP_EDIT_REPLACE, OnPopupEditReplace)
+	ON_COMMAND(ID_POPUP_EDIT_COPY, Copy)
+	ON_COMMAND(ID_POPUP_EDIT_CUT, Cut)
+	ON_COMMAND(ID_POPUP_EDIT_PASTE, Paste)
+	//}}AFX_MSG_MAP
+	ON_NOTIFY_REFLECT(EN_PROTECTED, OnProtected)
+	ON_NOTIFY_REFLECT(EN_SELCHANGE, OnSelChange)
+	ON_MESSAGE(WM_SETTEXT, OnSetText)
+	ON_MESSAGE(WM_LINE_LOCATION, OnLineLocation)
+	ON_REGISTERED_MESSAGE( WM_FINDREPLACE, OnFindReplace )
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CMarcEditCtrl message handlers
+
+UINT CMarcEditCtrl::OnGetDlgCode() 
+{
+	EFS_BEGIN
+
+	UINT uCode = CRichEditCtrl::OnGetDlgCode();
+	
+	uCode = DLGC_WANTALLKEYS | DLGC_WANTARROWS | DLGC_WANTCHARS | DLGC_WANTMESSAGE | DLGC_WANTTAB;
+
+	return uCode;
+
+	EFS_END
+	return -1;
+}
+
+void CMarcEditCtrl::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags) 
+{
+	EFS_BEGIN
+
+	if (nChar == '\t' && GetKeyState(VK_CONTROL) >= 0) {
+		ReplaceSel("\t", TRUE);
+		return;
+	}
+	
+	CRichEditCtrl::OnChar(nChar, nRepCnt, nFlags);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnChange() 
+{
+	EFS_BEGIN
+
+	// TODO: If this is a RICHEDIT control, the control will not
+	// send this notification unless you override the CRichEditCtrl::OnInitDialog()
+	// function and call CRichEditCtrl().SetEventMask()
+	// with the ENM_CHANGE flag ORed into the mask.
+	
+	// TODO: Add your control notification handler code here
+
+	if (m_bInForcedChange)
+		return;
+
+	CHARRANGE crCurSel;
+	GetSel(crCurSel);
+
+	if (m_changeType == ctMove && crCurSel.cpMin == crCurSel.cpMax)
+		m_changeType = ctPaste;
+
+	switch (m_changeType)
+	{
+	case ctReplSel:
+	case ctPaste:
+		//FormatTextLines(m_crOldSel.cpMin, crCurSel.cpMax);
+		break;
+	case ctDelete:
+	case ctBack:
+	case ctCut:
+		FormatTextLines(crCurSel.cpMin, crCurSel.cpMax);
+		break;
+	case ctUndo:
+		FormatTextLines(crCurSel.cpMin, crCurSel.cpMax);
+		break;
+	case ctMove:
+		FormatTextLines(crCurSel.cpMin, crCurSel.cpMax);
+		if (crCurSel.cpMin > m_crOldSel.cpMin) // move after
+			FormatTextLines(m_crOldSel.cpMin, m_crOldSel.cpMin);
+		else // move before
+			FormatTextLines(m_crOldSel.cpMax, m_crOldSel.cpMax);
+		break;
+	default:
+		FormatAll();
+		break;
+	}
+
+	m_changeType = ctUndo;
+
+	EFS_END
+}
+
+LRESULT CMarcEditCtrl::OnSetText(WPARAM wParam, LPARAM lParam)
+{
+	EFS_BEGIN
+
+	LRESULT res = Default();
+	//FormatAll();
+	return res;	
+
+	EFS_END
+	return NULL;
+
+}
+
+void CMarcEditCtrl::OnProtected(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	EFS_BEGIN
+
+	ENPROTECTED* pEP = (ENPROTECTED*)pNMHDR;
+
+	// determine type of change will occur
+
+	switch (pEP->msg) 
+	{
+	case WM_KEYDOWN:
+		switch (pEP->wParam) 
+		{
+		case VK_DELETE:
+			m_changeType = ctDelete;
+			break;
+		case VK_BACK:
+			m_changeType = ctBack;
+			break;
+		default:
+			m_changeType = ctUnknown;
+			break;
+		}
+		break;
+	case EM_REPLACESEL:
+	case WM_CHAR:
+		m_changeType = ctReplSel;
+		break;
+	case WM_PASTE:
+		m_changeType = (m_changeType == ctCut)?ctMove:ctPaste;
+		break;
+	case WM_CUT:
+		m_changeType = ctCut;
+		break;
+	default:
+		m_changeType = ctUnknown;
+		break;
+	};
+
+	if (pEP->msg != EM_SETCHARFORMAT && m_changeType != ctMove)
+		m_crOldSel = pEP->chrg;
+
+	*pResult = FALSE;
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnSelChange(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	EFS_BEGIN
+
+	SELCHANGE* pSC = (SELCHANGE*)pNMHDR;
+
+	*pResult = 0;
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnSysChar(UINT nChar, UINT nRepCnt, UINT nFlags) 
+{
+	EFS_BEGIN
+
+	if (GetKeyState(VK_MENU))
+	{
+		// ReadOnly 이면 처리안한다.
+		if (GetStyle() & ES_READONLY) return;
+
+		if (_istalnum(nChar))
+		{
+			// 알파벳이면 소문자로 바꾼다.
+			if (_istalpha(nChar) && _istupper(nChar))
+				nChar = _tolower(nChar);
+			InsertMarcCode(SUBFIELD_CODE, nChar);
+			return;
+		}
+	}
+	
+	CRichEditCtrl::OnSysChar(nChar, nRepCnt, nFlags);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) 
+{
+	EFS_BEGIN
+
+	if (Acceclerator(nChar)) return;
+	if (nChar == VK_TAB) return;
+
+	CRichEditCtrl::OnKeyDown(nChar, nRepCnt, nFlags);
+
+	EFS_END
+}
+
+LONG CMarcEditCtrl::OnLineLocation(WPARAM wParam, LPARAM lParam)
+{
+	EFS_BEGIN
+
+	SetFocus();
+
+	INT nCharIdx = LineIndex((INT)wParam);
+	SetSel(nCharIdx, nCharIdx);
+	return 0;
+
+	EFS_END
+	return -1;
+
+}
+
+LRESULT CMarcEditCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam) 
+{
+	EFS_BEGIN
+
+	if (message == EM_FINDTEXTEX)
+	{
+		wParam += 1;
+	}	
+	return CRichEditCtrl::WindowProc(message, wParam, lParam);
+
+	EFS_END
+	return NULL;
+
+}
+
+void CMarcEditCtrl::OnLButtonDown(UINT nFlags, CPoint point) 
+{
+	EFS_BEGIN
+
+	CRichEditCtrl::OnLButtonDown(nFlags, point);
+	
+	if (m_pMarcMgr == NULL) return;
+
+	CString strField;
+	GetLine(LineFromChar(LineIndex()), strField.GetBuffer(MAX_PATH), MAX_PATH);
+	strField.ReleaseBuffer();
+
+	CString strResult;
+	INT ids = m_pMarcMgr->CheckSimpleSyntax(strField.Left(3), CHK_TAG, strResult);
+	if (ids == 0)
+	{
+		// strResult = example
+		((CMarcEditor*)m_pParentEditor)->ShowExample(strResult);
+	}
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnRButtonDown(UINT nFlags, CPoint point) 
+{
+	EFS_BEGIN
+
+	CRichEditCtrl::OnRButtonDown(nFlags, point);
+
+	CMenu menu;
+	menu.LoadMenu(IDR_MENU);
+	
+	CMenu *pMenu = menu.GetSubMenu(0);
+	ClientToScreen(&point);
+	pMenu->TrackPopupMenu(TPM_LEFTALIGN, point.x, point.y, this);
+
+	EFS_END
+}
+
+LONG CMarcEditCtrl::OnFindReplace(WPARAM wParam, LPARAM lParam)
+{
+	EFS_BEGIN
+
+	CFindReplaceDialog* pFindReplace = CFindReplaceDialog::GetNotifier(lParam);
+    ASSERT(pFindReplace != NULL);
+
+	if (pFindReplace->IsTerminating())
+    {
+        pFindReplace = NULL;
+    }
+	else if (pFindReplace->FindNext())
+	{
+		DWORD dwFindFlag = 0;
+		
+		// match case
+		if (pFindReplace->MatchCase())
+			dwFindFlag |= FR_MATCHCASE;
+		// match whole word
+		if (pFindReplace->MatchWholeWord())
+			dwFindFlag |= FR_WHOLEWORD;
+
+		
+		// downward or upward
+		CHARRANGE cr;
+		GetSel(cr);
+		FINDTEXTEX ft;
+
+		if (pFindReplace->SearchDown())
+		{
+			ft.chrg.cpMin = cr.cpMax;
+			ft.chrg.cpMax = -1;	
+		}
+		else
+		{			
+			ft.chrg.cpMin = 0;
+			ft.chrg.cpMax = cr.cpMax;
+		}
+				
+		CString strFindString = pFindReplace->GetFindString();
+		ft.lpstrText = strFindString.GetBuffer(0);
+
+		
+		LONG n = FindText(dwFindFlag, &ft);
+		if (n == -1)
+		{
+			ft.chrg.cpMin = 0;
+			ft.chrg.cpMax = -1;
+
+			n = FindText(dwFindFlag, &ft);
+		}
+
+		if (n == -1)
+			goto NOT_FIND;
+		else
+			SetSel(ft.chrgText);
+	}
+	else if (pFindReplace->ReplaceCurrent())
+	{
+		CString strSelText = GetSelText();
+
+		if (strSelText == pFindReplace->GetFindString())
+		{
+			ReplaceSel(pFindReplace->GetReplaceString(), TRUE);
+		}
+	}
+	else if (pFindReplace->ReplaceAll())
+	{
+		CString strText;
+		GetWindowText(strText);
+
+		strText.Replace(pFindReplace->GetFindString(), pFindReplace->GetReplaceString());
+		
+		SetWindowText(strText);
+	}
+
+	return 0;
+
+NOT_FIND:
+	CString strMsg;
+	strMsg.Format("%s을(를) 찾을 수 없습니다.");
+	AfxMessageBox(strMsg, MB_ICONINFORMATION);
+
+	return 0;
+	
+
+	EFS_END
+	return -1;
+
+}
+
+//////////////////////////////////////////////////////////////////////
+// popup menu message handler
+
+void CMarcEditCtrl::OnPopupInsertFieldTerminator() 
+{
+	EFS_BEGIN
+
+	InsertMarcCode(FIELD_TERMINATOR);		
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupInsertRecordTerminator() 
+{
+	EFS_BEGIN
+
+	InsertMarcCode(RECORD_TERMINATOR);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupShowError() 
+{
+	EFS_BEGIN
+
+	if (m_pDlgMarcSyntaxError->IsWindowVisible())
+		m_pDlgMarcSyntaxError->ShowWindow(SW_HIDE);
+	else
+		m_pDlgMarcSyntaxError->ShowWindow(SW_SHOW);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupSyntaxCheck() 
+{
+	EFS_BEGIN
+
+	CheckFullSyntax();		
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupColor() 
+{
+	EFS_BEGIN
+
+	CDlgSymbolColor dlg(this);
+	if (dlg.DoModal() == IDOK)
+	{
+		SaveEditorFormatConfig();
+	}
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupFont() 
+{
+	EFS_BEGIN
+
+	CClientDC dc(this);
+	CHARFORMAT cf;
+	GetDefaultCharFormat(cf);
+
+	LOGFONT logfont;
+	logfont.lfCharSet = cf.bCharSet;
+	logfont.lfHeight = -(dc.GetDeviceCaps(LOGPIXELSY) * cf.yHeight/20) / 72;
+	_tcscpy(logfont.lfFaceName, cf.szFaceName);
+
+
+	CFontDialog dlg(&logfont, CF_SCREENFONTS | CF_NOSCRIPTSEL | CF_NOSTYLESEL | CF_NOVERTFONTS | CF_NOVECTORFONTS);
+	if (dlg.DoModal() == IDOK)
+	{
+		dlg.GetCurrentFont(&logfont);
+		
+		cf.yHeight = dlg.GetSize() * 2;
+		_tcscpy(cf.szFaceName, logfont.lfFaceName);
+
+		SetDefaultCharFormat(cf);
+
+		SaveEditorFormatConfig();
+		FormatAll();		
+	}
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupSpecialChar() 
+{
+	EFS_BEGIN
+
+	InsertSpecialChar();	
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupChinese() 
+{
+	EFS_BEGIN
+
+	ConvertWordKorToChi();	
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupKorToHira() 
+{
+	EFS_BEGIN
+
+	ConvertCharToHira();		
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupKorToKata() 
+{
+	EFS_BEGIN
+
+	ConvertCharToKata();	
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupKorToRoma() 
+{
+	EFS_BEGIN
+
+	ConvertCharToRoma();	
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupAcmarc() 
+{
+	EFS_BEGIN
+
+	ShowACMarcGetter();	
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupPrint() 
+{
+	EFS_BEGIN
+
+	/*
+	CDC             dc;
+    CPrintDialog    printDlg(FALSE);
+    CRect           r;
+    int             nHeight;
+    
+    // ask the user to select a printer
+    if (printDlg.DoModal() == IDCANCEL)
+        return;
+    
+    // Attach a printer DC
+    dc.Attach(printDlg.GetPrinterDC());
+    dc.m_bPrinting = TRUE;
+
+    // use Textmappingmode, that's easiest to map the fontsize
+    dc.SetMapMode(MM_TEXT);
+    
+    // setup font specifics
+    LOGFONT LogFont;
+    
+    CFont	aFont, *oldFont;
+    
+    LogFont.lfHeight = -MulDiv(10, GetDeviceCaps(dc, LOGPIXELSY), 72);
+    LogFont.lfWidth = 0;
+    LogFont.lfEscapement = 0;
+    LogFont.lfOrientation = 0;
+    LogFont.lfWeight = 0;
+    LogFont.lfItalic = false;
+    LogFont.lfUnderline = 0;
+    LogFont.lfStrikeOut = 0;
+    LogFont.lfCharSet = ANSI_CHARSET;
+    LogFont.lfOutPrecision = OUT_TT_PRECIS;
+    LogFont.lfClipPrecision = CLIP_DEFAULT_PRECIS;
+    LogFont.lfQuality = DEFAULT_QUALITY;
+    LogFont.lfPitchAndFamily = DEFAULT_PITCH | FF_SWISS;
+    lstrcpy (LogFont.lfFaceName, "MS Sans Serif");
+    dc.SetBkMode(OPAQUE);
+    aFont.CreateFontIndirect ( &LogFont );
+    // ok, we've build the font, now use it
+    oldFont = dc.SelectObject( &aFont );        
+        
+    // Get the application title
+    CString strTitle;
+    strTitle.LoadString(AFX_IDS_APP_TITLE);
+    
+    // Initialise print document details
+    
+    DOCINFO di;
+    ZeroMemory (&di, sizeof(DOCINFO));
+    di.cbSize = sizeof (DOCINFO);
+    // application title appears in the spooler view
+    di.lpszDocName = strTitle;
+    
+    // Begin a new print job
+    BOOL bPrintingOK = dc.StartDoc( &di );
+        
+    // Get the printing extents and store in the m_rectDraw field of a 
+    // CPrintInfo object
+    CPrintInfo Info;
+    int w = dc.GetDeviceCaps(HORZRES);
+    int h = dc.GetDeviceCaps(VERTRES);
+    Info.m_rectDraw.SetRect(0,0, w, h);
+    
+    char *startAt = "aaaaaa";
+    int totalDone = 0;
+    //int lengthToGo = pSize;
+	int lengthToGo = 6;
+    
+    for (UINT page = Info.GetMinPage();
+    bPrintingOK & totalDone < lengthToGo; page++)
+    {
+        // begin new page
+        dc.StartPage();
+        Info.m_nCurPage = page;
+        
+        // calc how much text fits on one page
+        r = Info.m_rectDraw;
+        r.bottom = r.top;
+        int i = 0;
+        while (r.bottom < Info.m_rectDraw.bottom & totalDone + i < lengthToGo)
+        {
+            r.right = Info.m_rectDraw.right;
+            nHeight = dc.DrawText(startAt, i++, r, 
+                DT_CALCRECT|DT_WORDBREAK|DT_NOCLIP|DT_EXPANDTABS);
+        }
+        // go one back to assure correct height
+        if (r.bottom >= Info.m_rectDraw.bottom)
+            i--;
+        
+        
+        // print that text
+        dc.DrawText(startAt, i, r, DT_WORDBREAK|DT_NOCLIP|DT_EXPANDTABS);
+        
+        // go to next page
+        startAt += i;
+        totalDone += i;
+        
+        // end page
+        bPrintingOK = (dc.EndPage() > 0);
+    }
+    
+    // end a print job
+    if (bPrintingOK)
+        dc.EndDoc();
+    else
+        // abort job.
+        dc.AbortDoc();
+    
+    
+    // restore font
+    dc.SelectObject(oldFont);
+    // free font memory
+    aFont.DeleteObject();
+    // detach the printer DC
+    dc.Detach();
+	*/
+
+
+	CDC dc;
+	CPrintDialog dlg(FALSE);
+	INT LineCnt,ncyScreen,StrLen,StrLenth,i,FindReturnidx;
+	TEXTMETRIC tm;
+	CHAR NullChar,ReturnChar;
+	
+	CString buffer,TempBuffer;;
+	
+	NullChar = 0;
+	ReturnChar = 13;
+
+	LineCnt = ncyScreen = StrLen = StrLenth = i = FindReturnidx = 0;
+	if(dlg.DoModal() == IDOK){
+		dc.Attach(dlg.GetPrinterDC());
+		DOCINFO di;
+		wmemset (&di, 0, sizeof( DOCINFO) );
+		di.cbSize = sizeof(DOCINFO);
+		di.lpszDocName = "인쇄중!!";
+		dc.SetWindowExt(2100,3000);  // Set the page size as A4
+		dc.SetWindowOrg(0,0);
+		if(dc.StartDoc(&di) != SP_ERROR)
+		{
+			dc.StartPage();
+			HDC hdc=dlg.GetPrinterDC();
+			GetWindowText(buffer);
+			dc.GetTextMetrics(&tm );
+		    ncyScreen = tm.tmHeight + tm.tmExternalLeading;
+
+			while(1){
+
+				FindReturnidx = buffer.Find(ReturnChar);
+				
+				if(FindReturnidx >= 0){
+					StrLen = buffer.GetLength();
+					TempBuffer = buffer.Left(FindReturnidx);
+					StrLenth = TempBuffer.GetLength();
+					::TextOut(hdc,0,ncyScreen*i,TempBuffer,StrLenth);
+					buffer = buffer.Right(StrLen - (FindReturnidx +2));
+					i++;
+				}
+				else{
+					if(buffer.Find(NullChar) >= 0){
+						StrLenth = buffer.GetLength();
+						::TextOut(hdc,0,ncyScreen*i,buffer,StrLenth);
+						break;
+					}
+					else if (buffer.IsEmpty())
+					{
+						break;
+					}
+				}
+				
+			}
+			dc.EndPage();
+			dc.EndDoc(); 
+		}
+	}
+
+	/*
+	CDC dc;
+	CPrintDialog dlg(FALSE);
+
+	if (dlg.DoModal() == IDOK)
+	{
+		dc.Attach(dlg.GetPrinterDC());
+		
+
+		FORMATRANGE fr;
+
+		LONG lPageWidth = ::MulDiv(dc.GetDeviceCaps(PHYSICALWIDTH), 1440, dc.GetDeviceCaps(LOGPIXELSX));
+		LONG lPageHeight = ::MulDiv(dc.GetDeviceCaps(PHYSICALHEIGHT), 1440, dc.GetDeviceCaps(LOGPIXELSY));
+
+		CRect rcPage(0, 0, lPageWidth, lPageHeight);
+
+		fr.hdc  = dlg.GetPrinterDC();
+		fr.hdcTarget = dlg.GetPrinterDC();
+		fr.rc = rcPage;
+		fr.rcPage = rcPage;
+		fr.chrg.cpMin = 0;
+		fr.chrg.cpMax = -1;
+
+		FormatRange(&fr, TRUE);
+
+		RECT rcClient;
+		GetClientRect(&rcClient);
+		
+		SetTargetDevice(dlg.GetPrinterDC(), lPageWidth);
+
+
+		DisplayBand(&rcClient);
+	}
+	*/
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupEditFind() 
+{
+	EFS_BEGIN
+
+	// find / replace
+	m_pFRDlg = new CFindReplaceDialog();
+	m_pFRDlg->Create(TRUE, "", "", FR_DOWN | FR_HIDEUPDOWN, this);
+	
+	m_pFRDlg->SetActiveWindow();
+	m_pFRDlg->ShowWindow(SW_SHOW);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::OnPopupEditReplace() 
+{
+	EFS_BEGIN
+
+	m_pFRDlg = new CFindReplaceDialog();
+	m_pFRDlg->Create(FALSE, "", "", FR_DOWN | FR_REPLACE | FR_HIDEUPDOWN | FR_NOWHOLEWORD, this);
+
+	m_pFRDlg->SetActiveWindow();
+	m_pFRDlg->ShowWindow(SW_SHOW);
+
+	EFS_END
+}
+
+void CMarcEditCtrl::ShowACMarcGetter_SubJect()
+{
+EFS_BEGIN
+		
+	//주제어 전거통제
+
+	CWnd *pParent = ((CMarcEditor*)m_pParentEditor)->m_pParentWnd;
+	if (pParent) 
+	pParent->PostMessage(WM_AC_AUTHOR, 4, 0);
+
+EFS_END
+}

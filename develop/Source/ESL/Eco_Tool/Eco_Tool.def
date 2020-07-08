@@ -1,0 +1,38 @@
+; Eco_Tool.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Eco_Tool"
+DESCRIPTION  'Eco_Tool Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+	ECO_malloc    
+	ECO_CopyMalloc
+	ECO_realloc   
+	ECO_free      
+	ECO_strcmpi   
+	ECO_strcpy    
+
+    clock_check
+    debug      
+
+	FilterSpecialChar
+	DataLeftRightTrim
+
+FdkFopen  
+FdkFputs  
+FdkFputc  
+FdkFgets
+FdkFgetc  
+FdkFseek  
+FdkFread  
+FdkFclose 
+FdkFprintf
+FdkFwrite 
+FdkFeof   
+FdkFscanf 
+FdkSscanf 
+FdkRename
+_FdkGetcwd
+_FdkChdir 
+_FdkMkdir 

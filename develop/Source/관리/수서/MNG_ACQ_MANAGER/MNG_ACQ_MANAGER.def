@@ -1,0 +1,11 @@
+; MNG_ACQ_MANAGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_ACQ_MANAGER"
+DESCRIPTION  'MNG_ACQ_MANAGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+CreateForm
+ResizeForm
+DeleteForm

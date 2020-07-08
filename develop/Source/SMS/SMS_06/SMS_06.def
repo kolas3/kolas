@@ -1,0 +1,7 @@
+; SMS_06.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SMS_06"
+DESCRIPTION  'SMS_06 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

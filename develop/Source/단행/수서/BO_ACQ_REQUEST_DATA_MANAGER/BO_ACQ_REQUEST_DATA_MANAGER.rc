@@ -1,0 +1,600 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_ACQ_REQUEST_DATA_MANAGER.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,31,88
+ PRODUCTVERSION 2005,8,31,88
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_ACQ_REQUEST_DATA_MANAGER DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 88\0"
+            VALUE "InternalName", "BO_ACQ_REQUEST_DATA_MANAGER\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_ACQ_REQUEST_DATA_MANAGER.DLL\0"
+            VALUE "ProductName", "BO_ACQ_REQUEST_DATA_MANAGER 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 88\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_REQUESTDATA_PRINT DIALOG DISCARDABLE  0, 0, 133, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "비치희망자료출력"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "확 인",IDOK,11,65,50,15
+    PUSHBUTTON      "취 소",IDCANCEL,67,65,50,15
+    CONTROL         "비치희망현황리스트",IDC_radREQUESTDATA,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,21,17,88,10
+    CONTROL         "메일발송현황리스트",IDC_radREQMAILSENDDATA,"Button",
+                    BS_AUTORADIOBUTTON,21,35,88,10
+    GROUPBOX        "",IDC_STATIC,2,0,129,56
+    GROUPBOX        "",IDC_STATIC,2,53,129,34
+END
+
+IDD_BO_REQUESTDATA_MGR DIALOG DISCARDABLE  0, 0, 283, 490
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "희망자료관리"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtWANTED_TITLE,55,217,115,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtBOOK_CNT,211,218,60,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_edtREQUEST_AUTHOR,55,235,115,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREQUEST_PUBLICATE_YEAR,211,236,60,13,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREQUEST_PUBLISHER,55,253,115,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtEA_ISBN,211,253,60,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREQUEST_VOLINFO,55,270,54,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREQUEST_PRICE,55,286,55,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    COMBOBOX        IDC_cmbBSFORM_CURRENCY_CLASS,147,286,60,112,
+                    CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_richRECOM_OPINION,55,314,216,41,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    COMBOBOX        IDC_cmbFURNISH_STATUS,55,377,115,63,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_CANCELREASON,55,396,216,154,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_richREQ_CANCEL_REASON,55,417,216,39,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    COMBOBOX        IDC_cmbLasifyClass,55,199,59,212,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbSubjectClass,160,199,77,211,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "이  전",IDC_btnREQUEST_PREV,8,468,35,15
+    PUSHBUTTON      "다  음",IDC_btnREQUEST_NEXT,46,468,35,15
+    PUSHBUTTON      "새로저장",IDC_btnREQ_NEW_SAVE,98,468,40,15
+    PUSHBUTTON      "복본조사",IDC_btnREQ_TITLE_DUP_SEARCH,141,468,40,15
+    DEFPUSHBUTTON   "저  장",IDOK,185,468,40,15
+    PUSHBUTTON      "닫  기",IDCANCEL,229,468,40,15
+    EDITTEXT        IDC_edtREQ_FURNISH_STATUS,211,378,52,14,ES_AUTOHSCROLL | 
+                    NOT WS_VISIBLE | WS_DISABLED
+    GROUPBOX        "",IDC_STATIC,3,305,276,55
+    GROUPBOX        "자료상태",IDC_stcREQ_DATA_STATUS,3,364,276,98
+    LTEXT           "비치상태",IDC_stcREQ_FURNISH_STATUS,11,380,33,8
+    LTEXT           "추천의견",IDC_STATIC,11,322,33,8
+    GROUPBOX        "",IDC_STATIC,3,0,276,25
+    LTEXT           "신청구분",IDC_tClass,11,12,33,8,SS_CENTERIMAGE
+    COMBOBOX        IDC_cmbAPPLICANT,55,8,73,50,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "비      고\r\n선택입력",IDC_chkREMARK,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,11,394,40,18
+    CONTROL         "비      고\r\n직접입력",IDC_chkREMARK2,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,11,417,40,18
+    GROUPBOX        "",IDC_STATIC,3,190,276,117
+    LTEXT           "※서  명",IDC_STATIC,11,219,33,8
+    LTEXT           "저 작 자",IDC_STATIC,11,237,33,8
+    LTEXT           "발 행 자",IDC_STATIC,11,255,33,8
+    LTEXT           "발 행 년",IDC_STATIC,174,238,33,8
+    LTEXT           "가    격",IDC_STATIC,11,290,33,8
+    LTEXT           "낱권ISBN",IDC_STATIC,174,255,33,8
+    CONTROL         "우선정리자료",IDC_chkPRIORITY_CATALOG,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP,211,288,62,12
+    LTEXT           "화폐구분",IDC_tCURRENCY_CLASS,113,290,33,8,
+                    SS_CENTERIMAGE
+    LTEXT           "분류표구분",IDC_STATIC,11,203,34,8
+    LTEXT           "주제구분",IDC_STATIC,126,203,33,8
+    LTEXT           "책     수",IDC_STATIC,174,220,33,8
+    LTEXT           "편 권 차",IDC_STATIC,11,272,33,8
+END
+
+IDD_BO_REQUEST_MAILSEND DIALOG DISCARDABLE  0, 0, 547, 291
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "메일발송현황"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "출 력",IDOK,428,9,50,15
+    PUSHBUTTON      "닫 기",IDCANCEL,484,9,50,15
+    LTEXT           "메일발송일",IDC_STATIC,129,13,41,8
+    EDITTEXT        IDC_edtREQ_MAILSEND_DATE1,175,11,51,14,ES_AUTOHSCROLL
+    LTEXT           "~",IDC_STATIC,232,13,8,8
+    EDITTEXT        IDC_edtREQ_MAILSEND_DATE2,242,11,51,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "찾 기",IDC_btnREQ_MAILSEND_FIND,299,9,50,15
+    CONTROL         "",IDC_gridREQ_MAILSEND_LIST,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,2,33,
+                    542,256
+    GROUPBOX        "",IDC_STATIC,2,0,358,31
+    GROUPBOX        "",IDC_STATIC,363,0,181,31
+    PUSHBUTTON      "정 렬",IDC_btnDATA_SORT,373,9,50,15
+    LTEXT           "관리구분",IDC_STATIC,15,13,33,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_cmbREQ_MANAGE_CODE,53,11,70,142,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_BO_ACQ_REQUEST_DATA_MGR DIALOG DISCARDABLE  0, 0, 415, 250
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_gridREQUEST_DATA,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,7,7,
+                    401,236
+END
+
+IDD_APPLICANT_LOANUSER DIALOG DISCARDABLE  0, 0, 283, 170
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "우선 대출 예약",IDC_chkRESERVATION_YN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,13,70,10
+    CONTROL         "SMS수신",IDC_chkSMS_RECEIPT_YN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,13,44,10
+    CONTROL         "주민등록번호 검사",IDC_chkID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,153,13,83,9
+    EDITTEXT        IDC_edtAPPLICATION_DATE,50,50,48,13,NOT WS_TABSTOP
+    EDITTEXT        IDC_hApplicantHour,101,50,46,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtAPPLICANT,50,70,48,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "대출자조회",IDC_btnREQUEST_FIND_APPLICANT,102,70,45,15,
+                    BS_VCENTER
+    PUSHBUTTON      "주소조회",IDC_btnFINDZIPCODE,102,89,45,14,BS_VCENTER
+    EDITTEXT        IDC_EDT_USERNO,205,89,66,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edtADDR,50,107,221,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREQUEST_EMAIL_ID,50,126,70,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbREQUEST_EMAIL_SITE,154,126,117,63,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtTEL_NO,50,144,70,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbREQUEST_HP_HEADNO,154,144,40,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtREQUEST_HP_MIDNO,196,144,36,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_edtREQUEST_HP_TAIL_NO,235,144,36,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_edtZIPCODE,50,89,48,13,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "E - Mail",IDC_STATIC,11,128,34,8
+    LTEXT           "전화번호",IDC_STATIC,11,146,33,8
+    LTEXT           "신청일자",IDC_STATIC,11,53,33,8
+    LTEXT           "※신청자",IDC_STATIC,11,72,33,8
+    LTEXT           "주    소",IDC_STATIC,11,109,33,8
+    GROUPBOX        "",IDC_STATIC,3,1,276,162
+    LTEXT           "우편번호",IDC_STATIC,11,91,33,8
+    LTEXT           "핸드폰",IDC_STATIC,126,146,25,8
+    LTEXT           "@",IDC_STATIC,137,128,8,8
+    LTEXT           "대출자번호",IDC_STC_USERNO,155,91,41,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,8,42,
+                    265,1
+    LTEXT           "우선 대출 예약 시 비치일에 대출정지이면 예약이 진행 되지 않습니다.",
+                    IDC_STATIC,11,29,264,8
+    LTEXT           "신청건수",IDC_stcAL_REQUESTCNT,155,53,49,8,NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_EDT_REQUESTCNT,205,50,66,13,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+    EDITTEXT        IDC_edtNID,206,70,66,13,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_VISIBLE
+    LTEXT           "주민등록번호",IDC_stcAL_CIVILNO,155,72,49,8,NOT 
+                    WS_VISIBLE
+END
+
+IDD_APPLICANT_DEPT DIALOG DISCARDABLE  0, 0, 283, 168
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtAPPLICATION_DATE,55,11,70,13,NOT WS_TABSTOP
+    COMBOBOX        IDC_cmbDEPT,55,29,70,142,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtAPPLICANT2,55,47,70,13,ES_AUTOHSCROLL
+    LTEXT           "신청일자",IDC_STATIC,11,13,33,8
+    LTEXT           "학처명",IDC_STATIC,11,31,25,8
+    GROUPBOX        "",IDC_STATIC,3,0,276,162
+    LTEXT           "※신청자",IDC_STATIC,11,50,33,8
+END
+
+IDD_APPLICANT_COURCE DIALOG DISCARDABLE  0, 0, 283, 166
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtAPPLICATION_DATE,55,11,70,13,NOT WS_TABSTOP
+    COMBOBOX        IDC_cmbCOURCE,55,29,70,142,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtAPPLICANT2,55,47,70,13,ES_AUTOHSCROLL
+    LTEXT           "신청일자",IDC_STATIC,11,13,33,8
+    GROUPBOX        "",IDC_STATIC,3,0,276,161
+    LTEXT           "학과명",IDC_STATIC,11,31,25,8
+    LTEXT           "※신청자",IDC_STATIC,11,50,33,8
+END
+
+IDD_APPLICANT_CLASS DIALOG DISCARDABLE  0, 0, 283, 169
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtAPPLICATION_DATE,55,11,70,13,NOT WS_TABSTOP
+    EDITTEXT        IDC_edtAPPLICANT2,55,47,70,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbCLASS,55,29,70,142,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "신청일자",IDC_STATIC,11,13,33,8
+    GROUPBOX        "",IDC_STATIC,3,0,276,162
+    LTEXT           "부서명",IDC_STATIC,11,31,25,8
+    LTEXT           "※신청자",IDC_STATIC,11,50,33,8
+END
+
+IDD_BO_REQUEST_STATUS_MGR DIALOG DISCARDABLE  0, 0, 332, 160
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "비치상태변경"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "저  장",IDOK,205,139,50,15
+    PUSHBUTTON      "취  소",IDCANCEL,271,139,50,15
+    LTEXT           "선택갯수",IDC_STATIC,22,13,33,8
+    EDITTEXT        IDC_edtSELECTCNT,59,10,63,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbFURNISH_STATUS,59,28,94,63,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,2,0,328,130
+    GROUPBOX        "",IDC_STATIC,2,130,328,28
+    LTEXT           "비치일자",IDC_stcFURNISH_DATE,185,31,33,8
+    EDITTEXT        IDC_edtFURNISH_DATE,228,28,93,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CMB_CANCELREASON,59,47,263,154,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_DISABLED | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_edtCANCEL_REASON,59,66,262,57,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    CONTROL         "비치상태",IDC_chkFURNISH_STATUS,"Button",
+                    BS_AUTOCHECKBOX | BS_CENTER | BS_VCENTER | WS_TABSTOP,9,
+                    29,46,13
+    CONTROL         " 비      고\r\n 선택입력",IDC_chkREMARK,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,11,45,42,18
+    CONTROL         " 비      고\r\n 직접입력",IDC_chkREMARK2,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,11,67,42,18
+END
+
+IDD_DIALOG_BATCH_MODIFY DIALOG DISCARDABLE  0, 0, 177, 73
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "일괄수정"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "일괄수정",IDOK,62,52,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,119,52,50,14
+    CONTROL         "우선예약대출",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,25,57,10
+    CONTROL         "SMS수신",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,100,25,57,10
+    GROUPBOX        "일괄수정 항목",IDC_STATIC,7,7,163,41
+END
+
+IDD_BO_REQUEST_STATISTIC_DLG DIALOG DISCARDABLE  0, 0, 439, 197
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "비치희망자료통계"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "통계",IDOK,318,7,41,13
+    PUSHBUTTON      "취소",IDCANCEL,377,7,40,12
+    GROUPBOX        "",IDC_STATIC,2,0,290,23
+    GROUPBOX        "",IDC_STATIC,296,0,137,23
+    CONTROL         "",IDC_gridREQ_STATISTIC,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,3,28,
+                    429,162
+    LTEXT           "신청일",IDC_STATIC,12,8,36,8
+    EDITTEXT        IDC_edtREQ_STAT_DATE1,52,7,57,12,ES_AUTOHSCROLL
+    LTEXT           "~",IDC_STATIC,119,8,8,8
+    EDITTEXT        IDC_edtREQ_STAT_DATE2,133,7,62,12,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BO_REQUEST_MAILSEND DLGINIT
+BEGIN
+    IDC_gridREQ_MAILSEND_LIST, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x6215, 0x0000, 0x27b0, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0101, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_BO_ACQ_REQUEST_DATA_MGR DLGINIT
+BEGIN
+    IDC_gridREQUEST_DATA, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x488e, 0x0000, 0x2496, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0101, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_BO_REQUEST_STATISTIC_DLG DLGINIT
+BEGIN
+    IDC_gridREQ_STATISTIC, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4d9e, 0x0000, 0x191d, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0101, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BO_REQUESTDATA_PRINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 131
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_BO_REQUESTDATA_MGR, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 280
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 487
+    END
+
+    IDD_BO_REQUEST_MAILSEND, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 544
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 289
+    END
+
+    IDD_BO_ACQ_REQUEST_DATA_MGR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 408
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 243
+    END
+
+    IDD_APPLICANT_LOANUSER, DIALOG
+    BEGIN
+        VERTGUIDE, 205
+        BOTTOMMARGIN, 169
+        HORZGUIDE, 50
+        HORZGUIDE, 61
+    END
+
+    IDD_APPLICANT_DEPT, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 167
+    END
+
+    IDD_APPLICANT_COURCE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 161
+    END
+
+    IDD_APPLICANT_CLASS, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 167
+    END
+
+    IDD_BO_REQUEST_STATUS_MGR, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 330
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_DIALOG_BATCH_MODIFY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 170
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+
+    IDD_BO_REQUEST_STATISTIC_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 432
+        TOPMARGIN, 45
+        BOTTOMMARGIN, 190
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR1             CURSOR  DISCARDABLE     "cursor1.cur"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_ACQ_REQUEST_DATA_MANAGER.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

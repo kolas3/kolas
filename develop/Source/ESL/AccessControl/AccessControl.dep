@@ -1,0 +1,748 @@
+# Microsoft Developer Studio Generated Dependency File, included by AccessControl.mak
+
+.\AccessControl.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlDoc.h"\
+	".\AccessControlView.h"\
+	".\MainFrm.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	".\UserList.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_Control_Element.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControl.rc : \
+	".\Bitmaps\CANCELD.bmp"\
+	".\Bitmaps\CANCELU.bmp"\
+	".\Bitmaps\CANCELX.bmp"\
+	".\Bitmaps\CLOSED.bmp"\
+	".\Bitmaps\CLOSEU.bmp"\
+	".\Bitmaps\CLOSEX.bmp"\
+	".\Bitmaps\DELETED.bmp"\
+	".\Bitmaps\DELETEU.bmp"\
+	".\Bitmaps\DELETEX.bmp"\
+	".\Bitmaps\INSERTD.bmp"\
+	".\Bitmaps\INSERTU.bmp"\
+	".\Bitmaps\INSERTX.bmp"\
+	".\Bitmaps\OKD.bmp"\
+	".\Bitmaps\OKU.bmp"\
+	".\Bitmaps\OKX.bmp"\
+	".\Bitmaps\UPDATED.bmp"\
+	".\Bitmaps\UPDATEU.bmp"\
+	".\Bitmaps\UPDATEX.bmp"\
+	".\icons\smile01.ico"\
+	".\icons\smile02.ico"\
+	".\icons\smile03.ico"\
+	".\icons\smile04.ico"\
+	".\icons\smile05.ico"\
+	".\icons\smile06.ico"\
+	".\icons\smile07.ico"\
+	".\icons\smile08.ico"\
+	".\icons\smile09.ico"\
+	".\icons\smile10.ico"\
+	".\res\AccessControl.ico"\
+	".\res\AccessControl.rc2"\
+	".\res\AccessControlDoc.ico"\
+	
+
+.\AccessControlChangeMethodDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlChangeMethodDlg.h"\
+	".\NewButtonList.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControlDeleteMethodDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlDeleteMethodDlg.h"\
+	".\NewButtonList.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControlDeleteUserDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlDeleteUserDlg.h"\
+	".\NewButtonList.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControlDoc.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlDoc.h"\
+	".\StdAfx.h"\
+	
+
+.\AccessControlMenuInsertDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlMenuInsertDlg.h"\
+	".\AccessControlWorkView.h"\
+	".\NewButtonList.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	".\UniqueMsgList.h"\
+	".\UserList.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_Control_Element.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControlNewMenuGroupDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlNewMenuGroupDlg.h"\
+	".\NewButtonList.h"\
+	".\StdAfx.h"\
+	
+
+.\AccessControlNewMethodDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlNewMethodDlg.h"\
+	".\NewButtonList.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControlSelectionListDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlSelectionListDlg.h"\
+	".\NewButton.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_Control_Element.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControlToolBarDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlSelectionListDlg.h"\
+	".\AccessControlToolBarDlg.h"\
+	".\AccessControlToolBarInsertDlg.h"\
+	".\AccessControlToolGroupInsertDlg.h"\
+	".\NewButton.h"\
+	".\NewButtonList.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	".\UserList.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_Control_Element.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControlToolBarInsertDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlToolBarInsertDlg.h"\
+	".\NewButtonList.h"\
+	".\StdAfx.h"\
+	
+
+.\AccessControlToolGroupInsertDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlToolGroupInsertDlg.h"\
+	".\NewButtonList.h"\
+	".\StdAfx.h"\
+	
+
+.\AccessControlUserSelectDlg.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlUserSelectDlg.h"\
+	".\NewButton.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControlView.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlDoc.h"\
+	".\AccessControlNewMenuGroupDlg.h"\
+	".\AccessControlView.h"\
+	".\AccessControlWorkView.h"\
+	".\MainFrm.h"\
+	".\NewButtonList.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	".\UniqueMsgList.h"\
+	".\UserList.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_Control_Element.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\AccessControlWorkView.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlMenuInsertDlg.h"\
+	".\AccessControlSelectionListDlg.h"\
+	".\AccessControlToolBarDlg.h"\
+	".\AccessControlWorkView.h"\
+	".\MainFrm.h"\
+	".\NewButton.h"\
+	".\NewButtonList.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	".\UniqueMsgList.h"\
+	".\UserList.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_Control_Element.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\font.cpp : \
+	".\font.h"\
+	".\StdAfx.h"\
+	
+
+.\MainFrm.cpp : \
+	".\AccessControl.h"\
+	".\AccessControlChangeMethodDlg.h"\
+	".\AccessControlDeleteMethodDlg.h"\
+	".\AccessControlDeleteUserDlg.h"\
+	".\AccessControlDoc.h"\
+	".\AccessControlNewMethodDlg.h"\
+	".\AccessControlUserSelectDlg.h"\
+	".\AccessControlView.h"\
+	".\AccessControlWorkView.h"\
+	".\MainFrm.h"\
+	".\NewButton.h"\
+	".\NewButtonList.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	".\UniqueMsgList.h"\
+	".\UserList.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_Control_Element.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\NewButton.cpp : \
+	".\NewButton.h"\
+	".\StdAfx.h"\
+	
+
+.\NewButtonList.cpp : \
+	".\AccessControl.h"\
+	".\NewButton.h"\
+	".\NewButtonList.h"\
+	".\StdAfx.h"\
+	
+
+.\picture.cpp : \
+	".\picture.h"\
+	".\StdAfx.h"\
+	
+
+.\ReadCfgFile.cpp : \
+	".\AccessControl.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	
+
+.\recordset.cpp : \
+	".\recordset.h"\
+	".\StdAfx.h"\
+	
+
+.\UniqueMsgList.cpp : \
+	".\AccessControl.h"\
+	".\StdAfx.h"\
+	".\UniqueMsgList.h"\
+	
+
+.\UserList.cpp : \
+	".\AccessControl.h"\
+	".\ReadCfgFile.h"\
+	".\StdAfx.h"\
+	".\UserList.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_DataMgr.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	

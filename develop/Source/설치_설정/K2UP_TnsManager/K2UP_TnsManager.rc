@@ -1,0 +1,269 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\K2UP_TnsManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\K2UP_TnsManager.ico"
+IDI_ICON1               ICON    DISCARDABLE     "NOTE.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_K2UP_TNSMANAGER_DIALOG DIALOGEX 0, 0, 319, 241
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "K2UP_TnsManager"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_eSEARCH,63,94,192,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "검색",IDC_bSEARCH,262,94,50,14
+    CONTROL         "★ Tnsnames.ora 변경 ★",IDC_bCHANGETNS,"Button",BS_OWNERDRAW | BS_FLAT | WS_TABSTOP,46,67,144,22
+    COMBOBOX        IDC_COMBO1,7,94,48,56,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "새로고침",IDC_bREFRESH,7,67,36,22,BS_FLAT
+    PUSHBUTTON      "230",IDC_bSET230,206,67,26,22,BS_FLAT
+    PUSHBUTTON      "환경설정",IDC_bCONFIG,262,67,50,22,BS_FLAT
+    CONTROL         "",IDC_COM_MSHFLEXGRID1,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,7,115,305,119
+    LTEXT           "File : ",IDC_STATIC,7,7,25,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_eTNSFILE,34,7,278,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Tns Name :",IDC_STATIC,7,28,40,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_eSID,51,28,51,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Host : ",IDC_STATIC,124,28,25,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_eHOST,186,28,126,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Port : ",IDC_STATIC,7,49,40,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_ePORT,51,49,51,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Service Name : ",IDC_STATIC,124,49,57,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_eSERVICENAME,186,49,126,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "숨기기",IDC_bHIDE,234,67,26,22,BS_FLAT
+END
+
+IDD_CONFIG DIALOG DISCARDABLE  0, 0, 401, 217
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "환경설정"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "KOLAS II UP.EXE 위치     : ",IDC_STATIC,13,15,107,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_eK2UP_PATH,128,15,217,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "변경",IDC_bK2UP_MAIN,351,15,36,14,BS_FLAT
+    LTEXT           "Tns 변경후 K2UP 바로실행 :",IDC_STATIC,13,31,107,14,SS_CENTERIMAGE
+    CONTROL         "예",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,129,31,40,14
+    CONTROL         "아니오",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,199,31,40,14
+    GROUPBOX        "KOLAS II UP 설정 정보",IDC_STATIC,7,2,387,64
+    GROUPBOX        "도서관 정보 관리 설정",IDC_STATIC,7,70,387,108
+    LTEXT           "DBMS Host     :",IDC_STATIC,13,83,107,14,SS_CENTERIMAGE | NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "DBMS ID       :",IDC_STATIC,13,102,107,14,SS_CENTERIMAGE | NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "DBMS PWD      :",IDC_STATIC,13,121,107,14,SS_CENTERIMAGE | NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "DBMS NAME     :",IDC_STATIC,13,140,107,14,SS_CENTERIMAGE | NOT WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_eDBMS_HOST,128,83,217,14,ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_eDBMS_ID,128,102,217,14,ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_eDBMS_PWD,128,121,217,14,ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_eDBMS_NAME,128,140,217,14,ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    GROUPBOX        "",IDC_STATIC,7,178,387,32
+    PUSHBUTTON      "★ 변경사항 적용 ★",IDC_IDOK,174,190,109,14
+    PUSHBUTTON      "닫기",IDC_bCANCEL,295,190,50,14
+    LTEXT           "ORACLE HOME NUMBER",IDC_STATIC,13,158,107,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_eORACLE_HOME,128,158,217,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "tnsnames.ora 초기화",IDC_bINIT,13,190,85,14,BS_FLAT
+    LTEXT           "화면모드일때 K2UP 바로실행 :",IDC_STATIC,13,47,111,14,SS_CENTERIMAGE
+    CONTROL         "예",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,129,47,40,14
+    CONTROL         "아니오",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,199,47,40,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "K2UP_TnsManager MFC 응용 프로그램\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "K2UP_TnsManager\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "K2UP_TnsManager.EXE\0"
+            VALUE "ProductName", "K2UP_TnsManager 응용 프로그램\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_K2UP_TNSMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 210
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_K2UP_TNSMANAGER_DIALOG DLGINIT
+BEGIN
+    IDC_COM_MSHFLEXGRID1, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2f56, 0x0000, 0x1280, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x000f, 0x8000, 0x000f, 0x8000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x7cdc, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\K2UP_TnsManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

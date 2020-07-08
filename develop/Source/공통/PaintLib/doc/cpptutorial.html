@@ -1,0 +1,272 @@
+<HTML>
+
+<HEAD>
+  <TITLE>paintlib - C++ - Tutorial</TITLE>
+  <meta name="robots" content="noindex">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="#8000FF" ALINK="#FF00FF">
+<accessed silent>
+<table width="350" border="0" cellspacing="0" cellpadding="0" align=right>
+  <tr>
+    <td>
+	  <img src="pics/cpptutorial.gif" width=350 height=60 border=0 	 
+         alt="" hspace=0 vspace=0>
+    <img src="pics/whitept.gif" width=31 height=21 hspace=0 vspace=0 border=0 alt="">
+    </td>
+  </tr>
+</table>
+<br clear=all>
+<p align=left>
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td width="22">
+      <img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+    </td>
+    <td>
+
+      <P> You'll find a short tutorial on how to include paintlib functions in 
+        your programs on this page. If you haven't gotten paintlib and the sample 
+        programs compiled yet, read the installing page first.
+      <P> [Note for MSVC users: The place most people seem to get stuck in first 
+        is in the project settings. The best thing to do when you get obscure 
+        compiler and linker errors is probably to compare the project settings 
+        of your project with the settings in the sample projects. In particular, 
+        make sure paintlib and your program are being built with the same runtime 
+        library version (static or dynamic? multi- or single-threaded?) and use 
+        the same alignment settings.] 
+      <P><b>Decoding an Image</b>
+      <P>
+      In the simplest case, what you need to do to use paintlib is this:
+      <PRE>
+  #include &quot;anydec.h&quot;
+  #include &quot;winbmp.h&quot;
+
+  // Create a decoder.
+  PLAnyPicDecoder Decoder;
+
+  // Create a bitmap object.
+  PLWinBmp Bmp;
+
+  // Tell the decoder to fill 
+  // the bitmap object with data.
+  Decoder.MakeBmpFromFile (&quot;foo.jpg&quot;, &amp;Bmp);
+
+  // Do something with the bitmap.
+  Bmp.Draw (pdc, 0, 0);
+</PRE>
+      
+      <P>These four lines are enough to load a bitmap in any of the supported 
+        formats from disk and draw it to a windows device context. The MakeBmpFromFile() 
+        call auto-detects the file type and gives you a 32 bpp bitmap containing 
+        the image stored in the file - including alpha channel if there is one. 
+        (The example is for windows because there's an easy &quot;Do something 
+        with the bitmap&quot; step in this case. The fragment also crashes if 
+        an error occurs while decoding. I'll get to the rest in a minute.) 
+      <P> Of course, you can use one decoder to decode several bitmap objects. 
+        It makes sense to create a decoder during program initialization and use 
+        it until the program terminates. The decoder class is not thread-safe 
+        - you can't use one decoder to decode several images at once. If several 
+        threads need to decode images, it's best to create a decoder in each thread. 
+      <P> When you create the bitmap object, you're also selecting the storage 
+        format for the bitmap. Let me explain this. The decoder takes a PLBmp 
+        as parameter to MakeBmpFromFile. Because PLBmp is an abstract base class, 
+        there can be no objects of the class. It exists mainly to define an interface 
+        for derived classes. Whenever it needs to store data, it asks the bitmap 
+        object for the address to place it. So if you create a PLWinBmp and pass 
+        it to MakeBmpFromFile, the storage format is a windows DIB (Device Independent 
+        Bitmap). We could also have passed a PLAnyBmp and stored the data in an 
+        OS-independent format. There's a third bitmap class - PLDIBSection - for 
+        use when you want to use a windows DIB section and if you're using DirectX, 
+        you can use PLDDrawBmp to load bitmaps directly into DirectDraw surfaces. 
+      <P> Needless to say that you can also define your own bitmap storage formats 
+        by deriving from PLBmp. (If all this doesn't make sense, ignore what I've 
+        just said. Just remember that you can safely pass PLWinBmps, PLAnyBmps, 
+        or objects of any other PLBmp-derived class to MakeBmpFromFile() and the 
+        bitmap data will arrive in the object in the format defined by the class. 
+        ;-) 
+      <P> <b>Manipulating bitmaps</b> 
+      <P>Once you've decoded the bitmaps, you'll want to do something with them. 
+        If you're coding for windows and using PLWinBmp, you can do whatever DIBs 
+        (Device Independent Bitmaps) are capable of. PLWinBmp defines methods 
+        to draw the bitmap to a device context and to copy it to the clipboard. 
+        You can also load PLWinBmps from resources. The class PLDIBSection derives 
+        from PLWinBmp and has the ability to return a GDI bitmap handle in addition 
+        to the features of PLWinBmp. This means you can use GDI drawing functions 
+        to change the contents of a PLDIBSection. 
+      <P>In addition, paintlib defines some filters that manipulate bitmaps. For 
+        example, to resize a bitmap, use this:
+      <pre>  PLFilterResizeBilinear Filter (XSize, YSize);
+  Filter.ApplyInPlace (pBmp);   // Replace with Apply(pSrc, pDst) if you want to
+                                // keep the original bitmap.  
+</pre>
+      <p>or:</p>
+      <pre>  pBmp-&gt;ApplyFilter (PLFilterResizeBilinear (XSize, YSize));</pre>
+      <p>Using filters allows you to do things like dynamically creating arrays 
+        of filters that you then apply to many bitmaps in succession etc. It also 
+        allows for simple undo/redo mechanisms: Keep all the filters you've applied 
+        to a bitmap in an array. When you need to undo, just reapply all but the 
+        last filter to the original image. (The test class PLTester takes advantage 
+        of this design at several points. Have a look.)</p>
+      <p>If you're interested in manipulating the data yourself, this is what 
+        you can do: </p>
+      <PRE>  // Assuming a 32 bpp bitmap.
+  PLPixel32 ** pLineArray;
+  int x,y;
+  PLPixel32  * pLine;
+
+  // Get the addresses of the bitmap lines
+  pLineArray = pBmp-&gt;GetLineArray32();
+
+  // Iterate through the lines
+  for (y=0; y&lt;pBmp-&gt;GetHeight(); y++)
+  {
+    pLine = pLineArray[y];
+
+    // Iterate through the pixels
+    for (x=0; x&lt;pBmp-&gt;GetWidth(); x++)
+    {
+      // Set the red intensity to maximum.
+      // (replace this with what you really 
+      // want to do...)
+      pLine[x].SetR(0xFFh);
+    }
+  }
+</PRE>
+    
+      <P> pBmp points to an object of a PLBmp-derived class. pBmp-&gt;GetLineArray32() 
+        returns an array of pointers to the bitmap lines. Once you have the array, 
+        you can iterate through the lines at maximum speed. The class PLPixel32 
+        allows basic operations on pixels like setting and getting components, 
+        testing for equality and assigning one pixel to another. There are similar 
+        classes for 24 and 8 bpp pixels and corresponding GetLineArray() functions. 
+        The order of the components of each pixel in 32 and 24 bpp mode is defined 
+        by the constants PL_RGBA_BLUE, PL_RGBA_GREEN, PL_RGBA_RED, and PL_RGBA_ALPHA. 
+        32 bpp bitmaps may or may not have valid data in the alpha channel. You 
+        can check this by calling pBmp-&gt;HasAlpha() and change the value by 
+        calling SetAlphaChannel() or SetHasAlpha(). You can copy bitmaps and convert 
+        them to different bit depths by calling CreateCopy() or the assignment 
+        operator. In 8 bpp mode, the color of each pixel is determined by the 
+        palette of the bitmap. The functions SetPalette(), SetGrayPalette() and 
+        SetPaletteEntry() allow you to set the color table.
+      <P>There are several additional functions to get information about the bitmap: 
+        GetWidth(), GetHeight(), GetBitsPerPixel(), GetBytesPerLine(), GetMemUsed(), 
+        GetNumColors() and GetResolution(). The resolution (in dpi) can also be 
+        set using SetResolution() - this doesn't resample the image, it just allows 
+        programs to be smart about how big the image is supposed to be displayed 
+        or printed. 
+      <P>These informational functions can also be called on the decoder after 
+        a bitmap has been opened, but before it's been loaded : 
+      <pre>    Decoder.OpenFile (&quot;test.bmp&quot;);
+    cerr << "Width: " << Decoder.GetWidth() << endl;
+    Decoder.MakeBmp(&Bmp);
+    Decoder.Close();
+</pre>
+      <P>Note that implementing a filter isn't much more work than manipulating 
+        the data directly. What you need to do is create a new class derived from 
+        PLFilter, place the actual manipulation code in Apply() and code a constructor. 
+        The constructor takes any parameters that your algorithm needs and places 
+        them in member variables that Apply() can use. In general, the destructor 
+        will be empty.
+      <P><b>Saving an image</b> 
+      <P>Easy:
+      <pre>  PLJPEGEncoder Encoder;
+  Encoder.MakeFileFromBmp(sFName, pBmp);
+</pre>
+      <P>PLJPEGEncoder also has some functions for setting image quality that 
+        you can call before calling MakeFileFromBmp(). 
+      <P>You can also use a PLPNGEncoder if you want to save in png format, a 
+        PLBMPEncoder to save in windows bmp format or a PLTIFFEncoder if you want 
+        to save in tiff format. PLTIFFEncoderEx provides advanced support for 
+        writing your own tiff tags. 
+      <P><b>Error Handling and Debugging </b>
+      <P>If you defined _DEBUG when you built the library, it was compiled to 
+        contain trace statements and asserts to help you debugging. In addition, 
+        debug info is included and optimizations are disabled. Trace statements 
+        give diagnostic output to a suitable medium. For MSVC, output is sent 
+        either to the MSVC debug log or to a file. Other systems send output to 
+        stderr or a file. The amount of information output and the destination 
+        can be changed by calling PLAnyPicDecoder::SetTraceConfig (Level, pszFName). 
+      <P>
+      In addition to enabling trace output, defining _DEBUG also enables
+      internal sanity checks and parameter validation via asserts. If
+      an assertion fails, the program will stop execution and print
+      out information about the file and line number causing the failure.
+      There are comments at these places in the code to help you sort
+      things out.
+      <P>
+      Errors which you can potentially recover from are handled by the
+      C++ exception mechanism. Here is sample code including error-handling:
+      <PRE>
+  try
+  {
+    Decoder.MakeBmpFromFile (&quot;foo.jpg&quot;, 
+                             &amp;Bmp);
+  }
+  catch (PLTextException e)
+  {
+    cerr &lt;&lt; &quot;Error &quot; &lt;&lt; e.GetCode() &lt;&lt; &quot; decoding foo.jpg: &quot; &lt;&lt; e &lt;&lt; endl;  
+  }
+</PRE>
+      
+      <P> If no error occurs, this code just amounts to one call to MakeBmpFromFile(). 
+        If something goes wrong, execution jumps to the catch block. In this block, 
+        you have a variable of type PLTextException available which provides you 
+        with an error code and a descriptive error string. The error codes are 
+        explained in the reference section. 
+      <P><b>Photoshop layer support</b>
+      <P>While the paintlib photoshop image (psd) decoder can be used to just 
+        get the compusite image like the other decoders, it can also be used to 
+        load each of the layers in a multi-layer image into a separate PLBmp:
+      <pre>  PLPSDDecoder Decoder;
+  Decoder.OpenFile (sFilePos.c_str());
+  int n = Decoder.GetNumLayers ();
+  vector&lt;PLAnyBmp*&gt; LayerBmps;
+  for (int i = 0; i&lt;n; i++)
+  { 
+    LayerBmps.push_back(new PLAnyBmp);
+    Decoder.GetNextLayer (*(LayerBmp[i]));
+    PLPoint Pt = Decoder.GetLayerOffset ();
+  }
+</pre>
+      <P><b>Windows-specific Stuff</b> 
+      <P>If you've got a bitmap handle and a corresponding device context and 
+        you need a PLWinBmp, do this: 
+      <pre>  PLWinBmp * pBmp;
+  pBmp->Create (Width, Height, bpp, FALSE);
+  GetDIBits( hdc, hBmp, 0, (WORD) pBmp->GetHeight(), 
+             pBmp->GetBits(), pBmp->GetBMI(), 
+             DIB_RGB_COLORS);
+</pre>
+      <P>Loading a picture (in any format) from a resource is also possible. Just 
+        place a resource of type RCDATA into the .rc file of the program and load 
+        the resource as a picture by calling 
+      <PRE>
+  MakeBmpFromResource(IDR_PICTURE, &amp;Bmp)
+</PRE>
+      The line in the .rc file should look like this:
+<PRE>
+  IDR_PICTURE  RCDATA  DISCARDABLE  &quot;picture.jpg&quot;
+</PRE>
+      You will also need to define IDR_PICTURE in resource.h (or wherever resource 
+      IDs are defined in your project). Under MSVC, adding a user-defined resource 
+      to a project requires a bit of magic. What you need to do (this isver 6.0) 
+      is: 
+      <OL>
+      <LI> Insert the file "res\projektname.rc2" in "View/Resource Includes".
+      <LI> Insert the resource reference in projectname.rc2 (the file
+      already exists).
+      <LI> Add the resource ID using "View/Resource Symbols" to resource.h.
+      </OL>
+      <P> For a real-life example of all this, see the sample programs. <br>
+      </td>
+    <td width="22">
+      <img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+    </td>
+
+  </tr>
+</table>
+
+</BODY>
+
+</HTML>

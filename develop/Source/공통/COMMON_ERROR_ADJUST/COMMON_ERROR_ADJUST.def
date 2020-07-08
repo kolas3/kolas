@@ -1,0 +1,11 @@
+; COMMON_ERROR_ADJUST.def : Declares the module parameters for the DLL.
+
+LIBRARY      "COMMON_ERROR_ADJUST"
+DESCRIPTION  'COMMON_ERROR_ADJUST Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

@@ -1,0 +1,165 @@
+dnl
+dnl
+dnl 2000/22/10 José Miguel Buenaposada Buencinto.
+dnl            First version of the autotools scripts for paintlib.
+dnl
+dnl   Process this file with autoconf to produce a configure script.
+
+AC_INIT(common/plbitmap.h)
+AC_CONFIG_AUX_DIR(config)
+
+MAJOR_VERSION=2
+MINOR_VERSION=5
+MICRO_VERSION=0
+VERSION=$MAJOR_VERSION.$MINOR_VERSION.$MICRO_VERSION dnl
+
+AC_SUBST(VERSION)
+
+PACKAGE=paintlib
+
+AM_CONFIG_HEADER(common/config.h)
+AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
+
+
+dnl Checks for programs.
+AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_LIBTOOL_WIN32_DLL
+AM_PROG_LIBTOOL
+AC_C_BIGENDIAN
+
+dnl
+dnl Check for M$  Windows
+dnl
+dnl AC_CANONICAL_HOST
+
+case "$host" in
+*-cygwin* | *-mingw*)
+  mswindows=yes
+  PIXEL_BYTE_ORDER=PL_PIXEL_BGRA_ORDER
+  ;;
+*)
+  mswindows=no
+  PIXEL_BYTE_ORDER=PL_PIXEL_RGBA_ORDER
+  CXXFLAGS=
+  ;;
+esac
+
+dnl Checks for libraries.
+dnl Replace `main' with a function in -lc:
+AC_CHECK_LIB(c, main)
+dnl Replace `main' with a function in -lm:
+AC_CHECK_LIB(m, main)
+dnl Replace `main' with a function in -lstdc:
+AC_CHECK_LIB(stdc, main)
+dnl Replace `main' with a function in -lstdcx:
+AC_CHECK_LIB(stdcx, main)
+
+dnl Checks for header files.
+AC_HEADER_STDC
+
+dnl Checks which header(s) contain dirent stuff
+AC_HEADER_DIRENT
+
+dnl Checks if memory-mapped files are available
+AC_FUNC_MMAP
+
+dnl Checks for library functions.
+AC_FUNC_MEMCMP
+
+#
+# libtiff, libjpeg libpgn support from system installed libraries
+#
+AC_CHECK_LIB(jpeg, main, sys_libjpeg=yes, sys_libjpeg=no)
+AC_CHECK_LIB(tiff, main, sys_libtiff=yes, sys_libtiff=no)
+AC_CHECK_LIB(z, main, sys_libz=yes, sys_libz=no)
+AC_CHECK_LIB(png, main, sys_libpng=yes, sys_libpng=no, -lz)
+AC_CHECK_LIB(ungif, main, sys_libungif=yes, sys_libungif=no, -lX11)
+
+AC_MSG_CHECKING(system PNG support (libpng and libz))
+sys_png=no
+if test "$sys_libpng" = yes -a "$sys_libz" = yes
+then sys_png=yes
+fi
+AC_MSG_RESULT($sys_png)
+
+dnl Defines for the graphic file formats supported
+
+if test "$sys_libtiff" = yes; then
+AC_DEFINE(PL_SUPPORT_TIFF)
+libstiff="-ltiff"
+else
+libstiff=""
+fi
+
+if test "$sys_libjpeg" = yes; then
+AC_DEFINE(PL_SUPPORT_JPEG)
+libsjpeg="-ljpeg"
+else
+libsjpeg=
+fi
+
+if test "$sys_png" = yes; then
+AC_DEFINE(PL_SUPPORT_PNG)
+libspng="-lz -lpng"
+else
+libspng=""
+fi
+
+if test "$sys_libungif" = yes; then
+AC_DEFINE(PL_SUPPORT_GIF)
+libsungif="-lungif"
+else
+libsungif=""
+fi
+
+AC_DEFINE(PL_SUPPORT_TGA)
+AC_DEFINE(PL_SUPPORT_BMP)
+AC_DEFINE(PL_SUPPORT_PICT)
+AC_DEFINE(PL_SUPPORT_PCX)
+AC_DEFINE(PL_SUPPORT_PGM)
+AC_DEFINE(PL_SUPPORT_PPM)
+AC_DEFINE(PL_SUPPORT_PSD)
+
+# We prefer our own copy of graphics libs over the system installed ones.
+AM_CONDITIONAL(SYS_LIBJPEG, test "$sys_libjpeg" = yes)
+AM_CONDITIONAL(SYS_LIBTIFF, test "$sys_libtiff" = yes)
+AM_CONDITIONAL(SYS_LIBPNG, test "$sys_png" = yes)
+AM_CONDITIONAL(SYS_LIBUNGIF, test "$sys_libungif" = yes)
+
+# Now establish PAINTLIB_CFLAGS and PAINTLIB_LIBS
+PAINTLIB_CFLAGS="$CFLAGS -I$includedir"
+PAINTLIB_LIBS="$libspng $libsjpeg $libstiff $libsungif -L$libdir -lpaintlib"
+
+AC_SUBST(PAINTLIB_CFLAGS)
+AC_SUBST(PAINTLIB_LIBS)
+
+# Check for Windows platform
+AM_CONDITIONAL(WIN32, test "$mswindows" = yes)
+
+Xsed="sed -e s/^X//"
+LTLIBOBJS=`echo X"$LIBOBJS" | \
+    $Xsed -e "s,\.[^.]* ,.lo ,g;s,\.[^.]*\$,.lo,"`
+AC_SUBST(LTLIBOBJS)
+
+AC_SUBST(CXX)
+AC_SUBST(CXXFLAGS)
+AC_SUBST(PIXEL_BYTE_ORDER)
+
+
+AC_OUTPUT(paintlib-config \
+lib/paintlib_version.h \
+common/plpixeldefs.h \
+Makefile \
+common/Makefile \
+common/Filter/Makefile \
+common/test/Makefile \
+lib/Makefile \
+gnu/Makefile \
+gnu/im2bmp/Makefile \
+gnu/im2jpeg/Makefile \
+gnu/im2tiff/Makefile \
+gnu/im2png/Makefile)

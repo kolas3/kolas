@@ -1,0 +1,11 @@
+; KL_NOTIFY_WEB.def : Declares the module parameters for the DLL.
+
+LIBRARY      "KL_NOTIFY_WEB"
+DESCRIPTION  'KL_NOTIFY_WEB Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

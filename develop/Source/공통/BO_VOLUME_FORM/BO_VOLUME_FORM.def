@@ -1,0 +1,7 @@
+; BO_VOLUME_FORM.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_VOLUME_FORM"
+DESCRIPTION  'BO_VOLUME_FORM Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

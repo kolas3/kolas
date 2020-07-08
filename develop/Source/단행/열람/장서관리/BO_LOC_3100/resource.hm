@@ -1,0 +1,30 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by BO_LOC_3100.rc
+//
+#define HIDC_BUTTON_31001               0xa18e046c    // IDD_BO_LOC_3100
+#define HIDC_LOAN_TYPE                  0xa18e0417    // IDD_BO_LOC_3100
+#define HIDC_RETURN_TYPE                0xa18e0418    // IDD_BO_LOC_3100
+#define HIDC_STATIC                     0xa18effff    // IDD_BO_LOC_3100
+#define HIDC_STATIC_FAMILYID            0xa18e0430    // IDD_BO_LOC_3100
+#define HIDC_STATIC_NAME                0xa18e042f    // IDD_BO_LOC_3100
+#define HIDC_STATIC_NUMBER              0xa18e042e    // IDD_BO_LOC_3100
+#define HIDC_bTEST_LOAN                 0xa18e045e    // IDD_BO_LOC_3100
+#define HIDC_btnMSGTEST                 0xa18e0400    // IDD_BO_LOC_3100
+#define HIDC_btnNUMBERFIND2             0xa18e0402    // IDD_BO_LOC_3100
+#define HIDC_btnSHOWMESSAGE             0xa18e03fe    // IDD_BO_LOC_3100
+#define HIDC_btnTEST                    0xa18e041c    // IDD_BO_LOC_3100
+#define HIDC_chkBARCODEUSE              0xa18e041e    // IDD_BO_LOC_3100
+#define HIDC_chkEXP_DATA                0xa18e044c    // IDD_BO_LOC_3100
+#define HIDC_cmbREG_NO_LIST             0xa18e042b    // IDD_BO_LOC_3100
+#define HIDC_cmbTEMP                    0xa18e0416    // IDD_BO_LOC_3100
+#define HIDC_edtDELAYDAY                0xa18e040e    // IDD_BO_LOC_3100
+#define HIDC_edtFAMILYID                0xa18e03f4    // IDD_BO_LOC_3100
+#define HIDC_edtNAME                    0xa18e09b8    // IDD_BO_LOC_3100
+#define HIDC_edtNUMBER2                 0xa18e0410    // IDD_BO_LOC_3100
+#define HIDC_radLOANTYPE1               0xa18e03e8    // IDD_BO_LOC_3100
+#define HIDC_radLOANTYPE2               0xa18e03e9    // IDD_BO_LOC_3100
+#define HIDC_radLOANTYPE3               0xa18e03ea    // IDD_BO_LOC_3100
+#define HIDC_radRETURNTYPE1             0xa18e03ec    // IDD_BO_LOC_3100
+#define HIDC_radRETURNTYPE2             0xa18e03ed    // IDD_BO_LOC_3100
+#define HIDC_radRETURNTYPE3             0xa18e03ee    // IDD_BO_LOC_3100
+#define HIDC_staRETURN_DELAY_DAY        0xa18e0425    // IDD_BO_LOC_3100

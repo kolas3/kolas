@@ -1,0 +1,785 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SIReportEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.kor\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Icon32.ICO"
+IDR_SIREPOTYPE          ICON    DISCARDABLE     "res\\SIReportEditorDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_CONTROL             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_TAB                 BITMAP  DISCARDABLE     "res\\bitmap2.bmp"
+IDR_TOOLBAREDIT         BITMAP  DISCARDABLE     "res\\toolbar_.bmp"
+IDB_PORTRAIT            BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+IDB_LANDSCAPE           BITMAP  DISCARDABLE     "res\\bitmap3.bmp"
+IDR_TOOLBAR_TABLE       BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDB_SHEET               BITMAP  DISCARDABLE     "res\\tree.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  36, 36
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_EDIT_UNDO
+    BUTTON      ID_EDIT_REDO
+END
+
+IDR_TOOLBAREDIT TOOLBAR DISCARDABLE  36, 36
+BEGIN
+    BUTTON      ID_LAYOUT_ALIGN_LEFT
+    BUTTON      ID_LAYOUT_ALIGN_RIGHT
+    BUTTON      ID_LAYOUT_ALIGN_TOP
+    BUTTON      ID_LAYOUT_ALIGN_BOTTOM
+    SEPARATOR
+    BUTTON      ID_LAYOUT_MAKE_SAME_WIDTH
+    BUTTON      ID_LAYOUT_MAKE_SAME_HEIGHT
+    BUTTON      ID_LAYOUT_MAKE_SAME_SIZE
+    SEPARATOR
+    BUTTON      ID_LAYOUT_ALIGN_HORZ_CENTER
+    BUTTON      ID_LAYOUT_ALIGN_VERT_CENTER
+    SEPARATOR
+    BUTTON      ID_LAYOUT_ORDER_BRING_TO_FRONT
+    BUTTON      ID_LAYOUT_ORDER_SEND_TO_BACK
+    BUTTON      ID_LAYOUT_ORDER_BRING_FORWARD
+    BUTTON      ID_LAYOUT_ORDER_SEND_BACKWARD
+    SEPARATOR
+    BUTTON      ID_EDIT_ZOOM_IN
+    BUTTON      ID_EDIT_ZOOM_OUT
+    BUTTON      ID_FILE_SAVE_TO_FILE
+END
+
+IDR_TOOLBAR_TABLE TOOLBAR DISCARDABLE  21, 20
+BEGIN
+    BUTTON      ID_TABLE_INSERT_ROW
+    BUTTON      ID_TABLE_INSERT_COL
+    BUTTON      ID_TABLE_DELETE_ROW
+    BUTTON      ID_TABLE_DELETE_COL
+    SEPARATOR
+    BUTTON      ID_TABLE_CHANGE_COL
+    SEPARATOR
+    BUTTON      ID_TABLE_MERGE
+    BUTTON      ID_TABLE_DEMERGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "새 워크폼(&N)\tCtrl+N",       ID_FILE_NEW
+        MENUITEM "새 워크시트(&W)\tCtrl+W",     ID_FILE_NEW_SHEET
+        MENUITEM "열기(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "저장(&S)\tCtrl+S",            ID_FILE_SAVE
+        MENUITEM "다른 이름으로 저장(&A)...",   ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "파일로 저장(&F)...",          ID_FILE_SAVE_TO_FILE
+        MENUITEM SEPARATOR
+        MENUITEM "기본 DM 설정(&D)...\tCtrl+D", ID_FILE_DEFAULT_DM_SETUP
+        MENUITEM "페이지설정(&U)...",           ID_FILE_PAGE_SETUP
+        MENUITEM "인쇄(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "인쇄 미리 보기(&V)",          ID_FILE_PRINT_PREVIEW
+        MENUITEM "인쇄 설정(&R)...",            ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM "종료(&X)",                    ID_APP_EXIT
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "취소(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM "재실행(&R)\tCtrl+Y",          ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)\tCtrl+X",        ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",        ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "모두 선택(&L)\tCtrl+A",       ID_EDIT_SELECT_ALL
+    END
+    POPUP "레이아웃(L)"
+    BEGIN
+        POPUP "사이즈 같게(&M)"
+        BEGIN
+            MENUITEM "가로",                        ID_LAYOUT_MAKE_SAME_WIDTH
+
+            MENUITEM "세로",                        ID_LAYOUT_MAKE_SAME_HEIGHT
+
+            MENUITEM "둘다",                        ID_LAYOUT_MAKE_SAME_SIZE
+        END
+        POPUP "정렬(&R)"
+        BEGIN
+            MENUITEM "맨 앞으로 가져오기(&T)",      ID_LAYOUT_ORDER_BRING_TO_FRONT
+
+            MENUITEM "맨 뒤로 보내기(&K)",          ID_LAYOUT_ORDER_SEND_TO_BACK
+
+            MENUITEM "앞으로 가져오기(&F)",         ID_LAYOUT_ORDER_BRING_FORWARD
+
+            MENUITEM "뒤로 보내기(&B)",             ID_LAYOUT_ORDER_SEND_BACKWARD
+
+        END
+        POPUP "맞춤/배분(&A)"
+        BEGIN
+            MENUITEM "왼쪽 맞춤(&L)",               ID_LAYOUT_ALIGN_LEFT
+            MENUITEM "가운데 맞춤(&C)",             ID_LAYOUT_ALIGN_HORZ_CENTER
+
+            MENUITEM "오른쪽 맞춤(&R)",             ID_LAYOUT_ALIGN_RIGHT
+            MENUITEM "위쪽 맞춤(&T)",               ID_LAYOUT_ALIGN_TOP
+            MENUITEM "중간 맞춤(&M)",               ID_LAYOUT_ALIGN_VERT_CENTER
+
+            MENUITEM "아래쪽 맞춤(&B)",             ID_LAYOUT_ALIGN_BOTTOM
+        END
+    END
+    POPUP "보기(&V)"
+    BEGIN
+        MENUITEM "워크 스페이스(&W)",           ID_VIEW_WORKSPACE
+        MENUITEM "표준 도구 모음(&T)",          ID_VIEW_TOOLBAR
+        MENUITEM "그리기 도구 모음(&D)",        ID_VIEW_TOOLBAREDIT
+        MENUITEM "테이블 도구 모음(&G)",        ID_VIEW_TOOLBARTABLE
+        MENUITEM "상태 표시줄(&S)",             ID_VIEW_STATUS_BAR
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "SIReportEditor 정보(&A)...",  ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "A",            ID_EDIT_SELECT_ALL,     VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "D",            ID_FILE_DEFAULT_DM_SETUP, VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F12,         ID_FILE_SAVE_AS,        VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, CONTROL, ALT, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "W",            ID_FILE_NEW_SHEET,      VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SIReportEditor 정보"
+FONT 9, "새굴림"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "SIReportEditor 버전 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002 (주)ECO",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "확인",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_TOOLBAR DIALOG DISCARDABLE  0, 0, 330, 16
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cZOOM,0,2,48,112,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Zoom IN",IDC_bZOOM_IN,56,1,50,14
+    PUSHBUTTON      "Zoom Out",IDC_bZOOM_OUT,115,2,50,14
+END
+
+IDD_CONTROLBOX DIALOG DISCARDABLE  0, 0, 170, 176
+STYLE WS_CHILD | WS_BORDER
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "List1",IDC_LIST_CONTROL,"SysListView32",LVS_SINGLESEL | LVS_AUTOARRANGE | LVS_NOCOLUMNHEADER | WS_TABSTOP,7,7,156,162
+END
+
+IDD_TABLE_PROPERTY DIALOGEX 0, 0, 248, 168
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "TABLE PROPERTY"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "확인",IDOK,131,142,50,14
+    PUSHBUTTON      "취소",IDCANCEL,191,142,50,14
+    GROUPBOX        "테이블 설정",IDC_STATIC,7,7,235,129
+    LTEXT           "테이블 이름 :",IDC_STATIC,14,26,53,8
+    EDITTEXT        IDC_eName,74,24,154,12,ES_AUTOHSCROLL
+    LTEXT           "행 :",IDC_STATIC,15,45,17,8
+    EDITTEXT        IDC_eROW,38,43,29,12,ES_AUTOHSCROLL
+    LTEXT           "열 :",IDC_STATIC,15,59,17,8
+    EDITTEXT        IDC_eCOL,38,58,30,12,ES_AUTOHSCROLL
+    CONTROL         "소계",IDC_chkPARTSUM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,81,32,10
+    CONTROL         "합계",IDC_chkTOTALSUM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,51,81,32,10
+    CONTROL         "가로선 보이기",IDC_chkHORZLINE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,103,68,10
+    CONTROL         "세로선 보이기",IDC_chkVERTLINE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,87,103,68,10
+    CONTROL         "반복",IDC_chkREPEAT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,119,32,10
+    CONTROL         "계속해서 보여주기",IDC_chkVISIBLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,63,119,84,10
+END
+
+IDD_PROPERTY DIALOGEX 0, 0, 235, 212
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tab1",IDC_TAB_PROPERTY,"SysTabControl32",0x0,7,7,221,198
+END
+
+IDD_SHEET_VIEW DIALOG DISCARDABLE  0, 0, 170, 176
+STYLE WS_CHILD | WS_BORDER
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "Tree2",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_TABSTOP,7,7,156,162
+END
+
+IDD_TAB_DIALOG DIALOGEX 0, 0, 156, 288
+STYLE WS_CHILD | WS_VISIBLE
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tab1",IDC_TAB_VIEW,"SysTabControl32",0x0,7,7,142,274,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+END
+
+IDD_PAGE_SETUP DIALOGEX 0, 0, 262, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Page Setup..."
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "가로",IDC_rORIENTATION,"Button",BS_AUTORADIOBUTTON | WS_GROUP,32,81,32,10
+    CONTROL         "세로",IDC_rORIENTATION2,"Button",BS_AUTORADIOBUTTON,32,97,32,10
+    COMBOBOX        IDC_cPAGESIZE,32,39,91,106,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "용지 사이즈 :",IDC_STATIC,13,24,53,8
+    LTEXT           "용지방향 :",IDC_STATIC,14,65,41,8
+    CONTROL         157,IDC_BMP_PORTRAIT,"Static",SS_BITMAP | NOT WS_VISIBLE,160,25,61,87
+    CONTROL         158,IDC_BMP_LANDSCAPE,"Static",SS_BITMAP,148,38,87,61
+    GROUPBOX        "용지 설정",IDC_STATIC,7,7,248,118
+    PUSHBUTTON      "확인",IDOK,146,136,50,14
+    PUSHBUTTON      "취소",IDCANCEL,205,136,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,133,16,116,103,WS_EX_STATICEDGE
+END
+
+IDD_RPT_FILE_MANAGE DIALOGEX 0, 0, 588, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "SIReportEditor Data Manage"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_eSEARCH,69,8,79,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "찾기",IDC_bSEARCH,153,8,50,14
+    PUSHBUTTON      "설명보기",IDC_bDESC,210,8,48,14
+    PUSHBUTTON      "삭제",IDC_bDELETE,261,8,48,14
+    PUSHBUTTON      "열기",IDC_bOPEN,312,8,48,14
+    PUSHBUTTON      "파일 열기...",IDC_bOPENFILE,421,8,50,14
+    PUSHBUTTON      "파일로 저장",IDC_bEXPORT,475,8,50,14
+    COMBOBOX        IDC_cSEARCH,3,8,64,60,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_MSHFLEXGRID,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,0,29,587,306
+    GROUPBOX        "",IDC_STATIC,0,0,206,26
+    GROUPBOX        "",IDC_STATIC,207,0,208,26
+    GROUPBOX        "",IDC_STATIC,418,0,110,26
+    PUSHBUTTON      "닫기",IDC_bCLOSE,534,8,50,14
+    GROUPBOX        "",IDC_STATIC,530,0,57,25
+    PUSHBUTTON      "정보수정",IDC_bMODIFY,363,8,48,14
+END
+
+IDD_RPT_SAVE DIALOGEX 0, 0, 299, 83
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "SIReportEditor Save..."
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_eTITLE,43,12,239,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eDESCRIPTION,43,30,239,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cSTEP1,43,47,76,78,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cSTEP2,125,47,76,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cSTEP3,206,47,76,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "저장",IDC_bSAVE,190,68,50,14
+    PUSHBUTTON      "취소",IDC_bCANCEL,244,68,50,14
+    LTEXT           "설명 :",IDC_STATIC,10,30,29,14,SS_CENTERIMAGE
+    LTEXT           "제목 :",IDC_STATIC,10,12,29,14,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,1,0,296,65
+    LTEXT           "업무 :",IDC_STATIC,10,48,29,14,SS_CENTERIMAGE
+END
+
+IDD_COLUMN_CHANGE DIALOGEX 0, 0, 120, 47
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "열 바꾸기"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,7,26,50,14
+    PUSHBUTTON      "취소",IDCANCEL,62,26,50,14
+    EDITTEXT        IDC_eCOLUMN,73,7,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "열번호",IDC_STATIC,19,9,25,8
+END
+
+IDD_RPT_FILE_MANAGE_MODIFY DIALOGEX 0, 0, 299, 83
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "정보수정"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_eTITLE,43,12,239,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eDESCRIPTION,43,30,239,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cSTEP1,43,47,76,78,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cSTEP2,125,47,76,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cSTEP3,206,47,76,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "저장",IDC_bSAVE,190,68,50,14
+    PUSHBUTTON      "취소",IDC_bCANCEL,244,68,50,14
+    LTEXT           "설명 :",IDC_STATIC,10,30,29,14,SS_CENTERIMAGE
+    LTEXT           "제목 :",IDC_STATIC,10,12,29,14,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,1,0,296,65
+    LTEXT           "업무 :",IDC_STATIC,10,48,29,14,SS_CENTERIMAGE
+END
+
+IDD_DEFALUT_DM DIALOGEX 0, 0, 166, 48
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Default DM Set"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,109,27,50,14
+    COMBOBOX        IDC_cDM,7,7,152,208,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,19,45
+ PRODUCTVERSION 2005,8,19,45
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "SIReportEditor MFC 응용 프로그램\0"
+            VALUE "FileVersion", "2005, 08, 19, 45\0"
+            VALUE "InternalName", "SIReportEditor\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SIReportEditor.EXE\0"
+            VALUE "ProductName", "SIReportEditor 응용 프로그램\0"
+            VALUE "ProductVersion", "2005, 08, 19, 45\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CONTROLBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_TABLE_PROPERTY, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_SHEET_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_TAB_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 281
+    END
+
+    IDD_PAGE_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_COLUMN_CHANGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 113
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+
+    IDD_DEFALUT_DM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 41
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_TOOLBAR DLGINIT
+BEGIN
+    IDC_cZOOM, 0x403, 5, 0
+0x3031, 0x2530, "\000" 
+    IDC_cZOOM, 0x403, 5, 0
+0x3032, 0x2530, "\000" 
+    0
+END
+
+IDD_RPT_FILE_MANAGE DLGINIT
+BEGIN
+    IDC_MSHFLEXGRID, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x6a25, 0x0000, 0x2f70, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0x0008, 0x8000, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x000d, 0x0000, 0x000e, 0x8000, 0xefef, 0x00ef, 0x000f, 0x0000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "SIReportEditor\n\nSIRepo\n\n\nSIReportEditor.Document\nSIRepo Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "SIReportEditor"
+    AFX_IDS_IDLEMESSAGE     "준비"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "새 워크폼을 작성합니다\n새 워크폼"
+    ID_FILE_OPEN            "기존 문서를 엽니다\n열기"
+    ID_FILE_CLOSE           "현재 열린 문서를 닫습니다\n닫기"
+    ID_FILE_SAVE            "현재 열린 문서를 저장합니다\n저장"
+    ID_FILE_SAVE_AS         "현재 열린 문서를 다른 이름으로 저장합니다\n다른 이름으로 저장"
+    ID_FILE_PAGE_SETUP      "인쇄 옵션을 변경합니다\n쪽 설정"
+    ID_FILE_PRINT_SETUP     "프린터와 인쇄 옵션을 변경합니다\n인쇄 설정"
+    ID_FILE_PRINT           "현재 열린 문서를 인쇄합니다\n인쇄"
+    ID_FILE_PRINT_PREVIEW   "쪽 전체를 표시합니다\n인쇄 미리 보기"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "프로그램 정보와 버전 정보, 저작권 정보를 표시합니다\n정보"
+    ID_APP_EXIT             "응용 프로그램을 종료하기 위해 문서를 저장할 것인지 묻습니다\n종료"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE2       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE3       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE4       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE5       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE6       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE7       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE8       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE9       "이 문서를 엽니다"
+    ID_FILE_MRU_FILE10      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE11      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE12      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE13      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE14      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE15      "이 문서를 엽니다"
+    ID_FILE_MRU_FILE16      "이 문서를 엽니다"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "다음 창으로 전환합니다\n다음 창"
+    ID_PREV_PANE            "이전 창으로 전환합니다\n이전 창"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "현재 열린 창을 나눕니다\n나누기"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "선택 부분을 지웁니다\n지우기"
+    ID_EDIT_CLEAR_ALL       "모든 것을 지웁니다\n모두 지우기"
+    ID_EDIT_COPY            "선택 부분을 복사하여 클립보드에 넣습니다\n복사"
+    ID_EDIT_CUT             "선택 부분을 잘라내어 클립보드에 넣습니다\n잘라내기"
+    ID_EDIT_FIND            "지정한 문자열을 찾습니다\n찾기"
+    ID_EDIT_PASTE           "클립보드의 내용을 붙여 넣습니다\n붙여넣기"
+    ID_EDIT_REPEAT          "마지막으로 실행한 동작을 반복합니다\n반복"
+    ID_EDIT_REPLACE         "지정한 문자열을 다른 문자열로 바꿉니다\n바꾸기"
+    ID_EDIT_SELECT_ALL      "문서 전체를 선택합니다\n전체 선택"
+    ID_EDIT_UNDO            "마지막으로 한 동작을 취소합니다\n실행 취소"
+    ID_EDIT_REDO            "이전에 취소한 동작을 다시 수행합니다\n다시 실행"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "표준 도구 모음을 보이거나 감춥니다\n표준 도구 모음 전환"
+    ID_VIEW_STATUS_BAR      "상태 표시줄을 표시하거나 감춥니다\n상태 표시줄 전환"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "창의 크기를 변경합니다"
+    AFX_IDS_SCMOVE          "창의 위치를 변경합니다"
+    AFX_IDS_SCMINIMIZE      "창을 아이콘으로 줄여서 표시합니다"
+    AFX_IDS_SCMAXIMIZE      "창을 최대 크기로 확장합니다"
+    AFX_IDS_SCNEXTWINDOW    "다음 문서 창으로 전환합니다"
+    AFX_IDS_SCPREVWINDOW    "이전 문서 창으로 전환합니다"
+    AFX_IDS_SCCLOSE         "현재 열린 창을 닫고 문서를 저장할 것인지를 묻습니다"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "창을 원래 크기로 복원합니다"
+    AFX_IDS_SCTASKLIST      "작업 목록을 활성화합니다"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "인쇄 미리 보기 모드를 닫습니다\n미리 보기 취소"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_LAYOUT_MAKE_SAME_WIDTH         "선택한 도형들의 가로사이즈를 같게 합니다.\n가로 사이즈 같게"
+    ID_LAYOUT_MAKE_SAME_HEIGHT         "선택한 도형들의 세로사이즈를 같게 합니다.\n세로 사이즈 같게"
+    ID_LAYOUT_MAKE_SAME_SIZE         "선택한 도형들의 사이즈를 같게 합니다.\n사이즈 같게"
+    ID_LAYOUT_ORDER_BRING_TO_FRONT         "선택한 도형을 맨 앞으로 가져옵니다.\n맨 앞으로 가져오기"
+    ID_LAYOUT_ORDER_SEND_TO_BACK         "선택한 도형을 맨 뒤로 보냅니다.\n맨 뒤로 보내기"
+    ID_LAYOUT_ORDER_BRING_FORWARD         "선택한 도형을 앞으로 가져옵니다.\n앞으로 가져오기"
+    ID_LAYOUT_ORDER_SEND_BACKWARD         "선택한 도형을 뒤로 내보냅니다.\n뒤로 보내기"
+    ID_LAYOUT_ALIGN_LEFT    "선택한 도형들을 왼쪽으로 맞춤니다.\n왼쪽 맞춤"
+    ID_LAYOUT_ALIGN_RIGHT   "선택한 도형들을 오른쪽으로 맞춤니다.\n오른쪽 맞춤"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_LAYOUT_ALIGN_TOP     "선택한 도형들을 위왼쪽으로 맞춤니다.\n위쪽 맞춤"
+    ID_LAYOUT_ALIGN_HORZ_CENTER         "선택한 도형들을 수평 가운데로 정렬합니다.\n수평 가운데 맞춤"
+    ID_LAYOUT_ALIGN_VERT_CENTER         "선택한 도형들을 수직 가운데로 정렬합니다.\n수직 가운데 맞춤"
+    ID_LAYOUT_ALIGN_BOTTOM  "선택한 도형들을 아래쪽으로 맞춤니다.\n아래쪽 맞춤"
+    ID_VIEW_TOOLBAREDIT     "그리기 도구 모음을 보이거나 감춥니다\n그리기 도구 모음 전환"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TABLE_INSERT_ROW     "선택한 위치에 행을 삽입합니다.\n행 삽입"
+    ID_TABLE_INSERT_COL     "선택한 위치에 열을 삽입합니다.\n열 삽입"
+    ID_TABLE_DELETE_ROW     "선택한 위치의 행을 삭제합니다.\n행 삭제"
+    ID_TABLE_DELETE_COL     "선택한 위치의 열을 삭제합니다.\n열 삭제"
+    ID_TABLE_CHANGE_COL     "선택한 위치의 열을 바꿉니다.\n열 바꾸기"
+    ID_TABLE_MERGE          "선택한 셀을 병합합니다.\n셀 병합"
+    ID_TABLE_DEMERGE        "선택한 셀을 분할합니다.\n셀 분할"
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\SIReportEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#include "l.kor\afxprint.rc"        // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,202 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_ACQ_PRINT_MGR.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,9,1,92
+ PRODUCTVERSION 2005,9,1,92
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_ACQ_PRINT_MGR DLL\0"
+            VALUE "FileVersion", "2005, 09, 01, 92\0"
+            VALUE "InternalName", "BO_ACQ_PRINT_MGR\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_ACQ_PRINT_MGR.DLL\0"
+            VALUE "ProductName", "BO_ACQ_PRINT_MGR 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 09, 01, 92\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_ACQ_PRINT_DLG DIALOG DISCARDABLE  0, 0, 260, 81
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "출  력",IDOK,146,60,45,15
+    PUSHBUTTON      "닫  기",IDCANCEL,206,52,45,15
+    LTEXT           "출력물목록",IDC_STATIC,12,15,41,8
+    COMBOBOX        IDC_cmbCPNT_PRINT_LIST,68,13,180,106,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,2,0,256,35
+    GROUPBOX        "",IDC_STATIC,91,35,106,44
+    PUSHBUTTON      "연속용지",IDC_btnSERIES_PAPER,98,60,45,15
+    PUSHBUTTON      "엑셀출력",IDC_btnEXCEL_EXPORT,146,43,45,15,NOT 
+                    WS_VISIBLE
+    PUSHBUTTON      "KOLAS2형식",IDC_btnKOLAS2_FORMAT,98,43,45,15
+    GROUPBOX        "",IDC_STATIC,200,35,58,44
+    GROUPBOX        "",IDC_STATIC,2,35,86,44
+    CONTROL         "출력시 자료정렬",IDC_chkPRINT_DATA_SORT_YN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,47,76,10
+    PUSHBUTTON      "정렬조건설정",IDC_btnSET_SORT_CONDITION,15,60,60,15
+END
+
+IDD_SUB_TOTAL_PRINT_OPTION_DLG DIALOG DISCARDABLE  0, 0, 134, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "출력데이터 선정"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "확 인",IDOK,13,77,50,15
+    PUSHBUTTON      "닫 기",IDCANCEL,71,77,50,15
+    GROUPBOX        "",IDC_stcGROUP1,2,0,130,67
+    CONTROL         "출력데이터 재검색",IDC_radRESEARCH,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,13,14,84,10
+    CONTROL         "바탕화면 검색데이터 사용",IDC_radMAIN_DATA,"Button",
+                    BS_AUTORADIOBUTTON,13,30,112,10
+    GROUPBOX        "",IDC_stcGROUP2,2,66,130,33
+    CONTROL         "그리드 선정자료",IDC_radGRID_SELECT_DATA,"Button",
+                    BS_AUTORADIOBUTTON,13,47,76,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BO_ACQ_PRINT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 258
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_SUB_TOTAL_PRINT_OPTION_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 132
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 99
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_ACQ_PRINT_MGR.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

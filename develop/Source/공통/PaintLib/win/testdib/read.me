@@ -1,0 +1,61 @@
+
+                          The blit classes
+                          ----------------
+
+
+This example contains classes which implement fast blits using the
+CDIB framework. A short description follows.
+
+The blit classes allow output of 32-bit DIBs. They support scaling,
+varying opacity, and a full 8-bit alpha channel. The class hierarchy
+is as follows (CObject and CObArray are MFC classes):
+
+                           CObject
+                              |
+                ----------------------------
+               |                            |
+            CGrItem                     CObArray
+               |                            |
+       -----------------                     ----
+      |                 |                        |
+ CDIBGrItem        CShadowItem             CGrItemArray
+
+
+Sample code which blits several bitmaps:
+
+#include "grarray.h"
+#include "dibgrit.h"
+
+CDIB Canvas;
+
+void UpdateCanvas
+    ( CRect * pUpdateRect
+    )
+{
+  CGrItemArray GrArray;
+  CDIBGrItem * pDIBItem;
+
+  for (i=0; i<NumberOfDIBs; i++)
+    {
+      pDIBItem = new CDIBGrItem (...);
+      GrArray.AddItem (pDIBItem);
+    }
+
+  GrArray.Draw (&Canvas, pUpdateRect);
+}
+
+The constructor of CDIBGrItem needs a bitmap and its position, size,
+position in z-order, and opacity. The drawing order used by the
+Draw() function is in ascending z position. The blit functions are
+optimized to recognize special cases, so blitting without resizing
+and/or without using opacity is considerably faster.
+
+In addition to CDIBGrItems, you can also insert CShadowItems into the
+array. These objects represent areas where the background is tinted
+with a color. CShadowItems can use alpha channel and opacity
+information.
+
+Blits with only one source bitmap can be accomplished by simply
+calling DrawOnDIB().
+
+Ulrich von Zadow, 2/8/1997

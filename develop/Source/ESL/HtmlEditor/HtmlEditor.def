@@ -1,0 +1,7 @@
+; HtmlEditor.def : Declares the module parameters for the DLL.
+
+LIBRARY      "HtmlEditor"
+DESCRIPTION  'HtmlEditor Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

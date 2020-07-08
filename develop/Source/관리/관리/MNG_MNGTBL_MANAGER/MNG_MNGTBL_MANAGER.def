@@ -1,0 +1,13 @@
+; MNG_MNGTBL_MANAGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_MNGTBL_MANAGER"
+DESCRIPTION  'MNG_MNGTBL_MANAGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

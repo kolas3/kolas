@@ -1,0 +1,7 @@
+; UnionUserManager.def : Declares the module parameters for the DLL.
+
+LIBRARY      "UnionUserManager"
+DESCRIPTION  'UnionUserManager Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

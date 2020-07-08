@@ -1,0 +1,8 @@
+[General]
+Target=Check_Dup_Api - Win32 Debug
+BuildModel=0
+[Directories]
+Target=.\TrueTime
+Intermediates=.\TrueTime
+[Instrumentation]
+Inlines=No

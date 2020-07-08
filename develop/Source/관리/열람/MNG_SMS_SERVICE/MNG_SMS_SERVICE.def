@@ -1,0 +1,11 @@
+; MNG_SMS_SERVICE.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_SMS_SERVICE"
+DESCRIPTION  'MNG_SMS_SERVICE Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

@@ -1,0 +1,158 @@
+<HTML>
+
+<HEAD>
+  <TITLE>paintlib - C++ - Installing</TITLE>
+  <meta name="robots" content="noindex">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000C0" VLINK="#8000FF" ALINK="#FF00FF">
+<accessed silent>
+<table width="350" border="0" cellspacing="0" cellpadding="0" align=right>
+  <tr>
+    <td>
+	  <img src="pics/cppinstall.gif" width=350 height=60 border=0 	 
+         alt="" hspace=0 vspace=0>
+    <img src="pics/whitept.gif" width=31 height=21 hspace=0 vspace=0 border=0 alt="">
+    </td>
+  </tr>
+</table>
+<br clear=all>
+<p align=left>
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td width="22">
+      <img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+    </td>
+    <td> 
+      <P> If you don't have the archive yet, download it. 
+      <P>After the download, you'll need to come back to this page - or to the 
+        copy of this page in the documentation included with the archive - to 
+        read the instructions on how to get paintlib through the compiler. Trial-and-error 
+        is a lot more work than reading the relevant sections of the instructions. 
+        Trust me. 
+      <P><B>Directory Structure</B> 
+      <P> After you've unpacked the paintlib archive, you should have created 
+        the following directory structure: 
+      <PRE>       paintlib-x.x.x
+         |--common
+         |   |--Filter
+         |    --test
+         |--config
+         |--doc
+         |--gnu
+         |   |--im2bmp
+         |   |--im2jpeg
+         |   |--im2png
+         |   |--im2tiff
+         |   |--libtiff
+         |--lib
+         |--(testpic)
+          --win
+             |--libjpeg
+             |--libpng
+             |--libtiff
+             |--libungif
+             |--paintlib
+             |--paintX
+             |--piclook
+             |--test
+             |--testdec
+             |--testdib
+             |--TIFFEX
+             |--VBPaintX
+              --VCPaintX
+</PRE>
+      <P> All platform-independent source code is in common/. The gnu/ and win/-directory 
+        trees contain system-specific files. testpic/ contains a suite of test 
+        images in various formats. These pictures are in a separate archive. You 
+        don't need to download them to use the library (although it's recommended 
+        if you'd like to make sure everything works as intended). doc/ contains 
+        the paintlib documentation in html format (You're reading it now), and 
+        paintX contains the precompiled paintlib ActiveX control (Also in a separate 
+        archive). 
+      <P><B>Compiling with Visual C++ under windows</B> 
+      <P>For windows compiles, you need to download libungif, libpng, zlib, libtiff 
+        and libjpeg and unpack them to paintlib-x.x.x/otherlib/. The download 
+        addresses for these packages are given under links in contents. (If you don't 
+        need support for one of these file formats, you can compile paintlib without 
+        these libraries. See "Omitting file formats" below for details.) 
+      <P> Some of the archives default to copying files into directories with 
+        version-specific names. For instance, the content of tiff-vx.y/ needs 
+        to be placed under otherlib/libtiff/. The easiest way to do this is to 
+        unpack the archive to otherlib and then rename tiff-vx.y/ to libtiff/. 
+        libungif, libjpeg, libpng and zlib need similar treatment.
+      <P> 
+      <P> The windows makefiles and projects are maintained for MSVC 6.0 and VS 
+        .NET. There are five libraries (paintlib, libpng, libtiff, libjpeg, libungif) 
+        and seven test and example programs to be made. Loading the workspace 
+        (src\win\paintlib\paintlib.dsw or paintlib.sln, depending on the VC++ 
+        Version) into the IDE and doing a batch build of everything should work. 
+        Some of the libraries under otherlib generate warnings when they're built 
+        under windows. Ignore them. In MSVC 6.0, libpng, libtiff and libjpeg also 
+        generate warnings whenever MSVC scans for dependencies. (This is a bug 
+        in MSVC: The dependency scan pays no attention to #ifdefs). 
+      <P> Run the test programs. test is the main one - it runs automated tests 
+        with bitmaps, de- and encoder pairs and filters. Testdec takes a directory 
+        as it's command line argument and displays all picture files found. It 
+        writes a log to paintlib.log describing success or failure of decoding 
+        each file. Testdib demonstrates windows-specific bitmap functions by doing 
+        fast blts with transparency. 
+      <P> Bernard Delm&eacute;e's PicLook is a complete picture viewer based on 
+        paintlib. It implements file loading and saving through paintlib and allows 
+        you to try the filters. It also supports printing and print preview, uses 
+        palettes, and it shows you a preview in the file open dialog - stuff that 
+        many people using paintlib will need. 
+      <P> <B>Building with configure</B> 
+      <p>If you have a *nix system, try 
+      <pre>  ./configure
+  make
+  make install
+  common/test/testpaintlib
+</pre>
+      <p>in the main directory. The configure script checks for the presence of 
+        the libraries that paintlib uses and builds makefiles that fit. (The otherlib/ 
+        directory is unused if configure is used). The default prefix directory 
+        into which paintlib gets installed is /usr/local. As is usual, this can 
+        be changed by calling configure like this (for example): 
+      <pre>  ./configure --prefix=/usr
+</pre>
+      <p>Libraries are copied to $(prefix)/lib, header files are copied to $(prefix)/include/paintlib.</p>
+      <p>The main test program is paintlib/common/test/testpaintlib - it runs 
+        automated tests with bitmaps, de- and encoder pairs and filters. Debug 
+        traces and asserts can be turned on by defining the environment variable 
+        CPPFLAGS before calling configure (e.g. export CPPFLAGS=-D_DEBUG in bash).</p>
+      <p>paintlib is known to compile and run under Intel Linux, cygwin and Intel 
+        FreeBSD systems, gcc 2.9x and 3.1. It currently doesn't run on big-endian 
+        systems.<br>
+      </p>
+      <p><B>Compiling for Other Systems</B> 
+      <P> On systems other than the ones mentioned above, you're on your own getting 
+        the library through the compiler. I believe someone once got it to work 
+        on the Mac, but I've lost contact and don't really know how he did it 
+        :-(. The code isn't dependent on many system-specific functions. It does 
+        need a C++-compiler which supports exceptions and templates. 
+      <P> It shouldn't be too hard for someone who knows his operating system 
+        to get paintlib to work. If you succeed, I'd love to know. 
+      <P><B>Omitting File Formats</B> 
+      <P>(Note that while I tested this feature when it was implemented, I can't 
+        really test it exaustively with each re-release. If anything has broken, 
+        please let me know.) 
+      <P>If you only need a subset of the supported file formats, you can compile 
+        paintlib to include only those formats you need. The file config.h (config.vc 
+        under windows) defines 
+        a symbol for every file format. To remove file format support from paintlib, 
+        remove the corresponding defines from config.h and the corresponding source 
+        file from the project-/configure-/makefile. If you remove support for 
+        PNG, you don't need libpng or zlib anymore. If you remove support for 
+        TIFF or JPEG, you don't need libtiff or libjpeg anymore (duh). Removing 
+        JPEG support also removes support for JPEG-encoded TIFF and PICT files. 
+        Because of this, removing JPEG support without removing TIFF support means 
+        that libtiff needs to be reconfigured. 
+    </td>
+    <td width="22">&nbsp; </td>
+  </tr>
+</table>
+
+<img src="pics/whitept.gif" width=21 height=1 hspace=0 vspace=0 border=0 alt="">
+</BODY>
+</HTML>

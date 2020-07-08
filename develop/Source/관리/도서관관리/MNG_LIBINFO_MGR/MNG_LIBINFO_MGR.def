@@ -1,0 +1,11 @@
+; MNG_LIBINFO_MGR.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_LIBINFO_MGR"
+DESCRIPTION  'MNG_LIBINFO_MGR Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

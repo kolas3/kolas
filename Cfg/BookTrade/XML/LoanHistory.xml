@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<qs:QueryParam xmlns:qs="urn:qs:xsd:1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" includeQueryInRetrieve="false">
+	<queryName>ECReports</queryName>
+	<params>
+		<param>
+			<fields>
+				<field>
+					<name>tag</name>
+					<value>urn:epc:tag:sscc-96:2.1234567890.0000001</value>					
+				</field>
+				<field>
+					<name>COMPANY_CODE</name>
+					<value></value>
+				</field>
+				<field>
+					<name>LENDING_DATE</name>
+					<value></value>
+				</field>
+				<field>
+					<name>LIBRARY_ID</name>
+					<value></value>
+				</field>
+				<field>
+					<name>readTime</name>
+					<value></value>
+				</field>
+				<field>
+					<name>sourceName</name>
+					<value>ItemShip-source</value>
+				</field>
+				<field>
+					<name>readerName</name>
+					<value>ItemShip-UHFReader</value>
+				</field>
+			</fields>
+		</param>
+	</params>
+</qs:QueryParam>

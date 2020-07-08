@@ -1,0 +1,194 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_CAT_SEARCH.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,08,19,43
+ PRODUCTVERSION 2005,08,19,43
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_CAT_SEARCH DLL\0"
+            VALUE "FileVersion", "2005, 08, 19, 43\0"
+            VALUE "InternalName", "BO_CAT_SEARCH\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_CAT_SEARCH.DLL\0"
+            VALUE "ProductName", "BO_CAT_SEARCH 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 19, 43\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_CAT_SEARCH DIALOG DISCARDABLE  0, 0, 337, 281
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "검  색"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cobAcqCode,62,30,75,95,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_eRECEIPT_YEAR,189,31,75,13,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_cFORM_CLASS,62,219,76,189,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cMED_CLASS,188,219,76,158,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cUSE_OBJECT_CLASS,62,237,76,140,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cMANAGE_CLASS,188,237,76,146,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cMAT_CLASS,62,255,76,159,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_eRECEIPTOR,188,256,76,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eACCESSION_REC_NO,61,94,86,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eACCESSION_NO_START4,179,94,86,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eACCESSION_NO_START3,61,110,86,14,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_eACCESSION_NO_END,179,110,86,14,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_eACCESSION_NO_START,61,126,86,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eACCESSION_NO_START2,179,126,86,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eSEQ_NO,61,174,204,13,ES_AUTOHSCROLL
+    LTEXT           "형식구분",IDC_REG_STATUS,12,223,33,8
+    LTEXT           "매체구분",IDC_REG_STATUS,148,223,33,8
+    LTEXT           "자료구분",IDC_REG_STATUS,12,259,33,8
+    LTEXT           "이용대상구분",IDC_REG_STATUS,12,241,49,8
+    LTEXT           "관리구분",IDC_REG_STATUS,148,241,33,8,NOT WS_VISIBLE
+    LTEXT           "접 수 자",IDC_REG_STATUS,148,259,33,8
+    LTEXT           "서    명",IDC_REG_7,12,176,33,8
+    GROUPBOX        "",IDC_REG_STATUS,3,209,270,68
+    LTEXT           "원부번호",IDC_REG_STATUS,11,129,33,8
+    LTEXT           "~",IDC_REG_STATUS,161,130,8,8
+    LTEXT           "입수년도",IDC_REG_STATUS,148,34,33,8
+    LTEXT           "입수구분",IDC_REG_STATUS,12,34,35,8
+    LTEXT           "가원부번호",IDC_REG_STATUS,12,113,41,8
+    LTEXT           "~",IDC_REG_STATUS,161,114,8,8
+    LTEXT           "~",IDC_REG_STATUS,161,97,8,8
+    GROUPBOX        "",IDC_REG_STATUS,3,19,270,31
+    GROUPBOX        "",IDC_REG_STATUS,3,81,270,80
+    GROUPBOX        "",15028,3,163,270,46
+    LTEXT           "등록번호",IDC_REG_STATUS,12,97,35,8
+    EDITTEXT        IDC_eSEQ_NO2,61,190,204,13,ES_AUTOHSCROLL
+    LTEXT           "저 작 자",IDC_REG_8,12,192,33,8
+    DEFPUSHBUTTON   "검  색",IDC_bSEARCH,277,5,56,15
+    PUSHBUTTON      "화면지우기",IDC_bREG0100CLEAR,277,23,56,15
+    PUSHBUTTON      "닫  기",IDCANCEL,277,41,56,15
+    PUSHBUTTON      "간략검색",IDC_bDetailNo,277,142,56,15
+    COMBOBOX        IDC_cobWorkingStatus,62,5,75,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "자료상태",IDC_REG_STATUS,11,9,32,8
+    GROUPBOX        "",IDC_REG_STATUS,3,49,270,31
+    EDITTEXT        IDC_eACCESSION_REC_NO2,61,60,86,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eACCESSION_NO_START5,179,60,86,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "~",IDC_REG_STATUS,161,64,8,8
+    LTEXT           "차수번호",IDC_REG_STATUS,11,64,35,8
+    EDITTEXT        IDC_eACCESSION_NO_START6,61,142,86,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eACCESSION_NO_START7,179,142,86,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "인계처리일",IDC_REG_STATUS,11,146,41,8
+    LTEXT           "~",IDC_REG_STATUS,161,146,8,8
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_CAT_SEARCH.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

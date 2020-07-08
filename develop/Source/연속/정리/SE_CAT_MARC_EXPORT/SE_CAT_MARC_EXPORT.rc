@@ -1,0 +1,172 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SE_CAT_MARC_EXPORT.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2004,12,15,63
+ PRODUCTVERSION 2004,12,15,63
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "SE_CAT_MARC_EXPORT DLL\0"
+            VALUE "FileVersion", "2004, 12, 15, 63\0"
+            VALUE "InternalName", "SE_CAT_MARC_EXPORT\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SE_CAT_MARC_EXPORT.DLL\0"
+            VALUE "ProductName", "SE_CAT_MARC_EXPORT 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2004, 12, 15, 63\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MARC_EXPORT_CAT DIALOG DISCARDABLE  0, 0, 326, 245
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "마크반출"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cSHELF_LOC,149,16,70,221,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cCat1100REG_CLASS,149,35,70,221,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_eACCESSION_NO_START,149,54,70,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eACCESSION_NO_END,235,54,70,13,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "첫등록번호가 등록번호 조건에 포함되는 자료만 반출",IDC_chCLASS1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,73,212,10
+    CONTROL         "조건에 포함되지 않는 등록번호 삭제 후 반출",IDC_chCLASS2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,88,184,10
+    CONTROL         "090(LCMARC:050) 의 자관정보를 포함하여 반출합니다.",IDC_chkMarcInfo,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,116,216,10
+    CONTROL         "파일 자동 분할",IDC_chkDivision,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,131,72,10
+    CONTROL         "일반MARC반출",IDC_rGeneralMarc,"Button",BS_AUTORADIOBUTTON | WS_GROUP,21,29,64,10
+    CONTROL         "전거MARC반출",IDC_rRADIO2,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_DISABLED,21,90,64,10
+    EDITTEXT        IDC_eCONTROL_NO_START,149,88,70,13,ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_eCONTROL_NO_END,235,88,70,13,ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_eFILE_NAME,70,189,217,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_bFILEOPEN,290,189,16,14
+    PUSHBUTTON      "반출처리",IDC_bMAKE_FILE,189,218,60,22
+    LTEXT           "등록번호",IDC_STATIC,104,57,33,8
+    LTEXT           "자료실구분",IDC_STATIC,96,20,41,8
+    LTEXT           "등록구분",IDC_STATIC,104,38,33,8
+    LTEXT           "~",IDC_STATIC,225,56,8,8
+    LTEXT           "반출파일명",IDC_STATIC,24,192,41,8
+    GROUPBOX        "",IDC_STATIC,8,5,311,98
+    GROUPBOX        "",IDC_STATIC,8,176,311,36
+    LTEXT           "전거제어번호",IDC_STATIC,96,91,49,8,NOT WS_VISIBLE
+    LTEXT           "~",IDC_STATIC,225,91,8,8,NOT WS_VISIBLE
+    PUSHBUTTON      "닫  기",IDCANCEL,267,218,51,21
+    COMBOBOX        IDC_cDataCount,33,158,48,59,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "레코드 건수가 많아 출력화일의 크기가 지나치게 클경우",IDC_STATIC,34,145,209,8
+    LTEXT           "건 단위로 별도 화일 생성",IDC_STATIC,84,161,97,8
+    GROUPBOX        "",IDC_STATIC,7,103,312,74
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\SE_CAT_MARC_EXPORT.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

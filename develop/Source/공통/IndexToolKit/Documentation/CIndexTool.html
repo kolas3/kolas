@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CIndexTool</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file C:\Kolas2UP\Develop\Source\공통\IndexToolKit\IndexTool.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CIndexTool</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>IndexToolKit에서 색인을 가져오기 위한 인터페이스 클래스 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=35>
+<param name=classes value="CCIndexTool,MCIndexTool.html">
+<param name=before value="M">
+<param name=after value="M">
+<param name=indent value="0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CIndexTool</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>GetIndex</B> (CString strIndexAlias, CString &amp;strIndexItem)<BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="CIndex.html">CIndex</A>* </TD><TD><B>GetIndex</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>GetLastError</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>GetMarcGroup</B> () const <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>Init</B> (CMarcMgr* pMarcMgr, CMarc* pMarc)<BR>
+<I>초기화 - 마크 메니저의 마크 그룹을 CIndexTool의 마크 그룹으로 설정한다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>SetMarcGroup</B> (CString strMarcGroup)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   </TD><TD><B>~CIndexTool</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="CIndex.html">CIndex</A> </TD><TD><B>m_Index</B> <BR>
+<I>CIndex</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="CIndex_Mono.html">CIndex_Mono</A> </TD><TD><B>m_MonoIndex</B> <BR>
+<I>CIndex_Mono</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="CIndex_NonBook.html">CIndex_NonBook</A> </TD><TD><B>m_NonBookIndex</B> <BR>
+<I>CIndex_NonBook</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="CIndex_Serial.html">CIndex_Serial</A> </TD><TD><B>m_SerialIndex</B> <BR>
+<I>CIndex_Serial</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strLastError</B> <BR>
+<I>마지막 에러 메시지</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.8.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strMarcGroup</B> <BR>
+<I>마크 그룹</I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+IndexToolKit에서 색인을 가져오기 위한 인터페이스 클래스
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CIndexTool"></A>
+<A NAME="DOC.8.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CIndexTool()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetMarcGroup"></A>
+<A NAME="DOC.8.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetMarcGroup() const </B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetMarcGroup"></A>
+<A NAME="DOC.8.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetMarcGroup(CString strMarcGroup)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetLastError"></A>
+<A NAME="DOC.8.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetLastError()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetIndex"></A>
+<A NAME="DOC.8.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CIndex.html">CIndex</A>* GetIndex()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_Index"></A>
+<A NAME="DOC.8.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CIndex.html">CIndex</A> m_Index</B></TT>
+<DD>CIndex
+<DL><DT><DD></DL><P>
+<A NAME="m_MonoIndex"></A>
+<A NAME="DOC.8.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CIndex_Mono.html">CIndex_Mono</A> m_MonoIndex</B></TT>
+<DD>CIndex_Mono
+<DL><DT><DD></DL><P>
+<A NAME="m_NonBookIndex"></A>
+<A NAME="DOC.8.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CIndex_NonBook.html">CIndex_NonBook</A> m_NonBookIndex</B></TT>
+<DD>CIndex_NonBook
+<DL><DT><DD></DL><P>
+<A NAME="m_SerialIndex"></A>
+<A NAME="DOC.8.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CIndex_Serial.html">CIndex_Serial</A> m_SerialIndex</B></TT>
+<DD>CIndex_Serial
+<DL><DT><DD></DL><P>
+<A NAME="m_strMarcGroup"></A>
+<A NAME="DOC.8.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strMarcGroup</B></TT>
+<DD>마크 그룹
+<DL><DT><DD></DL><P>
+<A NAME="m_strLastError"></A>
+<A NAME="DOC.8.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strLastError</B></TT>
+<DD>마지막 에러 메시지
+<DL><DT><DD></DL><P>
+<A NAME="Init"></A>
+<A NAME="DOC.8.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void Init(CMarcMgr* pMarcMgr, CMarc* pMarc)</B></TT>
+<DD>초기화 - 마크 메니저의 마크 그룹을 CIndexTool의 마크 그룹으로 설정한다
+<DL><DT><DD></DL><P>
+<A NAME="GetIndex"></A>
+<A NAME="DOC.8.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetIndex(CString strIndexAlias, CString &amp;strIndexItem)</B></TT>
+<DD>
+마크 그룹에 맞게 색인을 가져온다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>strIndexAlias</B> - 		[IN] 색인 ALIAS
+<BR><B></B> - &strIndexItem		[OUT]색인으로 작성된 스트링<BR><DD></DL><P>
+<A NAME="~CIndexTool"></A>
+<A NAME="DOC.8.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CIndexTool()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>이종은
+
+<DT><B>Since:</B><DD>2003-04-14 오전 11:02:52
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

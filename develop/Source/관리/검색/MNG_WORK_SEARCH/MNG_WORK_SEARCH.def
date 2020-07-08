@@ -1,0 +1,11 @@
+; MNG_WORK_SEARCH.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_WORK_SEARCH"
+DESCRIPTION  'MNG_WORK_SEARCH Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

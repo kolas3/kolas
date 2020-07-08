@@ -1,0 +1,181 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_STATICS_5163.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,08,31,9
+ PRODUCTVERSION 2005,08,31,9
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_STATICS_5163 DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 9\0"
+            VALUE "InternalName", "BO_STATICS_5163\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_STATICS_5163.DLL\0"
+            VALUE "ProductName", "BO_STATICS_5163 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 9\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_5163STATICS DIALOG DISCARDABLE  0, 0, 187, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "통계"
+FONT 9, "새굴림"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,2,173,85
+    LTEXT           "통계제목",IDC_STATIC,14,30,29,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_eStaticsTitle,50,29,56,12,ES_AUTOHSCROLL
+    LTEXT           "등 록 일",IDC_STATIC,14,47,29,12,SS_CENTERIMAGE
+    CONTROL         "DateTimePicker1",IDC_datREG_DATE1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,50,48,56,12
+    CONTROL         "DateTimePicker1",IDC_datREG_DATE2,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,115,48,56,12
+    DEFPUSHBUTTON   "통계",IDOK,69,95,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,125,95,50,14
+    GROUPBOX        "",IDC_STATIC,7,87,173,27
+    LTEXT           "~",IDC_STATIC,108,48,8,12,SS_CENTERIMAGE
+    CONTROL         "단행",IDC_rMONO,"Button",BS_AUTORADIOBUTTON,52,13,30,10
+    CONTROL         "연속",IDC_rSERIAL,"Button",BS_AUTORADIOBUTTON,86,13,30,10
+    LTEXT           "통계종류",IDC_STATIC,14,13,29,12,SS_CENTERIMAGE
+    CONTROL         "재산현황",IDC_cPrice,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,13,43,10
+    LTEXT           "등록번호",IDC_STATIC,14,65,29,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_eACCESSION_NO_START,50,65,56,13,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_eACCESSION_NO_END,115,65,56,13,ES_UPPERCASE | ES_AUTOHSCROLL
+    LTEXT           "~",IDC_STATIC_03,108,68,7,8
+    COMBOBOX        IDC_cJaRyo,115,28,56,58,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BO_5163STATICS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_STATICS_5163.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

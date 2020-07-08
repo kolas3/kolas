@@ -1,0 +1,896 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_STATICS_1100.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2009,1,6,88
+ PRODUCTVERSION 2009,1,6,88
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_STATICS_1100 DLL\0"
+            VALUE "FileVersion", "2009, 01, 06, 88\0"
+            VALUE "InternalName", "BO_STATICS_1100\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_STATICS_1100.DLL\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "BO_STATICS_1100 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2009, 01, 06, 88\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_STATICS_1100 DIALOGEX 0, 0, 551, 377
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbSTATICS_CLASS,63,3,151,323,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "통계 종류",IDC_STATIC,7,3,38,12,SS_CENTERIMAGE
+    CONTROL         "중복 포함 합계",IDC_chkDUP_DEL,"Button",BS_AUTOCHECKBOX | 
+                    BS_VCENTER | WS_TABSTOP,344,4,59,12
+    CONTROL         "행의 합계가 0인 항목 감추기",IDC_chkSUMZERODEL,"Button",
+                    BS_AUTOCHECKBOX | BS_RIGHT | WS_TABSTOP,411,4,100,12
+    RTEXT           "단위:종(책)",IDC_stc_UNIT,465,25,46,14,SS_CENTERIMAGE | 
+                    NOT WS_VISIBLE
+    CONTROL         "",IDC_gridMAIN,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",
+                    WS_TABSTOP,6,71,518,272
+    CONTROL         "Tab1",IDC_tabMAIN_OPTION,"SysTabControl32",0x0,0,51,530,
+                    300
+    CONTROL         "Progress1",IDC_prgSTATICS,"msctls_progress32",
+                    PBS_SMOOTH | NOT WS_VISIBLE | WS_BORDER,238,359,226,8
+    LTEXT           "통계출력물 제목",IDC_STATIC,7,25,51,14,SS_CENTERIMAGE
+    CONTROL         "Progress1",IDC_prgSTATICS2,"msctls_progress32",
+                    PBS_SMOOTH | NOT WS_VISIBLE | WS_BORDER,5,359,226,13
+    CONTROL         "",IDC_staTITLE1,"Static",SS_SIMPLE | NOT WS_VISIBLE | 
+                    WS_GROUP,314,0,237,20,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "DEBUG DM",IDC_btnDMVIEW,218,3,43,14
+    CONTROL         "",IDC_staTITLE2,"Static",SS_SIMPLE | NOT WS_VISIBLE | 
+                    WS_GROUP,315,18,236,21,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_STA_GUIDE_LINE1,"Static",SS_ETCHEDHORZ,1,20,530,1
+    EDITTEXT        IDC_EDT_STATIC_TITLE,63,25,151,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "제목 변경",IDC_BTN_CHANGE_TITLE,218,24,43,14,NOT 
+                    WS_VISIBLE
+END
+
+IDD_BO_STATICS_1110 DIALOG DISCARDABLE  0, 0, 420, 161
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbCLASSCODE,65,11,70,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbMANAGE_CODE2,185,12,37,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbMANAGE_CODE3,262,12,37,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbLOAN_STATUS,345,12,55,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbMANAGE_CODE,65,38,66,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbSHELF_LOC_CODE,185,38,78,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "= >",IDC_btnMOVE_SHELF_LOC_CODE,272,39,28,12
+    COMBOBOX        IDC_cmbSHELF_LOC_CODE2,309,38,78,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "X",IDC_btnMOVE_SHELF_LOC_CODE2,389,39,10,13,BS_CENTER | 
+                    BS_VCENTER
+    CONTROL         "DateTimePicker1",IDC_datREG_DATE1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,65,69,65,12
+    CONTROL         "DateTimePicker1",IDC_datREG_DATE2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,141,69,65,12
+    CONTROL         "DateTimePicker1",IDC_edtLOAN_DATE1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,259,69,65,12
+    CONTROL         "DateTimePicker1",IDC_edtLOAN_DATE2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,335,69,65,12
+    CONTROL         "DateTimePicker1",IDC_datRETURN_PLAN_DATE1,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,65,85,65,12
+    CONTROL         "DateTimePicker1",IDC_datRETURN_PLAN_DATE2,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,141,85,65,12
+    CONTROL         "DateTimePicker1",IDC_datRETURN_DATE1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,259,85,65,12
+    CONTROL         "DateTimePicker1",IDC_datRETURN_DATE2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,335,85,65,12
+    CONTROL         "DateTimePicker1",IDC_datRESERVATION_DATE1,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,65,101,65,12
+    CONTROL         "DateTimePicker1",IDC_datRESERVATION_DATE2,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,141,101,65,12
+    CONTROL         "DateTimePicker1",IDC_datRESERVATION_CANCLE_DATE1,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,259,101,65,12
+    CONTROL         "DateTimePicker1",IDC_datRESERVATION_CANCLE_DATE2,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,335,99,65,12
+    EDITTEXT        IDC_edtZIPCODE_HOME,65,119,68,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtADDRESS_HOME,65,135,85,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmb1110_KLMEMBER,345,118,55,101,CBS_DROPDOWNLIST | 
+                    NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "저  장",IDC_btnSAVE,285,169,47,16,NOT WS_VISIBLE
+    PUSHBUTTON      "닫  기",IDC_btnCLOSE,337,169,47,16,NOT WS_VISIBLE
+    PUSHBUTTON      "초기화",IDC_btnINIT,7,169,47,16,NOT WS_VISIBLE
+    LTEXT           "분류기호구분",IDC_STATIC,14,15,49,8,SS_CENTERIMAGE
+    LTEXT           "대출자등록일",IDC_staRegDate,14,69,48,12,SS_CENTERIMAGE
+    LTEXT           "대 출 일",IDC_STATIC,217,69,33,12,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,7,1,400,32
+    LTEXT           "~",IDC_STATIC,133,69,8,12,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATIC,133,86,8,8
+    LTEXT           "~",IDC_STATIC,327,69,8,12,SS_CENTERIMAGE
+    LTEXT           "반납예정일",IDC_STATIC,14,87,41,8
+    GROUPBOX        "",IDC_STATIC,7,56,400,99
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ | NOT WS_VISIBLE,3,
+                    196,389,1
+    LTEXT           "관 리 구 분",IDC_1110MANAGECODE,14,42,45,8
+    LTEXT           "~",IDC_STATIC,327,86,8,8
+    LTEXT           "반 납 일",IDC_STATIC,217,87,33,8
+    LTEXT           "자료실",IDC_STATIC,151,42,26,8
+    GROUPBOX        "",IDC_STATIC,7,28,400,33
+    LTEXT           "대출형태",IDC_STATIC,151,15,33,8
+    LTEXT           "반납형태",IDC_STATIC,228,15,33,8
+    LTEXT           "우편번호(집)",IDC_STATIC,15,121,49,8
+    LTEXT           "주소(집)",IDC_STATIC,15,137,33,8
+    LTEXT           "(우절단 검색)",IDC_STATIC,138,121,67,8
+    LTEXT           "대출상태",IDC_STATIC,310,15,33,8
+    LTEXT           "~",IDC_STATIC,133,101,8,8
+    LTEXT           "예  약  일",IDC_STATIC,14,103,41,8
+    LTEXT           "~",IDC_STATIC,327,101,8,8
+    LTEXT           "예약취소일",IDC_STATIC,217,103,41,8
+    LTEXT           "통합회원여부",IDC_sta1110_KLMEMBER,298,121,45,8,NOT 
+                    WS_VISIBLE
+END
+
+IDD_BO_STATICS_1120 DIALOGEX 0, 0, 390, 255
+STYLE WS_CHILD
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_treeCOLUMMN_NAME,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,7,22,110,197
+    CONTROL         "",IDC_gridEXP_GRID,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,134,
+                    49,248,169
+    PUSHBUTTON      "저  장",IDC_btnSAVE,286,230,46,18,NOT WS_VISIBLE
+    PUSHBUTTON      "닫  기",IDC_btnCLOSE,336,230,46,18,NOT WS_VISIBLE
+    PUSHBUTTON      "초기화",IDC_btnINIT,7,230,46,18,NOT WS_VISIBLE
+    CONTROL         "",IDC_staLINE,"Static",SS_ETCHEDHORZ | NOT WS_VISIBLE,0,
+                    224,390,1
+    CTEXT           "이름",IDC_STATIC,7,5,110,13,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CTEXT           "예상 모습",IDC_staRIGHTTITLE,134,5,248,13,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_staCERO,121,0,8,220
+    CONTROL         "Tab1",IDC_tabOPTION,"SysTabControl32",0x0,134,37,247,16
+    EDITTEXT        IDC_edtORDER,196,23,48,12,ES_AUTOHSCROLL
+    LTEXT           "순위 범위 : ~",IDC_staORDER,135,24,57,10
+    LTEXT           "위까지",IDC_staORDER2,248,24,29,8
+END
+
+IDD_BO_STATICS_1111 DIALOG DISCARDABLE  0, 0, 360, 146
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbIN_CODE,52,12,54,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbMANAGE_CODE,156,12,66,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbCLASSCODE,279,12,62,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbREG_CODE,60,37,52,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtREG_NO1,116,38,53,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREG_NO2,183,38,53,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtINYEAR,60,56,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtWONBU1,60,72,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtWONBU2,136,72,57,12,ES_AUTOHSCROLL
+    CONTROL         "DateTimePicker1",IDC_datREG_DATE4,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,97,88,65,12
+    CONTROL         "DateTimePicker1",IDC_datREG_DATE5,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,173,88,65,12
+    CONTROL         "DateTimePicker1",IDC_datREG_DATE3,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,97,104,65,12
+    CONTROL         "DateTimePicker1",IDC_datREG_DATE2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,173,104,65,12
+    CONTROL         "부록자료 포함",IDC_chkADDBOOK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,122,85,10
+    PUSHBUTTON      "저  장",IDC_btnSAVE,254,183,47,16,NOT WS_VISIBLE
+    PUSHBUTTON      "닫  기",IDC_btnCLOSE,306,183,47,16,NOT WS_VISIBLE
+    PUSHBUTTON      "초기화",IDC_btnINIT,7,183,47,16,NOT WS_VISIBLE
+    LTEXT           "분류기호구분",IDC_STATIC,228,16,49,8,SS_CENTERIMAGE
+    LTEXT           "등록일자(등록번호)",IDC_STATIC,14,104,77,12,
+                    SS_CENTERIMAGE
+    LTEXT           "원부번호",IDC_STATIC,14,72,33,12,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,7,1,346,32
+    LTEXT           "~",IDC_STATIC,165,104,8,12,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATIC,123,72,8,12,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,7,28,346,111
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ | NOT WS_VISIBLE,0,
+                    177,388,1
+    LTEXT           "관리 구분",IDC_1111MANAGECODE,116,16,37,8
+    LTEXT           "~",IDC_STATIC,173,40,8,8
+    LTEXT           "등록번호",IDC_STATIC,14,41,33,8
+    LTEXT           "수입구분",IDC_STATIC,14,16,33,8
+    LTEXT           "수입년도",IDC_STATIC,14,57,33,12,SS_CENTERIMAGE
+    LTEXT           "등록일자(원부)",IDC_STATIC,14,88,77,12,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATIC,165,88,8,12,SS_CENTERIMAGE
+END
+
+IDD_BO_STATICS_1112 DIALOG DISCARDABLE  0, 0, 360, 203
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbSHELF_LOC_CODE,52,12,91,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbMANAGE_CODE,254,12,91,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbCLASSCODE,254,31,91,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbWORKING_STATUS,52,52,293,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbREG_CODE,84,80,55,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtREG_NO1,142,81,52,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREG_NO2,213,81,52,12,ES_AUTOHSCROLL
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,84,97,66,12
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,168,97,66,12
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE3,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,84,113,66,12
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE4,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,168,113,66,12
+    EDITTEXT        IDC_edtREG_NO3,84,162,66,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtWONBU1,203,162,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtWONBU2,263,162,40,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "저  장",IDC_btnSAVE,254,181,47,16,NOT WS_VISIBLE
+    PUSHBUTTON      "닫  기",IDC_btnCLOSE,307,181,47,16,NOT WS_VISIBLE
+    PUSHBUTTON      "초기화",IDC_btnINIT,7,181,47,16,NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATICS,7,1,346,72
+    GROUPBOX        "",IDC_STATICS,7,68,346,125
+    CONTROL         "",IDC_STATICS,"Static",SS_ETCHEDHORZ | NOT WS_VISIBLE,0,
+                    196,388,1
+    LTEXT           "관리 구분",IDC_1112MANAGECODE,199,15,37,8
+    LTEXT           "~",IDC_STATICS,200,83,8,8
+    LTEXT           "등록번호",IDC_STATICS,14,84,33,8
+    LTEXT           "배가부서",IDC_STATICS,15,16,33,8
+    CONTROL         "부록자료 포함",IDC_chkADDBOOK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,178,85,8
+    LTEXT           "~",IDC_STATICS,156,113,8,12,SS_CENTERIMAGE
+    LTEXT           "원부번호",IDC_STATICS,168,162,33,12,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATICS,251,162,8,12,SS_CENTERIMAGE
+    LTEXT           "원부작성년도",IDC_STATICS,14,162,49,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_cmbINPUT_CODE,52,31,91,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "DateTimePicker1",IDC_edtLOAN_DATE1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,84,113,66,12
+    CONTROL         "DateTimePicker1",IDC_edtLOAN_DATE2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,168,113,66,12
+    LTEXT           "~",IDC_STATICS,155,113,8,12,SS_CENTERIMAGE
+    LTEXT           "배가일자",IDC_STATICS1,13,100,33,8
+    LTEXT           "자료실변경일자",IDC_STATICS2,14,115,57,8
+    LTEXT           "대출일자",IDC_STATICS0,13,115,33,8
+    LTEXT           "~",IDC_STATICS3,156,99,8,8
+    LTEXT           "수입구분",IDC_STATICS4,15,34,33,8
+    LTEXT           "분류기호구분",IDC_STATICS5,199,33,49,8
+    LTEXT           "자료상태",IDC_STATICS6,15,55,33,8
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE5,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,84,145,66,12
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE6,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,168,145,66,12
+    LTEXT           "~",IDC_STATICS,156,129,8,12,SS_CENTERIMAGE
+    LTEXT           "자료상태변경일자",IDC_STATICS7,14,131,65,8
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE7,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,84,129,66,12
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE8,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,168,129,66,12
+    LTEXT           "~",IDC_STATICS,156,145,8,12,SS_CENTERIMAGE
+    LTEXT           "제적일자",IDC_STATICS8,14,147,65,8
+END
+
+IDD_BO_STATICS_1110_OLD DIALOG DISCARDABLE  0, 0, 390, 153
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "조건 설정"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbCLASSCODE,66,11,70,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbMANAGE_CODE,195,11,66,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbSHELF_LOC_CODE,58,38,78,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_datREG_DATE1,61,69,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_datREG_DATE2,137,69,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtLOAN_DATE1,61,85,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtLOAN_DATE2,137,85,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_datRETURN_DATE1,246,86,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_datRETURN_DATE2,320,86,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_datRETURN_PLAN_DATE1,61,102,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_datRETURN_PLAN_DATE2,137,102,57,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "저  장",IDC_btnSAVE,285,131,47,16
+    PUSHBUTTON      "닫  기",IDC_btnCLOSE,337,131,47,16
+    PUSHBUTTON      "초기화",IDC_btnINIT,7,131,47,16
+    LTEXT           "분류기호구분",IDC_STATIC,15,15,49,8,SS_CENTERIMAGE
+    LTEXT           "등 록 일",IDC_STATIC,15,69,33,12,SS_CENTERIMAGE
+    LTEXT           "대 출 일",IDC_STATIC,15,85,33,12,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,7,1,377,32
+    LTEXT           "~",IDC_STATIC,125,69,8,12,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATIC,125,103,8,8
+    LTEXT           "~",IDC_STATIC,125,85,8,12,SS_CENTERIMAGE
+    LTEXT           "반납예정일",IDC_STATIC,15,104,41,8
+    GROUPBOX        "",IDC_STATIC,7,56,377,68
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,125,389,1
+    LTEXT           "관리 구분",IDC_STATIC,155,15,37,8,NOT WS_VISIBLE
+    LTEXT           "~",IDC_STATIC,309,87,8,8
+    LTEXT           "반 납 일",IDC_STATIC,207,88,33,8
+    LTEXT           "자료실",IDC_STATIC,17,42,26,8
+    GROUPBOX        "",IDC_STATIC,7,28,377,33
+    COMBOBOX        IDC_cmbSHELF_LOC_CODE2,183,38,78,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "= >",IDC_btnMOVE_SHELF_LOC_CODE,145,39,28,12
+    PUSHBUTTON      "X",IDC_btnMOVE_SHELF_LOC_CODE2,260,39,10,13,BS_CENTER | 
+                    BS_VCENTER
+END
+
+IDD_BO_STATICS_1111_OLD DIALOG DISCARDABLE  0, 0, 360, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "조건 설정"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbIN_CODE,52,12,54,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbMANAGE_CODE,156,12,66,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbCLASSCODE,279,12,62,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbREG_CODE,60,37,51,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtREG_NO1,114,38,49,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREG_NO2,179,38,49,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtINYEAR,60,53,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtWONBU1,60,69,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtWONBU2,136,69,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_datREG_DATE1,60,85,57,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_datREG_DATE2,136,85,57,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "저  장",IDC_btnSAVE,254,133,47,16
+    PUSHBUTTON      "닫  기",IDC_btnCLOSE,306,133,47,16
+    PUSHBUTTON      "초기화",IDC_btnINIT,7,133,47,16
+    LTEXT           "분류기호구분",IDC_STATIC,228,16,49,8,SS_CENTERIMAGE
+    LTEXT           "등록일자",IDC_STATIC,14,85,33,12,SS_CENTERIMAGE
+    LTEXT           "원부번호",IDC_STATIC,14,69,33,12,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,7,1,346,32
+    LTEXT           "~",IDC_STATIC,123,85,8,12,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATIC,123,69,8,12,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,7,28,346,94
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,127,389,1
+    LTEXT           "관리 구분",IDC_STATIC,116,16,37,8,NOT WS_VISIBLE
+    LTEXT           "~",IDC_STATIC,168,40,8,8
+    LTEXT           "등록번호",IDC_STATIC,14,41,33,8
+    LTEXT           "수입구분",IDC_STATIC,14,16,33,8
+    LTEXT           "수입년도",IDC_STATIC,14,54,33,12,SS_CENTERIMAGE
+    CONTROL         "부록자료 포함",IDC_chkADDBOOK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,103,85,10
+END
+
+IDD_TMP_DIALOG DIALOG DISCARDABLE  0, 0, 486, 399
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CLIPCHILDREN | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "통계"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "통 계",IDC_btnRunS,5,5,29,22
+    PUSHBUTTON      "닫 기",IDC_btnCLOSE,38,5,29,22
+    PUSHBUTTON      " 조건 설정",IDC_btnTITLE_COND,0,32,485,19,BS_LEFT | 
+                    BS_VCENTER | BS_FLAT
+    PUSHBUTTON      " 행열 미리보기",IDC_btnTITLE_COND2,0,142,485,19,BS_LEFT | 
+                    BS_VCENTER | BS_FLAT
+END
+
+IDD_BO_STATICS_1113 DIALOG DISCARDABLE  0, 0, 360, 181
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbSHELF_LOC_CODE,52,12,91,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbMANAGE_CODE,254,12,91,101,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbCLASSCODE,254,29,91,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbWORKING_STATUS,52,64,293,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbREG_CODE,68,99,58,101,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtREG_NO1,129,100,52,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREG_NO2,200,100,52,12,ES_AUTOHSCROLL
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,67,115,66,12
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,147,115,66,12
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE3,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,67,131,66,12
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE4,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,147,131,66,12
+    EDITTEXT        IDC_edtREG_NO3,68,146,66,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtWONBU1,192,146,66,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtWONBU2,276,146,66,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATICS,7,1,346,83
+    LTEXT           "~",IDC_STATICS,189,99,8,12,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATICS,7,87,346,89
+    LTEXT           "관리 구분",IDC_1113MANAGECODE,200,16,37,8
+    LTEXT           "등록번호",IDC_STATICS,14,103,33,8
+    LTEXT           "배가부서",IDC_STATICS,14,16,33,8
+    CONTROL         "부록자료 포함",IDC_chkADDBOOK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,162,85,8
+    LTEXT           "~",IDC_STATICS,137,131,8,12,SS_CENTERIMAGE
+    LTEXT           "원부번호",IDC_STATICS,152,146,33,12,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATICS,264,146,8,12,SS_CENTERIMAGE
+    LTEXT           "원부작성년도",IDC_STATICS,14,146,49,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_cmbINPUT_CODE,52,29,91,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "저  장",IDC_btnSAVE,254,186,47,16,NOT WS_VISIBLE
+    PUSHBUTTON      "닫  기",IDC_btnCLOSE,306,186,47,16,NOT WS_VISIBLE
+    PUSHBUTTON      "초기화",IDC_btnINIT,7,186,47,16,NOT WS_VISIBLE
+    COMBOBOX        IDC_cmbBIND_STATUS,52,48,91,76,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "제본상태",IDC_STATICS,14,50,33,8,SS_CENTERIMAGE
+    CONTROL         "DateTimePicker1",IDC_edtLOAN_DATE1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,67,131,65,12
+    CONTROL         "DateTimePicker2",IDC_edtLOAN_DATE2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,148,131,66,12
+    LTEXT           "배가일자",IDC_STATICS1,15,119,33,8
+    LTEXT           "배가변경일자",IDC_STATICS2,15,133,49,8
+    LTEXT           "대출일자",IDC_STATICS0,15,133,33,8
+    LTEXT           "~",IDC_STATICS3,137,119,8,8
+    LTEXT           "수입구분",IDC_STATICS4,14,33,33,8
+    LTEXT           "분류기호구분",IDC_STATICS5,200,32,49,8
+    LTEXT           "자료상태",IDC_STATICS6,14,67,33,8
+END
+
+IDD_BO_LOAN_CNT_STATICS DIALOG DISCARDABLE  0, 0, 171, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "대출횟수통계"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "DateTimePicker1",IDC_datLoanCnt_DATE1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,40,11,55,12
+    CONTROL         "DateTimePicker1",IDC_datLoanCnt_DATE2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,105,11,55,12
+    LTEXT           "~",IDC_STATIC,97,11,8,12,SS_CENTERIMAGE
+    LTEXT           "대 출 일",IDC_STATIC,8,13,28,8
+    LTEXT           "배 가 일",IDC_STATIC,8,30,28,8
+    CONTROL         "DateTimePicker1",IDC_datLoanCnt_SHELF_DATE1,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,40,28,55,12
+    CONTROL         "DateTimePicker1",IDC_datLoanCnt_SHELF_DATE2,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,105,28,55,12
+    LTEXT           "~",IDC_STATIC,97,28,8,12,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,4,0,162,47
+    LTEXT           "대출횟수",IDC_STATIC,8,55,28,8
+    LTEXT           "순      위",IDC_STATIC,8,71,28,8
+    EDITTEXT        IDC_edtLoanCnt1,40,53,54,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_edtLoanCnt2,105,53,54,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "~",IDC_STATIC,97,53,8,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_edtRank1,40,69,54,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_edtRank2,144,69,15,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    NOT WS_VISIBLE
+    LTEXT           "까지",IDC_STATIC,97,71,18,8,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,4,0,163,104
+    PUSHBUTTON      "닫 기",IDC_btnCLOSE,126,123,40,14
+    PUSHBUTTON      "통 계",IDC_btnLoanCntStatics,80,123,40,14
+    GROUPBOX        "",IDC_staManageCode2,4,41,162,96,NOT WS_VISIBLE
+    LTEXT           "관리구분",IDC_staManageCode1,7,112,28,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_cmbManageCode,40,108,73,102,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | NOT WS_VISIBLE | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "분류번호",IDC_STATIC,8,88,28,8
+    EDITTEXT        IDC_edtClassNum1,40,86,54,14,ES_AUTOHSCROLL
+    LTEXT           "~",IDC_STATIC,97,86,8,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_edtClassNum2,105,85,55,14,ES_AUTOHSCROLL
+END
+
+IDD_BO_LOAN_JOURNAL_STATICS DIALOG DISCARDABLE  0, 0, 341, 293
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "관내업무일지 통계"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "통 계",IDOK,228,270,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,282,270,50,14
+    CONTROL         "DateTimePicker1",IDC_DAT_TOTAL1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,47,11,55,12
+    CONTROL         "DateTimePicker1",IDC_DAT_TOTAL2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,112,11,55,12
+    LTEXT           "~",IDC_STATIC,104,11,8,12,SS_CENTERIMAGE
+    LTEXT           "집계 기간",IDC_STATIC,11,13,34,8
+    CONTROL         "분류별 서지 통계 집계",IDC_CHK_USE_CLASS_STAT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,50,85,10
+    CONTROL         "자료구분별 서지 통계 집계",IDC_CHK_USE_MAT_STAT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,224,50,98,10
+    CONTROL         "매체구분별 서지 통계 집계",IDC_CHK_USE_MEDIA_STAT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,114,50,98,10
+    GROUPBOX        "서지 통계 공통 옵션",IDC_STATIC,16,69,310,30
+    CONTROL         "부록 자료 포함",IDC_CHK_MEDIA_STAT_IMP_APPENDIX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,25,82,60,10
+    GROUPBOX        "서지 통계 (집계 기간에 배가된 서지 통계)",IDC_STATIC,11,
+                    34,321,72
+    GROUPBOX        "이용자 통계",IDC_STATIC,11,111,321,71
+    CONTROL         "직급별 이용자 등록 통계 집계",IDC_CHK_USE_REG_USER_STAT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,128,107,10
+    GROUPBOX        "직급별 이용자 등록 통계 옵션",IDC_STATIC,15,145,310,30
+    CONTROL         "비(준)회원 포함",IDC_CHK_REG_USER_STAT_IMP_STATUS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,158,60,10
+    CONTROL         "대출현황 통계 집계",IDC_CHK_USE_LOAN_STAT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,206,75,10
+    CONTROL         "작업중 자료 포함 (선택시 집계 기간에 입력된 서지 통계)",
+                    IDC_CHK_CLASS_STAT_IMP_WORKING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,82,193,10
+    CONTROL         "제적회원 포함",IDC_CHK_REG_USER_STAT_IMP_EXPELLED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,95,158,60,10
+    GROUPBOX        "대출반납 통계",IDC_STATIC,11,188,321,74
+    CONTROL         "'년 누계' 결과 포함",
+                    IDC_CHK_REG_USER_STAT_IMP_YEAR_RESULT,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,349,198,73,
+                    10
+    LTEXT           "☞ '년 누계' 결과는 집계 기간에 해당하는 년도의 통계를 산출합니다.",
+                    IDC_STATIC,359,214,214,8,NOT WS_VISIBLE
+    GROUPBOX        "대출/반납현황 통계 옵션",IDC_STATIC,339,279,278,46,NOT 
+                    WS_VISIBLE
+    CONTROL         "'년 누계' 결과 포함",IDC_CHK_LOAN_STAT_IMP_YEAR_RESULT,
+                    "Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,
+                    348,294,73,10
+    LTEXT           "☞ '년 누계' 결과는 집계 기간에 해당하는 년도의 통계를 산출합니다.",
+                    IDC_STATIC,358,310,214,8,NOT WS_VISIBLE
+    CONTROL         "반납현황 통계 집계",IDC_CHK_USE_RETURN_STAT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,114,206,75,10
+    CONTROL         "연체현황 통계 집계",IDC_CHK_USE_DELAY_STAT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,229,75,10
+    LTEXT           "☞ 연체현황 통계는 집계 기간과 별개로 현재 연체상태의 통계를 산출합니다.",
+                    IDC_STATIC,24,245,236,8
+    CONTROL         "책두레 통계 집계",IDC_CHK_USE_ILL_STAT,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,224,206,69,
+                    10
+    CONTROL         "Progress1",IDC_PROGRESS_RUN,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,11,270,174,14
+END
+
+IDD_SE_STATICS_LIST DIALOG DISCARDABLE  0, 0, 211, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "대상목록리스트"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "닫기",IDOK,146,204,50,14
+    CONTROL         "",IDC_gridList,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",
+                    WS_TABSTOP,17,7,174,182
+END
+
+IDD_BO_LOC_2190_CLICK_LIST DIALOG DISCARDABLE  0, 0, 231, 244
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "결과 목록 리스트"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "닫기",IDOK,174,223,50,14
+    CONTROL         "",IDC_gridList,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",
+                    WS_TABSTOP,7,7,217,203
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,8,217,216,1
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BO_STATICS_1100 DLGINIT
+BEGIN
+    IDC_gridMAIN, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x5dbe, 0x0000, 0x2a2b, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_BO_STATICS_1120 DLGINIT
+BEGIN
+    IDC_gridEXP_GRID, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2cdb, 0x0000, 0x1a40, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0000, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_SE_STATICS_LIST DLGINIT
+BEGIN
+    IDC_gridList, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x1f86, 0x0000, 0x1c37, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_BO_LOC_2190_CLICK_LIST DLGINIT
+BEGIN
+    IDC_gridList, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2746, 0x0000, 0x1f86, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TREEBITMAP          BITMAP  DISCARDABLE     "treebitm.bmp"
+RUN_SD                  BITMAP  DISCARDABLE     "run_s.bmp"
+RUN_SF                  BITMAP  DISCARDABLE     "run_sd1.bmp"
+RUN_SX                  BITMAP  DISCARDABLE     "run_sd2.bmp"
+RUN_SU                  BITMAP  DISCARDABLE     "run_sd3.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "Kolas2_32.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BO_STATICS_1100, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 362
+    END
+
+    IDD_BO_STATICS_1112, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 198
+    END
+
+    IDD_TMP_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 485
+        BOTTOMMARGIN, 360
+    END
+
+    IDD_BO_LOAN_CNT_STATICS, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 166
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 137
+    END
+
+    IDD_BO_LOAN_JOURNAL_STATICS, DIALOG
+    BEGIN
+        VERTGUIDE, 11
+    END
+
+    IDD_SE_STATICS_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_BO_LOC_2190_CLICK_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 237
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_STATICS_1100.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,7 @@
+; BL_LOC_LOAN.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BL_LOC_LOAN"
+DESCRIPTION  'BL_LOC_LOAN Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

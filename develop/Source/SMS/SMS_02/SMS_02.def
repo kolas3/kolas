@@ -1,0 +1,13 @@
+; SMS_02.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SMS_02"
+DESCRIPTION  'SMS_02 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

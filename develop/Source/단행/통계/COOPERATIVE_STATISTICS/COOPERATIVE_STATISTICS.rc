@@ -1,0 +1,372 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\COOPERATIVE_STATISTICS.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "COOPERATIVE_STATISTICS DLL\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "COOPERATIVE_STATISTICS\0"
+            VALUE "LegalCopyright", "Copyright (C) 2009, ECO\0"
+			 VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "COOPERATIVE_STATISTICS.DLL\0"
+            VALUE "ProductName", "COOPERATIVE_STATISTICS 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_STATISTICS_WHERE DIALOG DISCARDABLE  0, 0, 420, 59
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbMANAGE_CODE,52,4,141,101,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "DateTimePicker1",IDC_datPROPOSE_DATE1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,52,24,65,12
+    CONTROL         "DateTimePicker1",IDC_datPROPOSE_DATE2,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,128,24,65,12
+    CONTROL         "DateTimePicker1",IDC_edtOFFER_DATE1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_DISABLED | WS_TABSTOP,251,24,65,12
+    CONTROL         "DateTimePicker1",IDC_edtOFFER_DATE2,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_DISABLED | WS_TABSTOP,327,24,65,12
+    LTEXT           "신청일자",IDC_staRegDate,18,26,28,8,SS_CENTERIMAGE
+    LTEXT           "제공일자",IDC_staManageCode,217,26,28,8,SS_CENTERIMAGE
+    LTEXT           "~",IDC_staManageCode,120,26,8,8,SS_CENTERIMAGE
+    LTEXT           "~",IDC_staManageCode,318,26,8,8,SS_CENTERIMAGE
+    LTEXT           "관리구분",IDC_staManageCode,18,8,28,8
+    COMBOBOX        IDC_cmbSTATE,251,4,141,101,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "진행상태",IDC_staManageCode,217,8,28,8
+    CONTROL         "DateTimePicker1",IDC_datLOAN_DATE1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,52,42,65,12
+    CONTROL         "DateTimePicker1",IDC_datLOAN_DATE2,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,128,42,65,12
+    CONTROL         "DateTimePicker1",IDC_edtRETURN_DATE1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_DISABLED | WS_TABSTOP,251,42,65,12
+    CONTROL         "DateTimePicker1",IDC_edtRETURN_DATE2,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_DISABLED | WS_TABSTOP,327,42,65,12
+    LTEXT           "대출일자",IDC_staLoanDate,18,44,28,8,SS_CENTERIMAGE
+    LTEXT           "반납일자",IDC_staReturnDate,217,44,28,8,SS_CENTERIMAGE
+    LTEXT           "~",IDC_staManageCode,120,44,8,8,SS_CENTERIMAGE
+    LTEXT           "~",IDC_staManageCode,318,44,8,8,SS_CENTERIMAGE
+END
+
+IDD_STATISTICS_TEMP DIALOG DISCARDABLE  0, 0, 486, 320
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CLIPCHILDREN | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "통계"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "통 계",IDC_btnRunS,5,5,29,22
+    PUSHBUTTON      "닫 기",IDC_btnCLOSE,38,5,29,22
+    PUSHBUTTON      " 조건 설정",IDC_btnTITLE_COND,0,32,485,19,BS_LEFT | BS_VCENTER | BS_FLAT
+    PUSHBUTTON      " 행열 미리보기",IDC_btnTITLE_COND2,0,142,485,19,BS_LEFT | BS_VCENTER | BS_FLAT
+END
+
+IDD_STATISTICS_PREVIEW DIALOGEX 0, 0, 390, 226
+STYLE WS_CHILD
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_treeCOLUMMN_NAME,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,7,22,110,197
+    CONTROL         "",IDC_gridEXP_GRID,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,134,21,248,197
+    CTEXT           "이름",IDC_STATIC,7,5,110,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CTEXT           "예상 모습",IDC_staRIGHTTITLE,134,5,248,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_staCERO,121,0,8,220
+END
+
+IDD_STATISTICS_MAIN DIALOG DISCARDABLE  0, 0, 448, 311
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbSTATICS_CLASS,40,5,151,323,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "통계종류",IDC_STATIC,8,8,28,8,SS_CENTERIMAGE
+    CONTROL         "중복포함 합계",IDC_chkDUP_DEL,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,311,7,59,10
+    CONTROL         "행의 합계가 0인 항목 감추기",IDC_chkSUMZERODEL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,199,7,104,10
+    RTEXT           "단위:종(책)",IDC_stc_UNIT,378,7,58,8,SS_CENTERIMAGE | NOT WS_VISIBLE
+    CONTROL         "",IDC_gridMAIN,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,97,41,305,255
+    CONTROL         "Progress1",IDC_prgSTATICS,"msctls_progress32",PBS_SMOOTH | NOT WS_VISIBLE | WS_BORDER,222,298,211,8
+    CONTROL         "Progress1",IDC_prgSTATICS2,"msctls_progress32",PBS_SMOOTH | NOT WS_VISIBLE | WS_BORDER,0,298,211,13
+    CONTROL         "",IDC_gridCNT,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",NOT WS_VISIBLE | WS_TABSTOP,25,37,305,255
+END
+
+IDD_STATISTICS_CNT DIALOG DISCARDABLE  0, 0, 191, 208
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "제공횟수통계"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "DateTimePicker1",IDC_datCLASS_DATE1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,51,21,57,12
+    CONTROL         "DateTimePicker1",IDC_datCLASS_DATE2,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,118,21,57,12
+    LTEXT           "~",IDC_STATIC,110,21,8,12,SS_CENTERIMAGE
+    LTEXT           "제공일자",IDC_STC_CLASS_DATE,17,23,30,8
+    LTEXT           "배가일자",IDC_STATIC,17,40,30,8
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,51,38,57,12
+    CONTROL         "DateTimePicker1",IDC_datSHELF_DATE2,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,118,38,57,12
+    LTEXT           "~",IDC_STATIC,110,38,8,12,SS_CENTERIMAGE
+    GROUPBOX        "날짜조건",IDC_STATIC,3,4,185,55
+    LTEXT           "제공횟수",IDC_staCooperativeStatisticsCnt,17,84,28,8
+    LTEXT           "순      위",IDC_STATIC,17,100,30,8
+    EDITTEXT        IDC_edtCLASS_CNT1,51,82,56,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_edtCLASS_CNT2,118,82,56,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "~",IDC_STATIC,110,82,8,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_edtRANK1,51,98,56,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "까지",IDC_STATIC,111,100,18,8,SS_CENTERIMAGE
+    GROUPBOX        "횟수 및 순위",IDC_STATIC,3,65,185,55
+    PUSHBUTTON      "닫기",IDC_btnCLOSE,137,188,50,14
+    PUSHBUTTON      "통계",IDC_btnSTATICS_START,82,188,50,14
+    GROUPBOX        "기타조건",IDC_STATIC,3,126,185,55
+    COMBOBOX        IDC_cmbCNT_MANAGE_CODE,51,141,123,101,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "관리구분",IDC_STATIC,17,145,30,8
+    COMBOBOX        IDC_cmbCNT_STATE,51,159,123,101,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "진행상태",IDC_STATIC,17,163,30,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_STATISTICS_PREVIEW DLGINIT
+BEGIN
+    IDC_gridEXP_GRID, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2cdb, 0x0000, 0x1e98, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0000, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_STATISTICS_MAIN DLGINIT
+BEGIN
+    IDC_gridMAIN, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x3731, 0x0000, 0x2796, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    IDC_gridCNT, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x3731, 0x0000, 0x2796, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_STATISTICS_TEMP, DIALOG
+    BEGIN
+        RIGHTMARGIN, 485
+    END
+
+    IDD_STATISTICS_MAIN, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 296
+    END
+
+    IDD_STATISTICS_CNT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 201
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+RUN_SX                  BITMAP  DISCARDABLE     "run_sd2.bmp"
+RUN_SU                  BITMAP  DISCARDABLE     "run_sd3.bmp"
+RUN_SF                  BITMAP  DISCARDABLE     "run_sd1.bmp"
+RUN_SD                  BITMAP  DISCARDABLE     "run_s.bmp"
+IDB_TREEBITMAP          BITMAP  DISCARDABLE     "treebitm.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\cube_icon_small_32.ico"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\COOPERATIVE_STATISTICS.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

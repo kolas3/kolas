@@ -1,0 +1,7 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by BO_ACQ_SPECIES_FORM.rc
+//
+#define HIDC_cmbBSFORM_PRICE_CHARACTER  0xcf9e69ba    // IDD_BO_DONATE
+#define HIDC_stcUSERCODE1               0xcfa02ade    // IDD_BO_SPECIES
+#define HIDC_tClass_Code                0xcfa0465f    // IDD_BO_SPECIES
+#define HIDC_tTOTAL_VOLUMEP             0xcfa0465d    // IDD_BO_SPECIES

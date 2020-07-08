@@ -1,0 +1,7 @@
+; SE_CHECKIN_VOL.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_CHECKIN_VOL"
+DESCRIPTION  'SE_CHECKIN_VOL Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

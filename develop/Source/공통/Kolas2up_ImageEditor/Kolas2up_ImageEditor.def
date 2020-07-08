@@ -1,0 +1,7 @@
+; Kolas2up_ImageEditor.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Kolas2up_ImageEditor"
+DESCRIPTION  'Kolas2up_ImageEditor Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by SIReportSample.mak
+
+.\SIReportSample.cpp : \
+	".\StdAfx.h"\
+	
+
+.\SIReportSample.rc : \
+	".\res\SIReportSample.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

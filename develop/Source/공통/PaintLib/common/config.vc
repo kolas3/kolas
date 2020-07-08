@@ -1,0 +1,10 @@
+// This is the version of config.h used by visual C++. It is not
+// automatically generated since we have no autoconf available
+// on this platform.
+
+#define PL_LSB_FIRST // Intel et al.
+
+#define PL_SUPPORT_BMP 1
+#define PL_SUPPORT_JPEG 1
+
+#define PL_PIXEL_BGRA_ORDER

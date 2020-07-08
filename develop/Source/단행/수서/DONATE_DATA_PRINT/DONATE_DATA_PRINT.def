@@ -1,0 +1,11 @@
+; DONATE_DATA_PRINT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "DONATE_DATA_PRINT"
+DESCRIPTION  'DONATE_DATA_PRINT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

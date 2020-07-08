@@ -1,0 +1,33 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by BO_STATICS_1300.rc
+//
+#define IDD_BO_ACQ_PURCHASE_DATA_MGR    9473
+#define IDD_BO_STATICS_LIST             9474
+#define IDD_SE_STATICS_LIST             9474
+#define IDD_BO_STATICS_1300_MGR         9574
+#define IDC_edtPURCHASE_STATISTICS      10001
+#define IDC_stcPURCHASE_STATISTICS      10002
+#define IDC_stcPURCHASE_DATA            11010
+#define IDC_stcPURCHASE_STATISTICS_DATA 11010
+#define IDC_edtSTATISTICS_CONDITION     12000
+#define IDC_edtPURCHASE_STATISTICS_CONDITION 12000
+#define IDD_BO_STATICS_CLICK_LIST_1300  12000
+#define IDC_stcPURCHASE_STATISTICS_CONDITION 12001
+#define IDC_stcPURCHASE_STATISTICS_UNIT 12002
+#define IDC_gridList                    12003
+#define IDC_edtPURCHASE_STATISTICS_YEAR 18016
+#define IDC_stcPURCHASE_STATISTICS_YEAR 18017
+#define IDC_gridPURCHASE_STATISTICS_DATA 19000
+#define IDD_BO_LOC_2190_CLICK_LIST      30014
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        12002
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         12004
+#define _APS_NEXT_SYMED_VALUE           12000
+#endif
+#endif

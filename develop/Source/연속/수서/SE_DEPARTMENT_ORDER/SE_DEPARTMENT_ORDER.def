@@ -1,0 +1,7 @@
+; SE_DEPARTMENT_ORDER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_DEPARTMENT_ORDER"
+DESCRIPTION  'SE_DEPARTMENT_ORDER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

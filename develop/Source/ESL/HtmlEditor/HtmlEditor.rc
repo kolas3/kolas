@@ -1,0 +1,375 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\HtmlEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "HtmlEditor DLL\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "HtmlEditor\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "HtmlEditor.DLL\0"
+            VALUE "ProductName", "HtmlEditor 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_BOLD         BITMAP  DISCARDABLE     "RES\\굵게.bmp"
+IDB_BITMAP_FONTBGCOLOR  BITMAP  DISCARDABLE     "RES\\배경색.bmp"
+IDB_BITMAP_FONTCOLOR    BITMAP  DISCARDABLE     "RES\\글자색.bmp"
+IDB_BITMAP_ITALIC       BITMAP  DISCARDABLE     "RES\\기울임.bmp"
+IDB_BITMAP_TABLE        BITMAP  DISCARDABLE     "RES\\표.bmp"
+IDB_BITMAP_UNDERLINE    BITMAP  DISCARDABLE     "RES\\밑줄.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_INSERT_TABLE DIALOG DISCARDABLE  0, 0, 217, 110
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "표 만들기"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,161,9,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,161,27,50,14
+    LTEXT           "셀간격",IDC_STATIC,85,89,66,12,SS_CENTERIMAGE | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_CELLPADDING,85,89,66,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "셀내부 여백",IDC_STATIC,85,89,66,12,SS_CENTERIMAGE | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_CELLSPACING,85,89,66,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "넓이(픽셀 혹은 %)",IDC_STATIC,9,30,66,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_WIDTH,9,42,66,12,ES_AUTOHSCROLL
+    LTEXT           "높이(픽셀 혹은 %)",IDC_STATIC,85,30,66,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_HEIGHT,85,42,66,12,ES_AUTOHSCROLL
+    LTEXT           "행",IDC_STATIC,9,6,66,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_COL,9,18,66,12,ES_AUTOHSCROLL
+    LTEXT           "열",IDC_STATIC,85,6,66,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_ROW,85,18,66,12,ES_AUTOHSCROLL
+    LTEXT           "선 굵기",IDC_STATIC,9,54,66,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_BorderWidth,9,66,66,12,ES_AUTOHSCROLL
+    LTEXT           "선 색상",IDC_STATIC,85,54,66,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_BORDERCOLOR,85,89,66,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "배경색",IDC_STATIC,9,78,66,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_BG_COLOR,85,89,66,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "BORDER COLOR",IDC_BUTTON_TABLE_BORDER_COLOR,"Button",BS_OWNERDRAW | WS_TABSTOP,85,66,66,12
+    CONTROL         "BACK COLOR",IDC_BUTTON_TABLE_BG_COLOR,"Button",BS_OWNERDRAW | WS_TABSTOP,9,91,66,12
+END
+
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 348, 236
+STYLE WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Static",IDC_STATIC_EDITOR,6,35,333,195,WS_BORDER,WS_EX_CLIENTEDGE
+    COMBOBOX        IDC_COMBO_FONTNAME,6,18,100,262,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FONTSIZE,112,18,30,223,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "B",IDC_CHECK_BOLD,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,150,19,9,10
+    CONTROL         "I",IDC_CHECK_ITALIC,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,165,19,9,10
+    CONTROL         "U",IDC_CHECK_UNDERLINE,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,180,19,9,10
+    PUSHBUTTON      "F",IDC_BUTTON_FORECOLOR,195,19,9,10
+    PUSHBUTTON      "B",IDC_BUTTON_BACKCOLOR,210,19,9,10
+    CONTROL         "L",IDC_CHECK_LEFTALIGN,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,225,19,9,10
+    CONTROL         "R",IDC_CHECK_RIGHTALIGN,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,240,19,9,10
+    CONTROL         "C",IDC_CHECK_CENTERALIGN,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,255,19,9,10
+    CONTROL         "U",IDC_CHECK_UNORDERLIST,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,270,19,9,10
+    CONTROL         "O",IDC_CHECK_ORDERLIST,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,285,19,9,10
+    CONTROL         "T",IDC_BUTTON_TABLE,"Button",BS_OWNERDRAW | WS_TABSTOP,300,19,9,10
+    PUSHBUTTON      "I",IDC_BUTTON_IMAGE,315,19,9,10
+    PUSHBUTTON      "L",IDC_BUTTON_LINK,330,19,9,10
+    PUSHBUTTON      "Help",IDC_BUTTON_HELP,267,0,6,6,NOT WS_VISIBLE
+    CONTROL         "Source",IDC_CHECK_SOURCE,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | NOT WS_VISIBLE | WS_TABSTOP,193,0,9,10
+    PUSHBUTTON      "Clear All",IDC_BUTTON_CLEAR,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "Body BgColor",IDC_BUTTON_BGCOLOR,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "New Row above",IDC_BUTTON_ROW_ABOVE,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "New Row below",IDC_BUTTON_ROW_BELOW,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "Delete Row",IDC_BUTTON_DELETE_ROW,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "Combine Cells",IDC_BUTTON_COMBINE,267,0,6,6,NOT WS_VISIBLE
+    CONTROL         "Design",IDC_CHECK_DESIGN,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | NOT WS_VISIBLE | WS_TABSTOP,227,0,9,10
+    PUSHBUTTON      "Save",IDC_BUTTON_SAVE,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "Cell BgColor",IDC_BUTTON_BGCOLOR_CELL,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "P",IDC_BUTTON_TABLEPROP,263,2,9,10,NOT WS_VISIBLE
+    PUSHBUTTON      "New Col left",IDC_BUTTON_COL_LEFT,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "New Col right",IDC_BUTTON_COL_RIGHT,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "Delete Col",IDC_BUTTON_DELETE_COL,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "Split Cell",IDC_BUTTON_SPLIT,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "Nobreak",IDC_BUTTON_NOBR,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "X",IDC_BUTTON_REMOVEFORMAT,265,2,9,10,NOT WS_VISIBLE
+    PUSHBUTTON      "HR",IDC_BUTTON_HR,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "HR Prop",IDC_BUTTON_HRPROP,267,0,6,6,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_URL,267,0,6,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    PUSHBUTTON      "Load",IDC_BUTTON_LOAD,267,0,6,6,NOT WS_VISIBLE
+    LTEXT           "URL",IDC_STATIC_URL,265,0,8,8,NOT WS_VISIBLE
+    PUSHBUTTON      "<",IDC_BUTTON_GOBACK,267,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      ">",IDC_BUTTON_GOFORWARD,267,0,6,6,NOT WS_VISIBLE
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",0x0,0,0,347,16
+END
+
+IDD_HR_PROP DIALOG DISCARDABLE  0, 0, 142, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "HR Properties"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,46,61,50,14
+    EDITTEXT        IDC_EDIT_WIDTH,7,15,61,12,ES_AUTOHSCROLL
+    LTEXT           "넓이(픽셀/ %)",-1,8,6,57,8
+    EDITTEXT        IDC_EDIT_COLOR,73,38,62,12,ES_AUTOHSCROLL
+    LTEXT           "색상",-1,74,30,18,8
+    EDITTEXT        IDC_EDIT_SIZE,73,15,62,12,ES_AUTOHSCROLL
+    LTEXT           "높이(픽셀/ %)",-1,75,7,52,8
+    COMBOBOX        IDC_COMBO_SHADE,7,38,61,76,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_TABLE_PROP DIALOG DISCARDABLE  0, 0, 157, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "표 설정"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,91,60,50,14
+    LTEXT           "선 굵기(픽셀)",IDC_STATIC,7,6,64,8
+    EDITTEXT        IDC_EDIT_BorderWidth,7,15,66,12,ES_AUTOHSCROLL
+    LTEXT           "선 색상",IDC_STATIC,85,6,64,8
+    EDITTEXT        IDC_EDIT_BORDERCOLOR,85,15,66,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_RULE,74,58,16,102,CBS_DROPDOWN | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Cell Padding (pixel)",IDC_STATIC,78,56,8,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_CELLPADDING,78,56,6,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "Cell Spacing (pixel)",IDC_STATIC,78,56,8,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_CELLSPACING,78,56,6,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "넓이(픽셀 혹은 %)",IDC_STATIC,7,30,64,8
+    EDITTEXT        IDC_EDIT_WIDTH,7,39,66,12,ES_AUTOHSCROLL
+    LTEXT           "높이(픽셀 혹은 %)",IDC_STATIC,85,30,64,8
+    EDITTEXT        IDC_EDIT_HEIGHT,85,39,66,12,ES_AUTOHSCROLL
+    LTEXT           "배경색",IDC_STATIC,7,54,64,8
+    EDITTEXT        IDC_EDIT_BACKGCOLOR,7,63,66,12,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_HR_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_TABLE_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 150
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MAIN_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_FONTSIZE, 0x403, 1, 0
+"\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0035, 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0036, 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0037, 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0038, 
+    IDC_COMBO_FONTSIZE, 0x403, 2, 0
+0x0039, 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3731, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3831, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3232, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3432, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3632, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3832, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3033, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3233, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3433, "\000" 
+    IDC_COMBO_FONTSIZE, 0x403, 3, 0
+0x3633, "\000" 
+    0
+END
+
+IDD_HR_PROP DLGINIT
+BEGIN
+    IDC_COMBO_SHADE, 0x403, 6, 0
+0x6853, 0x6461, 0x0065, 
+    IDC_COMBO_SHADE, 0x403, 9, 0
+0x6f4e, 0x5320, 0x6168, 0x6564, "\000" 
+    0
+END
+
+IDD_TABLE_PROP DLGINIT
+BEGIN
+    IDC_COMBO_RULE, 0x403, 21, 0
+0x6c41, 0x206c, 0x696c, 0x656e, 0x2073, 0x6e61, 0x2064, 0x6f62, 0x6472, 
+0x7265, "\000" 
+    IDC_COMBO_RULE, 0x403, 28, 0
+0x6f48, 0x6972, 0x6f7a, 0x746e, 0x6c61, 0x6c20, 0x6e69, 0x7365, 0x6120, 
+0x646e, 0x6220, 0x726f, 0x6564, 0x0072, 
+    IDC_COMBO_RULE, 0x403, 26, 0
+0x6556, 0x7472, 0x6b69, 0x6c61, 0x6c20, 0x6e69, 0x7365, 0x6120, 0x646e, 
+0x6220, 0x726f, 0x6564, 0x0072, 
+    IDC_COMBO_RULE, 0x403, 12, 0
+0x6e4f, 0x796c, 0x6220, 0x726f, 0x6564, 0x0072, 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\HtmlEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

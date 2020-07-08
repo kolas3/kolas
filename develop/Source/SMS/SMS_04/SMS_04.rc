@@ -1,0 +1,252 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SMS_04.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2008,11,19,77
+ PRODUCTVERSION 2008,11,19,77
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "SMS_04 DLL\0"
+            VALUE "FileVersion", "2008, 11, 19, 77\0"
+            VALUE "InternalName", "SMS_04\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SMS_04.DLL\0"
+            VALUE "ProductName", "SMS_04 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2008, 11, 19, 77\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SMS_4100 DIALOG DISCARDABLE  0, 0, 525, 310
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_MAINGRID,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,0,0,525,309
+    CONTROL         "Tab1",IDC_tabUSER,"SysTabControl32",NOT WS_VISIBLE,2,84,523,226
+END
+
+IDD_SMS_4110 DIALOGEX 0, 0, 263, 243
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "이용자 검색"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbLOANPOS,70,71,129,116,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbLOANCLASS,70,92,129,116,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbINFERIORCLASS,70,134,129,116,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_c4110_GROUP,70,176,129,250,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbINFERIORCLASS2,70,198,38,116,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "휴대폰 번호가 존재하는 이용자",IDC_chkHANDPHONE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,218,110,11
+    CONTROL         "공지사항",IDC_radNEW,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,260,211,54,10
+    CONTROL         "행사안내",IDC_radEVENT,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,325,211,54,10
+    CONTROL         "일반문자",IDC_radNORMAL,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,390,211,54,10
+    CONTROL         "그리드에 검색된 이용자",IDC_radSEARCHGRID,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE | NOT WS_VISIBLE | WS_GROUP,260,255,112,8
+    CONTROL         "검색 조건에 맞는 이용자",IDC_radSEARCCOND,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE | NOT WS_VISIBLE,260,268,195,8
+    LTEXT           "(SMS수신여부:Y,휴대폰번호가존재하는이용자를 대상으로 발송합니다.)",IDC_STATIC,259,279,200,24,NOT WS_VISIBLE
+    DEFPUSHBUTTON   "검 색",IDC_btnSMS04Search,216,10,42,15
+    PUSHBUTTON      "닫 기",IDC_btnCLOSE,216,50,42,15
+    GROUPBOX        "이용자 정보",IDC_STATIC,7,5,204,230
+    DEFPUSHBUTTON   "발 송",IDC_btnSEND,302,131,42,38,NOT WS_VISIBLE
+    GROUPBOX        "발송 조건",IDC_STATIC,248,236,222,71,NOT WS_VISIBLE
+    LTEXT           "소         속",IDC_STATIC,18,75,46,8
+    LTEXT           "직         급",IDC_STATIC,18,96,46,8
+    LTEXT           "회 원 상 태",IDC_STATIC,18,137,46,8
+    LTEXT           "SMS수신여부",IDC_STATIC,18,201,46,8
+    LTEXT           "  검색 조건",IDC_STATIC,249,101,101,15,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_STATICEDGE
+    LTEXT           "  문자 발송 조건",IDC_STATIC,248,174,101,15,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_STATICEDGE
+    GROUPBOX        "문자 종류",IDC_STATIC,247,196,221,33,NOT WS_VISIBLE
+    LTEXT           "그         룹",IDC_sta4110_GROUP,18,180,46,8
+    LTEXT           "자   료   실",IDC_STATIC,18,117,46,8
+    COMBOBOX        IDC_cmbSMS04_SHELF_LOC,70,113,129,116,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "대출자번호",IDC_STATIC,18,22,46,8
+    EDITTEXT        IDC_edtSMS04_USER_NO1,70,19,58,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtSMS04_USER_NO2,141,19,58,12,ES_AUTOHSCROLL
+    LTEXT           "대출자이름",IDC_STATIC,18,38,46,8
+    EDITTEXT        IDC_edtSMS04_USER_NAME1,70,36,58,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtSMS04_USER_NAME2,141,36,58,12,ES_AUTOHSCROLL
+    LTEXT           "대출자생일",IDC_STATIC,18,55,46,8
+    EDITTEXT        IDC_edtSMS04_USER_BIRTHDAY1,70,53,58,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtSMS04_USER_BIRTHDAY2,141,53,58,12,ES_AUTOHSCROLL
+    LTEXT           "~",IDC_STATIC,132,23,8,8,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATIC,132,39,8,8,SS_CENTERIMAGE
+    PUSHBUTTON      "파일 반입",IDC_btnSMS04FileInput,216,30,42,15
+    COMBOBOX        IDC_cmbMEMBERCLASS,70,155,129,116,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "회 원 구 분",IDC_STATIC,18,159,46,8
+    LTEXT           "~",IDC_STATIC,132,55,8,8,SS_CENTERIMAGE    
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SMS_4100 DLGINIT
+BEGIN
+    IDC_MAINGRID, 0x37a, 533, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x5efb, 0x0000, 0x2ff5, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0004, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xc0c0, 0x00c0, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x000d, 0x8000, 0x000e, 0x8000, 0xefef, 0x00ef, 0x000f, 0x8000, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0101, 0x0001, 0x0000, 0x0000, 0x0068, 
+0x0000, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 
+0x0020, 0x007c, 0x0020, 0x0020, 0x0020, 0xc774, 0xc6a9, 0xc790, 0xbc88, 
+0xd638, 0x0020, 0x0020, 0x007c, 0x0020, 0x0020, 0x0020, 0x0020, 0xc774, 
+0xc6a9, 0xc790, 0xba85, 0x0020, 0x0020, 0x0020, 0x007c, 0x0020, 0x0020, 
+0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0xd578, 0xb4dc, 0xd3f0, 0xbc88, 
+0xd638, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0000, 0x0002, 
+0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 0x0000, 0x0004, 
+0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 0xffff, 0xffff, 
+0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 
+0x8101, 0x0000, 0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 
+0x0000, 0x0000, 0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 
+0xb84b, 0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SMS_4110, DIALOG
+    BEGIN
+        RIGHTMARGIN, 261
+        BOTTOMMARGIN, 237
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\SMS_04.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

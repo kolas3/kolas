@@ -1,0 +1,19 @@
+# Microsoft Developer Studio Generated Dependency File, included by KOMarcGetter.mak
+
+.\KOMarcGetter.cpp : \
+	".\KOMarcGetterDlg.h"\
+	".\StdAfx.h"\
+	
+
+.\KOMarcGetter.rc : \
+	".\res\KOMarcGetter.rc2"\
+	
+
+.\KOMarcGetterDlg.cpp : \
+	".\KOMarcGetterDlg.h"\
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

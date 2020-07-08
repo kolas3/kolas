@@ -1,0 +1,494 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Kalendar.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\icon\\k_01_icon.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Kalendar 정보"
+FONT 9, "굴림"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Kalendar 버전 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2008",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "확인",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_Kalendar_DIALOG DIALOGEX 0, 0, 480, 474
+STYLE WS_POPUP | WS_VISIBLE | WS_BORDER
+EXSTYLE WS_EX_APPWINDOW
+FONT 9, "굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "2",IDC_BUTTON_MONTH,"Button",BS_OWNERDRAW | WS_TABSTOP,11,56,46,29
+    CONTROL         "2008",IDC_BUTTON_YEAR,"Button",BS_OWNERDRAW | WS_TABSTOP,67,64,23,11
+    CONTROL         "feb",IDC_BUTTON_MONTH_ENG,"Button",BS_OWNERDRAW | WS_TABSTOP,59,77,36,10
+    CONTROL         "투데이",IDC_BUTTON_TODAY,"Button",BS_OWNERDRAW | WS_TABSTOP,119,69,39,14
+    CONTROL         "차수보기",IDC_BUTTON_SEQ_MODE,"Button",BS_OWNERDRAW | WS_TABSTOP,169,69,39,14
+    CONTROL         "메모보기",IDC_BUTTON_MEMO_MODE,"Button",BS_OWNERDRAW | WS_TABSTOP,217,69,39,14
+    CONTROL         "검색하기",IDC_BUTTON_SEARCH,"Button",BS_OWNERDRAW | WS_TABSTOP,275,69,39,14
+    CONTROL         "상세보기",IDC_BUTTON_VIEW,"Button",BS_OWNERDRAW | WS_TABSTOP,322,69,39,14
+    CONTROL         "이전 달",IDC_BUTTON_PREV_MONTH,"Button",BS_OWNERDRAW | WS_TABSTOP,380,69,39,14
+    CONTROL         "다음 달",IDC_BUTTON_NEXT_MONTH,"Button",BS_OWNERDRAW | WS_TABSTOP,421,69,39,14
+    CONTROL         "X",IDC_BUTTON_CLOSE,"Button",BS_OWNERDRAW | WS_TABSTOP,56,19,7,8
+    CONTROL         "",IDC_BUTTON_DROPDOWN_T,"Button",BS_OWNERDRAW | WS_TABSTOP,11,20,6,6
+    CONTROL         "^",IDC_BUTTON_DROPDOWN_B,"Button",BS_OWNERDRAW | WS_TABSTOP,24,20,6,6
+    CONTROL         ">",IDC_BUTTON_DROPDOWN_L,"Button",BS_OWNERDRAW | WS_TABSTOP,32,29,6,6
+    CONTROL         "<",IDC_BUTTON_DROPDOWN_R,"Button",BS_OWNERDRAW | WS_TABSTOP,40,39,6,6
+END
+
+IDD_DIALOG_LISTVIEW DIALOG DISCARDABLE  0, 0, 200, 332
+STYLE WS_POPUP
+FONT 9, "돋움체"
+BEGIN
+    LTEXT           "2008. 2",IDC_STATIC_DATE,8,6,53,8
+    CONTROL         "X",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,183,5,9,9
+    CONTROL         "검색",IDC_BUTTON_SEARCH,"Button",BS_OWNERDRAW | NOT WS_VISIBLE | WS_TABSTOP,163,3,10,10
+    EDITTEXT        IDC_EDIT_YEAR,8,4,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_SEARCH_TEXT,61,4,96,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CTEXT           "년",IDC_STATIC_YEAR,45,4,9,11,SS_CENTERIMAGE | NOT WS_VISIBLE
+END
+
+IDD_DIALOG_DAY DIALOG DISCARDABLE  0, 0, 73, 55
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "돋움체"
+BEGIN
+    CONTROL         "",IDC_RICHEDIT_TEXT,"RICHEDIT",ES_MULTILINE | ES_READONLY | WS_DISABLED | WS_TABSTOP,11,27,40,14
+END
+
+IDD_DIALOG_MEMO DIALOGEX 0, 0, 197, 159
+STYLE WS_POPUP
+FONT 9, "돋움체", 0, 0, 0x1
+BEGIN
+    CONTROL         "",ID_BUTTON_MEMO_OK,"Button",BS_OWNERDRAW | WS_TABSTOP,183,5,10,9
+    CONTROL         "",IDC_RICHEDIT_MEMO_TEXT,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_TABSTOP,6,25,187,129,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "12시",IDC_BUTTON_HOUR,133,4,21,13,WS_DISABLED
+    PUSHBUTTON      "00분",IDC_BUTTON_MIN,155,4,21,13,WS_DISABLED
+    PUSHBUTTON      "오전",IDC_BUTTON_NOON,111,4,21,13,WS_DISABLED
+    CONTROL         "0000년 00월 00일",IDC_STATIC_TITLE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,8,7,69,8
+    PUSHBUTTON      "알람",IDC_BUTTON_ALARM,89,4,21,13
+END
+
+IDD_DIALOG_ALARM DIALOGEX 0, 0, 202, 164
+STYLE WS_POPUP
+FONT 9, "돋움체", 0, 0, 0x1
+BEGIN
+    CONTROL         "확인",ID_BUTTON_ALARM_OK,"Button",BS_OWNERDRAW | WS_TABSTOP,183,5,18,13
+    CONTROL         "",IDC_RICHEDIT_ALARM_TEXT,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_TABSTOP,6,25,189,129,WS_EX_CLIENTEDGE
+    CONTROL         "00시 00분",IDC_STATIC_ALARM_TITLE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,8,7,88,8
+END
+
+IDD_DIALOG_SEQ DIALOG DISCARDABLE  0, 0, 73, 55
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 8, "돋움체"
+BEGIN
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "Kalendar MFC 응용 프로그램\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Kalendar\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Kalendar.EXE\0"
+            VALUE "ProductName", "Kalendar 응용 프로그램\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_Kalendar_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 479
+        TOPMARGIN, 1
+    END
+
+    IDD_DIALOG_LISTVIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 199
+        BOTTOMMARGIN, 331
+    END
+
+    IDD_DIALOG_MEMO, DIALOG
+    BEGIN
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_DIALOG_SEQ, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 66
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_YEAR MENU DISCARDABLE 
+BEGIN
+    POPUP "MENU_YEAR"
+    BEGIN
+        MENUITEM "현재년도",                    ID_YEAR
+        MENUITEM "PREV_5",                      ID_YEAR_PREV_5
+        MENUITEM "PREV_4",                      ID_YEAR_PREV_4
+        MENUITEM "PREV_3",                      ID_YEAR_PREV_3
+        MENUITEM "PREV_2",                      ID_YEAR_PREV_2
+        MENUITEM "PREV_1",                      ID_YEAR_PREV_1
+        MENUITEM "YEAR",                        ID_YEAR_
+        MENUITEM "NEXT_1",                      ID_YEAR_NEXT_1
+        MENUITEM "NEXT_2",                      ID_YEAR_NEXT_2
+        MENUITEM "NEXT_3",                      ID_YEAR_NEXT_3
+        MENUITEM "NEXT_4",                      ID_YEAR_NEXT_4
+        MENUITEM "NEXT_5",                      ID_YEAR_NEXT_5
+    END
+END
+
+IDR_MENU_MONTH MENU DISCARDABLE 
+BEGIN
+    POPUP "MENU_MONTH"
+    BEGIN
+        MENUITEM "현재 달",                     ID_MONTH
+        MENUITEM "1",                           ID_MONTH_1
+        MENUITEM "2",                           ID_MONTH_2
+        MENUITEM "3",                           ID_MONTH_3
+        MENUITEM "4",                           ID_MONTH_4
+        MENUITEM "5",                           ID_MONTH_5
+        MENUITEM "6",                           ID_MONTH_6
+        MENUITEM "7",                           ID_MONTH_7
+        MENUITEM "8",                           ID_MONTH_8
+        MENUITEM "9",                           ID_MONTH_9
+        MENUITEM "10",                          ID_MONTH_10
+        MENUITEM "11",                          ID_MONTH_11
+        MENUITEM "12",                          ID_MONTH_12
+    END
+END
+
+IDR_MENU_HOUR MENU DISCARDABLE 
+BEGIN
+    POPUP "IDR_MENU_HOUR"
+    BEGIN
+        MENUITEM "1시",                         ID_HOUR_1
+        MENUITEM "2시",                         ID_HOUR_2
+        MENUITEM "3시",                         ID_HOUR_3
+        MENUITEM "4시",                         ID_HOUR_4
+        MENUITEM "5시",                         ID_HOUR_5
+        MENUITEM "6시",                         ID_HOUR_6
+        MENUITEM "7시",                         ID_HOUR_7
+        MENUITEM "8시",                         ID_HOUR_8
+        MENUITEM "9시",                         ID_HOUR_9
+        MENUITEM "10시",                        ID_HOUR_10
+        MENUITEM "11시",                        ID_HOUR_11
+        MENUITEM "12시",                        ID_HOUR_12
+    END
+END
+
+IDR_MENU_MINUTE MENU DISCARDABLE 
+BEGIN
+    POPUP "IDR_MENU_MINUTE"
+    BEGIN
+        MENUITEM "5분후",                       ID_AFTER_5_MIN
+        MENUITEM "10분후",                      ID_AFTER_10_MIN
+        MENUITEM "30분후",                      ID_AFTER_30_MIN
+        MENUITEM SEPARATOR
+        MENUITEM "정각",                        ID_MIN_0
+        MENUITEM "15분",                        ID_MIN_15
+        MENUITEM "30분",                        ID_MIN_30
+        MENUITEM "45분",                        ID_MIN_45
+    END
+END
+
+IDR_MENU_NOON MENU DISCARDABLE 
+BEGIN
+    POPUP "IDR_MENU_NOON"
+    BEGIN
+        MENUITEM "오전",                        ID_NOON_FORE
+        MENUITEM "오후",                        ID_NOON_AFTER
+    END
+END
+
+IDR_MENU_RICHEDIT MENU DISCARDABLE 
+BEGIN
+    POPUP "IDR_MENU_RICHEDIT"
+    BEGIN
+        MENUITEM "복사하기",                    ID_RICHEDIT_COPY
+        MENUITEM "붙여넣기",                    ID_RICHEDIT_PASTE
+        MENUITEM "지우기",                      ID_RICHEDIT_CLEAR
+        MENUITEM "모두선택",                    ID_RICHEDIT_SELECTALL
+    END
+END
+
+IDR_MENU_DIVISION_NO MENU DISCARDABLE 
+BEGIN
+    POPUP "MENU_DIVISION_NO"
+    BEGIN
+        MENUITEM "",                            ID_DIVISION_NO1
+    END
+END
+
+IDM_RMOUSE_CLICK MENU DISCARDABLE 
+BEGIN
+    POPUP "IDM_RMOUSE_CLICK"
+    BEGIN
+        MENUITEM "새로고침",                    ID_MENU_REFRESH
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_MEMO_BACKIMAGE BITMAP  DISCARDABLE     "res\\popup\\bg.bmp"
+IDB_BITMAP_CHECKMARK    BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_BITMAP_LIST_BACKIMAGE BITMAP  DISCARDABLE     "res\\popup\\bglist.bmp"
+IDB_BITMAP_SEARCH       BITMAP  DISCARDABLE     "res\\popup\\search.bmp"
+IDB_BITMAP_MONTH_1      BITMAP  DISCARDABLE     "res\\month\\1.bmp"
+IDB_BITMAP_MONTH_12     BITMAP  DISCARDABLE     "res\\month\\12.bmp"
+IDB_BITMAP_MONTH_2      BITMAP  DISCARDABLE     "res\\month\\2.bmp"
+IDB_BITMAP_MONTH_3      BITMAP  DISCARDABLE     "res\\month\\3.bmp"
+IDB_BITMAP_MONTH_4      BITMAP  DISCARDABLE     "res\\month\\4.bmp"
+IDB_BITMAP_MONTH_5      BITMAP  DISCARDABLE     "res\\month\\5.bmp"
+IDB_BITMAP_MONTH_6      BITMAP  DISCARDABLE     "res\\month\\6.bmp"
+IDB_BITMAP_MONTH_7      BITMAP  DISCARDABLE     "res\\month\\7.bmp"
+IDB_BITMAP_MONTH_8      BITMAP  DISCARDABLE     "res\\month\\8.bmp"
+IDB_BITMAP_MONTH_9      BITMAP  DISCARDABLE     "res\\month\\9.bmp"
+IDB_BITMAP_MONTH_10     BITMAP  DISCARDABLE     "res\\month\\10.bmp"
+IDB_BITMAP_MONTH_11     BITMAP  DISCARDABLE     "res\\month\\11.bmp"
+IDB_BITMAP_MONTH_ENG_12 BITMAP  DISCARDABLE     "res\\month_eng\\12_dec.bmp"
+IDB_BITMAP_MONTH_ENG_1  BITMAP  DISCARDABLE     "res\\month_eng\\1_jan.bmp"
+IDB_BITMAP_MONTH_ENG_2  BITMAP  DISCARDABLE     "res\\month_eng\\2_feb.bmp"
+IDB_BITMAP_MONTH_ENG_3  BITMAP  DISCARDABLE     "res\\month_eng\\3_mar.bmp"
+IDB_BITMAP_MONTH_ENG_4  BITMAP  DISCARDABLE     "res\\month_eng\\4_apr.bmp"
+IDB_BITMAP_MONTH_ENG_5  BITMAP  DISCARDABLE     "res\\month_eng\\5_may.bmp"
+IDB_BITMAP_MONTH_ENG_6  BITMAP  DISCARDABLE     "res\\month_eng\\6_jun.bmp"
+IDB_BITMAP_MONTH_ENG_7  BITMAP  DISCARDABLE     "res\\month_eng\\7_jul.bmp"
+IDB_BITMAP_MONTH_ENG_8  BITMAP  DISCARDABLE     "res\\month_eng\\8_aug.bmp"
+IDB_BITMAP_MONTH_ENG_9  BITMAP  DISCARDABLE     "res\\month_eng\\9_sep.bmp"
+IDB_BITMAP_MONTH_ENG_10 BITMAP  DISCARDABLE     "res\\month_eng\\10_oct.bmp"
+IDB_BITMAP_MONTH_ENG_11 BITMAP  DISCARDABLE     "res\\month_eng\\11_nov.bmp"
+IDB_BITMAP_YEAR_9       BITMAP  DISCARDABLE     "res\\year\\9.bmp"
+IDB_BITMAP_YEAR_0       BITMAP  DISCARDABLE     "res\\year\\0.bmp"
+IDB_BITMAP_YEAR_1       BITMAP  DISCARDABLE     "res\\year\\1.bmp"
+IDB_BITMAP_YEAR_2       BITMAP  DISCARDABLE     "res\\year\\2.bmp"
+IDB_BITMAP_YEAR_3       BITMAP  DISCARDABLE     "res\\year\\3.bmp"
+IDB_BITMAP_YEAR_4       BITMAP  DISCARDABLE     "res\\year\\4.bmp"
+IDB_BITMAP_YEAR_5       BITMAP  DISCARDABLE     "res\\year\\5.bmp"
+IDB_BITMAP_YEAR_6       BITMAP  DISCARDABLE     "res\\year\\6.bmp"
+IDB_BITMAP_YEAR_7       BITMAP  DISCARDABLE     "res\\year\\7.bmp"
+IDB_BITMAP_YEAR_8       BITMAP  DISCARDABLE     "res\\year\\8.bmp"
+IDB_BITMAP_BUTTON_LISTVIEW BITMAP  DISCARDABLE     "res\\button\\ListView_.bmp"
+IDB_BITMAP_BUTTON_NEXTMONTH BITMAP  DISCARDABLE     "res\\button\\NextMonth_.bmp"
+IDB_BITMAP_BUTTON_PREVMONTH BITMAP  DISCARDABLE     "res\\button\\PrevMonth_.bmp"
+IDB_BITMAP_BUTTON_SEARCH BITMAP  DISCARDABLE     "res\\button\\Search_.bmp"
+IDB_BITMAP_DAY_BLACK_9  BITMAP  DISCARDABLE     "res\\num\\9.bmp"
+IDB_BITMAP_DAY_BLACK_0  BITMAP  DISCARDABLE     "res\\num\\0.bmp"
+IDB_BITMAP_DAY_BLACK_1  BITMAP  DISCARDABLE     "res\\num\\1.bmp"
+IDB_BITMAP_DAY_BLACK_2  BITMAP  DISCARDABLE     "res\\num\\2.bmp"
+IDB_BITMAP_DAY_BLACK_3  BITMAP  DISCARDABLE     "res\\num\\3.bmp"
+IDB_BITMAP_DAY_BLACK_4  BITMAP  DISCARDABLE     "res\\num\\4.bmp"
+IDB_BITMAP_DAY_BLACK_5  BITMAP  DISCARDABLE     "res\\num\\5.bmp"
+IDB_BITMAP_DAY_BLACK_6  BITMAP  DISCARDABLE     "res\\num\\6.bmp"
+IDB_BITMAP_DAY_BLACK_7  BITMAP  DISCARDABLE     "res\\num\\7.bmp"
+IDB_BITMAP_DAY_BLACK_8  BITMAP  DISCARDABLE     "res\\num\\8.bmp"
+IDB_BITMAP_DAY_NULL     BITMAP  DISCARDABLE     "res\\num\\NULL.bmp"
+IDB_BITMAP_DAY_RED_9    BITMAP  DISCARDABLE     "res\\num\\9_n.bmp"
+IDB_BITMAP_DAY_RED_0    BITMAP  DISCARDABLE     "res\\num\\0_n.bmp"
+IDB_BITMAP_DAY_RED_1    BITMAP  DISCARDABLE     "res\\num\\1_n.bmp"
+IDB_BITMAP_DAY_RED_2    BITMAP  DISCARDABLE     "res\\num\\2_n.bmp"
+IDB_BITMAP_DAY_RED_3    BITMAP  DISCARDABLE     "res\\num\\3_n.bmp"
+IDB_BITMAP_DAY_RED_4    BITMAP  DISCARDABLE     "res\\num\\4_n.bmp"
+IDB_BITMAP_DAY_RED_5    BITMAP  DISCARDABLE     "res\\num\\5_n.bmp"
+IDB_BITMAP_DAY_RED_6    BITMAP  DISCARDABLE     "res\\num\\6_n.bmp"
+IDB_BITMAP_DAY_RED_7    BITMAP  DISCARDABLE     "res\\num\\7_n.bmp"
+IDB_BITMAP_DAY_RED_8    BITMAP  DISCARDABLE     "res\\num\\8_n.bmp"
+IDB_BITMAP_DAY_BLUE_9   BITMAP  DISCARDABLE     "res\\num\\9_s.bmp"
+IDB_BITMAP_DAY_BLUE_0   BITMAP  DISCARDABLE     "res\\num\\0_s.bmp"
+IDB_BITMAP_DAY_BLUE_1   BITMAP  DISCARDABLE     "res\\num\\1_s.bmp"
+IDB_BITMAP_DAY_BLUE_2   BITMAP  DISCARDABLE     "res\\num\\2_s.bmp"
+IDB_BITMAP_DAY_BLUE_3   BITMAP  DISCARDABLE     "res\\num\\3_s.bmp"
+IDB_BITMAP_DAY_BLUE_4   BITMAP  DISCARDABLE     "res\\num\\4_s.bmp"
+IDB_BITMAP_DAY_BLUE_5   BITMAP  DISCARDABLE     "res\\num\\5_s.bmp"
+IDB_BITMAP_DAY_BLUE_6   BITMAP  DISCARDABLE     "res\\num\\6_s.bmp"
+IDB_BITMAP_DAY_BLUE_7   BITMAP  DISCARDABLE     "res\\num\\7_s.bmp"
+IDB_BITMAP_DAY_BLUE_8   BITMAP  DISCARDABLE     "res\\num\\8_s.bmp"
+IDB_BITMAP_TODAY        BITMAP  DISCARDABLE     "res\\memorial\\Today.bmp"
+IDB_BITMAP_HOLIDAY      BITMAP  DISCARDABLE     "res\\memorial\\Holiday.bmp"
+IDB_BITMAP_TODAY_HOLIDAY BITMAP  DISCARDABLE     "res\\memorial\\TodayHoliday.bmp"
+IDB_BITMAP_BUTTON_MINISEARCH BITMAP  DISCARDABLE     "res\\button\\mini_search.bmp"
+IDB_BITMAP_BUTTON_CLOSE BITMAP  DISCARDABLE     "res\\popup\\close.bmp"
+IDB_BITMAP_CLOSE_KALENDAR BITMAP  DISCARDABLE     "res\\close_kalendar.bmp"
+IDB_BITMAP_BG_MAIN      BITMAP  DISCARDABLE     "res\\bg.BMP"
+IDB_BITMAP_DIVISION_NO  BITMAP  DISCARDABLE     "res\\button\\DivisionMode_.bmp"
+IDB_BITMAP_BUTTON_TODAY BITMAP  DISCARDABLE     "res\\button\\Today_.bmp"
+IDB_BITMAP_BUTTON_MEMO  BITMAP  DISCARDABLE     "res\\button\\MemoMode_.bmp"
+IDB_BITMAP_BUTTON_CLOSE_RED BITMAP  DISCARDABLE     "res\\popup\\closered.bmp"
+IDB_BITMAP_ALARM_BACKIMAGE BITMAP  DISCARDABLE     "res\\popup\\bgalarm.bmp"
+IDB_BITMAP_BUTTON_XP_STYLE BITMAP  DISCARDABLE     "res\\popup\\xpbtn.bmp"
+IDB_BITMAP_BUTTON_DROPDOWN_T BITMAP  DISCARDABLE     "res\\dropdown_T.bmp"
+IDB_BITMAP_BUTTON_DROPDOWN_B BITMAP  DISCARDABLE     "res\\dropdown_B.bmp"
+IDB_BITMAP_BUTTON_DROPDOWN_R BITMAP  DISCARDABLE     "res\\dropdown_R.bmp"
+IDB_BITMAP_BUTTON_DROPDOWN_L BITMAP  DISCARDABLE     "res\\dropdown_L.bmp"
+IDB_DAY                 BITMAP  DISCARDABLE     "res\\Day.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "Kalendar 정보(&A)..."
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\Kalendar.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

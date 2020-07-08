@@ -1,0 +1,1136 @@
+// ECO_NOTICE_MANAGERDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "ECO_NOTICE_MANAGER.h"
+#include "ECO_NOTICE_MANAGERDlg.h"
+#include "ECO_NOTICE_LIB_CODE.h"
+#include "..\..\..\공동목록\check_dup_api\RS_SQL.h"
+#include <direct.h>
+#include "..\\..\\include\\공동목록\\RS_Acc.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CAboutDlg dialog used for App About
+
+class CAboutDlg : public CDialog
+{
+public:
+	CAboutDlg();
+
+// Dialog Data
+	//{{AFX_DATA(CAboutDlg)
+	enum { IDD = IDD_ABOUTBOX };
+	//}}AFX_DATA
+
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CAboutDlg)
+	protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	//}}AFX_VIRTUAL
+
+// Implementation
+protected:
+	//{{AFX_MSG(CAboutDlg)
+	//}}AFX_MSG
+	DECLARE_MESSAGE_MAP()
+};
+
+CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD)
+{
+	//{{AFX_DATA_INIT(CAboutDlg)
+	//}}AFX_DATA_INIT
+}
+
+void CAboutDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CAboutDlg)
+	//}}AFX_DATA_MAP
+}
+
+BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
+	//{{AFX_MSG_MAP(CAboutDlg)
+		// No message handlers
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CECO_NOTICE_MANAGERDlg dialog
+
+CECO_NOTICE_MANAGERDlg::CECO_NOTICE_MANAGERDlg(CESL_Mgr* pParent /*=NULL*/)
+	: CESL_Mgr(IDD, pParent)
+{
+	//{{AFX_DATA_INIT(CECO_NOTICE_MANAGERDlg)
+		// NOTE: the ClassWizard will add member initialization here
+	//}}AFX_DATA_INIT
+	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
+	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	m_FILE_INFO.FileCnt = 0;
+}
+
+void CECO_NOTICE_MANAGERDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CECO_NOTICE_MANAGERDlg)
+	DDX_Control(pDX, IDC_PROGRESS, m_ProgressCtrl);
+	DDX_Control(pDX, IDC_LIST1, m_List);
+	//}}AFX_DATA_MAP
+}
+
+BEGIN_MESSAGE_MAP(CECO_NOTICE_MANAGERDlg, CDialog)
+	//{{AFX_MSG_MAP(CECO_NOTICE_MANAGERDlg)
+	ON_WM_SYSCOMMAND()
+	ON_WM_PAINT()
+	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_bIDOK, OnbIDOK)
+	ON_BN_CLICKED(IDC_bSEARCH, OnbSEARCH)
+	ON_BN_CLICKED(IDC_bINCLUDE_FILE, OnbINCLUDEFILE)
+	ON_BN_CLICKED(IDC_bAPPEND, OnbAPPEND)
+	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB1, OnSelchangeTab1)
+	ON_BN_CLICKED(IDCANCEL2, OnCancel2)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CECO_NOTICE_MANAGERDlg message handlers
+
+BOOL CECO_NOTICE_MANAGERDlg::OnInitDialog()
+{
+	CDialog::OnInitDialog();
+
+	// Add "About..." menu item to system menu.
+
+	// IDM_ABOUTBOX must be in the system command range.
+	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
+	ASSERT(IDM_ABOUTBOX < 0xF000);
+
+	CMenu* pSysMenu = GetSystemMenu(FALSE);
+	if (pSysMenu != NULL)
+	{
+		CString strAboutMenu;
+		strAboutMenu.LoadString(IDS_ABOUTBOX);
+		if (!strAboutMenu.IsEmpty())
+		{
+			pSysMenu->AppendMenu(MF_SEPARATOR);
+			pSysMenu->AppendMenu(MF_STRING, IDM_ABOUTBOX, strAboutMenu);
+		}
+	}
+	m_pTabCtrl = (CTabCtrl *)GetDlgItem(IDC_TAB1);
+	m_pTabCtrl->InsertItem(0,"공지사항발송");
+	m_pTabCtrl->InsertItem(1,"보낸공지사항");
+	m_pTabCtrl->SetCurSel(0);
+
+	if(InitESL_Mgr("SM_ECO_NOTICE_INPUT")<0)
+	{
+		AfxMessageBox("InitESL_Mgr() Error~!");
+		return FALSE ;
+	}
+    m_SERVER_TYPE = "LS" ;
+
+	// TODO: Add extra initialization here
+	m_button1.AutoLoad( IDC_bINCLUDE_FILE, this );
+    m_SelectLibCnt = 0 ;
+
+	m_pDM = (CRS_DM_Mgr*)FindDM("DM_ECO_NOTICE_INPUT");
+
+	m_pDM->m_dbkind =  4; 
+	if ( m_pDM == NULL )
+	{
+		AfxMessageBox("DM 초기화 에러(DM_ECO_NOTICE)");
+		return FALSE;
+	}
+
+	INT ids;
+
+	ids = m_pDM->RefreshDataManager("");
+
+	// CM 초기화
+	CESL_ControlMgr *pCM = FindCM("CM_ECO_NOTICE_INPUT");
+	if ( pCM == NULL )
+	{
+		AfxMessageBox("CM 초기화 에러(CM_ECO_NOTICE_INPUT)");
+		return FALSE;
+	}
+	// Grid 초기화
+	m_pGrid = (CESL_Grid*)pCM->FindControl( _T("MainGrid"));
+	if ( m_pGrid == NULL )
+	{
+		AfxMessageBox("GRID 초기화 에러(CM_ECO_NOTICE_INPUT)");
+		return FALSE;
+	}
+	m_pGrid->m_fpEventHandler = ( int( CWnd::* )( CString &strGridAlias, INT nRow, INT nCol, CString &strDMFieldAlias, CString &str ) )GridDisplayEventProc;
+	// grid display
+
+	if( m_pGrid->Display() < 0 ) return FALSE;
+	// Set the icon for this dialog.  The framework does this automatically
+	//  when the application's main window is not a dialog
+	SetIcon(m_hIcon, TRUE);			// Set big icon
+	SetIcon(m_hIcon, FALSE);		// Set small icon
+	
+	Display(0);
+
+	AllControlDisplay ("CM_ECO_NOTICE_INPUT" ,-1);
+
+	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+int CECO_NOTICE_MANAGERDlg::Display(int nMode)
+{
+	if( nMode == 0 )
+	{
+		(CWnd*)GetDlgItem(IDC_eRECEIPT_LIB)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_STATIC1)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_STATIC2)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_STATIC3)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_STATIC4)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_STATIC5)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_eTHEME)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_LIST1)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_bINCLUDE_FILE)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_bSEARCH)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_PROS)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_PROGRESS)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_MainGrid)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_bAPPEND)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_bIDOK)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDCANCEL2)->ShowWindow(SW_SHOW);
+		(CWnd*)GetDlgItem(IDC_eVIEW)->ShowWindow(SW_SHOW);
+		
+	}
+	else
+	{
+		(CWnd*)GetDlgItem(IDC_eRECEIPT_LIB)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_STATIC1)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_STATIC2)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_STATIC3)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_STATIC4)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_STATIC5)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_eTHEME)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_LIST1)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_bINCLUDE_FILE)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_bSEARCH)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_PROS)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_PROGRESS)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_bAPPEND)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_bIDOK)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDCANCEL2)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_eVIEW)->ShowWindow(SW_HIDE);
+		(CWnd*)GetDlgItem(IDC_MainGrid)->ShowWindow(SW_SHOW);
+
+		m_pDM = (CRS_DM_Mgr*)FindDM("DM_ECO_NOTICE_INPUT");
+
+		m_pDM->m_dbkind =  4; 
+		if ( m_pDM == NULL )
+		{
+			AfxMessageBox("DM 초기화 에러(DM_ECO_NOTICE)");
+			return FALSE;
+		}
+
+		INT ids;
+
+		ids = m_pDM->RefreshDataManager("");
+
+		CESL_ControlMgr *pCM = FindCM("CM_ECO_NOTICE_INPUT");
+		if ( pCM == NULL )
+		{
+			AfxMessageBox("CM 초기화 에러(CM_ECO_NOTICE_INPUT)");
+			return FALSE;
+		}
+
+		m_pGrid->DisplayLine(-1);
+			
+	}
+
+	INT nCurSel = m_pGrid->GetTopRow();
+	m_pGrid->SetReverse(0);
+	m_pGrid->SetTopRow(nCurSel);
+	return 0;
+}
+
+void CECO_NOTICE_MANAGERDlg::OnSysCommand(UINT nID, LPARAM lParam)
+{
+	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
+	{
+		CAboutDlg dlgAbout;
+		dlgAbout.DoModal();
+	}
+	else
+	{
+		CDialog::OnSysCommand(nID, lParam);
+	}
+}
+
+// If you add a minimize button to your dialog, you will need the code below
+//  to draw the icon.  For MFC applications using the document/view model,
+//  this is automatically done for you by the framework.
+
+void CECO_NOTICE_MANAGERDlg::OnPaint() 
+{
+	if (IsIconic())
+	{
+		CPaintDC dc(this); // device context for painting
+
+		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
+
+		// Center icon in client rectangle
+		int cxIcon = GetSystemMetrics(SM_CXICON);
+		int cyIcon = GetSystemMetrics(SM_CYICON);
+		CRect rect;
+		GetClientRect(&rect);
+		int x = (rect.Width() - cxIcon + 1) / 2;
+		int y = (rect.Height() - cyIcon + 1) / 2;
+
+		// Draw the icon
+		dc.DrawIcon(x, y, m_hIcon);
+	}
+	else
+	{
+		CDialog::OnPaint();
+	}
+}
+
+// The system calls this to obtain the cursor to display while the user drags
+//  the minimized window.
+HCURSOR CECO_NOTICE_MANAGERDlg::OnQueryDragIcon()
+{
+	return (HCURSOR) m_hIcon;
+}
+
+void CECO_NOTICE_MANAGERDlg::OnbIDOK() 
+{
+	CESL_DataMgr * m_pDataMgr;
+	CString        ParentRecKey, LibraryCode, LibraryName, LocalFileRecKey, tmpData;
+	int            ids, i;
+
+	//////////////////////////////////////////////////////////////////////////////////
+	// 1. 도서관 선택여부를 체크한다.
+	//////////////////////////////////////////////////////////////////////////////////
+	if ( m_SelectLibCnt == 0 ) {
+		MessageBox( "공지사항을 보낼 도서관을 선택하십시오", "확인", MB_OK );
+		return;
+	}
+
+    m_pDataMgr = FindDM("DM_ECO_NOTICE_INPUT") ;
+    if(m_pDataMgr == NULL) {
+		AfxMessageBox("FindDM() Error");
+		return ;
+	}
+
+    CRS_SQL m_rs_sql(this) ;
+	//m_rs_sql.GetLibraryInfo (LibraryCode);
+	CString sWhere ;
+	sWhere.Format ("select LIB_NAME from LIB_INFO_tbl where lib_CODE = '%s'", "999999" ) ;
+    m_rs_sql.ES_GetOneFieldValue (sWhere,LibraryName ) ;
+
+
+	//////////////////////////////////////////////////////////////////////////////////
+	// 1. center에 저장
+	//////////////////////////////////////////////////////////////////////////////////
+
+	for ( i = 0; i < m_SelectLibCnt; i++ ) {
+		
+		//////////////////////////////////////////////////////////////////////////////////
+		// 2. 공지사항을 저장한다.
+		//////////////////////////////////////////////////////////////////////////////////
+				
+		m_SERVER_TYPE ="ES" ;
+        if(m_SERVER_TYPE == "ES")
+		{
+			ids = Input( m_ParentRecKey, i, LibraryCode, LibraryName );
+			if ( ids<0 ) {
+				AfxMessageBox( "입력을 실패했습니다.", MB_OK);
+				return;
+			}
+			if (ids == 100 )
+			{
+				return ;
+			}
+			
+			//////////////////////////////////////////////////////////////////////////////////
+			// 3. 보낸도서관 정보를 center에 저장한다.
+			//////////////////////////////////////////////////////////////////////////////////
+			ids = AllInputLibraryInfo(  m_select_Lib_Code.GetAt (i) , 
+										m_select_Lib_Name.GetAt (i) , 
+										m_ParentRecKey );
+		
+
+			ids = InsertFile_Proc( m_pDataMgr, LocalFileRecKey, m_ParentRecKey ,m_SERVER_TYPE );
+			if ( ids<0 ) {
+				AfxMessageBox( "LocalInsertFile_Proc() ERROR", MB_OK);
+				return;
+			}
+		}
+		//////////////////////////////////////////////////////////////////////////////////
+		// 4. local에 저장
+		//////////////////////////////////////////////////////////////////////////////////
+		
+	    m_SERVER_TYPE ="LS" ;
+		/*
+		if(m_SERVER_TYPE == "LS")
+		{
+			ids = m_pDataMgr->StartFrame();
+			m_pDataMgr->InitDBFieldData () ;
+        
+			ids = Input( ParentRecKey, i, LibraryCode, LibraryName );
+			if ( ids<0 ) {
+				m_pDataMgr->EndFrame();
+				AfxMessageBox ( "입력을 실패했습니다.", MB_OK);
+				return;
+			}
+
+			ids = m_pDataMgr->SendFrame();
+			ids = m_pDataMgr->EndFrame();
+		
+	
+			ids = InsertFile_Proc( m_pDataMgr, LocalFileRecKey, ParentRecKey ,m_SERVER_TYPE );
+			if ( ids<0 ) {
+				AfxMessageBox( "LocalInsertFile_Proc() ERROR", MB_OK);
+				return;
+			}
+
+		}*/
+/*
+		tmpData.Format ( "%d/%d 진행중", i+1,  );
+		m_pProgressBar.SetWindowText( tmpData );
+		m_pProgressBar.StepIt();
+*/
+	}
+
+
+
+	//ids = AllControlDisplay("CM_ECO_NOTICE_MAIN",-1);
+
+	//m_pProgressBar.SetWindowText( "완료" );
+
+    MessageBox( "공지사항을 보냈습니다.", "입력", MB_OK );
+	
+	CESL_ControlMgr *pCM = FindCM("CM_ECO_NOTICE_INPUT");
+	pCM->AllControlClear () ;
+}
+////////////////////////////////////////////////////////////////////////////////////
+// Input
+//
+// [PURPOSE]
+// [MINISPEC]
+// 1. 입력항목을 체크한다.
+// 2. Local 저장일때는 보낸공지사항
+// 3. center 저장일때는 받은공지사항
+// 4. Local DB 저장일때는 Momory도 Insert 함
+// 5. center DB 저장일때는 Momory도 Insert 안함
+////////////////////////////////////////////////////////////////////////////////////
+int CECO_NOTICE_MANAGERDlg::Input( CString RecKey, int index, CString LibraryCode, CString LibraryName )
+{
+	CESL_DataMgr  * m_pDataMgr;
+	CString         Subject, Contents;
+	CString         CurrentDate;
+	int             ids, RowCnt;
+
+    CString AttrData [10];
+    CString AttrName [10] = { "REC_KEY"        , // 레코드KEY
+		                    "send_libid"      , // 보낸 도서관 코드
+							"send_libname"    , // 보낸 도서관 명
+							"recv_libid"      , // 받는 도서관 코드
+							"recv_libname"    , // 받는 도서관 명
+							"title"           , // 제목
+							"contents"        , // 내용
+							"confirm"         , // 확인
+							"srflag"          , // 보낸공지사항
+							"trans_date"      };
+    CString    FieldType[10] = {"NUMERIC", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING" };
+
+    m_pDataMgr = FindDM("DM_ECO_NOTICE_INPUT") ;
+	if(m_pDataMgr == NULL){
+		AfxMessageBox("FindDM() Error~!");
+		return -1 ;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 1. 입력항목을 체크한다.
+	/////////////////////////////////////////////////////////////////////////////////////
+	ids = GetControlData ("CM_ECO_NOTICE_INPUT","제목",Subject,-1) ;
+	ids = GetControlData ("CM_ECO_NOTICE_INPUT","내용",Contents,-1) ;
+	
+	
+	if ( m_select_Lib_Code.GetAt (0).IsEmpty () ) {
+		MessageBox( "받을도서관을 선택하십시오.", "도서관찾기체크", MB_OK );
+		return 100;
+	}
+	if ( m_arSelectLib.GetAt (index).IsEmpty () ||
+		 Subject.IsEmpty () || 
+		 Contents.IsEmpty () ) {
+		MessageBox( "데이타를 입력하십시오.", "입력항목체크", MB_OK );
+		return 100;
+	}
+	/*if(m_SERVER_TYPE == "LS")
+	{
+		m_pDataMgr->MakeRecKey (RecKey) ;
+		m_ParentRecKey = RecKey ;
+	}
+    else*/
+	if( m_SERVER_TYPE == "ES")
+	{
+		CRS_SQL m_rs_sql(this) ;
+        CString sqlBuffer;
+		CString temp ;
+		sqlBuffer.Format ("select max(rec_key) from ECO_NOTICE_tbl") ;
+		m_rs_sql.ES_GetOneFieldValue (sqlBuffer,temp);
+		
+        int itmp ;
+		itmp = atoi(temp.GetBuffer (0)) ;
+		RecKey.Format ("%d",itmp+1) ;
+
+		m_ParentRecKey = RecKey ;
+	}
+
+
+	AttrData[0] = RecKey;
+	AttrData[1] = LibraryCode;
+	AttrData[2] = LibraryName;
+	AttrData[3] = m_select_Lib_Code.GetAt (index);
+	AttrData[4] = m_select_Lib_Name.GetAt (index);
+	AttrData[5] = Subject;
+	AttrData[6] = Contents;
+	AttrData[7] = "0";
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 2. Local 저장일때는 보낸공지사항
+	/////////////////////////////////////////////////////////////////////////////////////
+	if ( "LS" == m_SERVER_TYPE ) {
+		AttrData[8] = "1";
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 3. center 저장일때는 받은공지사항
+	/////////////////////////////////////////////////////////////////////////////////////
+	} else {
+		AttrData[8] = "1";
+	}
+
+    CTime t = CTime::GetCurrentTime () ;
+	CurrentDate.Format ("%d/%d/%d",t.GetYear (),t.GetMonth (),t.GetDay ());
+	AttrData[9] = CurrentDate;
+     
+    RowCnt ;
+/*
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 4. Local DB 저장일때는 Momory도 Insert 함
+	/////////////////////////////////////////////////////////////////////////////////////
+	if ( "LS" == m_SERVER_TYPE  ) {
+		for(int i =0 ; i <10;i++) {
+        m_pDataMgr->AddDBFieldData (AttrName[i],FieldType[i],AttrData[i]) ;
+        }
+
+		ids = m_pDataMgr->MakeInsertFrame ("ECO_NOTICE_TBL") ;
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 5. center DB 저장일때는 Momory도 Insert 
+	/////////////////////////////////////////////////////////////////////////////////////
+	} else */
+	if( m_SERVER_TYPE == "ES"){
+		 CRS_SQL m_rs_sql(this);
+		 int FieldType[10] = { 2,1,1,1,1,1,1,1,1,1};
+		 m_rs_sql.ES_InsertRow ("ECO_NOTICE_TBL",10,AttrName,AttrData,FieldType,TRUE) ;
+
+	}
+
+	return 0;
+}
+
+void CECO_NOTICE_MANAGERDlg::OnbSEARCH() 
+{
+	// TODO: Add your control notification handler code here
+	CComboBox * pCombo = (CComboBox*)GetDlgItem(IDC_eRECEIPT_LIB) ;
+	CECO_NOTICE_LIB_CODE dlg(this) ;
+	if(IDOK == dlg.DoModal ()) 
+	{
+		//dlg.m_arLibrary ;
+        int Cnt ;
+        Cnt = dlg.m_arLibrary.GetSize () ;
+		m_SelectLibCnt = Cnt ;
+        for(int i=0; i<Cnt; i++)
+		{   
+			pCombo->AddString (dlg.m_arLibrary.GetAt (i));
+			m_arSelectLib.Add (dlg.m_arLibrary.GetAt (i));
+			m_select_Lib_Code.Add (dlg.m_Lib_Code.GetAt (i));
+			m_select_Lib_Name.Add (dlg.m_Lib_Name.GetAt (i));
+		}
+		pCombo->SetCurSel (0) ;
+
+		CEdit* sEdit = (CEdit*)GetDlgItem(IDC_PROS) ;
+		
+		CString msg ;
+		msg.Format ("외 %d 군데",Cnt-1) ; 
+		sEdit->SetWindowText (msg) ;
+	}
+
+}
+
+int CECO_NOTICE_MANAGERDlg::AllInputLibraryInfo(CString pLibraryCode, CString pLibraryName, CString pParentRecKey)
+{
+//	CESL_DataMgr  * m_pDataMgr;
+	CString         RecKey;
+	//int             ids;
+
+    CString AttrData [4];
+    CString AttrName [4] = {  "REC_KEY"    ,
+		                     "PARENT_KEY" ,
+							 "LIBID"      ,
+	                         "LIBNAME"    };
+	INT    FieldType[4] = { 2, 2, 1, 1 };
+  
+	CRS_SQL m_rs_sql(this);
+    CString sqlBuffer ;
+	CString temp ;
+	sqlBuffer = "select max(rec_key) from ECO_NOTICE_RECV_LIBRARY_TBL";
+	m_rs_sql.ES_GetOneFieldValue (sqlBuffer,temp) ;
+
+	int MaxKey ;
+	MaxKey = atoi(temp.GetBuffer (0));
+
+	RecKey.Format ("%d",MaxKey+1);
+/*  
+	ids = MakePrimaryKey( RecKey );
+	if ( ids ) return -1;
+*/
+	AttrData[0] = RecKey;
+	AttrData[1] = pParentRecKey;
+	AttrData[2] = pLibraryCode;
+	AttrData[3] = pLibraryName;
+
+	m_rs_sql.ES_InsertRow ("ECO_NOTICE_RECV_LIBRARY_TBL",4,AttrName,AttrData,FieldType ,TRUE);
+
+
+	return 0;
+}
+
+void CECO_NOTICE_MANAGERDlg::OnbINCLUDEFILE() 
+{
+	FILE    * fp;
+	CString   strPathName;
+	char      FileName[256];
+	char      currentpath[256], filesize[256];
+	long      position;
+	int       numread, filelen;
+
+	_getcwd( currentpath, MAX_PATH );
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 1. 파일 Dialog를 띄운다.
+	/////////////////////////////////////////////////////////////////////////////////////
+	CFileDialog dlg( TRUE, "", "*.*",
+		OFN_HIDEREADONLY|OFN_OVERWRITEPROMPT,
+		"모든파일(*.*)|*.*|" );
+	dlg.m_ofn.lpstrTitle = "첨부 파일 삽입";
+	dlg.m_ofn.lStructSize;
+
+	if(IDOK == dlg.DoModal () )
+	{
+		
+		m_FILE_INFO.FileCnt = m_FILE_INFO.FileCnt+1;
+		strPathName = dlg.GetPathName();
+
+		/////////////////////////////////////////////////////////////////////////////////////
+		// 2. 파일을 open한다.
+		/////////////////////////////////////////////////////////////////////////////////////
+		fp = fopen( strPathName, "rb" );
+		_chdir( currentpath );
+
+		/////////////////////////////////////////////////////////////////////////////////////
+		// 3. Open한 파일의 크기를 구한다.
+		/////////////////////////////////////////////////////////////////////////////////////
+		fseek( fp, 0, SEEK_END);
+		position = ftell( fp );
+		fseek( fp, 0, SEEK_SET);
+
+		incfile = (char*)malloc( position );
+		numread = fread( incfile, sizeof( char ), position, fp );
+		sprintf( filesize, "%d", numread );
+
+		/////////////////////////////////////////////////////////////////////////////////////
+		// 4. 구조체에 파일이름과 사이즈를 저장한다.
+		/////////////////////////////////////////////////////////////////////////////////////
+		strcpy( m_FILE_INFO.FilePathBuf[m_FILE_INFO.FileCnt-1], strPathName.GetBuffer(0) );
+		strcpy( m_FILE_INFO.FileNameBuf[m_FILE_INFO.FileCnt-1], dlg.GetFileName() );
+		strcpy( m_FILE_INFO.filesize   [m_FILE_INFO.FileCnt-1], filesize );
+
+		/////////////////////////////////////////////////////////////////////////////////////
+		// 5. 파일 사이즈의 KB단위로 계산한다.
+		/////////////////////////////////////////////////////////////////////////////////////
+		filelen = strlen( filesize );
+		if ( filelen < 4 ) {
+			sprintf( FileName, "%s(1KB)", dlg.GetFileName() );
+		} else if ( filelen == 4 ) {
+			sprintf( FileName, "%s(%cKB)", dlg.GetFileName(), filesize[0] );
+		} else if ( filelen == 5 ) {
+			sprintf( FileName, "%s(%c%cKB)", dlg.GetFileName(), filesize[0], filesize[1] );
+		} else if ( filelen == 6 ) {
+			sprintf( FileName, "%s(%c%c%cKB)", dlg.GetFileName(), filesize[0], filesize[1], filesize[2] );
+		} else if ( filelen == 7 ) {
+			sprintf( FileName, "%s(%c.%c%c%cKB)", dlg.GetFileName(), filesize[0], filesize[1], filesize[2], filesize[3] );
+		} else if ( filelen == 8 ) {
+			sprintf( FileName, "%s(%c%c.%c%c%cKB)", dlg.GetFileName(), filesize[0], filesize[1], filesize[2], filesize[3], filesize[4] );
+		} else if ( filelen == 9 ) {
+			sprintf( FileName, "%s(%c%c%c.%c%c%cKB)", dlg.GetFileName(), filesize[0], filesize[1], filesize[2], filesize[3], filesize[4], filesize[5] );
+		}
+
+		/////////////////////////////////////////////////////////////////////////////////////
+		// 6. 리스트 컨트롤에 추가한다.
+		/////////////////////////////////////////////////////////////////////////////////////
+		m_List.InsertColumn (0,"");
+		m_List.InsertItem (0,FileName) ;
+
+		fclose( fp );
+	}
+
+}
+
+
+int CECO_NOTICE_MANAGERDlg::InsertFile_Proc( CESL_DataMgr * pDataMgr, CString pLocalFileRecKey, CString pParentRecKey ,CString ServerType ) 
+{
+	int  i, ids;
+    
+
+    if(ServerType == "ES")
+    {
+        CRS_SQL m_rs_sql (this) ;
+		CString sqlBuf ;
+		CString tmp_Value ;
+        int tmpReckey ;
+		
+		sqlBuf = "select max(rec_key) from ECO_NOTICE_FILE_TBL " ;
+	     
+		CString Field[5] = {"REC_KEY","FILENAME","FILE_SIZE","PARENT_KEY" } ;
+		CString FieldData[4] ;
+		int     FieldType[4] = { 2,1,2,2} ;
+
+		for ( i = 0; i < m_FILE_INFO.FileCnt; i++ ) {
+
+			m_rs_sql.ES_GetOneFieldValue (sqlBuf,tmp_Value);
+			tmpReckey = atoi(tmp_Value) ;
+            pLocalFileRecKey.Format ("%d",tmpReckey+1) ;
+          
+            FieldData[0] = pLocalFileRecKey;
+            FieldData[1] = m_FILE_INFO.FileNameBuf[i] ;
+			FieldData[2] = m_FILE_INFO.filesize[i] ;
+			FieldData[3] = pParentRecKey ;
+
+
+			m_rs_sql.ES_InsertRow ("ECO_NOTICE_FILE_TBL",4,Field,FieldData,FieldType,TRUE) ;
+            
+
+			ids = RS_InsertFile( 
+							"ECO_NOTICE_FILE_TBL"  ,
+							 pLocalFileRecKey.GetBuffer (0) ,
+							 m_FILE_INFO.FileNameBuf[i], 
+							 m_FILE_INFO.FilePathBuf[i],    
+							 4
+							 ) ;
+			if ( ids<0 ) {				
+				return ids;
+			}
+	
+		}
+
+	}
+/*	else if(ServerType == "LS")
+	{
+        CString tmpName ;
+		CString tmpSize ;
+
+		for ( i = 0; i < m_FILE_INFO.FileCnt; i++ ) {
+		    tmpName.Format ("%s",m_FILE_INFO.FileNameBuf[i]);
+			tmpSize.Format ("%d",m_FILE_INFO.filesize[i]) ;
+
+
+			pDataMgr->MakeRecKey(pLocalFileRecKey) ;
+		
+		    pDataMgr->StartFrame () ;
+			pDataMgr->InitDBFieldData () ;
+			pDataMgr->AddDBFieldData ("REC_KEY","NUMERIC",pLocalFileRecKey);
+			pDataMgr->AddDBFieldData ("FILENAME","STRING",tmpName) ;
+            pDataMgr->AddDBFieldData ("FILE_SIZE","NUMERIC",tmpSize) ;
+            pDataMgr->AddDBFieldData ("PARENT_KEY","NUMERIC",pParentRecKey) ;
+
+		    pDataMgr->MakeInsertFrame ("ECO_NOTICE_FILE_TBL");
+			pDataMgr->SendFrame ();
+			pDataMgr->EndFrame () ;
+
+			
+			ids = RS_InsertFile( 
+							"ECO_NOTICE_FILE_TBL"  ,
+							 pLocalFileRecKey.GetBuffer (0) ,
+							 m_FILE_INFO.FileNameBuf[i], 
+							 m_FILE_INFO.FilePathBuf[i],    
+							 0
+							 ) ;
+			if ( ids<0 ) {				
+				return ids;
+			}
+		}
+	}
+*/
+	return 0;
+}
+void CECO_NOTICE_MANAGERDlg::OnbAPPEND() 
+{
+	CESL_DataMgr * m_pDataMgr;
+	CESL_ControlMgr * m_pControlMgr;
+	CString           LibraryCode, LibraryName, MsqBuf, ParentRecKey;
+	CString           LocalLibraryCode, LocalLibraryName, LocalFileRecKey;
+	CString           tmpData, CenterParentRecKey, Subject, Contents;
+	int            ids, RecCnt, i;
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 1. 입력항목을 체크한다.
+	/////////////////////////////////////////////////////////////////////////////////////
+	
+	GetControlData ("CM_ECO_NOTICE_INPUT","제목",Subject,-1) ;
+	GetControlData ("CM_ECO_NOTICE_INPUT","내용",Contents,-1) ;
+
+
+	if ( Subject.IsEmpty () || Contents.IsEmpty () ) {
+		MessageBox( "데이타를 입력하십시오.", "입력항목체크", MB_OK );
+		return;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////
+	// 1. 전체도서관 정보를 구한다.
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	m_pDataMgr = FindDM("DM_ECO_NOTICE_LIB_CODE") ;
+	if(m_pDataMgr == NULL) {
+		AfxMessageBox("FindDM() Error~!");
+		return ;
+	}
+	
+	m_SERVER_TYPE = "ES" ;
+
+    CRS_SQL m_rs_sql(this) ;
+	
+	CString sWhere ;
+	sWhere = "LIB_CODE IS NOT NULL";
+	m_rs_sql.ES_Select (m_pDataMgr,sWhere,"DM_ECO_NOTICE_LIB_CODE",100,3) ;
+
+    RecCnt = m_pDataMgr->GetRowCount () ;
+
+	if ( RecCnt == 0 ) {
+		MessageBox( "도서관정보가 없습니다.", "도서관전체보내기", MB_OK );
+		return;
+	}
+   
+    m_SERVER_TYPE = "LS" ;
+
+	m_rs_sql.GetLibraryInfo (LocalLibraryCode ) ;
+	CString tmp_Value;
+    tmp_Value.Format ("select lib_name from lib_info_tbl where LIB_CODE = '%s'",LocalLibraryCode ) ;
+	m_rs_sql.ES_GetOneFieldValue (tmp_Value,LocalLibraryName ) ;
+
+
+
+	MsqBuf.Format ( "전체 %d개 도서관에 위 공지사항을 보내시겠습니까?", RecCnt );
+	
+	ids = MessageBox( MsqBuf, "도서관전체보내기", MB_OKCANCEL|MB_ICONQUESTION );
+	if ( IDCANCEL == ids ) return;
+
+    m_pControlMgr = FindCM("CM_ECO_NOTICE_INPUT") ;
+	if(m_pControlMgr == NULL) {
+		AfxMessageBox("FindCM() Error~!") ;
+		return ;
+	}
+    
+    
+    MsqBuf.Format("전체 %d개 도서관", RecCnt );
+
+    CComboBox * pCombo = (CComboBox*)GetDlgItem(IDC_eRECEIPT_LIB) ;
+    pCombo->AddString (MsqBuf) ;
+
+	GetDlgItem(IDC_PROS)->SetWindowText( "" );
+
+	/////////////////////////////////////////////////////////////////////////////////////////
+	// 2. Center공지사항에 저장할 키값을 구한다.
+	/////////////////////////////////////////////////////////////////////////////////////////
+    m_SERVER_TYPE = "ES" ;
+     
+
+	/*if(m_SERVER_TYPE == "LS")
+	{
+		CString RecKey ;
+		m_pDataMgr->MakeRecKey (RecKey) ;
+		ParentRecKey = RecKey ;
+	}
+    else*/
+	if (m_SERVER_TYPE == "ES")
+	{
+		CRS_SQL m_rs_sql(this) ;
+        CString sqlBuffer;
+		CString temp ;
+		sqlBuffer.Format ("select max(rec_key) from ECO_NOTICE_tbl") ;
+		m_rs_sql.ES_GetOneFieldValue (sqlBuffer,temp);
+		
+        int itmp ;
+		CString RecKey ;
+		itmp = atoi(temp.GetBuffer (0)) ;
+		RecKey.Format ("%d",itmp+1) ;
+
+		ParentRecKey = RecKey ;
+	}
+      
+
+	InitProgress (RecCnt) ;
+
+	////////////////////////////////////////////////////////////////////////////////////
+	// 3. Center에 파일정보와 Server에 파일을 저장한다.
+	////////////////////////////////////////////////////////////////////////////////////
+	ids = InsertFile_Proc( m_pDataMgr, LocalFileRecKey, ParentRecKey ,m_SERVER_TYPE );
+	if ( ids<0 )
+	{
+		m_pDataMgr->EndFrame();
+		AfxMessageBox ( "InsertFile_Proc", MB_OK);
+		return;
+	}
+
+    CenterParentRecKey =  ParentRecKey ;
+
+	////////////////////////////////////////////////////////////////////////////////////
+	// 4. Local에 공지사항을 저장한다.
+	////////////////////////////////////////////////////////////////////////////////////
+	/*m_SERVER_TYPE = "LS" ;
+
+
+    m_pDataMgr->StartFrame();
+	m_pDataMgr->InitDBFieldData () ;
+    m_pDataMgr->MakeRecKey (ParentRecKey) ;
+
+	ids = AllInput( ParentRecKey, LocalLibraryCode, LocalLibraryName );
+	if ( ids<0 ) {
+		m_pDataMgr->EndFrame();
+		AfxMessageBox ( "입력을 실패했습니다.", MB_OK);
+		return;
+	}
+
+	ids = m_pDataMgr->SendFrame(  );
+	ids = m_pDataMgr->EndFrame();
+	
+
+
+	////////////////////////////////////////////////////////////////////////////////////
+	// 5. local에 파일을저장한다.
+	////////////////////////////////////////////////////////////////////////////////////
+	m_SERVER_TYPE = "LS";
+	ids = InsertFile_Proc( m_pDataMgr, LocalFileRecKey, ParentRecKey ,m_SERVER_TYPE);
+	if ( ids<0 ) {
+		AfxMessageBox( "LocalInsertFile_Proc() ERROR", MB_OK);
+		return;
+	}
+*/
+	/////////////////////////////////////////////////////////////////////////////////////////
+	// 6. 보낸도서관 정보를 Center에 저장
+	/////////////////////////////////////////////////////////////////////////////////////////
+	m_SERVER_TYPE = "ES" ;
+
+
+	for ( i = 0; i < RecCnt; i++ ) {
+	     
+		 ChangeProgressCtrl(i) ;
+
+		 GetDataMgrData ("DM_ECO_NOTICE_LIB_CODE","LIB_CODE",LibraryCode ,i) ;
+         GetDataMgrData ("DM_ECO_NOTICE_LIB_CODE","LIB_NAME",LibraryName  ,i) ;
+
+	   	ids = AllInputLibraryInfo( LibraryCode, LibraryName, CenterParentRecKey );
+		if ( ids<0 ) {
+			if ( ids == 100 ) return;
+			AfxMessageBox ( "입력을 실패했습니다.", MB_OK);
+			return;
+		}
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////////////
+	// 마지막으로 Center에 공지사항을 저장한다.
+	/////////////////////////////////////////////////////////////////////////////////////////
+
+	ids = AllInput( CenterParentRecKey, LocalLibraryCode, LocalLibraryName );
+	
+
+	
+
+	MsqBuf.Format ( "전체 %d개 도서관에 공지사항을 보냈습니다.", RecCnt );
+	MessageBox( MsqBuf, "도서관전체보내기", MB_OK );
+
+    CESL_ControlMgr *pCM = FindCM("CM_ECO_NOTICE_INPUT");
+	if(pCM == NULL) {
+		AfxMessageBox("FindCM() Error~!");
+		return ;
+	}
+
+	pCM->AllControlClear();
+//	EndDialog(1);
+}
+
+
+int CECO_NOTICE_MANAGERDlg::AllInput( CString pParentRecKey, CString pLocalLibraryCode, CString pLocalLibraryName )
+{
+	CESL_DataMgr  * m_pDataMgr;
+	
+	CString         Subject, Contents;
+	CString         CurrentDate;
+	int             RowCnt;
+
+    CString AttrData [10];
+    CString AttrName [10] = { "REC_KEY"         , // 레코드KEY
+		                    "send_libid"      , // 보낸 도서관 코드
+							"send_libname"    , // 보낸 도서관 명
+							"recv_libid"      , // 받는 도서관 코드
+							"recv_libname"    , // 받는 도서관 명
+							"title"           , // 제목
+							"contents"        , // 내용
+							"confirm"         , // 확인
+							"srflag"          , // 보낸공지사항
+							"trans_date"      };
+	CString    FieldType[10] = { "NUMERIC", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING", "STRING" };
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 1. 입력항목을 체크한다.
+	/////////////////////////////////////////////////////////////////////////////////////
+	
+	GetControlData ("CM_ECO_NOTICE_INPUT","제목",Subject,-1) ;
+	
+	GetControlData ("CM_ECO_NOTICE_INPUT","내용",Contents ,-1) ;
+
+
+	if ( Subject.IsEmpty () || Contents.IsEmpty () ) {
+		MessageBox( "데이타를 입력하십시오.", "입력항목체크", MB_OK );
+		return 100;
+	}
+
+	AttrData[0] = pParentRecKey;
+	AttrData[1] = pLocalLibraryCode;
+	AttrData[2] = pLocalLibraryName;
+	AttrData[3] = "";
+	AttrData[4] = "전체도서관";
+	AttrData[5] = Subject;
+	AttrData[6] = Contents;
+	AttrData[7] = "0";
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 3. Local 저장일때는 보낸 공지사항으로 설정
+	/////////////////////////////////////////////////////////////////////////////////////
+    if ( m_SERVER_TYPE == "LS" ) {
+		AttrData[8] = "1";
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 4. Center 저장일때는 받은 공지사항으로 설정
+	/////////////////////////////////////////////////////////////////////////////////////
+	} else {
+		AttrData[8] = "1";
+	}
+   
+	CTime t = CTime::GetCurrentTime ();
+	CurrentDate.Format ("%d/%d/%d",t.GetYear (),t.GetMonth (),t.GetDay ()) ;
+	AttrData[9] = CurrentDate;
+
+    m_pDataMgr = FindDM("DM_ECO_NOTICE_INPUT") ;
+	if(m_pDataMgr == NULL) {
+		AfxMessageBox ("FindDM() Error~!");
+		return - 5 ;
+	}
+
+    RowCnt = m_pDataMgr->GetRowCount ();
+
+/*
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 5. Local DB 저장일때는 Memory에도 저장
+	/////////////////////////////////////////////////////////////////////////////////////
+	if ( m_SERVER_TYPE == "LS" ) {
+	
+		for(int i =0 ; i <10;i++) {
+        m_pDataMgr->AddDBFieldData (AttrName[i],FieldType[i],AttrData[i]) ;
+        }
+		m_pDataMgr->MakeInsertFrame ("ECO_NOTICE_TBL");
+	   
+	/////////////////////////////////////////////////////////////////////////////////////
+	// 6. Center DB 저장일때는 DB만 저장
+	/////////////////////////////////////////////////////////////////////////////////////
+	} 
+	else */
+	if( m_SERVER_TYPE == "ES")
+	{
+	   	 CRS_SQL m_rs_sql(this);
+		 int FieldType[10] = { 2,1,1,1,1,1,1,1,1,1};
+		 m_rs_sql.ES_InsertRow ("ECO_NOTICE_TBL",10,AttrName,AttrData,FieldType,TRUE) ;
+	}
+
+	return 0;
+}
+
+int CECO_NOTICE_MANAGERDlg::InitProgress (int nRange)
+{
+	m_ProgressCtrl.SetRange (0,nRange) ;
+	m_ProgressCtrl.SetPos (0) ;
+    
+	pCnt = (CStatic *)GetDlgItem(IDC_sCount) ;
+	pCnt->SetWindowText ("진행상태: 0%");
+
+	return 0 ;
+}
+
+int CECO_NOTICE_MANAGERDlg::ChangeProgressCtrl(int nRange)
+{
+	int nLower, nUpper ;
+
+	m_ProgressCtrl.GetRange (nLower,nUpper) ;
+	if(nRange <= 0 ) nRange = 1 ;
+
+	int nPos = ((nRange*100)/nUpper) ;
+	
+	m_ProgressCtrl.SetPos (nRange) ;
+    
+    CString sPos ;
+	sPos.Format ("진행상태 : %d(%d/%d)" , nPos,nRange,nUpper  );
+    
+    pCnt = (CStatic *)GetDlgItem(IDC_sCount) ;
+	pCnt->SetWindowText (sPos);
+
+	return 0 ;
+}
+
+void CECO_NOTICE_MANAGERDlg::OnSelchangeTab1(NMHDR* pNMHDR, LRESULT* pResult) 
+{
+	int nIndex = m_pTabCtrl->GetCurSel();
+	Display(nIndex);	
+	*pResult = 0;
+}
+
+INT CECO_NOTICE_MANAGERDlg::GridDisplayEventProc(CString &strGridAlias, INT nRow, INT nCol, CString &strDMFieldAlias, CString &str)
+{
+	CString strTmpData, strPriceInfo, strPrice, strCurrencyCode;
+
+	if(strDMFieldAlias == _T("확인"))
+	{
+		strTmpData = m_pDM->GetCellData(_T("확인"), nRow);
+		
+		if		( strTmpData == _T("0") )
+		{
+			str = "미확인";
+		}
+		else 
+		{
+			str = "확인";
+		}
+		m_pDM->SetCellData(_T("확인여부"), str, nRow);
+	}
+
+	return 0;
+}
+
+void CECO_NOTICE_MANAGERDlg::OnCancel2() 
+{
+	EndDialog(1);	
+}
+
+int CECO_NOTICE_MANAGERDlg::DoModal() 
+{
+	// TODO: Add your specialized code here and/or call the base class
+	
+	return CDialog::DoModal();
+}

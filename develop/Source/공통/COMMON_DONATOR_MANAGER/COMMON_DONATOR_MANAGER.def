@@ -1,0 +1,11 @@
+; COMMON_DONATOR_MANAGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "COMMON_DONATOR_MANAGER"
+DESCRIPTION  'COMMON_DONATOR_MANAGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

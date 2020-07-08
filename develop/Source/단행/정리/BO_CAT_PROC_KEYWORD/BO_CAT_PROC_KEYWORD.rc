@@ -1,0 +1,525 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_CAT_PROC_KEYWORD.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,19,103
+ PRODUCTVERSION 2005,8,19,103
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_CAT_PROC_KEYWORD DLL\0"
+            VALUE "FileVersion", "2005, 08, 19, 103\0"
+            VALUE "InternalName", "BO_CAT_PROC_KEYWORD\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_CAT_PROC_KEYWORD.DLL\0"
+            VALUE "ProductName", "BO_CAT_PROC_KEYWORD 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 19, 103\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_CAT_PROC_KEYWORD_0000 DIALOGEX 0, 0, 387, 239
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "키워드생성"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확  인",IDOK,276,217,50,15
+    PUSHBUTTON      "닫  기",IDCANCEL,327,217,48,15
+    PUSHBUTTON      "불용어",IDC_bUNLESS_WORD_INFO,13,217,50,15
+    PUSHBUTTON      "조  사",IDC_bAUX_WORD,65,217,50,15
+    PUSHBUTTON      "단  어",IDC_bWORD,117,217,50,15
+    PUSHBUTTON      "Keyword 재생성",IDC_bKEYWORD,189,217,66,15
+    GROUPBOX        "MARC",IDC_STATIC,3,6,381,136
+    GROUPBOX        "Keyword",IDC_STATIC,3,147,381,62
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,213,381,23,WS_EX_DLGMODALFRAME
+    EDITTEXT        IDC_eKEYWORD,10,158,368,46,ES_MULTILINE | ES_UPPERCASE | ES_AUTOVSCROLL | ES_AUTOHSCROLL
+    CONTROL         "",IDC_reditKey,"RICHEDIT20W",WS_BORDER | WS_VSCROLL | WS_TABSTOP | 0x1044,9,15,369,122
+END
+
+IDD_BO_CAT_PROC_KEYWORD_UNLESS DIALOGEX 0, 0, 401, 251
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "불용어관리"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "시작불용어",IDC_STATIC,10,11,41,8
+    EDITTEXT        IDC_eUNLESS_WORD,57,8,83,13,ES_AUTOHSCROLL
+    LTEXT           "부터",IDC_STATIC,146,11,20,8
+    PUSHBUTTON      "검  색",IDC_bSEARCH,166,7,50,15
+    PUSHBUTTON      "수  정",IDC_bUPDATE,287,7,50,15
+    PUSHBUTTON      "삭  제",IDC_bDELETE_BCPK,341,7,50,15
+    PUSHBUTTON      "출  력",IDC_bPRINT,240,71,50,15,NOT WS_VISIBLE
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,220,23,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "입  력",IDC_bINPUT,233,7,50,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,226,3,171,23,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "종  료",IDCANCEL,341,229,50,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,225,394,23,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_GRD_UNLESS,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,3,28,394,196
+END
+
+IDD_BO_CAT_PROC_KEYWORD_UNLESS_INPUT DIALOGEX 0, 0, 242, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "입  력"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "불 용 어",IDC_STATIC,25,15,33,8
+    PUSHBUTTON      "닫  기",IDCANCEL,196,40,40,15
+    PUSHBUTTON      "확  인",IDOK,151,40,43,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,36,235,23,WS_EX_DLGMODALFRAME
+    EDITTEXT        IDC_eUNLESS_WORD,67,12,164,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,235,31,WS_EX_DLGMODALFRAME
+END
+
+9121 DIALOGEX 0, 0, 242, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "수  정"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "불 용 어",IDC_STATIC,25,15,33,8
+    PUSHBUTTON      "이  전",IDC_bPREV,8,40,40,15
+    PUSHBUTTON      "다  음",IDC_bNEXT,50,40,40,15
+    PUSHBUTTON      "닫  기",IDCANCEL,196,40,40,15
+    PUSHBUTTON      "확  인",IDOK,151,40,43,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,36,235,23,WS_EX_DLGMODALFRAME
+    EDITTEXT        IDC_eUNLESS_WORD,67,12,164,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,235,31,WS_EX_DLGMODALFRAME
+END
+
+IDD_BO_CAT_AUXILIARY_WORD_0100 DIALOGEX 0, 0, 401, 251
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "조사관리"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "조    사",IDC_STATIC,17,11,33,8
+    EDITTEXT        IDC_eAUX_WORD,55,8,83,13,ES_AUTOHSCROLL
+    LTEXT           "부터",IDC_STATIC,143,11,20,8
+    PUSHBUTTON      "검  색",IDC_bSEARCH,170,7,50,15
+    PUSHBUTTON      "수  정",IDC_bUPDATE,288,7,50,15
+    PUSHBUTTON      "삭  제",IDC_bDELETE_BCPK,342,7,50,15
+    PUSHBUTTON      "출  력",IDC_bPRINT,233,73,50,15,NOT WS_VISIBLE
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,222,23,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "입  력",IDC_bINPUT,234,7,50,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,228,3,170,23,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "종  료",IDCANCEL,342,229,50,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,225,394,23,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_GRD_AUXILIARY,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,3,28,395,196
+END
+
+IDD_BO_CAT_AUXILIARY_WORD_0300 DIALOGEX 0, 0, 242, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "수  정"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "조  사",IDC_STATIC,25,15,25,8
+    PUSHBUTTON      "이  전",IDC_bPREV,8,40,40,15
+    PUSHBUTTON      "다  음",IDC_bNEXT,50,40,40,15
+    PUSHBUTTON      "닫  기",IDCANCEL,196,40,40,15
+    PUSHBUTTON      "확  인",IDOK,151,40,43,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,36,235,23,WS_EX_DLGMODALFRAME
+    EDITTEXT        IDC_eUNLESS_WORD,67,12,164,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,235,31,WS_EX_DLGMODALFRAME
+END
+
+IDD_BO_CAT_AUXILIARY_WORD_0200 DIALOGEX 0, 0, 242, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "입  력"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "조  사",IDC_STATIC,25,15,25,8
+    EDITTEXT        IDC_eUNLESS_WORD,67,12,164,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,235,31,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "닫  기",IDCANCEL,196,40,40,15
+    PUSHBUTTON      "확  인",IDOK,151,40,43,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,36,235,23,WS_EX_DLGMODALFRAME
+END
+
+IDD_BO_CAT_WORD_0100 DIALOGEX 0, 0, 403, 251
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "단어관리"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "단    어",IDC_STATIC,17,11,33,8
+    EDITTEXT        IDC_eWORD,55,8,83,13,ES_AUTOHSCROLL
+    LTEXT           "부터",IDC_STATIC,143,11,20,8
+    PUSHBUTTON      "검  색",IDC_bSEARCH,171,7,50,15
+    PUSHBUTTON      "수  정",IDC_bUPDATE,289,7,50,15
+    PUSHBUTTON      "삭  제",IDC_bDELETE_BCPK,343,7,50,15
+    PUSHBUTTON      "출  력",IDC_bPRINT,232,73,50,15,NOT WS_VISIBLE
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,223,23,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "입  력",IDC_bINPUT,235,7,50,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,229,3,170,23,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "종  료",IDCANCEL,343,229,50,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,225,396,23,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_GRD_WORD,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,3,28,396,196
+END
+
+IDD_BO_CAT_WORD_0300 DIALOGEX 0, 0, 242, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "수  정"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "단  어",IDC_STATIC,25,15,25,8
+    EDITTEXT        IDC_eUNLESS_WORD,67,12,164,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,235,31,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "이  전",IDC_bPREV,8,40,40,15
+    PUSHBUTTON      "다  음",IDC_bNEXT,50,40,40,15
+    PUSHBUTTON      "닫  기",IDCANCEL,196,40,40,15
+    PUSHBUTTON      "확  인",IDOK,151,40,43,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,36,235,23,WS_EX_DLGMODALFRAME
+END
+
+IDD_BO_CAT_WORD_0200 DIALOGEX 0, 0, 242, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "입  력"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "단  어",IDC_STATIC,25,15,25,8
+    EDITTEXT        IDC_eUNLESS_WORD,67,12,164,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,235,31,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "닫  기",IDCANCEL,196,40,40,15
+    PUSHBUTTON      "확  인",IDOK,151,40,43,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,36,235,23,WS_EX_DLGMODALFRAME
+END
+
+IDD_BO_CAT_PROC_KEYWORD_UNLESS_UPDATE DIALOGEX 0, 0, 242, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "수  정"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "불 용 어",IDC_STATIC,25,15,33,8
+    PUSHBUTTON      "닫  기",IDCANCEL,196,40,40,15
+    PUSHBUTTON      "확  인",IDOK,151,40,43,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,36,235,23,WS_EX_DLGMODALFRAME
+    EDITTEXT        IDC_eUNLESS_WORD,67,12,164,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,235,31,WS_EX_DLGMODALFRAME
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BO_CAT_PROC_KEYWORD_0000, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 384
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_BO_CAT_PROC_KEYWORD_UNLESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_BO_CAT_PROC_KEYWORD_UNLESS_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 239
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_BO_CAT_AUXILIARY_WORD_0100, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_BO_CAT_AUXILIARY_WORD_0300, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 239
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_BO_CAT_AUXILIARY_WORD_0200, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 239
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_BO_CAT_WORD_0100, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        BOTTOMMARGIN, 248
+        HORZGUIDE, 3
+    END
+
+    IDD_BO_CAT_WORD_0300, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 239
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_BO_CAT_WORD_0200, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 239
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_BO_CAT_PROC_KEYWORD_UNLESS_UPDATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 239
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 60
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BO_CAT_PROC_KEYWORD_UNLESS DLGINIT
+BEGIN
+    IDC_GRD_UNLESS, 0x37a, 605, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4750, 0x0000, 0x1e63, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x000a, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0098, 
+0x0000, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xc120, 0xc815, 
+0x007c, 0x005e, 0xbcf5, 0xbcf8, 0x007c, 0x005e, 0xb4f1, 0xb85d, 0xbc88, 
+0xd638, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 
+0xbcf8, 0xd45c, 0xc81c, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 
+0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xc800, 0xc791, 
+0xc790, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xbc1c, 0xd589, 
+0xc790, 0x0020, 0x0020, 0x007c, 0x005e, 0xbc1c, 0xd589, 0xb144, 0x0020, 
+0x0020, 0x007c, 0x005e, 0xd615, 0xd0dc, 0xad6c, 0xbd84, 0x007c, 0x005e, 
+0xb9e4, 0xccb4, 0xad6c, 0xbd84, 0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 
+0x0000, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0x0012, 0x8000, 0xffff, 0xffff, 0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 
+0xbf80, 0x0000, 0xbf80, 0x0001, 0x0000, 0x000a, 0x0000, 0x0000, 0x0000, 
+0x0005, 0xffff, 0x0000, 0xffff, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 
+0x8101, 0x0000, 0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 
+0x0000, 0x0000, 0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 
+0xb84b, 0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_BO_CAT_AUXILIARY_WORD_0100 DLGINIT
+BEGIN
+    IDC_GRD_AUXILIARY, 0x37a, 605, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x476b, 0x0000, 0x1e63, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x000a, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0098, 
+0x0000, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xc120, 0xc815, 
+0x007c, 0x005e, 0xbcf5, 0xbcf8, 0x007c, 0x005e, 0xb4f1, 0xb85d, 0xbc88, 
+0xd638, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 
+0xbcf8, 0xd45c, 0xc81c, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 
+0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xc800, 0xc791, 
+0xc790, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xbc1c, 0xd589, 
+0xc790, 0x0020, 0x0020, 0x007c, 0x005e, 0xbc1c, 0xd589, 0xb144, 0x0020, 
+0x0020, 0x007c, 0x005e, 0xd615, 0xd0dc, 0xad6c, 0xbd84, 0x007c, 0x005e, 
+0xb9e4, 0xccb4, 0xad6c, 0xbd84, 0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 
+0x0000, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0x0012, 0x8000, 0xffff, 0xffff, 0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 
+0xbf80, 0x0000, 0xbf80, 0x0001, 0x0000, 0x000a, 0x0000, 0x0000, 0x0000, 
+0x0005, 0xffff, 0x0000, 0xffff, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 
+0x8101, 0x0000, 0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 
+0x0000, 0x0000, 0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 
+0xb84b, 0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_BO_CAT_WORD_0100 DLGINIT
+BEGIN
+    IDC_GRD_WORD, 0x37a, 605, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x47a0, 0x0000, 0x1e63, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x000a, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0098, 
+0x0000, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xc120, 0xc815, 
+0x007c, 0x005e, 0xbcf5, 0xbcf8, 0x007c, 0x005e, 0xb4f1, 0xb85d, 0xbc88, 
+0xd638, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 
+0xbcf8, 0xd45c, 0xc81c, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 
+0x0020, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xc800, 0xc791, 
+0xc790, 0x0020, 0x0020, 0x0020, 0x0020, 0x007c, 0x005e, 0xbc1c, 0xd589, 
+0xc790, 0x0020, 0x0020, 0x007c, 0x005e, 0xbc1c, 0xd589, 0xb144, 0x0020, 
+0x0020, 0x007c, 0x005e, 0xd615, 0xd0dc, 0xad6c, 0xbd84, 0x007c, 0x005e, 
+0xb9e4, 0xccb4, 0xad6c, 0xbd84, 0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 
+0x0000, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0x0012, 0x8000, 0xffff, 0xffff, 0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 
+0xbf80, 0x0000, 0xbf80, 0x0001, 0x0000, 0x000a, 0x0000, 0x0000, 0x0000, 
+0x0001, 0xffff, 0x0000, 0xffff, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 
+0x8101, 0x0000, 0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 
+0x0000, 0x0000, 0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 
+0xb84b, 0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_CAT_PROC_KEYWORD.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

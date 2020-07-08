@@ -1,0 +1,7 @@
+; BL_LOC_2100.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BL_LOC_2100"
+DESCRIPTION  'BL_LOC_2100 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

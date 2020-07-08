@@ -1,0 +1,137 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "BL_SE_LOC_1500"="..\..\..\연속\열람\장서관리\BL_SE_LOC_1500\BL_SE_LOC_1500.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_API"="..\..\..\공통\BO_ACQ_API\BO_ACQ_API.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_LOAN_USER_SEARCH_MGR"="..\BO_ACQ_LOAN_USER_SEARCH_MGR\BO_ACQ_LOAN_USER_SEARCH_MGR.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_REQUEST_DATA_MANAGER"=".\BO_ACQ_REQUEST_DATA_MANAGER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_SEARCH_MANAGER"="..\BO_ACQ_SEARCH_MANAGER\BO_ACQ_SEARCH_MANAGER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_ACQ_SPECIES_FORM"="..\..\..\공통\BO_ACQ_SPECIES_FORM\BO_ACQ_SPECIES_FORM.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_LOC_3300"="..\..\열람\장서관리\BO_LOC_3300\BO_LOC_3300.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ESL"="..\..\..\ESL\ESL\ESL.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "LOC_CommonAPI"="..\..\열람\장서관리\LOC_CommonAPI\LOC_CommonAPI.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SE_LOC_1500"="..\..\..\연속\열람\SE_LOC_1500\SE_LOC_1500.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

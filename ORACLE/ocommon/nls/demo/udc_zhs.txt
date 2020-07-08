@@ -1,0 +1,2209 @@
+#------------------------------------------------------------------------------
+#
+# Copyright (c) Oracle Corporation 1998. All Rights Reserved.
+#
+#------------------------------------------------------------------------------
+#
+# Name:          Mapping table from UDC to ISO 10646(Unicode) Private Use 
+#                Area(PUA) for
+#                SIMPLIFIED CHINESE character sets of Oracle NLSRTL
+#
+# Created Date:  Tue Dec 22 15:38:02 1998
+
+#
+# Table Version: It is generated from NLSRTL Version 3.4.0.0.0 - Production.
+#
+# Table Owner:   Oracle Corporation
+#
+# Tables:        This file includes two tables
+#
+#                Table 1: Character sets which belong to SIMPLIFIED CHINESE language
+#
+#                Table 2: Mapping between PUA and UDC values of all character
+#                         set which has PUA mapping (stated 'yes' in Table 1.)
+#
+# Table 1 format:
+#                Columns separated by spaces:
+#                    Column 1: (pos.  3-30) character set name
+#                    Column 2: (pos. 32-35) character set id
+#                    Column 3: (pos. 37-39) has PUA mapping (yes/no)?
+#
+#                The entries are in Oracle character set id order.
+#
+# Table 2 format:
+#                Columns separated by spaces
+#                   Column 1: (pos.  1-10) ISO 10646 code in hex
+#                   Column 2: (pos. 12-21) value of 1st character set in hex
+#                   Column 3: (pos. 23-32) value of 2nd character set in hex
+#                     :
+#                     :
+#                   Column N: (pos. xx-xx) value of Nth character set in hex
+#                The entries are in ISO 10646 code value order.
+#
+#------------------------------------------------------------------------------
+# Table 1.
+# CHARACTER SET NAME            ID  PUA?
+# ---------------------------- ---- ---
+# ZHS16CGB231280                850 no
+# ZHS16MACCGB231280             851 no
+# ZHS16GBK                      852 yes
+# ZHS16DBCS                     853 yes
+# ZHS16CGB231280FIXED          1850 no
+# ZHS16GBKFIXED                1852 yes
+# ZHS16DBCSFIXED               1853 yes
+#------------------------------------------------------------------------------
+# Table 2.
+# PUA      ID:852     ID:853     ID:1852    ID:1853   
+#--------- ---------- ---------- ---------- ----------
+E000       AAA1       7641       AAA1       7641      
+E001       AAA2       7642       AAA2       7642      
+E002       AAA3       7643       AAA3       7643      
+E003       AAA4       7644       AAA4       7644      
+E004       AAA5       7645       AAA5       7645      
+E005       AAA6       7646       AAA6       7646      
+E006       AAA7       7647       AAA7       7647      
+E007       AAA8       7648       AAA8       7648      
+E008       AAA9       7649       AAA9       7649      
+E009       AAAA       764A       AAAA       764A      
+E00A       AAAB       764B       AAAB       764B      
+E00B       AAAC       764C       AAAC       764C      
+E00C       AAAD       764D       AAAD       764D      
+E00D       AAAE       764E       AAAE       764E      
+E00E       AAAF       764F       AAAF       764F      
+E00F       AAB0       7650       AAB0       7650      
+E010       AAB1       7651       AAB1       7651      
+E011       AAB2       7652       AAB2       7652      
+E012       AAB3       7653       AAB3       7653      
+E013       AAB4       7654       AAB4       7654      
+E014       AAB5       7655       AAB5       7655      
+E015       AAB6       7656       AAB6       7656      
+E016       AAB7       7657       AAB7       7657      
+E017       AAB8       7658       AAB8       7658      
+E018       AAB9       7659       AAB9       7659      
+E019       AABA       765A       AABA       765A      
+E01A       AABB       765B       AABB       765B      
+E01B       AABC       765C       AABC       765C      
+E01C       AABD       765D       AABD       765D      
+E01D       AABE       765E       AABE       765E      
+E01E       AABF       765F       AABF       765F      
+E01F       AAC0       7660       AAC0       7660      
+E020       AAC1       7661       AAC1       7661      
+E021       AAC2       7662       AAC2       7662      
+E022       AAC3       7663       AAC3       7663      
+E023       AAC4       7664       AAC4       7664      
+E024       AAC5       7665       AAC5       7665      
+E025       AAC6       7666       AAC6       7666      
+E026       AAC7       7667       AAC7       7667      
+E027       AAC8       7668       AAC8       7668      
+E028       AAC9       7669       AAC9       7669      
+E029       AACA       766A       AACA       766A      
+E02A       AACB       766B       AACB       766B      
+E02B       AACC       766C       AACC       766C      
+E02C       AACD       766D       AACD       766D      
+E02D       AACE       766E       AACE       766E      
+E02E       AACF       766F       AACF       766F      
+E02F       AAD0       7670       AAD0       7670      
+E030       AAD1       7671       AAD1       7671      
+E031       AAD2       7672       AAD2       7672      
+E032       AAD3       7673       AAD3       7673      
+E033       AAD4       7674       AAD4       7674      
+E034       AAD5       7675       AAD5       7675      
+E035       AAD6       7676       AAD6       7676      
+E036       AAD7       7677       AAD7       7677      
+E037       AAD8       7678       AAD8       7678      
+E038       AAD9       7679       AAD9       7679      
+E039       AADA       767A       AADA       767A      
+E03A       AADB       767B       AADB       767B      
+E03B       AADC       767C       AADC       767C      
+E03C       AADD       767D       AADD       767D      
+E03D       AADE       767E       AADE       767E      
+E03E       AADF       767F       AADF       767F      
+E03F       AAE0       7680       AAE0       7680      
+E040       AAE1       7682       AAE1       7682      
+E041       AAE2       7683       AAE2       7683      
+E042       AAE3       7684       AAE3       7684      
+E043       AAE4       7685       AAE4       7685      
+E044       AAE5       7686       AAE5       7686      
+E045       AAE6       7687       AAE6       7687      
+E046       AAE7       7688       AAE7       7688      
+E047       AAE8       7689       AAE8       7689      
+E048       AAE9       768A       AAE9       768A      
+E049       AAEA       768B       AAEA       768B      
+E04A       AAEB       768C       AAEB       768C      
+E04B       AAEC       768D       AAEC       768D      
+E04C       AAED       768E       AAED       768E      
+E04D       AAEE       768F       AAEE       768F      
+E04E       AAEF       7690       AAEF       7690      
+E04F       AAF0       7691       AAF0       7691      
+E050       AAF1       7692       AAF1       7692      
+E051       AAF2       7693       AAF2       7693      
+E052       AAF3       7694       AAF3       7694      
+E053       AAF4       7695       AAF4       7695      
+E054       AAF5       7696       AAF5       7696      
+E055       AAF6       7697       AAF6       7697      
+E056       AAF7       7698       AAF7       7698      
+E057       AAF8       7699       AAF8       7699      
+E058       AAF9       769A       AAF9       769A      
+E059       AAFA       769B       AAFA       769B      
+E05A       AAFB       769C       AAFB       769C      
+E05B       AAFC       769D       AAFC       769D      
+E05C       AAFD       769E       AAFD       769E      
+E05D       AAFE       769F       AAFE       769F      
+E05E       ABA1       76A0       ABA1       76A0      
+E05F       ABA2       76A1       ABA2       76A1      
+E060       ABA3       76A2       ABA3       76A2      
+E061       ABA4       76A3       ABA4       76A3      
+E062       ABA5       76A4       ABA5       76A4      
+E063       ABA6       76A5       ABA6       76A5      
+E064       ABA7       76A6       ABA7       76A6      
+E065       ABA8       76A7       ABA8       76A7      
+E066       ABA9       76A8       ABA9       76A8      
+E067       ABAA       76A9       ABAA       76A9      
+E068       ABAB       76AA       ABAB       76AA      
+E069       ABAC       76AB       ABAC       76AB      
+E06A       ABAD       76AC       ABAD       76AC      
+E06B       ABAE       76AD       ABAE       76AD      
+E06C       ABAF       76AE       ABAF       76AE      
+E06D       ABB0       76AF       ABB0       76AF      
+E06E       ABB1       76B0       ABB1       76B0      
+E06F       ABB2       76B1       ABB2       76B1      
+E070       ABB3       76B2       ABB3       76B2      
+E071       ABB4       76B3       ABB4       76B3      
+E072       ABB5       76B4       ABB5       76B4      
+E073       ABB6       76B5       ABB6       76B5      
+E074       ABB7       76B6       ABB7       76B6      
+E075       ABB8       76B7       ABB8       76B7      
+E076       ABB9       76B8       ABB9       76B8      
+E077       ABBA       76B9       ABBA       76B9      
+E078       ABBB       76BA       ABBB       76BA      
+E079       ABBC       76BB       ABBC       76BB      
+E07A       ABBD       76BC       ABBD       76BC      
+E07B       ABBE       76BD       ABBE       76BD      
+E07C       ABBF       76BE       ABBF       76BE      
+E07D       ABC0       76BF       ABC0       76BF      
+E07E       ABC1       76C0       ABC1       76C0      
+E07F       ABC2       76C1       ABC2       76C1      
+E080       ABC3       76C2       ABC3       76C2      
+E081       ABC4       76C3       ABC4       76C3      
+E082       ABC5       76C4       ABC5       76C4      
+E083       ABC6       76C5       ABC6       76C5      
+E084       ABC7       76C6       ABC7       76C6      
+E085       ABC8       76C7       ABC8       76C7      
+E086       ABC9       76C8       ABC9       76C8      
+E087       ABCA       76C9       ABCA       76C9      
+E088       ABCB       76CA       ABCB       76CA      
+E089       ABCC       76CB       ABCC       76CB      
+E08A       ABCD       76CC       ABCD       76CC      
+E08B       ABCE       76CD       ABCE       76CD      
+E08C       ABCF       76CE       ABCF       76CE      
+E08D       ABD0       76CF       ABD0       76CF      
+E08E       ABD1       76D0       ABD1       76D0      
+E08F       ABD2       76D1       ABD2       76D1      
+E090       ABD3       76D2       ABD3       76D2      
+E091       ABD4       76D3       ABD4       76D3      
+E092       ABD5       76D4       ABD5       76D4      
+E093       ABD6       76D5       ABD6       76D5      
+E094       ABD7       76D6       ABD7       76D6      
+E095       ABD8       76D7       ABD8       76D7      
+E096       ABD9       76D8       ABD9       76D8      
+E097       ABDA       76D9       ABDA       76D9      
+E098       ABDB       76DA       ABDB       76DA      
+E099       ABDC       76DB       ABDC       76DB      
+E09A       ABDD       76DC       ABDD       76DC      
+E09B       ABDE       76DD       ABDE       76DD      
+E09C       ABDF       76DE       ABDF       76DE      
+E09D       ABE0       76DF       ABE0       76DF      
+E09E       ABE1       76E0       ABE1       76E0      
+E09F       ABE2       76E1       ABE2       76E1      
+E0A0       ABE3       76E2       ABE3       76E2      
+E0A1       ABE4       76E3       ABE4       76E3      
+E0A2       ABE5       76E4       ABE5       76E4      
+E0A3       ABE6       76E5       ABE6       76E5      
+E0A4       ABE7       76E6       ABE7       76E6      
+E0A5       ABE8       76E7       ABE8       76E7      
+E0A6       ABE9       76E8       ABE9       76E8      
+E0A7       ABEA       76E9       ABEA       76E9      
+E0A8       ABEB       76EA       ABEB       76EA      
+E0A9       ABEC       76EB       ABEC       76EB      
+E0AA       ABED       76EC       ABED       76EC      
+E0AB       ABEE       76ED       ABEE       76ED      
+E0AC       ABEF       76EE       ABEF       76EE      
+E0AD       ABF0       76EF       ABF0       76EF      
+E0AE       ABF1       76F0       ABF1       76F0      
+E0AF       ABF2       76F1       ABF2       76F1      
+E0B0       ABF3       76F2       ABF3       76F2      
+E0B1       ABF4       76F3       ABF4       76F3      
+E0B2       ABF5       76F4       ABF5       76F4      
+E0B3       ABF6       76F5       ABF6       76F5      
+E0B4       ABF7       76F6       ABF7       76F6      
+E0B5       ABF8       76F7       ABF8       76F7      
+E0B6       ABF9       76F8       ABF9       76F8      
+E0B7       ABFA       76F9       ABFA       76F9      
+E0B8       ABFB       76FA       ABFB       76FA      
+E0B9       ABFC       76FB       ABFC       76FB      
+E0BA       ABFD       76FC       ABFD       76FC      
+E0BB       ABFE       76FD       ABFE       76FD      
+E0BC       ACA1       7741       ACA1       7741      
+E0BD       ACA2       76FE       ACA2       76FE      
+E0BE       ACA3       7743       ACA3       7743      
+E0BF       ACA4       7744       ACA4       7744      
+E0C0       ACA5       7745       ACA5       7745      
+E0C1       ACA6       7746       ACA6       7746      
+E0C2       ACA7       7747       ACA7       7747      
+E0C3       ACA8       7748       ACA8       7748      
+E0C4       ACA9       7749       ACA9       7749      
+E0C5       ACAA       774A       ACAA       774A      
+E0C6       ACAB       774B       ACAB       774B      
+E0C7       ACAC       774C       ACAC       774C      
+E0C8       ACAD       774D       ACAD       774D      
+E0C9       ACAE       774E       ACAE       774E      
+E0CA       ACAF       774F       ACAF       774F      
+E0CB       ACB0       7750       ACB0       7750      
+E0CC       ACB1       7751       ACB1       7751      
+E0CD       ACB2       7752       ACB2       7752      
+E0CE       ACB3       7753       ACB3       7753      
+E0CF       ACB4       7754       ACB4       7754      
+E0D0       ACB5       7755       ACB5       7755      
+E0D1       ACB6       7756       ACB6       7756      
+E0D2       ACB7       7757       ACB7       7757      
+E0D3       ACB8       7758       ACB8       7758      
+E0D4       ACB9       7759       ACB9       7759      
+E0D5       ACBA       775A       ACBA       775A      
+E0D6       ACBB       775B       ACBB       775B      
+E0D7       ACBC       775C       ACBC       775C      
+E0D8       ACBD       775D       ACBD       775D      
+E0D9       ACBE       775E       ACBE       775E      
+E0DA       ACBF       775F       ACBF       775F      
+E0DB       ACC0       7760       ACC0       7760      
+E0DC       ACC1       7761       ACC1       7761      
+E0DD       ACC2       7762       ACC2       7762      
+E0DE       ACC3       7763       ACC3       7763      
+E0DF       ACC4       7764       ACC4       7764      
+E0E0       ACC5       7765       ACC5       7765      
+E0E1       ACC6       7766       ACC6       7766      
+E0E2       ACC7       7767       ACC7       7767      
+E0E3       ACC8       7768       ACC8       7768      
+E0E4       ACC9       7769       ACC9       7769      
+E0E5       ACCA       776A       ACCA       776A      
+E0E6       ACCB       776B       ACCB       776B      
+E0E7       ACCC       776C       ACCC       776C      
+E0E8       ACCD       776D       ACCD       776D      
+E0E9       ACCE       776E       ACCE       776E      
+E0EA       ACCF       776F       ACCF       776F      
+E0EB       ACD0       7770       ACD0       7770      
+E0EC       ACD1       7771       ACD1       7771      
+E0ED       ACD2       7772       ACD2       7772      
+E0EE       ACD3       7773       ACD3       7773      
+E0EF       ACD4       7774       ACD4       7774      
+E0F0       ACD5       7775       ACD5       7775      
+E0F1       ACD6       7776       ACD6       7776      
+E0F2       ACD7       7777       ACD7       7777      
+E0F3       ACD8       7778       ACD8       7778      
+E0F4       ACD9       7779       ACD9       7779      
+E0F5       ACDA       777A       ACDA       777A      
+E0F6       ACDB       777B       ACDB       777B      
+E0F7       ACDC       777C       ACDC       777C      
+E0F8       ACDD       777D       ACDD       777D      
+E0F9       ACDE       777E       ACDE       777E      
+E0FA       ACDF       777F       ACDF       777F      
+E0FB       ACE0       7781       ACE0       7781      
+E0FC       ACE1       7782       ACE1       7782      
+E0FD       ACE2       7780       ACE2       7780      
+E0FE       ACE3       7784       ACE3       7784      
+E0FF       ACE4       7785       ACE4       7785      
+E100       ACE5       7786       ACE5       7786      
+E101       ACE6       7787       ACE6       7787      
+E102       ACE7       7788       ACE7       7788      
+E103       ACE8       7789       ACE8       7789      
+E104       ACE9       778A       ACE9       778A      
+E105       ACEA       778B       ACEA       778B      
+E106       ACEB       778C       ACEB       778C      
+E107       ACEC       778D       ACEC       778D      
+E108       ACED       778E       ACED       778E      
+E109       ACEE       778F       ACEE       778F      
+E10A       ACEF       7790       ACEF       7790      
+E10B       ACF0       7791       ACF0       7791      
+E10C       ACF1       7792       ACF1       7792      
+E10D       ACF2       7793       ACF2       7793      
+E10E       ACF3       7794       ACF3       7794      
+E10F       ACF4       7795       ACF4       7795      
+E110       ACF5       7796       ACF5       7796      
+E111       ACF6       7797       ACF6       7797      
+E112       ACF7       7798       ACF7       7798      
+E113       ACF8       7799       ACF8       7799      
+E114       ACF9       779A       ACF9       779A      
+E115       ACFA       779B       ACFA       779B      
+E116       ACFB       779C       ACFB       779C      
+E117       ACFC       779D       ACFC       779D      
+E118       ACFD       779E       ACFD       779E      
+E119       ACFE       779F       ACFE       779F      
+E11A       ADA1       77A0       ADA1       77A0      
+E11B       ADA2       77A1       ADA2       77A1      
+E11C       ADA3       77A2       ADA3       77A2      
+E11D       ADA4       77A3       ADA4       77A3      
+E11E       ADA5       77A4       ADA5       77A4      
+E11F       ADA6       77A5       ADA6       77A5      
+E120       ADA7       77A6       ADA7       77A6      
+E121       ADA8       77A7       ADA8       77A7      
+E122       ADA9       77A8       ADA9       77A8      
+E123       ADAA       77A9       ADAA       77A9      
+E124       ADAB       77AA       ADAB       77AA      
+E125       ADAC       77AB       ADAC       77AB      
+E126       ADAD       77AC       ADAD       77AC      
+E127       ADAE       77AD       ADAE       77AD      
+E128       ADAF       77AE       ADAF       77AE      
+E129       ADB0       77AF       ADB0       77AF      
+E12A       ADB1       77B0       ADB1       77B0      
+E12B       ADB2       77B1       ADB2       77B1      
+E12C       ADB3       77B2       ADB3       77B2      
+E12D       ADB4       77B3       ADB4       77B3      
+E12E       ADB5       77B4       ADB5       77B4      
+E12F       ADB6       77B5       ADB6       77B5      
+E130       ADB7       77B6       ADB7       77B6      
+E131       ADB8       77B7       ADB8       77B7      
+E132       ADB9       77B8       ADB9       77B8      
+E133       ADBA       77B9       ADBA       77B9      
+E134       ADBB       77BA       ADBB       77BA      
+E135       ADBC       77BB       ADBC       77BB      
+E136       ADBD       77BC       ADBD       77BC      
+E137       ADBE       77BD       ADBE       77BD      
+E138       ADBF       77BE       ADBF       77BE      
+E139       ADC0       77BF       ADC0       77BF      
+E13A       ADC1       77C0       ADC1       77C0      
+E13B       ADC2       77C1       ADC2       77C1      
+E13C       ADC3       77C2       ADC3       77C2      
+E13D       ADC4       77C3       ADC4       77C3      
+E13E       ADC5       77C4       ADC5       77C4      
+E13F       ADC6       77C5       ADC6       77C5      
+E140       ADC7       77C6       ADC7       77C6      
+E141       ADC8       77C7       ADC8       77C7      
+E142       ADC9       77C8       ADC9       77C8      
+E143       ADCA       77C9       ADCA       77C9      
+E144       ADCB       77CA       ADCB       77CA      
+E145       ADCC       77CB       ADCC       77CB      
+E146       ADCD       77CC       ADCD       77CC      
+E147       ADCE       77CD       ADCE       77CD      
+E148       ADCF       77CE       ADCF       77CE      
+E149       ADD0       77CF       ADD0       77CF      
+E14A       ADD1       77D0       ADD1       77D0      
+E14B       ADD2       77D1       ADD2       77D1      
+E14C       ADD3       77D2       ADD3       77D2      
+E14D       ADD4       77D3       ADD4       77D3      
+E14E       ADD5       77D4       ADD5       77D4      
+E14F       ADD6       77D5       ADD6       77D5      
+E150       ADD7       77D6       ADD7       77D6      
+E151       ADD8       77D7       ADD8       77D7      
+E152       ADD9       77D8       ADD9       77D8      
+E153       ADDA       77D9       ADDA       77D9      
+E154       ADDB       77DA       ADDB       77DA      
+E155       ADDC       77DB       ADDC       77DB      
+E156       ADDD       77DC       ADDD       77DC      
+E157       ADDE       77DD       ADDE       77DD      
+E158       ADDF       77DE       ADDF       77DE      
+E159       ADE0       77DF       ADE0       77DF      
+E15A       ADE1       77E0       ADE1       77E0      
+E15B       ADE2       77E1       ADE2       77E1      
+E15C       ADE3       77E2       ADE3       77E2      
+E15D       ADE4       77E3       ADE4       77E3      
+E15E       ADE5       77E4       ADE5       77E4      
+E15F       ADE6       77E5       ADE6       77E5      
+E160       ADE7       77E6       ADE7       77E6      
+E161       ADE8       77E7       ADE8       77E7      
+E162       ADE9       77E8       ADE9       77E8      
+E163       ADEA       77E9       ADEA       77E9      
+E164       ADEB       77EA       ADEB       77EA      
+E165       ADEC       77EB       ADEC       77EB      
+E166       ADED       77EC       ADED       77EC      
+E167       ADEE       77ED       ADEE       77ED      
+E168       ADEF       77EE       ADEF       77EE      
+E169       ADF0       77EF       ADF0       77EF      
+E16A       ADF1       77F0       ADF1       77F0      
+E16B       ADF2       77F1       ADF2       77F1      
+E16C       ADF3       77F2       ADF3       77F2      
+E16D       ADF4       77F3       ADF4       77F3      
+E16E       ADF5       77F4       ADF5       77F4      
+E16F       ADF6       77F5       ADF6       77F5      
+E170       ADF7       77F6       ADF7       77F6      
+E171       ADF8       77F7       ADF8       77F7      
+E172       ADF9       77F8       ADF9       77F8      
+E173       ADFA       77F9       ADFA       77F9      
+E174       ADFB       77FA       ADFB       77FA      
+E175       ADFC       77FB       ADFC       77FB      
+E176       ADFD       77FC       ADFD       77FC      
+E177       ADFE       77FD       ADFE       77FD      
+E178       AEA1       7841       AEA1       7841      
+E179       AEA2       7842       AEA2       7842      
+E17A       AEA3       7843       AEA3       7843      
+E17B       AEA4       77FE       AEA4       77FE      
+E17C       AEA5       7845       AEA5       7845      
+E17D       AEA6       7846       AEA6       7846      
+E17E       AEA7       7847       AEA7       7847      
+E17F       AEA8       7848       AEA8       7848      
+E180       AEA9       7849       AEA9       7849      
+E181       AEAA       784A       AEAA       784A      
+E182       AEAB       784B       AEAB       784B      
+E183       AEAC       784C       AEAC       784C      
+E184       AEAD       784D       AEAD       784D      
+E185       AEAE       784E       AEAE       784E      
+E186       AEAF       784F       AEAF       784F      
+E187       AEB0       7850       AEB0       7850      
+E188       AEB1       7851       AEB1       7851      
+E189       AEB2       7852       AEB2       7852      
+E18A       AEB3       7853       AEB3       7853      
+E18B       AEB4       7854       AEB4       7854      
+E18C       AEB5       7855       AEB5       7855      
+E18D       AEB6       7856       AEB6       7856      
+E18E       AEB7       7857       AEB7       7857      
+E18F       AEB8       7858       AEB8       7858      
+E190       AEB9       7859       AEB9       7859      
+E191       AEBA       785A       AEBA       785A      
+E192       AEBB       785B       AEBB       785B      
+E193       AEBC       785C       AEBC       785C      
+E194       AEBD       785D       AEBD       785D      
+E195       AEBE       785E       AEBE       785E      
+E196       AEBF       785F       AEBF       785F      
+E197       AEC0       7860       AEC0       7860      
+E198       AEC1       7861       AEC1       7861      
+E199       AEC2       7862       AEC2       7862      
+E19A       AEC3       7863       AEC3       7863      
+E19B       AEC4       7864       AEC4       7864      
+E19C       AEC5       7865       AEC5       7865      
+E19D       AEC6       7866       AEC6       7866      
+E19E       AEC7       7867       AEC7       7867      
+E19F       AEC8       7868       AEC8       7868      
+E1A0       AEC9       7869       AEC9       7869      
+E1A1       AECA       786A       AECA       786A      
+E1A2       AECB       786B       AECB       786B      
+E1A3       AECC       786C       AECC       786C      
+E1A4       AECD       786D       AECD       786D      
+E1A5       AECE       786E       AECE       786E      
+E1A6       AECF       786F       AECF       786F      
+E1A7       AED0       7870       AED0       7870      
+E1A8       AED1       7871       AED1       7871      
+E1A9       AED2       7872       AED2       7872      
+E1AA       AED3       7873       AED3       7873      
+E1AB       AED4       7874       AED4       7874      
+E1AC       AED5       7875       AED5       7875      
+E1AD       AED6       7876       AED6       7876      
+E1AE       AED7       7877       AED7       7877      
+E1AF       AED8       7878       AED8       7878      
+E1B0       AED9       7879       AED9       7879      
+E1B1       AEDA       787A       AEDA       787A      
+E1B2       AEDB       787B       AEDB       787B      
+E1B3       AEDC       787C       AEDC       787C      
+E1B4       AEDD       787D       AEDD       787D      
+E1B5       AEDE       787E       AEDE       787E      
+E1B6       AEDF       787F       AEDF       787F      
+E1B7       AEE0       7881       AEE0       7881      
+E1B8       AEE1       7882       AEE1       7882      
+E1B9       AEE2       7883       AEE2       7883      
+E1BA       AEE3       7884       AEE3       7884      
+E1BB       AEE4       7880       AEE4       7880      
+E1BC       AEE5       7886       AEE5       7886      
+E1BD       AEE6       7887       AEE6       7887      
+E1BE       AEE7       7888       AEE7       7888      
+E1BF       AEE8       7889       AEE8       7889      
+E1C0       AEE9       788A       AEE9       788A      
+E1C1       AEEA       788B       AEEA       788B      
+E1C2       AEEB       788C       AEEB       788C      
+E1C3       AEEC       788D       AEEC       788D      
+E1C4       AEED       788E       AEED       788E      
+E1C5       AEEE       788F       AEEE       788F      
+E1C6       AEEF       7890       AEEF       7890      
+E1C7       AEF0       7891       AEF0       7891      
+E1C8       AEF1       7892       AEF1       7892      
+E1C9       AEF2       7893       AEF2       7893      
+E1CA       AEF3       7894       AEF3       7894      
+E1CB       AEF4       7895       AEF4       7895      
+E1CC       AEF5       7896       AEF5       7896      
+E1CD       AEF6       7897       AEF6       7897      
+E1CE       AEF7       7898       AEF7       7898      
+E1CF       AEF8       7899       AEF8       7899      
+E1D0       AEF9       789A       AEF9       789A      
+E1D1       AEFA       789B       AEFA       789B      
+E1D2       AEFB       789C       AEFB       789C      
+E1D3       AEFC       789D       AEFC       789D      
+E1D4       AEFD       789E       AEFD       789E      
+E1D5       AEFE       789F       AEFE       789F      
+E1D6       AFA1       78A0       AFA1       78A0      
+E1D7       AFA2       78A1       AFA2       78A1      
+E1D8       AFA3       78A2       AFA3       78A2      
+E1D9       AFA4       78A3       AFA4       78A3      
+E1DA       AFA5       78A4       AFA5       78A4      
+E1DB       AFA6       78A5       AFA6       78A5      
+E1DC       AFA7       78A6       AFA7       78A6      
+E1DD       AFA8       78A7       AFA8       78A7      
+E1DE       AFA9       78A8       AFA9       78A8      
+E1DF       AFAA       78A9       AFAA       78A9      
+E1E0       AFAB       78AA       AFAB       78AA      
+E1E1       AFAC       78AB       AFAC       78AB      
+E1E2       AFAD       78AC       AFAD       78AC      
+E1E3       AFAE       78AD       AFAE       78AD      
+E1E4       AFAF       78AE       AFAF       78AE      
+E1E5       AFB0       78AF       AFB0       78AF      
+E1E6       AFB1       78B0       AFB1       78B0      
+E1E7       AFB2       78B1       AFB2       78B1      
+E1E8       AFB3       78B2       AFB3       78B2      
+E1E9       AFB4       78B3       AFB4       78B3      
+E1EA       AFB5       78B4       AFB5       78B4      
+E1EB       AFB6       78B5       AFB6       78B5      
+E1EC       AFB7       78B6       AFB7       78B6      
+E1ED       AFB8       78B7       AFB8       78B7      
+E1EE       AFB9       78B8       AFB9       78B8      
+E1EF       AFBA       78B9       AFBA       78B9      
+E1F0       AFBB       78BA       AFBB       78BA      
+E1F1       AFBC       78BB       AFBC       78BB      
+E1F2       AFBD       78BC       AFBD       78BC      
+E1F3       AFBE       78BD       AFBE       78BD      
+E1F4       AFBF       78BE       AFBF       78BE      
+E1F5       AFC0       78BF       AFC0       78BF      
+E1F6       AFC1       78C0       AFC1       78C0      
+E1F7       AFC2       78C1       AFC2       78C1      
+E1F8       AFC3       78C2       AFC3       78C2      
+E1F9       AFC4       78C3       AFC4       78C3      
+E1FA       AFC5       78C4       AFC5       78C4      
+E1FB       AFC6       78C5       AFC6       78C5      
+E1FC       AFC7       78C6       AFC7       78C6      
+E1FD       AFC8       78C7       AFC8       78C7      
+E1FE       AFC9       78C8       AFC9       78C8      
+E1FF       AFCA       78C9       AFCA       78C9      
+E200       AFCB       78CA       AFCB       78CA      
+E201       AFCC       78CB       AFCC       78CB      
+E202       AFCD       78CC       AFCD       78CC      
+E203       AFCE       78CD       AFCE       78CD      
+E204       AFCF       78CE       AFCF       78CE      
+E205       AFD0       78CF       AFD0       78CF      
+E206       AFD1       78D0       AFD1       78D0      
+E207       AFD2       78D1       AFD2       78D1      
+E208       AFD3       78D2       AFD3       78D2      
+E209       AFD4       78D3       AFD4       78D3      
+E20A       AFD5       78D4       AFD5       78D4      
+E20B       AFD6       78D5       AFD6       78D5      
+E20C       AFD7       78D6       AFD7       78D6      
+E20D       AFD8       78D7       AFD8       78D7      
+E20E       AFD9       78D8       AFD9       78D8      
+E20F       AFDA       78D9       AFDA       78D9      
+E210       AFDB       78DA       AFDB       78DA      
+E211       AFDC       78DB       AFDC       78DB      
+E212       AFDD       78DC       AFDD       78DC      
+E213       AFDE       78DD       AFDE       78DD      
+E214       AFDF       78DE       AFDF       78DE      
+E215       AFE0       78DF       AFE0       78DF      
+E216       AFE1       78E0       AFE1       78E0      
+E217       AFE2       78E1       AFE2       78E1      
+E218       AFE3       78E2       AFE3       78E2      
+E219       AFE4       78E3       AFE4       78E3      
+E21A       AFE5       78E4       AFE5       78E4      
+E21B       AFE6       78E5       AFE6       78E5      
+E21C       AFE7       78E6       AFE7       78E6      
+E21D       AFE8       78E7       AFE8       78E7      
+E21E       AFE9       78E8       AFE9       78E8      
+E21F       AFEA       78E9       AFEA       78E9      
+E220       AFEB       78EA       AFEB       78EA      
+E221       AFEC       78EB       AFEC       78EB      
+E222       AFED       78EC       AFED       78EC      
+E223       AFEE       78ED       AFEE       78ED      
+E224       AFEF       78EE       AFEF       78EE      
+E225       AFF0       78EF       AFF0       78EF      
+E226       AFF1       78F0       AFF1       78F0      
+E227       AFF2       78F1       AFF2       78F1      
+E228       AFF3       78F2       AFF3       78F2      
+E229       AFF4       78F3       AFF4       78F3      
+E22A       AFF5       78F4       AFF5       78F4      
+E22B       AFF6       78F5       AFF6       78F5      
+E22C       AFF7       78F6       AFF7       78F6      
+E22D       AFF8       78F7       AFF8       78F7      
+E22E       AFF9       78F8       AFF9       78F8      
+E22F       AFFA       78F9       AFFA       78F9      
+E230       AFFB       78FA       AFFB       78FA      
+E231       AFFC       78FB       AFFC       78FB      
+E232       AFFD       78FC       AFFD       78FC      
+E233       AFFE       78FD       AFFE       78FD      
+E234       F8A1       7941       F8A1       7941      
+E235       F8A2       7942       F8A2       7942      
+E236       F8A3       7943       F8A3       7943      
+E237       F8A4       7944       F8A4       7944      
+E238       F8A5       7945       F8A5       7945      
+E239       F8A6       78FE       F8A6       78FE      
+E23A       F8A7       7947       F8A7       7947      
+E23B       F8A8       7948       F8A8       7948      
+E23C       F8A9       7949       F8A9       7949      
+E23D       F8AA       794A       F8AA       794A      
+E23E       F8AB       794B       F8AB       794B      
+E23F       F8AC       794C       F8AC       794C      
+E240       F8AD       794D       F8AD       794D      
+E241       F8AE       794E       F8AE       794E      
+E242       F8AF       794F       F8AF       794F      
+E243       F8B0       7950       F8B0       7950      
+E244       F8B1       7951       F8B1       7951      
+E245       F8B2       7952       F8B2       7952      
+E246       F8B3       7953       F8B3       7953      
+E247       F8B4       7954       F8B4       7954      
+E248       F8B5       7955       F8B5       7955      
+E249       F8B6       7956       F8B6       7956      
+E24A       F8B7       7957       F8B7       7957      
+E24B       F8B8       7958       F8B8       7958      
+E24C       F8B9       7959       F8B9       7959      
+E24D       F8BA       795A       F8BA       795A      
+E24E       F8BB       795B       F8BB       795B      
+E24F       F8BC       795C       F8BC       795C      
+E250       F8BD       795D       F8BD       795D      
+E251       F8BE       795E       F8BE       795E      
+E252       F8BF       795F       F8BF       795F      
+E253       F8C0       7960       F8C0       7960      
+E254       F8C1       7961       F8C1       7961      
+E255       F8C2       7962       F8C2       7962      
+E256       F8C3       7963       F8C3       7963      
+E257       F8C4       7964       F8C4       7964      
+E258       F8C5       7965       F8C5       7965      
+E259       F8C6       7966       F8C6       7966      
+E25A       F8C7       7967       F8C7       7967      
+E25B       F8C8       7968       F8C8       7968      
+E25C       F8C9       7969       F8C9       7969      
+E25D       F8CA       796A       F8CA       796A      
+E25E       F8CB       796B       F8CB       796B      
+E25F       F8CC       796C       F8CC       796C      
+E260       F8CD       796D       F8CD       796D      
+E261       F8CE       796E       F8CE       796E      
+E262       F8CF       796F       F8CF       796F      
+E263       F8D0       7970       F8D0       7970      
+E264       F8D1       7971       F8D1       7971      
+E265       F8D2       7972       F8D2       7972      
+E266       F8D3       7973       F8D3       7973      
+E267       F8D4       7974       F8D4       7974      
+E268       F8D5       7975       F8D5       7975      
+E269       F8D6       7976       F8D6       7976      
+E26A       F8D7       7977       F8D7       7977      
+E26B       F8D8       7978       F8D8       7978      
+E26C       F8D9       7979       F8D9       7979      
+E26D       F8DA       797A       F8DA       797A      
+E26E       F8DB       797B       F8DB       797B      
+E26F       F8DC       797C       F8DC       797C      
+E270       F8DD       797D       F8DD       797D      
+E271       F8DE       797E       F8DE       797E      
+E272       F8DF       797F       F8DF       797F      
+E273       F8E0       7981       F8E0       7981      
+E274       F8E1       7982       F8E1       7982      
+E275       F8E2       7983       F8E2       7983      
+E276       F8E3       7984       F8E3       7984      
+E277       F8E4       7985       F8E4       7985      
+E278       F8E5       7986       F8E5       7986      
+E279       F8E6       7980       F8E6       7980      
+E27A       F8E7       7988       F8E7       7988      
+E27B       F8E8       7989       F8E8       7989      
+E27C       F8E9       798A       F8E9       798A      
+E27D       F8EA       798B       F8EA       798B      
+E27E       F8EB       798C       F8EB       798C      
+E27F       F8EC       798D       F8EC       798D      
+E280       F8ED       798E       F8ED       798E      
+E281       F8EE       798F       F8EE       798F      
+E282       F8EF       7990       F8EF       7990      
+E283       F8F0       7991       F8F0       7991      
+E284       F8F1       7992       F8F1       7992      
+E285       F8F2       7993       F8F2       7993      
+E286       F8F3       7994       F8F3       7994      
+E287       F8F4       7995       F8F4       7995      
+E288       F8F5       7996       F8F5       7996      
+E289       F8F6       7997       F8F6       7997      
+E28A       F8F7       7998       F8F7       7998      
+E28B       F8F8       7999       F8F8       7999      
+E28C       F8F9       799A       F8F9       799A      
+E28D       F8FA       799B       F8FA       799B      
+E28E       F8FB       799C       F8FB       799C      
+E28F       F8FC       799D       F8FC       799D      
+E290       F8FD       799E       F8FD       799E      
+E291       F8FE       799F       F8FE       799F      
+E292       F9A1       79A0       F9A1       79A0      
+E293       F9A2       79A1       F9A2       79A1      
+E294       F9A3       79A2       F9A3       79A2      
+E295       F9A4       79A3       F9A4       79A3      
+E296       F9A5       79A4       F9A5       79A4      
+E297       F9A6       79A5       F9A6       79A5      
+E298       F9A7       79A6       F9A7       79A6      
+E299       F9A8       79A7       F9A8       79A7      
+E29A       F9A9       79A8       F9A9       79A8      
+E29B       F9AA       79A9       F9AA       79A9      
+E29C       F9AB       79AA       F9AB       79AA      
+E29D       F9AC       79AB       F9AC       79AB      
+E29E       F9AD       79AC       F9AD       79AC      
+E29F       F9AE       79AD       F9AE       79AD      
+E2A0       F9AF       79AE       F9AF       79AE      
+E2A1       F9B0       79AF       F9B0       79AF      
+E2A2       F9B1       79B0       F9B1       79B0      
+E2A3       F9B2       79B1       F9B2       79B1      
+E2A4       F9B3       79B2       F9B3       79B2      
+E2A5       F9B4       79B3       F9B4       79B3      
+E2A6       F9B5       79B4       F9B5       79B4      
+E2A7       F9B6       79B5       F9B6       79B5      
+E2A8       F9B7       79B6       F9B7       79B6      
+E2A9       F9B8       79B7       F9B8       79B7      
+E2AA       F9B9       79B8       F9B9       79B8      
+E2AB       F9BA       79B9       F9BA       79B9      
+E2AC       F9BB       79BA       F9BB       79BA      
+E2AD       F9BC       79BB       F9BC       79BB      
+E2AE       F9BD       79BC       F9BD       79BC      
+E2AF       F9BE       79BD       F9BE       79BD      
+E2B0       F9BF       79BE       F9BF       79BE      
+E2B1       F9C0       79BF       F9C0       79BF      
+E2B2       F9C1       79C0       F9C1       79C0      
+E2B3       F9C2       79C1       F9C2       79C1      
+E2B4       F9C3       79C2       F9C3       79C2      
+E2B5       F9C4       79C3       F9C4       79C3      
+E2B6       F9C5       79C4       F9C5       79C4      
+E2B7       F9C6       79C5       F9C6       79C5      
+E2B8       F9C7       79C6       F9C7       79C6      
+E2B9       F9C8       79C7       F9C8       79C7      
+E2BA       F9C9       79C8       F9C9       79C8      
+E2BB       F9CA       79C9       F9CA       79C9      
+E2BC       F9CB       79CA       F9CB       79CA      
+E2BD       F9CC       79CB       F9CC       79CB      
+E2BE       F9CD       79CC       F9CD       79CC      
+E2BF       F9CE       79CD       F9CE       79CD      
+E2C0       F9CF       79CE       F9CF       79CE      
+E2C1       F9D0       79CF       F9D0       79CF      
+E2C2       F9D1       79D0       F9D1       79D0      
+E2C3       F9D2       79D1       F9D2       79D1      
+E2C4       F9D3       79D2       F9D3       79D2      
+E2C5       F9D4       79D3       F9D4       79D3      
+E2C6       F9D5       79D4       F9D5       79D4      
+E2C7       F9D6       79D5       F9D6       79D5      
+E2C8       F9D7       79D6       F9D7       79D6      
+E2C9       F9D8       79D7       F9D8       79D7      
+E2CA       F9D9       79D8       F9D9       79D8      
+E2CB       F9DA       79D9       F9DA       79D9      
+E2CC       F9DB       79DA       F9DB       79DA      
+E2CD       F9DC       79DB       F9DC       79DB      
+E2CE       F9DD       79DC       F9DD       79DC      
+E2CF       F9DE       79DD       F9DE       79DD      
+E2D0       F9DF       79DE       F9DF       79DE      
+E2D1       F9E0       79DF       F9E0       79DF      
+E2D2       F9E1       79E0       F9E1       79E0      
+E2D3       F9E2       79E1       F9E2       79E1      
+E2D4       F9E3       79E2       F9E3       79E2      
+E2D5       F9E4       79E3       F9E4       79E3      
+E2D6       F9E5       79E4       F9E5       79E4      
+E2D7       F9E6       79E5       F9E6       79E5      
+E2D8       F9E7       79E6       F9E7       79E6      
+E2D9       F9E8       79E7       F9E8       79E7      
+E2DA       F9E9       79E8       F9E9       79E8      
+E2DB       F9EA       79E9       F9EA       79E9      
+E2DC       F9EB       79EA       F9EB       79EA      
+E2DD       F9EC       79EB       F9EC       79EB      
+E2DE       F9ED       79EC       F9ED       79EC      
+E2DF       F9EE       79ED       F9EE       79ED      
+E2E0       F9EF       79EE       F9EF       79EE      
+E2E1       F9F0       79EF       F9F0       79EF      
+E2E2       F9F1       79F0       F9F1       79F0      
+E2E3       F9F2       79F1       F9F2       79F1      
+E2E4       F9F3       79F2       F9F3       79F2      
+E2E5       F9F4       79F3       F9F4       79F3      
+E2E6       F9F5       79F4       F9F5       79F4      
+E2E7       F9F6       79F5       F9F6       79F5      
+E2E8       F9F7       79F6       F9F7       79F6      
+E2E9       F9F8       79F7       F9F8       79F7      
+E2EA       F9F9       79F8       F9F9       79F8      
+E2EB       F9FA       79F9       F9FA       79F9      
+E2EC       F9FB       79FA       F9FB       79FA      
+E2ED       F9FC       79FB       F9FC       79FB      
+E2EE       F9FD       79FC       F9FD       79FC      
+E2EF       F9FE       79FD       F9FE       79FD      
+E2F0       FAA1       7A41       FAA1       7A41      
+E2F1       FAA2       7A42       FAA2       7A42      
+E2F2       FAA3       7A43       FAA3       7A43      
+E2F3       FAA4       7A44       FAA4       7A44      
+E2F4       FAA5       7A45       FAA5       7A45      
+E2F5       FAA6       7A46       FAA6       7A46      
+E2F6       FAA7       7A47       FAA7       7A47      
+E2F7       FAA8       79FE       FAA8       79FE      
+E2F8       FAA9       7A49       FAA9       7A49      
+E2F9       FAAA       7A4A       FAAA       7A4A      
+E2FA       FAAB       7A4B       FAAB       7A4B      
+E2FB       FAAC       7A4C       FAAC       7A4C      
+E2FC       FAAD       7A4D       FAAD       7A4D      
+E2FD       FAAE       7A4E       FAAE       7A4E      
+E2FE       FAAF       7A4F       FAAF       7A4F      
+E2FF       FAB0       7A50       FAB0       7A50      
+E300       FAB1       7A51       FAB1       7A51      
+E301       FAB2       7A52       FAB2       7A52      
+E302       FAB3       7A53       FAB3       7A53      
+E303       FAB4       7A54       FAB4       7A54      
+E304       FAB5       7A55       FAB5       7A55      
+E305       FAB6       7A56       FAB6       7A56      
+E306       FAB7       7A57       FAB7       7A57      
+E307       FAB8       7A58       FAB8       7A58      
+E308       FAB9       7A59       FAB9       7A59      
+E309       FABA       7A5A       FABA       7A5A      
+E30A       FABB       7A5B       FABB       7A5B      
+E30B       FABC       7A5C       FABC       7A5C      
+E30C       FABD       7A5D       FABD       7A5D      
+E30D       FABE       7A5E       FABE       7A5E      
+E30E       FABF       7A5F       FABF       7A5F      
+E30F       FAC0       7A60       FAC0       7A60      
+E310       FAC1       7A61       FAC1       7A61      
+E311       FAC2       7A62       FAC2       7A62      
+E312       FAC3       7A63       FAC3       7A63      
+E313       FAC4       7A64       FAC4       7A64      
+E314       FAC5       7A65       FAC5       7A65      
+E315       FAC6       7A66       FAC6       7A66      
+E316       FAC7       7A67       FAC7       7A67      
+E317       FAC8       7A68       FAC8       7A68      
+E318       FAC9       7A69       FAC9       7A69      
+E319       FACA       7A6A       FACA       7A6A      
+E31A       FACB       7A6B       FACB       7A6B      
+E31B       FACC       7A6C       FACC       7A6C      
+E31C       FACD       7A6D       FACD       7A6D      
+E31D       FACE       7A6E       FACE       7A6E      
+E31E       FACF       7A6F       FACF       7A6F      
+E31F       FAD0       7A70       FAD0       7A70      
+E320       FAD1       7A71       FAD1       7A71      
+E321       FAD2       7A72       FAD2       7A72      
+E322       FAD3       7A73       FAD3       7A73      
+E323       FAD4       7A74       FAD4       7A74      
+E324       FAD5       7A75       FAD5       7A75      
+E325       FAD6       7A76       FAD6       7A76      
+E326       FAD7       7A77       FAD7       7A77      
+E327       FAD8       7A78       FAD8       7A78      
+E328       FAD9       7A79       FAD9       7A79      
+E329       FADA       7A7A       FADA       7A7A      
+E32A       FADB       7A7B       FADB       7A7B      
+E32B       FADC       7A7C       FADC       7A7C      
+E32C       FADD       7A7D       FADD       7A7D      
+E32D       FADE       7A7E       FADE       7A7E      
+E32E       FADF       7A7F       FADF       7A7F      
+E32F       FAE0       7A81       FAE0       7A81      
+E330       FAE1       7A82       FAE1       7A82      
+E331       FAE2       7A83       FAE2       7A83      
+E332       FAE3       7A84       FAE3       7A84      
+E333       FAE4       7A85       FAE4       7A85      
+E334       FAE5       7A86       FAE5       7A86      
+E335       FAE6       7A87       FAE6       7A87      
+E336       FAE7       7A88       FAE7       7A88      
+E337       FAE8       7A80       FAE8       7A80      
+E338       FAE9       7A8A       FAE9       7A8A      
+E339       FAEA       7A8B       FAEA       7A8B      
+E33A       FAEB       7A8C       FAEB       7A8C      
+E33B       FAEC       7A8D       FAEC       7A8D      
+E33C       FAED       7A8E       FAED       7A8E      
+E33D       FAEE       7A8F       FAEE       7A8F      
+E33E       FAEF       7A90       FAEF       7A90      
+E33F       FAF0       7A91       FAF0       7A91      
+E340       FAF1       7A92       FAF1       7A92      
+E341       FAF2       7A93       FAF2       7A93      
+E342       FAF3       7A94       FAF3       7A94      
+E343       FAF4       7A95       FAF4       7A95      
+E344       FAF5       7A96       FAF5       7A96      
+E345       FAF6       7A97       FAF6       7A97      
+E346       FAF7       7A98       FAF7       7A98      
+E347       FAF8       7A99       FAF8       7A99      
+E348       FAF9       7A9A       FAF9       7A9A      
+E349       FAFA       7A9B       FAFA       7A9B      
+E34A       FAFB       7A9C       FAFB       7A9C      
+E34B       FAFC       7A9D       FAFC       7A9D      
+E34C       FAFD       7A9E       FAFD       7A9E      
+E34D       FAFE       7A9F       FAFE       7A9F      
+E34E       FBA1       7AA0       FBA1       7AA0      
+E34F       FBA2       7AA1       FBA2       7AA1      
+E350       FBA3       7AA2       FBA3       7AA2      
+E351       FBA4       7AA3       FBA4       7AA3      
+E352       FBA5       7AA4       FBA5       7AA4      
+E353       FBA6       7AA5       FBA6       7AA5      
+E354       FBA7       7AA6       FBA7       7AA6      
+E355       FBA8       7AA7       FBA8       7AA7      
+E356       FBA9       7AA8       FBA9       7AA8      
+E357       FBAA       7AA9       FBAA       7AA9      
+E358       FBAB       7AAA       FBAB       7AAA      
+E359       FBAC       7AAB       FBAC       7AAB      
+E35A       FBAD       7AAC       FBAD       7AAC      
+E35B       FBAE       7AAD       FBAE       7AAD      
+E35C       FBAF       7AAE       FBAF       7AAE      
+E35D       FBB0       7AAF       FBB0       7AAF      
+E35E       FBB1       7AB0       FBB1       7AB0      
+E35F       FBB2       7AB1       FBB2       7AB1      
+E360       FBB3       7AB2       FBB3       7AB2      
+E361       FBB4       7AB3       FBB4       7AB3      
+E362       FBB5       7AB4       FBB5       7AB4      
+E363       FBB6       7AB5       FBB6       7AB5      
+E364       FBB7       7AB6       FBB7       7AB6      
+E365       FBB8       7AB7       FBB8       7AB7      
+E366       FBB9       7AB8       FBB9       7AB8      
+E367       FBBA       7AB9       FBBA       7AB9      
+E368       FBBB       7ABA       FBBB       7ABA      
+E369       FBBC       7ABB       FBBC       7ABB      
+E36A       FBBD       7ABC       FBBD       7ABC      
+E36B       FBBE       7ABD       FBBE       7ABD      
+E36C       FBBF       7ABE       FBBF       7ABE      
+E36D       FBC0       7ABF       FBC0       7ABF      
+E36E       FBC1       7AC0       FBC1       7AC0      
+E36F       FBC2       7AC1       FBC2       7AC1      
+E370       FBC3       7AC2       FBC3       7AC2      
+E371       FBC4       7AC3       FBC4       7AC3      
+E372       FBC5       7AC4       FBC5       7AC4      
+E373       FBC6       7AC5       FBC6       7AC5      
+E374       FBC7       7AC6       FBC7       7AC6      
+E375       FBC8       7AC7       FBC8       7AC7      
+E376       FBC9       7AC8       FBC9       7AC8      
+E377       FBCA       7AC9       FBCA       7AC9      
+E378       FBCB       7ACA       FBCB       7ACA      
+E379       FBCC       7ACB       FBCC       7ACB      
+E37A       FBCD       7ACC       FBCD       7ACC      
+E37B       FBCE       7ACD       FBCE       7ACD      
+E37C       FBCF       7ACE       FBCF       7ACE      
+E37D       FBD0       7ACF       FBD0       7ACF      
+E37E       FBD1       7AD0       FBD1       7AD0      
+E37F       FBD2       7AD1       FBD2       7AD1      
+E380       FBD3       7AD2       FBD3       7AD2      
+E381       FBD4       7AD3       FBD4       7AD3      
+E382       FBD5       7AD4       FBD5       7AD4      
+E383       FBD6       7AD5       FBD6       7AD5      
+E384       FBD7       7AD6       FBD7       7AD6      
+E385       FBD8       7AD7       FBD8       7AD7      
+E386       FBD9       7AD8       FBD9       7AD8      
+E387       FBDA       7AD9       FBDA       7AD9      
+E388       FBDB       7ADA       FBDB       7ADA      
+E389       FBDC       7ADB       FBDC       7ADB      
+E38A       FBDD       7ADC       FBDD       7ADC      
+E38B       FBDE       7ADD       FBDE       7ADD      
+E38C       FBDF       7ADE       FBDF       7ADE      
+E38D       FBE0       7ADF       FBE0       7ADF      
+E38E       FBE1       7AE0       FBE1       7AE0      
+E38F       FBE2       7AE1       FBE2       7AE1      
+E390       FBE3       7AE2       FBE3       7AE2      
+E391       FBE4       7AE3       FBE4       7AE3      
+E392       FBE5       7AE4       FBE5       7AE4      
+E393       FBE6       7AE5       FBE6       7AE5      
+E394       FBE7       7AE6       FBE7       7AE6      
+E395       FBE8       7AE7       FBE8       7AE7      
+E396       FBE9       7AE8       FBE9       7AE8      
+E397       FBEA       7AE9       FBEA       7AE9      
+E398       FBEB       7AEA       FBEB       7AEA      
+E399       FBEC       7AEB       FBEC       7AEB      
+E39A       FBED       7AEC       FBED       7AEC      
+E39B       FBEE       7AED       FBEE       7AED      
+E39C       FBEF       7AEE       FBEF       7AEE      
+E39D       FBF0       7AEF       FBF0       7AEF      
+E39E       FBF1       7AF0       FBF1       7AF0      
+E39F       FBF2       7AF1       FBF2       7AF1      
+E3A0       FBF3       7AF2       FBF3       7AF2      
+E3A1       FBF4       7AF3       FBF4       7AF3      
+E3A2       FBF5       7AF4       FBF5       7AF4      
+E3A3       FBF6       7AF5       FBF6       7AF5      
+E3A4       FBF7       7AF6       FBF7       7AF6      
+E3A5       FBF8       7AF7       FBF8       7AF7      
+E3A6       FBF9       7AF8       FBF9       7AF8      
+E3A7       FBFA       7AF9       FBFA       7AF9      
+E3A8       FBFB       7AFA       FBFB       7AFA      
+E3A9       FBFC       7AFB       FBFC       7AFB      
+E3AA       FBFD       7AFC       FBFD       7AFC      
+E3AB       FBFE       7AFD       FBFE       7AFD      
+E3AC       FCA1       7B41       FCA1       7B41      
+E3AD       FCA2       7B42       FCA2       7B42      
+E3AE       FCA3       7B43       FCA3       7B43      
+E3AF       FCA4       7B44       FCA4       7B44      
+E3B0       FCA5       7B45       FCA5       7B45      
+E3B1       FCA6       7B46       FCA6       7B46      
+E3B2       FCA7       7B47       FCA7       7B47      
+E3B3       FCA8       7B48       FCA8       7B48      
+E3B4       FCA9       7B49       FCA9       7B49      
+E3B5       FCAA       7AFE       FCAA       7AFE      
+E3B6       FCAB       7B4B       FCAB       7B4B      
+E3B7       FCAC       7B4C       FCAC       7B4C      
+E3B8       FCAD       7B4D       FCAD       7B4D      
+E3B9       FCAE       7B4E       FCAE       7B4E      
+E3BA       FCAF       7B4F       FCAF       7B4F      
+E3BB       FCB0       7B50       FCB0       7B50      
+E3BC       FCB1       7B51       FCB1       7B51      
+E3BD       FCB2       7B52       FCB2       7B52      
+E3BE       FCB3       7B53       FCB3       7B53      
+E3BF       FCB4       7B54       FCB4       7B54      
+E3C0       FCB5       7B55       FCB5       7B55      
+E3C1       FCB6       7B56       FCB6       7B56      
+E3C2       FCB7       7B57       FCB7       7B57      
+E3C3       FCB8       7B58       FCB8       7B58      
+E3C4       FCB9       7B59       FCB9       7B59      
+E3C5       FCBA       7B5A       FCBA       7B5A      
+E3C6       FCBB       7B5B       FCBB       7B5B      
+E3C7       FCBC       7B5C       FCBC       7B5C      
+E3C8       FCBD       7B5D       FCBD       7B5D      
+E3C9       FCBE       7B5E       FCBE       7B5E      
+E3CA       FCBF       7B5F       FCBF       7B5F      
+E3CB       FCC0       7B60       FCC0       7B60      
+E3CC       FCC1       7B61       FCC1       7B61      
+E3CD       FCC2       7B62       FCC2       7B62      
+E3CE       FCC3       7B63       FCC3       7B63      
+E3CF       FCC4       7B64       FCC4       7B64      
+E3D0       FCC5       7B65       FCC5       7B65      
+E3D1       FCC6       7B66       FCC6       7B66      
+E3D2       FCC7       7B67       FCC7       7B67      
+E3D3       FCC8       7B68       FCC8       7B68      
+E3D4       FCC9       7B69       FCC9       7B69      
+E3D5       FCCA       7B6A       FCCA       7B6A      
+E3D6       FCCB       7B6B       FCCB       7B6B      
+E3D7       FCCC       7B6C       FCCC       7B6C      
+E3D8       FCCD       7B6D       FCCD       7B6D      
+E3D9       FCCE       7B6E       FCCE       7B6E      
+E3DA       FCCF       7B6F       FCCF       7B6F      
+E3DB       FCD0       7B70       FCD0       7B70      
+E3DC       FCD1       7B71       FCD1       7B71      
+E3DD       FCD2       7B72       FCD2       7B72      
+E3DE       FCD3       7B73       FCD3       7B73      
+E3DF       FCD4       7B74       FCD4       7B74      
+E3E0       FCD5       7B75       FCD5       7B75      
+E3E1       FCD6       7B76       FCD6       7B76      
+E3E2       FCD7       7B77       FCD7       7B77      
+E3E3       FCD8       7B78       FCD8       7B78      
+E3E4       FCD9       7B79       FCD9       7B79      
+E3E5       FCDA       7B7A       FCDA       7B7A      
+E3E6       FCDB       7B7B       FCDB       7B7B      
+E3E7       FCDC       7B7C       FCDC       7B7C      
+E3E8       FCDD       7B7D       FCDD       7B7D      
+E3E9       FCDE       7B7E       FCDE       7B7E      
+E3EA       FCDF       7B7F       FCDF       7B7F      
+E3EB       FCE0       7B81       FCE0       7B81      
+E3EC       FCE1       7B82       FCE1       7B82      
+E3ED       FCE2       7B83       FCE2       7B83      
+E3EE       FCE3       7B84       FCE3       7B84      
+E3EF       FCE4       7B85       FCE4       7B85      
+E3F0       FCE5       7B86       FCE5       7B86      
+E3F1       FCE6       7B87       FCE6       7B87      
+E3F2       FCE7       7B88       FCE7       7B88      
+E3F3       FCE8       7B89       FCE8       7B89      
+E3F4       FCE9       7B8A       FCE9       7B8A      
+E3F5       FCEA       7B80       FCEA       7B80      
+E3F6       FCEB       7B8C       FCEB       7B8C      
+E3F7       FCEC       7B8D       FCEC       7B8D      
+E3F8       FCED       7B8E       FCED       7B8E      
+E3F9       FCEE       7B8F       FCEE       7B8F      
+E3FA       FCEF       7B90       FCEF       7B90      
+E3FB       FCF0       7B91       FCF0       7B91      
+E3FC       FCF1       7B92       FCF1       7B92      
+E3FD       FCF2       7B93       FCF2       7B93      
+E3FE       FCF3       7B94       FCF3       7B94      
+E3FF       FCF4       7B95       FCF4       7B95      
+E400       FCF5       7B96       FCF5       7B96      
+E401       FCF6       7B97       FCF6       7B97      
+E402       FCF7       7B98       FCF7       7B98      
+E403       FCF8       7B99       FCF8       7B99      
+E404       FCF9       7B9A       FCF9       7B9A      
+E405       FCFA       7B9B       FCFA       7B9B      
+E406       FCFB       7B9C       FCFB       7B9C      
+E407       FCFC       7B9D       FCFC       7B9D      
+E408       FCFD       7B9E       FCFD       7B9E      
+E409       FCFE       7B9F       FCFE       7B9F      
+E40A       FDA1       7BA0       FDA1       7BA0      
+E40B       FDA2       7BA1       FDA2       7BA1      
+E40C       FDA3       7BA2       FDA3       7BA2      
+E40D       FDA4       7BA3       FDA4       7BA3      
+E40E       FDA5       7BA4       FDA5       7BA4      
+E40F       FDA6       7BA5       FDA6       7BA5      
+E410       FDA7       7BA6       FDA7       7BA6      
+E411       FDA8       7BA7       FDA8       7BA7      
+E412       FDA9       7BA8       FDA9       7BA8      
+E413       FDAA       7BA9       FDAA       7BA9      
+E414       FDAB       7BAA       FDAB       7BAA      
+E415       FDAC       7BAB       FDAC       7BAB      
+E416       FDAD       7BAC       FDAD       7BAC      
+E417       FDAE       7BAD       FDAE       7BAD      
+E418       FDAF       7BAE       FDAF       7BAE      
+E419       FDB0       7BAF       FDB0       7BAF      
+E41A       FDB1       7BB0       FDB1       7BB0      
+E41B       FDB2       7BB1       FDB2       7BB1      
+E41C       FDB3       7BB2       FDB3       7BB2      
+E41D       FDB4       7BB3       FDB4       7BB3      
+E41E       FDB5       7BB4       FDB5       7BB4      
+E41F       FDB6       7BB5       FDB6       7BB5      
+E420       FDB7       7BB6       FDB7       7BB6      
+E421       FDB8       7BB7       FDB8       7BB7      
+E422       FDB9       7BB8       FDB9       7BB8      
+E423       FDBA       7BB9       FDBA       7BB9      
+E424       FDBB       7BBA       FDBB       7BBA      
+E425       FDBC       7BBB       FDBC       7BBB      
+E426       FDBD       7BBC       FDBD       7BBC      
+E427       FDBE       7BBD       FDBE       7BBD      
+E428       FDBF       7BBE       FDBF       7BBE      
+E429       FDC0       7BBF       FDC0       7BBF      
+E42A       FDC1       7BC0       FDC1       7BC0      
+E42B       FDC2       7BC1       FDC2       7BC1      
+E42C       FDC3       7BC2       FDC3       7BC2      
+E42D       FDC4       7BC3       FDC4       7BC3      
+E42E       FDC5       7BC4       FDC5       7BC4      
+E42F       FDC6       7BC5       FDC6       7BC5      
+E430       FDC7       7BC6       FDC7       7BC6      
+E431       FDC8       7BC7       FDC8       7BC7      
+E432       FDC9       7BC8       FDC9       7BC8      
+E433       FDCA       7BC9       FDCA       7BC9      
+E434       FDCB       7BCA       FDCB       7BCA      
+E435       FDCC       7BCB       FDCC       7BCB      
+E436       FDCD       7BCC       FDCD       7BCC      
+E437       FDCE       7BCD       FDCE       7BCD      
+E438       FDCF       7BCE       FDCF       7BCE      
+E439       FDD0       7BCF       FDD0       7BCF      
+E43A       FDD1       7BD0       FDD1       7BD0      
+E43B       FDD2       7BD1       FDD2       7BD1      
+E43C       FDD3       7BD2       FDD3       7BD2      
+E43D       FDD4       7BD3       FDD4       7BD3      
+E43E       FDD5       7BD4       FDD5       7BD4      
+E43F       FDD6       7BD5       FDD6       7BD5      
+E440       FDD7       7BD6       FDD7       7BD6      
+E441       FDD8       7BD7       FDD8       7BD7      
+E442       FDD9       7BD8       FDD9       7BD8      
+E443       FDDA       7BD9       FDDA       7BD9      
+E444       FDDB       7BDA       FDDB       7BDA      
+E445       FDDC       7BDB       FDDC       7BDB      
+E446       FDDD       7BDC       FDDD       7BDC      
+E447       FDDE       7BDD       FDDE       7BDD      
+E448       FDDF       7BDE       FDDF       7BDE      
+E449       FDE0       7BDF       FDE0       7BDF      
+E44A       FDE1       7BE0       FDE1       7BE0      
+E44B       FDE2       7BE1       FDE2       7BE1      
+E44C       FDE3       7BE2       FDE3       7BE2      
+E44D       FDE4       7BE3       FDE4       7BE3      
+E44E       FDE5       7BE4       FDE5       7BE4      
+E44F       FDE6       7BE5       FDE6       7BE5      
+E450       FDE7       7BE6       FDE7       7BE6      
+E451       FDE8       7BE7       FDE8       7BE7      
+E452       FDE9       7BE8       FDE9       7BE8      
+E453       FDEA       7BE9       FDEA       7BE9      
+E454       FDEB       7BEA       FDEB       7BEA      
+E455       FDEC       7BEB       FDEC       7BEB      
+E456       FDED       7BEC       FDED       7BEC      
+E457       FDEE       7BED       FDEE       7BED      
+E458       FDEF       7BEE       FDEF       7BEE      
+E459       FDF0       7BEF       FDF0       7BEF      
+E45A       FDF1       7BF0       FDF1       7BF0      
+E45B       FDF2       7BF1       FDF2       7BF1      
+E45C       FDF3       7BF2       FDF3       7BF2      
+E45D       FDF4       7BF3       FDF4       7BF3      
+E45E       FDF5       7BF4       FDF5       7BF4      
+E45F       FDF6       7BF5       FDF6       7BF5      
+E460       FDF7       7BF6       FDF7       7BF6      
+E461       FDF8       7BF7       FDF8       7BF7      
+E462       FDF9       7BF8       FDF9       7BF8      
+E463       FDFA       7BF9       FDFA       7BF9      
+E464       FDFB       7BFA       FDFB       7BFA      
+E465       FDFC       7BFB       FDFC       7BFB      
+E466       FDFD       7BFC       FDFD       7BFC      
+E467       FDFE       7BFD       FDFE       7BFD      
+E468       FEA1       7C41       FEA1       7C41      
+E469       FEA2       7C42       FEA2       7C42      
+E46A       FEA3       7C43       FEA3       7C43      
+E46B       FEA4       7C44       FEA4       7C44      
+E46C       FEA5       7C45       FEA5       7C45      
+E46D       FEA6       7C46       FEA6       7C46      
+E46E       FEA7       7C47       FEA7       7C47      
+E46F       FEA8       7C48       FEA8       7C48      
+E470       FEA9       7C49       FEA9       7C49      
+E471       FEAA       7C4A       FEAA       7C4A      
+E472       FEAB       7C4B       FEAB       7C4B      
+E473       FEAC       7BFE       FEAC       7BFE      
+E474       FEAD       7C4D       FEAD       7C4D      
+E475       FEAE       7C4E       FEAE       7C4E      
+E476       FEAF       7C4F       FEAF       7C4F      
+E477       FEB0       7C50       FEB0       7C50      
+E478       FEB1       7C51       FEB1       7C51      
+E479       FEB2       7C52       FEB2       7C52      
+E47A       FEB3       7C53       FEB3       7C53      
+E47B       FEB4       7C54       FEB4       7C54      
+E47C       FEB5       7C55       FEB5       7C55      
+E47D       FEB6       7C56       FEB6       7C56      
+E47E       FEB7       7C57       FEB7       7C57      
+E47F       FEB8       7C58       FEB8       7C58      
+E480       FEB9       7C59       FEB9       7C59      
+E481       FEBA       7C5A       FEBA       7C5A      
+E482       FEBB       7C5B       FEBB       7C5B      
+E483       FEBC       7C5C       FEBC       7C5C      
+E484       FEBD       7C5D       FEBD       7C5D      
+E485       FEBE       7C5E       FEBE       7C5E      
+E486       FEBF       7C5F       FEBF       7C5F      
+E487       FEC0       7C60       FEC0       7C60      
+E488       FEC1       7C61       FEC1       7C61      
+E489       FEC2       7C62       FEC2       7C62      
+E48A       FEC3       7C63       FEC3       7C63      
+E48B       FEC4       7C64       FEC4       7C64      
+E48C       FEC5       7C65       FEC5       7C65      
+E48D       FEC6       7C66       FEC6       7C66      
+E48E       FEC7       7C67       FEC7       7C67      
+E48F       FEC8       7C68       FEC8       7C68      
+E490       FEC9       7C69       FEC9       7C69      
+E491       FECA       7C6A       FECA       7C6A      
+E492       FECB       7C6B       FECB       7C6B      
+E493       FECC       7C6C       FECC       7C6C      
+E494       FECD       7C6D       FECD       7C6D      
+E495       FECE       7C6E       FECE       7C6E      
+E496       FECF       7C6F       FECF       7C6F      
+E497       FED0       7C70       FED0       7C70      
+E498       FED1       7C71       FED1       7C71      
+E499       FED2       7C72       FED2       7C72      
+E49A       FED3       7C73       FED3       7C73      
+E49B       FED4       7C74       FED4       7C74      
+E49C       FED5       7C75       FED5       7C75      
+E49D       FED6       7C76       FED6       7C76      
+E49E       FED7       7C77       FED7       7C77      
+E49F       FED8       7C78       FED8       7C78      
+E4A0       FED9       7C79       FED9       7C79      
+E4A1       FEDA       7C7A       FEDA       7C7A      
+E4A2       FEDB       7C7B       FEDB       7C7B      
+E4A3       FEDC       7C7C       FEDC       7C7C      
+E4A4       FEDD       7C7D       FEDD       7C7D      
+E4A5       FEDE       7C7E       FEDE       7C7E      
+E4A6       FEDF       7C7F       FEDF       7C7F      
+E4A7       FEE0       7C81       FEE0       7C81      
+E4A8       FEE1       7C82       FEE1       7C82      
+E4A9       FEE2       7C83       FEE2       7C83      
+E4AA       FEE3       7C84       FEE3       7C84      
+E4AB       FEE4       7C85       FEE4       7C85      
+E4AC       FEE5       7C86       FEE5       7C86      
+E4AD       FEE6       7C87       FEE6       7C87      
+E4AE       FEE7       7C88       FEE7       7C88      
+E4AF       FEE8       7C89       FEE8       7C89      
+E4B0       FEE9       7C8A       FEE9       7C8A      
+E4B1       FEEA       7C8B       FEEA       7C8B      
+E4B2       FEEB       7C8C       FEEB       7C8C      
+E4B3       FEEC       7C80       FEEC       7C80      
+E4B4       FEED       7C8E       FEED       7C8E      
+E4B5       FEEE       7C8F       FEEE       7C8F      
+E4B6       FEEF       7C90       FEEF       7C90      
+E4B7       FEF0       7C91       FEF0       7C91      
+E4B8       FEF1       7C92       FEF1       7C92      
+E4B9       FEF2       7C93       FEF2       7C93      
+E4BA       FEF3       7C94       FEF3       7C94      
+E4BB       FEF4       7C95       FEF4       7C95      
+E4BC       FEF5       7C96       FEF5       7C96      
+E4BD       FEF6       7C97       FEF6       7C97      
+E4BE       FEF7       7C98       FEF7       7C98      
+E4BF       FEF8       7C99       FEF8       7C99      
+E4C0       FEF9       7C9A       FEF9       7C9A      
+E4C1       FEFA       7C9B       FEFA       7C9B      
+E4C2       FEFB       7C9C       FEFB       7C9C      
+E4C3       FEFC       7C9D       FEFC       7C9D      
+E4C4       FEFD       7C9E       FEFD       7C9E      
+E4C5       FEFE       7C9F       FEFE       7C9F      
+E4C6       A140       7CA0       A140       7CA0      
+E4C7       A141       7CA1       A141       7CA1      
+E4C8       A142       7CA2       A142       7CA2      
+E4C9       A143       7CA3       A143       7CA3      
+E4CA       A144       7CA4       A144       7CA4      
+E4CB       A145       7CA5       A145       7CA5      
+E4CC       A146       7CA6       A146       7CA6      
+E4CD       A147       7CA7       A147       7CA7      
+E4CE       A148       7CA8       A148       7CA8      
+E4CF       A149       7CA9       A149       7CA9      
+E4D0       A14A       7CAA       A14A       7CAA      
+E4D1       A14B       7CAB       A14B       7CAB      
+E4D2       A14C       7CAC       A14C       7CAC      
+E4D3       A14D       7CAD       A14D       7CAD      
+E4D4       A14E       7CAE       A14E       7CAE      
+E4D5       A14F       7CAF       A14F       7CAF      
+E4D6       A150       7CB0       A150       7CB0      
+E4D7       A151       7CB1       A151       7CB1      
+E4D8       A152       7CB2       A152       7CB2      
+E4D9       A153       7CB3       A153       7CB3      
+E4DA       A154       7CB4       A154       7CB4      
+E4DB       A155       7CB5       A155       7CB5      
+E4DC       A156       7CB6       A156       7CB6      
+E4DD       A157       7CB7       A157       7CB7      
+E4DE       A158       7CB8       A158       7CB8      
+E4DF       A159       7CB9       A159       7CB9      
+E4E0       A15A       7CBA       A15A       7CBA      
+E4E1       A15B       7CBB       A15B       7CBB      
+E4E2       A15C       7CBC       A15C       7CBC      
+E4E3       A15D       7CBD       A15D       7CBD      
+E4E4       A15E       7CBE       A15E       7CBE      
+E4E5       A15F       7CBF       A15F       7CBF      
+E4E6       A160       7CC0       A160       7CC0      
+E4E7       A161       7CC1       A161       7CC1      
+E4E8       A162       7CC2       A162       7CC2      
+E4E9       A163       7CC3       A163       7CC3      
+E4EA       A164       7CC4       A164       7CC4      
+E4EB       A165       7CC5       A165       7CC5      
+E4EC       A166       7CC6       A166       7CC6      
+E4ED       A167       7CC7       A167       7CC7      
+E4EE       A168       7CC8       A168       7CC8      
+E4EF       A169       7CC9       A169       7CC9      
+E4F0       A16A       7CCA       A16A       7CCA      
+E4F1       A16B       7CCB       A16B       7CCB      
+E4F2       A16C       7CCC       A16C       7CCC      
+E4F3       A16D       7CCD       A16D       7CCD      
+E4F4       A16E       7CCE       A16E       7CCE      
+E4F5       A16F       7CCF       A16F       7CCF      
+E4F6       A170       7CD0       A170       7CD0      
+E4F7       A171       7CD1       A171       7CD1      
+E4F8       A172       7CD2       A172       7CD2      
+E4F9       A173       7CD3       A173       7CD3      
+E4FA       A174       7CD4       A174       7CD4      
+E4FB       A175       7CD5       A175       7CD5      
+E4FC       A176       7CD6       A176       7CD6      
+E4FD       A177       7CD7       A177       7CD7      
+E4FE       A178       7CD8       A178       7CD8      
+E4FF       A179       7CD9       A179       7CD9      
+E500       A17A       7CDA       A17A       7CDA      
+E501       A17B       7CDB       A17B       7CDB      
+E502       A17C       7CDC       A17C       7CDC      
+E503       A17D       7CDD       A17D       7CDD      
+E504       A17E       7CDE       A17E       7CDE      
+E505       A180       7CDF       A180       7CDF      
+E506       A181       7CE0       A181       7CE0      
+E507       A182       7CE1       A182       7CE1      
+E508       A183       7CE2       A183       7CE2      
+E509       A184       7CE3       A184       7CE3      
+E50A       A185       7CE4       A185       7CE4      
+E50B       A186       7CE5       A186       7CE5      
+E50C       A187       7CE6       A187       7CE6      
+E50D       A188       7CE7       A188       7CE7      
+E50E       A189       7CE8       A189       7CE8      
+E50F       A18A       7CE9       A18A       7CE9      
+E510       A18B       7CEA       A18B       7CEA      
+E511       A18C       7CEB       A18C       7CEB      
+E512       A18D       7CEC       A18D       7CEC      
+E513       A18E       7CED       A18E       7CED      
+E514       A18F       7CEE       A18F       7CEE      
+E515       A190       7CEF       A190       7CEF      
+E516       A191       7CF0       A191       7CF0      
+E517       A192       7CF1       A192       7CF1      
+E518       A193       7CF2       A193       7CF2      
+E519       A194       7CF3       A194       7CF3      
+E51A       A195       7CF4       A195       7CF4      
+E51B       A196       7CF5       A196       7CF5      
+E51C       A197       7CF6       A197       7CF6      
+E51D       A198       7CF7       A198       7CF7      
+E51E       A199       7CF8       A199       7CF8      
+E51F       A19A       7CF9       A19A       7CF9      
+E520       A19B       7CFA       A19B       7CFA      
+E521       A19C       7CFB       A19C       7CFB      
+E522       A19D       7CFC       A19D       7CFC      
+E523       A19E       7CFD       A19E       7CFD      
+E524       A19F       7D41       A19F       7D41      
+E525       A1A0       7D42       A1A0       7D42      
+E526       A240       7D43       A240       7D43      
+E527       A241       7D44       A241       7D44      
+E528       A242       7D45       A242       7D45      
+E529       A243       7D46       A243       7D46      
+E52A       A244       7D47       A244       7D47      
+E52B       A245       7D48       A245       7D48      
+E52C       A246       7D49       A246       7D49      
+E52D       A247       7D4A       A247       7D4A      
+E52E       A248       7D4B       A248       7D4B      
+E52F       A249       7D4C       A249       7D4C      
+E530       A24A       7D4D       A24A       7D4D      
+E531       A24B       7CFE       A24B       7CFE      
+E532       A24C       7D4F       A24C       7D4F      
+E533       A24D       7D50       A24D       7D50      
+E534       A24E       7D51       A24E       7D51      
+E535       A24F       7D52       A24F       7D52      
+E536       A250       7D53       A250       7D53      
+E537       A251       7D54       A251       7D54      
+E538       A252       7D55       A252       7D55      
+E539       A253       7D56       A253       7D56      
+E53A       A254       7D57       A254       7D57      
+E53B       A255       7D58       A255       7D58      
+E53C       A256       7D59       A256       7D59      
+E53D       A257       7D5A       A257       7D5A      
+E53E       A258       7D5B       A258       7D5B      
+E53F       A259       7D5C       A259       7D5C      
+E540       A25A       7D5D       A25A       7D5D      
+E541       A25B       7D5E       A25B       7D5E      
+E542       A25C       7D5F       A25C       7D5F      
+E543       A25D       7D60       A25D       7D60      
+E544       A25E       7D61       A25E       7D61      
+E545       A25F       7D62       A25F       7D62      
+E546       A260       7D63       A260       7D63      
+E547       A261       7D64       A261       7D64      
+E548       A262       7D65       A262       7D65      
+E549       A263       7D66       A263       7D66      
+E54A       A264       7D67       A264       7D67      
+E54B       A265       7D68       A265       7D68      
+E54C       A266       7D69       A266       7D69      
+E54D       A267       7D6A       A267       7D6A      
+E54E       A268       7D6B       A268       7D6B      
+E54F       A269       7D6C       A269       7D6C      
+E550       A26A       7D6D       A26A       7D6D      
+E551       A26B       7D6E       A26B       7D6E      
+E552       A26C       7D6F       A26C       7D6F      
+E553       A26D       7D70       A26D       7D70      
+E554       A26E       7D71       A26E       7D71      
+E555       A26F       7D72       A26F       7D72      
+E556       A270       7D73       A270       7D73      
+E557       A271       7D74       A271       7D74      
+E558       A272       7D75       A272       7D75      
+E559       A273       7D76       A273       7D76      
+E55A       A274       7D77       A274       7D77      
+E55B       A275       7D78       A275       7D78      
+E55C       A276       7D79       A276       7D79      
+E55D       A277       7D7A       A277       7D7A      
+E55E       A278       7D7B       A278       7D7B      
+E55F       A279       7D7C       A279       7D7C      
+E560       A27A       7D7D       A27A       7D7D      
+E561       A27B       7D7E       A27B       7D7E      
+E562       A27C       7D7F       A27C       7D7F      
+E563       A27D       7D81       A27D       7D81      
+E564       A27E       7D82       A27E       7D82      
+E565       A280       7D83       A280       7D83      
+E566       A281       7D84       A281       7D84      
+E567       A282       7D85       A282       7D85      
+E568       A283       7D86       A283       7D86      
+E569       A284       7D87       A284       7D87      
+E56A       A285       7D88       A285       7D88      
+E56B       A286       7D89       A286       7D89      
+E56C       A287       7D8A       A287       7D8A      
+E56D       A288       7D8B       A288       7D8B      
+E56E       A289       7D8C       A289       7D8C      
+E56F       A28A       7D8D       A28A       7D8D      
+E570       A28B       7D8E       A28B       7D8E      
+E571       A28C       7D80       A28C       7D80      
+E572       A28D       7D90       A28D       7D90      
+E573       A28E       7D91       A28E       7D91      
+E574       A28F       7D92       A28F       7D92      
+E575       A290       7D93       A290       7D93      
+E576       A291       7D94       A291       7D94      
+E577       A292       7D95       A292       7D95      
+E578       A293       7D96       A293       7D96      
+E579       A294       7D97       A294       7D97      
+E57A       A295       7D98       A295       7D98      
+E57B       A296       7D99       A296       7D99      
+E57C       A297       7D9A       A297       7D9A      
+E57D       A298       7D9B       A298       7D9B      
+E57E       A299       7D9C       A299       7D9C      
+E57F       A29A       7D9D       A29A       7D9D      
+E580       A29B       7D9E       A29B       7D9E      
+E581       A29C       7D9F       A29C       7D9F      
+E582       A29D       7DA0       A29D       7DA0      
+E583       A29E       7DA1       A29E       7DA1      
+E584       A29F       7DA2       A29F       7DA2      
+E585       A2A0       7DA3       A2A0       7DA3      
+E586       A340       7DA4       A2AB       7DA4      
+E587       A341       7DA5       A2AC       7DA5      
+E588       A342       7DA6       A2AD       7DA6      
+E589       A343       7DA7       A2AE       7DA7      
+E58A       A344       7DA8       A2AF       7DA8      
+E58B       A345       7DA9       A2B0       7DA9      
+E58C       A346       7DAA       A2E3       7DAA      
+E58D       A347       7DAB       A2E4       7DAB      
+E58E       A348       7DAC       A2EF       7DAC      
+E58F       A349       7DAD       A2F0       7DAD      
+E590       A34A       7DAE       A2FD       7DAE      
+E591       A34B       7DAF       A2FE       7DAF      
+E592       A34C       7DB0       A340       7DB0      
+E593       A34D       7DB1       A341       7DB1      
+E594       A34E       7DB2       A342       7DB2      
+E595       A34F       7DB3       A343       7DB3      
+E596       A350       7DB4       A344       7DB4      
+E597       A351       7DB5       A345       7DB5      
+E598       A352       7DB6       A346       7DB6      
+E599       A353       7DB7       A347       7DB7      
+E59A       A354       7DB8       A348       7DB8      
+E59B       A355       7DB9       A349       7DB9      
+E59C       A356       7DBA       A34A       7DBA      
+E59D       A357       7DBB       A34B       7DBB      
+E59E       A358       7DBC       A34C       7DBC      
+E59F       A359       7DBD       A34D       7DBD      
+E5A0       A35A       7DBE       A34E       7DBE      
+E5A1       A35B       7DBF       A34F       7DBF      
+E5A2       A35C       7DC0       A350       7DC0      
+E5A3       A35D       7DC1       A351       7DC1      
+E5A4       A35E       7DC2       A352       7DC2      
+E5A5       A35F       7DC3       A353       7DC3      
+E5A6       A360       7DC4       A354       7DC4      
+E5A7       A361       7DC5       A355       7DC5      
+E5A8       A362       7DC6       A356       7DC6      
+E5A9       A363       7DC7       A357       7DC7      
+E5AA       A364       7DC8       A358       7DC8      
+E5AB       A365       7DC9       A359       7DC9      
+E5AC       A366       7DCA       A35A       7DCA      
+E5AD       A367       7DCB       A35B       7DCB      
+E5AE       A368       7DCC       A35C       7DCC      
+E5AF       A369       7DCD       A35D       7DCD      
+E5B0       A36A       7DCE       A35E       7DCE      
+E5B1       A36B       7DCF       A35F       7DCF      
+E5B2       A36C       7DD0       A360       7DD0      
+E5B3       A36D       7DD1       A361       7DD1      
+E5B4       A36E       7DD2       A362       7DD2      
+E5B5       A36F       7DD3       A363       7DD3      
+E5B6       A370       7DD4       A364       7DD4      
+E5B7       A371       7DD5       A365       7DD5      
+E5B8       A372       7DD6       A366       7DD6      
+E5B9       A373       7DD7       A367       7DD7      
+E5BA       A374       7DD8       A368       7DD8      
+E5BB       A375       7DD9       A369       7DD9      
+E5BC       A376       7DDA       A36A       7DDA      
+E5BD       A377       7DDB       A36B       7DDB      
+E5BE       A378       7DDC       A36C       7DDC      
+E5BF       A379       7DDD       A36D       7DDD      
+E5C0       A37A       7DDE       A36E       7DDE      
+E5C1       A37B       7DDF       A36F       7DDF      
+E5C2       A37C       7DE0       A370       7DE0      
+E5C3       A37D       7DE1       A371       7DE1      
+E5C4       A37E       7DE2       A372       7DE2      
+E5C5       A380       7DE3       A373       7DE3      
+E5C6       A381       7DE4       A374       7DE4      
+E5C7       A382       7DE5       A375       7DE5      
+E5C8       A383       7DE6       A376       7DE6      
+E5C9       A384       7DE7       A377       7DE7      
+E5CA       A385       7DE8       A378       7DE8      
+E5CB       A386       7DE9       A379       7DE9      
+E5CC       A387       7DEA       A37A       7DEA      
+E5CD       A388       7DEB       A37B       7DEB      
+E5CE       A389       7DEC       A37C       7DEC      
+E5CF       A38A       7DED       A37D       7DED      
+E5D0       A38B       7DEE       A37E       7DEE      
+E5D1       A38C       7DEF       A380       7DEF      
+E5D2       A38D       7DF0       A381       7DF0      
+E5D3       A38E       7DF1       A382       7DF1      
+E5D4       A38F       7DF2       A383       7DF2      
+E5D5       A390       7DF3       A384       7DF3      
+E5D6       A391       7DF4       A385       7DF4      
+E5D7       A392       7DF5       A386       7DF5      
+E5D8       A393       7DF6       A387       7DF6      
+E5D9       A394       7DF7       A388       7DF7      
+E5DA       A395       7DF8       A389       7DF8      
+E5DB       A396       7DF9       A38A       7DF9      
+E5DC       A397       7DFA       A38B       7DFA      
+E5DD       A398       7DFB       A38C       7DFB      
+E5DE       A399       7DFC       A38D       7DFC      
+E5DF       A39A       7DFD       A38E       7DFD      
+E5E0       A39B       7E41       A38F       7E41      
+E5E1       A39C       7E42       A390       7E42      
+E5E2       A39D       7E43       A391       7E43      
+E5E3       A39E       7E44       A392       7E44      
+E5E4       A39F       7E45       A393       7E45      
+E5E5       A3A0       7E46       A394       7E46      
+E5E6       A440       7E47       A395       7E47      
+E5E7       A441       7E48       A396       7E48      
+E5E8       A442       7E49       A397       7E49      
+E5E9       A443       7E4A       A398       7E4A      
+E5EA       A444       7E4B       A399       7E4B      
+E5EB       A445       7E4C       A39A       7E4C      
+E5EC       A446       7E4D       A39B       7E4D      
+E5ED       A447       7E4E       A39C       7E4E      
+E5EE       A448       7E4F       A39D       7E4F      
+E5EF       A449       7DFE       A39E       7DFE      
+E5F0       A44A       7E51       A39F       7E51      
+E5F1       A44B       7E52       A3A0       7E52      
+E5F2       A44C       7E53       A440       7E53      
+E5F3       A44D       7E54       A441       7E54      
+E5F4       A44E       7E55       A442       7E55      
+E5F5       A44F       7E56       A443       7E56      
+E5F6       A450       7E57       A444       7E57      
+E5F7       A451       7E58       A445       7E58      
+E5F8       A452       7E59       A446       7E59      
+E5F9       A453       7E5A       A447       7E5A      
+E5FA       A454       7E5B       A448       7E5B      
+E5FB       A455       7E5C       A449       7E5C      
+E5FC       A456       7E5D       A44A       7E5D      
+E5FD       A457       7E5E       A44B       7E5E      
+E5FE       A458       7E5F       A44C       7E5F      
+E5FF       A459       7E60       A44D       7E60      
+E600       A45A       7E61       A44E       7E61      
+E601       A45B       7E62       A44F       7E62      
+E602       A45C       7E63       A450       7E63      
+E603       A45D       7E64       A451       7E64      
+E604       A45E       7E65       A452       7E65      
+E605       A45F       7E66       A453       7E66      
+E606       A460       7E67       A454       7E67      
+E607       A461       7E68       A455       7E68      
+E608       A462       7E69       A456       7E69      
+E609       A463       7E6A       A457       7E6A      
+E60A       A464       7E6B       A458       7E6B      
+E60B       A465       7E6C       A459       7E6C      
+E60C       A466       7E6D       A45A       7E6D      
+E60D       A467       7E6E       A45B       7E6E      
+E60E       A468       7E6F       A45C       7E6F      
+E60F       A469       7E70       A45D       7E70      
+E610       A46A       7E71       A45E       7E71      
+E611       A46B       7E72       A45F       7E72      
+E612       A46C       7E73       A460       7E73      
+E613       A46D       7E74       A461       7E74      
+E614       A46E       7E75       A462       7E75      
+E615       A46F       7E76       A463       7E76      
+E616       A470       7E77       A464       7E77      
+E617       A471       7E78       A465       7E78      
+E618       A472       7E79       A466       7E79      
+E619       A473       7E7A       A467       7E7A      
+E61A       A474       7E7B       A468       7E7B      
+E61B       A475       7E7C       A469       7E7C      
+E61C       A476       7E7D       A46A       7E7D      
+E61D       A477       7E7E       A46B       7E7E      
+E61E       A478       7E7F       A46C       7E7F      
+E61F       A479       7E81       A46D       7E81      
+E620       A47A       7E82       A46E       7E82      
+E621       A47B       7E83       A46F       7E83      
+E622       A47C       7E84       A470       7E84      
+E623       A47D       7E85       A471       7E85      
+E624       A47E       7E86       A472       7E86      
+E625       A480       7E87       A473       7E87      
+E626       A481       7E88       A474       7E88      
+E627       A482       7E89       A475       7E89      
+E628       A483       7E8A       A476       7E8A      
+E629       A484       7E8B       A477       7E8B      
+E62A       A485       7E8C       A478       7E8C      
+E62B       A486       7E8D       A479       7E8D      
+E62C       A487       7E8E       A47A       7E8E      
+E62D       A488       7E8F       A47B       7E8F      
+E62E       A489       7E90       A47C       7E90      
+E62F       A48A       7E80       A47D       7E80      
+E630       A48B       7E92       A47E       7E92      
+E631       A48C       7E93       A480       7E93      
+E632       A48D       7E94       A481       7E94      
+E633       A48E       7E95       A482       7E95      
+E634       A48F       7E96       A483       7E96      
+E635       A490       7E97       A484       7E97      
+E636       A491       7E98       A485       7E98      
+E637       A492       7E99       A486       7E99      
+E638       A493       7E9A       A487       7E9A      
+E639       A494       7E9B       A488       7E9B      
+E63A       A495       7E9C       A489       7E9C      
+E63B       A496       7E9D       A48A       7E9D      
+E63C       A497       7E9E       A48B       7E9E      
+E63D       A498       7E9F       A48C       7E9F      
+E63E       A499       7EA0       A48D       7EA0      
+E63F       A49A       7EA1       A48E       7EA1      
+E640       A49B       7EA2       A48F       7EA2      
+E641       A49C       7EA3       A490       7EA3      
+E642       A49D       7EA4       A491       7EA4      
+E643       A49E       7EA5       A492       7EA5      
+E644       A49F       7EA6       A493       7EA6      
+E645       A4A0       7EA7       A494       7EA7      
+E646       A540       7EA8       A495       7EA8      
+E647       A541       7EA9       A496       7EA9      
+E648       A542       7EAA       A497       7EAA      
+E649       A543       7EAB       A498       7EAB      
+E64A       A544       7EAC       A499       7EAC      
+E64B       A545       7EAD       A49A       7EAD      
+E64C       A546       7EAE       A49B       7EAE      
+E64D       A547       7EAF       A49C       7EAF      
+E64E       A548       7EB0       A49D       7EB0      
+E64F       A549       7EB1       A49E       7EB1      
+E650       A54A       7EB2       A49F       7EB2      
+E651       A54B       7EB3       A4A0       7EB3      
+E652       A54C       7EB4       A4F4       7EB4      
+E653       A54D       7EB5       A4F5       7EB5      
+E654       A54E       7EB6       A4F6       7EB6      
+E655       A54F       7EB7       A4F7       7EB7      
+E656       A550       7EB8       A4F8       7EB8      
+E657       A551       7EB9       A4F9       7EB9      
+E658       A552       7EBA       A4FA       7EBA      
+E659       A553       7EBB       A4FB       7EBB      
+E65A       A554       7EBC       A4FC       7EBC      
+E65B       A555       7EBD       A4FD       7EBD      
+E65C       A556       7EBE       A4FE       7EBE      
+E65D       A557       7EBF       A540       7EBF      
+E65E       A558       7EC0       A541       7EC0      
+E65F       A559       7EC1       A542       7EC1      
+E660       A55A       7EC2       A543       7EC2      
+E661       A55B       7EC3       A544       7EC3      
+E662       A55C       7EC4       A545       7EC4      
+E663       A55D       7EC5       A546       7EC5      
+E664       A55E       7EC6       A547       7EC6      
+E665       A55F       7EC7       A548       7EC7      
+E666       A560       7EC8       A549       7EC8      
+E667       A561       7EC9       A54A       7EC9      
+E668       A562       7ECA       A54B       7ECA      
+E669       A563       7ECB       A54C       7ECB      
+E66A       A564       7ECC       A54D       7ECC      
+E66B       A565       7ECD       A54E       7ECD      
+E66C       A566       7ECE       A54F       7ECE      
+E66D       A567       7ECF       A550       7ECF      
+E66E       A568       7ED0       A551       7ED0      
+E66F       A569       7ED1       A552       7ED1      
+E670       A56A       7ED2       A553       7ED2      
+E671       A56B       7ED3       A554       7ED3      
+E672       A56C       7ED4       A555       7ED4      
+E673       A56D       7ED5       A556       7ED5      
+E674       A56E       7ED6       A557       7ED6      
+E675       A56F       7ED7       A558       7ED7      
+E676       A570       7ED8       A559       7ED8      
+E677       A571       7ED9       A55A       7ED9      
+E678       A572       7EDA       A55B       7EDA      
+E679       A573       7EDB       A55C       7EDB      
+E67A       A574       7EDC       A55D       7EDC      
+E67B       A575       7EDD       A55E       7EDD      
+E67C       A576       7EDE       A55F       7EDE      
+E67D       A577       7EDF       A560       7EDF      
+E67E       A578       7EE0       A561       7EE0      
+E67F       A579       7EE1       A562       7EE1      
+E680       A57A       7EE2       A563       7EE2      
+E681       A57B       7EE3       A564       7EE3      
+E682       A57C       7EE4       A565       7EE4      
+E683       A57D       7EE5       A566       7EE5      
+E684       A57E       7EE6       A567       7EE6      
+E685       A580       7EE7       A568       7EE7      
+E686       A581       7EE8       A569       7EE8      
+E687       A582       7EE9       A56A       7EE9      
+E688       A583       7EEA       A56B       7EEA      
+E689       A584       7EEB       A56C       7EEB      
+E68A       A585       7EEC       A56D       7EEC      
+E68B       A586       7EED       A56E       7EED      
+E68C       A587       7EEE       A56F       7EEE      
+E68D       A588       7EEF       A570       7EEF      
+E68E       A589       7EF0       A571       7EF0      
+E68F       A58A       7EF1       A572       7EF1      
+E690       A58B       7EF2       A573       7EF2      
+E691       A58C       7EF3       A574       7EF3      
+E692       A58D       7EF4       A575       7EF4      
+E693       A58E       7EF5       A576       7EF5      
+E694       A58F       7EF6       A577       7EF6      
+E695       A590       7EF7       A578       7EF7      
+E696       A591       7EF8       A579       7EF8      
+E697       A592       7EF9       A57A       7EF9      
+E698       A593       7EFA       A57B       7EFA      
+E699       A594       7EFB       A57C       7EFB      
+E69A       A595       7EFC       A57D       7EFC      
+E69B       A596       7EFD       A57E       7EFD      
+E69C       A597       7F41       A580       7F41      
+E69D       A598       7F42       A581       7F42      
+E69E       A599       7F43       A582       7F43      
+E69F       A59A       7F44       A583       7F44      
+E6A0       A59B       7F45       A584       7F45      
+E6A1       A59C       7F46       A585       7F46      
+E6A2       A59D       7F47       A586       7F47      
+E6A3       A59E       7F48       A587       7F48      
+E6A4       A59F       7F49       A588       7F49      
+E6A5       A5A0       7F4A       A589       7F4A      
+E6A6       A640       7F4B       A58A       7F4B      
+E6A7       A641       7F4C       A58B       7F4C      
+E6A8       A642       7F4D       A58C       7F4D      
+E6A9       A643       7F4E       A58D       7F4E      
+E6AA       A644       7F4F       A58E       7F4F      
+E6AB       A645       7F50       A58F       7F50      
+E6AC       A646       7F51       A590       7F51      
+E6AD       A647       7EFE       A591       7EFE      
+E6AE       A648       7F53       A592       7F53      
+E6AF       A649       7F54       A593       7F54      
+E6B0       A64A       7F55       A594       7F55      
+E6B1       A64B       7F56       A595       7F56      
+E6B2       A64C       7F57       A596       7F57      
+E6B3       A64D       7F58       A597       7F58      
+E6B4       A64E       7F59       A598       7F59      
+E6B5       A64F       7F5A       A599       7F5A      
+E6B6       A650       7F5B       A59A       7F5B      
+E6B7       A651       7F5C       A59B       7F5C      
+E6B8       A652       7F5D       A59C       7F5D      
+E6B9       A653       7F5E       A59D       7F5E      
+E6BA       A654       7F5F       A59E       7F5F      
+E6BB       A655       7F60       A59F       7F60      
+E6BC       A656       7F61       A5A0       7F61      
+E6BD       A657       7F62       A5F7       7F62      
+E6BE       A658       7F63       A5F8       7F63      
+E6BF       A659       7F64       A5F9       7F64      
+E6C0       A65A       7F65       A5FA       7F65      
+E6C1       A65B       7F66       A5FB       7F66      
+E6C2       A65C       7F67       A5FC       7F67      
+E6C3       A65D       7F68       A5FD       7F68      
+E6C4       A65E       7F69       A5FE       7F69      
+E6C5       A65F       7F6A       A640       7F6A      
+E6C6       A660       7F6B       A641       7F6B      
+E6C7       A661       7F6C       A642       7F6C      
+E6C8       A662       7F6D       A643       7F6D      
+E6C9       A663       7F6E       A644       7F6E      
+E6CA       A664       7F6F       A645       7F6F      
+E6CB       A665       7F70       A646       7F70      
+E6CC       A666       7F71       A647       7F71      
+E6CD       A667       7F72       A648       7F72      
+E6CE       A668       7F73       A649       7F73      
+E6CF       A669       7F74       A64A       7F74      
+E6D0       A66A       7F75       A64B       7F75      
+E6D1       A66B       7F76       A64C       7F76      
+E6D2       A66C       7F77       A64D       7F77      
+E6D3       A66D       7F78       A64E       7F78      
+E6D4       A66E       7F79       A64F       7F79      
+E6D5       A66F       7F7A       A650       7F7A      
+E6D6       A670       7F7B       A651       7F7B      
+E6D7       A671       7F7C       A652       7F7C      
+E6D8       A672       7F7D       A653       7F7D      
+E6D9       A673       7F7E       A654       7F7E      
+E6DA       A674       7F7F       A655       7F7F      
+E6DB       A675       7F81       A656       7F81      
+E6DC       A676       7F82       A657       7F82      
+E6DD       A677       7F83       A658       7F83      
+E6DE       A678       7F84       A659       7F84      
+E6DF       A679       7F85       A65A       7F85      
+E6E0       A67A       7F86       A65B       7F86      
+E6E1       A67B       7F87       A65C       7F87      
+E6E2       A67C       7F88       A65D       7F88      
+E6E3       A67D       7F89       A65E       7F89      
+E6E4       A67E       7F8A       A65F       7F8A      
+E6E5       A680       7F8B       A660       7F8B      
+E6E6       A681       7F8C       A661       7F8C      
+E6E7       A682       7F8D       A662       7F8D      
+E6E8       A683       7F8E       A663       7F8E      
+E6E9       A684       7F8F       A664       7F8F      
+E6EA       A685       7F90       A665       7F90      
+E6EB       A686       7F91       A666       7F91      
+E6EC       A687       7F92       A667       7F92      
+E6ED       A688       7F80       A668       7F80      
+E6EE       A689       7F94       A669       7F94      
+E6EF       A68A       7F95       A66A       7F95      
+E6F0       A68B       7F96       A66B       7F96      
+E6F1       A68C       7F97       A66C       7F97      
+E6F2       A68D       7F98       A66D       7F98      
+E6F3       A68E       7F99       A66E       7F99      
+E6F4       A68F       7F9A       A66F       7F9A      
+E6F5       A690       7F9B       A670       7F9B      
+E6F6       A691       7F9C       A671       7F9C      
+E6F7       A692       7F9D       A672       7F9D      
+E6F8       A693       7F9E       A673       7F9E      
+E6F9       A694       7F9F       A674       7F9F      
+E6FA       A695       7FA0       A675       7FA0      
+E6FB       A696       7FA1       A676       7FA1      
+E6FC       A697       7FA2       A677       7FA2      
+E6FD       A698       7FA3       A678       7FA3      
+E6FE       A699       7FA4       A679       7FA4      
+E6FF       A69A       7FA5       A67A       7FA5      
+E700       A69B       7FA6       A67B       7FA6      
+E701       A69C       7FA7       A67C       7FA7      
+E702       A69D       7FA8       A67D       7FA8      
+E703       A69E       7FA9       A67E       7FA9      
+E704       A69F       7FAA       A680       7FAA      
+E705       A6A0       7FAB       A681       7FAB      
+E706       A740       7FAC       A682       7FAC      
+E707       A741       7FAD       A683       7FAD      
+E708       A742       7FAE       A684       7FAE      
+E709       A743       7FAF       A685       7FAF      
+E70A       A744       7FB0       A686       7FB0      
+E70B       A745       7FB1       A687       7FB1      
+E70C       A746       7FB2       A688       7FB2      
+E70D       A747       7FB3       A689       7FB3      
+E70E       A748       7FB4       A68A       7FB4      
+E70F       A749       7FB5       A68B       7FB5      
+E710       A74A       7FB6       A68C       7FB6      
+E711       A74B       7FB7       A68D       7FB7      
+E712       A74C       7FB8       A68E       7FB8      
+E713       A74D       7FB9       A68F       7FB9      
+E714       A74E       7FBA       A690       7FBA      
+E715       A74F       7FBB       A691       7FBB      
+E716       A750       7FBC       A692       7FBC      
+E717       A751       7FBD       A693       7FBD      
+E718       A752       7FBE       A694       7FBE      
+E719       A753       7FBF       A695       7FBF      
+E71A       A754       7FC0       A696       7FC0      
+E71B       A755       7FC1       A697       7FC1      
+E71C       A756       7FC2       A698       7FC2      
+E71D       A757       7FC3       A699       7FC3      
+E71E       A758       7FC4       A69A       7FC4      
+E71F       A759       7FC5       A69B       7FC5      
+E720       A75A       7FC6       A69C       7FC6      
+E721       A75B       7FC7       A69D       7FC7      
+E722       A75C       7FC8       A69E       7FC8      
+E723       A75D       7FC9       A69F       7FC9      
+E724       A75E       7FCA       A6A0       7FCA      
+E725       A75F       7FCB       A6B9       7FCB      
+E726       A760       7FCC       A6BA       7FCC      
+E727       A761       7FCD       A6BB       7FCD      
+E728       A762       7FCE       A6BC       7FCE      
+E729       A763       7FCF       A6BD       7FCF      
+E72A       A764       7FD0       A6BE       7FD0      
+E72B       A765       7FD1       A6BF       7FD1      
+E72C       A766       7FD2       A6C0       7FD2      
+E72D       A767       7FD3       A6D9       7FD3      
+E72E       A768       7FD4       A6DA       7FD4      
+E72F       A769       7FD5       A6DB       7FD5      
+E730       A76A       7FD6       A6DC       7FD6      
+E731       A76B       7FD7       A6DD       7FD7      
+E732       A76C       7FD8       A6DE       7FD8      
+E733       A76D       7FD9       A6DF       7FD9      
+E734       A76E       7FDA       A6EC       7FDA      
+E735       A76F       7FDB       A6ED       7FDB      
+E736       A770       7FDC       A6F3       7FDC      
+E737       A771       7FDD       A6F6       7FDD      
+E738       A772       7FDE       A6F7       7FDE      
+E739       A773       7FDF       A6F8       7FDF      
+E73A       A774       7FE0       A6F9       7FE0      
+E73B       A775       7FE1       A6FA       7FE1      
+E73C       A776       7FE2       A6FB       7FE2      
+E73D       A777       7FE3       A6FC       7FE3      
+E73E       A778       7FE4       A6FD       7FE4      
+E73F       A779       7FE5       A6FE       7FE5      
+E740       A77A       7FE6       A740       7FE6      
+E741       A77B       7FE7       A741       7FE7      
+E742       A77C       7FE8       A742       7FE8      
+E743       A77D       7FE9       A743       7FE9      
+E744       A77E       7FEA       A744       7FEA      
+E745       A780       7FEB       A745       7FEB      
+E746       A781       7FEC       A746       7FEC      
+E747       A782       7FED       A747       7FED      
+E748       A783       7FEE       A748       7FEE      
+E749       A784       7FEF       A749       7FEF      
+E74A       A785       7FF0       A74A       7FF0      
+E74B       A786       7FF1       A74B       7FF1      
+E74C       A787       7FF2       A74C       7FF2      
+E74D       A788       7FF3       A74D       7FF3      
+E74E       A789       7FF4       A74E       7FF4      
+E74F       A78A       7FF5       A74F       7FF5      
+E750       A78B       7FF6       A750       7FF6      
+E751       A78C       7FF7       A751       7FF7      
+E752       A78D       7FF8       A752       7FF8      
+E753       A78E       7FF9       A753       7FF9      
+E754       A78F       7FFA       A754       7FFA      
+E755       A790       7FFB       A755       7FFB      
+E756       A791       7FFC       A756       7FFC      
+E757       A792       7FFD       A757       7FFD      
+E758       A793                  A758                 
+E759       A794                  A759                 
+E75A       A795                  A75A                 
+E75B       A796                  A75B                 
+E75C       A797                  A75C                 
+E75D       A798                  A75D                 
+E75E       A799                  A75E                 
+E75F       A79A                  A75F                 
+E760       A79B                  A760                 
+E761       A79C                  A761                 
+E762       A79D                  A762                 
+E763       A79E                  A763                 
+E764       A79F                  A764                 
+E765       A7A0                  A765                 
+E766       A2AB                  A766                 
+E767       A2AC                  A767                 
+E768       A2AD                  A768                 
+E769       A2AE                  A769                 
+E76A       A2AF                  A76A                 
+E76B       A2B0       7FFE       A76B       7FFE      
+E76C       A2E3                  A76C                 
+E76D       A2E4                  A76D                 
+E76E       A2EF                  A76E                 
+E76F       A2F0                  A76F                 
+E770       A2FD                  A770                 
+E771       A2FE                  A771                 
+E772       A4F4                  A772                 
+E773       A4F5                  A773                 
+E774       A4F6                  A774                 
+E775       A4F7                  A775                 
+E776       A4F8                  A776                 
+E777       A4F9                  A777                 
+E778       A4FA                  A778                 
+E779       A4FB                  A779                 
+E77A       A4FC                  A77A                 
+E77B       A4FD                  A77B                 
+E77C       A4FE                  A77C                 
+E77D       A5F7                  A77D                 
+E77E       A5F8                  A77E                 
+E77F       A5F9                  A780                 
+E780       A5FA                  A781                 
+E781       A5FB                  A782                 
+E782       A5FC                  A783                 
+E783       A5FD                  A784                 
+E784       A5FE                  A785                 
+E785       A6B9                  A786                 
+E786       A6BA                  A787                 
+E787       A6BB                  A788                 
+E788       A6BC                  A789                 
+E789       A6BD                  A78A                 
+E78A       A6BE                  A78B                 
+E78B       A6BF                  A78C                 
+E78C       A6C0                  A78D                 
+E78D       A6D9                  A78E                 
+E78E       A6DA                  A78F                 
+E78F       A6DB                  A790                 
+E790       A6DC                  A791                 
+E791       A6DD                  A792                 
+E792       A6DE                  A793                 
+E793       A6DF                  A794                 
+E794       A6EC                  A795                 
+E795       A6ED                  A796                 
+E796       A6F3                  A797                 
+E797       A6F6                  A798                 
+E798       A6F7                  A799                 
+E799       A6F8                  A79A                 
+E79A       A6F9                  A79B                 
+E79B       A6FA                  A79C                 
+E79C       A6FB                  A79D                 
+E79D       A6FC                  A79E                 
+E79E       A6FD                  A79F                 
+E79F       A6FE                  A7A0                 
+E7A0       A7C2                  A7C2                 
+E7A1       A7C3                  A7C3                 
+E7A2       A7C4                  A7C4                 
+E7A3       A7C5                  A7C5                 
+E7A4       A7C6                  A7C6                 
+E7A5       A7C7                  A7C7                 
+E7A6       A7C8                  A7C8                 
+E7A7       A7C9                  A7C9                 
+E7A8       A7CA                  A7CA                 
+E7A9       A7CB                  A7CB                 
+E7AA       A7CC                  A7CC                 
+E7AB       A7CD                  A7CD                 
+E7AC       A7CE                  A7CE                 
+E7AD       A7CF                  A7CF                 
+E7AE       A7D0                  A7D0                 
+E7AF       A7F2                  A7F2                 
+E7B0       A7F3                  A7F3                 
+E7B1       A7F4                  A7F4                 
+E7B2       A7F5                  A7F5                 
+E7B3       A7F6                  A7F6                 
+E7B4       A7F7                  A7F7                 
+E7B5       A7F8                  A7F8                 
+E7B6       A7F9                  A7F9                 
+E7B7       A7FA                  A7FA                 
+E7B8       A7FB                  A7FB                 
+E7B9       A7FC                  A7FC                 
+E7BA       A7FD                  A7FD                 
+E7BB       A7FE                  A7FE                 
+E7BC       A896                  A896                 
+E7BD       A897                  A897                 
+E7BE       A898                  A898                 
+E7BF       A899                  A899                 
+E7C0       A89A                  A89A                 
+E7C1       A89B                  A89B                 
+E7C2       A89C                  A89C                 
+E7C3       A89D                  A89D                 
+E7C4       A89E                  A89E                 
+E7C5       A89F                  A89F                 
+E7C6       A8A0                  A8A0                 
+E7C7       A8BC                  A8BC                 
+E7C8       A8BF                  A8BF                 
+E7C9       A8C1                  A8C1                 
+E7CA       A8C2                  A8C2                 
+E7CB       A8C3                  A8C3                 
+E7CC       A8C4                  A8C4                 
+E7CD       A8EA                  A8EA                 
+E7CE       A8EB                  A8EB                 
+E7CF       A8EC                  A8EC                 
+E7D0       A8ED                  A8ED                 
+E7D1       A8EE                  A8EE                 
+E7D2       A8EF                  A8EF                 
+E7D3       A8F0                  A8F0                 
+E7D4       A8F1                  A8F1                 
+E7D5       A8F2                  A8F2                 
+E7D6       A8F3                  A8F3                 
+E7D7       A8F4                  A8F4                 
+E7D8       A8F5                  A8F5                 
+E7D9       A8F6                  A8F6                 
+E7DA       A8F7                  A8F7                 
+E7DB       A8F8                  A8F8                 
+E7DC       A8F9                  A8F9                 
+E7DD       A8FA                  A8FA                 
+E7DE       A8FB                  A8FB                 
+E7DF       A8FC                  A8FC                 
+E7E0       A8FD                  A8FD                 
+E7E1       A8FE                  A8FE                 
+E7E2       A958                  A958                 
+E7E3       A95B                  A95B                 
+E7E4       A95D                  A95D                 
+E7E5       A95E                  A95E                 
+E7E6       A95F                  A95F                 
+E7E7       A989                  A989                 
+E7E8       A98A                  A98A                 
+E7E9       A98B                  A98B                 
+E7EA       A98C                  A98C                 
+E7EB       A98D                  A98D                 
+E7EC       A98E                  A98E                 
+E7ED       A98F                  A98F                 
+E7EE       A990                  A990                 
+E7EF       A991                  A991                 
+E7F0       A992                  A992                 
+E7F1       A993                  A993                 
+E7F2       A994                  A994                 
+E7F3       A995                  A995                 
+E7F4       A997                  A997                 
+E7F5       A998                  A998                 
+E7F6       A999                  A999                 
+E7F7       A99A                  A99A                 
+E7F8       A99B                  A99B                 
+E7F9       A99C                  A99C                 
+E7FA       A99D                  A99D                 
+E7FB       A99E                  A99E                 
+E7FC       A99F                  A99F                 
+E7FD       A9A0                  A9A0                 
+E7FE       A9A1                  A9A1                 
+E7FF       A9A2                  A9A2                 
+E800       A9A3                  A9A3                 
+E801       A9F0                  A9F0                 
+E802       A9F1                  A9F1                 
+E803       A9F2                  A9F2                 
+E804       A9F3                  A9F3                 
+E805       A9F4                  A9F4                 
+E806       A9F5                  A9F5                 
+E807       A9F6                  A9F6                 
+E808       A9F7                  A9F7                 
+E809       A9F8                  A9F8                 
+E80A       A9F9                  A9F9                 
+E80B       A9FA                  A9FA                 
+E80C       A9FB                  A9FB                 
+E80D       A9FC                  A9FC                 
+E80E       A9FD                  A9FD                 
+E80F       A9FE                  A9FE                 
+E810       D7FA                  D7FA                 
+E811       D7FB                  D7FB                 
+E812       D7FC                  D7FC                 
+E813       D7FD                  D7FD                 
+E814       D7FE                  D7FE                 
+E815       FE50                  FE50                 
+E816       FE51                  FE51                 
+E817       FE52                  FE52                 
+E818       FE53                  FE53                 
+E819       FE54                  FE54                 
+E81A       FE55                  FE55                 
+E81B       FE56                  FE56                 
+E81C       FE57                  FE57                 
+E81D       FE58                  FE58                 
+E81E       FE59                  FE59                 
+E81F       FE5A                  FE5A                 
+E820       FE5B                  FE5B                 
+E821       FE5C                  FE5C                 
+E822       FE5D                  FE5D                 
+E823       FE5E                  FE5E                 
+E824       FE5F                  FE5F                 
+E825       FE60                  FE60                 
+E826       FE61                  FE61                 
+E827       FE62                  FE62                 
+E828       FE63                  FE63                 
+E829       FE64                  FE64                 
+E82A       FE65                  FE65                 
+E82B       FE66                  FE66                 
+E82C       FE67                  FE67                 
+E82D       FE68                  FE68                 
+E82E       FE69                  FE69                 
+E82F       FE6A                  FE6A                 
+E830       FE6B                  FE6B                 
+E831       FE6C                  FE6C                 
+E832       FE6D                  FE6D                 
+E833       FE6E                  FE6E                 
+E834       FE6F                  FE6F                 
+E835       FE70                  FE70                 
+E836       FE71                  FE71                 
+E837       FE72                  FE72                 
+E838       FE73                  FE73                 
+E839       FE74                  FE74                 
+E83A       FE75                  FE75                 
+E83B       FE76                  FE76                 
+E83C       FE77                  FE77                 
+E83D       FE78                  FE78                 
+E83E       FE79                  FE79                 
+E83F       FE7A                  FE7A                 
+E840       FE7B                  FE7B                 
+E841       FE7C                  FE7C                 
+E842       FE7D                  FE7D                 
+E843       FE7E                  FE7E                 
+E844       FE80                  FE80                 
+E845       FE81                  FE81                 
+E846       FE82                  FE82                 
+E847       FE83                  FE83                 
+E848       FE84                  FE84                 
+E849       FE85                  FE85                 
+E84A       FE86                  FE86                 
+E84B       FE87                  FE87                 
+E84C       FE88                  FE88                 
+E84D       FE89                  FE89                 
+E84E       FE8A                  FE8A                 
+E84F       FE8B                  FE8B                 
+E850       FE8C                  FE8C                 
+E851       FE8D                  FE8D                 
+E852       FE8E                  FE8E                 
+E853       FE8F                  FE8F                 
+E854       FE90                  FE90                 
+E855       FE91                  FE91                 
+E856       FE92                  FE92                 
+E857       FE93                  FE93                 
+E858       FE94                  FE94                 
+E859       FE95                  FE95                 
+E85A       FE96                  FE96                 
+E85B       FE97                  FE97                 
+E85C       FE98                  FE98                 
+E85D       FE99                  FE99                 
+E85E       FE9A                  FE9A                 
+E85F       FE9B                  FE9B                 
+E860       FE9C                  FE9C                 
+E861       FE9D                  FE9D                 
+E862       FE9E                  FE9E                 
+E863       FE9F                  FE9F                 
+E864       FEA0                  FEA0                 
+F83D                  435B                  435B      
+F83E                  445C                  445C      
+#------------------------------------------------------------------------------

@@ -1,0 +1,302 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\IndexEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2008,10,30,19
+ PRODUCTVERSION 2008,10,30,19
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "IndexEditor DLL\0"
+            VALUE "FileVersion", "2008, 10, 30, 19\0"
+            VALUE "InternalName", "IndexEditor\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IndexEditor.DLL\0"
+            VALUE "ProductName", "IndexEditor 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2008, 10, 30, 19\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INDEX_EDITOR_MAIN DIALOG DISCARDABLE  0, 0, 401, 235
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    LISTBOX         IDC_listIndexAlias,8,45,112,184,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Tree1",IDC_treeIndexComponent,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,141,9,106,222
+    EDITTEXT        IDC_edtIndexGroup,43,14,76,13,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "색인그룹",IDC_stcIndexGroup,7,16,32,8
+    GROUPBOX        "",IDC_groupIndexGroup,3,3,122,29
+END
+
+IDD_INDEX_GROUP DIALOG DISCARDABLE  0, 0, 140, 169
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "그룹 선택"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "선택",IDOK,16,151,50,14
+    PUSHBUTTON      "취소",IDCANCEL,74,151,50,14
+    LISTBOX         IDC_listGroup,4,2,133,145,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_INDEX_INFO DIALOG DISCARDABLE  0, 0, 228, 340
+STYLE WS_CHILD | WS_BORDER
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtIndexTypeDesc,11,33,208,108,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+    EDITTEXT        IDC_edtTagDesc,9,190,207,126,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+    CONTROL         "Tab1",IDC_tabIndexTypeInfo,"SysTabControl32",0x0,5,5,220,153
+    GROUPBOX        "",IDC_stcTagInfo,3,176,220,152
+END
+
+IDD_INDEX_INDICATOR DIALOG DISCARDABLE  0, 0, 197, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "지시기호 정보"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "A",IDC_radIndTypeA,"Button",BS_AUTORADIOBUTTON | WS_GROUP,154,36,19,8
+    CONTROL         "B",IDC_radIndTypeB,"Button",BS_AUTORADIOBUTTON,154,53,19,8
+    CONTROL         "C",IDC_radIndTypeC,"Button",BS_AUTORADIOBUTTON,154,70,19,8
+    CONTROL         "D",IDC_radIndTypeD,"Button",BS_AUTORADIOBUTTON,154,87,19,8
+    CONTROL         "E",IDC_radIndTypeE,"Button",BS_AUTORADIOBUTTON,154,104,19,8
+    CONTROL         "F",IDC_radIndTypeF,"Button",BS_AUTORADIOBUTTON,154,121,19,8
+    CONTROL         "G",IDC_radIndTypeG,"Button",BS_AUTORADIOBUTTON,154,138,19,8
+    CONTROL         "H",IDC_radIndTypeH,"Button",BS_AUTORADIOBUTTON,154,155,19,8
+    CONTROL         "I",IDC_radIndTypeI,"Button",BS_AUTORADIOBUTTON,154,172,19,8
+    CONTROL         "J",IDC_radIndTypeJ,"Button",BS_AUTORADIOBUTTON,153,189,19,8
+    DEFPUSHBUTTON   "확인",IDOK,43,211,50,14
+    PUSHBUTTON      "취소",IDCANCEL,99,211,50,14
+    GROUPBOX        "지시기호 유형",IDC_STATIC,129,24,65,180
+    LISTBOX         IDC_listFirstIndicator,14,39,30,149,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_listSecondIndicator,80,39,30,149,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "제1지시기호",IDC_STATIC,2,24,55,180
+    GROUPBOX        "제2지시기호",IDC_STATIC,66,24,55,180
+    CONTROL         "전체 지시기호 선택 ",IDC_chkIndicatorAll,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,85,8
+    CONTROL         "반복허용",IDC_chkIndicatorRepeat,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,137,7,45,8
+END
+
+IDD_INDEX_SUBFIELD DIALOG DISCARDABLE  0, 0, 108, 151
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "식별기호 정보"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,2,133,50,14
+    PUSHBUTTON      "취소",IDCANCEL,58,133,50,14
+    LISTBOX         IDC_listSubfield,29,18,48,100,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "식별기호",IDC_STATIC,6,5,94,122
+END
+
+IDD_INDEX_TAG_TYPE DIALOG DISCARDABLE  0, 0, 107, 191
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "태그 유형 설정"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "A",IDC_radTagTypeA,"Button",BS_AUTORADIOBUTTON | WS_GROUP,39,36,31,8
+    CONTROL         "B",IDC_radTagTypeB,"Button",BS_AUTORADIOBUTTON,39,55,31,8
+    CONTROL         "C",IDC_radTagTypeC,"Button",BS_AUTORADIOBUTTON,39,74,31,8
+    CONTROL         "D",IDC_radTagTypeD,"Button",BS_AUTORADIOBUTTON,39,93,31,8
+    CONTROL         "E",IDC_radTagTypeE,"Button",BS_AUTORADIOBUTTON,39,112,31,8
+    CONTROL         "F",IDC_radTagTypeF,"Button",BS_AUTORADIOBUTTON,39,131,31,8
+    CONTROL         "G",IDC_radTagTypeG,"Button",BS_AUTORADIOBUTTON,39,150,31,8
+    DEFPUSHBUTTON   "확인",IDOK,3,173,50,14
+    PUSHBUTTON      "취소",IDCANCEL,55,173,50,14
+    CONTROL         "유형없음",IDC_chkTagNoType,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,7,44,8
+    GROUPBOX        "태그유형",IDC_STATIC,4,23,99,144
+END
+
+IDD_INDEX_TAG DIALOG DISCARDABLE  0, 0, 254, 221
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "태그 추가"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "A",IDC_radTagInsertA,"Button",BS_AUTORADIOBUTTON | WS_GROUP,209,61,18,8
+    CONTROL         "B",IDC_radTagInsertB,"Button",BS_AUTORADIOBUTTON,209,80,18,8
+    CONTROL         "C",IDC_radTagInsertC,"Button",BS_AUTORADIOBUTTON,209,99,18,8
+    CONTROL         "D",IDC_radTagInsertD,"Button",BS_AUTORADIOBUTTON,209,118,18,8
+    CONTROL         "E",IDC_radTagInsertE,"Button",BS_AUTORADIOBUTTON,209,137,18,8
+    CONTROL         "F",IDC_radTagInsertF,"Button",BS_AUTORADIOBUTTON,209,156,18,8
+    CONTROL         "G",IDC_radTagInsertG,"Button",BS_AUTORADIOBUTTON,209,175,18,8
+    DEFPUSHBUTTON   "확인",IDOK,68,205,50,14
+    PUSHBUTTON      "취소",IDCANCEL,134,205,50,14
+    CONTROL         "",IDC_gridTag,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,3,33,180,168
+    LTEXT           "코드",IDC_STATIC,5,13,16,8
+    LTEXT           "이름",IDC_STATIC,51,13,16,8
+    EDITTEXT        IDC_edtTagCode,25,10,21,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtTagName,69,9,78,13,ES_AUTOHSCROLL
+    CONTROL         "유형 없음",IDC_chkTagInsertNoType,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,192,12,50,8
+    GROUPBOX        "태그유형",IDC_STATIC,189,29,60,173
+    PUSHBUTTON      "검색",IDC_btnTagSearch,151,8,28,16
+    GROUPBOX        "",IDC_STATIC,3,0,180,28
+END
+
+IDD_INDEX_NEW DIALOG DISCARDABLE  0, 0, 166, 59
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "색인 입력"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,25,42,50,14
+    PUSHBUTTON      "취소",IDCANCEL,90,41,50,14
+    EDITTEXT        IDC_edtNewIndexName,7,17,149,13,ES_AUTOHSCROLL
+    GROUPBOX        "새 색인 이름",IDC_STATIC,3,5,160,30
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TREEBITMAP          BITMAP  DISCARDABLE     "treebitm.bmp"
+IDB_TREETYPE            BITMAP  DISCARDABLE     "bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_INDEX_TAG DLGINIT
+BEGIN
+    IDC_gridTag, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x208e, 0x0000, 0x1a0c, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0000, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\IndexEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

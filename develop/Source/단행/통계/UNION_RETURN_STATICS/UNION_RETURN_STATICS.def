@@ -1,0 +1,11 @@
+; UNION_RETURN_STATICS.def : Declares the module parameters for the DLL.
+
+LIBRARY      "UNION_RETURN_STATICS"
+DESCRIPTION  'UNION_RETURN_STATICS Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

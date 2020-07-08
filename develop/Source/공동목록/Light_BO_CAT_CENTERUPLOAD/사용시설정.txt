@@ -1,0 +1,14 @@
+
+
+Light_BO_CAT_CENTERUPLOAD
+
+BasicDM = "DM_CENTERUPLOAD_01;
+DupDM   = "DM_CENTERUPLOAD_복본자료" ;
+
+
+
+  CBO_CAT_CENTERUPLOAD dlg(this) ;
+  dlg.SetDMAlias( CString BasicDM, CString DupDM ,CString pParentCM) ;
+  dlg.CenterUpload(bool m_bMarcSyntaxCheck) ;
+
+  

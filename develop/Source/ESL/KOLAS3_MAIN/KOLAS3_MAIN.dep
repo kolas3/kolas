@@ -1,0 +1,297 @@
+# Microsoft Developer Studio Generated Dependency File, included by KOLAS3_MAIN.mak
+
+.\BCMenu.cpp : \
+	".\BCMenu.h"\
+	".\StdAfx.h"\
+	
+
+.\Form.cpp : \
+	".\Form.h"\
+	".\KOLAS3_MAIN.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Confirm.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\\ESL\\ESL_DataMgr.h"\
+	{$(INCLUDE)}"..\\ESL\\ESL_Information.h"\
+	{$(INCLUDE)}"..\ESL\\ESL_Control_Element.h"\
+	{$(INCLUDE)}"..\ESL\ESL_Mgr.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"Ctrl_Strucrdef.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECO_ControlDateEdit.h"\
+	{$(INCLUDE)}"ECO_ControlDateEditElem.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_CodeMgr.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_ControlComboBox.h"\
+	{$(INCLUDE)}"ESL_ControlEdit.h"\
+	{$(INCLUDE)}"ESL_ControlMgr.h"\
+	{$(INCLUDE)}"ESL_ControlMultiComboBox.h"\
+	{$(INCLUDE)}"ESL_DataVerifyMgr.h"\
+	{$(INCLUDE)}"ESL_DateTimeCtrl.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"esl_worksheet_dlg.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"JComboBx.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\KOLAS3_MAIN.cpp : \
+	".\BCMenu.h"\
+	".\Form.h"\
+	".\KOLAS3_MAIN.h"\
+	".\KOLAS3_MAINDoc.h"\
+	".\KOLAS3_MAINView.h"\
+	".\LoadBmp.h"\
+	".\MainFrm.h"\
+	".\MenuItem.h"\
+	".\StdAfx.h"\
+	".\ToolbarItem.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Confirm.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\\ESL\\ESL_DataMgr.h"\
+	{$(INCLUDE)}"..\\ESL\\ESL_Information.h"\
+	{$(INCLUDE)}"..\ESL\\ESL_Control_Element.h"\
+	{$(INCLUDE)}"..\ESL\ESL_Mgr.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"Ctrl_Strucrdef.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECO_ControlDateEdit.h"\
+	{$(INCLUDE)}"ECO_ControlDateEditElem.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_CodeMgr.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_ControlComboBox.h"\
+	{$(INCLUDE)}"ESL_ControlEdit.h"\
+	{$(INCLUDE)}"ESL_ControlMgr.h"\
+	{$(INCLUDE)}"ESL_ControlMultiComboBox.h"\
+	{$(INCLUDE)}"ESL_DataVerifyMgr.h"\
+	{$(INCLUDE)}"ESL_DateTimeCtrl.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"esl_worksheet_dlg.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"JComboBx.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\KOLAS3_MAIN.rc : \
+	".\res\KOLAS3_MAIN.ico"\
+	".\res\KOLAS3_MAIN.rc2"\
+	".\res\KOLAS3_MAINDoc.ico"\
+	".\res\Toolbar.bmp"\
+	
+
+.\KOLAS3_MAINDoc.cpp : \
+	".\KOLAS3_MAIN.h"\
+	".\KOLAS3_MAINDoc.h"\
+	".\StdAfx.h"\
+	
+
+.\KOLAS3_MAINView.cpp : \
+	".\BCMenu.h"\
+	".\Form.h"\
+	".\KOLAS3_MAIN.h"\
+	".\KOLAS3_MAINDoc.h"\
+	".\KOLAS3_MAINView.h"\
+	".\LoadBmp.h"\
+	".\LoginDlg.h"\
+	".\MainFrm.h"\
+	".\MenuItem.h"\
+	".\StdAfx.h"\
+	".\ToolbarItem.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Confirm.h"\
+	{$(INCLUDE)}"..\..\source\ESL\ESL\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\\ESL\\ESL_DataMgr.h"\
+	{$(INCLUDE)}"..\\ESL\\ESL_Information.h"\
+	{$(INCLUDE)}"..\ESL\\ESL_Control_Element.h"\
+	{$(INCLUDE)}"..\ESL\ESL_Mgr.h"\
+	{$(INCLUDE)}"_excelmancontrol.h"\
+	{$(INCLUDE)}"Ctrl_Strucrdef.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECO_ControlDateEdit.h"\
+	{$(INCLUDE)}"ECO_ControlDateEditElem.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_CodeMgr.h"\
+	{$(INCLUDE)}"ESL_Constant.h"\
+	{$(INCLUDE)}"ESL_ControlComboBox.h"\
+	{$(INCLUDE)}"ESL_ControlEdit.h"\
+	{$(INCLUDE)}"ESL_ControlMgr.h"\
+	{$(INCLUDE)}"ESL_ControlMultiComboBox.h"\
+	{$(INCLUDE)}"ESL_DataVerifyMgr.h"\
+	{$(INCLUDE)}"ESL_DateTimeCtrl.h"\
+	{$(INCLUDE)}"ESL_Grid.h"\
+	{$(INCLUDE)}"ESL_GridSelEditor.h"\
+	{$(INCLUDE)}"esl_worksheet_dlg.h"\
+	{$(INCLUDE)}"ExcelManager.h"\
+	{$(INCLUDE)}"JComboBx.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mshflexgrid.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\LoadBmp.cpp : \
+	".\LoadBmp.h"\
+	".\StdAfx.h"\
+	
+
+.\LoginDlg.cpp : \
+	".\KOLAS3_MAIN.h"\
+	".\LoadBmp.h"\
+	".\LoginDlg.h"\
+	".\StdAfx.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\\ESL\\ESL_DataMgr.h"\
+	{$(INCLUDE)}"..\\ESL\\ESL_Information.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ECOOCI8.h"\
+	{$(INCLUDE)}"ECOOCIComApi.h"\
+	{$(INCLUDE)}"ESL_CodeMgr.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidem.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocikp.h"\
+	{$(INCLUDE)}"ocikpr.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\MainFrm.cpp : \
+	".\KOLAS3_MAIN.h"\
+	".\MainFrm.h"\
+	".\StdAfx.h"\
+	
+
+.\MenuItem.cpp : \
+	".\KOLAS3_MAIN.h"\
+	".\MenuItem.h"\
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	
+
+.\ToolbarItem.cpp : \
+	".\KOLAS3_MAIN.h"\
+	".\StdAfx.h"\
+	".\ToolbarItem.h"\
+	

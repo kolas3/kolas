@@ -1,0 +1,101 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "BL_LOC_USER"="..\..\단행\열람\장서관리\BL_LOC_USER\BL_LOC_USER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BO_LOC_3100"="..\..\단행\열람\장서관리\BO_LOC_3100\BO_LOC_3100.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "CO_CENTER_USER_MANAGE"=".\CO_CENTER_USER_MANAGE.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Kolas2up_CommonControl"="..\..\공통\Kolas2up_CommonControl\Kolas2up_CommonControl.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "LOC_CommonAPI"="..\..\단행\열람\장서관리\LOC_CommonAPI\LOC_CommonAPI.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_CENTERLIB_MANAGER"="..\..\관리\센터도서관관리\MNG_CENTERLIB_MANAGER\MNG_CENTERLIB_MANAGER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_UNION_LOAN_INFO_MANAGER"="..\..\관리\대출자,도서관 통합 관리\MNG_UNION_LOAN_INFO_MANAGER\MNG_UNION_LOAN_INFO_MANAGER.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

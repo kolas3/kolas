@@ -1,0 +1,943 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CMarcEditCtrl</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file C:\Kolas2UP\Develop\Source\ESL\MARC\MarcEdit\MarcEditCtrl.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CMarcEditCtrl</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>CRichEditCtrl을 상속받은 MarcEditCtrl </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCRichEditCtrl,M,CCMarcEditCtrl,MCMarcEditCtrl.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.34"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>AddErrorLog</B> (INT nMode = 1)<BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.30"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>ApplyEdit</B> (INT nMode = 0)<BR>
+<I> apply edit marc to marc class </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CMarcEditCtrl</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.35"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>CreateSyntaxErrorDialog</B> ()<BR>
+<I>create syntax error dialog</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.27"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>Display</B> ()<BR>
+<I>display marc to edit ctrl</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.33"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>ErrorShowProc</B> (INT nErrorStart, INT nErrorEnd, BOOL bIsLogError)<BR>
+<I>에러를 nErrorStart부터 nErrorEnd까지 밑줄로 보여주고 bIsLogError가 TRUE이면 에러를 기록한다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.36"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>FindLineNumber</B> (CString strTagCode, INT &amp;nLineNumber)<BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.41"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>FreeSaveTagList</B> ()<BR>
+<I>Free Save Tag List</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.42"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>FreeSubfieldWordWrapList</B> ()<BR>
+<I>Free SubfieldWordWrap List</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>GetLastError</B> () const <BR>
+<I>마지막 에러메시지를 가져온다.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.32"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>GetSubfieldIdx</B> (CString strField, INT nOrder)<BR>
+<I>nOrder 번째의 서브필드 시작 위치를 가져온다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.24"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>Init</B> (CMarcMgr* pMarcMgr, CMarc* pMarc)<BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.40"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>IsWrapSubfield</B> (CString strAlias)<BR>
+<I>subfield word wrap</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.37"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>LoadEditorFormatConfig</B> ()<BR>
+<I>load editorformat config</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.39"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>LoadSubfieldWrapConfig</B> ()<BR>
+<I>load subfield wrap config</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.29"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>RemoveCRLFSpace</B> (CString &amp;strSrc)<BR>
+<I>Remove CR LF Space In String</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.38"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>SaveEditorFormatConfig</B> ()<BR>
+<I>save edit ctrl config</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Set/Get Color</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.25"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>SetMarc</B> (CMarc* pMarc)<BR>
+<I>set marc and save limit tag to save tag list</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>SetMarcMgr</B> (CMarcMgr* pMarcMgr)<BR>
+<I>마크 메니저 설정</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>SetParentEditor</B> (void* pParentEditor)<BR>
+<I>부모 Editor를 설정한다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.31"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Syntax Check 관련</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.28"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>get edit marc to marc class</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.45"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   </TD><TD><B>~CMarcEditCtrl</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.26"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>변경 제한 테크 설정 관련</B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Members</H3><DD><TR>
+<TD VALIGN=TOP><DT><A HREF="CSymbolFormat.html">class  <B>CSymbolFormat</B></A>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.74"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DECLARE_MESSAGE_MAP</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Symbol Format</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.19"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CArray&lt;CString, CString&amp;&gt;  </TD><TD><B>m_arrayLimitTag</B> <BR>
+<I>limit tag list (include indicator)</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.18"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>m_bInForcedChange</B> <BR>
+<I>determine change process</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="CMarcEditCtrl.html#DOC.40.11">EnumChangeType</A> </TD><TD><B>m_changeType</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>COLORREF </TD><TD><B>m_clrBkColor</B> <BR>
+<I>Background color</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CHARRANGE </TD><TD><B>m_crOldSel</B> <BR>
+<I>old selected range</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.20"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CObList </TD><TD><B>m_listSavedTag</B> <BR>
+<I>save tag for limit tag</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.21"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CObList </TD><TD><B>m_listSubfieldWordWrap</B> <BR>
+<I>subfield word wrap list</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="CDlgMarcSyntaxError.html">CDlgMarcSyntaxError</A>* </TD><TD><B>m_pDlgMarcSyntaxError</B> <BR>
+<I>Syntax check dialog</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.23"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CFindReplaceDialog* </TD><TD><B>m_pFRDlg</B> <BR>
+<I>find / replace Dialog</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CMarc* </TD><TD><B>m_pMarc</B> <BR>
+<I>Marc Pointer</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CMarcMgr* </TD><TD><B>m_pMarcMgr</B> <BR>
+<I>Marc Manager Pointer</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void* </TD><TD><B>m_pParentEditor</B> <BR>
+<I>Parent CEditor</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strEditorFormatConfFile</B> <BR>
+<I>Editor Config File path</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.22"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strLastError</B> <BR>
+<I>last error</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strSubfieldWrapConfFile</B> <BR>
+<I>Subfield Wrap File Path</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.46"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>Acceclerator</B> (UINT nChar)<BR>
+<I>단축키적용</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.47"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnChange</B> ()<BR>
+<I>바뀐부분이 어느곳인지 파악해서 포멧 적용</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.49"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnChar</B> (UINT nChar, UINT nRepCnt, UINT nFlags)<BR>
+<I>탭키 눌렸을때 처리</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.73"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg LONG </TD><TD><B>OnFindReplace</B> (WPARAM wParam, LPARAM lParam)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.48"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg UINT </TD><TD><B>OnGetDlgCode</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.51"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnKeyDown</B> (UINT nChar, UINT nRepCnt, UINT nFlags)<BR>
+<I>단축키 적용</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.61"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnLButtonDown</B> (UINT nFlags, CPoint point)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.72"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>LONG </TD><TD><B>OnLineLocation</B> (WPARAM wParam, LPARAM lParam)<BR>
+<I>wParam 라인에 커서를 위치 시킨다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.65"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupAcmarc</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.60"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupChinese</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.56"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupColor</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.67"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupEditFind</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.68"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupEditReplace</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.57"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupFont</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.53"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupInsertFieldTerminator</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.54"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupInsertRecordTerminator</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.62"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupKorToHira</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.63"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupKorToKata</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.64"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupKorToRoma</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.66"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupPrint</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.58"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupShowError</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.59"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupSpecialChar</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.55"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnPopupSyntaxCheck</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.70"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnProtected</B> (NMHDR*, LRESULT* pResult)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.52"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnRButtonDown</B> (UINT nFlags, CPoint point)<BR>
+<I>컨텍스트 메뉴를 부여준다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.71"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnSelChange</B> (NMHDR*, LRESULT* pResult)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.69"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg LRESULT </TD><TD><B>OnSetText</B> (WPARAM wParam, LPARAM lParam)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.50"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnSysChar</B> (UINT nChar, UINT nRepCnt, UINT nFlags)<BR>
+<I>ALT 키 눌렸을때 식별기호 + 알파벳(소문자) 처리</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.44"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void </TD><TD><B>PreSubclassWindow</B> ()<BR>
+<I>PARAFORMAT, CHARFORMAT 을 설정한다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.43"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   LRESULT </TD><TD><B>WindowProc</B> (UINT message, WPARAM wParam, LPARAM lParam)<BR>
+<I>Find Text 처리를 위해</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Members</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.40.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>enum  </TD><TD><B>EnumChangeType</B> <BR>
+<I>edit change type</I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+CRichEditCtrl을 상속받은 MarcEditCtrl <BR>
+MarcStream을 Edit할수 있는 형태로 변경하여 보여준다. <BR>
+Edit된 Edit Marc는 다시 MarcStream으로 변경하여 저장한다.<BR>
+특수문자, 한자, 전거, 문법 체크, 내용 체크, 인쇄, 빠른 오류체크 기능등을 제공한다. ㅡ.ㅡ 휴..<BR>
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CMarcEditCtrl"></A>
+<A NAME="DOC.40.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CMarcEditCtrl()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetParentEditor"></A>
+<A NAME="DOC.40.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetParentEditor(void* pParentEditor)</B></TT>
+<DD>부모 Editor를 설정한다
+<DL><DT><DD></DL><P>
+<A NAME="SetMarcMgr"></A>
+<A NAME="DOC.40.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetMarcMgr(CMarcMgr* pMarcMgr)</B></TT>
+<DD>마크 메니저 설정
+<DL><DT><DD></DL><P>
+<A NAME="GetLastError"></A>
+<A NAME="DOC.40.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetLastError() const </B></TT>
+<DD>마지막 에러메시지를 가져온다. (아직 미완성...)
+<DL><DT><DD></DL><P>
+<A NAME="Set/Get Color"></A>
+<A NAME="DOC.40.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Set/Get Color</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="SetTextColor"></A>
+<A NAME="DOC.40.6.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void SetTextColor(COLORREF clr, BOOL bBold)</B></TT>
+<DD>텍스트 색을 지정
+<DL><DT><DD></DL><P>
+<A NAME="SetNumberColor"></A>
+<A NAME="DOC.40.6.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void SetNumberColor(COLORREF clr, BOOL bBold)</B></TT>
+<DD>숫자 색을 지정
+<DL><DT><DD></DL><P>
+<A NAME="SetTagCodeColor"></A>
+<A NAME="DOC.40.6.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void SetTagCodeColor(COLORREF clr, BOOL bBold)</B></TT>
+<DD>테그 코드 색을 지정
+<DL><DT><DD></DL><P>
+<A NAME="SetIndicatorCodeColor"></A>
+<A NAME="DOC.40.6.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void SetIndicatorCodeColor(COLORREF clr, BOOL bBold)</B></TT>
+<DD>지시기호 색을 지정
+<DL><DT><DD></DL><P>
+<A NAME="SetSubfieldCodeColor"></A>
+<A NAME="DOC.40.6.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void SetSubfieldCodeColor(COLORREF clr, BOOL bBold)</B></TT>
+<DD>식별기호 색을 지정
+<DL><DT><DD></DL><P>
+<A NAME="SetFieldTerminatorColor"></A>
+<A NAME="DOC.40.6.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void SetFieldTerminatorColor(COLORREF clr, BOOL bBold)</B></TT>
+<DD>필드종단기호 색을 지정
+<DL><DT><DD></DL><P>
+<A NAME="SetRecordTerminatorColor"></A>
+<A NAME="DOC.40.6.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void SetRecordTerminatorColor(COLORREF clr, BOOL bBold)</B></TT>
+<DD>레코드종단기호 색을 지정
+<DL><DT><DD></DL><P>
+<A NAME="SetErrorColor"></A>
+<A NAME="DOC.40.6.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void SetErrorColor(COLORREF clr, BOOL bBold)</B></TT>
+<DD>에러 색을 지정
+<DL><DT><DD></DL><P>
+<A NAME="SetBkColor"></A>
+<A NAME="DOC.40.6.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void SetBkColor(COLORREF clr, BOOL bSysColor)</B></TT>
+<DD>배경색을 지정
+<DL><DT><DD></DL><P>
+<A NAME="GetTextColor"></A>
+<A NAME="DOC.40.6.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void GetTextColor(COLORREF &amp;clr, BOOL &amp;bBold) const </B></TT>
+<DD>Get 텍스트 색
+<DL><DT><DD></DL><P>
+<A NAME="GetNumberColor"></A>
+<A NAME="DOC.40.6.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void GetNumberColor(COLORREF &amp;clr, BOOL &amp;bBold) const </B></TT>
+<DD>Get 숫자 색
+<DL><DT><DD></DL><P>
+<A NAME="GetTagCodeColor"></A>
+<A NAME="DOC.40.6.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void GetTagCodeColor(COLORREF &amp;clr, BOOL &amp;bBold) const </B></TT>
+<DD>Get 테그 코드 색
+<DL><DT><DD></DL><P>
+<A NAME="GetIndicatorCodeColor"></A>
+<A NAME="DOC.40.6.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void GetIndicatorCodeColor(COLORREF &amp;clr, BOOL &amp;bBold) const </B></TT>
+<DD>Get 지시기호 색
+<DL><DT><DD></DL><P>
+<A NAME="GetSubfieldCodeColor"></A>
+<A NAME="DOC.40.6.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void GetSubfieldCodeColor(COLORREF &amp;clr, BOOL &amp;bBold) const </B></TT>
+<DD>Get 식별기호 색
+<DL><DT><DD></DL><P>
+<A NAME="GetFieldTerminatorColor"></A>
+<A NAME="DOC.40.6.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void GetFieldTerminatorColor(COLORREF &amp;clr, BOOL &amp;bBold) const </B></TT>
+<DD>Get 필드종단기호 색
+<DL><DT><DD></DL><P>
+<A NAME="GetRecordTerminatorColor"></A>
+<A NAME="DOC.40.6.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void GetRecordTerminatorColor(COLORREF &amp;clr, BOOL &amp;bBold) const </B></TT>
+<DD>Get 레코드종단기호 색
+<DL><DT><DD></DL><P>
+<A NAME="GetErrorColor"></A>
+<A NAME="DOC.40.6.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void GetErrorColor(COLORREF &amp;clr, BOOL &amp;bBold) const </B></TT>
+<DD>Get 에러 색
+<DL><DT><DD></DL><P>
+<A NAME="GetBkColor"></A>
+<A NAME="DOC.40.6.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void GetBkColor(COLORREF &amp;clr, BOOL &amp;bSysColor) const </B></TT>
+<DD>Get 배경색
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="m_pParentEditor"></A>
+<A NAME="DOC.40.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void* m_pParentEditor</B></TT>
+<DD>Parent CEditor
+<DL><DT><DD></DL><P>
+<A NAME="m_pMarcMgr"></A>
+<A NAME="DOC.40.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CMarcMgr* m_pMarcMgr</B></TT>
+<DD>Marc Manager Pointer
+<DL><DT><DD></DL><P>
+<A NAME="m_pMarc"></A>
+<A NAME="DOC.40.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CMarc* m_pMarc</B></TT>
+<DD>Marc Pointer
+<DL><DT><DD></DL><P>
+<A NAME="m_pDlgMarcSyntaxError"></A>
+<A NAME="DOC.40.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CDlgMarcSyntaxError.html">CDlgMarcSyntaxError</A>* m_pDlgMarcSyntaxError</B></TT>
+<DD>Syntax check dialog
+<DL><DT><DD></DL><P>
+<A NAME="EnumChangeType"></A>
+<A NAME="DOC.40.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>enum  EnumChangeType</B></TT>
+<DD>edit change type
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="ctUndo"></A>
+<A NAME="DOC.40.11.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ctUndo</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="ctUnknown"></A>
+<A NAME="DOC.40.11.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ctUnknown</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="ctReplSel"></A>
+<A NAME="DOC.40.11.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ctReplSel</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="ctDelete"></A>
+<A NAME="DOC.40.11.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ctDelete</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="ctBack"></A>
+<A NAME="DOC.40.11.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ctBack</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="ctCut"></A>
+<A NAME="DOC.40.11.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ctCut</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="ctPaste"></A>
+<A NAME="DOC.40.11.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ctPaste</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="ctMove"></A>
+<A NAME="DOC.40.11.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ctMove</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="m_changeType"></A>
+<A NAME="DOC.40.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CMarcEditCtrl.html#DOC.40.11">EnumChangeType</A> m_changeType</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_strEditorFormatConfFile"></A>
+<A NAME="DOC.40.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strEditorFormatConfFile</B></TT>
+<DD>Editor Config File path
+<DL><DT><DD></DL><P>
+<A NAME="m_strSubfieldWrapConfFile"></A>
+<A NAME="DOC.40.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strSubfieldWrapConfFile</B></TT>
+<DD>Subfield Wrap File Path
+<DL><DT><DD></DL><P>
+<A NAME="Symbol Format"></A>
+<A NAME="DOC.40.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Symbol Format</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_sfText"></A>
+<A NAME="DOC.40.15.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CSymbolFormat.html">CSymbolFormat</A> m_sfText</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sfNumber"></A>
+<A NAME="DOC.40.15.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CSymbolFormat.html">CSymbolFormat</A> m_sfNumber</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sfTagCode"></A>
+<A NAME="DOC.40.15.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CSymbolFormat.html">CSymbolFormat</A> m_sfTagCode</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sfIndicator"></A>
+<A NAME="DOC.40.15.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CSymbolFormat.html">CSymbolFormat</A> m_sfIndicator</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sfSubfieldCode"></A>
+<A NAME="DOC.40.15.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CSymbolFormat.html">CSymbolFormat</A> m_sfSubfieldCode</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sfFieldTerminator"></A>
+<A NAME="DOC.40.15.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CSymbolFormat.html">CSymbolFormat</A> m_sfFieldTerminator</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sfRecordTerminator"></A>
+<A NAME="DOC.40.15.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CSymbolFormat.html">CSymbolFormat</A> m_sfRecordTerminator</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sfError"></A>
+<A NAME="DOC.40.15.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CSymbolFormat.html">CSymbolFormat</A> m_sfError</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="m_clrBkColor"></A>
+<A NAME="DOC.40.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>COLORREF m_clrBkColor</B></TT>
+<DD>Background color
+<DL><DT><DD></DL><P>
+<A NAME="m_crOldSel"></A>
+<A NAME="DOC.40.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CHARRANGE m_crOldSel</B></TT>
+<DD>old selected range
+<DL><DT><DD></DL><P>
+<A NAME="m_bInForcedChange"></A>
+<A NAME="DOC.40.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_bInForcedChange</B></TT>
+<DD>determine change process
+<DL><DT><DD></DL><P>
+<A NAME="m_arrayLimitTag"></A>
+<A NAME="DOC.40.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CArray&lt;CString, CString&amp;&gt;  m_arrayLimitTag</B></TT>
+<DD>limit tag list (include indicator)
+<DL><DT><DD></DL><P>
+<A NAME="m_listSavedTag"></A>
+<A NAME="DOC.40.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CObList m_listSavedTag</B></TT>
+<DD>save tag for limit tag
+<DL><DT><DD></DL><P>
+<A NAME="m_listSubfieldWordWrap"></A>
+<A NAME="DOC.40.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CObList m_listSubfieldWordWrap</B></TT>
+<DD>subfield word wrap list
+<DL><DT><DD></DL><P>
+<A NAME="m_strLastError"></A>
+<A NAME="DOC.40.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strLastError</B></TT>
+<DD>last error
+<DL><DT><DD></DL><P>
+<A NAME="m_pFRDlg"></A>
+<A NAME="DOC.40.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CFindReplaceDialog* m_pFRDlg</B></TT>
+<DD>find / replace Dialog
+<DL><DT><DD></DL><P>
+<A NAME="Init"></A>
+<A NAME="DOC.40.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void Init(CMarcMgr* pMarcMgr, CMarc* pMarc)</B></TT>
+<DD>
+초기화
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - *pMarcMgr		CMarcMgr의 포인터
+<BR><B></B> - *pMarc			CMarc의 포인터<BR><DD></DL><P>
+<A NAME="SetMarc"></A>
+<A NAME="DOC.40.25"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetMarc(CMarc* pMarc)</B></TT>
+<DD>set marc and save limit tag to save tag list
+<DL><DT><DD></DL><P>
+<A NAME="변경 제한 테크 설정 관련"></A>
+<A NAME="DOC.40.26"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 변경 제한 테크 설정 관련</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="InitLimitTag"></A>
+<A NAME="DOC.40.26.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void InitLimitTag()</B></TT>
+<DD>제한 테그 초기화
+<DL><DT><DD></DL><P>
+<A NAME="AddLimitTag"></A>
+<A NAME="DOC.40.26.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void AddLimitTag(CString strTagCode, CString strIndicator = _T("__"))</B></TT>
+<DD>제한 테그 추가 지시기호까지 세팅해준다. 지시기호가 없으면 Tag만으로 제한을 건다.
+<DL><DT><DD></DL><P>
+<A NAME="IsLimitTag"></A>
+<A NAME="DOC.40.26.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL IsLimitTag(CString strTagCode, CString strIndicator = _T("__"))</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Display"></A>
+<A NAME="DOC.40.27"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL Display()</B></TT>
+<DD>display marc to edit ctrl
+<DL><DT><DD></DL><P>
+<A NAME="get edit marc to marc class"></A>
+<A NAME="DOC.40.28"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> get edit marc to marc class</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetMarc"></A>
+<A NAME="DOC.40.28.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetMarc(CMarc &amp;marc)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetMarc"></A>
+<A NAME="DOC.40.28.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetMarc(CMarc* pMarc)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="RemoveCRLFSpace"></A>
+<A NAME="DOC.40.29"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void RemoveCRLFSpace(CString &amp;strSrc)</B></TT>
+<DD>Remove CR LF Space In String
+<DL><DT><DD></DL><P>
+<A NAME="ApplyEdit"></A>
+<A NAME="DOC.40.30"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ApplyEdit(INT nMode = 0)</B></TT>
+<DD>
+apply edit marc to marc class
+
+<DL><DT><DT><B>Parameters:</B><DD><B>nMode</B> -  0 : 에러를 보여준다. 1 : 에러를 보여주지 않는다.<BR><DD></DL><P>
+<A NAME="Syntax Check 관련"></A>
+<A NAME="DOC.40.31"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Syntax Check 관련</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CheckFullSyntax"></A>
+<A NAME="DOC.40.31.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL CheckFullSyntax(BOOL bShowError = TRUE)</B></TT>
+<DD>
+전체 Syntax를 체크한다. 
+
+<DL><DT><DT><B>Parameters:</B><DD><B>bShowError</B> -  TRUE이면 에러를 보여준다. FALSE이면 에러를 안보여준다.<BR><DD></DL><P>
+<A NAME="FormatAll"></A>
+<A NAME="DOC.40.31.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void FormatAll()</B></TT>
+<DD>format all edit ctrl
+<DL><DT><DD></DL><P>
+<A NAME="에디터 포멧 관련"></A>
+<A NAME="DOC.40.31.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 에디터 포멧 관련</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetFieldRange"></A>
+<A NAME="DOC.40.31.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void GetFieldRange(LONG &amp;nStart, LONG &amp;nEnd)</B></TT>
+<DD>
+nStart로 부터 뒤로 필드종단기호가 있는곳이나 처음 위치 <BR>
+nEnd로 부터 앞으로 필드 종단기호가 있는곳이나 마지막 위치 <BR>
+위치를 찾아 return 해준다.
+
+<P>
+<DL><DT><DT><B>Parameters:</B><DD><B>nStart</B> -  시작 위치
+<BR><B>nEnd</B> -    끝 위치<BR><DD></DL><P>
+<A NAME="FormatTextRange"></A>
+<A NAME="DOC.40.31.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void FormatTextRange(INT nStart, INT nEnd)</B></TT>
+<DD>nStart 부터 nEnd까지 의 테텍스트를 형식을 지정한다
+<DL><DT><DD></DL><P>
+<A NAME="FormatTextLines"></A>
+<A NAME="DOC.40.31.3.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void FormatTextLines(INT nLineStart, INT nLineEnd)</B></TT>
+<DD>nLineStart부터 nLineEnd까지의 라인을 찾아 그 라인의 형식을 지정한다
+<DL><DT><DD></DL><P>
+<A NAME="SetFormatRange"></A>
+<A NAME="DOC.40.31.3.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetFormatRange(INT nStart, INT nEnd, BOOL bBold, BOOL bUnderLine, COLORREF clr, BOOL bSpecial = FALSE)</B></TT>
+<DD>
+nStart부터 nEnd까지 텍스트의 색, underline등을 설정한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>nStart</B> - 		시작
+<BR><B>nEnd</B> - 		끝
+<BR><B>bBold</B> - 		굵게 여부
+<BR><B>bUnderLine</B> - 	밑줄 여부	
+<BR><B>clr</B> - 			텍스트 색
+<BR><B>bSpecial</B> -     TRUE이면 무조건 Terminal 폰트로 보여준다.		<BR><DD></DL><P></DL>
+
+<A NAME="InsertMarcCode"></A>
+<A NAME="DOC.40.31.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void InsertMarcCode(UINT nType, UINT nChar = NULL)</B></TT>
+<DD>
+Insert marc code : subfield code, field terminator, record terminator
+
+<DL><DT><DT><B>Parameters:</B><DD><B>nType</B> - 	SUBFIELD_CODE : 식별기호 <BR>
+FIELD_TERMINATOR : 필드종단기호 <BR>
+RECORD_TERMINATOR : 레코드 종단기호
+<BR><B>nChar</B> -     SUBFIELD_CODE일때 식별기호와 nChar를 붙여서 Insert한다.
+<BR><DD></DL><P>
+<A NAME="InsertLine"></A>
+<A NAME="DOC.40.31.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void InsertLine(CString strLine)</B></TT>
+<DD>Insert Line
+<DL><DT><DD></DL><P>
+<A NAME="InsertSpecialChar"></A>
+<A NAME="DOC.40.31.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void InsertSpecialChar()</B></TT>
+<DD>insert specialchar
+<DL><DT><DD></DL><P>
+<A NAME="캐릭터 변경관련"></A>
+<A NAME="DOC.40.31.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 캐릭터 변경관련</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="ConvertCharToHira"></A>
+<A NAME="DOC.40.31.7.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void ConvertCharToHira()</B></TT>
+<DD>CHAR를 HIRA(일어)로 변경
+<DL><DT><DD></DL><P>
+<A NAME="ConvertCharToKata"></A>
+<A NAME="DOC.40.31.7.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void ConvertCharToKata()</B></TT>
+<DD>CHAR를 KATA(일어)로 변경
+<DL><DT><DD></DL><P>
+<A NAME="ConvertCharToRoma"></A>
+<A NAME="DOC.40.31.7.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void ConvertCharToRoma()</B></TT>
+<DD>CHAR를 로마자로 변경
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="ConvertWordKorToChi"></A>
+<A NAME="DOC.40.31.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void ConvertWordKorToChi()</B></TT>
+<DD>convert slected word to chinese word F6 Key
+<DL><DT><DD></DL><P>
+<A NAME="ShowACMarcGetter"></A>
+<A NAME="DOC.40.31.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void ShowACMarcGetter()</B></TT>
+<DD>전거 보여주기 F9 Key
+<DL><DT><DD></DL><P>
+<A NAME="CheckSimpleSyntax"></A>
+<A NAME="DOC.40.31.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL CheckSimpleSyntax(INT nStart, INT nEnd, BOOL bIsLogError = FALSE, BOOL bIsHideSelection = TRUE)</B></TT>
+<DD>
+nStart부터 nEnd까지의 마크 텍스트의 에러를 체크한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>nStart</B> - 			시작
+<BR><B>nEnd</B> - 			끝
+<BR><B>bIsLogError</B> - 		에러를 기록해서 에러 다이얼로그를 보여준다.
+<BR><B>bIsHideSelection</B> -  Selection을 안보여줄지 보여줄지 결정<BR><DD></DL><P>
+<A NAME="CheckSimpleSyntax2"></A>
+<A NAME="DOC.40.31.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL CheckSimpleSyntax2(INT nStart, INT nEnd, BOOL bIsLogError = FALSE)</B></TT>
+<DD>에전에 사용했던 Syntax체크 (지금은 사용하지 않음)
+<DL><DT><DD></DL><P>
+<A NAME="CheckDeepSyntax"></A>
+<A NAME="DOC.40.31.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL CheckDeepSyntax()</B></TT>
+<DD>내용 체크를 함
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="GetSubfieldIdx"></A>
+<A NAME="DOC.40.32"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSubfieldIdx(CString strField, INT nOrder)</B></TT>
+<DD>nOrder 번째의 서브필드 시작 위치를 가져온다
+<DL><DT><DD></DL><P>
+<A NAME="ErrorShowProc"></A>
+<A NAME="DOC.40.33"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ErrorShowProc(INT nErrorStart, INT nErrorEnd, BOOL bIsLogError)</B></TT>
+<DD>에러를 nErrorStart부터 nErrorEnd까지 밑줄로 보여주고 bIsLogError가 TRUE이면 에러를 기록한다
+<DL><DT><DD></DL><P>
+<A NAME="AddErrorLog"></A>
+<A NAME="DOC.40.34"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void AddErrorLog(INT nMode = 1)</B></TT>
+<DD>
+Add Error Log
+
+<DL><DT><DT><B>Parameters:</B><DD><B>nMode</B> -  1 : Simple Syntax 에러
+<BR><B>nMode</B> -  2 : Deep Syntax 에러<BR><DD></DL><P>
+<A NAME="CreateSyntaxErrorDialog"></A>
+<A NAME="DOC.40.35"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void CreateSyntaxErrorDialog()</B></TT>
+<DD>create syntax error dialog
+<DL><DT><DD></DL><P>
+<A NAME="FindLineNumber"></A>
+<A NAME="DOC.40.36"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL FindLineNumber(CString strTagCode, INT &amp;nLineNumber)</B></TT>
+<DD>
+테크코드로 라인번호를 찾는다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>strTagCode</B> - 		테크고드
+<BR><B></B> - &nLineNumber	찾아진 라인 번호<BR><DD></DL><P>
+<A NAME="LoadEditorFormatConfig"></A>
+<A NAME="DOC.40.37"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void LoadEditorFormatConfig()</B></TT>
+<DD>load editorformat config
+<DL><DT><DD></DL><P>
+<A NAME="SaveEditorFormatConfig"></A>
+<A NAME="DOC.40.38"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SaveEditorFormatConfig()</B></TT>
+<DD>save edit ctrl config
+<DL><DT><DD></DL><P>
+<A NAME="LoadSubfieldWrapConfig"></A>
+<A NAME="DOC.40.39"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void LoadSubfieldWrapConfig()</B></TT>
+<DD>load subfield wrap config
+<DL><DT><DD></DL><P>
+<A NAME="IsWrapSubfield"></A>
+<A NAME="DOC.40.40"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL IsWrapSubfield(CString strAlias)</B></TT>
+<DD>subfield word wrap
+<DL><DT><DD></DL><P>
+<A NAME="FreeSaveTagList"></A>
+<A NAME="DOC.40.41"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT FreeSaveTagList()</B></TT>
+<DD>Free Save Tag List
+<DL><DT><DD></DL><P>
+<A NAME="FreeSubfieldWordWrapList"></A>
+<A NAME="DOC.40.42"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT FreeSubfieldWordWrapList()</B></TT>
+<DD>Free SubfieldWordWrap List
+<DL><DT><DD></DL><P>
+<A NAME="WindowProc"></A>
+<A NAME="DOC.40.43"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam)</B></TT>
+<DD>Find Text 처리를 위해
+<DL><DT><DD></DL><P>
+<A NAME="PreSubclassWindow"></A>
+<A NAME="DOC.40.44"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void PreSubclassWindow()</B></TT>
+<DD>PARAFORMAT, CHARFORMAT 을 설정한다
+<DL><DT><DD></DL><P>
+<A NAME="~CMarcEditCtrl"></A>
+<A NAME="DOC.40.45"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CMarcEditCtrl()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="Acceclerator"></A>
+<A NAME="DOC.40.46"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL Acceclerator(UINT nChar)</B></TT>
+<DD>단축키적용
+<DL><DT><DD></DL><P>
+<A NAME="OnChange"></A>
+<A NAME="DOC.40.47"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnChange()</B></TT>
+<DD>바뀐부분이 어느곳인지 파악해서 포멧 적용
+<DL><DT><DD></DL><P>
+<A NAME="OnGetDlgCode"></A>
+<A NAME="DOC.40.48"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg UINT OnGetDlgCode()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnChar"></A>
+<A NAME="DOC.40.49"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)</B></TT>
+<DD>탭키 눌렸을때 처리
+<DL><DT><DD></DL><P>
+<A NAME="OnSysChar"></A>
+<A NAME="DOC.40.50"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnSysChar(UINT nChar, UINT nRepCnt, UINT nFlags)</B></TT>
+<DD>ALT 키 눌렸을때 식별기호 + 알파벳(소문자) 처리
+<DL><DT><DD></DL><P>
+<A NAME="OnKeyDown"></A>
+<A NAME="DOC.40.51"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)</B></TT>
+<DD>단축키 적용
+<DL><DT><DD></DL><P>
+<A NAME="OnRButtonDown"></A>
+<A NAME="DOC.40.52"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnRButtonDown(UINT nFlags, CPoint point)</B></TT>
+<DD>컨텍스트 메뉴를 부여준다
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupInsertFieldTerminator"></A>
+<A NAME="DOC.40.53"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupInsertFieldTerminator()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupInsertRecordTerminator"></A>
+<A NAME="DOC.40.54"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupInsertRecordTerminator()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupSyntaxCheck"></A>
+<A NAME="DOC.40.55"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupSyntaxCheck()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupColor"></A>
+<A NAME="DOC.40.56"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupColor()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupFont"></A>
+<A NAME="DOC.40.57"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupFont()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupShowError"></A>
+<A NAME="DOC.40.58"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupShowError()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupSpecialChar"></A>
+<A NAME="DOC.40.59"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupSpecialChar()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupChinese"></A>
+<A NAME="DOC.40.60"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupChinese()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnLButtonDown"></A>
+<A NAME="DOC.40.61"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnLButtonDown(UINT nFlags, CPoint point)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupKorToHira"></A>
+<A NAME="DOC.40.62"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupKorToHira()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupKorToKata"></A>
+<A NAME="DOC.40.63"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupKorToKata()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupKorToRoma"></A>
+<A NAME="DOC.40.64"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupKorToRoma()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupAcmarc"></A>
+<A NAME="DOC.40.65"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupAcmarc()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupPrint"></A>
+<A NAME="DOC.40.66"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupPrint()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupEditFind"></A>
+<A NAME="DOC.40.67"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupEditFind()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnPopupEditReplace"></A>
+<A NAME="DOC.40.68"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnPopupEditReplace()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnSetText"></A>
+<A NAME="DOC.40.69"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg LRESULT OnSetText(WPARAM wParam, LPARAM lParam)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnProtected"></A>
+<A NAME="DOC.40.70"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnProtected(NMHDR*, LRESULT* pResult)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnSelChange"></A>
+<A NAME="DOC.40.71"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnSelChange(NMHDR*, LRESULT* pResult)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnLineLocation"></A>
+<A NAME="DOC.40.72"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>LONG OnLineLocation(WPARAM wParam, LPARAM lParam)</B></TT>
+<DD>wParam 라인에 커서를 위치 시킨다
+<DL><DT><DD></DL><P>
+<A NAME="OnFindReplace"></A>
+<A NAME="DOC.40.73"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg LONG OnFindReplace(WPARAM wParam, LPARAM lParam)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="DECLARE_MESSAGE_MAP"></A>
+<A NAME="DOC.40.74"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DECLARE_MESSAGE_MAP()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>이종은
+
+<DT><B>Since:</B><DD>2003-04-10 오후 2:50:30
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

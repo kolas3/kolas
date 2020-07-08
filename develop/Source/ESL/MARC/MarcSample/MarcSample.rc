@@ -1,0 +1,286 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MarcSample.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MarcSample.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MarcSample 정보"
+FONT 9, "새굴림"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "MarcSample 버전 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "확인",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_MARCSAMPLE_DIALOG DIALOGEX 0, 0, 482, 469
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Marc Sample Dialog"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_eALIAS,63,59,71,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "값 찾기",IDC_bSEARCH,136,59,38,14
+    EDITTEXT        IDC_eALIAS_KEYVALUE,103,78,71,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eITEMDATA,103,97,71,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "입력1",IDC_bINSERT1,17,120,56,14
+    EDITTEXT        IDC_eTAGCODE,227,78,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eALIASTYPE,258,78,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eDATA,289,78,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eITEMDATA2,227,98,92,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "입력2",IDC_bINSERT2,228,120,56,14
+    PUSHBUTTON      "Marc Encoding",IDC_bENCODING,72,19,56,14
+    PUSHBUTTON      "Edit Marc",IDC_bEDIT_MARC,191,19,56,14
+    PUSHBUTTON      "Marc Decoding",IDC_bDECODING,13,19,56,14
+    PUSHBUTTON      "AliasToFile",IDC_bALIASTOFILE,332,19,56,14
+    CONTROL         "",IDC_RICHEDIT,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,7,207,211,164
+    CONTROL         "",IDC_MSHFLEXGRID,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,220,207,255,179
+    PUSHBUTTON      "삭제",IDC_bDELETE,82,120,56,14
+    PUSHBUTTON      "Marc2Text",IDC_bMARC2TEXT,272,19,56,14
+    PUSHBUTTON      "Sort Marc",IDC_bSORT_MARC,132,19,56,14
+    GROUPBOX        "Marc Manage",IDC_STATIC,7,7,251,32
+    LTEXT           "Marc Alias :",IDC_STATIC,17,62,40,8
+    LTEXT           "Marc Alias or KeyValue :",IDC_STATIC,17,81,82,8
+    LTEXT           "Item Data :",IDC_STATIC,17,101,36,8
+    GROUPBOX        "Marc Data Manage",IDC_STATIC,7,47,468,97
+    GROUPBOX        "Marc ToolKit",IDC_STATIC,264,7,130,32
+    EDITTEXT        IDC_eSAMPLE,327,77,141,58,ES_MULTILINE | ES_AUTOHSCROLL | WS_DISABLED | NOT WS_BORDER
+    EDITTEXT        IDC_eOUTPUT,7,391,468,71,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+    PUSHBUTTON      "Button1",IDOK,425,7,50,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_eEXAMPLE,7,373,210,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set Strem Marc",IDC_bSETSTREAMMARC,423,7,52,36
+    EDITTEXT        IDC_eINDEX_ALIAS,227,59,92,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "색인만들기",IDC_bINDEX,322,59,50,14
+    EDITTEXT        IDC_eCHAR,142,119,22,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "CHAR",IDC_CHAR,168,119,25,14
+    PUSHBUTTON      "Insert Field",IDC_INSERT_FIELD,377,59,50,14
+    PUSHBUTTON      "코드보기",IDC_bCLASS_CODE,179,58,50,14
+    EDITTEXT        IDC_eFIELD_TAG_CODE,7,148,54,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "필드삭제",IDC_bDELTE_FIELD,76,147,50,14
+    PUSHBUTTON      "빈필드 삭제",IDC_bDELTE_EMPTY_FIELD,357,145,50,14
+    PUSHBUTTON      "필드가져오기",IDC_bGET_FIELD,183,148,50,14
+    PUSHBUTTON      "컨버전",IDC_bCONVERSION,242,148,50,14
+    PUSHBUTTON      "TEST",IDC_bTEST,417,148,50,14
+    PUSHBUTTON      "지시기호세팅",IDC_bSETIND,304,147,50,14
+    EDITTEXT        IDC_eFIELD_FROM,7,167,113,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "필드 수정",IDC_bUPDATE_FIELD,129,186,50,14
+    EDITTEXT        IDC_eFIELD_TO,7,186,113,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "저자기호생성",IDC_bAUTORCODE,198,185,50,14
+    PUSHBUTTON      "새로운 마크->텍스트",IDC_NEW_MARC2TEXT,261,184,74,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "MarcSample MFC 응용 프로그램\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MarcSample\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MarcSample.EXE\0"
+            VALUE "ProductName", "MarcSample 응용 프로그램\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_MARCSAMPLE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 475
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 462
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MARCSAMPLE_DIALOG DLGINIT
+BEGIN
+    IDC_MSHFLEXGRID, 0x37a, 419, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2e18, 0x0000, 0x1bcd, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x000f, 0x8000, 0x000f, 0x8000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0001, 0x0100, 0x0001, 0x0001, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb104, 0xb8bc, 0x00b2, 0x0000, 0x0000, 0x0400, 
+0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 
+0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "MarcSample 정보(&A)..."
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MarcSample.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

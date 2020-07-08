@@ -1,0 +1,159 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_LOC_3700.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,08,31,44
+ PRODUCTVERSION 2005,08,31,44
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_LOC_3700 DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 44\0"
+            VALUE "InternalName", "BO_LOC_3700\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_LOC_3700.DLL\0"
+            VALUE "ProductName", "BO_LOC_3700 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 44\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_LOC_3710 DIALOG DISCARDABLE  0, 0, 458, 235
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    GROUPBOX        "< 발송 메시지 >",IDC_STATIC,7,105,431,41
+    EDITTEXT        IDC_eMSG,15,121,416,14,ES_AUTOHSCROLL
+    CTEXT           "메시지의 전체 길이는 한글40글자(영문,숫자 80글자)를 초과하지 않아야 휴대폰으로 전송될 수 있습니다!!!",IDC_STATIC,5,153,408,13,SS_CENTERIMAGE
+    GROUPBOX        "< 발송 대상 선정 >",IDC_STATIC,7,50,432,44
+    GROUPBOX        "< 회신 번호 >",IDC_STATIC,7,172,114,41
+    EDITTEXT        IDC_eCALLBACK,61,190,54,14,ES_AUTOHSCROLL
+    LTEXT           "전화/휴대폰",IDC_STATIC,13,192,45,8
+    COMBOBOX        IDC_cPosition,57,68,90,132,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "소    속",IDC_STATIC,18,71,33,8
+    COMBOBOX        IDC_cClass,199,68,90,130,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "직    급",IDC_STATIC,159,71,33,8
+    COMBOBOX        IDC_cStatus,342,68,90,71,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "회원상태",IDC_STATIC,302,71,33,8
+    GROUPBOX        "< 발송 종류 선택 >",IDC_STATIC,7,6,432,36
+    CONTROL         "공지사항",IDC_rInfo,"Button",BS_AUTORADIOBUTTON | WS_GROUP,60,22,48,10
+    CONTROL         "신착자료 도착안내",IDC_rNewArrival,"Button",BS_AUTORADIOBUTTON,178,22,84,10
+    CONTROL         "추천도서 안내",IDC_rRecommend,"Button",BS_AUTORADIOBUTTON,327,22,68,10
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_LOC_3700.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

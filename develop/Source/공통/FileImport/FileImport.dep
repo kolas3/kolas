@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by FileImport.mak
+
+.\FileImport.cpp : \
+	".\StdAfx.h"\
+	
+
+.\FileImport.rc : \
+	".\res\FileImport.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

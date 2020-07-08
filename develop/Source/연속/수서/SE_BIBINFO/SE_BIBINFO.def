@@ -1,0 +1,11 @@
+; SE_BIBINFO.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_BIBINFO"
+DESCRIPTION  'SE_BIBINFO Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

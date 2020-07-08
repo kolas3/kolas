@@ -1,0 +1,255 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_MARC_IMPORT.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,31,58
+ PRODUCTVERSION 2005,8,31,58
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_MARC_IMPORT DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 58\0"
+            VALUE "InternalName", "BO_MARC_IMPORT\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_MARC_IMPORT.DLL\0"
+            VALUE "ProductName", "BO_MARC_IMPORT 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 58\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MARC_IMPORT DIALOGEX 0, 0, 498, 371
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "MARC반입"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtMARC_TITLE,68,43,166,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtMARC_KEYWORD,305,43,166,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtMARC_AUTHOR,68,58,166,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtMARC_PUBLISHER,305,58,166,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbMARC_CLASS_CODE,67,73,65,117,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtMARC_CLASS_CODE1,133,73,45,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtMARC_CLASS_CODE2,189,73,45,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edt_MARC_REG_NO1,305,73,70,13,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_edt_MARC_REG_NO2,401,73,70,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eSUBJECT,67,91,166,13,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_edtMARC_PUBLICATE_YEAR_START,68,124,49,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtMARC_PUBLICATE_YEAR_END,128,124,49,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbMARC_MEDIA_CODE,227,124,101,96,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "자료찾기",IDC_bSEARCH,338,122,70,15
+    LTEXT           "주 제 어",IDC_SUBJECT,27,93,33,8
+    COMBOBOX        IDC_cmbMARC_MAT_CODE,189,11,101,58,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbMARC_FORM_CODE,53,11,86,58,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "~",IDC_STATIC,181,76,8,8
+    LTEXT           "~",IDC_STATIC,386,76,8,8
+    PUSHBUTTON      "화면지우기",IDC_bCLEAR,413,122,70,15
+    PUSHBUTTON      "확  인",IDOK,339,336,70,15
+    PUSHBUTTON      "닫  기",IDCANCEL,417,336,70,15
+    LTEXT           "등록번호",IDC_STATIC,265,75,33,8
+    PUSHBUTTON      "MARC 보기",IDC_bMARC,23,336,70,15
+    PUSHBUTTON      "도움말",IDC_bHELP,99,336,70,15
+    CONTROL         "기본정보 반입",IDC_radMARC_BASIC_INFO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,209,328,68,10
+    CONTROL         "전체정보 반입",IDC_radMARC_ALL_INFO,"Button",BS_AUTORADIOBUTTON,209,339,68,10
+    CONTROL         "다권정보삭제한 전체정보반입",IDC_radMARC_MANY_INFO,"Button",BS_AUTORADIOBUTTON,209,350,124,10
+    CONTROL         "",IDC_sSTATIC,"Static",SS_SIMPLE | WS_GROUP,2,323,493,42,WS_EX_DLGMODALFRAME
+    LTEXT           "서    명",IDC_STATIC,28,46,33,8
+    LTEXT           "키 워 드",IDC_STATIC,265,46,33,8
+    LTEXT           "형 식 구 분",IDC_STATIC,15,14,35,8
+    GROUPBOX        "",IDC_STATIC,7,3,482,25
+    LTEXT           "저 작 자",IDC_STATIC,28,60,33,8
+    LTEXT           "발 행 자",IDC_STATIC,265,61,33,8
+    LTEXT           "분류기호",IDC_STATIC,27,75,33,8
+    GROUPBOX        "검색 조건은 기본적으로 우절단검색입니다.",IDC_STATIC,7,31,482,78
+    LTEXT           "매체구분",IDC_STATIC,187,128,33,8
+    LTEXT           "발행년도",IDC_STATIC,32,128,33,8
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,300,12,169,11
+    LTEXT           "~",IDC_STATIC,120,126,8,8
+    GROUPBOX        " 보조검색항목 ",IDC_STATIC,7,113,482,28
+    LTEXT           "자 료 구 분",IDC_STATIC,150,14,35,8
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,2,3,493,145,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_gridMARC_IMPORT,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,3,156,490,160
+    CONTROL         "",IDC_sSTATIC3,"Static",SS_SIMPLE | WS_GROUP,2,150,493,172,WS_EX_DLGMODALFRAME
+END
+
+IDD_MARC_IMPORT_MARC_VIEW DIALOG DISCARDABLE  0, 0, 342, 315
+STYLE DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_THICKFRAME
+CAPTION "마크보기"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_edtSPECIES_MARC_EDITOR,"RICHEDIT20W",WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP | 0x10c4,0,0,342,295
+    PUSHBUTTON      "닫 기",IDC_btnMarcCLOSE,289,297,52,16
+    PUSHBUTTON      "이 전",IDC_btnPREV,3,297,50,15
+    PUSHBUTTON      "다 음",IDC_btnNEXT,60,297,50,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MARC_IMPORT DLGINIT
+BEGIN
+    IDC_gridMARC_IMPORT, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x58ad, 0x0000, 0x18ce, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MARC_IMPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 494
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 367
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_MARC_IMPORT.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

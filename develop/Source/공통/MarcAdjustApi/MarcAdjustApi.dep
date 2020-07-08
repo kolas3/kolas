@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by MarcAdjustApi.mak
+
+.\MarcAdjustApi.cpp : \
+	".\StdAfx.h"\
+	
+
+.\MarcAdjustApi.rc : \
+	".\res\MarcAdjustApi.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

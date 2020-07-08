@@ -1,0 +1,194 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "DownLoadLoanUser"="..\捞悼档辑包包府\DownLoadLoanUser\DownLoadLoanUser.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ESL"="..\..\ESL\ESL\ESL.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ExportTableCfgFile"="..\ExportTableCfgFile\ExportTableCfgFile.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "KOLAS3_MAIN"="..\..\ESL\KOLAS3_MAIN\KOLAS3_MAIN.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Kolas2up_MobileCommon"=".\Kolas2up_MobileCommon.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_ACCESS_CONTROL"="..\..\包府\蜡历包府\MNG_ACCESS_CONTROL\MNG_ACCESS_CONTROL.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_LIB_HOLIDAY_MGR"="..\..\包府\档辑包包府\MNG_LIB_HOLIDAY_MGR\MNG_LIB_HOLIDAY_MGR.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MNG_LIB_MobileTest"="..\MNG_LIB_MobileTest\MNG_LIB_MobileTest.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MOBILE_MNG_LIB_DOWNLOAD"="..\捞悼档辑包包府\MOBILE_MNG_LIB_DOWNLOAD\MOBILE_MNG_LIB_DOWNLOAD.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Kolas2up_MobileCommon
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "MOBILE_MNG_LIB_SCHEDULE"="..\捞悼档辑包包府\MOBILE_MNG_LIB_SCHEDULE\MOBILE_MNG_LIB_SCHEDULE.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MOBILE_MNG_LIB_SETMODE"="..\捞悼档辑包包府\MOBILE_MNG_LIB_SETMODE\MOBILE_MNG_LIB_SETMODE.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MOBILE_MNG_LIB_SHAREINFO"="..\捞悼档辑包包府\MOBILE_MNG_LIB_SHAREINFO\MOBILE_MNG_LIB_SHAREINFO.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Kolas2up_MobileCommon
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "MOBILE_MNG_LIB_UPLOAD"="..\捞悼档辑包包府\MOBILE_MNG_LIB_UPLOAD\MOBILE_MNG_LIB_UPLOAD.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Kolas2up_MobileCommon
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "OCIMgr"="..\..\ESL\OCIMgr\OCIMgr.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

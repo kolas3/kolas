@@ -1,0 +1,253 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_ACQ_STATISTICS.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,31,122
+ PRODUCTVERSION 2005,8,31,122
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_ACQ_STATISTICS DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 122\0"
+            VALUE "InternalName", "BO_ACQ_STATISTICS\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_ACQ_STATISTICS.DLL\0"
+            VALUE "ProductName", "BO_ACQ_STATISTICS 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 122\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_STATISTICS_CONDITIOIN DIALOG DISCARDABLE  0, 0, 329, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "조건설정"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cmbSTAT_DATE_CLASS,51,52,59,58,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "자료구분일",IDC_stcSTAT_DATE_CLASS,7,55,41,8
+    EDITTEXT        IDC_edtSTAT_DATE1,115,52,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtSTAT_DATE2,195,52,60,14,ES_AUTOHSCROLL
+    LTEXT           "~",IDC_stcSTAT_DATE_RANGE,183,55,8,8
+    LTEXT           "통계물목록",IDC_STATIC,6,75,41,8
+    LTEXT           "자료구분",IDC_STATIC,117,36,33,8
+    COMBOBOX        IDC_cmbSTAT_DATA_CLASS,155,33,100,58,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "자료기준",IDC_STATIC,146,75,33,8
+    COMBOBOX        IDC_cmbSTAT_STATLIST,50,71,91,68,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbSTAT_BASIC_CLASS,189,71,65,65,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "수입구분",IDC_STATIC,7,37,33,8
+    COMBOBOX        IDC_cmbSTAT_ACQ_CODE,52,33,59,60,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "수입년도",IDC_stcSTAT_ACQ_YEAR,7,55,33,8
+    EDITTEXT        IDC_edtSTAT_ACQ_YEAR,51,52,26,14,ES_AUTOHSCROLL
+    LTEXT           "차수번호",IDC_stcSTAT_GROUPINFO,169,55,33,8
+    EDITTEXT        IDC_edtSTAT_GROUPINFO,203,52,52,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "통계자료구축",IDOK,268,57,55,15
+    PUSHBUTTON      "닫 기",IDCANCEL,268,77,55,15
+    PUSHBUTTON      "",IDC_btnSTAT_GROUP_VIEW,268,37,55,15
+    GROUPBOX        "",IDC_STATIC,2,20,260,73
+    LTEXT           "업무구분",IDC_stcSTAT_WORK_CODE,79,55,33,8
+    COMBOBOX        IDC_cmbSTAT_WORK_CODE,113,52,55,121,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "[주의] 수입구분이 적용안함일 경우 구입 또는 기증정보가 없는 자료가 검색됩니다.\n ※ 구입, 기증 통계시 구입정보, 기증정보가 있는 자료만 검색됩니다.",IDC_STATIC,2,2,325,19,SS_SUNKEN
+END
+
+IDD_BO_PURCHASE_STATISTICS DIALOG DISCARDABLE  0, 0, 463, 287
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "출 력",IDC_btnPURSTAT_PRINT,393,10,50,15
+    PUSHBUTTON      "닫 기",IDCANCEL,393,30,50,15
+    PUSHBUTTON      "통계구축",IDC_btnPURSTAT_CONTRUCT,314,30,50,15
+    CONTROL         "",IDC_gridPURSTAT_RESULT,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,2,54,459,231
+    LTEXT           "수입년도",IDC_STATIC,10,13,33,8
+    EDITTEXT        IDC_edtPURSTAT_ACQ_YEAR,53,10,29,14,ES_AUTOHSCROLL
+    LTEXT           "업무구분",IDC_STATIC,92,13,33,8
+    COMBOBOX        IDC_cmbPURSTAT_WORK_CODE,126,11,56,103,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "차수번호",IDC_STATIC,189,14,33,8
+    EDITTEXT        IDC_edtPURSTAT_DIVNO,223,11,78,14,ES_AUTOHSCROLL
+    LTEXT           "통계물목록",IDC_STATIC,10,35,41,8
+    LTEXT           "자료기준",IDC_STATIC,189,35,33,8
+    COMBOBOX        IDC_cmbPURSTAT_STATLIST,53,32,129,68,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbPURSTAT_BASIC_CLASS,223,31,79,65,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "차수보기",IDC_btnPUR_STAT_VIEW_DIVNO,314,10,50,15
+    GROUPBOX        "",IDC_STATIC,2,0,370,52
+    GROUPBOX        "",IDC_STATIC,374,0,87,52
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BO_STATISTICS_CONDITIOIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 327
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 93
+    END
+
+    IDD_BO_PURCHASE_STATISTICS, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 461
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 285
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BO_PURCHASE_STATISTICS DLGINIT
+BEGIN
+    IDC_gridPURSTAT_RESULT, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x52fe, 0x0000, 0x23dd, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_ACQ_STATISTICS.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

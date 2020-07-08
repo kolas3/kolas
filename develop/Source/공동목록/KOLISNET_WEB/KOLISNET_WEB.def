@@ -1,0 +1,11 @@
+; KOLISNET_WEB.def : Declares the module parameters for the DLL.
+
+LIBRARY      "KOLISNET_WEB"
+DESCRIPTION  'KOLISNET_WEB Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

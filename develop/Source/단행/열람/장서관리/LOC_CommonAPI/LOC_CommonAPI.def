@@ -1,0 +1,7 @@
+; LOC_CommonAPI.def : Declares the module parameters for the DLL.
+
+LIBRARY      "LOC_CommonAPI"
+DESCRIPTION  'LOC_CommonAPI Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

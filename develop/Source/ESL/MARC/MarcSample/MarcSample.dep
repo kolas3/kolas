@@ -1,0 +1,61 @@
+# Microsoft Developer Studio Generated Dependency File, included by MarcSample.mak
+
+.\MarcSample.cpp : \
+	"..\..\..\..\include\ESL\Marc.h"\
+	"..\..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\..\include\ESL\Tag.h"\
+	"..\MarcEdit\DlgMarcSyntaxError.h"\
+	"..\MarcEdit\GridCombo.h"\
+	"..\MarcEdit\GridEdit.h"\
+	"..\MarcEdit\MarcEditCtrl.h"\
+	"..\MarcEdit\MarcEditor.h"\
+	"..\MarcEdit\MarcGridCtrl.h"\
+	"..\MarcToolKit\MarcAliasToFile.h"\
+	"..\MarcToolKit\MarcRelationToText.h"\
+	"..\MarcToolKit\ReadCfgFile.h"\
+	".\MarcSample.h"\
+	".\MarcSampleDlg.h"\
+	
+
+.\MarcSample.rc : \
+	".\res\MarcSample.ico"\
+	".\res\MarcSample.rc2"\
+	
+
+.\MarcSampleDlg.cpp : \
+	"..\..\..\..\include\ESL\Marc.h"\
+	"..\..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\..\include\ESL\Tag.h"\
+	"..\..\..\공통\IndexToolKit\Index.h"\
+	"..\..\..\공통\IndexToolKit\Index_Mono.h"\
+	"..\..\..\공통\IndexToolKit\IndexTool.h"\
+	"..\..\ESL\ESL_CharSetMgr.h"\
+	"..\MarcEdit\DlgMarcSyntaxError.h"\
+	"..\MarcEdit\GridCombo.h"\
+	"..\MarcEdit\GridEdit.h"\
+	"..\MarcEdit\MarcEditCtrl.h"\
+	"..\MarcEdit\MarcEditor.h"\
+	"..\MarcEdit\MarcGridCtrl.h"\
+	"..\MarcToolKit\MarcAliasToFile.h"\
+	"..\MarcToolKit\MarcRelationToText.h"\
+	"..\MarcToolKit\ReadCfgFile.h"\
+	".\MarcSample.h"\
+	".\MarcSampleDlg.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	

@@ -1,0 +1,13 @@
+; MNG_CAT_MANAGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_CAT_MANAGER"
+DESCRIPTION  'MNG_CAT_MANAGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+
+CreateForm
+ResizeForm
+DeleteForm
+CreateModelessDlg

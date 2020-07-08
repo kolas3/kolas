@@ -1,0 +1,13 @@
+; CHECK_RETURN_MAIL.def : Declares the module parameters for the DLL.
+
+LIBRARY      "CHECK_RETURN_MAIL"
+DESCRIPTION  'CHECK_RETURN_MAIL Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

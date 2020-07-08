@@ -1,0 +1,123 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by ESL.rc
+//
+#define IDR_MANIFEST                    1
+#define RT_MANIFEST                     24
+#define IDI_ICON_INFO                   1001
+#define IDC_SQL_ERROR_EDIT              1002
+#define IDC_STATIC_MSG                  1003
+#define IDC_cCHAR_SET                   1003
+#define IDC_COM_RADIO1                  1005
+#define IDC_tCHAR_CLASS                 1005
+#define IDC_COM_RADIO2                  1006
+#define IDC_COM_bINSERT                 1007
+#define IDC_eCHAR_SELECTED              1007
+#define IDC_COM_bMODIFY                 1008
+#define IDC_COM_bDELETE                 1009
+#define IDC_ZOOM_CHAR                   1009
+#define IDC_COM_bSAVE                   1010
+#define IDC_COM_bCLOSE                  1011
+#define IDC_COM_bLEFT                   1012
+#define IDC_COM_bRIGHT                  1013
+#define IDC_COM_cALIAS                  1014
+#define IDC_COM_cALIGN                  1015
+#define IDC_COM_eWIDTH                  1016
+#define IDC_COM_eTITLE                  1017
+#define IDC_COM_bCANCEL                 1018
+#define IDC_COM_STATIC1                 1020
+#define IDC_COM_STATIC3                 1022
+#define IDC_COM_STATIC4                 1023
+#define IDC_COM_STATIC5                 1024
+#define IDC_COM_STATIC6                 1025
+#define IDC_COM_STATIC7                 1026
+#define IDC_COM_bOK                     1027
+#define IDOK_COM                        1028
+#define IDCANCEL_COM                    1029
+#define IDC_COM_STATIC9                 1030
+#define IDC_COM_STATIC8                 1031
+#define IDC_STATIC_VIEWER2              1032
+#define IDC_MUUTICOMBO_BOX              1034
+#define IDC_STATIC1111                  1036
+#define IDC_COM_MSHFLEXGRID             1037
+#define IDC_bCONVERT_HANJA_WORD         1038
+#define IDD_DLG_EXPORT_TYPE_SELECT      1038
+#define IDD_DLG_USER_EXPORT_REASON      1039
+#define IDOK_2                          1040
+#define IDC_eINPUT1                     1042
+#define IDC_RADIO1_COM                  1042
+#define IDC_eINPUT2                     1043
+#define IDC_RADIO2_COM                  1043
+#define IDC_RADIO3_COM                  1044
+#define IDC_RADIO4_COM                  1045
+#define IDC_bINPUT_HANJA_WORD           1046
+#define IDC_bMODIFY_HANJA_WORD          1047
+#define IDC_bREFRESH_USER               1048
+#define IDC_bDELETE_HANJA_WORD          1049
+#define IDC_bREFRESH_ORIGINAL           1050
+#define IDC_bMANAGER_HANJA_WORD         1052
+#define IDC_eCLASS_CODE_KEYWORD         1055
+#define IDC_bSEARCH_HANJA_WORD          1056
+#define IDC_MSHFLEXGRID_HANJA_WORD      1057
+#define IDC_eINPUT_HANJA_WORD           1058
+#define IDC_COM_cDMLIST                 1059
+#define IDC_COM_bVIEW                   1060
+#define IDC_COM_bPREV                   1062
+#define IDC_COM_bNEXT                   1063
+#define IDC_COM_sINDEX                  1064
+#define IDC_COM_gDATAVIEW               1065
+#define IDC_TAB_COM                     1066
+#define IDC_COM_EXCELEXPORT_PROGRESS    1067
+#define IDC_COM_EXCELEXPORT_STATIC      1068
+#define IDC_COM_eFINDWORD               1070
+#define IDC_COM_cTARGET                 1071
+#define IDC_COM_rUPPER                  1072
+#define IDC_COM_rDOWN                   1073
+#define IDC_COM_bFIND                   1074
+#define IDC_COM_bALL                    1075
+#define IDC_LIST_BOX                    1078
+#define IDC_RADIO_TYPE_EXCEL            1080
+#define IDC_RADIO_TYPE_HANCELL          1081
+#define IDC_RADIO_TYPE_CSV              1082
+#define IDC_BTN_TYPE_SELECT             1083
+#define IDC_BTN_TYPE_CANCEL             1084
+#define IDC_EDT_USER_EXPORT_REASON      1085
+#define IDC_COM_MSHFLEXGRID1            3006
+#define IDC_COM_MSHFLEXGRID2            3007
+#define IDD_DLG_MSG_YESNO               5213
+#define IDD_DLG_MSG_ERROR               5214
+#define IDD_DLG_MSG_WORK                5215
+#define IDD_DLG_CONFIG_GRID             5216
+#define IDD_DLG_CONFIG_GRID_INSERT      5217
+#define IDD_DVM_VIEW                    5218
+#define IDD_DLG_WORKSHEET               5219
+#define IDD_CONVERT_TO_HANJA            5220
+#define IDD_HAJA_WORD_MANAGER           5221
+#define IDD_HANJA_WORD_INPUT_MODIFY     5222
+#define IDD_CLASS_CODE                  5223
+#define IDD_DLG_DM_VIEWER               5224
+#define IDD_DLG_FINDWORD_GRID           5225
+#define IDD_AUTO_LIST                   5226
+#define IDD_EFS_REPORT                  5227
+#define IDD_LIB_F2KEY_SPECIALCHAR       5228
+#define IDD_DLG_MSG_EXCELEXPORTWAIT     5229
+#define IDC_bCLOSE_EFS                  10004
+#define IDC_eERROR_EFS                  10005
+#define IDC_STATIC_GROUP                10006
+#define IDC_bEFS_REPORT                 10007
+#define IDC_eEFS_DESCRIPTION            10008
+#define IDC_eEFS_EMAIL                  10009
+#define IDC_MSHFLEXGRID_1               19000
+#define IDC_MSHFLEXGRID_CODE            19000
+#define IDC_MSHFLEXGRID_2               19002
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        1040
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         1086
+#define _APS_NEXT_SYMED_VALUE           1000
+#endif
+#endif

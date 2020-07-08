@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"> 
+
+<assemblyIdentity 
+
+    version="1.0.0.0" 
+
+    processorArchitecture="X86" 
+
+    name="*"
+
+    type="win32" 
+
+/> 
+
+<dependency> 
+
+    <dependentAssembly> 
+
+        <assemblyIdentity 
+
+            type="win32" 
+
+            name="Microsoft.Windows.Common-Controls" 
+
+            version="6.0.0.0" 
+
+            processorArchitecture="X86" 
+
+            publicKeyToken="6595b64144ccf1df" 
+
+            language="*" 
+
+        /> 
+
+    </dependentAssembly> 
+
+</dependency> 
+
+</assembly>
+
+[출처] VC6 에서 XP 테마 완벽하게 적용하기|작성자 미쉘린
+

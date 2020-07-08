@@ -1,0 +1,11 @@
+; SE_CHECKIN.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_CHECKIN"
+DESCRIPTION  'SE_CHECKIN Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

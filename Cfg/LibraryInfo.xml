@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<MenuDS xmlns="http://tempuri.org/MenuDS.xsd">
+  <LIBRARY_INFO>
+    <NAME>충청북도중앙도서관</NAME>
+    <ADDRESS>충북 청주시 흥덕구 사직2동 국천로 59</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>부산광역시립시민도서관</NAME>
+    <ADDRESS>부산광역시 부산진구 초읍동 산51-1</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>인천광역시북구도서관</NAME>
+    <ADDRESS>인천 부평구 부평4동 880번지</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>울산중부도서관</NAME>
+    <ADDRESS>울산광역시 중구 북정동 350-5</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>한밭도서관</NAME>
+    <ADDRESS>대전 중구 문화동 한밭도서관길 222</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>대구광역시립중앙도서관</NAME>
+    <ADDRESS>대구시 중구 동인2가 42번지</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>경상북도립구미도서관</NAME>
+    <ADDRESS>경북 구미시 원평동 964-616</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>경상남도창원도서관</NAME>
+    <ADDRESS>경남 창원시 교육단지 1길 45 창원도서관</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>춘천평생교육정보관</NAME>
+    <ADDRESS>강원도 춘천시 중앙로 3가 26-1</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>전주시립도서관</NAME>
+    <ADDRESS>전주시 완산구 동완산동 464-1</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>성동구립도서관</NAME>
+    <ADDRESS>서울특별시 성동구 행당동 142-4</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>물댄동산어린이도서관</NAME>
+    <ADDRESS>서울특별시 성동구 성수동1가 668-73</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>대구광역시립서부도서관</NAME>
+    <ADDRESS>대구광역시 서구 평리3동 1230-1</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>서울시립어린이도서관</NAME>
+    <ADDRESS>서울특별시 종로구 사직동 1-28</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>효목어린이도서관</NAME>
+    <ADDRESS>대구광역시 수성구 만촌1동 54</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>춘천시립도서관</NAME>
+    <ADDRESS>강원도 춘천시 삼천동 28-79</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>안산중앙도서관</NAME>
+    <ADDRESS>경기도 안산시 단원구 고잔동 721</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>국립어린이청소년도서관</NAME>
+    <ADDRESS>서울특별시 강남구 역삼1동 635-1</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>북제주군공공도서관</NAME>
+    <ADDRESS>제주특별자치도 제주시 애월읍 고내리 1364</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>우당도서관</NAME>
+    <ADDRESS>제주특별자치도 제주시 건입동 318</ADDRESS>
+  </LIBRARY_INFO>
+  <LIBRARY_INFO>
+    <NAME>남해도서관</NAME>
+    <ADDRESS>경상남도 남해군 남해읍 남변리 195</ADDRESS>
+  </LIBRARY_INFO>
+</MenuDS>

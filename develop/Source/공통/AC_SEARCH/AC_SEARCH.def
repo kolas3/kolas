@@ -1,0 +1,7 @@
+; AC_SEARCH.def : Declares the module parameters for the DLL.
+
+LIBRARY      "AC_SEARCH"
+DESCRIPTION  'AC_SEARCH Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

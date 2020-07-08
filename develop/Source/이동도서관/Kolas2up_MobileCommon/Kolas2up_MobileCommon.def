@@ -1,0 +1,7 @@
+; Kolas2up_MobileCommon.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Kolas2up_MobileCommon"
+DESCRIPTION  'Kolas2up_MobileCommon Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,7 @@
+; UI_SEARCH_DLG.def : Declares the module parameters for the DLL.
+
+LIBRARY      "UI_SEARCH_DLG"
+DESCRIPTION  'UI_SEARCH_DLG Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

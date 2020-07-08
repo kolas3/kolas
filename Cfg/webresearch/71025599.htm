@@ -1,0 +1,13 @@
+<html><head><style type='text/css'><!-- p,br,body,td,select,input,form,textarea,option {font-size:8.9pt;font-family:굴림;}--></style></head><body><p><p>
+<FORM METHOD = post NAME = RESEARCH ACTION = http://192.168.1.230/MailCheck/research.php  ><p><p>
+===================================================================<br><B><FONT SYTLE = 돋움 SIZE = 2 >[ 설문 제목 ] : 설문지<br><br>설문지입니다.<br><br>[ 설문 종료일 ]: 2004/12/12<br><br>10</FONT></B>===================================================================<br><br>===================================================================
+<br><b>좋아하는 과일은?</b><br><br><INPUT TYPE = RADIO NAME = Q_71025623 VALUE = 1 > 사과 
+<br><INPUT TYPE = RADIO NAME = Q_71025623 VALUE = 2 > 배 
+<br><INPUT TYPE = RADIO NAME = Q_71025623 VALUE = 3 > 딸기 
+<br>===================================================================
+<br><p><input type = hidden name = output ><p>
+<p><input type= button value = '[ 보내기 ]' onClick = 'javascript:chk()' style='border:solid 1 #ababab;'>&nbsp&nbsp;<input type = reset><p>
+</form><p><p><SCRIPT LANGUAGE = 'JavaScript'> function chk(){ var temp; var result = '71025599';  var bCheck = false ; 
+ bCheck = false ;  for(i = 0 ; i < 3 ; i++) {  if (document.RESEARCH.Q_71025623[i].checked) {  var select = i+1 ;  var strdata = '['+ '단일선택형 ;'+ '71025623 ;' + select  +']' ;  result =  result + strdata ;  bCheck = true ;  }} 
+ if(bCheck == false ) { alert ('항목이 선택되지 않았습니다.'); return; } document.RESEARCH.output.value = result ; document.RESEARCH.submit() ; } </SCRIPT><BR> 
+<p><p></body></html>

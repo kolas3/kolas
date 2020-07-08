@@ -1,0 +1,11 @@
+; MarcSample2.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MarcSample2"
+DESCRIPTION  'MarcSample2 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

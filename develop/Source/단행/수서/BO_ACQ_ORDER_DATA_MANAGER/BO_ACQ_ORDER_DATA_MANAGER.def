@@ -1,0 +1,12 @@
+; BO_ACQ_ORDER_DATA_MANAGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_ACQ_ORDER_DATA_MANAGER"
+DESCRIPTION  'BO_ACQ_ORDER_DATA_MANAGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm
+KalendarSearch

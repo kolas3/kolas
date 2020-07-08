@@ -1,0 +1,40 @@
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=D:\kolas2up\bin\SIReportEditor.exe)(HOST=WJCHOI)(USER=Administrator))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 01-APR-2003 10:48:47
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ù
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: ÇÁ·ÎÅäÄÝ ¾î´ðÅÍ ¿À·ùÀÔ´Ï´Ù
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORA92)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORA92)(CID=(PROGRAM=D:\Kolas2up\bin\SIReportEditor.exe)(HOST=ECO-AFDB254BF5A)(USER=sic))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 23-OCT-2007 17:14:08
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12560
+    TNS-12560: TNS:í”„ë¡œí† ì½œ ì–´ëŒ‘í„° ì˜¤ë¥˜
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: í”„ë¡œí† ì½œ ì–´ëŒ‘í„° ì˜¤ë¥˜ìž…ë‹ˆë‹¤
+    nt secondary err code: 126
+    nt OS err code: 0

@@ -1,0 +1,303 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\K2UP_Common.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PRICE_SUM_LIGHT DIALOGEX 0, 0, 386, 339
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "가격합산"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "출  력",IDC_bPRINT,242,314,58,15
+    PUSHBUTTON      "닫  기",IDCANCEL,304,314,58,15
+    LTEXT           "합  계 :",IDC_STATIC,26,318,33,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_edtBOOK_COUNT,71,316,39,13,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "책",IDC_STATIC,115,318,9,8,0,WS_EX_TRANSPARENT
+    LTEXT           "원",IDC_STATIC,211,318,9,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_edtPRICE,130,316,77,13,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,309,380,24,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_gridPRICE_SUM,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,8,49,369,255
+    CONTROL         "Tab1",IDC_tabPRICE_SUM,"SysTabControl32",0x0,4,31,379,277
+    COMBOBOX        IDC_cmbPSUM_CLASS,17,9,88,49,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,115,26,WS_EX_DLGMODALFRAME
+    COMBOBOX        IDC_cmbPSUM_DATE_CLASS,126,9,64,60,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtPSUM_DATE1,200,9,44,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtPSUM_DATE2,255,9,44,14,ES_AUTOHSCROLL
+    LTEXT           "~",IDC_STATIC,248,12,8,8
+    PUSHBUTTON      "가격합산",IDC_btnPSUM,319,9,50,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,119,3,263,26,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "차수조회",IDC_btnVIEW_DIVISION_NO,131,9,50,14
+    EDITTEXT        IDC_edtPSUM_DIVISION_NO1,200,9,44,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtPSUM_DIVISION_NO2,255,9,44,14,ES_AUTOHSCROLL
+END
+
+IDD_BO_ACQ_DELETE DIALOGEX 0, 0, 122, 75
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "자료삭제"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "재활용 자료",IDC_rRECALL,"Button",BS_AUTORADIOBUTTON,28,14,60,10
+    CONTROL         "삭제처리",IDC_rDELETE,"Button",BS_AUTORADIOBUTTON,28,29,48,10
+    DEFPUSHBUTTON   "확  인",IDOK,10,55,50,15
+    PUSHBUTTON      "닫  기",IDCANCEL,64,55,50,15
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,51,116,22,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,3,116,46,WS_EX_DLGMODALFRAME
+END
+
+IDD_BO_ACQ_MANAGE DIALOGEX 0, 0, 241, 230
+STYLE WS_CHILD
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "저  장",IDOK,181,203,50,15
+    GROUPBOX        "서명자동복본조사",IDC_STATIC,10,9,166,39
+    GROUPBOX        "주문메일자동발송",IDC_STATIC,10,52,166,39
+    GROUPBOX        "비치희망자료 알림메일 자동발송",IDC_STATIC,10,95,166,39
+    CONTROL         "자동실행",IDC_radTITLE_AUTO_SEARCH,"Button",BS_AUTORADIOBUTTON | WS_GROUP,26,26,48,10
+    CONTROL         "수동실행",IDC_radTITLE_HAND_SEARCH,"Button",BS_AUTORADIOBUTTON,114,26,48,10
+    CONTROL         "자동발송",IDC_radORDERMAIL_AUTO_SEND,"Button",BS_AUTORADIOBUTTON | WS_GROUP,26,70,48,10
+    CONTROL         "수동발송",IDC_radORDERMAIL_HAND_SEND,"Button",BS_AUTORADIOBUTTON,114,70,48,10
+    CONTROL         "자동발송",IDC_radREQUESTMAIL_AUTO_SEND,"Button",BS_AUTORADIOBUTTON | WS_GROUP,26,113,48,10
+    CONTROL         "수동발송",IDC_radREQUESTMAIL_HAND_SEND,"Button",BS_AUTORADIOBUTTON,114,113,48,10
+    GROUPBOX        "등록인계 사용여부",IDC_STATIC,10,137,166,39
+    CONTROL         "사용함",IDC_radREQUESTMAIL_AUTO_SEND2,"Button",BS_AUTORADIOBUTTON | WS_GROUP,26,155,40,10
+    CONTROL         "사용안함",IDC_radREQUESTMAIL_HAND_SEND2,"Button",BS_AUTORADIOBUTTON,114,155,48,10
+    GROUPBOX        "검수완료 다음 경로",IDC_STATIC,10,180,166,39
+    CONTROL         "등록대상",IDC_radREQUESTMAIL_AUTO_SEND3,"Button",BS_AUTORADIOBUTTON | WS_GROUP,26,198,48,10
+    CONTROL         "정리인계",IDC_radREQUESTMAIL_HAND_SEND3,"Button",BS_AUTORADIOBUTTON,114,198,48,10
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,2,2,235,225,WS_EX_DLGMODALFRAME
+END
+
+IDD_PRINT_TEMP_DLG DIALOG DISCARDABLE  0, 0, 9, 9
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+END
+
+IDD_DATA_PROCESSING_DLG DIALOGEX 0, 0, 185, 76
+STYLE WS_POPUP
+EXSTYLE WS_EX_STATICEDGE
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "Progress1",IDC_prgDATA_PROCESSING,"msctls_progress32",PBS_SMOOTH | WS_BORDER,5,62,175,9
+    CTEXT           "",IDC_stcDATA_PROCESSING,6,36,174,24,SS_CENTERIMAGE
+    PUSHBUTTON      "작업취소",IDCANCEL,129,8,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PRICE_SUM_LIGHT DLGINIT
+BEGIN
+    IDC_gridPRICE_SUM, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x42c4, 0x0000, 0x2796, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PRICE_SUM_LIGHT, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 336
+    END
+
+    IDD_BO_ACQ_MANAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 239
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 228
+    END
+
+    IDD_PRINT_TEMP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 2
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 2
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_WAIT                BITMAP  DISCARDABLE     "WaitProgress.bmp"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2008,10,30,74
+ PRODUCTVERSION 2008,10,30,74
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "K2UP_Common DLL\0"
+            VALUE "FileVersion", "2008, 10, 30, 74\0"
+            VALUE "InternalName", "K2UP_Common\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "K2UP_Common.DLL\0"
+            VALUE "ProductName", "K2UP_Common Dynamic Link Library\0"
+            VALUE "ProductVersion", "2008, 10, 30, 74\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\K2UP_Common.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

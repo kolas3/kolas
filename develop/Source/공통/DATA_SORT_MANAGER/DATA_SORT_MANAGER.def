@@ -1,0 +1,7 @@
+; DATA_SORT_MANAGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "DATA_SORT_MANAGER"
+DESCRIPTION  'DATA_SORT_MANAGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,7 @@
+; SE_SPECIES.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_SPECIES"
+DESCRIPTION  'SE_SPECIES Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

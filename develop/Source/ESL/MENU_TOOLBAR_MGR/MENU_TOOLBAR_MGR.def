@@ -1,0 +1,7 @@
+; MENU_TOOLBAR_MGR.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MENU_TOOLBAR_MGR"
+DESCRIPTION  'MENU_TOOLBAR_MGR Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

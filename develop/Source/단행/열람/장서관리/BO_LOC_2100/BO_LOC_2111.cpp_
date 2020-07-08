@@ -1,0 +1,71 @@
+// BO_LOC_2111.cpp : implementation file
+//
+
+#include "stdafx.h"
+
+#include "BO_LOC_2111.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CBO_LOC_2111 dialog
+
+
+CBO_LOC_2111::CBO_LOC_2111(CWnd* pParent /*=NULL*/)
+	: CDialog(CBO_LOC_2111::IDD, pParent)
+{
+	//{{AFX_DATA_INIT(CBO_LOC_2111)
+	m_nSaveFileType = -1;
+	//}}AFX_DATA_INIT
+}
+
+
+void CBO_LOC_2111::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CBO_LOC_2111)
+	DDX_Radio(pDX, IDC_RADIO1, m_nSaveFileType);
+	//}}AFX_DATA_MAP
+}
+
+
+BEGIN_MESSAGE_MAP(CBO_LOC_2111, CDialog)
+	//{{AFX_MSG_MAP(CBO_LOC_2111)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CBO_LOC_2111 message handlers
+
+
+int		CBO_LOC_2111::SaveFile()
+{
+	if( m_pDM_Save != NULL )  return 0;
+
+	int r = 0;
+	if( m_nSaveFileType == 0 )
+	{
+		//¿¢¼¿
+		r =	m_pDM_Save->ExportToExcelWithFileDialog( this );
+		
+	}else{
+		//ÇÑ¼¿
+		r=1;
+	}
+
+	return r;
+}
+
+void CBO_LOC_2111::OnOK() 
+{
+	// TODO: Add extra validation here
+	
+	int r = SaveFile();
+
+	if( r > 0 )
+		CDialog::OnOK();
+}

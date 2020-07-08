@@ -1,0 +1,215 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MailMgrTest.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ARROW.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MailMgrTest 정보"
+FONT 9, "새굴림"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Mail보내기테스트.exe",IDC_STATIC,40,14,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,29,119,8
+    DEFPUSHBUTTON   "확인",IDOK,188,17,39,19,WS_GROUP
+END
+
+IDD_MAILMGRTEST_DIALOG DIALOGEX 0, 0, 468, 353
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Mail전송테스트"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "메일 전송",IDC_rSEND,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE | BS_FLAT,11,12,446,17,WS_EX_TRANSPARENT
+    CONTROL         "메일 전송 결과",IDC_rRESULT,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE | BS_FLAT,11,117,446,17,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_eRECIPIENT_NAME,116,61,136,13,ES_AUTOHSCROLL,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_eRECIPIENT_EMAIL,116,78,136,13,ES_AUTOHSCROLL,WS_EX_TRANSPARENT
+    PUSHBUTTON      "메일테스트용 설정",IDC_btnMAIL_SERVER,258,69,83,23,0,WS_EX_TRANSPARENT
+    CONTROL         "Background ?",IDC_chkBACKGROUND,"Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,359,33,64,16,WS_EX_TRANSPARENT
+    PUSHBUTTON      "메일보내기",IDC_btnMAIL_SEND,357,51,95,47,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_eLOG,10,149,433,160,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL,WS_EX_TRANSPARENT
+    CONTROL         "로그파일  지우기",IDC_chkDELETE_LOG_FILE,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_VCENTER | BS_PUSHLIKE | BS_MULTILINE | BS_FLAT | WS_TABSTOP,445,234,11,75,WS_EX_TRANSPARENT
+    PUSHBUTTON      "종 료",ID_btnClose,5,316,457,29
+    PUSHBUTTON      "취소",IDCANCEL,329,114,50,14,NOT WS_VISIBLE
+    LTEXT           "메일 수신자 이름",IDC_STATIC,26,64,85,11,0,WS_EX_TRANSPARENT
+    LTEXT           "메일 수신자 이메일",IDC_STATIC,26,81,85,11,0,WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_STATIC,16,30,333,69,WS_DISABLED,WS_EX_TRANSPARENT
+    CONTROL         "메일보내기를 할 때마다 초기화하기",IDC_chkCLEAR,"Button",BS_AUTOCHECKBOX | BS_LEFT | BS_FLAT | WS_TABSTOP,14,138,174,9,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_eCFG_FILE_PATH,116,43,136,13,ES_AUTOHSCROLL,WS_EX_TRANSPARENT
+    LTEXT           "메일 서버 정보파일",IDC_STATIC,26,45,85,11,0,WS_EX_TRANSPARENT
+    PUSHBUTTON      "메일서버설정 보기",IDC_btnMAIL_SERVER_VIEW,258,43,83,23,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STATIC,5,4,457,104,0,WS_EX_DLGMODALFRAME
+    CONTROL         "로그파일  내용보기",IDC_chkVIEW_LOG_FILE,"Button",BS_AUTOCHECKBOX | BS_CENTER | BS_VCENTER | BS_PUSHLIKE | BS_MULTILINE | BS_FLAT | WS_TABSTOP,445,149,11,81,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STATIC,5,110,457,203,0,WS_EX_DLGMODALFRAME
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2004,01,30,30
+ PRODUCTVERSION 2004,01,30,30
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "MailMgrTest MFC 응용 프로그램\0"
+            VALUE "FileVersion", "2004, 01, 30, 30\0"
+            VALUE "InternalName", "MailMgrTest\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MailMgrTest.EXE\0"
+            VALUE "ProductName", "MailMgrTest 응용 프로그램\0"
+            VALUE "ProductVersion", "2004, 01, 30, 30\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "MailMgrTest 정보(&A)..."
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MailMgrTest.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

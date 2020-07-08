@@ -1,0 +1,454 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SearchZipCodeAPI.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2008,10,30,19
+ PRODUCTVERSION 2008,10,30,19
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "SearchZipCodeAPI DLL\0"
+            VALUE "FileVersion", "2008, 10, 30, 19\0"
+            VALUE "InternalName", "SearchZipCodeAPI\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SearchZipCodeAPI.DLL\0"
+            VALUE "ProductName", "SearchZipCodeAPI 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2008, 10, 30, 19\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SEARCH_ZIP_CODE_DLG DIALOG DISCARDABLE  0, 0, 446, 291
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "우편 번호 검색"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_gridZIP_CODE,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,5,55,434,222
+    EDITTEXT        IDC_edtZIP_CODE,15,30,114,15,ES_AUTOHSCROLL
+    PUSHBUTTON      "검 색",IDC_btnZIP_CODE_SEARCH,132,30,35,16
+    LTEXT           "※ 찾고자 하시는 주소의 동이나 군이나 도이름을 입력하십시오.예)역삼동, 화양동,서울,연기군",IDC_STATIC,16,15,292,8
+    PUSHBUTTON      "입 력",IDC_btnZIP_CODE_SEARCH2,181,30,35,16
+    PUSHBUTTON      "수 정",IDC_btnZIP_CODE_SEARCH3,220,30,35,16
+    PUSHBUTTON      "삭 제",IDC_btnZIP_CODE_SEARCH4,259,30,35,16
+    PUSHBUTTON      "선 택",IDC_btnZIP_CODE_SEARCH5,364,30,35,16
+    PUSHBUTTON      "닫 기",IDC_btnZIP_CODE_SEARCH6,402,30,35,16
+    PUSHBUTTON      "파일/반입반출",IDC_btnZIP_CODE_SEARCH7,297,30,51,16
+END
+
+IDD_SEARCH_ZIP_CODE_01_DLG DIALOG DISCARDABLE  0, 0, 217, 107
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "우편 번호 상세 검색"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "검 색",IDC_btnZIP_CODE_SEARCH,161,9,42,16
+    GROUPBOX        "검색어 ",IDC_STATIC,4,3,136,94
+    EDITTEXT        IDC_edtINPUT_ZIP_CODE,53,21,76,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtINPUT_ZIP_CODE3,53,37,76,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtINPUT_ZIP_CODE4,53,53,76,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtINPUT_ZIP_CODE2,53,70,76,13,ES_AUTOHSCROLL
+    LTEXT           "우편 번호",IDC_STATIC,14,23,31,12
+    LTEXT           "동",IDC_STATIC,14,73,31,8
+    LTEXT           "시  도",IDC_STATIC,14,41,31,8
+    LTEXT           "군",IDC_STATIC,14,58,31,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,149,1,1,112
+    PUSHBUTTON      "닫 기",IDC_btnZIP_CODE_SEARCH2,161,30,42,16
+END
+
+IDD_SEARCH_ZIP_CODE_02_DLG DIALOG DISCARDABLE  0, 0, 315, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "우편 번호 입력/수정"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtINPUT_ZIP_CODE,51,14,76,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtINPUT_ZIP_CODE3,51,35,244,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtINPUT_ZIP_CODE4,51,53,244,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtINPUT_ZIP_CODE2,51,72,244,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtINPUT_ZIP_CODE5,51,90,244,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "저 장",IDC_btnZIP_CODE_SAVE,219,128,42,16
+    PUSHBUTTON      "닫 기",IDC_btnZIP_CODE_CLOSE,265,128,42,16
+    PUSHBUTTON      "이 전",IDC_btnZIP_CODE_PREV,7,130,42,16
+    PUSHBUTTON      "다 음",IDC_btnZIP_CODE_NEXT,53,130,42,16
+    GROUPBOX        "",IDC_STATIC,5,0,302,113
+    LTEXT           "우편 번호",IDC_STATIC,14,16,31,12
+    LTEXT           "동",IDC_STATIC,14,74,31,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,121,341,1
+    LTEXT           "시  도",IDC_STATIC,14,37,31,8
+    LTEXT           "군",IDC_STATIC,14,55,31,8
+    LTEXT           "번 지",IDC_STATIC,14,92,31,8
+END
+
+IDD_ADDRESS_IMP_EXT DIALOGEX 0, 0, 171, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "주소 반입 반출"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_eFILEPATH,3,91,143,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "반입",IDC_rIMPORT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,53,25,27,10
+    CONTROL         "반출",IDC_rEXPORT,"Button",BS_AUTORADIOBUTTON,91,25,27,10
+    PUSHBUTTON      "시작",IDC_bSTART_IMP_EXP,75,146,43,14
+    PUSHBUTTON      "...",IDC_bFILEOPEN,149,91,19,12
+    PUSHBUTTON      "닫기",IDC_bSTART_IMP_EXP2,122,146,43,14
+    CTEXT           "선  택",IDC_STATIC,0,0,171,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    GROUPBOX        "",IDC_STATIC,0,11,171,54
+    CTEXT           "파 일 경 로",IDC_STATIC,0,66,171,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    GROUPBOX        "",IDC_STATIC,0,77,171,38
+    CONTROL         "전체 반입 : 기존 우편번호 테이블 삭제후 재생성",IDC_chkALLIMPORT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,3,46,165,10
+    CONTROL         "Progress1",IDC_PROGRESS_ZIP,"msctls_progress32",WS_BORDER,0,126,171,14
+    CTEXT           "",IDC_STATIC_ZIP_STATUS,0,116,170,10
+END
+
+IDD_SEARCH_ZIP_CODE_SETUP_AUTH DIALOG DISCARDABLE  0, 0, 234, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "인증키 설정"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "인증키 :",IDC_STATIC,9,10,28,8
+    DEFPUSHBUTTON   "적용",IDOK,116,39,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,176,39,50,14
+    EDITTEXT        IDC_EDT_AUTH,40,7,186,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,8,29,220,1
+END
+
+IDD_SEARCH_ZIP_CODE_OPENAPI DIALOG DISCARDABLE  0, 0, 381, 216
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "주소조회"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "지역 :",IDC_STATIC,7,11,21,8
+    COMBOBOX        IDC_CMB_REGION,29,9,67,15,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "닫기",IDCANCEL,324,193,50,14
+    PUSHBUTTON      "<<",IDC_BTN_PREV_PAGE,7,193,14,13,WS_DISABLED
+    PUSHBUTTON      ">>",IDC_BTN_NEXT_PAGE,91,193,14,13,WS_DISABLED
+    CONTROL         "",IDC_GRID_RESULT,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,7,29,367,148
+    EDITTEXT        IDC_EDT_CURRENT_PAGE,25,193,26,13,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    LTEXT           "검색어 :",IDC_STATIC,109,11,26,8
+    EDITTEXT        IDC_EDT_SEARCH,138,9,180,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "검색",IDC_BTN_SEARCH,324,9,50,14,WS_DISABLED
+    EDITTEXT        IDC_EDT_TOTAL_PAGE,61,193,26,13,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    CTEXT           "/",IDC_STATIC,52,195,8,8
+    PUSHBUTTON      "적용",IDC_BTN_APPLY,268,193,50,14,WS_DISABLED
+    COMBOBOX        IDC_CMB_APPLY_TYPE,211,194,52,15,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "인증키 설정",IDC_BTN_SETUP,111,193,50,14,WS_DISABLED
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,185,369,1
+END
+
+IDD_SEARCH_ZIP_CODE_NEW DIALOG DISCARDABLE  0, 0, 543, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "주소조회"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "     시  도",IDC_stc_SIDO,9,38,49,13
+    LTEXT           "   시  군  구",IDC_stc_SIGUNGU,9,56,49,13
+    LTEXT           "   읍  면  동",IDC_stc_UPMYUNDONG,9,74,49,13
+    LTEXT           "        리",IDC_stc_RI,9,92,49,13
+    LTEXT           "     번  지",IDC_stc_BUNJI,9,111,39,13
+    LTEXT           "   건  물  명",IDC_stc_BUILDINGNM,9,130,49,13
+    LTEXT           "  검 색 결 과",IDC_STATIC,9,147,41,11
+    COMBOBOX        IDC_cmb_SIDO,58,34,87,15,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmb_SIGUNGU,58,53,87,15,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmb_UPMYUNDONG,58,71,87,15,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmb_RI,58,90,87,15,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "산",IDC_chk_MOUNTAIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,58,108,22,14
+    EDITTEXT        IDC_edt_NUM1,81,109,26,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_edt_NUM2,119,109,26,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_btn_BUILDINGNAME,58,127,87,12,ES_AUTOHSCROLL
+    CONTROL         "지번주소",IDC_rad_OLD,"Button",BS_AUTORADIOBUTTON,57,144,42,16
+    CONTROL         "도로명주소",IDC_rad_NEW,"Button",BS_AUTORADIOBUTTON,101,144,52,16
+    DEFPUSHBUTTON   "검색",IDC_BTN_SEARCH,95,170,50,14
+    DEFPUSHBUTTON   "입력",IDOK,426,170,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,486,170,50,14
+    PUSHBUTTON      "<<",IDC_btn_PREV,296,170,14,13
+    PUSHBUTTON      ">>",IDC_btn_NEXT,380,170,14,13
+    CONTROL         "Tab1",IDC_tab_OPERATION,"SysTabControl32",0x0,0,7,161,187
+    LTEXT           "-",IDC_static_DASH,110,111,8,11
+    CONTROL         "",IDC_gridNEWADDRESS,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,169,20,367,141
+    EDITTEXT        IDC_edt_PAGENUM,315,170,61,13,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_gridNEWADDRESS2,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",NOT WS_VISIBLE | WS_TABSTOP,169,20,367,141
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SEARCH_ZIP_CODE_DLG DLGINIT
+BEGIN
+    IDC_gridZIP_CODE, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4e8c, 0x0000, 0x226b, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_SEARCH_ZIP_CODE_OPENAPI DLGINIT
+BEGIN
+    IDC_GRID_RESULT, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x425a, 0x0000, 0x16f2, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_SEARCH_ZIP_CODE_NEW DLGINIT
+BEGIN
+    IDC_gridNEWADDRESS, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x425a, 0x0000, 0x15e9, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    IDC_gridNEWADDRESS2, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x425a, 0x0000, 0x15e9, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SEARCH_ZIP_CODE_01_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 105
+    END
+
+    IDD_SEARCH_ZIP_CODE_02_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 314
+    END
+
+    IDD_SEARCH_ZIP_CODE_SETUP_AUTH, DIALOG
+    BEGIN
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+    END
+
+    IDD_SEARCH_ZIP_CODE_OPENAPI, DIALOG
+    BEGIN
+        RIGHTMARGIN, 374
+        VERTGUIDE, 7
+        TOPMARGIN, 7
+    END
+
+    IDD_SEARCH_ZIP_CODE_NEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 536
+        VERTGUIDE, 9
+        VERTGUIDE, 58
+        VERTGUIDE, 145
+        VERTGUIDE, 169
+        TOPMARGIN, 7
+        HORZGUIDE, 20
+        HORZGUIDE, 97
+        HORZGUIDE, 124
+        HORZGUIDE, 161
+        HORZGUIDE, 170
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\SearchZipCodeAPI.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

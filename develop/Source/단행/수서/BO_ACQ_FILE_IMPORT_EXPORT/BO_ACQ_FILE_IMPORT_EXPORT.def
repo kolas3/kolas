@@ -1,0 +1,7 @@
+; BO_ACQ_FILE_IMPORT_EXPORT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_ACQ_FILE_IMPORT_EXPORT"
+DESCRIPTION  'BO_ACQ_FILE_IMPORT_EXPORT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

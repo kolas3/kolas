@@ -1,0 +1,7 @@
+; CO_STATICS.def : Declares the module parameters for the DLL.
+
+LIBRARY      "CO_STATICS"
+DESCRIPTION  'CO_STATICS Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

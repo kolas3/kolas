@@ -1,0 +1,11 @@
+; BO_STATICS_1100.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_STATICS_1100"
+DESCRIPTION  'BO_STATICS_1100 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

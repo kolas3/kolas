@@ -1,0 +1,240 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_LOC_3500.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,31,45
+ PRODUCTVERSION 2005,8,31,45
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_LOC_3500 DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 45\0"
+            VALUE "InternalName", "BO_LOC_3500\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_LOC_3500.DLL\0"
+            VALUE "ProductName", "BO_LOC_3500 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 45\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_LOC_3510 DIALOG DISCARDABLE  0, 0, 401, 235
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_gridMAIN,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,0,0,352,175
+END
+
+IDD_BO_LOC_3520 DIALOG DISCARDABLE  0, 0, 397, 177
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "검 색"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtFIND2,71,37,77,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtFIND3,167,37,77,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtFIND4,71,53,77,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtFIND5,167,53,77,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtFIND1,71,70,111,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbFIND3,52,13,58,110,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbFIND1,131,12,83,144,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbFIND2,239,12,83,153,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "검  색",IDC_btnFIND,343,6,48,17
+    PUSHBUTTON      "닫  기",IDC_btnCLOSE,343,25,48,17
+    PUSHBUTTON      "초기화",IDC_btnSEARCH_CLEAR,343,70,48,17
+    LTEXT           "대출자번호",IDC_STATIC,15,39,41,8
+    LTEXT           "~",IDC_STATIC,155,39,8,8
+    LTEXT           "대출자명",IDC_STATIC,15,55,33,8
+    LTEXT           "~",IDC_STATIC,155,55,8,8
+    LTEXT           "회원상태",IDC_STATIC,15,16,33,8
+    LTEXT           "주민등록번호",IDC_STATIC,15,72,49,8
+    LTEXT           "소속",IDC_STATIC,111,16,17,8
+    LTEXT           "직급",IDC_STATIC,219,16,17,8
+    GROUPBOX        "",IDC_STATIC,5,3,324,29
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,336,0,1,276
+    GROUPBOX        "",IDC_STATIC,5,27,324,61
+    GROUPBOX        "",IDC_STATIC,5,83,324,46
+    EDITTEXT        IDC_edtFIND6,71,108,77,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtFIND7,167,108,77,13,ES_AUTOHSCROLL
+    LTEXT           "~",IDC_STATIC,155,110,8,8
+    LTEXT           "반납예정일",IDC_STATIC,15,111,54,8
+    CONTROL         "반납 대상자",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,94,61,11
+    GROUPBOX        "",IDC_STATIC,5,124,324,46
+    EDITTEXT        IDC_edtFIND8,71,149,77,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtFIND9,167,149,77,13,ES_AUTOHSCROLL
+    LTEXT           "~",IDC_STATIC,155,151,8,8
+    LTEXT           "연체일",IDC_STATIC,15,152,54,8
+    CONTROL         "연체자",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,135,61,11
+END
+
+IDD_BO_LOC_3530 DIALOG DISCARDABLE  0, 0, 397, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "메세지 편집"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtFIND1,64,36,111,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "설  정",IDC_btnFIND,345,11,48,17
+    PUSHBUTTON      "취  소",IDC_btnCLOSE,345,30,48,17
+    LTEXT           "회신 번호",-1,14,37,37,8
+    GROUPBOX        "기본 정보",-1,5,7,324,45
+    CONTROL         "",-1,"Static",SS_ETCHEDVERT,336,0,1,276
+    GROUPBOX        "메세지 구성",-1,5,59,324,34
+    CONTROL         "대출자명",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,73,47,11
+    EDITTEXT        IDC_edtFIND10,64,19,259,13,ES_AUTOHSCROLL
+    LTEXT           "기본 메세지 ",-1,14,21,49,8
+    CONTROL         "기본 메세지",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,69,73,61,11
+    CONTROL         "반납책수/연체책수",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,138,73,83,11
+    CONTROL         "등록번호:반납예정일",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,233,73,90,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BO_LOC_3510 DLGINIT
+BEGIN
+    IDC_gridMAIN, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x3faa, 0x0000, 0x1b2f, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_LOC_3500.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

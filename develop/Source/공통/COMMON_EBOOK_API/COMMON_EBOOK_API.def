@@ -1,0 +1,7 @@
+; COMMON_EBOOK_API.def : Declares the module parameters for the DLL.
+
+LIBRARY      "COMMON_EBOOK_API"
+DESCRIPTION  'COMMON_EBOOK_API Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

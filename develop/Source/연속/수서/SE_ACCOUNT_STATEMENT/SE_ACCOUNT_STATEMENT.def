@@ -1,0 +1,7 @@
+; SE_ACCOUNT_STATEMENT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_ACCOUNT_STATEMENT"
+DESCRIPTION  'SE_ACCOUNT_STATEMENT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

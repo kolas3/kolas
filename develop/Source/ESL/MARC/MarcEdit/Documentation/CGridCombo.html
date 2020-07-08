@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CGridCombo</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file C:\Kolas2UP\Develop\Source\ESL\MARC\MarcEdit\GridCombo.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CGridCombo</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>그리드에서 보여줄 콤보박스 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCComboBox,M,CCGridCombo,MCGridCombo.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CWnd* </TD><TD><B>parent</B> <BR>
+<I>부모 그리드</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CGridCombo</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>NotifyCancel</B> ()<BR>
+<I>부모 그리드에 값 수정이 취소됬음을 알린다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>NotifyModify</B> ()<BR>
+<I>부모 그리드에 값이 수정됬음을 알린다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   BOOL </TD><TD><B>PreTranslateMessage</B> (MSG* pMsg)<BR>
+<I>ESC KEY와 ENTER KEY를 감지해서 수정인지 취소인지를 판단해서 부모 그리드에 알린다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   </TD><TD><B>~CGridCombo</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DECLARE_MESSAGE_MAP</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnKillfocus</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnSelchange</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.44.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnSelendcancel</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+그리드에서 보여줄 콤보박스
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CGridCombo"></A>
+<A NAME="DOC.44.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CGridCombo()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="parent"></A>
+<A NAME="DOC.44.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CWnd* parent</B></TT>
+<DD>부모 그리드
+<DL><DT><DD></DL><P>
+<A NAME="NotifyModify"></A>
+<A NAME="DOC.44.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void NotifyModify()</B></TT>
+<DD>부모 그리드에 값이 수정됬음을 알린다
+<DL><DT><DD></DL><P>
+<A NAME="NotifyCancel"></A>
+<A NAME="DOC.44.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void NotifyCancel()</B></TT>
+<DD>부모 그리드에 값 수정이 취소됬음을 알린다
+<DL><DT><DD></DL><P>
+<A NAME="PreTranslateMessage"></A>
+<A NAME="DOC.44.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   BOOL PreTranslateMessage(MSG* pMsg)</B></TT>
+<DD>ESC KEY와 ENTER KEY를 감지해서 수정인지 취소인지를 판단해서 부모 그리드에 알린다
+<DL><DT><DD></DL><P>
+<A NAME="~CGridCombo"></A>
+<A NAME="DOC.44.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CGridCombo()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnKillfocus"></A>
+<A NAME="DOC.44.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnKillfocus()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnSelchange"></A>
+<A NAME="DOC.44.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnSelchange()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnSelendcancel"></A>
+<A NAME="DOC.44.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnSelendcancel()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="DECLARE_MESSAGE_MAP"></A>
+<A NAME="DOC.44.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DECLARE_MESSAGE_MAP()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>이종은
+
+<DT><B>Since:</B><DD>2003-04-10 오후 1:43:58
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

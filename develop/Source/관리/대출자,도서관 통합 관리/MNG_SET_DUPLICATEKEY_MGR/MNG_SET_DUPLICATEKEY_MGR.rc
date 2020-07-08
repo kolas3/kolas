@@ -1,0 +1,171 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MNG_SET_DUPLICATEKEY_MGR.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,02,04,17
+ PRODUCTVERSION 2005,02,04,17
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "MNG_SET_DUPLICATEKEY_MGR DLL\0"
+            VALUE "FileVersion", "2005, 02, 04, 17\0"
+            VALUE "InternalName", "MNG_SET_DUPLICATEKEY_MGR\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MNG_SET_DUPLICATEKEY_MGR.DLL\0"
+            VALUE "ProductName", "MNG_SET_DUPLICATEKEY_MGR 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 02, 04, 17\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MNG_SET_DUPLICATEKEY_MGR_01 DIALOG DISCARDABLE  0, 0, 430, 304
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "센터에서 대출자정보 업로드 및 다운로드시 중복검사 키를 설정합니다.",IDC_STATIC,9,10,269,14
+    CONTROL         "1. 주민등록번호",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,195,194,194,8
+    CONTROL         "2. 주민등록번호, 핸드폰번호",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,195,211,194,8
+    CONTROL         "3. 주민등록번호, 핸드폰번호, 대출자번호",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,195,228,194,8
+    CONTROL         "4. 주민등록번호, 핸드폰번호, 대출자번호, 이름",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,195,245,194,8
+    CONTROL         "주민등록번호",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,9,28,10,8
+    CONTROL         "핸드폰번호",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,43,59,8
+    CONTROL         "대출자번호",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,58,59,8
+    CONTROL         "이름",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,73,59,8
+    LTEXT           "주민등록번호",IDC_STATIC,21,28,74,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MNG_SET_DUPLICATEKEY_MGR_01, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 423
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 300
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MNG_SET_DUPLICATEKEY_MGR.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

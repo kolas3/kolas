@@ -1,0 +1,434 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CAT_PRINT.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,3,17,123
+ PRODUCTVERSION 2005,3,17,123
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "CAT_PRINT DLL\0"
+            VALUE "FileVersion", "2005, 03, 17, 123\0"
+            VALUE "InternalName", "CAT_PRINT\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CAT_PRINT.DLL\0"
+            VALUE "ProductName", "CAT_PRINT 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 03, 17, 123\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EQUIP_PRINT DIALOG DISCARDABLE  0, 0, 502, 299
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "장비출력 리스트"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "장비출력",IDC_bPRINT_EQUIP,405,12,58,17
+    COMBOBOX        IDC_cPRINT_FORMAT,16,13,113,183,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "출력형태변경",IDC_bCHANGE_PRINT_FORMAT,143,11,58,17
+    CONTROL         "",IDC_GRID_EQUIP_BOOK_LIST,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,7,41,488,251
+    GROUPBOX        "",IDC_STATIC,7,2,488,32
+    PUSHBUTTON      "RFID등록",IDC_bRfidWrite,319,12,58,17,NOT WS_VISIBLE
+    PUSHBUTTON      "보관내용삭제",IDC_bDeleteDm,216,11,58,17
+    EDITTEXT        IDC_EDIT_CALLNO,131,55,40,14,ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_VISIBLE
+    CONTROL         "",IDC_GRID_EQUIP_BOOK_LIST2,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",NOT WS_VISIBLE | WS_TABSTOP,7,41,488,251
+END
+
+IDD_EQUIP_PRINT_PROPERTY DIALOGEX 0, 0, 485, 219
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "출력 설정"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "가로",IDC_rPAPER_WIDTH,"Button",BS_AUTORADIOBUTTON | WS_GROUP,16,14,32,10
+    CONTROL         "세로",IDC_rPAPER_LENGTH,"Button",BS_AUTORADIOBUTTON,58,14,32,10
+    CONTROL         "줄바꿔찍기",IDC_rPRINT_LINE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,47,56,10
+    CONTROL         "이어찍기",IDC_rPRINT_SERIAL,"Button",BS_AUTORADIOBUTTON,81,47,48,10
+    CONTROL         "바코드",IDC_rPRINT_BARCODE,"Button",BS_AUTORADIOBUTTON,15,77,40,10
+    CONTROL         "북카드",IDC_rPRINT_BOOKCARD,"Button",BS_AUTORADIOBUTTON,15,109,40,10
+    CONTROL         "스티커",IDC_rPRINT_STICKER,"Button",BS_AUTORADIOBUTTON,81,109,40,10
+    LTEXT           "도서관명",IDC_STATIC,81,78,33,8
+    EDITTEXT        IDC_eLIB_NAME_CP,141,76,74,12,ES_AUTOHSCROLL | ES_READONLY
+    COMBOBOX        IDC_cREG_CODE_CP,15,146,56,154,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_eREG_NO_START_CP,78,146,56,14,ES_AUTOHSCROLL
+    LTEXT           "~",IDC_staSLASH,143,149,13,8
+    EDITTEXT        IDC_eREG_NO_END_CP,159,146,56,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "출력",IDC_bPRINT_EQUIP,103,182,45,18
+    PUSHBUTTON      "설정값 저장",IDC_bSAVE_CONFIG,159,182,55,18
+    LTEXT           "위쪽 여백",IDC_STATIC,236,139,37,8
+    EDITTEXT        IDC_eMARGIN_UP,290,137,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eMARGIN_SIDE,290,151,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eSPACE_VERT,290,165,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eSPACE_HORZ,290,179,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eMARGIN_BARCODE,420,192,51,12,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_VISIBLE
+    EDITTEXT        IDC_eLABEL_HIGHT,420,137,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eLABEL_WIDTH,420,151,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eWIDTH_COUNT,420,165,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_eLENGTH_COUNT,420,179,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "레이블 높이",IDC_STATIC,358,139,45,8
+    LTEXT           "왼쪽 여백",IDC_STATIC,236,153,37,8
+    LTEXT           "레이블 너비",IDC_STATIC,358,153,45,8
+    LTEXT           "세로 간격",IDC_STATIC,236,167,37,8
+    LTEXT           "행(ROW) 개수",IDC_STATIC,358,167,49,8
+    LTEXT           "가로 간격",IDC_STATIC,236,181,37,8
+    LTEXT           "열(COL) 개수",IDC_STATIC,358,181,49,8
+    GROUPBOX        "레이블",IDC_STATIC,7,36,212,26
+    GROUPBOX        "출력 범위(등록번호)",IDC_staREG_NO,7,132,212,37
+    CONTROL         2003,IDC_STATIC,"Static",SS_BITMAP,236,14,237,102
+    GROUPBOX        "출력 정보",IDC_STATIC,229,2,249,209
+    GROUPBOX        "",IDC_STATIC,7,170,212,40
+    LTEXT           "시작 위치",IDC_STATIC,13,187,37,8
+    EDITTEXT        IDC_eSTART_POSITION_CP,55,184,27,14,ES_AUTOHSCROLL
+    LTEXT           "바코드 여백",IDC_tMARGIN_BARCODE,358,195,45,8,NOT WS_VISIBLE
+    LTEXT           "폰트",IDC_STATIC,236,195,17,8
+    PUSHBUTTON      "",IDC_bFONT,262,192,79,15,0,WS_EX_STATICEDGE
+    GROUPBOX        "바코드",IDC_STATIC,7,66,212,26
+    GROUPBOX        "북카드",IDC_staBOOKCARD,7,98,212,26
+    COMBOBOX        IDC_cREG_NO_PLACE,141,45,74,104,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CobUnit,289,120,69,45,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "단     위",IDC_STATIC,236,123,37,8
+    CONTROL         "연속용지",IDC_CHK_SERIAL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,105,14,48,10
+    CONTROL         "낱장용지",IDC_rPAPER_SHEET,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,109,14,48,10
+    PUSHBUTTON      "연속용지 설정",IDC_BtnSerialLabelConfig,157,12,58,14
+    GROUPBOX        "용지",IDC_STATIC,7,2,212,30
+    CONTROL         "연속용지",IDC_rPAPER_SERIAL,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_DISABLED,167,14,48,10
+    CONTROL         "",IDC_BARCOD1,"{2200CD20-1176-101D-85F5-0020AF1EF604}",WS_TABSTOP,268,67,91,36
+END
+
+IDD_REVISION_PRINT DIALOG DISCARDABLE  0, 0, 264, 69
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "교열지 출력"
+FONT 9, "새굴림"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,0,250,40
+    CONTROL         "등록번호 검색으로 교열지 출력",IDC_chkREG_NO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,0,132,10
+    LTEXT           "등록번호",IDC_STATIC,15,22,33,8
+    COMBOBOX        IDC_cCLASS_CODE_CP,56,20,68,116,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_REG_NO_START_CP,131,19,53,13,ES_UPPERCASE | ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    EDITTEXT        IDC_eREG_NO_END_CP,200,19,53,13,ES_UPPERCASE | ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    PUSHBUTTON      "출력",IDC_bPRINT_CP,148,45,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,203,45,50,14
+    GROUPBOX        "",IDC_STATIC,7,38,250,24
+    LTEXT           "~",IDC_STATIC,189,22,8,8
+END
+
+IDD_SERIAL_LABEL_CONFIG DIALOGEX 0, 0, 266, 237
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "연속용지 줄바꿔찍기 레이블 프린트설정"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_STATIC,8,2,250,225
+    CONTROL         2006,IDC_STATIC,"Static",SS_BITMAP,13,6,237,102
+    LTEXT           "첫번째 위치",IDC_STATIC,13,115,45,8
+    LTEXT           "두번째 위치",IDC_STATIC,13,133,45,8
+    LTEXT           "등록번호 위치",IDC_STATIC,13,151,53,8
+    LTEXT           "청구기호 간격",IDC_STATIC,126,115,53,8
+    LTEXT           "레이블 출력 줄수",IDC_STATIC,126,133,65,8
+    LTEXT           "등록번호 출력여부",IDC_STATIC,126,151,69,8
+    LTEXT           "윗 공백 수",IDC_STATIC,14,171,41,8
+    EDITTEXT        IDC_EdtFisrtLoc,67,111,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EdtSecLoc,67,129,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EdtRegnoLoc,67,147,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EdtColnoLoc,195,111,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EdtColCount,195,129,55,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CobRegnoPrintYN,196,148,56,46,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EdtTopSpace,67,167,55,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CobSerialFont,157,167,95,96,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "저장",IDC_bSAVE,53,204,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,177,204,50,14
+    LTEXT           "폰트",IDC_STATIC,126,171,17,8
+    COMBOBOX        IDC_CobFirstLineSpace,67,183,55,96,CBS_DROPDOWN | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SERIAL_LABEL_PREVIEW DIALOG DISCARDABLE  0, 0, 321, 353
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "연속용지 출력 미리보기"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "출력",IDOK,203,329,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,259,329,50,14
+    GROUPBOX        "",IDC_STATIC,5,2,312,321
+    EDITTEXT        IDC_EDT_PREVIEW,13,12,296,306,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+    GROUPBOX        "",IDC_STATIC,5,320,312,28
+END
+
+IDD_SERIAL_NORMAL_CONFIG DIALOGEX 0, 0, 266, 201
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "연속용지 이어찍기 레이블 프린트설정"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "",-1,8,2,250,193
+    CONTROL         2006,-1,"Static",SS_BITMAP,13,6,237,102
+    LTEXT           "청구기호 시작위치",-1,13,115,69,8
+    LTEXT           "등록번호 시작위치",-1,13,133,69,8
+    LTEXT           "첫 라인 공백여부",-1,13,151,65,8
+    EDITTEXT        IDC_EdtSecondLoc,127,111,123,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EdtRegnoLoc,127,129,123,14,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_CobFirstLineSpace,127,148,124,46,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "저장",IDC_bSAVE,53,171,50,14
+    PUSHBUTTON      "닫기",IDCANCEL,177,171,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_EQUIP_PRINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 495
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 292
+    END
+
+    IDD_EQUIP_PRINT_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 478
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 217
+    END
+
+    IDD_REVISION_PRINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 62
+    END
+
+    IDD_SERIAL_LABEL_CONFIG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 254
+        BOTTOMMARGIN, 236
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_EQUIP_PRINT DLGINIT
+BEGIN
+    IDC_GRID_EQUIP_BOOK_LIST, 0x37a, 423, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4ba8, 0x0000, 0x26f7, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x000f, 0x8000, 0x000f, 0x8000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0000, 0x0001, 0x0004, 0x0000, 0x0002, 
+0x0000, 0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 
+0x0001, 0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0001, 0xffff, 0x0000, 
+0xffff, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 
+0x0000, 0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 
+0x0000, 0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 
+0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    IDC_GRID_EQUIP_BOOK_LIST2, 0x37a, 423, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4ba8, 0x0000, 0x26f7, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x000f, 0x8000, 0x000f, 0x8000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0000, 0x0001, 0x0004, 0x0000, 0x0002, 
+0x0000, 0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 
+0x0001, 0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0001, 0xffff, 0x0000, 
+0xffff, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 
+0x0000, 0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 
+0x0000, 0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 
+0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_EQUIP_PRINT_PROPERTY DLGINIT
+BEGIN
+    IDC_BARCOD1, 0x37a, 99, 0
+0x0008, 0x0000, 0x0032, 0x0034, 0x0046, 0x0041, 0x0031, 0x0037, 0x0031, 
+0x0034, 0x0023, 0x0000, 0x0001, 0x0000, 0x001b, 0x0000, 0x0001, 0x8001, 
+0x0000, 0xfdfa, 0xffff, 0x0008, 0x0000, 0x0002, 0x8001, 0x0001, 0x0000, 
+0x0700, 0x0100, 0x2900, 0x000e, 0x9500, 0x0005, 0x4b00, 0x0000, 0x0700, 
+0x6142, 0x4372, 0x646f, 0x0031, 0x0000, 0xff00, 0xffff, 0x0100, 0x0000, 
+0x0000, 0x0006, 0x0003, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LABEL               BITMAP  DISCARDABLE     "bitmap1.bmp"
+IDB_SERIAL              BITMAP  DISCARDABLE     "bmp00001.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "bitmap2.bmp"
+IDB_B9                  BITMAP  DISCARDABLE     "b9.bmp"
+IDB_B_WM                BITMAP  DISCARDABLE     "b11.bmp"
+IDB_B_AT                BITMAP  DISCARDABLE     "b12.bmp"
+IDB_B_EM                BITMAP  DISCARDABLE     "b13.bmp"
+IDB_B_SM                BITMAP  DISCARDABLE     "b14.bmp"
+IDB_B2                  BITMAP  DISCARDABLE     "b2.bmp"
+IDB_B3                  BITMAP  DISCARDABLE     "b3.bmp"
+IDB_B4                  BITMAP  DISCARDABLE     "b4.bmp"
+IDB_B5                  BITMAP  DISCARDABLE     "b5.bmp"
+IDB_B6                  BITMAP  DISCARDABLE     "b6.bmp"
+IDB_B7                  BITMAP  DISCARDABLE     "b7.bmp"
+IDB_B8                  BITMAP  DISCARDABLE     "b8.bmp"
+IDB_B10                 BITMAP  DISCARDABLE     "b10.bmp"
+IDB_B1                  BITMAP  DISCARDABLE     "bmp00002.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "Kolas2_32.ico"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\CAT_PRINT.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

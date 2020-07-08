@@ -1,0 +1,1935 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<MenuDS xmlns="http://tempuri.org/MenuDS.xsd">
+  <MENU_TBL>
+    <ALIAS>기초자료관리</ALIAS>
+    <GROUP_ALIAS>BO1_기초자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>기초자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_ACQ_BASIC_DATA_MANAGER.dll</TARGET>
+    <TITLE_DESC>[단행] 수서대상관리 ▶ 기초자료관리</TITLE_DESC>
+    <PK>74282431</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO1_기초자료관리</ALIAS>
+    <GROUP_ALIAS>UP단행_수서대상관리메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>기초자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282492</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>비치희망자료관리</ALIAS>
+    <GROUP_ALIAS>BO1_비치희망자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>비치희망자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_ACQ_REQUEST_DATA_MANAGER.dll</TARGET>
+    <TITLE_DESC>[단행] 수서대상관리 ▶ 비치희망자료관리</TITLE_DESC>
+    <PK>74282516</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO1_비치희망자료관리</ALIAS>
+    <GROUP_ALIAS>UP단행_수서대상관리메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>비치희망자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282493</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>반입자료관리</ALIAS>
+    <GROUP_ALIAS>BO1_반입자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>반입자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_ACQ_IMPORT_DATA_MANAGER.dll</TARGET>
+    <TITLE_DESC>[단행] 수서대상관리 ▶ 반입자료관리</TITLE_DESC>
+    <PK>74282432</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO1_반입자료관리</ALIAS>
+    <GROUP_ALIAS>UP단행_수서대상관리메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>반입자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282494</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>재활용자료관리</ALIAS>
+    <GROUP_ALIAS>BO1_재활용자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>재활용자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_ACQ_RECYCLE_DATA_MANAGER.dll</TARGET>
+    <TITLE_DESC>[단행] 수서대상관리 ▶ 재활용자료관리</TITLE_DESC>
+    <PK>74282524</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO1_재활용자료관리</ALIAS>
+    <GROUP_ALIAS>UP단행_수서대상관리메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>재활용자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282495</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP단행_수서대상관리메뉴</GROUP_ALIAS>
+    <IDX>5</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282497</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO2_구입대상자료관리</ALIAS>
+    <GROUP_ALIAS>UP단행_구입메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>구입대상자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74295001</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>단행_구입_구입정보관리</ALIAS>
+    <GROUP_ALIAS>BO2_주문자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>구입정보관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_ACQ_ORDER_DATA_MANAGER.dll</TARGET>
+    <TITLE_DESC>[단행] 구입 ▶ 검수대상자료관리</TITLE_DESC>
+    <PK>74282433</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>주문</ALIAS>
+    <GROUP_ALIAS>BO2_주문자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>검수대상자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_ACQ_ORDER_DATA_MANAGER.dll</TARGET>
+    <TITLE_DESC>[단행] 구입 ▶ 검수대상자료관리</TITLE_DESC>
+    <PK>74282433</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO2_주문자료관리</ALIAS>
+    <GROUP_ALIAS>UP단행_구입메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>검수대상자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282713</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO2_통계/출력</ALIAS>
+    <GROUP_ALIAS>UP단행_구입메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>통계/출력</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282715</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>미납품관리</ALIAS>
+    <GROUP_ALIAS>BO2_미납품관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>미납품관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_ACQ_MISSING_DATA_MANAGER.dll</TARGET>
+    <TITLE_DESC>[단행] 구입 ▶ 미납품관리</TITLE_DESC>
+    <PK>74282434</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO2_미납품관리</ALIAS>
+    <GROUP_ALIAS>UP단행_구입메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>미납품관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282714</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP단행_구입메뉴</GROUP_ALIAS>
+    <IDX>5</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282531</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>등록대상처리2</ALIAS>
+    <GROUP_ALIAS>BO2_구입등록대상처리</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>등록대상처리2</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_ACQ_REGOBJ_DATA_MANAGER.dll</TARGET>
+    <TITLE_DESC>등록대상처리</TITLE_DESC>
+    <PK>74294939</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO2_구입등록대상처리</ALIAS>
+    <GROUP_ALIAS>UP단행_구입메뉴</GROUP_ALIAS>
+    <IDX>6</IDX>
+    <CAPTION>등록대상처리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74294927</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO3_기증자료관리</ALIAS>
+    <GROUP_ALIAS>UP단행_기증메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>기증자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282498</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>기증등록대상처리</ALIAS>
+    <GROUP_ALIAS>BO3_기증등록대상처리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>기증등록대상처리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_DON_REGOBJ_DATA_MANAGER.dll</TARGET>
+    <TITLE_DESC>[단행] 기증 ▶ 등록대상처리</TITLE_DESC>
+    <PK>74282663</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO3_기증등록대상처리</ALIAS>
+    <GROUP_ALIAS>UP단행_기증메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>등록대상처리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282499</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO3_통계/출력</ALIAS>
+    <GROUP_ALIAS>UP단행_기증메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>통계/출력</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282652</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>기증자관리</ALIAS>
+    <GROUP_ALIAS>CO1_기증자관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>기증자관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\common\COMMON_DONATOR_MANAGER.dll</TARGET>
+    <TITLE_DESC>[공통] 기증 ▶ 기증자관리</TITLE_DESC>
+    <PK>74282639</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO1_기증자관리</ALIAS>
+    <GROUP_ALIAS>UP단행_기증메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>기증자관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282638</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP단행_기증메뉴</GROUP_ALIAS>
+    <IDX>5</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282501</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO4_등록자료관리</ALIAS>
+    <GROUP_ALIAS>UP단행_등록메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>등록자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282502</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>단행_등록_원부대장관리</ALIAS>
+    <GROUP_ALIAS>BO4_원부대장관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>원부대장관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\MONO\BO_CAT_REG.DLL</TARGET>
+    <TITLE_DESC>[단행] 등록 ▶ 원부대장관리</TITLE_DESC>
+    <PK>74282526</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO4_원부대장관리</ALIAS>
+    <GROUP_ALIAS>UP단행_등록메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>원부대장관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282543</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP단행_등록메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282542</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>단행_정리_복본조사</ALIAS>
+    <GROUP_ALIAS>BO5_복본조사</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>복본조사</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\MONO\BO_CAT.dll</TARGET>
+    <TITLE_DESC>[단행] 정리 ▶ 복본조사</TITLE_DESC>
+    <PK>74282529</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO5_복본조사</ALIAS>
+    <GROUP_ALIAS>UP단행_정리메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>복본조사</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282545</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>단행_정리_분류</ALIAS>
+    <GROUP_ALIAS>BO5_분류</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>분류</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\MONO\BO_CAT.dll</TARGET>
+    <TITLE_DESC>[단행] 정리 ▶ 분류</TITLE_DESC>
+    <PK>74282412</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO5_분류</ALIAS>
+    <GROUP_ALIAS>UP단행_정리메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>분류</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282602</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>단행_정리_목록완성</ALIAS>
+    <GROUP_ALIAS>BO5_목록완성</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>목록완성</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\MONO\BO_CAT.dll</TARGET>
+    <TITLE_DESC>[단행] 정리 ▶ 목록완성(서지데이터관리)</TITLE_DESC>
+    <PK>74282527</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO5_목록완성</ALIAS>
+    <GROUP_ALIAS>UP단행_정리메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>목록완성</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282547</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>단행_정리_목록편성</ALIAS>
+    <GROUP_ALIAS>BO5_목록편성</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>목록편성</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\MONO\BO_CAT.dll</TARGET>
+    <TITLE_DESC>[단행] 정리 ▶ 목록편성</TITLE_DESC>
+    <PK>74282528</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO5_목록편성</ALIAS>
+    <GROUP_ALIAS>UP단행_정리메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>목록편성</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282548</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO5_정리환경설정</ALIAS>
+    <GROUP_ALIAS>UP단행_정리메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>정리환경설정</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282550</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP단행_정리메뉴</GROUP_ALIAS>
+    <IDX>6</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282552</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO6_배가관리</ALIAS>
+    <GROUP_ALIAS>UP단행_열람메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>배가관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282594</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO6_장서관리</ALIAS>
+    <GROUP_ALIAS>UP단행_열람메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>장서관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282595</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO7_장서통계</ALIAS>
+    <GROUP_ALIAS>UP단행_열람메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>통계</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74553228</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP단행_열람메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282597</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>연속_구입자료관리</ALIAS>
+    <GROUP_ALIAS>SE1_구입자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>구입자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_PURCHASE.dll</TARGET>
+    <TITLE_DESC>[연속] 구입 ▶ 구입자료관리</TITLE_DESC>
+    <PK>74282462</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE1_구입자료관리</ALIAS>
+    <GROUP_ALIAS>UP연속_구입메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>구입자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282553</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>구입서지정보관리</ALIAS>
+    <GROUP_ALIAS>SE1_서지정보관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>서지정보관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_BIBINFO.dll</TARGET>
+    <TITLE_DESC>[연속] 구입 ▶ 서지정보관리</TITLE_DESC>
+    <PK>74282463</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE1_서지정보관리</ALIAS>
+    <GROUP_ALIAS>UP연속_구입메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>서지정보관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282554</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>구입체크인</ALIAS>
+    <GROUP_ALIAS>SE1_체크인</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>체크인</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_CHECKIN.dll</TARGET>
+    <TITLE_DESC>[연속] 구입 ▶ 체크인</TITLE_DESC>
+    <PK>74282480</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE1_체크인</ALIAS>
+    <GROUP_ALIAS>UP연속_구입메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>체크인</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282509</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>독촉(구입)</ALIAS>
+    <GROUP_ALIAS>SE1_결호관리(독촉)</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>결호관리(독촉)</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_MISSING_DATA.dll</TARGET>
+    <TITLE_DESC>[연속] 구입 ▶ 결호관리(독촉)</TITLE_DESC>
+    <PK>74282620</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE1_결호관리(독촉)</ALIAS>
+    <GROUP_ALIAS>UP연속_구입메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>결호관리(독촉)</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282555</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>통계_출력</ALIAS>
+    <GROUP_ALIAS>SE1_통계/출력</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>구입 통계출력</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_STATISTICS.dll</TARGET>
+    <TITLE_DESC>[연속] 구입 ▶ 통계/출력</TITLE_DESC>
+    <PK>74282512</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE1_통계/출력</ALIAS>
+    <GROUP_ALIAS>UP연속_구입메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>통계/출력</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282642</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>구입자료인계</ALIAS>
+    <GROUP_ALIAS>SE1_자료인계</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>자료인계</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_TRANSFER.dll</TARGET>
+    <TITLE_DESC>[연속] 구입 ▶ 자료인계</TITLE_DESC>
+    <PK>74282641</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE1_자료인계</ALIAS>
+    <GROUP_ALIAS>UP연속_구입메뉴</GROUP_ALIAS>
+    <IDX>7</IDX>
+    <CAPTION>자료인계</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282656</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP연속_구입메뉴</GROUP_ALIAS>
+    <IDX>9</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282557</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>기증서지정보관리</ALIAS>
+    <GROUP_ALIAS>SE2_서지정보관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>서지정보관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_BIBINFO.dll</TARGET>
+    <TITLE_DESC>[연속] 기증 ▶ 서지정보관리</TITLE_DESC>
+    <PK>74282468</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE2_서지정보관리</ALIAS>
+    <GROUP_ALIAS>UP연속_기증메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>서지정보관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282558</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>기증체크인</ALIAS>
+    <GROUP_ALIAS>SE2_체크인</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>체크인</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_CHECKIN.dll</TARGET>
+    <TITLE_DESC>[연속] 기증 ▶ 체크인</TITLE_DESC>
+    <PK>74282481</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE2_체크인</ALIAS>
+    <GROUP_ALIAS>UP연속_기증메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>체크인</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282559</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>독촉(의뢰)</ALIAS>
+    <GROUP_ALIAS>SE2_결호관리(의뢰)</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>결호관리(의뢰)</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_MISSING_DATA_DON.dll</TARGET>
+    <TITLE_DESC>[연속] 기증 ▶ 결호관리(의뢰)</TITLE_DESC>
+    <PK>74282621</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE2_결호관리(의뢰)</ALIAS>
+    <GROUP_ALIAS>UP연속_기증메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>결호관리(의뢰)</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282560</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>기증자료인계</ALIAS>
+    <GROUP_ALIAS>SE2_자료인계</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>자료인계</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\Dll\serial\SE_TRANSFER.dll</TARGET>
+    <TITLE_DESC>[연속] 기증 ▶ 자료인계</TITLE_DESC>
+    <PK>74282658</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE2_자료인계</ALIAS>
+    <GROUP_ALIAS>UP연속_기증메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>자료인계</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282657</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO1_기증자관리</ALIAS>
+    <GROUP_ALIAS>UP연속_기증메뉴</GROUP_ALIAS>
+    <IDX>5</IDX>
+    <CAPTION>기증자관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282561</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP연속_기증메뉴</GROUP_ALIAS>
+    <IDX>7</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282563</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>제본결정</ALIAS>
+    <GROUP_ALIAS>SE3_제본결정</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>제본결정</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\serial\SE_BINDING_DECISION.dll</TARGET>
+    <TITLE_DESC>[연속] 제본 ▶ 제본결정</TITLE_DESC>
+    <PK>74282482</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE3_제본결정</ALIAS>
+    <GROUP_ALIAS>UP연속_제본메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>제본결정</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282564</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>제본발주</ALIAS>
+    <GROUP_ALIAS>SE3_제본발주</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>제본발주</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\serial\SE_BINDING_ORDER.dll</TARGET>
+    <TITLE_DESC>[연속] 제본 ▶ 제본발주</TITLE_DESC>
+    <PK>74282470</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE3_제본발주</ALIAS>
+    <GROUP_ALIAS>UP연속_제본메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>제본발주</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282565</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>제본검수</ALIAS>
+    <GROUP_ALIAS>SE3_제본검수</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>제본검수</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\serial\SE_BINDING_TERMIN.dll</TARGET>
+    <TITLE_DESC>[연속] 제본 ▶ 제본검수</TITLE_DESC>
+    <PK>74282469</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE3_제본검수</ALIAS>
+    <GROUP_ALIAS>UP연속_제본메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>제본검수</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282566</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>등록인계</ALIAS>
+    <GROUP_ALIAS>SE3_제본등록인계</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>제본등록인계</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\serial\SE_BINDING_TRANSFER.dll</TARGET>
+    <TITLE_DESC>[연속] 제본 ▶ 제본등록인계</TITLE_DESC>
+    <PK>74282514</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE3_제본등록인계</ALIAS>
+    <GROUP_ALIAS>UP연속_제본메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>제본등록인계</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282567</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP연속_제본메뉴</GROUP_ALIAS>
+    <IDX>5</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282569</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>연속_등록_등록자료관리</ALIAS>
+    <GROUP_ALIAS>SE4_등록자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>등록자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\SERIAL\SE_CAT_REG.DLL</TARGET>
+    <TITLE_DESC>[연속] 등록 ▶ 등록자료관리</TITLE_DESC>
+    <PK>74282517</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE4_등록자료관리</ALIAS>
+    <GROUP_ALIAS>UP연속_등록메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>등록자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282589</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>연속_등록_가원부작성</ALIAS>
+    <GROUP_ALIAS>SE4_가원부자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>가원부자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\SERIAL\SE_CAT_REG.DLL</TARGET>
+    <TITLE_DESC>[연속] 등록 ▶ 가원부자료관리</TITLE_DESC>
+    <PK>74282472</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE4_가원부자료관리</ALIAS>
+    <GROUP_ALIAS>UP연속_등록메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>가원부자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282590</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>연속_등록_원부대장관리</ALIAS>
+    <GROUP_ALIAS>SE4_원부대장관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>원부대장관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\SERIAL\SE_CAT_REG.DLL</TARGET>
+    <TITLE_DESC>[연속] 등록 ▶ 원부대장관리</TITLE_DESC>
+    <PK>74282473</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE4_원부대장관리</ALIAS>
+    <GROUP_ALIAS>UP연속_등록메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>원부대장관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282591</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP연속_등록메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282593</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>연속_정리_목록완성</ALIAS>
+    <GROUP_ALIAS>SE5_목록완성</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>서지데이터관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\Serial\SE_CAT.dll</TARGET>
+    <TITLE_DESC>[연속] 정리 ▶ 목록완성(서지데이터관리)</TITLE_DESC>
+    <PK>74282474</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE5_목록완성</ALIAS>
+    <GROUP_ALIAS>UP연속_정리메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>목록완성</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282603</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>연속_정리_목록편성</ALIAS>
+    <GROUP_ALIAS>SE5_목록편성</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>목록편성</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\Serial\SE_CAT.dll</TARGET>
+    <TITLE_DESC>[연속] 정리 ▶ 목록편성</TITLE_DESC>
+    <PK>74282475</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE5_목록편성</ALIAS>
+    <GROUP_ALIAS>UP연속_정리메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>목록편성</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282604</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>연속_정리_열람인계처리</ALIAS>
+    <GROUP_ALIAS>SE5_열람인계처리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>열람인계처리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\Serial\SE_CAT.dll</TARGET>
+    <TITLE_DESC>[연속] 정리 ▶ 열람인계처리</TITLE_DESC>
+    <PK>74282533</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE5_열람인계처리</ALIAS>
+    <GROUP_ALIAS>UP연속_정리메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>열람인계처리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282605</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE5_정리환경설정</ALIAS>
+    <GROUP_ALIAS>UP연속_정리메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>정리환경설정</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282606</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP연속_정리메뉴</GROUP_ALIAS>
+    <IDX>5</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282608</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE6_배가관리</ALIAS>
+    <GROUP_ALIAS>UP연속_열람메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>배가관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282598</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE6_장서관리</ALIAS>
+    <GROUP_ALIAS>UP연속_열람메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>장서관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282599</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>실시간배가자료관리_연속</ALIAS>
+    <GROUP_ALIAS>SE6_실시간열람자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>실시간열람자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\serial\se_loc_1500.dll</TARGET>
+    <TITLE_DESC>[연속] 열람 ▶ 실시간열람자료관리</TITLE_DESC>
+    <PK>74282635</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>SE6_실시간열람자료관리</ALIAS>
+    <GROUP_ALIAS>UP연속_열람메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>실시간열람자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282634</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP연속_열람메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282601</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO3_사용자관리</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>사용자관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282437</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO3_부호관리</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>부호관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282485</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO3_수서환경설정</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>수서환경설정</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282486</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO5_정리환경설정</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>정리환경설정</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282484</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO3_열람환경설정</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>열람환경설정</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282487</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>공통환경설정</ALIAS>
+    <GROUP_ALIAS>CO3_공통환경설정</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>공통환경설정</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mng\MNG_COMMON_ENVIRONMENT.dll</TARGET>
+    <TITLE_DESC>[관리] 공통환경설정</TITLE_DESC>
+    <PK>74282660</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO3_공통환경설정</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>5</IDX>
+    <CAPTION>공통환경설정</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282659</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO3_메일관리</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>6</IDX>
+    <CAPTION>메일관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282488</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO3_마지막번호관리</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>7</IDX>
+    <CAPTION>마지막번호관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282489</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO3_도서관관리</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>8</IDX>
+    <CAPTION>도서관관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282490</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>검색엔진동기화</ALIAS>
+    <GROUP_ALIAS>CO3_검색엔진동기화</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>검색엔진동기화</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mng\MNG_SYNCHRONIZED_SEARCHENGINE.dll</TARGET>
+    <TITLE_DESC>[관리] 검색엔진동기화</TITLE_DESC>
+    <PK>74282655</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO3_검색엔진동기화</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>9</IDX>
+    <CAPTION>검색엔진동기화</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282654</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>10</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282438</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO4_공유대출정보관리</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>14</IDX>
+    <CAPTION>공유대출정보관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>S</STYLE>
+    <ACTION>P</ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282691</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>C13_색인재생성</ALIAS>
+    <GROUP_ALIAS>UP기타_관리메뉴</GROUP_ALIAS>
+    <IDX>15</IDX>
+    <CAPTION>색인재생성</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC>색인재생성</TITLE_DESC>
+    <PK>74282670</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>대출관리_대출/반납</ALIAS>
+    <GROUP_ALIAS>CO4_대출/반납</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>대출/반납</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\bo_loc_3100.dll</TARGET>
+    <TITLE_DESC>[대출/반납] 대출/반납</TITLE_DESC>
+    <PK>74282399</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO4_대출/반납</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>대출/반납</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282610</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>대출관리_대출자료관리</ALIAS>
+    <GROUP_ALIAS>CO4_대출자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>대출자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_LOC_3200.dll</TARGET>
+    <TITLE_DESC>[대출/반납] 대출자료관리</TITLE_DESC>
+    <PK>74282372</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO4_대출자료관리</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>대출자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282611</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>대출관리_이용자관리</ALIAS>
+    <GROUP_ALIAS>CO4_이용자관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>이용자관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\bo_loc_3300.dll</TARGET>
+    <TITLE_DESC>[대출/반납] 이용자관리</TITLE_DESC>
+    <PK>74282373</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO4_이용자관리</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>이용자관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282609</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>대출관리_배달자료관리</ALIAS>
+    <GROUP_ALIAS>CO4_배달자료관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>배달자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\bo_loc_3400.dll</TARGET>
+    <TITLE_DESC>[대출/반납] 배달자료관리</TITLE_DESC>
+    <PK>74282400</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO4_배달자료관리</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>배달자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282692</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>BO1_비치희망자료관리</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>비치희망자료관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282612</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>상호대차관리</ALIAS>
+    <GROUP_ALIAS>C15_상호대차관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>상호대차관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\MNG\MNG_ILL_WEB.dll</TARGET>
+    <TITLE_DESC>상호대차관리</TITLE_DESC>
+    <PK>74530025</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>C15_상호대차관리</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>5</IDX>
+    <CAPTION>상호대차관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74530024</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>타관반납통계</ALIAS>
+    <GROUP_ALIAS>C16_타관반납통계</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>타관반납통계</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\mono\UNION_RETURN_STATICS.dll</TARGET>
+    <TITLE_DESC>[대출/반납] 타관반납통계</TITLE_DESC>
+    <PK>74546568</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>C16_타관반납통계</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>6</IDX>
+    <CAPTION>타관반납통계</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74546527</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>대출관리_통계</ALIAS>
+    <GROUP_ALIAS>CO4_통계</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>통계</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mono\BO_STATICS_1100.dll</TARGET>
+    <TITLE_DESC>[대출/반납] 통계</TITLE_DESC>
+    <PK>74282401</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO4_통계</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>7</IDX>
+    <CAPTION>통계</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282613</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>C14_메일링시스템</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>8</IDX>
+    <CAPTION>메일링시스템</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>S</STYLE>
+    <ACTION>P</ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282693</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>C10_SMS서비스</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>9</IDX>
+    <CAPTION>SMS 서비스</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74284845</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>11</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282615</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>박우람</ALIAS>
+    <GROUP_ALIAS>UP기타_대출반납메뉴</GROUP_ALIAS>
+    <IDX>12</IDX>
+    <CAPTION>박우람</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74551651</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>단행자료관리</ALIAS>
+    <GROUP_ALIAS>CO5_단행자료</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>단행자료</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mng\contentsmgr_bo.dll</TARGET>
+    <TITLE_DESC>[기타] 목차초록 ▶ 단행자료</TITLE_DESC>
+    <PK>74282477</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO5_단행자료</ALIAS>
+    <GROUP_ALIAS>UP기타_목차초록메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>단행자료</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282616</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>연속자료관리</ALIAS>
+    <GROUP_ALIAS>CO5_연속간행자료</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>연속자료관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mng\contentsmgr_se.dll</TARGET>
+    <TITLE_DESC>[기타] 목차초록 ▶ 연속자료관리</TITLE_DESC>
+    <PK>74282476</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO5_연속간행자료</ALIAS>
+    <GROUP_ALIAS>UP기타_목차초록메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>연속간행자료</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282617</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP기타_목차초록메뉴</GROUP_ALIAS>
+    <IDX>3</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282619</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>전거</ALIAS>
+    <GROUP_ALIAS>CO9_전거관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>전거관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mng\MNG_AC_MANAGER.dll</TARGET>
+    <TITLE_DESC>[기타] 전거통제 ▶ 전거관리</TITLE_DESC>
+    <PK>74282628</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO9_전거관리</ALIAS>
+    <GROUP_ALIAS>UP기타_전거통제메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>전거관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282570</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP기타_전거통제메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282572</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>분류기호</ALIAS>
+    <GROUP_ALIAS>CO6_분류기호검색</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>분류기호</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mng\MNG_CLASS_SIGN_MANAGER.dll</TARGET>
+    <TITLE_DESC>[기타] 분류기호 및 주제명 ▶ 분류기호</TITLE_DESC>
+    <PK>74282374</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO6_분류기호검색</ALIAS>
+    <GROUP_ALIAS>UP기타_분류기호메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>분류기호검색</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282573</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO6_주제명검색요어검색</ALIAS>
+    <GROUP_ALIAS>UP기타_분류기호메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>주제명검색요어검색</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282574</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO6_분류기호관리</ALIAS>
+    <GROUP_ALIAS>UP기타_분류기호메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282423</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP기타_분류기호메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282576</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>이용자용자료찾기</ALIAS>
+    <GROUP_ALIAS>CO8_이용자용자료찾기</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>이용자용자료찾기</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mng\MNG_USER_DATA_SEARCH.dll</TARGET>
+    <TITLE_DESC>[기타] 이용자자료찾기</TITLE_DESC>
+    <PK>74282479</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO8_이용자용자료찾기</ALIAS>
+    <GROUP_ALIAS>UP기타_이용자자료찾기메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>자료찾기</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282623</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP기타_이용자자료찾기메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282578</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>업무용자료찾기</ALIAS>
+    <GROUP_ALIAS>CO7_업무용자료찾기</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>업무용자료찾기</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\mng\MNG_WORK_DATA_SEARCH.dll</TARGET>
+    <TITLE_DESC>[기타] 업무용자료찾기</TITLE_DESC>
+    <PK>74282478</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO7_업무용자료찾기</ALIAS>
+    <GROUP_ALIAS>UP기타_업무용자료찾기메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>자료찾기</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282622</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP기타_업무용자료찾기메뉴</GROUP_ALIAS>
+    <IDX>2</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282510</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO2_목록관리</ALIAS>
+    <GROUP_ALIAS>UP기타_공동목록메뉴</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>목록관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282579</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>KOLIS-NET</ALIAS>
+    <GROUP_ALIAS>CO2_KOLIS-NET 검색</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>국가자료공동목록 검색</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\UC\KOLISNET_SEARCH.DLL</TARGET>
+    <TITLE_DESC>[공동목록] KOLIS-NET 검색</TITLE_DESC>
+    <PK>74282387</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO2_KOLIS-NET 검색</ALIAS>
+    <GROUP_ALIAS>UP기타_공동목록메뉴</GROUP_ALIAS>
+    <IDX>1</IDX>
+    <CAPTION>국가자료공동목록 검색</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282580</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>도서관정보관리</ALIAS>
+    <GROUP_ALIAS>CO2_도서관정보관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>도서관정보관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\UC\UC_IT_LIB_INFO.DLL</TARGET>
+    <TITLE_DESC>[공동목록] 도서관정보관리</TITLE_DESC>
+    <PK>74282391</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO2_도서관정보관리</ALIAS>
+    <GROUP_ALIAS>UP기타_공동목록메뉴</GROUP_ALIAS>
+    <IDX>4</IDX>
+    <CAPTION>도서관정보관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282583</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>KOLISNET_이용자관리</ALIAS>
+    <GROUP_ALIAS>CO2_KOLIS-NET 이용자관리</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>이용자관리</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\UC\UC_IT_USER_INFO.DLL</TARGET>
+    <TITLE_DESC>[공동목록] 이용자관리</TITLE_DESC>
+    <PK>74282483</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO2_KOLIS-NET 이용자관리</ALIAS>
+    <GROUP_ALIAS>UP기타_공동목록메뉴</GROUP_ALIAS>
+    <IDX>5</IDX>
+    <CAPTION>국가자료공동목록 이용자관리</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282584</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>공지사항</ALIAS>
+    <GROUP_ALIAS>CO2_공지사항</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>공지사항</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\dll\uc\Light_uc_notify_local.dll</TARGET>
+    <TITLE_DESC>[공동목록] 공지사항</TITLE_DESC>
+    <PK>74282393</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO2_공지사항</ALIAS>
+    <GROUP_ALIAS>UP기타_공동목록메뉴</GROUP_ALIAS>
+    <IDX>6</IDX>
+    <CAPTION>공지사항</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282585</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>KOLISNET_통계</ALIAS>
+    <GROUP_ALIAS>CO2_KOLIS-NET 통계</GROUP_ALIAS>
+    <IDX>0</IDX>
+    <CAPTION>국가자료공동목록 통계</CAPTION>
+    <VISIBLE>T</VISIBLE>
+    <STYLE>A</STYLE>
+    <ACTION>D</ACTION>
+    <TARGET>..\DLL\UC\UC_IT_STATISTICS.DLL</TARGET>
+    <TITLE_DESC>[공동목록] KOLISNET_통계</TITLE_DESC>
+    <PK>74282394</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>CO2_KOLIS-NET 통계</ALIAS>
+    <GROUP_ALIAS>UP기타_공동목록메뉴</GROUP_ALIAS>
+    <IDX>7</IDX>
+    <CAPTION>국가자료공동목록 통계</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282586</PK>
+  </MENU_TBL>
+  <MENU_TBL>
+    <ALIAS>홈</ALIAS>
+    <GROUP_ALIAS>UP기타_공동목록메뉴</GROUP_ALIAS>
+    <IDX>9</IDX>
+    <CAPTION>홈</CAPTION>
+    <VISIBLE xml:space="preserve"> </VISIBLE>
+    <STYLE xml:space="preserve"> </STYLE>
+    <ACTION xml:space="preserve"> </ACTION>
+    <TARGET xml:space="preserve"> </TARGET>
+    <TITLE_DESC xml:space="preserve"> </TITLE_DESC>
+    <PK>74282588</PK>
+  </MENU_TBL>
+</MenuDS>

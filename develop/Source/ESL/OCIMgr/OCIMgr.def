@@ -1,0 +1,51 @@
+; OCIMgr.def : Declares the module parameters for the DLL.
+
+LIBRARY      "OCIMgr"
+DESCRIPTION  'OCIMgr Windows Dynamic Link Library'
+
+EXPORTS
+       ConnectDB					= ConnectDB
+	   DisconnectDB				    = DisconnectDB
+	   DisconnectDBOfRequest		= DisconnectDBOfRequest
+	   DisconnectDBForOneRecord     = DisconnectDBForOneRecord
+	   SelectProc					= SelectProc
+	   SelectProcForOneRecord		= SelectProcForOneRecord
+	   FetchOneRecord				= FetchOneRecord
+	   UnSelectProc				    = UnSelectProc
+	   InsertProc					= InsertProc
+	   UpdateProc					= UpdateProc
+	   DeleteProc					= DeleteProc
+	   ExecSQLProc				    = ExecSQLProc
+	   CommitProc					= CommitProc
+	   RollbackProc				    = RollbackProc
+	   NextNumberProc				= NextNumberProc
+	   GetOneFieldValueProc		    = GetOneFieldValueProc
+	   StartFrameProc				= StartFrameProc
+	   SendFrameProc				= SendFrameProc
+	   EndFrameProc				    = EndFrameProc
+	   MakeInsertFrameProc		    = MakeInsertFrameProc
+	   MakeUpdateFrameProc		    = MakeUpdateFrameProc
+	   MakeDeleteFrameProc		    = MakeDeleteFrameProc
+	   MakeExecSQLFrameProc		    = MakeExecSQLFrameProc
+	   MakeCommitFrameProc		    = MakeCommitFrameProc
+	   MakeNextNumberFrameProc	    = MakeNextNumberFrameProc
+ 	   SetMaxFetchCount			    = SetMaxFetchCount
+	   GetMaxFetchCount			    = GetMaxFetchCount
+	   SetBindingData				= SetBindingData
+	   FreeDBDataArrayType          = FreeDBDataArrayType
+	   FreeDBDataUnion              = FreeDBDataUnion
+	   FreeEDBMBindData             = FreeEDBMBindData
+	   SetLoginID                   = SetLoginID
+	   UpdateLobProc                = UpdateLobProc
+	   UnSelectProcWithoutBeginEnd  = UnSelectProcWithoutBeginEnd
+	   SelectProcEx					= SelectProcEx
+	   FetchEx						= FetchEx
+	   FreeOCIHandle				= FreeOCIHandle
+	   GetSessionRequestID			= GetSessionRequestID
+	   IsConnectedOfRequest			= IsConnectedOfRequest
+	   SetArrayFetchSize			= SetArrayFetchSize
+	   InitEDBMBindDataType			= InitEDBMBindDataType
+	   AddEDBMBindDataByString		= AddEDBMBindDataByString
+	   FreeOraFieldType				= FreeOraFieldType	   
+	   FreeOraArrayFieldType		= FreeOraArrayFieldType
+	   		

@@ -1,0 +1,11 @@
+; BO_LOC_3840.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_LOC_3840"
+DESCRIPTION  'BO_LOC_3840 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

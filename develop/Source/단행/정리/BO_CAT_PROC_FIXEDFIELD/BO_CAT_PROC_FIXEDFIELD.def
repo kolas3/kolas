@@ -1,0 +1,7 @@
+; BO_CAT_PROC_FIXEDFIELD.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_CAT_PROC_FIXEDFIELD"
+DESCRIPTION  'BO_CAT_PROC_FIXEDFIELD Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

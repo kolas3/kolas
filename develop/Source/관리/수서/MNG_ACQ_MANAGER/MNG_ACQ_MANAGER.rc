@@ -1,0 +1,188 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MNG_ACQ_MANAGER.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,08,19,20
+ PRODUCTVERSION 2005,08,19,20
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "MNG_ACQ_MANAGER DLL\0"
+            VALUE "FileVersion", "2005, 08, 19, 20\0"
+            VALUE "InternalName", "MNG_ACQ_MANAGER\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MNG_ACQ_MANAGER.DLL\0"
+            VALUE "ProductName", "MNG_ACQ_MANAGER 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 19, 20\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MNG_ACQ_MANAGER_01 DIALOG DISCARDABLE  0, 0, 526, 308
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "심의완료한 ",IDC_RADIO_1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,9,16,98,8
+    CONTROL         "심의완료하지 않은",IDC_RADIO_2,"Button",BS_AUTORADIOBUTTON,9,42,98,8
+    CONTROL         "수서업무에서 ",IDC_RADIO_3,"Button",BS_AUTORADIOBUTTON | WS_GROUP,139,16,98,8
+    CONTROL         "수서업무에서 등록번호 ",IDC_RADIO_4,"Button",BS_AUTORADIOBUTTON,139,42,98,8
+    COMBOBOX        IDC_COMBO1,11,89,70,190,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_RICHEDIT1,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | WS_BORDER | WS_TABSTOP,87,86,428,55
+    CONTROL         "자동 발송",IDC_RADIO_5,"Button",BS_AUTORADIOBUTTON | WS_GROUP,11,189,55,8
+    CONTROL         "수동 발송",IDC_RADIO_6,"Button",BS_AUTORADIOBUTTON,11,205,60,8
+    CONTROL         "",IDC_RICHEDIT2,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | WS_BORDER | WS_TABSTOP,87,167,428,55
+    CONTROL         "",IDC_RICHEDIT3,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | WS_BORDER | WS_TABSTOP,87,245,428,55
+    CONTROL         "기증자정보 ",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,272,16,98,8
+    CONTROL         "미납품관리 사용함",IDC_RADIO_7,"Button",BS_AUTORADIOBUTTON | WS_GROUP,401,16,98,8
+    CONTROL         "미납품관리 사용안함",IDC_RADIO_8,"Button",BS_AUTORADIOBUTTON,401,42,98,8
+    COMBOBOX        IDC_COMBO2,11,169,70,190,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO3,11,251,70,190,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "심의완료 기능 사용여부",IDC_STATIC,3,2,124,65,BS_NOTIFY | BS_FLAT
+    GROUPBOX        "등록번호부여 여부",IDC_STATIC,134,2,124,65,BS_NOTIFY | BS_FLAT
+    GROUPBOX        "기증자정보 입력 여부",IDC_STATIC,265,2,124,65,BS_NOTIFY | BS_FLAT
+    GROUPBOX        "미납품관리 사용여부",IDC_STATIC,396,2,124,65,BS_NOTIFY | BS_FLAT
+    GROUPBOX        "비치희망자료 메일 내용 설정",IDC_STATIC,3,74,519,74,BS_NOTIFY | BS_FLAT
+    GROUPBOX        "주문자료 메일 발송 여부 및 발송 내용",IDC_STATIC,3,155,519,74,BS_NOTIFY | BS_FLAT
+    GROUPBOX        "연속간행자료 독촉장 메일 내용 설정",IDC_STATIC,3,233,519,74,BS_NOTIFY | BS_FLAT
+    LTEXT           "자료만 주문가능",IDC_STATIC,21,28,90,8,SS_CENTERIMAGE
+    LTEXT           "자료 주문가능",IDC_STATIC,21,54,90,8,SS_CENTERIMAGE
+    LTEXT           "등록번호 부여함",IDC_STATIC,151,28,90,8,SS_CENTERIMAGE
+    LTEXT           "부여하지 않음",IDC_STATIC,151,52,90,8,SS_CENTERIMAGE
+    LTEXT           "반드시 입력",IDC_STATIC,284,28,55,8,SS_CENTERIMAGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MNG_ACQ_MANAGER_01, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 519
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 301
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MNG_ACQ_MANAGER.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

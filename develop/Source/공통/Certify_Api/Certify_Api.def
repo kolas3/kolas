@@ -1,0 +1,7 @@
+; Certify_Api.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Certify_Api"
+DESCRIPTION  'Certify_Api Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

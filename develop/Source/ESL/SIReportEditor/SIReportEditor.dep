@@ -1,0 +1,707 @@
+# Microsoft Developer Studio Generated Dependency File, included by SIReportEditor.mak
+
+.\ColourPicker.cpp : \
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	
+
+.\ColourPopup.cpp : \
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	
+
+.\CoolDialogBar.cpp : \
+	".\CoolDialogBar.h"\
+	
+
+.\DlgColumnChange.cpp : \
+	".\DlgColumnChange.h"\
+	".\SIReportEditor.h"\
+	
+
+.\DlgControlBox.cpp : \
+	".\DlgControlBox.h"\
+	".\MListCtrl.h"\
+	".\OleMListDropTarget.h"\
+	".\SIReportEditor.h"\
+	
+
+.\DlgDefaultDMSetup.cpp : \
+	".\DlgDefaultDMSetup.h"\
+	".\SIReportEditor.h"\
+	
+
+.\DlgPageSetup.cpp : \
+	".\DlgPageSetup.h"\
+	".\SIReportEditor.h"\
+	
+
+.\DlgProperty.cpp : \
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\DlgProperty.h"\
+	".\PropertyListCtrl.h"\
+	".\SIReportEditor.h"\
+	
+
+.\DlgRptFileManage.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\ESL\ESLDlg_Work.h"\
+	"..\SIReportData\LoadBmp.h"\
+	"..\SIReportData\SIBarcodeCtrl.h"\
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Barcode.h"\
+	"..\SIReportData\SIReportObject_Bitmap.h"\
+	"..\SIReportData\SIReportObject_Line.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	"..\SIReportData\SIReportObject_Text_Box.h"\
+	"..\SIReportData\SIReportReadBroker.h"\
+	"..\SIReportData\SIReportWorkForm.h"\
+	"..\SIReportData\SIReportWorkSheet.h"\
+	"..\SIReportData\SIReportXMLIOMgr.h"\
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\DlgProperty.h"\
+	".\DlgRptFileManage.h"\
+	".\DlgRptFileManageModify.h"\
+	".\MSheetDesigner.h"\
+	".\OleMSheetDesignerDropTarget.h"\
+	".\PropertyListCtrl.h"\
+	".\ReadCfgFile.h"\
+	".\SIReportEditor.h"\
+	".\SIReportEditorDoc.h"\
+	".\SIReportEditorView.h"\
+	
+
+.\DlgRptFileManageModify.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	".\DlgRptFileManageModify.h"\
+	".\SIReportEditor.h"\
+	
+
+.\DlgRptSave.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\SIReportData\LoadBmp.h"\
+	"..\SIReportData\SIBarcodeCtrl.h"\
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Barcode.h"\
+	"..\SIReportData\SIReportObject_Bitmap.h"\
+	"..\SIReportData\SIReportObject_Line.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	"..\SIReportData\SIReportObject_Text_Box.h"\
+	"..\SIReportData\SIReportReadBroker.h"\
+	"..\SIReportData\SIReportWorkForm.h"\
+	"..\SIReportData\SIReportWorkSheet.h"\
+	"..\SIReportData\SIReportXMLIOMgr.h"\
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\DlgProperty.h"\
+	".\DlgRptSave.h"\
+	".\MSheetDesigner.h"\
+	".\OleMSheetDesignerDropTarget.h"\
+	".\PropertyListCtrl.h"\
+	".\ReadCfgFile.h"\
+	".\SIReportEditor.h"\
+	".\SIReportEditorDoc.h"\
+	".\SIReportEditorView.h"\
+	
+
+.\DlgSheetView.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\SIReportData\LoadBmp.h"\
+	"..\SIReportData\SIBarcodeCtrl.h"\
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Barcode.h"\
+	"..\SIReportData\SIReportObject_Bitmap.h"\
+	"..\SIReportData\SIReportObject_Line.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	"..\SIReportData\SIReportObject_Text_Box.h"\
+	"..\SIReportData\SIReportReadBroker.h"\
+	"..\SIReportData\SIReportWorkForm.h"\
+	"..\SIReportData\SIReportWorkSheet.h"\
+	"..\SIReportData\SIReportXMLIOMgr.h"\
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\DlgProperty.h"\
+	".\DlgSheetView.h"\
+	".\MListCtrl.h"\
+	".\MSheetDesigner.h"\
+	".\OleMListDropTarget.h"\
+	".\OleMSheetDesignerDropTarget.h"\
+	".\PropertyListCtrl.h"\
+	".\ReadCfgFile.h"\
+	".\SIReportEditor.h"\
+	".\SIReportEditorDoc.h"\
+	".\SIReportEditorView.h"\
+	
+
+.\DlgTab.cpp : \
+	".\DlgControlBox.h"\
+	".\DlgSheetView.h"\
+	".\DlgTab.h"\
+	".\MListCtrl.h"\
+	".\OleMListDropTarget.h"\
+	".\SIReportEditor.h"\
+	
+
+.\DlgTableProperty.cpp : \
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	".\DlgTableProperty.h"\
+	".\SIReportEditor.h"\
+	
+
+.\MainFrm.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\SIReportData\LoadBmp.h"\
+	"..\SIReportData\SIBarcodeCtrl.h"\
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Barcode.h"\
+	"..\SIReportData\SIReportObject_Bitmap.h"\
+	"..\SIReportData\SIReportObject_Line.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	"..\SIReportData\SIReportObject_Text_Box.h"\
+	"..\SIReportData\SIReportReadBroker.h"\
+	"..\SIReportData\SIReportWorkForm.h"\
+	"..\SIReportData\SIReportWorkSheet.h"\
+	"..\SIReportData\SIReportXMLIOMgr.h"\
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\CoolDialogBar.h"\
+	".\DlgControlBox.h"\
+	".\DlgProperty.h"\
+	".\DlgSheetView.h"\
+	".\DlgTab.h"\
+	".\MainFrm.h"\
+	".\MListCtrl.h"\
+	".\MSheetDesigner.h"\
+	".\OleMListDropTarget.h"\
+	".\OleMSheetDesignerDropTarget.h"\
+	".\PropertyListCtrl.h"\
+	".\ReadCfgFile.h"\
+	".\SIReportEditor.h"\
+	".\SIReportEditorDoc.h"\
+	".\SIReportEditorView.h"\
+	
+
+.\MListCtrl.cpp : \
+	".\MListCtrl.h"\
+	".\OleMListDropTarget.h"\
+	".\SIReportEditor.h"\
+	
+
+.\MSheetDesigner.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\SIReportData\LoadBmp.h"\
+	"..\SIReportData\SIBarcodeCtrl.h"\
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Barcode.h"\
+	"..\SIReportData\SIReportObject_Bitmap.h"\
+	"..\SIReportData\SIReportObject_Line.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	"..\SIReportData\SIReportObject_Text_Box.h"\
+	"..\SIReportData\SIReportReadBroker.h"\
+	"..\SIReportData\SIReportWorkForm.h"\
+	"..\SIReportData\SIReportWorkSheet.h"\
+	"..\SIReportData\SIReportXMLIOMgr.h"\
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\DlgColumnChange.h"\
+	".\DlgProperty.h"\
+	".\DlgTableProperty.h"\
+	".\memdc.h"\
+	".\MSheetDesigner.h"\
+	".\OleMSheetDesignerDropTarget.h"\
+	".\PropertyListCtrl.h"\
+	".\ReadCfgFile.h"\
+	".\SIReportEditor.h"\
+	".\SIReportEditorDoc.h"\
+	".\SIReportEditorView.h"\
+	
+
+.\OleMListDropTarget.cpp : \
+	".\MListCtrl.h"\
+	".\OleMListDropTarget.h"\
+	".\SIReportEditor.h"\
+	
+
+.\OleMSheetDesignerDropTarget.cpp : \
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	"..\SIReportData\LoadBmp.h"\
+	"..\SIReportData\SIBarcodeCtrl.h"\
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Barcode.h"\
+	"..\SIReportData\SIReportObject_Bitmap.h"\
+	"..\SIReportData\SIReportObject_Line.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	"..\SIReportData\SIReportObject_Text_Box.h"\
+	"..\SIReportData\SIReportWorkForm.h"\
+	"..\SIReportData\SIReportWorkSheet.h"\
+	"..\SIReportData\SIReportXMLIOMgr.h"\
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\DlgProperty.h"\
+	".\MListCtrl.h"\
+	".\MSheetDesigner.h"\
+	".\OleMListDropTarget.h"\
+	".\OleMSheetDesignerDropTarget.h"\
+	".\PropertyListCtrl.h"\
+	".\SIReportEditor.h"\
+	
+
+.\PropertyListCtrl.cpp : \
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\PropertyListCtrl.h"\
+	
+
+.\ReadCfgFile.cpp : \
+	".\ReadCfgFile.h"\
+	
+
+.\SIReportEditor.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\SIReportData\LoadBmp.h"\
+	"..\SIReportData\SIBarcodeCtrl.h"\
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Barcode.h"\
+	"..\SIReportData\SIReportObject_Bitmap.h"\
+	"..\SIReportData\SIReportObject_Line.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	"..\SIReportData\SIReportObject_Text_Box.h"\
+	"..\SIReportData\SIReportReadBroker.h"\
+	"..\SIReportData\SIReportWorkForm.h"\
+	"..\SIReportData\SIReportWorkSheet.h"\
+	"..\SIReportData\SIReportXMLIOMgr.h"\
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\CoolDialogBar.h"\
+	".\DlgControlBox.h"\
+	".\DlgProperty.h"\
+	".\DlgSheetView.h"\
+	".\DlgTab.h"\
+	".\MainFrm.h"\
+	".\MListCtrl.h"\
+	".\MSheetDesigner.h"\
+	".\OleMListDropTarget.h"\
+	".\OleMSheetDesignerDropTarget.h"\
+	".\PropertyListCtrl.h"\
+	".\ReadCfgFile.h"\
+	".\SIReportEditor.h"\
+	".\SIReportEditorDoc.h"\
+	".\SIReportEditorView.h"\
+	
+
+.\SIReportEditor.rc : \
+	".\res\bitmap1.bmp"\
+	".\res\bitmap2.bmp"\
+	".\res\bitmap3.bmp"\
+	".\res\bmp00001.bmp"\
+	".\res\control1.bmp"\
+	".\res\Icon32.ICO"\
+	".\res\SIReportEditor.rc2"\
+	".\res\SIReportEditorDoc.ico"\
+	".\res\Toolbar.bmp"\
+	".\res\toolbar1.bmp"\
+	".\res\toolbar_.bmp"\
+	
+
+.\SIReportEditorDoc.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\SIReportData\LoadBmp.h"\
+	"..\SIReportData\SIBarcodeCtrl.h"\
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Barcode.h"\
+	"..\SIReportData\SIReportObject_Bitmap.h"\
+	"..\SIReportData\SIReportObject_Line.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	"..\SIReportData\SIReportObject_Text_Box.h"\
+	"..\SIReportData\SIReportReadBroker.h"\
+	"..\SIReportData\SIReportWorkForm.h"\
+	"..\SIReportData\SIReportWorkSheet.h"\
+	"..\SIReportData\SIReportXMLIOMgr.h"\
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\DlgProperty.h"\
+	".\MSheetDesigner.h"\
+	".\OleMSheetDesignerDropTarget.h"\
+	".\PropertyListCtrl.h"\
+	".\ReadCfgFile.h"\
+	".\SIReportEditor.h"\
+	".\SIReportEditorDoc.h"\
+	".\SIReportEditorView.h"\
+	
+
+.\SIReportEditorView.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\ESL\ESLDlg_Work.h"\
+	"..\SIReportData\LoadBmp.h"\
+	"..\SIReportData\SIBarcodeCtrl.h"\
+	"..\SIReportData\SIReportConstant.h"\
+	"..\SIReportData\SIReportObject.h"\
+	"..\SIReportData\SIReportObject_Barcode.h"\
+	"..\SIReportData\SIReportObject_Bitmap.h"\
+	"..\SIReportData\SIReportObject_Line.h"\
+	"..\SIReportData\SIReportObject_Table.h"\
+	"..\SIReportData\SIReportObject_Table_Cell.h"\
+	"..\SIReportData\SIReportObject_Text.h"\
+	"..\SIReportData\SIReportObject_Text_Box.h"\
+	"..\SIReportData\SIReportReadBroker.h"\
+	"..\SIReportData\SIReportWorkForm.h"\
+	"..\SIReportData\SIReportWorkSheet.h"\
+	"..\SIReportData\SIReportXMLIOMgr.h"\
+	".\ColourPicker.h"\
+	".\ColourPopup.h"\
+	".\CoolDialogBar.h"\
+	".\DlgControlBox.h"\
+	".\DlgDefaultDMSetup.h"\
+	".\DlgPageSetup.h"\
+	".\DlgProperty.h"\
+	".\DlgRptFileManage.h"\
+	".\DlgRptSave.h"\
+	".\DlgSheetView.h"\
+	".\DlgTab.h"\
+	".\MainFrm.h"\
+	".\MListCtrl.h"\
+	".\MSheetDesigner.h"\
+	".\OleMListDropTarget.h"\
+	".\OleMSheetDesignerDropTarget.h"\
+	".\PropertyListCtrl.h"\
+	".\ReadCfgFile.h"\
+	".\SIReportEditor.h"\
+	".\SIReportEditorDoc.h"\
+	".\SIReportEditorView.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	

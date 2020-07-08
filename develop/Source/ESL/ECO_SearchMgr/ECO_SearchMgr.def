@@ -1,0 +1,7 @@
+; ECO_SearchMgr.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ECO_SearchMgr"
+DESCRIPTION  'ECO_SearchMgr Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

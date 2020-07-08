@@ -1,0 +1,7 @@
+; BO_CAT_REGNO_CANCEL.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_CAT_REGNO_CANCEL"
+DESCRIPTION  'BO_CAT_REGNO_CANCEL Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

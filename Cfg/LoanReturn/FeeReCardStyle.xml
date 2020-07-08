@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<RECEIPT>
+	<ITEM>
+		<ALIAS>TITLE</ALIAS>
+		<FORWARD>[!FH][!FC]</FORWARD>
+		<VALUE>[납부 확인증]</VALUE>
+		<BACKWARD>[!LF][!LC][!FP][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>USER_NO</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 회원번호 : %대출자번호%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>USER_NAME</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 회원이름 : %대출자이름%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>LR_CLASS</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 회원등급 : %회원등급%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>LR_CARD</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 카드종류 : %카드종류%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>LR_PAYMENT</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 납부금액 : %납부금액% 원</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>LIB_NAME</ALIAS>
+		<FORWARD>[!FH][!FC]</FORWARD>
+		<VALUE>%도서관명%</VALUE>
+		<BACKWARD>[!LC][!LH][!FP]</BACKWARD>
+	</ITEM>
+</RECEIPT>

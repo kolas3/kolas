@@ -1,0 +1,7 @@
+; MarcConvertManager.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MarcConvertManager"
+DESCRIPTION  'MarcConvertManager Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,13 @@
+; ContentsMgr_BO.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ContentsMgr_BO"
+DESCRIPTION  'ContentsMgr_BO Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

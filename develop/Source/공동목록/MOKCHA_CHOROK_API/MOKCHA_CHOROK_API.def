@@ -1,0 +1,7 @@
+; MOKCHA_CHOROK_API.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MOKCHA_CHOROK_API"
+DESCRIPTION  'MOKCHA_CHOROK_API Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

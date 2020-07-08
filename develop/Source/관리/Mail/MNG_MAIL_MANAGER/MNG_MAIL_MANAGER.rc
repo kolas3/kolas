@@ -1,0 +1,295 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MNG_MAIL_MANAGER.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,31,59
+ PRODUCTVERSION 2005,8,31,59
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "MNG_MAIL_MANAGER DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 59\0"
+            VALUE "InternalName", "MNG_MAIL_MANAGER\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MNG_MAIL_MANAGER.DLL\0"
+            VALUE "ProductName", "MNG_MAIL_MANAGER 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 59\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MNG_MAIL_MANAGER_01 DIALOG DISCARDABLE  0, 0, 424, 344
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_mngGRID_1,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,18,27,297,171
+END
+
+IDD_MNG_MAIL_MANAGER_02 DIALOG DISCARDABLE  0, 0, 541, 365
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "메일 형식 입력/수정"
+FONT 9, "새굴림"
+BEGIN
+    GROUPBOX        "메일 내용",IDC_STATIC,7,64,323,267,BS_NOTIFY
+    COMBOBOX        IDC_cmbBOX1,38,19,70,255,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbBOX2,160,19,107,12,CBS_SIMPLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtEDT2,38,39,177,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbBOX3,248,39,70,255,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL
+    CONTROL         "",IDC_edtEDT3,"RICHEDIT",ES_MULTILINE | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,20,93,298,42
+    CONTROL         "",IDC_edtEDT4,"RICHEDIT",ES_MULTILINE | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,20,152,298,104
+    CONTROL         "",IDC_edtEDT5,"RICHEDIT",ES_MULTILINE | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,20,274,298,51
+    DEFPUSHBUTTON   "저 장",IDC_btnMAIL_SAVE,232,344,46,17
+    PUSHBUTTON      "닫 기",IDC_btnMAIL_CLOSE,284,344,46,17
+    PUSHBUTTON      "이 전",IDC_btnMAIL_PREV,8,344,46,17
+    PUSHBUTTON      "다 음",IDC_btnMAIL_NEXT,57,344,46,17
+    PUSHBUTTON      "도움말",IDC_btnMAIL_HELP,288,73,30,12
+    EDITTEXT        IDC_edtEDT1,298,19,20,12,ES_AUTOHSCROLL | NOT WS_VISIBLE | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtEDT6,425,17,90,12,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtEDT7,425,32,90,12,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtEDT13,425,47,90,12,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtEDT8,425,99,90,12,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtEDT9,425,113,90,12,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtEDT10,425,126,90,12,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtEDT11,425,140,90,12,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtEDT12,425,153,90,12,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    LTEXT           "업 무",IDC_STATIC,15,21,20,8
+    LTEXT           "메일 종류",IDC_STATIC,117,21,40,8
+    LTEXT           "양 식",IDC_STATIC_YANGSIC,273,21,20,8,NOT WS_VISIBLE | NOT WS_GROUP
+    LTEXT           "제 목",IDC_STATIC,15,41,20,8
+    LTEXT           "발신자",IDC_STATIC,219,41,25,8,NOT WS_VISIBLE | NOT WS_GROUP
+    GROUPBOX        "메일 정보",IDC_STATIC,7,4,323,55,BS_NOTIFY
+    CONTROL         "- 머릿말 -",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE,20,81,49,8
+    CONTROL         "- 중간 내용 - ",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE,20,140,49,8
+    CONTROL         "- 꼬릿말 -",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE,20,261,49,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,336,541,1
+    GROUPBOX        "개발자용 정보",IDC_STATIC,343,4,186,230,BS_NOTIFY
+    LTEXT           "코드           : ",IDC_STATIC,357,19,66,8,NOT WS_GROUP
+    LTEXT           "메일 통합 조건 : ",IDC_STATIC,358,34,65,8,NOT WS_GROUP
+    LTEXT           "사용 여부      : ",IDC_STATIC,358,101,67,8,NOT WS_GROUP
+    LTEXT           "일괄 보내기시 조건 (대출/반납업무에만 사용)",IDC_STATIC,350,83,176,8,NOT WS_GROUP
+    LTEXT           "재발송 여부    : ",IDC_STATIC,358,115,67,8,NOT WS_GROUP
+    LTEXT           "조건 앞 설명   : ",IDC_STATIC,358,128,67,8,NOT WS_GROUP
+    LTEXT           "조건           : ",IDC_STATIC,358,142,66,8,NOT WS_GROUP
+    LTEXT           "조건 뒤 설명   : ",IDC_STATIC,358,155,65,8,NOT WS_GROUP
+    LTEXT           "WHERE 절       :",IDC_STATIC,358,49,65,8,NOT WS_GROUP
+END
+
+IDD_MNG_MAIL_MANAGER_03 DIALOG DISCARDABLE  0, 0, 181, 57
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "검 색"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "검 색",IDOK,132,4,41,15
+    PUSHBUTTON      "닫 기",IDCANCEL,132,23,41,15
+    COMBOBOX        IDC_COMBO1,49,11,70,255,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,49,30,70,255,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "업 무",IDC_STATIC,11,14,20,8
+    LTEXT           "관리항목",IDC_STATIC,11,33,35,8
+    GROUPBOX        "",IDC_STATIC,4,0,121,53
+END
+
+IDD_MNG_MAIL_MANAGER_04 DIALOGEX 0, 0, 456, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "? 도움말 ( 알리아스 )"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_mngALIASGRID,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,5,20,285,185
+    LTEXT           "알리아스 리스트",IDC_STATIC,5,5,63,8
+    LTEXT           "",IDC_staDESC,301,20,137,185,0,WS_EX_CLIENTEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MNG_MAIL_MANAGER_02 DLGINIT
+BEGIN
+    IDC_cmbBOX1, 0x403, 8, 0
+0xd1a2, 0xbc20, 0xc5b1, 0x00c3, 
+    IDC_cmbBOX1, 0x403, 5, 0
+0xf6bc, 0xadbc, "\000" 
+    IDC_cmbBOX1, 0x403, 5, 0
+0xadbf, 0xf7b6, "\000" 
+    IDC_cmbBOX1, 0x403, 5, 0
+0xa4c1, 0xaeb8, "\000" 
+    0
+END
+
+IDD_MNG_MAIL_MANAGER_01 DLGINIT
+BEGIN
+    IDC_mngGRID_1, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x35be, 0x0000, 0x1a90, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_MNG_MAIL_MANAGER_04 DLGINIT
+BEGIN
+    IDC_mngALIASGRID, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x3393, 0x0000, 0x1cbb, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MNG_MAIL_MANAGER.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

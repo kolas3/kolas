@@ -1,0 +1,197 @@
+# 
+#  Copyright (c) 1994 by Oracle Corporation 
+#    NAME
+#      nw10004.d - Example territory object file
+#    DESCRIPTION
+#      This is an example of a text-format territory definition.
+#    NOTES
+#      This example is taken from the definition of France.
+#    MODIFIED   (MM/DD/YY)
+#     pma        03/01/95 -  Increment version number
+#     tlai       08/27/94 -  Increment version number
+#     tlai       07/25/94 -  Creation
+
+#
+# Version number.  Refers to the file format version.
+#
+version = 1.1.0.0.0
+
+#
+# Type.  Must be "territory".
+#
+type = territory
+
+#
+# Information field.  You may put anything you want in here, up to 70 bytes
+# (including the null terminator).
+#
+info = ""
+
+#
+# Territory ID
+#
+terrid = 4
+
+#
+# ID of character set that the text strings in this file are specified in.
+#
+terrch = 31
+
+#
+# Week start day number.  0 = Sunday
+#
+terrws = 1
+
+#
+# Sign code for numeric values.  0 = sign preceeds value, 1 = sign follows
+# value
+#
+terrsg = 1
+
+#
+# Week calculation code.  0 = non-ISO, 1 = ISO
+#
+terrwc = 1
+
+#
+# Measurement system indicator.  0 = English (Imperial), 1 = metric (SI)
+#
+terrms = 1
+
+#
+# Rounding indicator.  Values greater than this round up.
+#
+terrrn = 4
+
+#
+# Minimum accounting unit, expressed in terms of monetary precision.  Actual
+# value is obtained by multiplying by 10^(-monetary precision).
+#
+terrau = 1
+
+#
+# International monetary precision (number of fractional digits for
+# international currency values)
+#
+terrif = 2
+
+#
+# Monetary precision (number of fractional digits for local currency values)
+#
+terrlf = 2
+
+#
+# Sign codes for debits (negative monetary values) and credits (positive
+# monetary values):
+#   0 = parentheses surround the quantity and currency symbol
+#   1 = sign string precedes the quantity and currency symbol
+#   2 = sign string succeeds the quantity and currency symbol
+#   3 = sign string immediately precedes the currency symbol
+#   4 = sign string immediately succeeds the currency symbol
+#
+terrsd = 1
+terrsc = 1
+
+#
+# Currency flags (bit field):
+#   0x0001 = Currency precedes debit
+#   0x0002 = Currency precedes credit
+#   0x0004 = Space separates currency from debit
+#   0x0008 = Space separates currency from credit
+#
+terrfl = 3
+
+#
+# Territory name
+#
+terrna = "FRANCE"
+
+#
+# ISO abbreviation for territory name
+#
+terrab = "FR"
+
+#
+# Decimal character
+#
+terrde = ","
+
+#
+# Group separator character
+#
+terrgr = "."
+
+#
+# Number grouping fields, in ISO C-string format
+#
+terrnn = "\003"
+
+#
+# International currency symbol
+#
+terrcu = "FRF"
+
+#
+# Local currency symbol
+#
+terrlc = "F"
+
+#
+# Monetary decimal character
+#
+terrmd = ","
+
+#
+# Monetary group separator character
+#
+terrmg = "."
+
+#
+# Monetary grouping fields, in ISO C-string format
+#
+terrmn = "\003"
+
+#
+# List separator character (AKA field separator character)
+#
+terrls = ";"
+
+#
+# Debit symbol (symbol used for negative monetary values)
+#
+terrdb = "-"
+
+#
+# Credit symbol (symbol used for positive monetary values)
+#
+terrcr = ""
+
+#
+# Character separating international currency symbol from value
+#
+terrsp = " "
+
+#
+# lxhsftime() %c format (date + time)
+#
+terrla = "%A %d %B %Y %H:%M:%S"
+
+#
+# lxhsftime() %x format (date)
+#
+terrld = "%A %d %B %Y"
+
+#
+# lxhsftime() %X format (time)
+#
+terrlt = "%H:%M:%S"
+
+#
+# Oracle default date format
+#
+terrod = "DD/MM/YY"
+
+#
+# Oracle default time format
+#
+terrot = "HH24:MI:SS"

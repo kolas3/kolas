@@ -1,0 +1,7 @@
+; BO_CAT_DUP_FREE.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_CAT_DUP_FREE"
+DESCRIPTION  'BO_CAT_DUP_FREE Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

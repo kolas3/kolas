@@ -1,0 +1,7 @@
+; UC_NOTIFY_POPUP.def : Declares the module parameters for the DLL.
+
+LIBRARY      "UC_NOTIFY_POPUP"
+DESCRIPTION  'UC_NOTIFY_POPUP Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

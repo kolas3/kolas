@@ -1,0 +1,7 @@
+; Duplicate_Data_Search.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Duplicate_Data_Search"
+DESCRIPTION  'Duplicate_Data_Search Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

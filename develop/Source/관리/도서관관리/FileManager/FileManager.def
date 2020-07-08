@@ -1,0 +1,7 @@
+; FileManager.def : Declares the module parameters for the DLL.
+
+LIBRARY      "FileManager"
+DESCRIPTION  'FileManager Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

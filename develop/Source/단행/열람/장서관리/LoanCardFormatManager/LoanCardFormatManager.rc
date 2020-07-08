@@ -1,0 +1,376 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\LoanCardFormatManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,31,74
+ PRODUCTVERSION 2005,8,31,74
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "LoanCardFormatManager DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 74\0"
+            VALUE "InternalName", "LoanCardFormatManager\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "LoanCardFormatManager.DLL\0"
+            VALUE "ProductName", "LoanCardFormatManager 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 74\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_dLOANCARD_FORMAT_SETTER DIALOG DISCARDABLE  0, 0, 378, 265
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "대출증 포맷 설정"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "닫 기",IDCANCEL,321,19,50,14,NOT WS_VISIBLE
+    DEFPUSHBUTTON   "입 력",ID_bINPUT,7,19,50,14
+    DEFPUSHBUTTON   "수 정",ID_bUPDATE,61,19,50,14
+    DEFPUSHBUTTON   "미리보기",ID_bVIEW_BEFORE,321,37,50,14,NOT WS_VISIBLE
+    DEFPUSHBUTTON   "삭 제",ID_bDELETE,115,19,50,14
+    DEFPUSHBUTTON   "우선순위 초기화",ID_bINIT_RANK,7,37,75,14
+    DEFPUSHBUTTON   "우선순위 저장",ID_bSAVE_RANK,90,37,75,14
+    PUSHBUTTON      "양식 추가",IDC_bADD_PTRN,181,37,50,14
+    PUSHBUTTON      "양식 삭제",IDC_bDELETE_PTRN,236,37,50,14
+    COMBOBOX        IDC_cPTRN_LIST,181,19,105,535,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "대출증 구성 항목",IDC_STATIC,1,8,170,50
+    GROUPBOX        "대출증 양식",IDC_STATIC,176,8,115,50
+    CONTROL         "",IDC_gMAIN_GRID,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,5,60,363,197
+END
+
+IDD_dLOANCARD_INFO_ADDER DIALOG DISCARDABLE  0, 0, 352, 309
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "입력/수정"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_EDIT1,65,20,120,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,76,38,20,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT3,110,38,20,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT4,156,38,20,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT5,192,38,20,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "바코드",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,65,57,57,8
+    CONTROL         "텍스트 박스",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,126,57,57,8
+    CONTROL         "YES",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,65,74,57,8
+    CONTROL         "NO",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,126,74,57,8
+    CONTROL         "YES",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,65,91,57,8
+    CONTROL         "NO",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,126,91,57,8
+    EDITTEXT        IDC_EDIT6,65,106,120,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_bLCFM_FONT,185,106,11,13
+    EDITTEXT        IDC_EDIT7,65,122,120,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_bBACK_COLOR,185,122,11,13
+    EDITTEXT        IDC_EDIT8,65,139,120,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT9,65,156,120,13,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "왼쪽",IDC_RADIO11,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,65,176,57,8
+    CONTROL         "중앙",IDC_RADIO12,"Button",BS_AUTORADIOBUTTON,126,176,57,8
+    CONTROL         "오른쪽",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON,187,176,57,8
+    CONTROL         "위",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,65,193,57,8
+    CONTROL         "중앙",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON,126,193,57,8
+    CONTROL         "아래",IDC_RADIO16,"Button",BS_AUTORADIOBUTTON,187,193,57,8
+    CONTROL         "YES",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,65,210,57,8
+    CONTROL         "NO",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON,126,210,57,8
+    CONTROL         "YES",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,65,227,57,8
+    CONTROL         "NO",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON,126,227,57,8
+    CONTROL         "",IDC_RICHEDIT1,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP,152,241,193,39
+    COMBOBOX        IDC_COMBO2,65,241,282,215,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "저 장",IDOK,243,290,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,297,290,50,14
+    LTEXT           "Alias",IDC_STATIC,12,23,45,8
+    LTEXT           "크기",IDC_STATIC,12,40,45,8
+    LTEXT           "TYPE",IDC_STATIC,12,57,45,8
+    LTEXT           "사용여부",IDC_STATIC,12,74,45,8
+    LTEXT           "고정 값",IDC_STATIC,12,91,45,8
+    LTEXT           "내용",IDC_STATIC,12,244,30,8
+    LTEXT           "바탕색",IDC_STATIC,12,125,45,8
+    LTEXT           "라인당 문자수",IDC_STATIC,12,142,45,8
+    LTEXT           "최대 문자수",IDC_STATIC,12,159,45,8
+    LTEXT           "수평정렬",IDC_STATIC,12,176,45,8
+    LTEXT           "수직정렬",IDC_STATIC,12,193,45,8
+    LTEXT           "수평선 보임",IDC_STATIC,12,210,45,8
+    LTEXT           "수직선 보임",IDC_STATIC,12,227,45,8
+    LTEXT           "폰트",IDC_STATIC,12,108,45,8
+    LTEXT           "X",IDC_STATIC,65,40,8,8
+    LTEXT           "Y",IDC_STATIC,99,40,8,8
+    LTEXT           "넓이",IDC_STATIC,133,40,20,8
+    LTEXT           "폭",IDC_STATIC,179,40,10,8
+    GROUPBOX        "대출증 구성 정보",IDC_STATIC,2,4,350,281
+    GROUPBOX        "",IDC_STATIC,2,283,350,24
+    PUSHBUTTON      "이 전",IDC_bBEFORE,12,290,50,14
+    PUSHBUTTON      "다 음",IDC_bNEXT,65,290,50,14
+END
+
+IDD_dCARFORMAT_INFO_DLG DIALOG DISCARDABLE  0, 0, 249, 265
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "입력/수정"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_EDIT1,68,19,172,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,79,35,25,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,118,35,25,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT14,166,35,25,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,214,35,25,12,ES_AUTOHSCROLL
+    CONTROL         "텍스트 박스",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON | WS_GROUP,68,51,63,11
+    CONTROL         "바코드",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON,142,51,49,11
+    CONTROL         "Y",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON | WS_GROUP,68,65,24,11
+    CONTROL         "N",IDC_RADIO16,"Button",BS_AUTORADIOBUTTON,142,65,24,11
+    COMBOBOX        IDC_cFONT_COMBO,68,81,92,286,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT10,164,82,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT12,68,100,172,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT13,68,116,172,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_COMBO3,68,132,62,66,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,68,148,62,75,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Y",IDC_RADIO17,"Button",BS_AUTORADIOBUTTON | WS_GROUP,68,164,24,11
+    CONTROL         "N",IDC_RADIO18,"Button",BS_AUTORADIOBUTTON,142,164,24,11
+    CONTROL         "Y",IDC_RADIO19,"Button",BS_AUTORADIOBUTTON | WS_GROUP,68,180,24,11
+    CONTROL         "N",IDC_RADIO20,"Button",BS_AUTORADIOBUTTON,142,180,24,11
+    COMBOBOX        IDC_COMBO1,68,196,172,246,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT8,5,219,33,12,ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_VISIBLE
+    PUSHBUTTON      "이 전",IDC_bBEFORE,12,246,50,14
+    PUSHBUTTON      "다 음",IDC_bNEXT,65,246,50,14
+    DEFPUSHBUTTON   "저 장",IDOK,137,246,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,190,246,50,14
+    EDITTEXT        IDC_EDIT2,175,172,62,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Y",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,199,67,24,11
+    CONTROL         "N",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,225,67,24,11
+    EDITTEXT        IDC_EDIT6,173,132,57,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+    PUSHBUTTON      "...",IDC_bSETFONT,229,132,19,12,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT11,177,156,53,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    PUSHBUTTON      "...",IDC_bCOLOR,229,156,19,12,NOT WS_VISIBLE
+    LTEXT           "Alias",IDC_STATIC,12,22,45,8
+    LTEXT           "크기",IDC_STATIC,12,38,45,8
+    LTEXT           "TYPE",IDC_STATIC,12,54,45,8
+    LTEXT           "사용여부",IDC_STATIC,161,70,45,8,NOT WS_VISIBLE
+    LTEXT           "고정 값",IDC_STATIC,12,68,45,8
+    LTEXT           "내용",IDC_STATIC,12,199,30,8
+    LTEXT           "바탕색",IDC_STATIC,147,155,45,8,NOT WS_VISIBLE
+    LTEXT           "라인당 문자수",IDC_STATIC,12,103,45,8
+    LTEXT           "최대 문자수",IDC_STATIC,12,119,45,8
+    LTEXT           "수평정렬",IDC_STATIC,12,135,45,8
+    LTEXT           "수직정렬",IDC_STATIC,12,151,45,8
+    LTEXT           "수평선 보임",IDC_STATIC,12,167,45,8
+    LTEXT           "수직선 보임",IDC_STATIC,12,183,45,8
+    LTEXT           "폰트",IDC_STATIC,12,84,45,8
+    LTEXT           "폰트 크기",IDC_STATIC,149,135,45,8,NOT WS_VISIBLE
+    GROUPBOX        "대출증 포맷 정보",IDC_STATIC,2,4,245,236
+    GROUPBOX        "",IDC_STATIC,2,237,245,27
+    LTEXT           "X",IDC_STATIC,68,38,8,8
+    LTEXT           "Y",IDC_STATIC,107,38,8,8
+    LTEXT           "넓이",IDC_STATIC,147,38,16,8
+    LTEXT           "높이",IDC_STATIC,194,38,16,8
+    CONTROL         "",IDC_RICHEDIT2,"RICHEDIT",ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_TABSTOP,68,196,172,36
+    CONTROL         "굵게",IDC_FONT_BOLD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,193,82,34,12
+END
+
+IDD_dNEW_PATTERN DIALOG DISCARDABLE  0, 0, 157, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "새 대출증 양식 추가"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "확 인",IDOK,44,62,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,99,62,50,14
+    EDITTEXT        IDC_ePTRN_NAME,6,35,143,16,ES_AUTOHSCROLL
+    GROUPBOX        "새 양식이름을 입력하여 주십시요",IDC_STATIC,2,4,154,51
+    COMBOBOX        IDC_cPTRN_LIST,6,18,143,225,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,2,54,154,26
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_dLOANCARD_FORMAT_SETTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 371
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 258
+    END
+
+    IDD_dLOANCARD_INFO_ADDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 345
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 302
+    END
+
+    IDD_dCARFORMAT_INFO_DLG, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+    END
+
+    IDD_dNEW_PATTERN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 150
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_dLOANCARD_FORMAT_SETTER DLGINIT
+BEGIN
+    IDC_gMAIN_GRID, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x41a1, 0x0000, 0x1e98, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "Kolas2_32.ico"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\LoanCardFormatManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

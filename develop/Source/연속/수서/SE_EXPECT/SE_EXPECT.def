@@ -1,0 +1,7 @@
+; SE_EXPECT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_EXPECT"
+DESCRIPTION  'SE_EXPECT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

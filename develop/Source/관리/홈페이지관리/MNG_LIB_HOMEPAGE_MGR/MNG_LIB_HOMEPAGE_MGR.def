@@ -1,0 +1,7 @@
+; MNG_LIB_HOMEPAGE_MGR.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_LIB_HOMEPAGE_MGR"
+DESCRIPTION  'MNG_LIB_HOMEPAGE_MGR Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

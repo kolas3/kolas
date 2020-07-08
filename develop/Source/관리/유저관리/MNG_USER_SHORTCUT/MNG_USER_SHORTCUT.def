@@ -1,0 +1,11 @@
+; MNG_USER_SHORTCUT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_USER_SHORTCUT"
+DESCRIPTION  'MNG_USER_SHORTCUT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CGridEdit</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file C:\Kolas2UP\Develop\Source\ESL\MARC\MarcEdit\GridEdit.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CGridEdit</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>그리드에서 보여줄 에디트박스 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCEdit,M,CCGridEdit,MCGridEdit.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CWnd* </TD><TD><B>parent</B> <BR>
+<I>부모 그리드</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CGridEdit</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>NotifyCancel</B> ()<BR>
+<I>부모 그리드에 값 수정이 취소됬음을 알린다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>NotifyModify</B> (UINT nChar)<BR>
+<I>부모 그리드에 값이 수정됬음을 알린다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   BOOL </TD><TD><B>PreTranslateMessage</B> (MSG* pMsg)<BR>
+<I>ESC KEY와 ENTER KEY를 감지해서 수정인지 취소인지를 판단해서 부모 그리드에 알린다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   </TD><TD><B>~CGridEdit</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Members</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>enum  </TD><TD><B>EditMode</B> <BR>
+<I> 에디트 모드 <BR> editEasy : 쉬운모드임 글자가 처지면 자동 생성하고 위, 아래 키가 눌릴때 자동 수정됨 <BR> editCustom : 사용자 모드 엔터키를 누르면 에디트하고 엔터키를 누르면 수정됨</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DECLARE_MESSAGE_MAP</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnKeyUp</B> (UINT nChar, UINT nRepCnt, UINT nFlags)<BR>
+<I>이지 모드일때 수정을 해주고 부모 그리드에게 알려준다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.47.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnKillfocus</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+그리드에서 보여줄 에디트박스
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CGridEdit"></A>
+<A NAME="DOC.47.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CGridEdit()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="parent"></A>
+<A NAME="DOC.47.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CWnd* parent</B></TT>
+<DD>부모 그리드
+<DL><DT><DD></DL><P>
+<A NAME="EditMode"></A>
+<A NAME="DOC.47.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>enum  EditMode</B></TT>
+<DD>
+에디트 모드
+<BR> editEasy : 쉬운모드임 글자가 처지면 자동 생성하고 위, 아래 키가 눌릴때 자동 수정됨
+<BR> editCustom : 사용자 모드 엔터키를 누르면 에디트하고 엔터키를 누르면 수정됨
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="editEasy"></A>
+<A NAME="DOC.47.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> editEasy</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="editCustom"></A>
+<A NAME="DOC.47.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> editCustom</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="NotifyModify"></A>
+<A NAME="DOC.47.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void NotifyModify(UINT nChar)</B></TT>
+<DD>부모 그리드에 값이 수정됬음을 알린다
+<DL><DT><DD></DL><P>
+<A NAME="NotifyCancel"></A>
+<A NAME="DOC.47.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void NotifyCancel()</B></TT>
+<DD>부모 그리드에 값 수정이 취소됬음을 알린다
+<DL><DT><DD></DL><P>
+<A NAME="PreTranslateMessage"></A>
+<A NAME="DOC.47.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   BOOL PreTranslateMessage(MSG* pMsg)</B></TT>
+<DD>ESC KEY와 ENTER KEY를 감지해서 수정인지 취소인지를 판단해서 부모 그리드에 알린다
+<DL><DT><DD></DL><P>
+<A NAME="~CGridEdit"></A>
+<A NAME="DOC.47.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CGridEdit()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnKillfocus"></A>
+<A NAME="DOC.47.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnKillfocus()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnKeyUp"></A>
+<A NAME="DOC.47.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)</B></TT>
+<DD>이지 모드일때 수정을 해주고 부모 그리드에게 알려준다
+<DL><DT><DD></DL><P>
+<A NAME="DECLARE_MESSAGE_MAP"></A>
+<A NAME="DOC.47.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DECLARE_MESSAGE_MAP()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>이종은
+
+<DT><B>Since:</B><DD>2003-04-10 오후 1:48:26
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

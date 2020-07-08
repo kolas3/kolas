@@ -1,0 +1,57 @@
+
+
+***********************************************************************
+Fatal NI connect error 12538, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Develop\KOLASIII\bin\KOLASIII.EXE)(HOST=ORGANIZA-A02482)(USER=nl))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 22-OCT-2019 12:11:07
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12538
+    TNS-12538: TNS:그런 프로토콜 어댑터는 없습니다
+    ns secondary err code: 12560
+    nt main err code: 508
+    TNS-00508: 그러한 프로토콜 어댑터는 없습니다
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12538, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Develop\KOLASIII\bin\KOLASIII.EXE)(HOST=ORGANIZA-A02482)(USER=nl))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 22-OCT-2019 12:11:08
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12538
+    TNS-12538: TNS:그런 프로토콜 어댑터는 없습니다
+    ns secondary err code: 12560
+    nt main err code: 508
+    TNS-00508: 그러한 프로토콜 어댑터는 없습니다
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12538, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleORCL)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=ORCL)(CID=(PROGRAM=C:\Develop\KOLASIII\bin\KOLASIII.EXE)(HOST=ORGANIZA-A02482)(USER=nl))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.0.1.1.0 - Production
+  Time: 22-OCT-2019 12:11:08
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12538
+    TNS-12538: TNS:그런 프로토콜 어댑터는 없습니다
+    ns secondary err code: 12560
+    nt main err code: 508
+    TNS-00508: 그러한 프로토콜 어댑터는 없습니다
+    nt secondary err code: 0
+    nt OS err code: 0

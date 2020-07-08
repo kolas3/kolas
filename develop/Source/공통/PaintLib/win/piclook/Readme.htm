@@ -1,0 +1,127 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+
+<title>PicLook v2.2</title>
+</head>
+
+<body bgcolor="#C0C0C0" text="#008080">
+
+<h1 align="center"><font color="#800080" size="5"
+face="Lucida Console">PicLook V2.2</font></h1>
+
+<p align="left"><font face="Lucida Console">I originally hacked
+this program from the 'DIBLOOK' MFC example, with the added
+capability of multi-format viewing besides BMP. This is a testbed
+for </font><a href="http://www.paintlib.de"><font
+face="Lucida Console">paintlib</font></a><font
+face="Lucida Console"> under Win32, really. There's a wealth of
+nicer, more capable and free graphics viewers (and even editors)
+out there. But the difference is that with this one you get full
+source code, which you may reuse at will in derived work. Just
+acknowledge their due credit to the authors of paintlib and the
+decoding libraries it relies on. </font></p>
+
+<p><font face="Lucida Console">Besides these fine people (please
+have a look at the program's &quot;about box&quot;), I also
+incorporated in this release some code from other authors. In
+particular: </font></p>
+
+<ul>
+    <li><h3><font color="#004080" face="Lucida Console">DrawDib
+        drawing:</font></h3>
+    </li>
+</ul>
+
+<p><font face="Lucida Console">The CWinBmpEx illustrates how to
+use the DrawDib API as an alternative to plain GDI rendering. It
+is greatly inspired by the enjoyable articles of Paul Di Lascia
+on the subject, originally published between the january and june
+´97 issues of MSJ. They are also now available </font><a
+href="http://www.dilascia.com/links"><font face="Lucida Console">online</font></a><font
+face="Lucida Console">. Look for &quot;More Fun with MFC: A Gamut
+of Reusable Goodies&quot;. While you're at it, read all this
+folk's articles. You won't lose your time. &quot;Meandering
+Through the Maze of MFC Message and Command Routing&quot; is
+particularly enlightening. If you're struggling with MFC on a
+regular basis, that is. </font></p>
+
+<ul>
+    <li><h3><font color="#004080" face="Lucida Console">Zooming: </font></h3>
+    </li>
+</ul>
+
+<p><font face="Lucida Console">Brad Pirtle wrote a very good
+explanation on how to implement </font><a
+href="http://www.codeguru.com/doc_view/zoom_scale.shtml"><font
+face="Lucida Console">zooming</font></a><font
+face="Lucida Console"> by using the standard GDI devices such as
+window and viewport. His code constitutes the ZoomView module I
+used in this release of PicLook. </font></p>
+
+<ul>
+    <li><h3><font color="#004080" face="Lucida Console">Panning: </font></h3>
+    </li>
+</ul>
+
+<p><font face="Lucida Console">If you have a three-mouse button,
+do yourself a favor: go grab the </font><a
+href="http://www.codeguru.com/doc_view/autopan2.shtml"><font
+face="Lucida Console">panning</font></a><font
+face="Lucida Console"> code available at codeguru. It is cleverly
+packaged as a DLL, so you don't have to cut and paste code and
+resources (cursors mostly) to integrate it in your project. To
+activate it within PicLook, define the &quot;OWND&quot; symbol.
+Many thanks to Russ Freeman.</font></p>
+
+<p><font face="Lucida Console"></font>&nbsp;</p>
+<div align="center"><center>
+
+<table border="1">
+    <tr>
+        <th><font color="#800080">Mouse Usage</font></th>
+        <th>Default</th>
+        <th>Zoom Mode</th>
+    </tr>
+    <tr>
+        <th>Left button</th>
+        <td align="center">grab &amp; pan</td>
+        <td align="center">zoom in / define area to zoom</td>
+    </tr>
+    <tr>
+        <th>Middle button</th>
+        <td align="center">IE-like panning (when ownd.dll is
+        available)</td>
+        <td align="center">fit to window</td>
+    </tr>
+    <tr>
+        <th>Right button</th>
+        <td align="center">&quot;unzoom&quot;</td>
+        <td align="center">zoom out</td>
+    </tr>
+</table>
+</center></div>
+
+<p><font face="Lucida Console"></font>&nbsp;</p>
+
+<p><font face="Lucida Console">Since the &quot;video for
+windows&quot; DrawDib API does not honor the GDI mapping mode
+that make zooming possible, this version of the program only uses
+it for file previewing. If you feel this makes it slower on your
+machine, you can try and recompile with the
+&quot;USES_DRAWDIB&quot; symbol defined in the project settings.
+But then zooming will not be available...</font></p>
+
+<p><font face="Lucida Console">I hope you'll enjoy PicLook. If
+you enrich it somehow, please consider contributing your
+enhancements back to PainLib.</font> </p>
+
+<p><font face="Lucida Console">Happy C++ coding,</font></p>
+
+<p><a href="mailto:bdelmee@advalvas.be"><font
+face="Lucida Console">Bernard Delmée</font></a><font
+face="Lucida Console">, March 2000.</font></p>
+</body>
+</html>

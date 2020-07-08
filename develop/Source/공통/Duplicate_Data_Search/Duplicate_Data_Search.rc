@@ -1,0 +1,924 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Duplicate_Data_Search.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2008,5,6,141
+ PRODUCTVERSION 2008,5,6,141
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "Duplicate_Data_Search DLL\0"
+            VALUE "FileVersion", "2008, 05, 06, 141\0"
+            VALUE "InternalName", "Duplicate_Data_Search\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Duplicate_Data_Search.DLL\0"
+            VALUE "ProductName", "Duplicate_Data_Search 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2008, 05, 06, 141\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DUP_KEY_SETTING DIALOGEX 0, 0, 258, 312
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "중복/복본조사키설정"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "서  명",IDC_chkTITLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,28,43,12
+    CONTROL         "전단어검색",IDC_radALLWORDSEARCH,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,69,26,57,14
+    CONTROL         "절취검색( 영문 서명일 경우에만 사용. )",
+                    IDC_radTITLE_CUTSEARCH,"Button",BS_AUTORADIOBUTTON,69,40,
+                    174,11
+    GROUPBOX        "",IDC_STATIC,59,27,17,19
+    CONTROL         "우절단",IDC_radTITLE_RIGHTTRUNCATION,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,136,26,57,14
+    CONTROL         "일치",IDC_radTITLE_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON,196,26,49,14
+    CONTROL         "총서명",IDC_chkSeriesTitle,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,16,42,43,12
+    CONTROL         "서명 전단어검색시 관칭을 포함/불포함하여 두번검색",
+                    IDC_chkTITLE_TWICE_SEARCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,57,225,12
+    CONTROL         "ISBN",IDC_chkISBN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    16,77,55,12
+    CONTROL         "일치",IDC_radISBN_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,195,76,49,14
+    CONTROL         "저작자",IDC_chkAUTHOR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,119,55,12
+    CONTROL         "우절단",IDC_radAUTHOR_RIGHTTRUNCATION,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,136,119,57,14
+    CONTROL         "일치",IDC_radAUTHOR_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON,196,119,49,14
+    CONTROL         "발행자",IDC_chkPUBLISHER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,135,55,12
+    CONTROL         "우절단",IDC_radPUBLISHER_RIGHTTRUNCATION,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,136,135,57,14
+    CONTROL         "일치",IDC_radPUBLISHER_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON,196,138,49,14
+    CONTROL         "발행년",IDC_chkPUBLICATE_YEAR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,151,55,12
+    CONTROL         "일치",IDC_radPUBLICATE_YEAR_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,196,151,49,14
+    CONTROL         "매체구분",IDC_chkMED_CLASS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,168,55,12
+    CONTROL         "일치",IDC_radMEDIACODE_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,196,168,49,14
+    CONTROL         "편/권차",IDC_chkVOL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,183,55,12
+    CONTROL         "일치",IDC_radVOL_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,196,183,49,14
+    CONTROL         "권서명",IDC_chkVOL_TITLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,199,55,12
+    CONTROL         "우절단",IDC_radVOL_TITLE_RIGHTTRUNCATION,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,136,199,57,14
+    CONTROL         "일치",IDC_radVOL_TITLE_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON,196,199,49,14
+    CONTROL         "별치기호(중복조사에는적용안됨)",
+                    IDC_chkSEPARATE_SHELF_CODE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,215,134,12
+    CONTROL         "일치",IDC_radSEPARATECODE_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,196,215,49,14
+    CONTROL         "등록구분(중복조사에는적용안됨)",IDC_chkREG_CODE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,231,134,12
+    CONTROL         "일치",IDC_radREGCODE_EQUIVALENCE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,196,231,49,14
+    CONTROL         "제적자료 제외",IDC_chkDiscardBook,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,260,68,10
+    DEFPUSHBUTTON   "확  인",IDOK,144,288,50,15
+    PUSHBUTTON      "닫  기",IDCANCEL,198,288,50,15
+    GROUPBOX        "",IDC_STATIC,6,108,247,139
+    CTEXT           "필수사항",IDC_STATIC,6,6,50,13,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CTEXT           "선택사항",IDC_STATIC,6,99,50,13,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,6,277,247,31
+    GROUPBOX        "",IDC_STATIC,6,15,247,78
+    GROUPBOX        "",IDC_STATIC,6,249,247,28
+    GROUPBOX        "",IDC_STATIC,6,68,247,25
+END
+
+IDD_BO_WORK_DUP_SEARCH DIALOG DISCARDABLE  0, 0, 600, 325
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "중복조사결과"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "닫  기",IDCANCEL,527,10,50,16,BS_FLAT
+    PUSHBUTTON      "상세보기",IDC_btnDETAIL,17,10,50,16,BS_FLAT
+    PUSHBUTTON      "중복자료삭제",IDC_btnDUPDEL,143,10,60,16,BS_FLAT
+    PUSHBUTTON      "목록출력",IDC_btnPRINT,215,10,50,16,BS_FLAT
+    CONTROL         "",IDC_gridMAINGRID,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,2,
+                    214,596,111
+    PUSHBUTTON      "중복자료선정",IDC_btnSELSOURCEDATA,77,10,55,16,BS_FLAT | 
+                    NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,2,0,596,33
+    GROUPBOX        "필수사항",IDC_STATIC,2,37,198,70
+    EDITTEXT        IDC_dupFUNC2,3,14,17,12,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_VISIBLE | NOT WS_BORDER
+    GROUPBOX        "선택사항",IDC_STATIC,208,37,390,70
+    CONTROL         "서명",IDC_chkTITLE2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,51,25,10
+    CONTROL         "전단어검색",IDC_radALLWORDSEARCH2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,52,47,50,14
+    CONTROL         "절취검색( 영문 서명일 경우에만 사용. )",
+                    IDC_radTITLE_CUTSEARCH2,"Button",BS_AUTORADIOBUTTON,52,
+                    61,134,14
+    GROUPBOX        "",IDC_STATIC,47,50,14,19
+    CONTROL         "우절단",IDC_radTITLE_RIGHTTRUNCATION2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,111,47,31,14
+    CONTROL         "일치",IDC_radTITLE_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON,149,47,24,14
+    CONTROL         "서명 전단어검색시 관칭을 포함/불포함하여 두번검색",
+                    IDC_chkTITLE_TWICE_SEARCH2,"Button",BS_AUTOCHECKBOX,16,
+                    75,175,10
+    CONTROL         "저작자",IDC_chkAUTHOR2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,222,49,32,8
+    CONTROL         "발행자",IDC_chkPUBLISHER2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,222,63,32,8
+    CONTROL         "발행년 : 일치",IDC_chkPUBLICATE_YEAR2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,222,75,51,8
+    CONTROL         "ISBN   : 일치",IDC_chkISBN2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,94,51,8
+    CONTROL         "우절단",IDC_radAUTHOR_RIGHTTRUNCATION2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,265,49,31,8
+    CONTROL         "일치",IDC_radAUTHOR_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON,303,49,24,8
+    CONTROL         "우절단",IDC_radPUBLISHER_RIGHTTRUNCATION2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,265,63,31,8
+    CONTROL         "일치",IDC_radPUBLISHER_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON,303,63,24,8
+    CONTROL         "일치",IDC_radPUBLICATE_YEAR_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,222,75,24,
+                    8
+    CONTROL         "일치",IDC_radISBN_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,16,94,24,
+                    8
+    CONTROL         "매체구분 : 일치",IDC_chkMED_CLASS2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,348,49,58,8
+    CONTROL         "일치",IDC_radMEDIACODE_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,348,49,38,
+                    8
+    CONTROL         "편//권차 : 일치",IDC_chkVOL2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,348,63,59,8
+    CONTROL         "일치",IDC_radVOL_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,348,63,37,
+                    8
+    CONTROL         "권서명",IDC_chkVOL_TITLE2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,348,75,31,8
+    CONTROL         "우절단",IDC_radVOL_TITLE_RIGHTTRUNCATION2,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,387,75,31,8
+    CONTROL         "일치",IDC_radVOL_TITLE_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON,425,75,24,8
+    CONTROL         "별치기호(중복조사에는적용안됨) : 일치",
+                    IDC_chkSEPARATE_SHELF_CODE2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,471,49,112,8
+    CONTROL         "일치",IDC_radSEPARATECODE_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,483,49,24,
+                    8
+    CONTROL         "등록구분(중복조사에는적용안됨) : 일치",IDC_chkREG_CODE2,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,471,63,112,8
+    CONTROL         "일치",IDC_radREGCODE_EQUIVALENCE2,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,483,63,24,
+                    8
+    CONTROL         "제적자료 제외",IDC_chkDiscardBook2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,471,90,95,8
+    PUSHBUTTON      "조사실행",IDC_btnDUP_FIND_START2,445,10,50,16
+    GROUPBOX        "",IDC_STATIC,2,86,198,21
+END
+
+IDD_BO_WORK_DUP_DETAIL_INFO DIALOGEX 0, 0, 507, 349
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "상세보기"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_edtJOB_NO,64,30,52,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edtVOL_COUNT,152,30,29,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_edtBOOK_COUNT,215,30,29,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "",IDC_richWORK_SOURCE,"RICHEDIT20W",WS_BORDER | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP | 0x804,8,45,238,
+                    241
+    PUSHBUTTON      "선정자료선택해제",IDC_btnSELECT_DATA,8,298,71,15
+    PUSHBUTTON      "권별정보보기",IDC_btnVOL_INFO_INPUT,83,298,53,15
+    EDITTEXT        IDC_edtSOURCEGUN,176,299,22,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_edtSOURCEJAE,214,299,21,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_edtJOB_NO_SEL,323,30,52,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_edtVOL_COUNT_SEL,405,30,29,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_edtBOOK_COUNT_SEL,469,30,29,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "",IDC_richWORK_DUPLICATE,"RICHEDIT20W",WS_BORDER | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP | 0x804,261,45,238,
+                    241
+    PUSHBUTTON      "중복자료선택",IDC_btnSELECT_DATA2,261,298,71,15
+    PUSHBUTTON      "권별정보보기",IDC_btnVOL_INFO_INPUT_SEL,337,298,53,16
+    PUSHBUTTON      "이  전",IDC_btnPRE_SEL,261,326,50,15
+    PUSHBUTTON      "다  음",IDC_btnNEXT_SEL,315,326,50,15
+    PUSHBUTTON      "이  전",IDC_btnWORKPREV,9,326,50,15
+    PUSHBUTTON      "다  음",IDC_btnWORKNEXT,63,326,50,15
+    DEFPUSHBUTTON   "닫  기",IDCANCEL,447,326,50,15
+    CTEXT           "선정자료",IDC_STATIC,2,2,250,20,SS_CENTERIMAGE,
+                    WS_EX_DLGMODALFRAME
+    CTEXT           "중복자료",IDC_STATIC,255,2,250,20,SS_CENTERIMAGE,
+                    WS_EX_DLGMODALFRAME
+    LTEXT           "중복자료",IDC_STATIC,393,302,33,8
+    LTEXT           "건",IDC_STATIC,455,302,9,8
+    LTEXT           "째",IDC_STATIC,491,302,9,8
+    EDITTEXT        IDC_edtSELGUN,429,299,22,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edtSELJAE,467,299,21,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "작업-일련번호",IDC_STATIC,8,32,53,8
+    LTEXT           "총권수",IDC_STATIC,123,32,25,8
+    LTEXT           "총책수",IDC_STATIC,186,32,25,8
+    GROUPBOX        "",IDC_STATIC,2,21,250,270
+    LTEXT           "작업-일련번호",IDC_STATIC,263,32,53,8
+    LTEXT           "총권수",IDC_STATIC,377,32,25,8
+    LTEXT           "총책수",IDC_STATIC,439,32,25,8
+    GROUPBOX        "",IDC_STATIC,255,21,250,270
+    GROUPBOX        "",IDC_STATIC,255,290,250,27
+    LTEXT           "선정자료",IDC_STATIC,140,302,33,8
+    LTEXT           "건",IDC_STATIC,202,301,9,8
+    LTEXT           "째",IDC_STATIC,238,301,9,8
+    GROUPBOX        "",IDC_STATIC,2,290,250,27
+    GROUPBOX        "",IDC_STATIC,2,316,503,32
+END
+
+IDD_BO_HOLDING_DUP_DETAIL_INFO DIALOGEX 0, 0, 507, 349
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "상세보기"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "닫  기",IDCANCEL,460,326,40,15
+    CTEXT           "대상자료",IDC_STATIC,2,3,250,20,SS_CENTERIMAGE,
+                    WS_EX_DLGMODALFRAME
+    CTEXT           "복본자료",IDC_STATIC,255,3,250,20,SS_CENTERIMAGE,
+                    WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "이  전",IDC_btnPRE_SEL,262,326,40,15
+    PUSHBUTTON      "다  음",IDC_btnNEXT_SEL,305,326,40,15
+    LTEXT           "대상자료",IDC_STATIC,140,302,33,8
+    LTEXT           "건",IDC_STATIC,202,302,9,8
+    LTEXT           "째",IDC_STATIC,240,302,9,8
+    EDITTEXT        IDC_edtGUN,177,299,22,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edtJAE,215,299,21,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "자료상태",IDC_STATIC,11,32,33,8
+    EDITTEXT        IDC_edtMANAGEMENT_NO,49,30,52,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "",IDC_STATIC,2,21,250,270
+    LTEXT           "자료상태",IDC_STATIC,265,31,33,8
+    EDITTEXT        IDC_edtMANAGEMENT_NO_SEL,303,29,52,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "",IDC_STATIC,255,21,250,270
+    GROUPBOX        "",IDC_STATIC,2,289,250,27
+    PUSHBUTTON      "이  전",IDC_btnPREV_SRC,8,326,40,15
+    PUSHBUTTON      "다  음",IDC_btnNEXT_SRC,51,326,40,15
+    LTEXT           "형식구분",IDC_STATIC,106,32,33,8
+    LTEXT           "매체구분",IDC_STATIC,179,32,33,8
+    EDITTEXT        IDC_edtFORM_CLASS,144,29,30,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_edtMED_CLASS,215,29,30,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "형식구분",IDC_STATIC,359,32,33,8
+    LTEXT           "매체구분",IDC_STATIC,432,32,33,8
+    EDITTEXT        IDC_edtFORM_CLASS_SEL,397,29,30,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_edtMED_CLASS_SEL,468,29,30,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "",IDC_richHOLDING_SOURCE,"RICHEDIT20W",WS_BORDER | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP | 0x804,8,46,238,
+                    241
+    CONTROL         "",IDC_richHOLDING_DUPLICATE,"RICHEDIT20W",WS_BORDER | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP | 0x804,262,45,238,
+                    241
+    PUSHBUTTON      "복본추기",IDC_btnDUPDATA_INSERT,147,326,40,15
+    PUSHBUTTON      "복본추기취소",IDC_btnDUPDATA_INSERT_CANCEL,191,326,55,
+                    15
+    PUSHBUTTON      "권별정보보기",IDC_btnSHOW_SRCVOL,8,297,55,15
+    PUSHBUTTON      "권별정보보기",IDC_btnSHOW_DUPVOL,262,297,55,15
+    GROUPBOX        "",IDC_STATIC,255,289,250,27
+    LTEXT           "복본자료",IDC_STATIC,389,300,33,8
+    LTEXT           "건",IDC_STATIC,451,300,9,8
+    LTEXT           "째",IDC_STATIC,489,300,9,8
+    EDITTEXT        IDC_edtGUN2,427,297,22,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edtJAE2,465,297,21,12,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "",IDC_STATIC,2,316,503,32
+    PUSHBUTTON      "변경적용",IDC_btnCHANGE_SAVE,103,326,40,15
+END
+
+IDD_BO_HOLDING_ALL_DUP_SEARCH DIALOG DISCARDABLE  0, 0, 600, 325
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "복본조사"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "상세보기",IDC_btnDETAIL,23,12,60,15,BS_FLAT
+    PUSHBUTTON      "복본자료삭제",IDC_btnCOPY_DEL,180,12,69,15,BS_FLAT
+    PUSHBUTTON      "목록출력",IDC_btnPRINT,267,12,60,15,BS_FLAT
+    PUSHBUTTON      "닫기",IDCANCEL,516,11,60,15,BS_FLAT
+    CONTROL         "",IDC_gridBOKBON_SEARCH,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,2,
+                    190,596,129
+    PUSHBUTTON      "복본자료선정",IDC_btnSELSOURCEDATA,96,12,69,15,BS_FLAT | 
+                    NOT WS_VISIBLE
+    PUSHBUTTON      "복본추기",IDC_btnAPPLY,147,12,50,15,BS_FLAT
+    CONTROL         "",IDC_gridINPUT_BOKBON_SEARCH,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,2,
+                    190,596,129
+    CONTROL         "",IDC_gridSE_INPUT_BOKBON_SEARCH,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,2,
+                    190,596,129
+    GROUPBOX        "",IDC_STATIC,2,0,596,34
+    PUSHBUTTON      "복본소장마크반출",IDC_btnExportHoldingMarc,343,12,74,15,
+                    BS_FLAT | NOT WS_VISIBLE
+    EDITTEXT        IDC_dupFUNC1,5,12,17,12,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_VISIBLE | NOT WS_BORDER
+    GROUPBOX        "필수사항",IDC_STATIC,2,38,198,70
+    CONTROL         "서명",IDC_chkTITLE1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,53,25,10
+    CONTROL         "서명 전단어검색시 관칭을 포함/불포함하여 두번검색",
+                    IDC_chkTITLE_TWICE_SEARCH1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,79,175,10
+    CONTROL         "전단어검색",IDC_radALLWORDSEARCH1,"Button",
+                    BS_AUTORADIOBUTTON,59,51,50,14
+    CONTROL         "절취검색( 영문 서명일 경우에만 사용. )",
+                    IDC_radTITLE_CUTSEARCH1,"Button",BS_AUTORADIOBUTTON,59,
+                    65,133,14
+    GROUPBOX        "",IDC_STATIC,52,53,10,19
+    CONTROL         "우절단",IDC_radTITLE_RIGHTTRUNCATION1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,119,51,30,14
+    CONTROL         "일치",IDC_radTITLE_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON,154,51,40,14
+    GROUPBOX        "선택사항",IDC_STATIC,208,38,390,70
+    CONTROL         "저작자",IDC_chkAUTHOR1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,222,50,31,10
+    CONTROL         "우절단",IDC_radAUTHOR_RIGHTTRUNCATION1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,263,50,32,10
+    CONTROL         "일치",IDC_radAUTHOR_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON,302,50,24,10
+    CONTROL         "발행자",IDC_chkPUBLISHER1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,222,64,31,10
+    CONTROL         "우절단",IDC_radPUBLISHER_RIGHTTRUNCATION1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,263,64,32,10
+    CONTROL         "일치",IDC_radPUBLISHER_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON,302,64,24,10
+    CONTROL         "발행년 : 일치",IDC_chkPUBLICATE_YEAR1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,222,79,51,10
+    CONTROL         "ISBN   : 일치",IDC_chkISBN1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,95,51,10
+    CONTROL         "매체구분 : 일치",IDC_chkMED_CLASS1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,350,50,58,10
+    CONTROL         "편//권차 : 일치",IDC_chkVOL1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,350,64,59,10
+    CONTROL         "권서명",IDC_chkVOL_TITLE1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,350,79,32,10
+    CONTROL         "우절단",IDC_radVOL_TITLE_RIGHTTRUNCATION1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,391,79,30,10
+    CONTROL         "일치",IDC_radVOL_TITLE_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON,430,79,24,10
+    CONTROL         "별치기호(중복조사에는적용안됨) : 일치",
+                    IDC_chkSEPARATE_SHELF_CODE1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,470,50,113,10
+    CONTROL         "등록구분(중복조사에는적용안됨) : 일치",IDC_chkREG_CODE1,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,470,64,113,10
+    CONTROL         "제적자료 제외",IDC_chkDiscardBook1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,470,92,80,10
+    PUSHBUTTON      "조사실행",IDC_btnDUP_FIND_START,445,12,60,15,BS_FLAT
+    CONTROL         "일치",IDC_radPUBLICATE_YEAR_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,222,79,24,
+                    10
+    CONTROL         "일치",IDC_radISBN_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,17,95,24,
+                    10
+    CONTROL         "일치",IDC_radMEDIACODE_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,350,50,24,
+                    10
+    CONTROL         "일치",IDC_radVOL_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,350,64,24,
+                    10
+    CONTROL         "일치",IDC_radSEPARATECODE_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,543,50,24,
+                    10
+    CONTROL         "일치",IDC_radREGCODE_EQUIVALENCE1,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,543,64,24,
+                    10
+    CONTROL         "총서명",IDC_chkSeriesTitle1,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,17,68,32,10
+    GROUPBOX        "",IDC_STATIC,2,88,198,20
+END
+
+IDD_BO_INPUT_DUP_DETAIL_INFO DIALOGEX 0, 0, 406, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "상세보기"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "닫  기",IDCANCEL,341,209,50,15
+    CTEXT           "복본자료",-1,3,3,398,19,SS_CENTERIMAGE,
+                    WS_EX_DLGMODALFRAME
+    LTEXT           "복본자료",-1,283,187,33,8
+    LTEXT           "건",-1,345,187,9,8
+    LTEXT           "째",-1,383,187,9,8
+    EDITTEXT        IDC_edtGUN,320,183,22,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edtJAE,358,183,21,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "자료상태",-1,11,31,33,8
+    EDITTEXT        IDC_edtMANAGEMENT_NO_SEL,49,29,100,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "",-1,3,21,398,156
+    GROUPBOX        "",-1,3,175,397,27
+    PUSHBUTTON      "이  전",IDC_btnPREV_SRC,12,209,50,15
+    PUSHBUTTON      "다  음",IDC_btnNEXT_SRC,66,209,50,15
+    LTEXT           "형식구분",-1,162,33,33,8
+    LTEXT           "매체구분",-1,256,33,33,8
+    EDITTEXT        IDC_edtFORM_CLASS_SEL,200,29,40,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_edtMED_CLASS_SEL,292,29,40,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "",IDC_richINPUT_DUPLICATE,"RICHEDIT20W",WS_BORDER | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP | 0x804,8,45,389,
+                    127
+    PUSHBUTTON      "권별정보보기",IDC_btnSHOW_INPUTDUP_VOL,341,29,55,15
+    GROUPBOX        "",-1,3,201,397,27
+END
+
+IDD_DUP_BO_VOLUME DIALOGEX 0, 0, 408, 341
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "권별정보"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LTEXT           "등록구분",IDC_DUP_tREG_CLASS_CODE,16,193,33,8
+    EDITTEXT        IDC_DUP_eREG_CLASS_CODE,53,191,70,13,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    LTEXT           "등록번호",IDC_DUP_tREG_NO,130,193,33,8
+    EDITTEXT        IDC_DUP_eREG_NO,177,191,76,13,ES_AUTOHSCROLL
+    LTEXT           "별치기호",IDC_DUP_tSHELF_CODE,272,193,33,8
+    COMBOBOX        IDC_DUP_cSHELF_CODE,318,191,76,77,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_DISABLED | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "매체구분",IDC_DUP_tMAT_CLASS,16,210,33,8
+    COMBOBOX        IDC_DUP_cMEDIA_CLASS,53,208,70,57,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_DISABLED | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "이용제한",IDC_DUP_tUSE_LIMIT_CLASS,130,210,33,8
+    COMBOBOX        IDC_DUP_cUSE_LIMIT_CLASS,177,208,76,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_DISABLED | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "관리구분",IDC_DUP_tMANAGE_CLASS,272,210,33,8,NOT 
+                    WS_VISIBLE
+    COMBOBOX        IDC_DUP_cMANAGE_CLASS,318,208,76,76,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_DISABLED | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "편/권차",IDC_DUP_tVOL,16,227,33,8
+    EDITTEXT        IDC_DUP_eVOL,53,224,70,13,ES_AUTOHSCROLL
+    LTEXT           "권 서 명",IDC_DUP_tVOLTITLE,130,227,33,8
+    EDITTEXT        IDC_DUP_eVOLTITLE,177,224,217,13,ES_AUTOHSCROLL
+    LTEXT           "저 작 자",IDC_DUP_tAUTHOR1,16,244,33,8
+    EDITTEXT        IDC_DUP_eAUTHOR,53,241,70,13,ES_AUTOHSCROLL
+    LTEXT           "발행년",IDC_DUP_tPUBLISH_YEAR,130,244,25,8
+    EDITTEXT        IDC_DUP_ePUBLISH_YEAR,177,241,86,13,ES_AUTOHSCROLL
+    LTEXT           "자료실",IDC_DUP_tSHLEF_LOC_CODE,271,244,25,8
+    COMBOBOX        IDC_DUP_cSHELF_LOC_CODE,302,241,92,30,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_DISABLED | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "같은책수",IDC_DUP_tBOOK_COUNT,16,260,33,8
+    EDITTEXT        IDC_DUP_eBOOK_CNT,53,258,70,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "I S B N",IDC_DUP_tEA_ISBN,130,260,33,8
+    EDITTEXT        IDC_DUP_eEA_ISBN,177,258,91,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DUP_eISBN2,274,258,52,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DUP_eISBN3,332,258,61,13,ES_AUTOHSCROLL
+    LTEXT           "면 장 수",IDC_DUP_tPAGE_CNT,16,278,33,8
+    EDITTEXT        IDC_DUP_ePAGE_CNT,53,275,70,13,ES_AUTOHSCROLL
+    LTEXT           "물리적특성",IDC_DUP_tPHYSICAL_PROPERTIES,130,278,41,8
+    EDITTEXT        IDC_DUP_ePHYSICAL_PROPERTIES,177,275,40,13,
+                    ES_AUTOHSCROLL
+    LTEXT           "크    기",IDC_DUP_tSIZE,221,278,33,8
+    EDITTEXT        IDC_DUP_eSIZE,257,275,40,13,ES_AUTOHSCROLL
+    LTEXT           "딸린자료",IDC_DUP_tAPPENDIX,303,278,33,8
+    EDITTEXT        IDC_DUP_eAPPENDIX,354,275,40,13,ES_AUTOHSCROLL
+    LTEXT           "가    격",IDC_DUP_tBOOK_PRICE,16,295,33,8
+    EDITTEXT        IDC_DUP_eBOOK_PRICE,53,292,70,13,ES_AUTOHSCROLL
+    LTEXT           "가격잡정보",IDC_DUP_tPRICE_OTHRE_INFO,130,295,41,8
+    EDITTEXT        IDC_DUP_ePRICE_OTHRE_INFO,177,292,123,13,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_DUP_STATIC_GROUP2,7,307,394,27
+    PUSHBUTTON      "닫   기",IDC_DUP_bCLOSE,347,315,50,16
+    GROUPBOX        "",IDC_DUP_STATIC_GROUP1,7,183,394,127
+    CONTROL         "",IDC_DUP_GRID_VOLUME,
+                    "{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,11,
+                    11,386,167
+    CONTROL         "",IDC_DUP_STATIC1,"Static",SS_SIMPLE | WS_GROUP,7,7,394,
+                    176,WS_EX_DLGMODALFRAME
+END
+
+IDD_BO_REQUEST_DUP_DETAIL_INFO DIALOGEX 0, 0, 507, 349
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "상세보기"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "닫  기",IDCANCEL,450,326,50,15
+    CTEXT           "대상자료",IDC_STATIC,2,3,250,20,SS_CENTERIMAGE,
+                    WS_EX_DLGMODALFRAME
+    CTEXT           "복본자료",IDC_STATIC,255,3,250,20,SS_CENTERIMAGE,
+                    WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "이  전",IDC_btnPRE_SEL,262,326,50,15
+    PUSHBUTTON      "다  음",IDC_btnNEXT_SEL,316,326,50,15
+    LTEXT           "대상자료",IDC_STATIC,140,302,33,8
+    LTEXT           "건",IDC_STATIC,202,302,9,8
+    LTEXT           "째",IDC_STATIC,240,302,9,8
+    EDITTEXT        IDC_edtGUN,177,299,22,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edtJAE,215,299,21,12,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "",IDC_STATIC,2,21,250,120
+    LTEXT           "자료상태",IDC_STATIC,265,31,33,8
+    EDITTEXT        IDC_edtMANAGEMENT_NO_SEL,303,29,52,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "",IDC_STATIC,255,21,250,270
+    GROUPBOX        "",IDC_STATIC,2,289,250,27
+    PUSHBUTTON      "이  전",IDC_btnPREV_SRC,8,326,50,15
+    PUSHBUTTON      "다  음",IDC_btnNEXT_SRC,62,326,50,15
+    LTEXT           "형식구분",IDC_STATIC,359,32,33,8
+    LTEXT           "매체구분",IDC_STATIC,432,32,33,8
+    EDITTEXT        IDC_edtFORM_CLASS_SEL,397,29,30,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_edtMED_CLASS_SEL,468,29,30,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "",IDC_richHOLDING_DUPLICATE,"RICHEDIT20W",WS_BORDER | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP | 0x804,262,45,238,
+                    241
+    PUSHBUTTON      "변경내용저장",IDC_btnREQDATA_SAVE,191,326,55,15
+    PUSHBUTTON      "권별정보보기",IDC_btnSHOW_DUPVOL,262,297,55,15
+    GROUPBOX        "",IDC_STATIC,255,289,250,27
+    LTEXT           "복본자료",IDC_STATIC,389,300,33,8
+    LTEXT           "건",IDC_STATIC,451,300,9,8
+    LTEXT           "째",IDC_STATIC,489,300,9,8
+    EDITTEXT        IDC_edtGUN2,427,297,22,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edtJAE2,465,297,21,12,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "",IDC_STATIC,2,316,503,32
+    EDITTEXT        IDC_edtREQDUP_WANTED_TITLE,56,68,184,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREQDUP_REQUEST_AUTHOR,56,86,184,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREQDUP_REQUEST_PUBLISHER,56,104,184,13,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_edtREQDUP_REQUEST_PUBLICATE_YEAR,56,122,70,13,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_edtREQDUP_REQUEST_PRICE,170,122,70,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "도 서 명",IDC_STATIC,8,70,33,8
+    LTEXT           "저 작 자",IDC_STATIC,8,88,33,8
+    LTEXT           "출 판 사",IDC_STATIC,8,106,33,8
+    LTEXT           "출 판 년",IDC_STATIC,8,125,33,8
+    LTEXT           "비치상태",IDC_STATIC,8,154,33,8
+    LTEXT           "비    고",IDC_STATIC,7,176,33,8
+    LTEXT           "가    격",IDC_STATIC,132,125,33,8
+    COMBOBOX        IDC_cmbREQDUP_FURNISH_STATUS,56,151,184,95,
+                    CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_edtREQDUP_APPLICATION_DATE,180,51,57,13,
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+    EDITTEXT        IDC_edtREQDUP_APPLICANT,56,50,70,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "신청일자",IDC_STATIC,135,53,33,8,NOT WS_VISIBLE
+    LTEXT           "신 청 자",IDC_STATIC,8,52,33,8
+    GROUPBOX        "",IDC_STATIC,2,140,250,151
+    LTEXT           "관리구분",IDC_STATIC,8,34,33,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_cmbREQ_MANAGE_CODE,56,30,70,128,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | WS_DISABLED | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_richREQDUP_CANCEL_REASON,7,189,241,96,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DUP_KEY_SETTING, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 287
+    END
+
+    IDD_BO_WORK_DUP_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 598
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 323
+    END
+
+    IDD_BO_WORK_DUP_DETAIL_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 505
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 347
+    END
+
+    IDD_BO_HOLDING_DUP_DETAIL_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 505
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 346
+    END
+
+    IDD_BO_HOLDING_ALL_DUP_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 598
+        VERTGUIDE, 428
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 323
+    END
+
+    IDD_BO_INPUT_DUP_DETAIL_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 403
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 228
+    END
+
+    IDD_DUP_BO_VOLUME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 401
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 334
+    END
+
+    IDD_BO_REQUEST_DUP_DETAIL_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 505
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 346
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BO_WORK_DUP_SEARCH DLGINIT
+BEGIN
+    IDC_gridMAINGRID, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x6bcc, 0x0000, 0x1143, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_BO_HOLDING_ALL_DUP_SEARCH DLGINIT
+BEGIN
+    IDC_gridBOKBON_SEARCH, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x6bcc, 0x0000, 0x140d, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    IDC_gridINPUT_BOKBON_SEARCH, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x6bcc, 0x0000, 0x140d, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    IDC_gridSE_INPUT_BOKBON_SEARCH, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x6bcc, 0x0000, 0x140d, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_DUP_BO_VOLUME DLGINIT
+BEGIN
+    IDC_DUP_GRID_VOLUME, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x45de, 0x0000, 0x19f1, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\Duplicate_Data_Search.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

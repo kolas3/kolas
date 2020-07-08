@@ -1,0 +1,405 @@
+#if !defined(AFX_MARCEDITCTRL_H__B9A847F4_2826_4B6E_B27D_FC09F3866F6E__INCLUDED_)
+#define AFX_MARCEDITCTRL_H__B9A847F4_2826_4B6E_B27D_FC09F3866F6E__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+// MarcEditCtrl.h : header file
+//
+
+#include <afxtempl.h>
+#include "MarcMgr.h"
+#include "DlgMarcSyntaxError.h"
+
+#define WM_AC_AUTHOR	21001
+#define WM_AC_TITLE		21002
+#define WM_AC_SUBJECT	21003
+
+/////////////////////////////////////////////////////////////////////////////
+// CMarcEditCtrl window
+
+
+/**
+  @doc	CRichEditCtrl을 상속받은 MarcEditCtrl <BR>
+		MarcStream을 Edit할수 있는 형태로 변경하여 보여준다. <BR>
+		Edit된 Edit Marc는 다시 MarcStream으로 변경하여 저장한다.<BR>
+		특수문자, 한자, 전거, 문법 체크, 내용 체크, 인쇄, 빠른 오류체크 기능등을 제공한다. ㅡ.ㅡ 휴..<BR>
+  @memo CRichEditCtrl을 상속받은 MarcEditCtrl
+  @author 이종은
+  @since 2003-04-10 오후 2:50:30
+ */
+class AFX_EXT_CLASS CMarcEditCtrl : public CRichEditCtrl
+{
+// Construction
+public:
+	CMarcEditCtrl();
+
+	/////////////////////////////////////////////////////////////////////////////
+	// CSymbolFormat : format of symbols..
+	class CSymbolFormat
+	{
+	public:
+		/// 심볼 컬러
+		COLORREF	m_clrSymbol;
+		/// 볼드인지 아닌지
+		BOOL		m_bBold;
+	};
+
+// Attributes
+public:
+	/// 부모 Editor를 설정한다.
+	void SetParentEditor(void *pParentEditor)	{m_pParentEditor = pParentEditor;}
+	/// 마크 메니저 설정
+	void SetMarcMgr(CMarcMgr *pMarcMgr)			{m_pMarcMgr = pMarcMgr;}
+	/// 마지막 에러메시지를 가져온다. (아직 미완성...)
+	CString GetLastError() const				{return m_strLastError;}
+
+	/// @name Set/Get Color
+	//@{	
+	/// 텍스트 색을 지정
+	inline void SetTextColor(COLORREF clr, BOOL bBold)
+		{m_sfText.m_clrSymbol = clr; m_sfText.m_bBold = bBold;}
+	/// 숫자 색을 지정
+	inline void SetNumberColor(COLORREF clr, BOOL bBold)				
+		{m_sfNumber.m_clrSymbol = clr; m_sfNumber.m_bBold = bBold;}
+	/// 테그 코드 색을 지정
+	inline void SetTagCodeColor(COLORREF clr, BOOL bBold)				
+		{m_sfTagCode.m_clrSymbol = clr; m_sfTagCode.m_bBold = bBold;}
+	/// 지시기호 색을 지정
+	inline void SetIndicatorCodeColor(COLORREF clr, BOOL bBold)	
+		{m_sfIndicator.m_clrSymbol = clr; m_sfIndicator.m_bBold = bBold;}
+	/// 식별기호 색을 지정
+	inline void SetSubfieldCodeColor(COLORREF clr, BOOL bBold)			
+		{m_sfSubfieldCode.m_clrSymbol = clr; m_sfSubfieldCode.m_bBold = bBold;}
+	/// 필드종단기호 색을 지정
+	inline void SetFieldTerminatorColor(COLORREF clr, BOOL bBold)		
+		{m_sfFieldTerminator.m_clrSymbol = clr; m_sfFieldTerminator.m_bBold = bBold;}
+	/// 레코드종단기호 색을 지정
+	inline void SetRecordTerminatorColor(COLORREF clr, BOOL bBold)		
+		{m_sfRecordTerminator.m_clrSymbol = clr; m_sfRecordTerminator.m_bBold = bBold;}
+	/// 에러 색을 지정
+	inline void SetErrorColor(COLORREF clr, BOOL bBold)				
+		{m_sfError.m_clrSymbol = clr; m_sfError.m_bBold = bBold;}
+	/// 배경색을 지정
+	inline void SetBkColor(COLORREF clr, BOOL bSysColor)
+		{m_clrBkColor = clr; SetBackgroundColor(bSysColor, clr);}
+
+	/// Get 텍스트 색
+	inline void GetTextColor(COLORREF &clr, BOOL &bBold) const			
+		{clr = m_sfText.m_clrSymbol; bBold = m_sfText.m_bBold;}
+	/// Get 숫자 색
+	inline void GetNumberColor(COLORREF &clr, BOOL &bBold) const
+		{clr = m_sfNumber.m_clrSymbol; bBold = m_sfNumber.m_bBold;}
+	/// Get 테그 코드 색
+	inline void GetTagCodeColor(COLORREF &clr, BOOL &bBold) const			
+		{clr = m_sfTagCode.m_clrSymbol; bBold = m_sfTagCode.m_bBold;}
+	/// Get 지시기호 색
+	inline void GetIndicatorCodeColor(COLORREF &clr, BOOL &bBold) const
+		{clr = m_sfIndicator.m_clrSymbol; bBold = m_sfIndicator.m_bBold;}
+	/// Get 식별기호 색
+	inline void GetSubfieldCodeColor(COLORREF &clr, BOOL &bBold) const		
+		{clr = m_sfSubfieldCode.m_clrSymbol; bBold = m_sfSubfieldCode.m_bBold;}
+	/// Get 필드종단기호 색
+	inline void GetFieldTerminatorColor(COLORREF &clr, BOOL &bBold) const	
+		{clr = m_sfFieldTerminator.m_clrSymbol; bBold = m_sfFieldTerminator.m_bBold;}
+	/// Get 레코드종단기호 색
+	inline void GetRecordTerminatorColor(COLORREF &clr, BOOL &bBold) const	
+		{clr = m_sfRecordTerminator.m_clrSymbol; bBold = m_sfRecordTerminator.m_bBold;}
+	/// Get 에러 색
+	inline void GetErrorColor(COLORREF &clr, BOOL &bBold)	const
+		{clr = m_sfError.m_clrSymbol; bBold = m_sfError.m_bBold;}
+	/// Get 배경색
+	inline void GetBkColor(COLORREF &clr, BOOL &bSysColor) const			
+		{clr = m_clrBkColor; bSysColor = FALSE;}
+	//@}
+		
+protected:
+	/// Parent CEditor
+	void				*m_pParentEditor;
+
+	/// Marc Manager Pointer
+	CMarcMgr			*m_pMarcMgr;
+
+	/// Marc Pointer
+	CMarc				*m_pMarc;
+
+	/// Syntax check dialog
+	CDlgMarcSyntaxError *m_pDlgMarcSyntaxError;
+	
+	/// edit change type
+	enum EnumChangeType {ctUndo, ctUnknown, ctReplSel, ctDelete, ctBack, ctCut, ctPaste, ctMove};
+	EnumChangeType m_changeType;
+
+	/// Editor Config File path
+	CString m_strEditorFormatConfFile;
+	/// Subfield Wrap File Path
+	CString m_strSubfieldWrapConfFile;
+	
+	/// @name Symbol Format
+	//@{
+	CSymbolFormat	m_sfText;
+	CSymbolFormat	m_sfNumber;
+	CSymbolFormat	m_sfTagCode;
+	CSymbolFormat	m_sfIndicator;
+	CSymbolFormat	m_sfSubfieldCode;
+	CSymbolFormat	m_sfFieldTerminator;
+	CSymbolFormat	m_sfRecordTerminator;
+	CSymbolFormat	m_sfError;
+	//@}
+
+	/// Background color
+	COLORREF		m_clrBkColor;
+	
+	/// old selected range
+	CHARRANGE m_crOldSel;
+	
+	/// determine change process
+	BOOL m_bInForcedChange;
+
+	/// limit tag list (include indicator)
+	CArray<CString, CString&> m_arrayLimitTag;
+	/// save tag for limit tag
+	CObList m_listSavedTag;
+
+	/// subfield word wrap list
+	CObList m_listSubfieldWordWrap;
+
+	/// last error
+	CString m_strLastError;
+
+	/// find / replace Dialog
+	CFindReplaceDialog *m_pFRDlg;
+
+	// OS Version
+	OSVERSIONINFOEX m_osvi;
+
+// Operations
+public:
+	/** 
+		@doc	초기화
+		@param	*pMarcMgr		CMarcMgr의 포인터
+		@param	*pMarc			CMarc의 포인터
+	*/
+	void Init(CMarcMgr *pMarcMgr, CMarc *pMarc);
+
+	/// set marc and save limit tag to save tag list
+	void SetMarc(CMarc *pMarc);
+
+	/// @name 변경 제한 테크 설정 관련
+	//@{
+	/// 제한 테그 초기화
+	void InitLimitTag();
+	/// 제한 테그 추가 지시기호까지 세팅해준다. 지시기호가 없으면 Tag만으로 제한을 건다.
+	void AddLimitTag(CString strTagCode, CString strIndicator = _T("__"));
+	BOOL IsLimitTag(CString strTagCode, CString strIndicator = _T("__"));
+	//@}
+
+	/// display marc to edit ctrl
+	BOOL Display();
+
+	/// @name get edit marc to marc class
+	//@{
+	INT GetMarc(CMarc &marc);
+	INT GetMarc(CMarc *pMarc);
+	//@}
+
+	/// Remove CR LF Space In String
+	void RemoveCRLFSpace(CString &strSrc);
+
+	/**
+		apply edit marc to marc class
+		@param nMode 0 : 에러를 보여준다. 1 : 에러를 보여주지 않는다.
+	*/
+	INT ApplyEdit(INT nMode = 0);
+
+	/// @name Syntax Check 관련
+	//@{
+	/**
+		@doc 전체 Syntax를 체크한다. 
+		@param bShowError TRUE이면 에러를 보여준다. FALSE이면 에러를 안보여준다.
+	*/
+	BOOL CheckFullSyntax(BOOL bShowError = TRUE);
+
+	/// format all edit ctrl
+	void FormatAll();
+
+protected:
+	/// @name 에디터 포멧 관련
+	//@{
+	/**
+		@doc	nStart로 부터 뒤로 필드종단기호가 있는곳이나 처음 위치 <BR>
+				nEnd로 부터 앞으로 필드 종단기호가 있는곳이나 마지막 위치 <BR>
+				위치를 찾아 return 해준다.
+		
+		@param nStart 시작 위치
+		@param nEnd   끝 위치
+	*/
+	void GetFieldRange(LONG &nStart, LONG &nEnd);
+	/// nStart 부터 nEnd까지 의 테텍스트를 형식을 지정한다.
+	void FormatTextRange(INT nStart, INT nEnd);
+	/// nLineStart부터 nLineEnd까지의 라인을 찾아 그 라인의 형식을 지정한다.
+	void FormatTextLines(INT nLineStart, INT nLineEnd);
+
+	/** 
+		@doc	nStart부터 nEnd까지 텍스트의 색, underline등을 설정한다.
+		@param	nStart		시작
+		@param	nEnd		끝
+		@param	bBold		굵게 여부
+		@param	bUnderLine	밑줄 여부	
+		@param	clr			텍스트 색
+		@param	bSpecial    TRUE이면 무조건 Terminal 폰트로 보여준다.		
+	*/
+	void SetFormatRange(INT nStart, INT nEnd, BOOL bBold, BOOL bUnderLine, COLORREF clr, BOOL bSpecial = FALSE);
+	//@}
+
+	/**
+		@doc Insert marc code : subfield code, field terminator, record terminator
+		@param nType	SUBFIELD_CODE : 식별기호 <BR>
+						FIELD_TERMINATOR : 필드종단기호 <BR>
+						RECORD_TERMINATOR : 레코드 종단기호
+		@param nChar    SUBFIELD_CODE일때 식별기호와 nChar를 붙여서 Insert한다.
+
+	*/		
+	void InsertMarcCode(UINT nType, UINT nChar = NULL);
+
+	/// Insert Line
+	void InsertLine(CString strLine);
+
+	/// insert specialchar
+	void InsertSpecialChar();
+	
+	/// @name 캐릭터 변경관련
+	//@{
+	/// CHAR를 HIRA(일어)로 변경
+	void ConvertCharToHira();
+	/// CHAR를 KATA(일어)로 변경
+	void ConvertCharToKata();
+	/// CHAR를 로마자로 변경
+	void ConvertCharToRoma();
+	//@}
+
+	/// convert slected word to chinese word F6 Key
+	void ConvertWordKorToChi();
+
+	/// 전거 보여주기 F9 Key
+	void ShowACMarcGetter();
+	
+	/** 
+		@doc	nStart부터 nEnd까지의 마크 텍스트의 에러를 체크한다.
+		@param	nStart			시작
+		@param	nEnd			끝
+		@param	bIsLogError		에러를 기록해서 에러 다이얼로그를 보여준다.
+		@param	bIsHideSelection Selection을 안보여줄지 보여줄지 결정
+	*/
+	BOOL CheckSimpleSyntax(INT nStart, INT nEnd, BOOL bIsLogError = FALSE, BOOL bIsHideSelection = TRUE);
+	/// 에전에 사용했던 Syntax체크 (지금은 사용하지 않음)
+	BOOL CheckSimpleSyntax2(INT nStart, INT nEnd, BOOL bIsLogError = FALSE);
+	/// 내용 체크를 함
+	BOOL CheckDeepSyntax();
+	//@}
+
+	/// nOrder 번째의 서브필드 시작 위치를 가져온다.
+	INT GetSubfieldIdx(CString strField, INT nOrder);
+
+	/// 에러를 nErrorStart부터 nErrorEnd까지 밑줄로 보여주고 bIsLogError가 TRUE이면 에러를 기록한다.
+	INT ErrorShowProc(INT nErrorStart, INT nErrorEnd, BOOL bIsLogError);
+
+	/**
+		@doc Add Error Log
+		@param nMode 1 : Simple Syntax 에러
+		@param nMode 2 : Deep Syntax 에러
+	*/
+	void AddErrorLog(INT nMode = 1);
+	
+	/// create syntax error dialog
+	void CreateSyntaxErrorDialog();
+
+	/** 
+		@doc	테크코드로 라인번호를 찾는다.
+		@param	strTagCode		테크고드
+		@param	&nLineNumber	찾아진 라인 번호
+	*/
+	BOOL FindLineNumber(CString strTagCode, INT &nLineNumber);
+
+	/// load editorformat config
+	void LoadEditorFormatConfig();
+	/// save edit ctrl config
+	void SaveEditorFormatConfig();
+
+	/// load subfield wrap config
+	void LoadSubfieldWrapConfig();
+
+	/// subfield word wrap
+	BOOL IsWrapSubfield(CString strAlias);
+	
+	/// Free Save Tag List
+	INT FreeSaveTagList();
+	/// Free SubfieldWordWrap List
+	INT FreeSubfieldWordWrapList();
+	
+// Overrides
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CMarcEditCtrl)
+	protected:
+	/// Find Text 처리를 위해...
+	virtual LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam);
+	/// PARAFORMAT, CHARFORMAT 을 설정한다.
+	virtual void PreSubclassWindow();
+	//}}AFX_VIRTUAL
+
+// Implementation
+public:
+	virtual ~CMarcEditCtrl();
+
+	// Generated message map functions
+protected:
+	/// 단축키적용
+	BOOL Acceclerator(UINT nChar);				
+
+	//{{AFX_MSG(CMarcEditCtrl)
+	/// 바뀐부분이 어느곳인지 파악해서 포멧 적용
+	afx_msg void OnChange();
+	afx_msg UINT OnGetDlgCode();
+	/// 탭키 눌렸을때 처리
+	afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags);
+	/// ALT 키 눌렸을때 식별기호 + 알파벳(소문자) 처리
+	afx_msg void OnSysChar(UINT nChar, UINT nRepCnt, UINT nFlags);
+	/// 단축키 적용
+	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
+	/// 컨텍스트 메뉴를 부여준다.
+	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnPopupInsertFieldTerminator();
+	afx_msg void OnPopupInsertRecordTerminator();
+	afx_msg void OnPopupSyntaxCheck();
+	afx_msg void OnPopupColor();
+	afx_msg void OnPopupFont();
+	afx_msg void OnPopupShowError();
+	afx_msg void OnPopupSpecialChar();
+	afx_msg void OnPopupChinese();
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnPopupKorToHira();
+	afx_msg void OnPopupKorToKata();
+	afx_msg void OnPopupKorToRoma();
+	afx_msg void OnPopupAcmarc();
+	afx_msg void OnPopupPrint();
+	afx_msg void OnPopupEditFind();
+	afx_msg void OnPopupEditReplace();
+	//}}AFX_MSG
+	afx_msg LRESULT OnSetText(WPARAM wParam, LPARAM lParam);
+	afx_msg void OnProtected(NMHDR*, LRESULT* pResult);
+	afx_msg void OnSelChange(NMHDR*, LRESULT* pResult);
+	/// wParam 라인에 커서를 위치 시킨다.
+	LONG OnLineLocation(WPARAM wParam, LPARAM lParam);
+	afx_msg LONG OnFindReplace(WPARAM wParam, LPARAM lParam);
+
+	DECLARE_MESSAGE_MAP()
+private:
+	void ShowACMarcGetter_SubJect();
+};
+
+/////////////////////////////////////////////////////////////////////////////
+
+//{{AFX_INSERT_LOCATION}}
+// Microsoft Visual C++ will insert additional declarations immediately before the previous line.
+
+#endif // !defined(AFX_MARCEDITCTRL_H__B9A847F4_2826_4B6E_B27D_FC09F3866F6E__INCLUDED_)

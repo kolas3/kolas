@@ -1,0 +1,451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CDuplicateSearch_Interface</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file D:\KOLAS2UP\Develop\Source\공통\Duplicate_Data_Search\DuplicateSearch_Interface.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CDuplicateSearch_Interface</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>중복/복본조사를 사용자가 쉽게 접근할 수 있도록 구성한 클래스 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCWnd,M,CCDuplicateSearch_Interface,MCDuplicateSearch_Interface.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CESL_Mgr* </TD><TD><B>m_pParentMgr</B> <BR>
+<I>부모 윈도우의 포인터</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Constructor / Destructor</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>기타 메소드</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>쓰레드 관리 메소드</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>일괄 복본/중복 조사 쓰레드와 관련된 메시지처리 메소드</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>중복/복본조사 수행 메소드</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>중복/복본조사 수행결과 다이얼로그 출력 메소드</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>m_bRunning</B> <BR>
+<I>쓰리드의 수행을 제어하는 변수</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>m_isDeleteOperation</B> <BR>
+<I>중복/복본조사 수행결과 화면에서 자료삭제 및 복본추기 동작이 발행했는지를 나타냄</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>m_nSearchCount</B> <BR>
+<I>서명복본조사 수행후 결과 데이터 수</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="CDataProcessingDlg.html">CDataProcessingDlg</A>* </TD><TD><B>m_pDataProcessingDlg</B> <BR>
+<I>CDataProcessingDlg 클래스의 포인터</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CProgressCtrl* </TD><TD><B>m_pPrgCtrl</B> <BR>
+<I>CDataProcessingDlg 클래스의 프로그래스바 컨트롤의 포인터</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CWinThread* </TD><TD><B>m_pThread</B> <BR>
+<I>쓰레드의 포인터</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strCMAlias</B> <BR>
+<I>중복/복본조사를 수행하는 부모의 CM알리아스</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strDMAlias</B> <BR>
+<I>중복/복본조사를 수행하는 부모의 DM알리아스</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strGridAlias</B> <BR>
+<I>중복/복본조사를 수행하는 부모의 Grid알리아스</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.198.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strSearchType</B> <BR>
+<I>중복/복본조사타입</I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+사용자가 실제 중복/복본조사를 수행할 수 있는 메소드를 포함 메소드의 종류는 일괄 중복/복본조사
+서명복본조사로 구성되어진다.<br>일괄 복본/중복 조사는 쓰레드로 동작하며 중복/복본 데이터 구축과 이를 출력
+하는 루틴이 분리되어 있다.<br> 서명 복본조사의 경우 쓰레드로 동작하지 않으며 역시 데이터구축과 결과출력 
+루틴이 분리되어 있다.<br>
+일괄 중복/복본조사의 쓰레드 수행과 이의 자료처리상태 및 데이터 구축 동작을 제어하기 위한 CDataProcessingDlg
+와의 상호작용을 위하여 본 클래스는 CWin클래스를 상속받으며 일괄 복본/중복 조사를 수행하는 쪽에서 CWin클래스의
+Create메소드를 호출하여 윈도우 Handle를 생성하고 CDataProcessingDlg클래스에 정의된 JOB_CANCEL 사용자 메시지로서 
+쓰레드의 동작을 제어한다.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Constructor / Destructor"></A>
+<A NAME="DOC.198.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Constructor / Destructor</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CDuplicateSearch_Interface"></A>
+<A NAME="DOC.198.1.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CDuplicateSearch_Interface(CESL_Mgr*  pMgr)</B></TT>
+<DD>
+부모(CESL_Mgr*)의 포인터를 인자료 받아서 이를 멤버변수 m_pParentMgr필드에 저정하며
+다른 멤버변수를 초기화 한다.
+<DL><DT><DD></DL><P>
+<A NAME="~CDuplicateSearch_Interface"></A>
+<A NAME="DOC.198.1.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CDuplicateSearch_Interface()</B></TT>
+<DD>
+CDataProcessingDlg클래스의 메모리를 초기화 해주며 쓰레드 m_pThread가 수행중이면 이를 종료시킨다.
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="중복/복본조사 수행 메소드"></A>
+<A NAME="DOC.198.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 중복/복본조사 수행 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="SearchDuplicateData"></A>
+<A NAME="DOC.198.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   UINT SearchDuplicateData( LPVOID pParam )</B></TT>
+<DD>
+일괄/복본/중복조사를 수행하는 SearchDuplicateData()를 호출한다. 
+
+<DL><DT><DT><B>Parameters:</B><DD><B>pParam</B> -  [in] 쓰레드로 동작할 함수 포인터<BR><DT><B>Returns:</B><DD>  0 - 쓰레드 정상종료<br>
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearch_Interface.html#DOC.198.2.5">ShowWorkDuplicateSearch</A>(), <!1><A HREF="CDuplicateSearch_Interface.html#DOC.198.2.1">SearchDuplicateData</A>()
+<BR><DD></DL><P>
+<A NAME="SearchDuplicateData"></A>
+<A NAME="DOC.198.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID SearchDuplicateData()</B></TT>
+<DD>
+설정된 멤버변수 m_strDMAlias, m_strCMAlias, m_strGridAlias와 CDataProcessingDlg클래스의 CProgressCtrl
+클래스를 이용하여 CDuplicateSearchMgr클래스의 일괄 중복/복본조사 메소드를 호출한다. (SPFExecutePath메소드)
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearchMgr.html">CDuplicateSearchMgr</A>클래스의 <!1><A HREF="CDuplicateSearchMgr.html#DOC.194.50">SPFExecutePath</A>(), <!1><A HREF="CDuplicateSearch_Interface.html#DOC.198.2.5">ShowWorkDuplicateSearch</A>()<BR><DD></DL><P>
+<A NAME="DuplicateDataSearchByMarc"></A>
+<A NAME="DOC.198.2.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DuplicateDataSearchByMarc( CString strMarc )</B></TT>
+<DD>
+입력으로 전달받은 마크로 복본조사를 수행하는 메소드. 공동목록에서 사용되어진다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>strMarc</B> -  [in] 복본조사를 수행할 키값을 갖고 있는 마크문자열<BR><DT><B>Returns:</B><DD>  0 - 정상종료<br>
+<BR>  -1000 - 복본조사 수행결과 가 없거나 에러 발생<br>
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearchMgr.html">CDuplicateSearchMgr</A>클래스의 <!1><A HREF="CDuplicateSearchMgr.html#DOC.194.50">SPFExecutePath</A>()
+<BR><DD></DL><P>
+<A NAME="ShowOnlyTitleDuplicateSearch"></A>
+<A NAME="DOC.198.2.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ShowOnlyTitleDuplicateSearch( CString searchType,  CString strTitle,  CString &amp;strResultCnt,  CString species_key )</B></TT>
+<DD>
+입력으로 전달받은 서명복본조사타입, 서명, 종키로 서명복본조사를 수행하여 결과 데이터수를 리턴한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>searchType</B> -  [in] 서명복본조사 타입
+<BR><B>strTitle</B> -  [in] 복본조사를 수행할 서명
+<BR><B>strResultCnt</B> -  [out] 서명복본조사 수행 결과 데이터 수
+<BR><B>species_key</B> -  [in] 서명복본조사시 제외되어야 할 종키<BR><DT><B>Returns:</B><DD>  0 - 정상종료<br>
+<BR>  -1000 - 서명이 공백임<br>
+<BR>  -1002 - 복본조사 수행 에러 발생<br>
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearchMgr.html">CDuplicateSearchMgr</A>클래스의 <!1><A HREF="CDuplicateSearchMgr.html#DOC.194.50">SPFExecutePath</A>()
+<BR><DD></DL><P>
+<A NAME="ShowWorkDuplicateSearch"></A>
+<A NAME="DOC.198.2.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID ShowWorkDuplicateSearch( CString searchType,  CString DMAlias,  CString CMAlias,  CString GridAlias )</B></TT>
+<DD>
+사용자의 일괄 복본/중복조사요구를 받아서 이를 쓰레드로 수행시키는 메소드<br>
+인자로 받은 CM/DM/Grid알리아스를 멤버변수 m_strCMAlias, m_strDMAlias, m_strGridAlias, m_strSearchType에 
+저장하고 복본/중복 조사시 자료의 처리상황을 표시할 CDataProcessingDlg 생성, Create하며, 
+쓰레드 동작을 제어하는 m_bRunning멤버변수를 TRUE로 설정하여 쓰레드를 호출한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>searchType</B> -  [in] 일괄 복본/중복조사 타입
+<BR><B>DMAlias</B> -  [in] 사용자가 선정한 자료가 있는 DM알리아스
+<BR><B>CMAlias</B> -  [in] 사용자가 선정한 그리드가 있는 CM알리아스
+<BR><B>GridAlias</B> -  [in] 사용자가 선정한 그리드 알리아스<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearch_Interface.html#DOC.198.2.1">SearchDuplicateData</A>(LPVOID), <!1><A HREF="CDuplicateSearch_Interface.html#DOC.198.2.1">SearchDuplicateData</A>()
+<BR><DD></DL><P></DL>
+
+<A NAME="중복/복본조사 수행결과 다이얼로그 출력 메소드"></A>
+<A NAME="DOC.198.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 중복/복본조사 수행결과 다이얼로그 출력 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="ShowTitleDuplicateSearchDlg"></A>
+<A NAME="DOC.198.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID ShowTitleDuplicateSearchDlg( CString strSearchType,  CString &amp;Skey )</B></TT>
+<DD>
+서명복본조사 수행결과 다이얼로그를 출력한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>strSearchType</B> -  [in] 서명복본조사 타입
+<BR><B>Skey</B> -  [inout] 결과화면에서 사용자가 선정한 자료의 종키<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_HOLDING_ALL_DUP_SEARCH.html">CBO_HOLDING_ALL_DUP_SEARCH</A>
+<BR><DD></DL><P>
+<A NAME="ShowDuplicateSearchDlg"></A>
+<A NAME="DOC.198.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID ShowDuplicateSearchDlg()</B></TT>
+<DD>
+일괄 중복/복본조사 수행결과 다이얼로그를 출력한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_HOLDING_ALL_DUP_SEARCH.html">CBO_HOLDING_ALL_DUP_SEARCH</A>, CBO_WORKING_DUP_SEARCH<BR><DD></DL><P></DL>
+
+<A NAME="쓰레드 관리 메소드"></A>
+<A NAME="DOC.198.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 쓰레드 관리 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetRunning"></A>
+<A NAME="DOC.198.4.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL GetRunning()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearch_Interface.html#DOC.198.2.1">SearchDuplicateData</A>(LPVOID), <!1><A HREF="CDuplicateSearch_Interface.html#DOC.198.2.1">SearchDuplicateData</A>(), CDupliacateSearchMgr::SearchDuplicateData<BR><DD></DL><P>
+<A NAME="ShowDataProcessingDlg"></A>
+<A NAME="DOC.198.4.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID ShowDataProcessingDlg()</B></TT>
+<DD>
+쓰레드의 자료처리상태를 보여주는 CDataProcessingDlg클래스를 생성/Create하는 메소드<br>  
+CDataProcessingDlg클래스를 생성하고 m_pDataProcessingDlg, m_pPrgCtrl멤버변수를 설정한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDataProcessingDlg.html">CDataProcessingDlg</A><BR><DD></DL><P>
+<A NAME="ThreadTerminate"></A>
+<A NAME="DOC.198.4.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID ThreadTerminate()</B></TT>
+<DD>
+쓰레드의 동작을 제어하는 m_bRunning변수를 FALSE로 설정한후 쓰레드가 종료되기를 기다린다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearch_Interface.html#DOC.198.5.3">OnJobCancel</A>(), ~<!1><A HREF="CDuplicateSearch_Interface.html">CDuplicateSearch_Interface</A>()<BR><DD></DL><P></DL>
+
+<A NAME="일괄 복본/중복 조사 쓰레드와 관련된 메시지처리 메소드"></A>
+<A NAME="DOC.198.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 일괄 복본/중복 조사 쓰레드와 관련된 메시지처리 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="SendShowSearchResultMsg"></A>
+<A NAME="DOC.198.5.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID SendShowSearchResultMsg()</B></TT>
+<DD>
+SHOW_SEARCH_RESULT 사용자정의 메시지를 부모윈도우에 보낸다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD>CBO_ACQ_PURCHASE_LIGHT_1_01::OnShowSearchResult()<BR><DD></DL><P>
+<A NAME="SendRefreshMsg"></A>
+<A NAME="DOC.198.5.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID SendRefreshMsg()</B></TT>
+<DD>
+DM_REFRESH 사용자정의 메시지를 부모윈도우에 보낸다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD>CBO_ACQ_PURCHASE_LIGHT_1_01::OnDMRefresh()<BR><DD></DL><P>
+<A NAME="OnJobCancel"></A>
+<A NAME="DOC.198.5.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnJobCancel(WPARAM w, LPARAM l)</B></TT>
+<DD>
+CDataProcessingDlg클래스에서 전달된 JOB_CANCEL메시지를 처리하는 메소드. ThreadTerminate메소드를 호출
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearch_Interface.html#DOC.198.4.3">ThreadTerminate</A>(), <!1><A HREF="CDataProcessingDlg.html#DOC.184.1">CDataProcessingDlg::SendMsgToParent</A>()<BR><DD></DL><P>
+<A NAME="DECLARE_MESSAGE_MAP"></A>
+<A NAME="DOC.198.5.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DECLARE_MESSAGE_MAP()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="기타 메소드"></A>
+<A NAME="DOC.198.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 기타 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetIsDeleteOperation"></A>
+<A NAME="DOC.198.6.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL GetIsDeleteOperation()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="ESLAfxMessageBox"></A>
+<A NAME="DOC.198.6.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ESLAfxMessageBox(CString strMsg, UINT nType = MB_ICONEXCLAMATION)</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME="m_pPrgCtrl"></A>
+<A NAME="DOC.198.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CProgressCtrl* m_pPrgCtrl</B></TT>
+<DD>CDataProcessingDlg 클래스의 프로그래스바 컨트롤의 포인터
+<DL><DT><DD></DL><P>
+<A NAME="m_pDataProcessingDlg"></A>
+<A NAME="DOC.198.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CDataProcessingDlg.html">CDataProcessingDlg</A>* m_pDataProcessingDlg</B></TT>
+<DD>CDataProcessingDlg 클래스의 포인터
+<DL><DT><DD></DL><P>
+<A NAME="m_pThread"></A>
+<A NAME="DOC.198.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CWinThread* m_pThread</B></TT>
+<DD>쓰레드의 포인터
+<DL><DT><DD></DL><P>
+<A NAME="m_bRunning"></A>
+<A NAME="DOC.198.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_bRunning</B></TT>
+<DD>쓰리드의 수행을 제어하는 변수
+<DL><DT><DD></DL><P>
+<A NAME="m_isDeleteOperation"></A>
+<A NAME="DOC.198.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_isDeleteOperation</B></TT>
+<DD>중복/복본조사 수행결과 화면에서 자료삭제 및 복본추기 동작이 발행했는지를 나타냄
+<DL><DT><DD></DL><P>
+<A NAME="m_strCMAlias"></A>
+<A NAME="DOC.198.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strCMAlias</B></TT>
+<DD>중복/복본조사를 수행하는 부모의 CM알리아스
+<DL><DT><DD></DL><P>
+<A NAME="m_strDMAlias"></A>
+<A NAME="DOC.198.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strDMAlias</B></TT>
+<DD>중복/복본조사를 수행하는 부모의 DM알리아스
+<DL><DT><DD></DL><P>
+<A NAME="m_strGridAlias"></A>
+<A NAME="DOC.198.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strGridAlias</B></TT>
+<DD>중복/복본조사를 수행하는 부모의 Grid알리아스
+<DL><DT><DD></DL><P>
+<A NAME="m_strSearchType"></A>
+<A NAME="DOC.198.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strSearchType</B></TT>
+<DD>중복/복본조사타입
+<DL><DT><DD></DL><P>
+<A NAME="m_nSearchCount"></A>
+<A NAME="DOC.198.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nSearchCount</B></TT>
+<DD>서명복본조사 수행후 결과 데이터 수
+<DL><DT><DD></DL><P>
+<A NAME="m_pParentMgr"></A>
+<A NAME="DOC.198.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_Mgr* m_pParentMgr</B></TT>
+<DD>부모 윈도우의 포인터
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearchMgr.html">CDuplicateSearchMgr</A>, <!1><A HREF="CDataProcessingDlg.html">CDataProcessingDlg</A>, <!1><A HREF="CBO_HOLDING_ALL_DUP_SEARCH.html">CBO_HOLDING_ALL_DUP_SEARCH</A>, CBO_WORKING_DUP_SEARCH<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

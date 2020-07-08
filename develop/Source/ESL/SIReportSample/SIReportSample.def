@@ -1,0 +1,11 @@
+; SIReportSample.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SIReportSample"
+DESCRIPTION  'SIReportSample Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

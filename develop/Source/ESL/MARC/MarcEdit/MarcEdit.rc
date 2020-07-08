@@ -1,0 +1,308 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MarcEdit.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2008,10,30,144
+ PRODUCTVERSION 2008,10,30,144
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "MarcEdit DLL\0"
+            VALUE "FileVersion", "2008, 10, 30, 144\0"
+            VALUE "InternalName", "MarcEdit\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MarcEdit.DLL\0"
+            VALUE "ProductName", "MarcEdit 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2008, 10, 30, 144\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MARC_SYNTAXT_ERROR DIALOGEX 0, 0, 340, 250
+STYLE DS_SYSMODAL | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Marc Error List"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_gridERROR,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,0,12,340,117
+    CONTROL         "상세설명 보기",IDC_chkVIEW_DESCRIPTION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,0,0,68,10
+    EDITTEXT        IDC_eDESCRIPTION,0,131,339,118,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+END
+
+IDD_SYMBOL_COLOR DIALOGEX 0, 0, 140, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Symbol Color"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_lSYMBOL,0,0,140,75,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Color",IDC_bCOLOR,0,79,58,14
+    CONTROL         "BOLD",IDC_ckBOLD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,64,81,32,10
+    PUSHBUTTON      "닫기",IDOK,105,79,33,14
+END
+
+IDD_MARC_ANALYZER_DLG DIALOGEX 0, 0, 307, 322
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "오류 마크 수정"
+FONT 10, "새굴림", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "닫기",IDCANCEL,243,296,50,14
+    CONTROL         "",IDC_sMarcViewClient,"Static",SS_SIMPLE | WS_GROUP,8,7,288,279,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,9,288,291,27
+    LTEXT           "",IDC_STATIC,4,4,296,284,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "적용",IDC_APPLY,187,296,50,14
+END
+
+IDD_MARC_AUTO_LIST DIALOG DISCARDABLE  0, 0, 134, 171
+STYLE WS_POPUP | WS_CLIPCHILDREN | WS_BORDER
+FONT 10, "굴림체"
+BEGIN
+    LISTBOX         IDC_LIST_BOX,151,30,78,102,LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | NOT WS_BORDER | WS_TABSTOP
+    CONTROL         "List1",IDC_MARC_INTELLISENS_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | WS_TABSTOP,0,17,134,153
+    LTEXT           "설명",IDC_DESC_STATIC,3,3,127,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MARC_SYNTAXT_ERROR DLGINIT
+BEGIN
+    IDC_gridERROR, 0x37a, 419, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x3d7f, 0x0000, 0x1231, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0x0008, 0x8000, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x000d, 0x0000, 0x000e, 0x8000, 0xefef, 0x00ef, 0x000f, 0x0000, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb104, 0xb8bc, 0x00b2, 0x0000, 0x0000, 0x0400, 
+0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 
+0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MARC_SYNTAXT_ERROR, DIALOG
+    BEGIN
+        HORZGUIDE, 10
+    END
+
+    IDD_MARC_ANALYZER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 300
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 315
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "문법 체크\tF7",               ID_POPUP_SYNTAX_CHECK
+        MENUITEM "인쇄\t(Ctrl+P)",              ID_POPUP_PRINT
+        MENUITEM SEPARATOR
+        POPUP "편집"
+        BEGIN
+            MENUITEM "찾기\t(Ctrl+F)",              ID_POPUP_EDIT_FIND
+            MENUITEM "바꾸기\t(Ctrl+H)",            ID_POPUP_EDIT_REPLACE
+            MENUITEM SEPARATOR
+            MENUITEM "복사\t(Ctrl+C)",              ID_POPUP_EDIT_COPY
+            MENUITEM "잘라내기\t(Ctrl+X)",          ID_POPUP_EDIT_CUT
+            MENUITEM "붙여넣기\t(Ctrl+V)",          ID_POPUP_EDIT_PASTE
+        END
+        MENUITEM "필드종단기호 삽입\t(Ctrl+Y)", ID_POPUP_INSERT_FIELD_TERMINATOR
+
+        MENUITEM "레코드종단기호 삽입\t(Ctrl+R)",                             ID_POPUP_INSERT_RECORD_TERMINATOR
+
+        MENUITEM SEPARATOR
+        MENUITEM "특수문자\tF2",                ID_POPUP_SPECIAL_CHAR
+        MENUITEM "한자단어\tF6",                ID_POPUP_CHINESE
+        POPUP "변환"
+        BEGIN
+            MENUITEM "HIRA\tF3",                    ID_POPUP_KOR_TO_HIRA
+            MENUITEM "KATA\tF4",                    ID_POPUP_KOR_TO_KATA
+            MENUITEM "ROMA\tF5",                    ID_POPUP_KOR_TO_ROMA
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "전거\tF9",                    ID_POPUP_ACMARC
+        MENUITEM SEPARATOR
+        MENUITEM "폰트...",                     ID_POPUP_FONT
+        MENUITEM "심볼 컬러...",                ID_POPUP_COLOR
+        MENUITEM "오류 마크 수정",              ID_ANALYZE_MARC
+    END
+    POPUP "BACKUP"
+    BEGIN
+        MENUITEM "오류 보기\tF11",              ID_POPUP_SHOW_ERROR
+        , INACTIVE
+    END
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_LINK                CURSOR  DISCARDABLE     "res\\linkhand.cur"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\MarcEdit.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

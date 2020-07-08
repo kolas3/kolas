@@ -1,0 +1,11 @@
+; MNG_PRE_REG_NO.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_PRE_REG_NO"
+DESCRIPTION  'MNG_PRE_REG_NO Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

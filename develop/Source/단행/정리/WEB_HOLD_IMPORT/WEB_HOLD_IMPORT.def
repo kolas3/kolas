@@ -1,0 +1,7 @@
+; WEB_HOLD_IMPORT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "WEB_HOLD_IMPORT"
+DESCRIPTION  'WEB_HOLD_IMPORT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

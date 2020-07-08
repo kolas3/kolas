@@ -1,0 +1,7 @@
+; DonatorIDGetter.def : Declares the module parameters for the DLL.
+
+LIBRARY      "DonatorIDGetter"
+DESCRIPTION  'DonatorIDGetter Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

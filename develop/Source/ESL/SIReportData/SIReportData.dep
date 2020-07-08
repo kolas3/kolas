@@ -1,0 +1,133 @@
+# Microsoft Developer Studio Generated Dependency File, included by SIReportData.mak
+
+.\LoadBmp.cpp : \
+	".\LoadBmp.h"\
+	
+
+.\SIBarcodeCtrl.cpp : \
+	".\SIBarcodeCtrl.h"\
+	
+
+.\SIReportData.rc : \
+	".\res\SIReportData.rc2"\
+	
+
+.\SIReportEventInfo.cpp : \
+	".\SIReportEventInfo.h"\
+	
+
+.\SIReportObject.cpp : \
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Text.h"\
+	
+
+.\SIReportObject_Barcode.cpp : \
+	".\SIBarcodeCtrl.h"\
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Barcode.h"\
+	".\SIReportObject_Text.h"\
+	
+
+.\SIReportObject_Bitmap.cpp : \
+	".\LoadBmp.h"\
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Bitmap.h"\
+	".\SIReportObject_Text.h"\
+	
+
+.\SIReportObject_Line.cpp : \
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Line.h"\
+	".\SIReportObject_Text.h"\
+	
+
+.\SIReportObject_Table.cpp : \
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Table.h"\
+	".\SIReportObject_Table_Cell.h"\
+	".\SIReportObject_Text.h"\
+	
+
+.\SIReportObject_Table_Cell.cpp : \
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Table.h"\
+	".\SIReportObject_Table_Cell.h"\
+	".\SIReportObject_Text.h"\
+	
+
+.\SIReportObject_Text.cpp : \
+	".\SIReportObject_Text.h"\
+	
+
+.\SIReportObject_Text_Box.cpp : \
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Text.h"\
+	".\SIReportObject_Text_Box.h"\
+	
+
+.\SIReportReadBroker.cpp : \
+	".\SIReportReadBroker.h"\
+	
+
+.\SIReportWorkForm.cpp : \
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	".\LoadBmp.h"\
+	".\SIBarcodeCtrl.h"\
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Barcode.h"\
+	".\SIReportObject_Bitmap.h"\
+	".\SIReportObject_Line.h"\
+	".\SIReportObject_Table.h"\
+	".\SIReportObject_Table_Cell.h"\
+	".\SIReportObject_Text.h"\
+	".\SIReportObject_Text_Box.h"\
+	".\SIReportWorkForm.h"\
+	".\SIReportWorkSheet.h"\
+	".\SIReportXMLIOMgr.h"\
+	
+
+.\SIReportWorkSheet.cpp : \
+	".\LoadBmp.h"\
+	".\SIBarcodeCtrl.h"\
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Barcode.h"\
+	".\SIReportObject_Bitmap.h"\
+	".\SIReportObject_Line.h"\
+	".\SIReportObject_Table.h"\
+	".\SIReportObject_Table_Cell.h"\
+	".\SIReportObject_Text.h"\
+	".\SIReportObject_Text_Box.h"\
+	".\SIReportWorkSheet.h"\
+	
+
+.\SIReportXMLIOMgr.cpp : \
+	"..\..\..\..\..\winnt\system32\msxml4.dll"\
+	".\LoadBmp.h"\
+	".\SIBarcodeCtrl.h"\
+	".\SIReportConstant.h"\
+	".\SIReportObject.h"\
+	".\SIReportObject_Barcode.h"\
+	".\SIReportObject_Bitmap.h"\
+	".\SIReportObject_Line.h"\
+	".\SIReportObject_Table.h"\
+	".\SIReportObject_Table_Cell.h"\
+	".\SIReportObject_Text.h"\
+	".\SIReportObject_Text_Box.h"\
+	".\SIReportWorkForm.h"\
+	".\SIReportWorkSheet.h"\
+	".\SIReportXMLIOMgr.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	

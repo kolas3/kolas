@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CCreateAutorCode</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file C:\Kolas2UP\Develop\Source\ESL\MARC\MarcToolKit\CreateAutorCode.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CCreateAutorCode</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>저자기호를 만드는 클래스 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=35>
+<param name=classes value="CCCreateAutorCode,MCCreateAutorCode.html">
+<param name=before value="M">
+<param name=after value="M">
+<param name=indent value="0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CCreateAutorCode</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>GetElordAuthorDate</B> ( CHAR* f_pSubFieldData,  CHAR* f_AuthorAddData, CHAR* f_pElordAuthorData )<BR>
+<I>Elord저자기기호를 생성 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>GetJangIlSeaAuthorData</B> ( CHAR* f_pSubFieldData,  CHAR* f_AuthorAddData,  CHAR* f_pJangIlSeaAuthorData )<BR>
+<I>장일세저자기호 생성 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>GetJungPilMoAuthorData</B> ( CHAR* f_pSubFieldData,  CHAR* f_AuthorAddData,  CHAR* f_pJungPilMoAuthorData )<BR>
+<I>정필모저자기호 생성 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>GetLeeJaeChulAuthorData</B> ( CHAR f_VolCode,  CHAR* f_pSubFieldData,  CHAR* f_pJangIlSeaAuthorData )<BR>
+<I>이재철 저자기호 생성 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>TrimAll</B> (TCHAR* pszSrc, TCHAR* pszDesc)<BR>
+<I>String을 왼쪽 오른쪽 트림한다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   </TD><TD><B>~CCreateAutorCode</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Members</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Elord저자기호</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>장일세저자기호</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>정필모저자기호</B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CharSetMgr</B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>VOID </TD><TD><B>str_ltrim</B> ( CHAR* strln, CHAR* strline1, CHAR var )<BR>
+<I>String을 왼쪽 트림한다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>VOID </TD><TD><B>str_rtrim</B> ( CHAR* strln, CHAR* strline1, CHAR var )<BR>
+<I>String을 오른쪽 트림한다</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>VOID </TD><TD><B>str_trimall</B> ( CHAR* strln, CHAR* strline1, CHAR var )<BR>
+<I>String을 왼쪽 오른쪽 트림한다</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Members</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.28.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>이재철저자기호</B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+저자기호를 만드는 클래스
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CCreateAutorCode"></A>
+<A NAME="DOC.28.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CCreateAutorCode()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="CharSetMgr"></A>
+<A NAME="DOC.28.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CharSetMgr</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_CharSetMgr_KorToConsonant"></A>
+<A NAME="DOC.28.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_CharSetMgr m_CharSetMgr_KorToConsonant</B></TT>
+<DD>한글 -> 한글 자음 으로 바꾸어주는 CharSetMgr
+<DL><DT><DD></DL><P>
+<A NAME="m_CharSetMgr_KorToChi"></A>
+<A NAME="DOC.28.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_CharSetMgr m_CharSetMgr_KorToChi</B></TT>
+<DD>한글 -> 한글 자음 으로 바꾸어주는 CharSetMgr
+<DL><DT><DD></DL><P>
+<A NAME="m_CharSetMgr_AutorCode"></A>
+<A NAME="DOC.28.2.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_CharSetMgr m_CharSetMgr_AutorCode</B></TT>
+<DD>한글 -> 한글 자음 으로 바꾸어주는 CharSetMgr
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="GetElordAuthorDate"></A>
+<A NAME="DOC.28.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetElordAuthorDate( CHAR* f_pSubFieldData,  CHAR* f_AuthorAddData, CHAR* f_pElordAuthorData )</B></TT>
+<DD>Elord저자기기호를 생성
+
+<DL><DT><DT><B>Parameters:</B><DD><B>f_pSubFieldData</B> -   저자명<BR><DD></DL><P>
+<A NAME="Elord저자기호"></A>
+<A NAME="DOC.28.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Elord저자기호</B></TT>
+<DD>Elord저자기호
+<DL><DT><DD></DL><P>
+<A NAME="GetJangIlSeaAuthorData"></A>
+<A NAME="DOC.28.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetJangIlSeaAuthorData( CHAR* f_pSubFieldData,  CHAR* f_AuthorAddData,  CHAR* f_pJangIlSeaAuthorData )</B></TT>
+<DD>장일세저자기호 생성
+
+<DL><DT><DT><B>Parameters:</B><DD><B>f_pSubFieldData</B> -   저자명
+<BR><B>f_AuthorAddData</B> -   부가기호<BR><DD></DL><P>
+<A NAME="장일세저자기호"></A>
+<A NAME="DOC.28.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 장일세저자기호</B></TT>
+<DD>장일세저자기호
+<DL><DT><DD></DL><P>
+<A NAME="GetJungPilMoAuthorData"></A>
+<A NAME="DOC.28.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetJungPilMoAuthorData( CHAR* f_pSubFieldData,  CHAR* f_AuthorAddData,  CHAR* f_pJungPilMoAuthorData )</B></TT>
+<DD>정필모저자기호 생성
+
+<DL><DT><DT><B>Parameters:</B><DD><B>f_pSubFieldData</B> -   저자명
+<BR><B>f_AuthorAddData</B> -   부가기호<BR><DD></DL><P>
+<A NAME="정필모저자기호"></A>
+<A NAME="DOC.28.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 정필모저자기호</B></TT>
+<DD>정필모저자기호
+<DL><DT><DD></DL><P>
+<A NAME="GetLeeJaeChulAuthorData"></A>
+<A NAME="DOC.28.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetLeeJaeChulAuthorData( CHAR f_VolCode,  CHAR* f_pSubFieldData,  CHAR* f_pJangIlSeaAuthorData )</B></TT>
+<DD>이재철 저자기호 생성
+
+<DL><DT><DT><B>Parameters:</B><DD><B>f_VolCode</B> -   판표시
+<BR><B>f_pSubFieldData</B> -   저자명                             <BR><DD></DL><P>
+<A NAME="이재철저자기호"></A>
+<A NAME="DOC.28.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 이재철저자기호</B></TT>
+<DD>이재철저자기호
+<DL><DT><DD></DL><P>
+<A NAME="TrimAll"></A>
+<A NAME="DOC.28.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT TrimAll(TCHAR* pszSrc, TCHAR* pszDesc)</B></TT>
+<DD>String을 왼쪽 오른쪽 트림한다
+<DL><DT><DD></DL><P>
+<A NAME="str_trimall"></A>
+<A NAME="DOC.28.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID str_trimall( CHAR* strln, CHAR* strline1, CHAR var )</B></TT>
+<DD>String을 왼쪽 오른쪽 트림한다
+<DL><DT><DD></DL><P>
+<A NAME="str_ltrim"></A>
+<A NAME="DOC.28.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID str_ltrim( CHAR* strln, CHAR* strline1, CHAR var )</B></TT>
+<DD>String을 왼쪽 트림한다
+<DL><DT><DD></DL><P>
+<A NAME="str_rtrim"></A>
+<A NAME="DOC.28.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VOID str_rtrim( CHAR* strln, CHAR* strline1, CHAR var )</B></TT>
+<DD>String을 오른쪽 트림한다
+<DL><DT><DD></DL><P>
+<A NAME="~CCreateAutorCode"></A>
+<A NAME="DOC.28.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CCreateAutorCode()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>이종은
+
+<DT><B>Since:</B><DD>2003-04-10 오후 4:06:34
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

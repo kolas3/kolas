@@ -1,0 +1,3690 @@
+// OCIMgr.cpp : Defines the initialization routines for the DLL.
+//
+
+#include "stdafx.h"
+#include "OCIMgr.h"
+#include "OCI_API.h"
+#include "except.h"
+#include "ECO_FILE_API.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// COCIMgrApp
+
+BEGIN_MESSAGE_MAP(COCIMgrApp, CWinApp)
+	//{{AFX_MSG_MAP(COCIMgrApp)
+		// NOTE - the ClassWizard will add and remove mapping macros here.
+		//    DO NOT EDIT what you see in these blocks of generated code!
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// COCIMgrApp construction
+
+TCHAR g_szUserID [64];				// DB User ID
+TCHAR g_szPasswd [64];				// DB User Password
+LONG  g_nRequestID;					// 세션Request ID for DM
+ECO_SEMA_HANDLE hSemaphore;			// Semaphore Object for Session management
+
+COCIMgrApp::COCIMgrApp()
+{
+	// 세션 객체 초기화 
+	InitOraAccessType(g_MainAccess);
+
+	// 세션Request ID 초기화
+	g_nRequestID = -1;
+
+	TCHAR szBuff[1024];
+	TCHAR* pToken;
+ 
+	FILE *fp = NULL;
+
+	CString sBuffer;
+
+//	fp = FdkFopen(USER_CFG_FILE, _T("r"));
+	if (fp != NULL)
+	{
+//		FdkFgets(szBuff, 1024, fp);
+
+		sBuffer.Format(_T("%s"), szBuff);
+		sBuffer.TrimRight(_T("\n"));
+		sBuffer.TrimRight(_T(" "));
+
+		_stprintf(szBuff, _T("%s"), sBuffer.GetBuffer(0));
+
+		pToken = _tcstok(szBuff, _T(" "));
+
+		_tcscpy(g_szUserID, pToken);
+
+		pToken = _tcstok(NULL , _T(" "));
+
+		_tcscpy(g_szPasswd, pToken);
+
+		fclose(fp);
+	}
+
+#ifdef __TRACE_DATABASE__
+	g_szWorkID[0] = _T('\0');
+#endif
+}
+
+COCIMgrApp::~COCIMgrApp()
+{
+	DisconnectDB();
+}
+/////////////////////////////////////////////////////////////////////////////
+// The one and only COCIMgrApp object
+
+COCIMgrApp theApp;
+
+
+
+
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// 멀티세션관리 [GJPark@eco.co.kr:2003/8/13] 작업시작
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : GetSessionRequestID
+// 기  능 : (DM에) 세션Request ID를 넘겨준다. (InterlockedIncrement)
+//--------------------------------------------------------------------------
+// Return : 세션Request ID(>=0)
+//--------------------------------------------------------------------------
+// Author : [GJPark@eco.co.kr]
+// Created: 2003/8/18 13:17
+//--------------------------------------------------------------------------o
+LONG GetSessionRequestID()
+{
+	return InterlockedIncrement(&g_nRequestID);
+}
+
+
+
+//------------------------------------------------//----------------------------------------o
+// I N T E R N A L   F U N C T I O N
+//------------------------------------------------//----------------------------------------o
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : getSession
+// 기  능 : 새로운 세션이 필요할 때 세션을 Open하고, 새 세션의 Index를 nOraIdx에 리턴한다.
+//			새로운 세션이 필요할 때 - 모든 SESSION_OPENED 세션이 SESSION_USING 상태일 때
+//									  새로운 쿼리를 수행하려는 경우
+//			RequestID에 할당된 세션 존재 & SESSION_CLOSED 상태 >>> OCI8ConnectDB & SESSION_OPENED 상태로 설정
+//			RequestID에 할당된 세션 존재 & SESSION_USING, SESSION_FETCHING 상태 >>> 상태 유지
+//			RequestID에 할당된 세션 없음 & SQL_SESSION_EXIST >>> 있어야 할 세션이 없어졌다. ERR_REQUEST_NOT_EXIST 리턴
+//			RequestID에 할당된 세션 없음 & SQL_SESSION_NEW, SQL_SESSION_EXIST_OPEN >>> (필요시 OCI8ConnectDB &) SESSION_OPENED 상태로 설정
+//--------------------------------------------------------------------------
+// Return : OCI8ConnectDB 오류시 리턴값
+//			SemaphoreOpenLock(<0)		- 세마포어로 세션 관리시 오류(ERR_SEMAPHORE_CREATE, ERR_SEMAPHORE_EXISTOPEN, ERR_SEMAPHORE_NONSIGNALED)
+//			ERR_REQUEST_NOT_EXIST(<0)	- nSQLType이 SQL_SESSION_EXIST인 경우에 RequestID에 해당하는 세션을 찾을 수 없을 때
+//			ERR_SESSION_MAX(<0)			- 새로운 세션을 맺을려고 했으나 MAX_SESSION_CNT에 도달해 세션을 맺을 수 없을 때
+//			ERR_SQLTYPE_INVALID(<0)		- nSQLType이 잘못되었을 때
+//			ERR_SESSION_ALLOCATED(<0)	- 이미 다른 RequestID에 할당 되었다.
+//			0							- 정상종료
+//--------------------------------------------------------------------------o
+INT getSession					(
+								 INT	nRequestID	,		// [I N] 세션Request ID		[#######]
+								 INT	nSQLType	,		// [I N] 세션 용도 타입 - NEW || EXIST_OPEN || EXIST
+								 TCHAR*	pszUserID	,		// [I N] 사용자ID
+								 TCHAR*	pszPasswd	,		// [I N] 사용자Password
+								 INT*	pSessionID			// [OUT] 할당된 세션ID, NULL이면 되돌리지 않는다.
+								 )
+{
+	ASSERT( SQL_SESSION_NEW			== nSQLType	|| 
+			SQL_SESSION_EXIST_OPEN	== nSQLType	|| 
+			SQL_SESSION_EXIST		== nSQLType		);
+
+	INT ids;
+
+	BOOL   bAuthChanged = FALSE;
+	TCHAR* pAt;
+	TCHAR  szServiceName[64];
+	TCHAR  szUserName   [64];
+	
+	pAt = _tcsstr(pszUserID, _T("@"));
+	if (pAt == NULL) return -1;
+	
+	_tcsncpy(szUserName, &pszUserID[0], pAt - pszUserID);
+	szUserName[pAt - pszUserID] = _T('\0');
+	
+	_tcscpy (szServiceName, &pAt[1]);
+	
+
+//sm++
+	//ids = SemaphoreOpen(SEMAPHORE_NAME, 1, &hSemaphore);
+	//if (ids) return ids;	//ERR_SEMAPHORE_CREATE OR ERR_SEMAPHORE_EXISTOPEN
+	
+	//ids = SemaphoreLock(hSemaphore, WAIT_INFINITE);
+	//if (ids) return ids;	//ERR_SEMAPHORE_NONSIGNALED
+
+	ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+	if (ids) return ids;	//ERR_SEMAPHORE_CREATE OR ERR_SEMAPHORE_EXISTOPEN OR ERR_SEMAPHORE_NONSIGNALED
+	
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+
+//#ifdef _DEBUG_DEEP_LOG_
+//CString sTemp, sTemp2;
+//#endif
+
+	//-----------------------------------------------------------------
+	// RequestID에 해당하는 세션이 있다. >>> 기존 세션을 사용한다.
+	//-----------------------------------------------------------------
+
+	// nSQLType에 상관없이 RequestID의 세션이 현재 사용중이라면 그 세션을 사용하도록 한다.
+	//		(DML 쿼리 실행 후 Commit 되기 전에 Select 쿼리 등이 세션을 요구하는 경우)
+	if (ERR_REQUEST_NOT_EXIST != nSessionID)
+	{
+		
+		bAuthChanged = (_tcsicmp(SESSION(nSessionID).szServiceName, szServiceName) != 0 ||
+			_tcsicmp(SESSION(nSessionID).szUserName   , szUserName   ) != 0 ||
+			_tcsicmp(SESSION(nSessionID).szPassWord   , pszPasswd    ) != 0	);
+		
+		//ReqeustID가 사용하는 세션이 closed 상태라면 >>> 해당 세션으로 다시 Connect한다.
+		if (SESSION_CLOSED == STATUS(nSessionID) || bAuthChanged) 
+		{
+#ifdef _DEBUG_DEEP_LOG_
+			{
+				CString sTemp;
+				sTemp.Format("■ getSession      ■ EXIST but CLOSED or AUTH changed ▷ [RID=%04d][SID=%04d] ▷ Reconnect(OCI8ConnectDB)시 오류\n", nRequestID, nSessionID);
+				LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+				AfxMessageBox(sTemp);
+#endif
+			}
+#endif
+
+			ids = OCI8ConnectDB(&SESSION(nSessionID), pszUserID, pszPasswd);
+			if (ids) 
+			{
+				SemaphoreUnLock(hSemaphore);
+				
+#ifdef _DEBUG_DEEP_LOG_
+				{
+					CString sTemp;
+					sTemp.Format("■ getSession      ■ EXIST but CLOSED ▷ [RID=%04d][SID=%04d] ▷ Reconnect시 오류\n", nRequestID, nSessionID);
+					LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+					AfxMessageBox(sTemp);
+#endif
+				}
+#endif
+				
+				return ids;
+			}
+			STATUS (nSessionID) = SESSION_OPENED;
+		}
+		// SESSION_USING, SESSION_FETCHING, SESSION_OPENED 상태는 그 상태 그대로 유지한다.
+		
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp, sTemp2;
+			if		(SESSION_OPENED  ==STATUS(nSessionID)) sTemp2 = "SESSION_OPENED";
+			else if (SESSION_FETCHING==STATUS(nSessionID)) sTemp2 = "SESSION_FETCHING";
+			else if (SESSION_USING   ==STATUS(nSessionID)) sTemp2 = "SESSION_USING";
+			sTemp.Format("■ getSession      ■ EXIST       ▷ [RID=%04d][SID=%04d] ▷ [%s]\n", nRequestID, nSessionID, sTemp2);
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+		
+	}
+
+	//-----------------------------------------------------------------
+	// RequestID에 해당하는 세션이 없다. >>> nSQLType에 따라 새 세션을 맺어 할당한다.
+	//-----------------------------------------------------------------
+
+	else
+	{
+		// 로직상 반드시 Opened 되어 있어야 할 RequestID에 해당하는 세션이 사라졌다.
+		if (SQL_SESSION_EXIST == nSQLType)
+		{
+			SemaphoreUnLock(hSemaphore);
+			
+#ifdef _DEBUG_DEEP_LOG_
+			{
+				CString sTemp;
+				sTemp.Format("■ getSession      ■ ### NOT EXIST   ▷ [RID=%04d] ▷ SQL_SESSION_EXIST인데 RequestID존재하지 않음\n", nRequestID);
+				LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+				AfxMessageBox(sTemp);
+#endif
+			}
+#endif
+			
+			return ERR_REQUEST_NOT_EXIST;
+		}
+		
+		// SELECT, INSERT, UPDATE, DELETE 모두 기존 Opened 세션을 이용하거나 신규로 할당한다.
+		if (SQL_SESSION_NEW			== nSQLType	|| 
+			SQL_SESSION_EXIST_OPEN	== nSQLType		)
+		{
+
+			nSessionID = getFirstSessionIDWithStatus(SESSION_OPENED, TRUE);
+
+#ifdef _DEBUG_DEEP_LOG_
+			{
+				CString sTemp;
+				sTemp.Format("■ getSession      ■ NOT EXIST   ▷ [RID=%04d][SID=%04d] ▷ 새로운 Opened세션을 가져옴\n", nRequestID, nSessionID);
+				LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+				AfxMessageBox(sTemp);
+#endif
+			}
+#endif
+
+			if (ERR_STATUS_NOT_EXIST != nSessionID)
+			{ 
+				if (NOT_SET_REQUEST != REQUEST(nSessionID) ) 
+				{
+					SemaphoreUnLock(hSemaphore);
+					
+#ifdef _DEBUG_DEEP_LOG_
+					{
+						CString sTemp;
+						sTemp.Format("■ getSession      ■ NOT EXIST   ▷ [RID=%04d][SID=%04d] ▷ 새로운 Opened세션을 가져왔는데 RequestID가 존재함??????(이런 일은 절대 없다!!!!!)\n", nRequestID, nSessionID);
+						LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+						AfxMessageBox(sTemp);
+#endif
+					}
+#endif
+					
+					return ERR_SESSION_ALLOCATED;	//이런 일은 절대 없다.
+				}
+				
+				bAuthChanged = (_tcsicmp(SESSION(nSessionID).szServiceName, szServiceName) != 0 ||
+								_tcsicmp(SESSION(nSessionID).szUserName   , szUserName   ) != 0 ||
+								_tcsicmp(SESSION(nSessionID).szPassWord   , pszPasswd    ) != 0	);
+				if (bAuthChanged)
+				{
+#ifdef _DEBUG_DEEP_LOG_
+					{
+						CString sTemp;
+						sTemp.Format("■ getSession      ■ NOT EXIST   ▷ [RID=%04d][SID=%04d] ▷ 계정(%s@%s) 변경되어 OCI8ConnectDB 수행 시작\n", nRequestID, nSessionID, szUserName, szServiceName);
+						LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+						AfxMessageBox(sTemp);
+#endif
+					}
+#endif
+					ids = OCI8ConnectDB(&SESSION(nSessionID), pszUserID, pszPasswd);
+					if (ids) 
+					{
+						SemaphoreUnLock(hSemaphore);
+						return ids;
+					}
+				}
+				
+			}
+			else //if (ERR_STATUS_NOT_EXIST==nSessionID)
+			{
+				nSessionID = getFirstSessionIDWithStatus(SESSION_CLOSED, FALSE);
+
+#ifdef _DEBUG_DEEP_LOG_
+				{
+					CString sTemp;
+					sTemp.Format("■ getSession      ■ NOT EXIST   ▷ [RID=%04d][SID=%04d] ▷ Opened세션을 찾을 수 없어 다시 closed세션을 가져옴\n", nRequestID, nSessionID);
+					LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+					AfxMessageBox(sTemp);
+#endif
+				}
+#endif
+
+				// Opened or Closed 상태의 세션을 찾을 수 없다. 모두 Using 또는 Fetching 중이다.
+				if (ERR_STATUS_NOT_EXIST==nSessionID) 
+				{
+					SemaphoreUnLock(hSemaphore);
+					
+#ifdef _DEBUG_DEEP_LOG_
+					{
+						CString sTemp;
+						sTemp.Format("■ getSession      ■ NOT EXIST   ▷ [RID=%04d][SID=%04d] ▷ 새로운 Opened세션 없음 & Closed세션도 없음 >>> ERR_SESSION_MAX\n", nRequestID, nSessionID);
+						LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+						AfxMessageBox(sTemp);
+#endif
+					}
+#endif
+					
+					return ERR_SESSION_MAX;			// -900
+				}
+				
+				#ifdef _DEBUG_DEEP_LOG_
+				{
+						CString sTemp;
+						sTemp.Format("■ getSession      ■ NOT EXIST   ▷ [RID=%04d][SID=%04d] ▷ Closed세션을 가져와 OCI8ConnectDB 수행 시작\n", nRequestID, nSessionID);
+						LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+						AfxMessageBox(sTemp);
+#endif
+				}
+				#endif
+				
+				ids = OCI8ConnectDB(&SESSION(nSessionID), pszUserID, pszPasswd);
+				if (ids) 
+				{
+					SemaphoreUnLock(hSemaphore);
+					
+#ifdef _DEBUG_DEEP_LOG_
+					{
+						CString sTemp;
+						sTemp.Format("■ getSession      ■ NOT EXIST   ▷ [RID=%04d][SID=%04d] ▷ 새로운 Opened세션 없음 & Closed세션 가져와 Connect시에 오류 발생\n", nRequestID, nSessionID);
+						LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+						AfxMessageBox(sTemp);
+#endif
+					}
+#endif
+					
+					return ids;
+				}
+			}
+			STATUS(nSessionID) = SESSION_OPENED ;
+			
+#ifdef _DEBUG_DEEP_LOG_
+			{
+				CString sTemp;
+				sTemp.Format("■ getSession      ■ NOT EXIST   ▷ [RID=%04d][SID=%04d] ▷ 신규세션 Open함 [SESSION_OPENED]\n", nRequestID, nSessionID);
+				LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+				AfxMessageBox(sTemp);
+#endif
+			}
+#endif
+			
+		}
+		// SQLType이 잘못되었다.				
+		else
+		{
+			SemaphoreUnLock(hSemaphore);
+			
+#ifdef _DEBUG_DEEP_LOG_
+			{
+				CString sTemp;
+				sTemp.Format("■ getSession      ■ SQLType 오류 ▷ [RID=%04d] ▷ SQLType = %d\n", nRequestID, nSQLType);
+				LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+				AfxMessageBox(sTemp);
+#endif
+			}
+#endif
+			
+			return ERR_SQLTYPE_INVALID;
+		}
+	}
+	
+	//-----------------------------------------------------------------
+	// 사용할 세션에 대한 정보를 설정한다.
+	//-----------------------------------------------------------------
+	
+	_tcscpy( SESSION(nSessionID).szServiceName, szServiceName );
+	_tcscpy( SESSION(nSessionID).szUserName   , szUserName    );
+	_tcscpy( SESSION(nSessionID).szPassWord   , pszPasswd     );
+	//STATUS (nSessionID) = SESSION_OPENED;	 <-- 이거는 위에서 상황에 맞게 설정되어야 한다.
+	REQUEST(nSessionID) = nRequestID;
+	if (pSessionID) (*pSessionID) = nSessionID;
+	
+#ifdef _DEBUG_COUNT_SESSION_
+	{
+		CString sCount;
+		sCount.Format("■ getSession      ■ Open세션수  ■ ━[%d]━\n", countOpenSession(TRUE));
+		LoggingProcess("OCIMGR_SESSION", sCount.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sCount);
+#endif
+	}
+#endif
+	
+	
+	SemaphoreUnLock(hSemaphore);
+	//sm--	
+	
+	return 0;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : getFirstSessionIDWithStatus
+// 기  능 : 특정 상태의 세션을 찾아 세션ID를 리턴한다.
+//			bNotSetRequest 가 TRUE이면 RequestID가 설정되지 않은 원하는 상태의 세션을 찾고
+//							  FALSE이면 RequestID 설정 여부에 상관없이 원하는 상태의 세션을 찾는다.
+//--------------------------------------------------------------------------
+// Return : ERR_STATUS_NOT_EXIST(<0) - 원하는 상태에 해당하는 세션이 존재하지 않는다.
+//			n>0                      - 원하는 상태에 해당하는 세션ID
+//--------------------------------------------------------------------------o
+INT getFirstSessionIDWithStatus	(INT	nSessionStatus,		// [I N] 찾으려는 세션 상태
+								 BOOL	bNotSetRequest)		// [I N] TRUE이면 RequestID가 설정되지 않은 세션만 찾는다.
+															//		 FALSE이면 RequestID 설정 여부에 상관없이 원하는 상태의 세션을 찾는다.
+{
+	INT nSessionID = ERR_STATUS_NOT_EXIST;
+	for (INT i=0 ; i<MAX_SESSION_CNT ; i++)
+	{
+		//RequestID가 설정되지 않은 세션을 찾는 경우 RequestID가 설정되어 있으면 continue
+		if (bNotSetRequest && NOT_SET_REQUEST!=REQUEST(i)) continue;
+		if (nSessionStatus == g_MainAccess[i].nStatus)
+		{
+			nSessionID = i;
+			break;
+		}
+	}
+	return nSessionID;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : getSessionIDOfRequest
+// 기  능 : RequestID에 해당하는 세션을 찾아 그 세션ID를 리턴한다.
+//--------------------------------------------------------------------------
+// Return :	ERR_REQUEST_NOT_EXIST(<0) - RequestID에 해당하는 세션이 존재하지 않는다.
+//			n>0                       - RequestID에 해당하는 세션ID
+//--------------------------------------------------------------------------o
+INT getSessionIDOfRequest		(INT	nRequestID)		// [I N] 찾으려는 RequestID
+{
+	INT nSessionID = ERR_REQUEST_NOT_EXIST;
+	for (INT i=0 ; i<MAX_SESSION_CNT ; i++)
+	{
+		if (nRequestID == REQUEST(i))
+		{
+			nSessionID = i;
+			break;
+		}
+	}
+	return nSessionID;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : getSessionStatusOfRequest
+// 기  능 : RequestID에 해당하는 세션을 찾아 그 세션의 상태를 리턴한다.
+//			이 함수를 호출하는 Caller는 세션 상태값을 처리하는 동안 ### Semaphore ### 로 반드시 잠궈야 한다.
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST(<0) - RequestID에 해당하는 세션이 존재하지 않는다.
+//			n>0                       - RequestID에 해당하는 세션의 상태
+//--------------------------------------------------------------------------o
+INT getSessionStatusOfRequest	(INT	nRequestID)		// [I N] 찾으려는 RequestID
+{
+//sm++
+//ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+//if (ids) return ids;	//ERR_SEMAPHORE_CREATE OR ERR_SEMAPHORE_EXISTOPEN OR ERR_SEMAPHORE_NONSIGNALED
+
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	
+//SemaphoreUnLock(hSemaphore);
+//sm--
+
+	return STATUS(nSessionID);
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : setSessionStatusForRestFetch
+// 기  능 : Select Execution 을 먼저 한 후에 나중에 Fetch하는 경우에 
+//			RequestID에 해당하는 세션을 찾아 그 세션의 상태를 설정한다.(SESSION_FETCHING or SESSION_USING)
+//--------------------------------------------------------------------------
+// Return : SemaphoreOpenLock(<0)		- 오류시
+//			ERR_REQUEST_NOT_EXIST(<0)	- RequestID에 해당하는 세션이 존재하지 않는다.
+//			ERR_STATUS_INVALID(<0)		- RequestID에 해당하는 세션의 상태가 Rest Fetch를 하기 위해 적합한 상태(SESSION_OPENED or SESSION_USING)가 아니다.
+//			0							- 정상 종료
+//--------------------------------------------------------------------------
+// Author : [GJPark@eco.co.kr]
+// Created: 2003/8/18 14:33
+//--------------------------------------------------------------------------o
+INT setSessionStatusForRestFetch	(INT nRequestID)	// [I N] 찾으려는 RequestID
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+
+//sm++
+	INT ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+	if (ids) return ids;
+	
+	if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_FETCHING;
+	else if (SESSION_USING == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+	else ids = ERR_STATUS_INVALID;
+
+	SemaphoreUnLock(hSemaphore);
+//sm--
+
+	return ids;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : countOpenSession
+// 기  능 : 현재 Opened (또는 Using, Fetching) 상태의 세션 수를 리턴한다.
+//			이 함수를 호출하는 Caller는 세션 상태값을 처리하는 동안 ### Semaphore ### 로 반드시 잠궈야 한다.
+//--------------------------------------------------------------------------
+// Return : n - Opened (또는 Using, Fetching) 상태의 세션 수
+//--------------------------------------------------------------------------o
+INT countOpenSession			(BOOL bCountUSING)		// [I N] Count시에 Using, Fetching 상태의 세션 포함여부
+{
+	INT nCnt = 0;
+	for (INT i=0 ; i<MAX_SESSION_CNT ; i++)
+	{
+		if (SESSION_OPENED == STATUS(i)) nCnt++;
+		else if (bCountUSING && (SESSION_USING == STATUS(i) || SESSION_FETCHING == STATUS(i))) nCnt++;
+	}
+	return nCnt;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : isClosable
+// 기  능 : 주어진 특정 세션을 닫을 수 있는지 확인
+//			이 함수를 호출하는 Caller는 세션 상태값을 처리하는 동안 ### Semaphore ### 로 반드시 잠궈야 한다.
+//--------------------------------------------------------------------------
+// Return : TRUE - SESSION_USING, SESSION_FETCHING이 아닌 경우
+//--------------------------------------------------------------------------
+// Author : [GJPark@eco.co.kr]
+// Created: 2003/8/14 15:11
+//--------------------------------------------------------------------------o
+BOOL isClosable					(INT	nSessionID)		// [I N] close할 특정 세션ID
+{
+	ASSERT(MAX_SESSION_CNT>nSessionID);
+	ASSERT(-1<nSessionID);
+	BOOL bClosable = (SESSION_USING    != STATUS(nSessionID) && 
+					  SESSION_FETCHING != STATUS(nSessionID)   );
+	return bClosable;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : closeSession
+// 기  능 : 특정 세션ID을 닫는다.(OCI8DisconnectDB)
+//			bUseMaxOpenCnt 이 TRUE이면 MAX_OPEN_SESSION_CNT를 초과한 경우에만 disconnect한다.
+//			bUseMaxOpenCnt 이 FALSE이면 무조건 비사용중 세션을 닫는다.
+//			disconnect하려는데 사용중(Using, Fetching) 세션이면 오류를 리턴한다.
+//--------------------------------------------------------------------------
+// Return : SemaphoreOpenLock(<0) - 세마포어로 세션 관리시 오류(ERR_SEMAPHORE_CREATE, ERR_SEMAPHORE_EXISTOPEN, ERR_SEMAPHORE_NONSIGNALED)
+//			OCI8DisconnectDB      - 오류시 
+//			ERR_SESSION_USING(<0) - 사용중(Using, Fetching) 세션을 닫으려 했다.
+//			0                     - 정상종료
+//--------------------------------------------------------------------------o
+INT closeSession				(INT	nSessionID,			// [I N] close할 특정 세션ID
+								 BOOL	bForceClose,		// [I N] TRUE이면 세션상태에 상관없이 close한다.
+								 BOOL	bUseMaxOpenCnt)		// [I N] MAX_OPEN_SESSION_CNT를 적용할 지 여부
+{
+	INT ids;
+
+//sm++
+	ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+	if (ids) return ids;	//ERR_SEMAPHORE_CREATE OR ERR_SEMAPHORE_EXISTOPEN OR ERR_SEMAPHORE_NONSIGNALED
+	
+	if (!bForceClose && !isClosable(nSessionID)) 
+	{
+		SemaphoreUnLock(hSemaphore);
+
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp, sTemp2;	
+			if		(SESSION_CLOSED==STATUS(nSessionID))	sTemp2 = "SESSION_CLOSED";
+			else if (SESSION_OPENED==STATUS(nSessionID))	sTemp2 = "SESSION_OPENED";
+			else if (SESSION_USING==STATUS(nSessionID))		sTemp2 = "SESSION_USING";
+			else if (SESSION_FETCHING==STATUS(nSessionID))	sTemp2 = "SESSION_FETCHING";
+			sTemp.Format("□ closeSession    □ 세션닫기불가□ [SID=%04d]           ▷ [%s]\n", nSessionID, sTemp2);
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+
+		return ERR_SESSION_USING;
+	}
+
+	BOOL bClosable; 
+	bClosable = (!bUseMaxOpenCnt) ? TRUE : (MAX_OPEN_SESSION_CNT<countOpenSession(TRUE));
+	
+	if (bClosable) 
+	{
+		
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□ closeSession    □ 세션닫기가능□ [SID=%04d]           ▷ OCI8DisconnectDB 수행 시작\n", nSessionID);
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+		
+		ids = OCI8DisconnectDB(&SESSION(nSessionID));
+		if (-1==ids) ids = -100;
+		if (ids) 
+		{
+			SemaphoreUnLock(hSemaphore);
+			
+#ifdef _DEBUG_DEEP_LOG_
+			{
+				CString sTemp;
+				sTemp.Format("□ closeSession    □ [SID=%04d] ▷ OCI8DisconnectDB ▷ %d 리턴\n", nSessionID, ids);
+				LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+				AfxMessageBox(sTemp);
+#endif
+			}
+#endif
+			
+			return ids;
+		}
+	}
+	
+	STATUS(nSessionID)  = (bClosable) ? SESSION_CLOSED : SESSION_OPENED;
+	REQUEST(nSessionID) = NOT_SET_REQUEST;
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp, sTemp2;	
+		if		(SESSION_CLOSED==STATUS(nSessionID)) sTemp2 = "SESSION_CLOSED";
+		else if (SESSION_OPENED==STATUS(nSessionID)) sTemp2 = "SESSION_OPENED";
+		sTemp.Format("□ closeSession    □ 세션을 닫음 ▷ [SID=%04d]           ▷ [%s & NOT_SET_REQUEST]\n", nSessionID, sTemp2);
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+#ifdef _DEBUG_COUNT_SESSION_
+	{
+		CString sCount;
+		sCount.Format("□ closeSession    □ Open세션수  □ ━[%d]━\n", countOpenSession(TRUE));
+		LoggingProcess("OCIMGR_SESSION", sCount.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sCount);
+#endif
+	}
+#endif
+
+	SemaphoreUnLock(hSemaphore);
+//sm--
+	
+	return 0;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : closeSessionOfReqeust
+// 기  능 : ReqeustID에 할당된 세션을 닫는다.(OCI8DisconnectDB)
+//			bUseMaxOpenCnt 이 TRUE이면 MAX_OPEN_SESSION_CNT를 초과한 경우에만 disconnect한다.
+//			bUseMaxOpenCnt 이 FALSE이면 무조건 비사용중 세션을 닫는다.
+//			disconnect하려는데 사용중(Using, Fetching) 세션이면 오류를 리턴한다.
+//--------------------------------------------------------------------------
+// Return : OCI8DisconnectDB			- 오류시 
+//			ERR_REQUEST_NOT_EXIST(<0)	- RequestID에 대한 세션을 찾을 수 없다.
+//			ERR_SESSION_USING(<0)		- 사용중(Using, Fetching) 세션을 닫으려 했다.
+//			0							- 정상종료
+//--------------------------------------------------------------------------o
+INT closeSessionOfReqeust		(INT	nRequestID,			// [I N] close할 RequestID
+								 BOOL	bForceClose,		// [I N] TRUE이면 세션상태에 상관없이 close한다.
+								 BOOL	bUseMaxOpenCnt)		// [I N] MAX_OPEN_SESSION_CNT를 적용할 지 여부
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("□□□□□□□□□ □ closeSessionOfReqeust->closeSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+	
+
+//sm++
+	//2003-12-01 [박길주] =========================================
+	//return closeSession(nSessionID, bForceClose, bUseMaxOpenCnt);
+	//2003-12-01 [박길주] +++++++++++++++++++++++++++++++++++++++++
+	INT ids = closeSession(nSessionID, bForceClose, bUseMaxOpenCnt);
+	if		(bForceClose && 0>ids) return ids;
+	else if (ERR_SESSION_USING != ids && ids) return ids;
+	return 0;
+	//2003-12-01 [박길주] -----------------------------------------
+//sm--
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : closeAllSession
+// 기  능 : 모든 세션을 닫는다. 사용중인 세션도 강제로 닫는다.
+//--------------------------------------------------------------------------
+// Return : OCI8DisconnectDB	- 오류시 
+//			SemaphoreOpen(<0)	- 오류시(ERR_SEMAPHORE_CREATE, ERR_SEMAPHORE_EXISTOPEN)
+//			SemaphoreLock(<0)	- 오류시(ERR_SEMAPHORE_NONSIGNALED)
+//			0					- 정상종료
+//--------------------------------------------------------------------------o
+INT closeAllSession	()
+{
+	INT ids;
+
+//sm++
+	ids = SemaphoreOpen(SEMAPHORE_NAME, 1, &hSemaphore);
+	if (ids) return ids;
+
+	for (INT i=0 ; i<MAX_SESSION_CNT ; i++)
+	{
+		ids = SemaphoreLock(hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+
+		if (SESSION_CLOSED != STATUS(i))
+		{
+			SemaphoreUnLock(hSemaphore);
+			continue;
+		}
+
+		ids = OCI8DisconnectDB(&SESSION(i));
+		if (ids) 
+		{
+			SemaphoreUnLock(hSemaphore);
+			return ids;
+		}
+		STATUS(i)  = SESSION_CLOSED;
+		REQUEST(i) = NOT_SET_REQUEST;
+		SemaphoreUnLock(hSemaphore);
+	}
+
+#ifdef _DEBUG_COUNT_SESSION_
+	{
+		CString sCount;
+		sCount.Format("▩ closeAllSession ▩ Open세션수  ▩ ━[%d]━\n", countOpenSession(TRUE));
+		LoggingProcess("OCIMGR_SESSION", sCount.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sCount);
+#endif
+	}
+#endif
+	
+	return 0;
+}
+
+
+//------------------------------------------------------------------------
+// 멀티세션관리 [GJPark@eco.co.kr:2003/8/13] 작업끝
+//------------------------------------------------------------------------
+
+
+
+
+
+
+
+//------------------------------------------------//----------------------------------------o
+// E X P O R T   F U N C T I O N
+//------------------------------------------------//----------------------------------------o
+
+
+
+
+//------------------------------------------------//----------------------------------------o
+// Connent / Disconnect
+//------------------------------------------------//----------------------------------------o
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : ConnectDB
+// 기  능 : nRequestID 에 사용가능하거나 또는 새로 세션을 맺은 세션ID를 할당한다.
+//--------------------------------------------------------------------------
+// Return : getSession(<0) - 오류시 
+//			0              - 정상종료
+//--------------------------------------------------------------------------o
+INT  ConnectDB					(INT	nRequestID	,	// [I N] 세션Request ID		[#######]
+								 TCHAR* pszUserID	,	// [I N] 사용자ID
+								 TCHAR* pszPasswd		// [I N] 사용자Password
+								 )		
+{
+	INT ids;
+
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ ConnectDB->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+
+//cs++
+	ids = getSession(nRequestID, SQL_SESSION_NEW, szTmpUserID, szTmpPasswd, NULL);	
+	if (ids) return ids;
+	
+	//--------------------------------------------------------------------------------------------------
+	//RequestID에 할당된 세션 존재 & SESSION_CLOSED 상태 >>> OCI8ConnectDB & SESSION_OPENED 상태로 설정
+	//RequestID에 할당된 세션 존재 & SESSION_USING, SESSION_FETCHING 상태 >>> 상태 유지
+	//RequestID에 할당된 세션 없음 & SQL_SESSION_EXIST >>> 있어야 할 세션이 없어졌다. ERR_REQUEST_NOT_EXIST 리턴
+	//RequestID에 할당된 세션 없음 & SQL_SESSION_NEW, SQL_SESSION_EXIST_OPEN >>> (필요시 OCI8ConnectDB &) SESSION_OPENED 상태로 설정
+	//--------------------------------------------------------------------------------------------------
+	
+//cs--
+
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : DisconnectDB
+// 기  능 : Oracle과의 모든 연결을 종료한다.(모든 세션을 close한다.)
+//--------------------------------------------------------------------------
+// Return : closeAllSession - 오류 또는 정상 종료
+//--------------------------------------------------------------------------o
+INT  DisconnectDB()
+{
+	return closeAllSession();
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : DisconnectDBOfRequest
+// 기  능 : 특정 세션 RequestID이 세션을 연결 해제(close)한다.
+//--------------------------------------------------------------------------
+// Return : closeSessionOfReqeust	- 오류 또는 정상
+//--------------------------------------------------------------------------
+// Author : [GJPark@eco.co.kr]
+// Created: 2003/8/18 13:37
+//--------------------------------------------------------------------------o
+INT DisconnectDBOfRequest(INT	nRequestID		,					// [I N] close할 RequestID
+						  BOOL	bForceClose		,					// [I N] TRUE이면 세션상태에 상관없이 close한다.
+						  BOOL	bUseMaxOpenCnt						// [I N] MAX_OPEN_SESSION_CNT를 적용할 지 여부
+						  )
+{
+	return closeSessionOfReqeust(nRequestID, bForceClose, bUseMaxOpenCnt);
+}
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : DisconnectDBForOneRecord >>> 불필요? 
+// 기  능 : 커서의 연결을 종료한다.
+//--------------------------------------------------------------------------
+// Return : closeSessionOfReqeust(<0) - 오류시 
+//			0                         - 정상종료
+//--------------------------------------------------------------------------o
+INT  DisconnectDBForOneRecord(INT					nRequestID		,   // [I N] 세션Request ID		[#######]
+							  BOOL					bForceClose		,	// [I N] TRUE이면 세션상태에 상관없이 close한다.
+							  BOOL					bUseMaxOpenCnt	,	// [I N] MAX_OPEN_SESSION_CNT를 적용할 지 여부
+							  //ORA_ACCESS_TYPE*    pAccess			,	// [I N] Oracle 연결 정보 및 프레임 정보
+					          ORA_SELECT_STRU*      pSelect			,	// [I N] 검색 결과 필드 정보
+					          EDBM_DATA_ARRAY_TYPE* pOutData			// [I N] 결과 값을 받는 구조체 변수 포인터
+							  )
+{
+	INT ids;
+
+	// ORA_SELECT_STRU, EDBM_DATA_ARRAY_TYPE 변수 메모리 해제
+	FreeOraFieldType   (pSelect->pField , pSelect->nColumnCount );
+	FreeDBDataArrayType(pOutData->pColumnData, pOutData->nColumnCount);
+	OCI8StmtHandleFree (pSelect->hpStmt);
+
+	pSelect->hpStmt        = NULL;
+	pSelect->nColumnCount  = 0;
+	pSelect->pField        = NULL;
+
+	pOutData->nColumnCount = 0;
+	pOutData->nRowCount    = 0;
+	pOutData->pColumnData  = 0;
+
+//cs++
+	ids = closeSessionOfReqeust(nRequestID, bForceClose, bUseMaxOpenCnt);
+	if (ids) return ids;
+//cs--
+
+	return 0;
+}
+
+
+
+
+
+//------------------------------------------------//----------------------------------------o
+// Select Function
+//------------------------------------------------//----------------------------------------o
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : SelectProc
+// 기  능 : SELECT 문을 수행하여 결과 값을 리턴한다.(closeSession 호출)
+//--------------------------------------------------------------------------
+// Return : getSession(<0)		- 오류시
+//			OCI8SelectProc(<0)	- 오류시
+//			closeSession(<0)	- 오류시
+//			0					- 정상 종료
+//--------------------------------------------------------------------------o
+INT  SelectProc(
+				INT					 nRequestID		,	// [I N] 세션Request ID		[#######]
+				TCHAR*               pszUserID		,	// [I N] 사용자 ID
+                TCHAR*               pszPasswd		,	// [I N] 사용자 Password
+                TCHAR*               pszSQL			,	// [I N] SELECT SQL
+                INT*                 pRowCount		,	// [OUT] 결과 Row Count
+                INT*                 pColumnCount	,	// [OUT] 결과 Column Count
+                DB_DATA_ARRAY_TYPE** pOutData			// [OUT] 결과 Data
+               )
+{
+	INT ids;
+
+	EDBM_DATA_ARRAY_TYPE Data;
+
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ SelectProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+//cs++
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_NEW, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+
+	INT rc = OCI8SelectProc(&SESSION(nSessionID), szTmpUserID, szTmpPasswd, pszSQL, 1, -1, &Data);
+	// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] +++
+	if (OCI_NO_DATA == rc) rc = 0;
+	// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] ---
+
+	if (-1<rc)
+	{
+		*pRowCount    = Data.nRowCount;
+		*pColumnCount = Data.nColumnCount;
+		pOutData[0]   = Data.pColumnData;
+	}
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("□□□□□□□□□ □ SelectProc->closeSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+	
+	ids = closeSession(nSessionID, FALSE, TRUE);
+//cs--
+
+	if (rc) return rc;
+	if (ERR_SESSION_USING != ids && ids) return ids;
+
+	return 0;
+}
+
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : GetOneFieldValueProc
+// 기  능 : SELECT의 첫행 첫열을 구한다.(closeSession 호출)
+//--------------------------------------------------------------------------
+// Return : getSession(<0)					- 오류시
+//			OCI8GetOneFieldValueProc(<0)	- 오류시
+//			closeSession(<0)				- 오류시
+//			0								- 정상 종료
+//--------------------------------------------------------------------------o
+INT  GetOneFieldValueProc(
+						  INT		nRequestID		,	// [I N] 세션Request ID		[#######]
+						  TCHAR*	pszUserID		,	// [I N] 사용자 ID
+						  TCHAR*	pszPasswd		,	// [I N] 사용자 Password
+						  TCHAR*	pszSQL			,	// [I N] SELECT SQL
+						  TCHAR*	pszReturnValue		// [OUT] 첫번째 Row 첫번째 Column의 값
+						  )
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ GetOneFieldValueProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+//cs++
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_NEW, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+	
+	ids = OCI8GetOneFieldValueProc(&SESSION(nSessionID), szTmpUserID, szTmpPasswd, pszSQL, pszReturnValue);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		
+		//2003-12-03 [박길주] =====================
+		//return ids;
+		//2003-12-03 [박길주] +++++++++++++++++++++
+		//2003-12-03 [박길주] ---------------------
+	}
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("□□□□□□□□□ □ GetOneFieldValueProc->closeSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+	INT rc = closeSession(nSessionID, FALSE, TRUE);
+
+	//2003-12-03 [박길주] =====================
+	//2003-12-03 [박길주] +++++++++++++++++++++
+	if (ids) return ids;
+	//2003-12-03 [박길주] ---------------------
+	if (ERR_SESSION_USING != rc && rc) return rc;
+//cs--
+	
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : SelectProcForOneRecord
+// 기  능 : 새로운 커서 정보로 SELECT 문을 수행하고 Rest fetch를 위해 대기한다.
+//			setSessionStatusForRestFetch() 호출 후 세션 상태 >>> SESSION_FETCHING or SESSION_USING
+//--------------------------------------------------------------------------
+// Return : getSession(<0)					- 오류시
+//			OCI8SelectExProc(<0)			- 오류시
+//			setSessionStatusForRestFetch(<0)- 오류시
+//			0								- 정상 종료
+//--------------------------------------------------------------------------o
+INT  SelectProcForOneRecord		(INT					nRequestID	,	// [I N] 세션Request ID		[#######]
+								 //ORA_ACCESS_TYPE*		pAccess		,	// 사용하지 않음
+								 TCHAR*					pszUserID	,	// [I N] 사용자 ID
+								 TCHAR*					pszPasswd	,	// [I N] 사용자 Password 
+								 TCHAR*					pszSQL		,	// [I N] SELECT SQL 
+								 ORA_SELECT_STRU*		pSelect		,	// [OUT] 검색 결과 필드 정보
+								 EDBM_DATA_ARRAY_TYPE*	pOutData		// [OUT] 결과 값을 받는 구조체 변수 포인터
+								 )
+{
+	INT ids;
+	INT rc;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ SelectProcForOneRecord->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+	
+//sm++
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_NEW, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--
+	ids = OCI8SelectExProc(&SESSION(nSessionID), szTmpUserID, szTmpPasswd, pszSQL, pSelect, pOutData);
+
+	//2003-12-03 [박길주] =====================
+	//if (ids) return ids;
+	//ids = setSessionStatusForRestFetch(nRequestID);
+	//if (ids) return ids;
+	//2003-12-03 [박길주] +++++++++++++++++++++
+	if (ids)
+	{
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ SelectProcForOneRecord->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+
+		rc = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+		if (ERR_SESSION_USING != rc && rc) return rc;
+	}
+	else
+	{
+		ids = setSessionStatusForRestFetch(nRequestID);
+		if (ids) 
+		{
+
+#ifdef _DEBUG_DEEP_LOG_
+			{
+				CString sTemp;
+				sTemp.Format("□□□□□□□□□ □ SelectProcForOneRecord->closeSession ◎。。。。。。。\n");
+				LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+				AfxMessageBox(sTemp);
+#endif
+			}
+#endif
+
+			rc = closeSession(nSessionID, FALSE, TRUE);
+			if (ids) return ids;
+			if (ERR_SESSION_USING != rc && rc) return rc;
+		}
+	}
+	//2003-12-03 [박길주] ---------------------
+	
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : FetchOneRecord
+// 기  능 : SELECT Execution 후 커서 정보를 가지고 결과값을 리턴받는다.(Rest fetch 한다.)
+//			bCloseSession이 TRUE이거나 OCI8SelectFetchProc()가 OCI_NO_DATA를 리턴하면 세션을 종료한다.
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST(-903) - RequestID에 해당하는 세션을 찾을 수 없다.
+//			[X]ERR_STATUS_INVALID(<0)	- RequestID에 해당하는 세션의 상태가 SESSION_FETCHING, SESSION_USING 상태가 아니다.
+//			OCI8SelectFetchProc(<0)		- 오류시
+//			closeSessionForRestFetch(<0)- 오류시
+//			0							- 정상 종료(OCI_NO_DATA가 아닌 경우)
+//			OCI_NO_DATA(=100)			- 정상 종료(OCI_NO_DATA인 경우)
+//--------------------------------------------------------------------------o
+INT  FetchOneRecord(
+					INT						nRequestID	,	// [I N] 세션Request ID		[#######] 
+                    //ORA_ACCESS_TYPE*		pAccess		,	// 사용하지 않음
+					ORA_SELECT_STRU*		pSelect		,	// [OUT] 검색 결과 필드 정보
+					EDBM_DATA_ARRAY_TYPE*	pOutData	,	// [OUT] 결과 값을 받는 구조체 변수 포인터		
+					BOOL					bCloseSession	// [I N] 세션을 종료할 지 여부
+					)
+{
+	INT ids;
+	BOOL bAllFetched = FALSE;
+	
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	//if (SESSION_USING	   != STATUS(nSessionID) && 
+	//	  SESSION_FETCHING != STATUS(nSessionID)	) return ERR_STATUS_INVALID;
+	
+	//한 레코드(첫번째)만 fetch함
+	ids = OCI8SelectFetchProc(&SESSION(nSessionID), pSelect, 1, 1, pOutData);
+
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	// 모든 데이터를 페치한 경우 처리 [GJPark@eco.co.kr:2003/8/18] +++
+	//if (ids) return ids;
+	if (OCI_NO_DATA != ids && ids) return ids;
+	if (bCloseSession || OCI_NO_DATA == ids)
+	{
+		if (OCI_NO_DATA == ids) bAllFetched = TRUE;
+
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ FetchOneRecord->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+
+//sm++
+		// fetch가 끝났으므로 세션을 닫는다.
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ERR_SESSION_USING != ids && ids) return ids;
+//sm--
+	}
+	// 모든 데이터를 페치한 경우 처리 [GJPark@eco.co.kr:2003/8/18] ---
+	//----------------------------------------------------------------
+	
+	if (bAllFetched) return OCI_NO_DATA;
+	else return 0;
+}
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : SelectProcEx
+// 기  능 : SELECT 문을 수행하고 Rest fetch를 위해 대기한다.
+//			setSessionStatusForRestFetch() 호출 후 세션 상태 >>> SESSION_FETCHING or SESSION_USING
+//--------------------------------------------------------------------------
+// Return : getSession(<0)			- 오류시
+//			OCI8SelectExProc(<0)	- 오류시
+//			ERR_STATUS_INVALID(<0)	- 세션 상태 변경 전 상태가 SESSION_OPENED, SESSION_USING 상태가 아니다.
+//			0						- 정상 종료
+//--------------------------------------------------------------------------
+//Sequencial한 Select를 위하여 원종이가 추가한 부분
+//At : 2002. 12. 14
+//--------------------------------------------------------------------------o
+INT  SelectProcEx(
+				  INT					nRequestID	,	// [I N] 세션Request ID		[#######]
+				  TCHAR*				pszUserID   ,	// [I N] 사용자 ID
+				  TCHAR*				pszPasswd   ,	// [I N] 사용자 Password
+				  TCHAR*				pszSQL      ,	// [I N] SELECT SQL
+				  ORA_SELECT_STRU*      pSelect		,	// [OUT] 검색 결과 필드 정보
+				  EDBM_DATA_ARRAY_TYPE* pOutData		// [OUT] 결과 값을 받는 구조체 변수 포인터		
+				  )
+{
+	INT ids;
+	INT rc;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ SelectProcEx->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+	
+//sm++
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_NEW, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--
+
+	ids = OCI8SelectExProc(&SESSION(nSessionID), szTmpUserID, szTmpPasswd, pszSQL, pSelect, pOutData);
+	
+	//2003-12-03 [박길주] =====================
+	//if (ids) return ids;
+	//ids = setSessionStatusForRestFetch(nRequestID);
+	//if (ids) return ids;
+	//2003-12-03 [박길주] +++++++++++++++++++++
+	if (ids)
+	{
+
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ SelectProcEx->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+		
+		rc = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+		if (ERR_SESSION_USING != rc && rc) return rc;
+	}
+	else
+	{
+		ids = setSessionStatusForRestFetch(nRequestID);
+		if (ids) 
+		{
+
+#ifdef _DEBUG_DEEP_LOG_
+			{
+				CString sTemp;
+				sTemp.Format("□□□□□□□□□ □ SelectProcEx->closeSession ◎。。。。。。。\n");
+				LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+				AfxMessageBox(sTemp);
+#endif
+			}
+#endif
+
+			rc = closeSession(nSessionID, FALSE, TRUE);
+			if (ids) return ids;
+			if (ERR_SESSION_USING != rc && rc) return rc;
+		}
+	}
+	//2003-12-03 [박길주] ---------------------
+
+	return 0;
+}
+
+
+
+
+//--------------------------------------------------------------------------
+// 함수명 : FetchEx
+// 기  능 : SELECT Execution 후 커서 정보를 가지고 결과값을 리턴받는다.(Rest fetch 한다.)
+//			bCloseSession이 TRUE이거나 OCI8SelectFetchProc()가 OCI_NO_DATA를 리턴하면 세션을 종료한다.
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST(-903) - RequestID에 해당하는 세션을 찾을 수 없다.
+//			[X]ERR_STATUS_INVALID(<0)	- RequestID에 해당하는 세션의 상태가 SESSION_FETCHING, SESSION_USING 상태가 아니다.
+//			OraSQLFetchEx(<0)			- 오류시
+//			closeSessionForRestFetch(<0)- 오류시
+//			0							- 정상 종료(OCI_NO_DATA가 아닌 경우)
+//			OCI_NO_DATA(=100)			- 정상 종료(OCI_NO_DATA인 경우)
+//--------------------------------------------------------------------------o
+INT  FetchEx(
+			 INT				nRequestID	,	// [I N] 세션Request ID		[#######]	
+			 ORA_SELECT_STRU*	pSelect		,	// [OUT] 검색 결과 필드 정보 
+			 INT				nRowFetch	,	// [I N] 최대 Fetch할 개수  [???]
+			 INT				nColumnCount,	// [I N] 컬럼 개수
+			 BOOL				bCloseSession	// [I N] 세션을 종료할 지 여부
+			 )
+{
+	INT ids;
+	BOOL bAllFetched = FALSE;
+	
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	//if (SESSION_USING    != STATUS(nSessionID) && 
+	//    SESSION_FETCHING != STATUS(nSessionID)   ) return ERR_STATUS_INVALID;
+	
+	ids = OraSQLFetchEx(SESSION(nSessionID).hpSvc, 
+						SESSION(nSessionID).hpErr, 
+						pSelect->hpStmt, 
+						nRowFetch, 
+						nColumnCount, 
+						pSelect->pField);
+
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	// 모든 데이터를 페치한 경우 처리 [GJPark@eco.co.kr:2003/8/18] +++
+	//if (ids) return ids;
+	if (OCI_NO_DATA != ids && ids) return ids;
+	if (bCloseSession || OCI_NO_DATA == ids)
+	{
+		if (OCI_NO_DATA == ids) bAllFetched = TRUE;	
+
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ FetchEx->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+
+//sm++
+		// fetch가 끝났으므로 세션을 닫는다.
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ERR_SESSION_USING != ids && ids) return ids;
+//sm--
+	}
+	// 모든 데이터를 페치한 경우 처리 [GJPark@eco.co.kr:2003/8/18] ---
+	//----------------------------------------------------------------
+//cs--
+
+	if (bAllFetched) return OCI_NO_DATA;
+	else return 0;
+}
+
+
+
+
+
+
+
+
+
+
+//------------------------------------------------//----------------------------------------o
+// UML Function
+//------------------------------------------------//----------------------------------------o
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : UnSelectProc
+// 기  능 : SELECT가 아닌 DML 커리를 수행한다.
+//--------------------------------------------------------------------------
+// Return : getSession(<0)			- 오류시
+//			OCI8UnSelectProc(<0)	- 오류시
+//			0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT  UnSelectProc(
+				  INT		nRequestID	,	// [I N] 세션Request ID		[#######]	
+				  TCHAR*	pszUserID   ,	// [I N] 사용자 ID
+				  TCHAR*	pszPasswd   ,	// [I N] 사용자 Password
+                  TCHAR*	pszSQL      ,	// [I N] DML SQL
+				  INT		nFrameIndex		// [I N] 실행 프레임 (프레임이 아닐 경우 -1)
+				  )
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ UnSelectProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+	
+//sm++
+	//기존 세션을 이용할 수도 있고, 신규로 세션을 Open해도 되는 경우
+	//		SendFrameProc 등에서 호출될 때는 반드시 기존 세션을 이용해야 한다.
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--
+
+	ids = OCI8UnSelectProc(&SESSION(nSessionID), szTmpUserID, szTmpPasswd, pszSQL, nFrameIndex);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		return ids;
+	}
+
+	// 2003-12-01 [박길주] ==============================================================
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//sm++
+	ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+	if (ids) return ids;
+	
+	if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+	else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+	else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+	
+	SemaphoreUnLock(hSemaphore);
+//sm--
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : InsertProc
+// 기  능 : INSERT 문을 수행한다
+//--------------------------------------------------------------------------
+// Return : getSession(<0)				- 오류시
+//			InitEDBMBindDataType(<0)	- 오류시
+//			OCI8InsertProc(<0)			- 오류시
+//			closeSession(<0)			- 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 InsertProc(
+				INT		nRequestID		,	// [I N] 세션Request ID		[#######]	
+				TCHAR*  pszUserID       ,	// [I N] 사용자 ID
+                TCHAR*  pszPasswd       ,	// [I N] 사용자 Password
+				TCHAR*  pszTableName    ,	// [I N] 테이블명
+				INT     nColumnCount    ,	// [I N] 칼럼수
+				TCHAR** pszAttributeName,	// [I N] Attribute명
+				TCHAR** pszAttributeData,	// [I N] Attribute Data
+				INT*    pInDataType     ,	// [I N] Attribute Type
+				BOOL    bCommit				// [I N] Commit 여부		
+				)
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ InsertProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+
+//sm++
+	//기존 세션을 이용할 수도 있고, 신규로 세션을 Open해도 되는 경우
+	//		SendFrameProc 등에서 호출될 때는 반드시 기존 세션을 이용해야 한다.
+	
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--	
+
+	ids = InitEDBMBindDataType(&SESSION(nSessionID).pNonFrameBindData, 0, 1);
+	if (ids) return ids;	//-1인 경우만 있다.
+	
+	ids = OCI8InsertProc(&SESSION(nSessionID), 
+						 szTmpUserID, 
+						 szTmpPasswd, 
+						 pszTableName, 
+						 nColumnCount, 
+						 pszAttributeName, 
+						 pszAttributeData, 
+						 pInDataType, 
+						 bCommit);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		return ids;
+	}
+	
+	FreeEDBMBindData(&SESSION(nSessionID).pNonFrameBindData  , 1);
+	FreeEDBMBindData(&SESSION(nSessionID).pNonFrameNumberData, 1);
+
+	// 2003-12-01 [박길주] ==============================================================
+	//if (bCommit) 
+	//{
+	//	ids = closeSession(nSessionID, TRUE, TRUE);
+	//	if (ids) return ids;
+	//}
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//sm++
+	if (bCommit) 
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ InsertProc->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+		
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+	}
+	else
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+	}		
+//sm--
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : UpdateProc
+// 기  능 : UPDATE 문을 수행한다
+//--------------------------------------------------------------------------
+// Return : getSession(<0)				- 오류시
+//			InitEDBMBindDataType(<0)	- 오류시
+//			OCI8UpdateProc(<0)			- 오류시
+//			closeSession(<0)			- 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 UpdateProc(
+				INT		nRequestID			,	// [I N] 세션Request ID		[#######]	
+				TCHAR*  pszUserID			,	// [I N] 사용자 ID
+                TCHAR*  pszPasswd			,	// [I N] 사용자 Password
+				TCHAR*  pszTableName		,	// [I N] 테이블명
+				INT     nColumnCount		,	// [I N] 칼럼수
+				TCHAR** pszAttributeName	,	// [I N] Attribute명
+				TCHAR** pszAttributeData	,	// [I N] Attribute Data
+				INT*    pInDataType			,	// [I N] Attribute Type
+				TCHAR*  pszPKAttributeName	,	// [I N] Primary Key Attribute 명
+				TCHAR*  pszTablePrimaryKey	,	// [I N] Primary Key 값
+				BOOL    bCommit					// [I N] Commit 여부		
+				)
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ UpdateProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+
+//sm++
+	
+	//기존 세션을 이용할 수도 있고, 신규로 세션을 Open해도 되는 경우
+	//		SendFrameProc 등에서 호출될 때는 반드시 기존 세션을 이용해야 한다.
+
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--	
+
+	ids = InitEDBMBindDataType(&SESSION(nSessionID).pNonFrameBindData, 0, 1);
+	if (ids) return ids;
+	
+	ids = OCI8UpdateProc(&SESSION(nSessionID), 
+						 szTmpUserID, 
+						 szTmpPasswd, 
+						 pszTableName, 
+						 nColumnCount, 
+						 pszAttributeName, 
+						 pszAttributeData, 
+						 pInDataType, 
+						 pszPKAttributeName, 
+						 pszTablePrimaryKey, 
+						 bCommit);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		return ids;
+	}
+	
+	FreeEDBMBindData(&SESSION(nSessionID).pNonFrameBindData  , 1);
+	FreeEDBMBindData(&SESSION(nSessionID).pNonFrameNumberData, 1);
+	
+	// 2003-12-01 [박길주] ==============================================================
+	//if (bCommit) 
+	//{
+	//	ids = closeSession(nSessionID, TRUE, TRUE);
+	//	if (ids) return ids;
+	//}
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//sm++
+	if (bCommit) 
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ UpdateProc->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+		
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+	}
+	else
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+	}
+//sm--
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+	return 0;
+}
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : DeleteProc
+// 기  능 : DELETE 문을 수행한다
+//--------------------------------------------------------------------------
+// Return : getSession(<0)				- 오류시
+//			OCI8DeleteProc(<0)			- 오류시
+//			closeSession(<0)			- 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 DeleteProc(
+				INT		nRequestID			,	// [I N] 세션Request ID		[#######]	
+				TCHAR*	pszUserID			,	// [I N] 사용자 ID
+                TCHAR*	pszPasswd			,	// [I N] 사용자 Password
+				TCHAR*	pszTableName		,	// [I N] 테이블명
+				TCHAR*	pszPKAttributeName	,	// [I N] Primary Key Attribute 명
+				TCHAR*	pszTablePrimaryKey	,	// [I N] Primary Key 값
+				BOOL	bCommit					// [I N] Commit 여부	
+				)
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ DeleteProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+	
+//sm++
+	//기존 세션을 이용할 수도 있고, 신규로 세션을 Open해도 되는 경우
+	//		SendFrameProc 등에서 호출될 때는 반드시 기존 세션을 이용해야 한다.
+
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--
+	
+	ids = OCI8DeleteProc(&SESSION(nSessionID), 
+						 szTmpUserID, 
+						 szTmpPasswd, 
+						 pszTableName, 
+						 pszPKAttributeName, 
+						 pszTablePrimaryKey, 
+						 bCommit);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		return ids;
+	}
+	
+	FreeEDBMBindData(&SESSION(nSessionID).pNonFrameBindData  , 1);
+	FreeEDBMBindData(&SESSION(nSessionID).pNonFrameNumberData, 1);
+	
+	// 2003-12-01 [박길주] ==============================================================
+	//if (bCommit) 
+	//{
+	//	ids = closeSession(nSessionID, TRUE, TRUE);
+	//	if (ids) return ids;
+	//}
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//sm++
+	if (bCommit) 
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+		
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ DeleteProc->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+	}
+	else
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+	}
+//sm--
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : NextNumberProc
+// 기  능 : 다음 번호를 가져온다.
+//--------------------------------------------------------------------------
+// Return : getSession(<0)				- 오류시
+//			OCI8NextNumberProc(<0)		- 오류시
+//			closeSession(<0)			- 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 NextNumberProc(
+					INT		nRequestID		,	// [I N] 세션Request ID		[#######]	
+					TCHAR*	pszUserID		,	// [I N] 사용자 ID
+					TCHAR*	pszPasswd		,	// [I N] 사용자 Password
+					TCHAR*	pszSQL			,	// [I N] 번호 구하기용 SQL
+					TCHAR*	pszNumberAlias	,	// [I N] SQL에 있는 번호 Alias
+					TCHAR*	pszNumber		,	// [OUT] 구해진 번호	
+					BOOL	bCommit				// [I N] Commit 여부	
+					)
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ NextNumberProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+
+//sm++
+	//기존 세션을 이용할 수도 있고, 신규로 세션을 Open해도 되는 경우
+	//		SendFrameProc 등에서 호출될 때는 반드시 기존 세션을 이용해야 한다.
+	
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--
+	
+	ids = OCI8NextNumberProc(&SESSION(nSessionID), 
+							 szTmpUserID, 
+							 szTmpPasswd, 
+							 pszSQL, 
+							 pszNumberAlias, 
+							 pszNumber);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		return ids;
+	}
+	
+	FreeEDBMBindData(&SESSION(nSessionID).pNonFrameNumberData, 1);
+
+	// 2003-12-01 [박길주] ==============================================================
+	//if (bCommit) 
+	//{
+	//	ids = closeSession(nSessionID, TRUE, TRUE);
+	//	if (ids) return ids;
+	//}
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//sm++
+	if (bCommit) 
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+		
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ NextNumberProc->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+		
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+	}
+	else
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+	}
+//sm--
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : ExecSQLProc
+// 기  능 : SQL 문을 수행한다
+//--------------------------------------------------------------------------
+// Return : getSession(<0)			- 오류시
+//			OCI8ExecSQLProc(<0)		- 오류시
+//			closeSession(<0)		- 오류시
+//			0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 ExecSQLProc(
+				 INT	nRequestID		,	// [I N] 세션Request ID		[#######]	
+				 TCHAR*	pszUserID		,	// [I N] 사용자 ID
+				 TCHAR*	pszPasswd		,	// [I N] 사용자 Password
+				 TCHAR*	pszSQL			,	// [I N] SQL
+				 BOOL	bCommit				// [I N] Commit 여부	
+				 )
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ ExecSQLProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+	
+
+//sm++
+	//기존 세션을 이용할 수도 있고, 신규로 세션을 Open해도 되는 경우
+	//		SendFrameProc 등에서 호출될 때는 반드시 기존 세션을 이용해야 한다.
+	
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--	
+
+	ids = OCI8ExecSQLProc(&SESSION(nSessionID), 
+						  szTmpUserID, 
+						  szTmpPasswd, 
+						  pszSQL, 
+						  bCommit);
+	if (ids)
+	{
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ ExecSQLProc->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+		FreeAllAccessVariable(nSessionID);
+		return ids;
+	}
+	
+	FreeEDBMBindData(&SESSION(nSessionID).pNonFrameBindData  , 1);
+	FreeEDBMBindData(&SESSION(nSessionID).pNonFrameNumberData, 1);
+	
+	// 2003-12-01 [박길주] ==============================================================
+	//if (bCommit) 
+	//{
+	//	ids = closeSession(nSessionID, TRUE, TRUE);
+	//	if (ids) return ids;
+	//}
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//sm++
+	if (bCommit) 
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ ExecSQLProc->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+		
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+	}
+	else
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+	}
+	
+//sm--
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+	return 0;
+}
+
+
+
+
+
+// 2002년07월08일 Binary를 지원하기 위해서 정민이 수정
+// 수정시작
+//--------------------------------------------------------------------------o
+// 함수명 : UpdateLobProc
+// 기  능 : Lob Data를 업데이트 하는데 사용한다. 
+//          MakeInsertFrame에서 데이터 type을 binary로 할경우 32k이하의 자료는 입력이 가능하지만
+//          특별히 32k이상의 Lob데이터는 이 함수를 사용해야 한다
+//--------------------------------------------------------------------------
+// Return : getSession(<0)			- 오류시
+//			OCI8UpdateLobProc(<0)	- 오류시
+//			closeSession(<0)		- 오류시
+//			0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT UpdateLobProc(
+				  INT		nRequestID			,	// [I N] 세션Request ID		[#######]	
+				  TCHAR*	pszUserID			,	// [I N] 사용자 ID
+				  TCHAR*	pszPasswd			,	// [I N] 사용자 Password
+				  TCHAR*	pszTableName		,	// [I N] 테이블명
+				  TCHAR*	pszAttributeName	,	// [I N] Attribute명
+				  void*		pszLobData			,	// [I N] Lob Data
+				  INT		nLobLen				,	// [I N] Lob Length	 
+				  TCHAR*	pszPKAttributeName	,	// [I N] Primary Key Attribute 명
+				  TCHAR*	pszTablePrimaryKey	,	// [I N] Primary Key 값
+				  BOOL		bCommit					// [I N] Commit 여부		
+				  )
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ UpdateLobProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+	
+//sm++
+	//기존 세션을 이용할 수도 있고, 신규로 세션을 Open해도 되는 경우
+	//		SendFrameProc 등에서 호출될 때는 반드시 기존 세션을 이용해야 한다.
+	
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--
+	
+	ids = OCI8UpdateLobProc(&SESSION(nSessionID), 
+							szTmpUserID, 
+							szTmpPasswd, 
+							pszTableName, 
+							pszAttributeName, 
+							pszLobData, 
+							nLobLen, 
+							pszPKAttributeName, 
+							pszTablePrimaryKey, 
+							bCommit);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		return ids;
+	}
+
+	// 2003-12-01 [박길주] ==============================================================
+	//if (bCommit) 
+	//{
+	//	ids = closeSession(nSessionID, TRUE, TRUE);
+	//	if (ids) return ids;
+	//}
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//sm++
+	if (bCommit) 
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ UpdateLobProc->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+		
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+	}
+	else
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+	}
+//sm--
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+
+	return 0;
+}
+// 수정끝	
+
+
+
+
+
+// 2002년08월13일 DDL(Data Definition Language)를 지원하기 위해서 정민이 수정
+// 수정시작
+//--------------------------------------------------------------------------o
+// 함수명 : UnSelectProcWithoutBeginEnd
+// 기  능 : begin end;로 싸여 있을 경우 drop, alter, create 같은 작업을 할 수 없기 때문에 생성
+//--------------------------------------------------------------------------
+// Return : getSession(<0)						- 오류시
+//			OCI8UnSelectProcWithoutBeginEnd(<0)	- 오류시
+//			closeSession(<0)					- 오류시
+//			0									- 정상 종료
+//--------------------------------------------------------------------------o
+INT UnSelectProcWithoutBeginEnd(
+								INT		nRequestID	,	// [I N] 세션Request ID		[#######]	
+								TCHAR*	pszUserID	,	// [I N] 사용자 ID
+								TCHAR*	pszPasswd	,	// [I N] 사용자 Password
+								TCHAR*	pszSQL		,	// [I N] SQL
+								BOOL	bCommit			// [I N] Commit 여부	
+								)
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+	
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ UnSelectProcWithoutBeginEnd->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+//sm++
+	//기존 세션을 이용할 수도 있고, 신규로 세션을 Open해도 되는 경우
+	//		SendFrameProc 등에서 호출될 때는 반드시 기존 세션을 이용해야 한다.
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--
+	
+	ids = OCI8UnSelectProcWithoutBeginEnd(&SESSION(nSessionID), 
+										  szTmpUserID, 
+										  szTmpPasswd, 
+										  pszSQL, 
+										  bCommit);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		return ids;
+	}
+	
+	// 2003-12-01 [박길주] ==============================================================
+	//if (bCommit) 
+	//{
+	//	ids = closeSession(nSessionID, TRUE, TRUE);
+	//	if (ids) return ids;
+	//}
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//sm++
+	if (bCommit) 
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+		
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ UnSelectProcWithoutBeginEnd->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+		
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ids) return ids;
+	}
+	else
+	{
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		SemaphoreUnLock(hSemaphore);
+	}		
+//sm--
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+	return 0;
+}
+// 수정끝	
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : CommitProc
+// 기  능 : Commit 문을 수행한다
+//--------------------------------------------------------------------------
+// Return : getSession(<0)		- 오류시
+//			OCI8CommitProc(<0)	- 오류시
+//			closeSession(<0)	- 오류시
+//			0					- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 CommitProc(
+				INT		nRequestID	,	// [I N] 세션Request ID		[#######]	
+				TCHAR*	pszUserID	,	// [I N] 사용자 ID
+				TCHAR*	pszPasswd		// [I N] 사용자 Password
+				)
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+
+//sm++
+	//INT nSessionID;
+	//ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	//if (ids) return ids;
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	//if (ERR_REQUEST_NOT_EXIST==nSessionID)	  return ERR_REQUEST_NOT_EXIST;
+	if (ERR_REQUEST_NOT_EXIST==nSessionID)	
+	{
+		//FreeAllAccessVariable(nSessionID);
+		return 0;
+	}
+//sm--
+
+	ids = OCI8CommitProc(&SESSION(nSessionID), szTmpUserID, szTmpPasswd);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		//2003-12-03 [박길주] ========================
+		//return ids;
+		//2003-12-03 [박길주] ++++++++++++++++++++++++
+		//2003-12-03 [박길주] ------------------------
+	}
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("□□□□□□□□□ □ CommitProc->closeSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+	
+//sm++	
+	INT rc = closeSession(nSessionID, FALSE, TRUE);
+	//2003-12-01 [박길주] ========================
+	//if (0>rc) return rc;
+	//2003-12-01 [박길주] ++++++++++++++++++++++++
+	//if (ERR_SESSION_USING != rc && rc) return rc;
+	//2003-12-01 [박길주] ------------------------
+//sm--
+
+	//2003-12-03 [박길주] ========================
+	//2003-12-03 [박길주] ++++++++++++++++++++++++
+	if (ids) return -1;
+	if (ERR_SESSION_USING != rc && rc) return rc;
+	//2003-12-03 [박길주] ------------------------
+	
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : RollbackProc
+// 기  능 : Rollback 문을 수행한다
+//--------------------------------------------------------------------------
+// Return : getSession(<0)			- 오류시
+//			OCI8RollbackProc(<0)	- 오류시
+//			closeSession(<0)		- 오류시
+//			0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 RollbackProc(
+				  INT		nRequestID	,	// [I N] 세션Request ID		[#######]	
+				  TCHAR*	pszUserID	,	// [I N] 사용자 ID
+				  TCHAR*	pszPasswd		// [I N] 사용자 Password
+				  )
+{
+	INT ids;
+	
+	TCHAR szTmpUserID[64];
+	TCHAR szTmpPasswd[64];
+	
+	if (g_szUserID[0] != _T('\0') && g_szPasswd[0] != _T('\0'))
+	{
+		_tcscpy(szTmpUserID, g_szUserID);
+		_tcscpy(szTmpPasswd, g_szPasswd);
+	}
+	else
+	{
+		_tcscpy(szTmpUserID, pszUserID);
+		_tcscpy(szTmpPasswd, pszPasswd);
+	}
+	
+//sm++
+	//INT nSessionID;
+	//ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, szTmpUserID, szTmpPasswd, &nSessionID);
+	//if (ids) return ids;
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	//if (ERR_REQUEST_NOT_EXIST==nSessionID)	  return ERR_REQUEST_NOT_EXIST;
+	if (ERR_REQUEST_NOT_EXIST==nSessionID)	
+	{
+		//FreeAllAccessVariable(nSessionID);
+		return 0;
+	}
+//sm--
+	
+	ids = OCI8RollbackProc(&SESSION(nSessionID), szTmpUserID, szTmpPasswd);
+	if (ids)
+	{
+		FreeAllAccessVariable(nSessionID);
+		return ids;
+	}
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("□□□□□□□□□ □ RollbackProc->closeSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+
+//sm++
+	//STATUS(nSessionID) = SESSION_OPENED;
+	ids = closeSession(nSessionID, FALSE, TRUE);
+	//2003-12-01 [박길주] ========================
+	//if (ids) return ids;
+	//2003-12-01 [박길주] ++++++++++++++++++++++++
+	if (ERR_SESSION_USING != ids && ids) return ids;
+	//2003-12-01 [박길주] ------------------------
+//sm--
+	
+	return 0;
+}
+
+
+
+
+
+
+
+
+//------------------------------------------------//----------------------------------------o
+// Frame Function for DML
+//------------------------------------------------//----------------------------------------o
+
+
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : StartFrameProc
+// 기  능 : Frame을 초기화한다
+//--------------------------------------------------------------------------
+// Return : getSession(<0)			- 오류시
+//			OCI8RollbackProc(<0)	- 오류시
+//			closeSession(<0)		- 오류시
+//			0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 StartFrameProc(
+					INT		nRequestID	,	// [I N] 세션Request ID		[#######]	
+					TCHAR*	pszUserID	,	// [I N] 사용자 ID
+					TCHAR*	pszPasswd		// [I N] 사용자 Password
+					)
+{
+	INT ids;
+
+#ifdef _DEBUG_DEEP_LOG_
+	{
+		CString sTemp;
+		sTemp.Format("■■■■■■■■■ ■ StartFrameProc->getSession ◎。。。。。。。\n");
+		LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+		AfxMessageBox(sTemp);
+#endif
+	}
+#endif
+
+//sm++	
+	//기존 세션을 이용할 수도 있고, 신규로 세션을 Open해도 되는 경우
+	//		SendFrameProc 등에서 호출될 때는 반드시 기존 세션을 이용해야 한다.
+	INT nSessionID;
+	ids = getSession(nRequestID, SQL_SESSION_EXIST_OPEN, pszUserID, pszPasswd, &nSessionID);
+	if (ids) return ids;
+//sm--	
+	
+	FreeEDBMBindData  (&SESSION(nSessionID).pFrameBindData  , SESSION(nSessionID).nFrameStreamCount);
+	FreeEDBMBindData  (&SESSION(nSessionID).pFrameNumberData, SESSION(nSessionID).nFrameStreamCount);
+	FreeTwoPtrVariable(&SESSION(nSessionID).pFrameStream    , SESSION(nSessionID).nFrameStreamCount);
+	
+	SESSION(nSessionID).nOldFrameStreamCount = 0;
+	SESSION(nSessionID).nFrameStreamCount    = 0;
+
+	// 2003-12-01 [박길주] ==============================================================
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	{
+//sm++
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		
+		SemaphoreUnLock(hSemaphore);
+//sm--
+	}
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : SendFrameProc
+// 기  능 : Frame을 수행한다
+//--------------------------------------------------------------------------
+// Return : getSession(<0)				- 오류시
+//			UnSelectProc(<0)			- 오류시
+//			AddEDBMBindDataByString(<0)	- 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 SendFrameProc(
+				   INT						nRequestID	,	// [I N] 세션Request ID		[#######]	
+				   TCHAR*					pszUserID	,	// [I N] 사용자 ID
+				   TCHAR*					pszPasswd	,	// [I N] 사용자 Password
+				   EDBM_BIND_DATA_TYPE**	pNumberData		// [OUT] 번호 정보
+				   )
+{
+	INT ids;
+
+//sm++
+	//INT nSessionID;
+	//ids = getSession(nRequestID, SQL_SESSION_EXIST, pszUserID, pszPasswd, &nSessionID);
+	//if (ids) return ids;
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID)	  return ERR_REQUEST_NOT_EXIST;
+//sm--	
+
+	if (pNumberData != NULL)
+	{
+		InitEDBMBindDataType(pNumberData, 0, 1);
+	}
+	
+//CString sTemp;
+//sTemp.Format("%d Frame 구축 ▷ 쿼리실행 시작 ?", SESSION(nSessionID).nFrameStreamCount);
+//AfxMessageBox(sTemp);
+	
+	for (INT i = 0; i < SESSION(nSessionID).nFrameStreamCount; i++)
+	{
+		/*1031 Frame 처리 수정-박길주+++++++++++++++++++++++++++++*/
+		if (	NULL==SESSION(nSessionID).pFrameStream[i] 
+			||	0 ==*(SESSION(nSessionID).pFrameStream[i])	) 
+		{
+			//CString sTemp;
+			//if (NULL!=SESSION(nSessionID).pFrameStream[i]) 
+			//{
+			//	sTemp.Format(_T("[%d] Frame Sql = %s"), i+1, SESSION(nSessionID).pFrameStream[i]);
+			//}
+			//else
+			//{
+			//	sTemp.Format(_T("[%d] Frame Sql = (null)"), i+1);
+			//}
+			//AfxMessageBox(sTemp);
+			break;
+		}
+		/*1031 Frame 처리 수정-박길주-----------------------------*/
+		
+		ids = UnSelectProc(nRequestID,
+						   pszUserID, 
+						   pszPasswd, 
+						   SESSION(nSessionID).pFrameStream[i], 
+						   i);
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > RollbackProc(nRequestID, pszUserID, pszPasswd)) return -1;
+			if (0 > EndFrameProc(nRequestID)) return -2;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -3;
+		}
+		
+		if (SESSION(nSessionID).pFrameNumberData != NULL)
+		{
+			
+			for (INT j = 0; j < SESSION(nSessionID).pFrameNumberData[i].nCount; j++)
+			{
+				ids = AddEDBMBindDataByString(pNumberData[0],
+											  SESSION(nSessionID).pFrameNumberData[i].nDataType[j],
+											  SESSION(nSessionID).pFrameNumberData[i].pAlias[j].pStringData,
+											  SESSION(nSessionID).pFrameNumberData[i].pValue[j].pStringData
+											  );
+				if (ids)
+				{
+					//2003-12-03 [박길주] ========================================
+					//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+					if (0 > RollbackProc(nRequestID, pszUserID, pszPasswd)) return -4;
+					if (0 > EndFrameProc(nRequestID)) return -5;
+					//2003-12-03 [박길주] ----------------------------------------
+					FreeAllAccessVariable(nSessionID);
+					return -6;
+				}
+			}
+		}
+	}
+	
+	// 2003-12-01 [박길주] ==============================================================
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	{
+//sm++
+		ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		//2003-12-03 [박길주] ========================================
+		//if (ids) return ids;
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (ids) 
+		{
+			if (0 > RollbackProc(nRequestID, pszUserID, pszPasswd)) return -7;
+			if (0 > EndFrameProc(nRequestID)) return -8;
+			FreeAllAccessVariable(nSessionID);
+			return ids;
+		}
+		//2003-12-03 [박길주] ----------------------------------------
+		
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_USING;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		
+		SemaphoreUnLock(hSemaphore);
+//sm--
+	}
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+	return 0;
+}
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : EndFrameProc
+// 기  능 : Frame 정보를 삭제한다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST	- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 EndFrameProc	(INT	nRequestID)		// [I N] 세션Request ID		[#######]	
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID)	  return ERR_REQUEST_NOT_EXIST;
+	//if (SESSION_CLOSED == STATUS(nSessionID)) return ERR_SESSION_CLOSED;
+
+	FreeEDBMBindData  (&SESSION(nSessionID).pFrameBindData  , SESSION(nSessionID).nFrameStreamCount);
+	FreeEDBMBindData  (&SESSION(nSessionID).pFrameNumberData, SESSION(nSessionID).nFrameStreamCount);
+	FreeTwoPtrVariable(&SESSION(nSessionID).pFrameStream    , SESSION(nSessionID).nFrameStreamCount);
+	
+	SESSION(nSessionID).nOldFrameStreamCount = 0;
+	SESSION(nSessionID).nFrameStreamCount    = 0;
+	
+	// 2003-12-01 [박길주] ==============================================================
+	// 2003-12-01 [박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	{
+//sm++
+		INT ids = SemaphoreOpenLock(SEMAPHORE_NAME, 1, &hSemaphore, WAIT_INFINITE);
+		if (ids) return ids;
+		
+		if      (SESSION_OPENED == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else if (SESSION_USING  == STATUS(nSessionID))	STATUS(nSessionID) = SESSION_OPENED;
+		else return ERR_STATUS_INVALID;	//ids = ERR_STATUS_INVALID;
+		
+		SemaphoreUnLock(hSemaphore);
+
+#ifdef _DEBUG_DEEP_LOG_
+		{
+			CString sTemp;
+			sTemp.Format("□□□□□□□□□ □ EndFrameProc->closeSession ◎。。。。。。。\n");
+			LoggingProcess("OCIMGR_SESSION", sTemp.GetBuffer(0));
+#ifdef _DEBUG_DEEP_AFXMESSAGE_
+			AfxMessageBox(sTemp);
+#endif
+		}
+#endif
+
+		ids = closeSession(nSessionID, FALSE, TRUE);
+		if (ERR_SESSION_USING != ids && ids) return ids;
+
+//sm--
+	}
+	// 2003-12-01 [박길주] --------------------------------------------------------------
+
+	return 0;
+}
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : MakeInsertFrameProc
+// 기  능 : INSERT Frame문을 추가한다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST		- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			InitEDBMBindDataType(<0)	- 오류시
+//			MakeInsertSQL(<0)			- 오류시
+//			AddSQLStatementToFrame(<0)	- 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 MakeInsertFrameProc(
+						 INT		nRequestID			,	// [I N] 세션Request ID		[#######]	
+						 TCHAR*		pszTableName		,	// [I N] 테이블명
+						 INT		nColumnCount		,	// [I N] 칼럼수
+						 TCHAR**	pszAttributeName	,	// [I N] Attribute명
+						 TCHAR**	pszAttributeData	,	// [I N] Attribute Data
+						 INT*		pInDataType				// [I N] Attribute Type
+						 )
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	//if (SESSION_CLOSED == STATUS(nSessionID)) return ERR_SESSION_CLOSED;
+	
+	INT ids;
+	CString sSQLStatement;
+	
+	// Make Insert DML SQL
+	
+
+	/*1031 Frame 처리 수정-박길주+++++++++++++++++++++++++++++*/
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData, 0, 1);
+			//SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData,
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -1;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -2;
+		}
+	}
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 0, 1);
+			SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -3;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -4;
+		}
+	}
+	/*1031 Frame 처리 수정-박길주-----------------------------*/
+	
+	ids = MakeInsertSQL(pszTableName, 
+						nColumnCount, 
+						pszAttributeName, 
+						pszAttributeData, 
+						pInDataType, 
+						sSQLStatement, 
+						&SESSION(nSessionID).pFrameBindData[SESSION(nSessionID).nOldFrameStreamCount - 1]);
+	if (ids)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -5;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -6;
+	}
+	
+	// Add to frame stream
+	ids = AddSQLStatementToFrame(nSessionID, sSQLStatement.GetBuffer(0));
+	if (ids)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -7;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -8;
+	}
+	
+	return 0;
+}
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : MakeUpdateFrameProc
+// 기  능 : UPDATE Frame문을 추가한다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST		- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			InitEDBMBindDataType(<0)	- 오류시
+//			MakeUpdateSQL(<0)			- 오류시
+//			AddSQLStatementToFrame(<0)	- 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 MakeUpdateFrameProc(
+						 INT		nRequestID			,	// [I N] 세션Request ID		[#######]	
+						 TCHAR*		pszTableName		,	// [I N] 테이블명
+						 INT		nColumnCount		,	// [I N] 칼럼수
+						 TCHAR**	pszAttributeName	,	// [I N] Attribute명
+						 TCHAR**	pszAttributeData	,	// [I N] Attribute Data
+						 INT*		pInDataType			,	// [I N] Attribute Type
+						 TCHAR*		pszPKAttributeName	,	// [I N] Primary Key Attribute 명
+						 TCHAR*		pszTablePrimaryKey		// [I N] Primary Key 값
+						 )
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	//if (SESSION_CLOSED == STATUS(nSessionID)) return ERR_SESSION_CLOSED;
+	
+	INT ids;
+	CString sSQLStatement;
+	
+	// Make Update DML SQL
+	
+	/*1031 Frame 처리 수정-박길주+++++++++++++++++++++++++++++*/
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData, 0, 1);
+			//SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData,
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -1;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -2;
+		}
+	}
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 0, 1);
+			SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -3;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -4;
+		}
+	}
+	/*1031 Frame 처리 수정-박길주-----------------------------*/
+	
+	ids = MakeUpdateSQL(pszTableName, 
+						nColumnCount, 
+						pszAttributeName, 
+						pszAttributeData, 
+						pInDataType, 
+						pszPKAttributeName, 
+						pszTablePrimaryKey, 
+						sSQLStatement, 
+						&SESSION(nSessionID).pFrameBindData[SESSION(nSessionID).nOldFrameStreamCount - 1]);
+	if (ids)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -5;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -6;
+	}
+	
+	// Add to frame stream
+	ids = AddSQLStatementToFrame(nSessionID, sSQLStatement.GetBuffer(0));
+	if (ids)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -7;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -8;
+	}
+	
+	return 0;
+}
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : MakeDeleteFrameProc
+// 기  능 : DELETE Frame문을 추가한다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST		- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			-1							- pszTableName, pszPKAttributeName, pszTablePrimaryKey가 설정되지 않았을 경우
+//			AddSQLStatementToFrame(<0)	- 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 MakeDeleteFrameProc(
+						 INT	nRequestID			,	// [I N] 세션Request ID		[#######]	
+						 TCHAR* pszTableName		,	// [I N] 테이블명
+						 TCHAR* pszPKAttributeName	,	// [I N] Primary Key Attribute 명
+						 TCHAR* pszTablePrimaryKey		// [I N] Primary Key 값
+						 )
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	//if (SESSION_CLOSED == STATUS(nSessionID)) return ERR_SESSION_CLOSED;
+	
+	INT ids;
+	CString sSQL;
+	
+	// Check validation
+	if (StringLength2(pszTableName)       <= 0 || 
+		StringLength2(pszPKAttributeName) <= 0 || 
+		StringLength2(pszTablePrimaryKey) <= 0   )
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -1;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -2;
+	}
+	
+	/*1031 Frame 처리 수정-박길주+++++++++++++++++++++++++++++*/
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData, 0, 1);
+			//SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData,
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			FreeAllAccessVariable(nSessionID);
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -3;
+			//2003-12-03 [박길주] ----------------------------------------
+			return -4;
+		}
+	}
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 0, 1);
+			SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			FreeAllAccessVariable(nSessionID);
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -5;
+			//2003-12-03 [박길주] ----------------------------------------
+			return -6;
+		}
+	}
+	/*1031 Frame 처리 수정-박길주-----------------------------*/
+	
+
+	// Make Delete DML SQL
+	sSQL.Format(_T("DELETE FROM %s WHERE %s = %s;"), pszTableName, pszPKAttributeName, pszTablePrimaryKey);
+	
+	// Add to frame stream
+	ids = AddSQLStatementToFrame(nSessionID, sSQL.GetBuffer(0));
+	if (ids)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -7;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -8;
+	}
+	
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : MakeExecSQLFrameProc
+// 기  능 : SQL Frame문을 추가한다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST		- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			-1							- pszSQL이 설정되지 않았을 경우
+//			AddSQLStatementToFrame(<0)	- 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 MakeExecSQLFrameProc(
+						  INT		nRequestID,		// [I N] 세션Request ID		[#######]	
+						  TCHAR*	pszSQL			// [I N] SQL
+						  )
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	//if (SESSION_CLOSED == STATUS(nSessionID)) return ERR_SESSION_CLOSED;
+	
+	INT ids;
+	
+	// Check validation
+	if (StringLength2(pszSQL) <= 0)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -1;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -2;
+	}
+	
+	/*1031 Frame 처리 수정-박길주+++++++++++++++++++++++++++++*/
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData, 0, 1);
+			//SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData,
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -3;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -4;
+		}
+	}
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 0, 1);
+			SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -5;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -6;
+		}
+	}
+	/*1031 Frame 처리 수정-박길주-----------------------------*/
+	
+
+	// Add to frame stream
+	ids = AddSQLStatementToFrame(nSessionID, pszSQL);
+	if (ids)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -8;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -9;
+	}
+	
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : MakeCommitFrameProc
+// 기  능 : Commit Frame문을 추가한다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST		- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			-1							- AddSQLStatementToFrame 오류시
+//			0							- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 MakeCommitFrameProc(INT nRequestID)			// [I N] 세션Request ID		[#######]	
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	//if (SESSION_CLOSED == STATUS(nSessionID)) return ERR_SESSION_CLOSED;
+	
+	INT ids;
+
+	/*1031 Frame 처리 수정-박길주+++++++++++++++++++++++++++++*/
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData, 0, 1);
+			//SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameBindData,
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -1;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -2;
+		}
+	}
+	{
+		if (SESSION(nSessionID).nOldFrameStreamCount == 0)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 0, 1);
+			SESSION(nSessionID).nOldFrameStreamCount = 1;
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -3;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -4;
+		}
+	}
+	/*1031 Frame 처리 수정-박길주-----------------------------*/
+
+	ids = AddSQLStatementToFrame(nSessionID, _T("COMMIT;"));
+	if (ids)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -5;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -6;
+	}
+
+	//###########################################
+	//STATUS(nSessionID) = SESSION_OPENED;
+	//ids = closeSession(nSessionID, TRUE);
+	//if (ids) return ids;
+
+	return 0;
+}
+
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : MakeNextNumberFrameProc
+// 기  능 : 번호구하기용 Frame문을 추가한다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST	- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			-1						- pszSQL이 설정되지 않았을 경우
+//			-2						- AddSQLStatementToFrame() 오류시
+//			-3						- InitEDBMBindDataType() 오류시
+//			-4						- pszAlias[] 매개변수가 설정되지 않았을 경우
+//			-5						- AddEDBMBindDataByString() 오류시
+//			0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 MakeNextNumberFrameProc(
+							 INT		nRequestID	,	// [I N] 세션Request ID		[#######]	
+							 TCHAR*		pszSQL		,	// [I N] SQL
+							 TCHAR**	pszAlias	,	// [I N] SQL 문 안에 있는 ALIAS들
+							 INT		nAliasCount		// [I N] 번호 ALIAS 개수
+							 )
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	//if (SESSION_CLOSED == STATUS(nSessionID)) return ERR_SESSION_CLOSED;
+	
+	INT ids;
+	
+	// Check validation
+	if (StringLength2(pszSQL) <= 0 || nAliasCount <= 0)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -1;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -2;
+	}
+	
+    // Add to frame stream
+	ids = AddSQLStatementToFrame(nSessionID, pszSQL);
+	if (ids)
+	{
+		//2003-12-03 [박길주] ========================================
+		//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+		if (0 > EndFrameProc(nRequestID)) return -3;
+		//2003-12-03 [박길주] ----------------------------------------
+		FreeAllAccessVariable(nSessionID);
+		return -4;
+	}
+	
+	// Add alias to number structure
+	if (nAliasCount > 0)
+	{
+		if (SESSION(nSessionID).pFrameNumberData == NULL)
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 0, 1);
+		}
+		else
+		{
+			ids = InitEDBMBindDataType(&SESSION(nSessionID).pFrameNumberData, 
+										SESSION(nSessionID).nOldFrameStreamCount, 
+										SESSION(nSessionID).nFrameStreamCount);
+		}
+		if (ids)
+		{
+			//2003-12-03 [박길주] ========================================
+			//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+			if (0 > EndFrameProc(nRequestID)) return -5;
+			//2003-12-03 [박길주] ----------------------------------------
+			FreeAllAccessVariable(nSessionID);
+			return -6;
+		}
+		
+		for (INT i = 0; i < nAliasCount; i++)
+		{
+			if (StringLength2(pszAlias[i]) <= 0)
+			{
+				//2003-12-03 [박길주] ========================================
+				//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+				if (0 > EndFrameProc(nRequestID)) return -7;
+				//2003-12-03 [박길주] ----------------------------------------
+				FreeAllAccessVariable(nSessionID);
+				return -8;
+			}
+			
+			ids = AddEDBMBindDataByString(&SESSION(nSessionID).pFrameNumberData[SESSION(nSessionID).nFrameStreamCount - 1], 
+										  STRING, 
+										  pszAlias[i], 
+										  NULL);
+			if (ids)
+			{
+				//2003-12-03 [박길주] ========================================
+				//2003-12-03 [박길주] ++++++++++++++++++++++++++++++++++++++++
+				if (0 > EndFrameProc(nRequestID)) return -9;
+				//2003-12-03 [박길주] ----------------------------------------
+				FreeAllAccessVariable(nSessionID);
+				return -10;
+			}
+		}
+	}
+	
+	return 0;
+}
+
+
+
+
+
+
+
+//------------------------------------------------//----------------------------------------o
+// Initialization / Deinitialization / Set & Get Properties
+//------------------------------------------------//----------------------------------------o
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : FreeOCIHandle
+// 기  능 : OCI Statement Handle Free
+//--------------------------------------------------------------------------
+// Return : 0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT  FreeOCIHandle(ORA_SELECT_STRU* pSelect)
+{
+	OCI8StmtHandleFree(pSelect->hpStmt);
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------
+// 원종 추가
+// 함수명 : GetConnectedDB 
+// 기  능 : DB가 Connect 되어 있는지 아닌지 Flag를 리턴한다.(TRUE/FALSE)
+//--------------------------------------------------------------------------
+/*
+BOOL  GetConnectedDB(INT nRequestID)
+{
+	INT nSessionStatus = SESSION_CLOSED;
+	for (INT i=0 ; i<MAX_SESSION_CNT ; i++)
+	{
+		if (g_MainAccess[i].nRequestID == nRequestID)
+		{
+			nSessionStatus = g_MainAccess[i].nStatus;
+			break;
+		}
+	}
+	
+	//return (SESSION_OPENED == nSessionStatus || SESSION_ERROR == nSessionStatus) ? TRUE : FALSE;
+	return (SESSION_OPENED == nSessionStatus || SESSION_ERROR == nSessionStatus) ? TRUE : FALSE;
+}
+*/
+
+//--------------------------------------------------------------------------o
+// 함수명 : IsConnectedOfRequest
+// 기  능 : 세션Request ID에 해당하는 세션이 SESSION_CLOSE 상태면 FALSE, 그렇지 않으면(연결되어 있으면) TRUE
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST	- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			TRUE	- SESSION_OPENED, SESSION_FETCHING, SESSION_USING 상태(연결된 상태)
+//			FALSE	- SESSION_CLOSED 상태
+//--------------------------------------------------------------------------o
+BOOL  IsConnectedOfRequest	(INT nRequestID)	// [I N] 세션Request ID		[#######]	
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	return (SESSION_CLOSED) ? FALSE : TRUE;
+}
+
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : SetFetchCount
+// 기  능 : 세션Request ID에 해당하는 세션에 
+//			한번에 SELECT를 수행하여 가져올 수 있는 최대 Record 개수를 설정한다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST	- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT SetMaxFetchCount	(
+						 INT nRequestID,		// [I N] 세션Request ID		[#######]	
+						 INT nMaxFetchCount		// [I N] 최대 Fetch 가능 레코드 수
+						 )
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	SESSION(nSessionID).nMaxFetchCount = nMaxFetchCount;
+	return 0;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : GetFetchCount
+// 기  능 : 세션Request ID에 해당하는 세션에 
+//			한번에 SELECT를 수행하여 가져올 수 있는 최대 Record 개수를 가져온다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST	- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 GetMaxFetchCount(INT nRequestID)	// [I N] 세션Request ID		[#######]	
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	return SESSION(nSessionID).nMaxFetchCount;
+}
+
+//--------------------------------------------------------------------------o
+// 함수명 : SetArrayFetchSize
+// 기  능 : 세션Request ID에 해당하는 세션에 
+//			한번의 OCIStmtFetch 시에 가져올 레코드 수를 설정한다.
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST	- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			0						- 정상 종료
+//--------------------------------------------------------------------------
+// Author : [GJPark@eco.co.kr]
+// Created: 2003/8/18 21:00
+//--------------------------------------------------------------------------o
+INT SetArrayFetchSize			(
+								 INT nRequestID,		// [I N] 세션Request ID		[#######]	
+								 INT nArrayFetchSize	// [I N] 한번의 OCIStmtFetch 시에 가져올 레코드 수
+								 )
+{
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	SESSION(nSessionID).nArrayFetchSize = nArrayFetchSize;
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : SetBindingData
+// 기  능 : 바인딩 자료를 저장한다
+//--------------------------------------------------------------------------
+// Return : ERR_REQUEST_NOT_EXIST	- 세션Request ID에 대한 세션을 찾을 수 없다.
+//			-1						- Frame이 아닌 경우 AddEDBMBindDataByString 오류시
+//			-2						- Frame인      경우 AddEDBMBindDataByString 오류시
+//			0						- 정상 종료
+//--------------------------------------------------------------------------o
+INT	 SetBindingData				(
+								 INT nRequestID,		// [I N] 세션Request ID		[#######]	
+								 TCHAR* pszAlias,		// [I N] 바인딩 Alias
+								 TCHAR* pszData,		// [I N] 바인딩 Data 
+								 BOOL bFrame			// [I N] 프레임 여부
+								 )
+{
+	INT ids;
+
+	INT nSessionID = getSessionIDOfRequest(nRequestID);
+	if (ERR_REQUEST_NOT_EXIST==nSessionID) return ERR_REQUEST_NOT_EXIST;
+	
+	if (bFrame == FALSE)
+	{
+		ids = AddEDBMBindDataByString(&SESSION(nSessionID).pNonFrameBindData[0], STRING, pszAlias, pszData);
+		if (ids) return -1;
+	}
+	else
+	{
+		ids = AddEDBMBindDataByString(&SESSION(nSessionID).pFrameBindData[SESSION(nSessionID).nFrameStreamCount - 1], STRING, pszAlias, pszData);
+		if (ids) return -2;
+	}
+	
+	return 0;
+}
+
+
+//--------------------------------------------------------------------------o
+// 함수명 : SetLoginID
+// 기  능 : 시스템에서 쓰는 테이블의 FIRST_WORK, LAST_WORK에 로그로 남길
+//          로그인 ID를 저장한다
+//--------------------------------------------------------------------------o
+VOID SetLoginID	(TCHAR* pLoginID)	// [I N] 로그인 ID
+{
+	_tcscpy(g_szWorkID, pLoginID);
+}
+
+
+

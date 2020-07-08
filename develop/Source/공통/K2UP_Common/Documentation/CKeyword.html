@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CKeyword</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.9">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file D:\KOLAS2UP\Develop\Source\공통\K2UP_Common\Keyword.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CKeyword</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>특수문자 제거 및 Keyword 생성</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=35>
+<param name=classes value="CCKeyword,MCKeyword.html">
+<param name=before value="M">
+<param name=after value="M">
+<param name=indent value="0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.4.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CKeyword</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.4.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   VOID </TD><TD><B>deleteSpecialChar</B> (CHAR* szInput, CHAR* szOutput, BOOL bFlag)<BR>
+<I>[static] 특수문자 제거.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.4.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   VOID </TD><TD><B>getKeyword</B> (CHAR* szInput, CHAR* szKeyword, BOOL bKeywordFlag )<BR>
+<I>[static] Keyword를 생성.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.4.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   </TD><TD><B>~CKeyword</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>특수문자 제거 및 Keyword 생성</BLOCKQUOTE>
+<DL>
+
+<A NAME="CKeyword"></A>
+<A NAME="DOC.4.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CKeyword()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="~CKeyword"></A>
+<A NAME="DOC.4.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CKeyword()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="getKeyword"></A>
+<A NAME="DOC.4.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   VOID getKeyword(CHAR* szInput, CHAR* szKeyword, BOOL bKeywordFlag )</B></TT>
+<DD>[static] Keyword를 생성.
+특수문자 제거, 영문자 대문자 변환 등등
+
+<DL><DT><DT><B>Parameters:</B><DD><B>szInput</B> - 		 [in]  Keyword를 얻을 문자열
+<BR><B>szKeyword</B> - 	 [out] 처리된 Keyword 문자열 
+<BR><B>bKeywordFlag</B> - 	 [in]  Keyword를 생성 flag. FALSE인 경우 : '.', ' ', '-' 등을 제거
+<BR><DT><B>Author:</B><DD>박길주
+
+<DT><B>Since:</B><DD>2002-11-22
+<DD></DL><P>
+<A NAME="deleteSpecialChar"></A>
+<A NAME="DOC.4.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   VOID deleteSpecialChar(CHAR* szInput, CHAR* szOutput, BOOL bFlag)</B></TT>
+<DD>[static] 특수문자 제거.
+한글, 한자, 일어, 그리스어, 라틴어, 라틴어, 러시아어, 한글자모, 한글고어
+숫자, 영문대문자, 영문소문자, 그림문자, 한글확장 등의 2 Byte 문자를 처리한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>szInput</B> - 		[in]  입력문자열
+<BR><B>szOutput</B> - 		[out] 특수문자가 제거된 출력문자열
+<BR><B>bFlag</B> - 		[in]  TRUE이면 그림문자는 처리하지 않는다.
+<BR><DT><B>Author:</B><DD>박길주
+
+<DT><B>Since:</B><DD>2002-11-22
+<DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

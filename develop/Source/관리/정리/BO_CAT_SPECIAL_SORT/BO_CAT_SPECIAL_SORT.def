@@ -1,0 +1,12 @@
+; BO_CAT_SPECIAL_SORT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_CAT_SPECIAL_SORT"
+DESCRIPTION  'BO_CAT_SPECIAL_SORT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+CreateForm
+ResizeForm
+DeleteForm
+CreateModelessDlg

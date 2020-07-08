@@ -1,0 +1,396 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\DBSync.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About DBSync"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "DBSync Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DBSYNC_DIALOG DIALOGEX 0, 0, 321, 411
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DBSync"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_eSID1,189,23,42,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eUSER1,189,40,42,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ePASS1,189,57,42,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eSID2,266,22,42,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eUSER2,266,39,42,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ePASS2,266,57,42,13,ES_AUTOHSCROLL
+    CONTROL         "스키마",IDC_rSCHEMA,"Button",BS_AUTORADIOBUTTON,13,102,34,10
+    CONTROL         "데이타",IDC_rDATA,"Button",BS_AUTORADIOBUTTON,53,102,34,10
+    CONTROL         "RUN",IDC_bRUN,"Button",BS_OWNERDRAW | WS_TABSTOP,13,343,41,45
+    CONTROL         "DETAIL",IDC_bDETAIL,"Button",BS_OWNERDRAW | WS_TABSTOP,59,343,41,45
+    CONTROL         "CLOSE",IDCANCEL,"Button",BS_OWNERDRAW | WS_TABSTOP,265,343,41,45
+    CONTROL         "",IDC_gDATA,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,13,115,294,220
+    GROUPBOX        "대상서버",IDC_STATIC,241,7,73,75
+    LTEXT           "환경 파일",IDC_STATIC,13,25,36,9
+    LTEXT           "스키마 파일",IDC_STATIC,13,42,37,9
+    LTEXT           "데이타 파일",IDC_STATIC,13,59,37,9
+    GROUPBOX        "정보",IDC_STATIC,7,7,153,75
+    LTEXT           "SID",IDC_STATIC,247,25,11,9
+    LTEXT           "User",IDC_STATIC,247,42,14,9
+    LTEXT           "Pass",IDC_STATIC,247,61,17,9
+    EDITTEXT        IDC_eENV,52,22,103,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_eSCHEMA,52,39,103,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_eDATA,52,57,103,13,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "원본서버",IDC_STATIC,164,7,73,75
+    LTEXT           "SID",IDC_STATIC,170,25,11,9
+    LTEXT           "User",IDC_STATIC,170,42,14,9
+    LTEXT           "Pass",IDC_STATIC,170,61,17,9
+    GROUPBOX        "원본",IDC_STATIC,7,87,307,317
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,2,2,317,407,WS_EX_DLGMODALFRAME
+END
+
+IDD_DBSYNC_DETAIL DIALOG DISCARDABLE  0, 0, 499, 441
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "상세정보"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_eTABLE,52,13,209,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_eFIELD,52,30,209,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_eWHERE,52,48,209,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_eSRC_CNT,52,65,46,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_eDST_CNT,52,83,46,13,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Prev",IDC_bPREV,"Button",BS_OWNERDRAW | WS_TABSTOP,12,385,40,45
+    CONTROL         "Next",IDC_bNEXT,"Button",BS_OWNERDRAW | WS_TABSTOP,58,385,40,45
+    CONTROL         "CLOSE",IDCANCEL,"Button",BS_OWNERDRAW | WS_TABSTOP,446,386,40,45
+    CONTROL         "",IDC_gDATA1,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,12,124,229,237
+    CONTROL         "",IDC_gDATA2,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,257,124,229,237
+    LTEXT           "테이블",IDC_STATIC,13,16,36,9
+    LTEXT           "Field",IDC_STATIC1,13,33,37,9
+    LTEXT           "Where",IDC_STATIC2,13,50,37,9
+    LTEXT           "SRC 개수",IDC_STATIC3,13,67,37,9
+    LTEXT           "DST 개수",IDC_STATIC4,13,84,37,9
+    GROUPBOX        "원본",IDC_STATIC,7,113,239,254
+    GROUPBOX        "대상",IDC_STATIC,252,113,239,254
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,2,110,495,265,WS_EX_DLGMODALFRAME
+    EDITTEXT        IDC_eCOMPARE,292,13,32,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "일치",IDC_STATIC,272,15,16,9
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,2,2,495,104,WS_EX_DLGMODALFRAME
+    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,399,386,40,45
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,2,378,495,61,WS_EX_DLGMODALFRAME
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DBSYNC_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 319
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 409
+    END
+
+    IDD_DBSYNC_DETAIL, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 497
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 439
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+RUNX                    BITMAP  DISCARDABLE     "RUNX.bmp"
+CLOSEU                  BITMAP  DISCARDABLE     "CLOSEU.bmp"
+CLOSEX                  BITMAP  DISCARDABLE     "CLOSEX.bmp"
+RUND                    BITMAP  DISCARDABLE     "RUND.bmp"
+RUNU                    BITMAP  DISCARDABLE     "RUNU.bmp"
+CLOSED                  BITMAP  DISCARDABLE     "CLOSED.bmp"
+DETAILX                 BITMAP  DISCARDABLE     "DETAILX.bmp"
+DETAILU                 BITMAP  DISCARDABLE     "DETAILU.bmp"
+DETAILD                 BITMAP  DISCARDABLE     "DETAILD.bmp"
+PREVX                   BITMAP  DISCARDABLE     "PREVX.bmp"
+PREVU                   BITMAP  DISCARDABLE     "PREVU.bmp"
+PREVD                   BITMAP  DISCARDABLE     "PREVD.bmp"
+NEXTX                   BITMAP  DISCARDABLE     "NEXTX.bmp"
+NEXTU                   BITMAP  DISCARDABLE     "NEXTU.bmp"
+NEXTD                   BITMAP  DISCARDABLE     "NEXTD.bmp"
+OKX                     BITMAP  DISCARDABLE     "OKX.bmp"
+OKU                     BITMAP  DISCARDABLE     "OKU.bmp"
+OKD                     BITMAP  DISCARDABLE     "OKD.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DBSYNC_DIALOG DLGINIT
+BEGIN
+    IDC_gDATA, 0x37a, 419, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x353a, 0x0000, 0x221b, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x8080, 0x0080, 0x000f, 0x8000, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0000, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb104, 0xb8bc, 0x00b2, 0x0000, 0x0000, 0x0400, 
+0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 
+0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_DBSYNC_DETAIL DLGINIT
+BEGIN
+    IDC_gDATA1, 0x37a, 419, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2972, 0x0000, 0x24cb, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x8080, 0x0080, 0x000f, 0x8000, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0000, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb104, 0xb8bc, 0x00b2, 0x0000, 0x0000, 0x0400, 
+0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 
+0x0000, 0x0000, "\000" 
+    IDC_gDATA2, 0x37a, 419, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2972, 0x0000, 0x24cb, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x8080, 0x0080, 0x000f, 0x8000, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0000, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb104, 0xb8bc, 0x00b2, 0x0000, 0x0000, 0x0400, 
+0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 
+0x0000, 0x0000, "\000" 
+    0
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "DBSync MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "DBSync\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "DBSync.EXE\0"
+            VALUE "ProductName", "DBSync Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About DBSync..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\DBSync.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

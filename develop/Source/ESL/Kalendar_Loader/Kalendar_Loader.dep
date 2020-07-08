@@ -1,0 +1,22 @@
+# Microsoft Developer Studio Generated Dependency File, included by Kalendar_Loader.mak
+
+.\Kalendar_Loader.cpp : \
+	".\Kalendar_Loader.h"\
+	".\Kalendar_LoaderDlg.h"\
+	".\StdAfx.h"\
+	
+
+.\Kalendar_Loader.rc : \
+	".\res\Kalendar_Loader.ico"\
+	".\res\Kalendar_Loader.rc2"\
+	
+
+.\Kalendar_LoaderDlg.cpp : \
+	".\Kalendar_Loader.h"\
+	".\Kalendar_LoaderDlg.h"\
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

@@ -1,0 +1,24 @@
+HKCR
+{
+	PaintX.PictureDecoder.1 = s 'PictureDecoder Class'
+	{
+		CLSID = s '{B69FE5D3-9F53-11D2-B13F-444553540000}'
+	}
+	PaintX.PictureDecoder = s 'PictureDecoder Class'
+	{
+		CurVer = s 'PaintX.PictureDecoder.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B69FE5D3-9F53-11D2-B13F-444553540000} = s 'PictureDecoder Class'
+		{
+			ProgID = s 'PaintX.PictureDecoder.1'
+			VersionIndependentProgID = s 'PaintX.PictureDecoder'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

@@ -1,0 +1,208 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\LOAN_INFO_SHARE_MANAGER.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2008,11,19,91
+ PRODUCTVERSION 2008,11,19,91
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "LOAN_INFO_SHARE_MANAGER DLL\0"
+            VALUE "FileVersion", "2008, 11, 19, 91\0"
+            VALUE "InternalName", "LOAN_INFO_SHARE_MANAGER\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "LOAN_INFO_SHARE_MANAGER.DLL\0"
+            VALUE "ProductName", "LOAN_INFO_SHARE_MANAGER 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2008, 11, 19, 91\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TEST_SHARE DIALOGEX 0, 0, 674, 298
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "TEST SHARE",IDC_STATIC,14,16,56,8
+    EDITTEXT        IDC_edtNTYPE,90,51,40,14,ES_AUTOHSCROLL
+    LTEXT           "nType",IDC_STATIC,47,53,29,8
+    EDITTEXT        IDC_edtSTYPE,169,92,158,14,ES_AUTOHSCROLL
+    LTEXT           "sType",IDC_STATIC,50,94,112,8
+    EDITTEXT        IDC_edtSCOMMAND,169,110,158,14,ES_AUTOHSCROLL
+    LTEXT           "Command",IDC_STATIC,50,112,112,8
+    EDITTEXT        IDC_edtSMASTERUSERINFOCHANGEYN,169,128,158,14,ES_AUTOHSCROLL
+    LTEXT           "sMasterUserInfoChangeYN",IDC_STATIC,50,130,112,8
+    EDITTEXT        IDC_edtUPDATETABLENAME,169,145,158,14,ES_AUTOHSCROLL
+    LTEXT           "sUpdatedTableName",IDC_STATIC,50,147,112,8
+    EDITTEXT        IDC_edtSUPDATETABLERECKEY,169,162,158,14,ES_AUTOHSCROLL
+    LTEXT           "sUpdatedTableRecKey",IDC_STATIC,50,164,112,8
+    EDITTEXT        IDC_edtSUPDATEDFIELDS,169,180,158,14,ES_AUTOHSCROLL
+    LTEXT           "sUpdatedFields",IDC_STATIC,50,182,112,8
+    EDITTEXT        IDC_edtSUPDATELIBCODE,169,213,158,14,ES_AUTOHSCROLL
+    LTEXT           "sUpdateLibCode",IDC_STATIC,50,220,112,8
+    EDITTEXT        IDC_UPDATEDTABLERECKEY,169,236,158,14,ES_AUTOHSCROLL
+    LTEXT           "UpdatedTableRecKey",IDC_STATIC,50,238,112,8
+    EDITTEXT        IDC_edtUPDATESETQUERY,169,254,158,14,ES_AUTOHSCROLL
+    LTEXT           "sUpdatedSetQuery",IDC_STATIC,50,256,112,8
+    LTEXT           " UPLOAD_SHARE_LOAN_INFO",IDC_STATIC,39,75,122,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    LTEXT           " UPLOAD_SHARE_DELAY_INFO",IDC_STATIC,39,200,122,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    PUSHBUTTON      "한건 업로드",IDC_btnTESTO,87,11,94,25
+    PUSHBUTTON      "이용자 일괄 업로드",IDC_btnTEST2,215,11,94,25
+    PUSHBUTTON      "대출/반납 일괄 업로드",IDC_btnTEST3,338,12,94,25
+END
+
+IDD_LOAN_SHARE_MANAGER DIALOG DISCARDABLE  0, 0, 187, 98
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "안보이는 다이얼로그"
+FONT 10, "System"
+BEGIN
+END
+
+IDD_LOAN_SHARE_WAIT_MESSAGE DIALOG DISCARDABLE  0, 0, 244, 75
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "대출 공유에 관련된 작업이 진행중입니다. \r\n완료될때까지 잠시만 기다려주십시요.",IDC_staGEMESSAGE,25,15,194,20
+    LTEXT           "남은 작업수 : ",IDC_staREMAIN_COUNT,25,56,155,9
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,2,44,242,1
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_TEST_SHARE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 291
+    END
+
+    IDD_LOAN_SHARE_MANAGER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\LOAN_INFO_SHARE_MANAGER.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

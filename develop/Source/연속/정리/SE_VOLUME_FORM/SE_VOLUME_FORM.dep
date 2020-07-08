@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by SE_VOLUME_FORM.mak
+
+.\SE_VOLUME_FORM.cpp : \
+	".\StdAfx.h"\
+	
+
+.\SE_VOLUME_FORM.rc : \
+	".\res\SE_VOLUME_FORM.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

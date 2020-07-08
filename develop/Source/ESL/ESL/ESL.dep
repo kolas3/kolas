@@ -1,0 +1,1096 @@
+# Microsoft Developer Studio Generated Dependency File, included by ESL.mak
+
+.\_excelmancontrol.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	
+
+.\ECO_ControlDateEdit.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ECO_ControlDateEditElem.cpp : \
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	
+
+.\ESL.rc : \
+	".\BMP\ADDD.bmp"\
+	".\BMP\CANCELD.bmp"\
+	".\BMP\CLOSED.bmp"\
+	".\BMP\DELETED.bmp"\
+	".\BMP\LEFTD.bmp"\
+	".\BMP\OKD.bmp"\
+	".\BMP\RIGHTD.bmp"\
+	".\BMP\SAVED.bmp"\
+	".\BMP\UPDATED.bmp"\
+	".\INFO.ICO"\
+	".\res\ESL.rc2"\
+	
+
+.\ESL_CharSetMgr.cpp : \
+	".\ESL_CharSetMgr.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_CodeMgr.cpp : \
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_Control_Element.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_ControlComboBox.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_ControlEdit.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_ControlMgr.cpp : \
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_ControlMultiComboBox.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_DataMgr.cpp : \
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	".\ESLDlg_Error.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_DataVerifyMgr.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESL_DVM_VIEWER.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_DateTimeCtrl.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_DVM_VIEWER.cpp : \
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESL_DVM_VIEWER.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_Grid.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridData.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_MBCSFileIO.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\ESL\ESL_UnicodeFileIO.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_GridConfig.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_GridData.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridData.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_GridSelEditor.cpp : \
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	
+
+.\ESL_Information.cpp : \
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_MBCSFileIO.cpp : \
+	"..\..\..\include\ESL\ESL_MBCSFileIO.h"\
+	
+
+.\ESL_Mgr.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESL_UnicodeFileIO.cpp : \
+	"..\..\..\include\ESL\ESL_UnicodeFileIO.h"\
+	
+
+.\esl_worksheet_dlg.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\ESLDlg_Confirm.cpp : \
+	".\ESLDlg_Confirm.h"\
+	
+
+.\ESLDlg_Error.cpp : \
+	".\ESLDlg_Error.h"\
+	
+
+.\ESLDlg_GridConfig.cpp : \
+	"..\..\..\include\ESL\ESL_MBCSFileIO.h"\
+	"..\..\..\include\ESL\ESL_UnicodeFileIO.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	".\ESLDlg_GridConfig.h"\
+	".\ESLDlg_GridConfig_INSERT.h"\
+	
+
+.\ESLDlg_GridConfig_INSERT.cpp : \
+	".\ESLDlg_GridConfig_INSERT.h"\
+	
+
+.\ESLDlg_Work.cpp : \
+	".\ESLDlg_Work.h"\
+	
+
+.\ExcelManager.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	
+
+.\font.cpp : \
+	"..\..\..\include\ESL\font.h"\
+	
+
+.\JComboBx.cpp : \
+	"..\..\..\include\ESL\JComboBx.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	
+
+.\Marc.cpp : \
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\MarcInstruction.cpp : \
+	{$(INCLUDE)}"MarcInstruction.h"\
+	
+
+.\MarcMgr.cpp : \
+	"..\..\..\include\ESL\MarcOperation.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\MarcOperation.cpp : \
+	"..\..\..\include\ESL\MarcOperation.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\MarcRelation.cpp : \
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	
+
+.\MarcSimpleRelation.cpp : \
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	
+
+.\mshflexgrid.cpp : \
+	"..\..\..\include\ESL\font.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\include\ESL\picture.h"\
+	"..\..\..\include\ESL\recordset.h"\
+	
+
+.\picture.cpp : \
+	"..\..\..\include\ESL\picture.h"\
+	
+
+.\recordset.cpp : \
+	"..\..\..\include\ESL\recordset.h"\
+	
+
+.\rowcursor.cpp : \
+	"..\..\..\include\ESL\rowcursor.h"\
+	
+
+.\SPF_Work.cpp : \
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\include\ESL\SPF_Work.h"\
+	".\ESLDlg_Confirm.h"\
+	".\ESLDlg_Work.h"\
+	{$(INCLUDE)}"..\\..\\include\\ESL\\OCI_API.h"\
+	{$(INCLUDE)}"..\\..\\include\ESL\except.h"\
+	{$(INCLUDE)}"..\esl\esl_datamgr.h"\
+	{$(INCLUDE)}"db_struct.h"\
+	{$(INCLUDE)}"ecooci8.h"\
+	{$(INCLUDE)}"ecoocicomapi.h"\
+	{$(INCLUDE)}"Marc.h"\
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"MarcInstruction.h"\
+	{$(INCLUDE)}"MarcMgr.h"\
+	{$(INCLUDE)}"MarcRelation.h"\
+	{$(INCLUDE)}"MarcSimpleRelation.h"\
+	{$(INCLUDE)}"mysql.h"\
+	{$(INCLUDE)}"mysql_com.h"\
+	{$(INCLUDE)}"mysql_version.h"\
+	{$(INCLUDE)}"nzerror.h"\
+	{$(INCLUDE)}"nzt.h"\
+	{$(INCLUDE)}"oci.h"\
+	{$(INCLUDE)}"oci1.h"\
+	{$(INCLUDE)}"oci8dp.h"\
+	{$(INCLUDE)}"ociap.h"\
+	{$(INCLUDE)}"ociapr.h"\
+	{$(INCLUDE)}"ocidfn.h"\
+	{$(INCLUDE)}"ociextp.h"\
+	{$(INCLUDE)}"ocixad.h"\
+	{$(INCLUDE)}"oratypes.h"\
+	{$(INCLUDE)}"ori.h"\
+	{$(INCLUDE)}"orl.h"\
+	{$(INCLUDE)}"oro.h"\
+	{$(INCLUDE)}"ort.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	
+
+.\Subfield.cpp : \
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	
+
+.\Tag.cpp : \
+	{$(INCLUDE)}"MarcConstant.h"\
+	{$(INCLUDE)}"Subfield.h"\
+	{$(INCLUDE)}"Tag.h"\
+	

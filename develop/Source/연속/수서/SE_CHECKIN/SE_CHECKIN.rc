@@ -1,0 +1,397 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SE_CHECKIN.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,30,36
+ PRODUCTVERSION 2005,8,30,36
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "SE_CHECKIN DLL\0"
+            VALUE "FileVersion", "2005, 08, 30, 36\0"
+            VALUE "InternalName", "SE_CHECKIN\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SE_CHECKIN.DLL\0"
+            VALUE "ProductName", "SE_CHECKIN 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 30, 36\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CHECKIN DIALOG DISCARDABLE  0, 0, 380, 254
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_gridCHEKIN,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,5,33,367,201
+    EDITTEXT        IDC_edtCHECKIN_ACQ_TYPE,49,5,50,13,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_edtCHECKIN_ACQ_YEAR,146,5,50,13,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_edtCHECKIN_RECEIPT_NO,246,5,50,13,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "수입구분",IDC_STATIC,12,8,32,8
+    LTEXT           "수입년도",IDC_STATIC,111,7,32,8
+    LTEXT           "접수번호",IDC_STATIC,209,7,32,8
+    CONTROL         "",IDC_gridCHEKIN2,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",NOT WS_VISIBLE | WS_TABSTOP,332,9,16,8
+END
+
+IDD_CHECKIN_SEARCH DIALOG DISCARDABLE  0, 0, 385, 129
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "체크인 검색"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_edtCHE_TITLE1,50,12,110,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtCHE_TITLE2,208,11,110,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtCHE_PUBLISHER1,50,30,110,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtCHE_PURBLISHER2,208,30,110,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    COMBOBOX        IDC_cmbCHE_PUB_FREQ,50,48,110,168,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL
+    COMBOBOX        IDC_cmbCHE_PROVIDER,50,67,110,152,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL
+    EDITTEXT        IDC_edtCHE_ISSN1,50,86,35,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtCHE_ISSN2,124,86,35,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtCHE_ACQ_DELAY_DATE,50,105,110,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    DEFPUSHBUTTON   "검색",IDOK,330,4,50,15
+    PUSHBUTTON      "닫기",IDCANCEL,330,25,50,15
+    PUSHBUTTON      "화면지우기",IDC_btnCHE_SEARCH_CLEAR,330,46,50,15
+    PUSHBUTTON      "기증자 검색",IDC_btnCHE_DONATOR_SEARCH,208,68,110,13
+    LTEXT           "서  명",IDC_STATIC,15,15,24,8
+    LTEXT           "발행자",IDC_STATIC,15,32,24,8
+    LTEXT           "간행빈도",IDC_STATIC,11,50,32,8
+    LTEXT           "구입처",IDC_stcCHE_PROVIDER,15,69,24,8
+    LTEXT           "ISSN",IDC_STATIC,18,89,16,8
+    LTEXT           "입수예정일",IDC_STATIC_DELAY_ACQ_DATE,7,108,40,8
+    LTEXT           "~",IDC_STATIC,182,13,8,8
+    LTEXT           "~",IDC_STATIC,182,32,8,8
+    LTEXT           "~",IDC_STATIC,101,88,8,8
+    GROUPBOX        "",IDC_STATIC_GROUP_BOX,1,0,324,125
+    EDITTEXT        IDC_edtCHE_DONATOR,50,67,110,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cmbCHE_PUB_STATUS,208,49,110,78,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "간행상태",IDC_STATIC,169,52,32,8
+    LTEXT           "연속구분",IDC_STATIC_DIV_CODE,169,70,32,8
+    LTEXT           " 자료실",IDC_STATIC_LOCATION,169,88,32,8
+    COMBOBOX        IDC_cmbCHE_DIV_CODE,208,68,110,78,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cmbCHE_LOCATION,208,86,110,78,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edtCHE_ACQYEAR,208,105,35,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_edtCHE_RECEIPTNO,282,105,35,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    LTEXT           "수입년도",IDC_STATIC_ACQYEAR,169,107,32,8
+    LTEXT           "접수번호",IDC_STATIC_RECEIPTNO,247,107,33,8
+    EDITTEXT        IDC_edtCHE_ACQ_DELAY_DATE2,208,105,110,13,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    LTEXT           "~",IDC_STATIC_ACQ_DELAY,182,107,8,8
+END
+
+IDD_CHECKIN_ACQ_DELAY DIALOG DISCARDABLE  0, 0, 424, 319
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "입수지연처리"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "지연처리",IDOK,299,301,50,14
+    PUSHBUTTON      "작업취소",IDCANCEL,6,301,50,14
+    CONTROL         "",IDC_gridCHECKIN_ACQ_DELAY,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,2,23,421,273
+    EDITTEXT        IDC_edtCHECKIN_ACQ_DELAY_TITLE,49,5,336,13,ES_AUTOHSCROLL
+    LTEXT           "서 명:",IDC_STATIC,15,7,26,8
+    PUSHBUTTON      "다음",IDC_btnNEXT_ACQ_DELAY,356,301,50,14
+    PUSHBUTTON      "목록출력",IDC_BUTTON1,59,301,50,14
+END
+
+IDD_CHECKIN_PROGRESSIVE_ACQ DIALOG DISCARDABLE  0, 0, 174, 88
+STYLE WS_POPUP | WS_BORDER
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "Progress1",IDC_prgACQ_DELAY_TOP,"msctls_progress32",WS_BORDER,7,33,158,13
+    CONTROL         "Progress2",IDC_prgACQ_DELAY_BOTTOM,"msctls_progress32",WS_BORDER,7,69,158,13
+    LTEXT           "",IDC_stcACQ_DELAY_TOP,9,5,155,24
+    LTEXT           "",IDC_stcACQ_DELAY_BOTTOM,7,57,156,9
+END
+
+IDD_CHECKIN_PROGRESS DIALOG DISCARDABLE  0, 0, 178, 88
+STYLE WS_CHILD | WS_BORDER
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "Progress2",IDC_prgDOWN,"msctls_progress32",WS_BORDER,11,63,155,15
+    LTEXT           "",IDC_stcUP,13,6,147,23
+    LTEXT           "",IDC_stcDOWN,13,45,146,12
+END
+
+IDD_CHECKIN_SISAC_SEARCH DIALOG DISCARDABLE  0, 0, 113, 38
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sisac 바코드"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT1,14,13,85,12,ES_AUTOHSCROLL
+END
+
+IDD_CHECKIN_SISAC_SPECIES_LIST DIALOG DISCARDABLE  0, 0, 265, 128
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "서지정보"
+FONT 9, "굴림"
+BEGIN
+    DEFPUSHBUTTON   "선택",IDOK,178,107,38,14
+    PUSHBUTTON      "닫기",IDCANCEL,219,107,39,14
+    CONTROL         "",IDC_gridCHEKIN_SISAC,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,8,8,250,94
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CHECKIN DLGINIT
+BEGIN
+    IDC_gridCHEKIN, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x425a, 0x0000, 0x1f36, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    IDC_gridCHEKIN2, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x02e5, 0x0000, 0x013e, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0005, 0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 
+0x000d, 0x8000, 0x000e, 0x8000, 0x000f, 0x8000, 0x000f, 0x8000, 0x0012, 
+0x8000, 0xc0c0, 0x00c0, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_CHECKIN_ACQ_DELAY DLGINIT
+BEGIN
+    IDC_gridCHECKIN_ACQ_DELAY, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4c2c, 0x0000, 0x2a60, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_CHECKIN_SISAC_SPECIES_LIST DLGINIT
+BEGIN
+    IDC_gridCHEKIN_SISAC, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2d45, 0x0000, 0x0e93, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CHECKIN_SEARCH, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_CHECKIN_SISAC_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 105
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 31
+    END
+
+    IDD_CHECKIN_SISAC_SPECIES_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 258
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 121
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\SE_CHECKIN.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

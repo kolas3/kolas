@@ -1,0 +1,11 @@
+; MNG_ILL_OPTION_MANAGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_ILL_OPTION_MANAGER"
+DESCRIPTION  'MNG_ILL_OPTION_MANAGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

@@ -1,0 +1,52 @@
+# Microsoft Developer Studio Generated Dependency File, included by IndexToolKit.mak
+
+.\Index.cpp : \
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\..\ESL\ESL\ESL_CharSetMgr.h"\
+	".\Index.h"\
+	
+
+.\Index_Mono.cpp : \
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\..\ESL\ESL\ESL_CharSetMgr.h"\
+	".\Index.h"\
+	".\Index_Mono.h"\
+	
+
+.\IndexTool.cpp : \
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\..\ESL\ESL\ESL_CharSetMgr.h"\
+	".\Index.h"\
+	".\Index_Mono.h"\
+	".\IndexTool.h"\
+	
+
+.\IndexToolKit.rc : \
+	".\res\IndexToolKit.rc2"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	

@@ -1,0 +1,1083 @@
+// BO_CAT_REG_0800.cpp : implementation file
+//
+
+#include "stdafx.h"
+//#include "bo_cat_reg.h"
+#include "BO_CAT_REG_0800.h"
+#include "..\..\..\ESL\SIReportMgr\SIReportManager.h"
+#include "..\..\..\공통\MarcAdjustApi\CatApi_BO.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CBO_CAT_REG_0800 dialog
+
+
+CBO_CAT_REG_0800::CBO_CAT_REG_0800(CESL_Mgr* pParent /*=NULL*/)
+	: CESL_Mgr(IDD, pParent)
+{
+	//{{AFX_DATA_INIT(CBO_CAT_REG_0800)
+		// NOTE: the ClassWizard will add member initialization here
+	//}}AFX_DATA_INIT
+}
+
+BOOL CBO_CAT_REG_0800::Create(CWnd* pParentWnd)
+{
+EFS_BEGIN
+
+	return CDialog::Create(IDD, pParentWnd);
+
+EFS_END
+return FALSE;
+
+}
+
+void CBO_CAT_REG_0800::DoDataExchange(CDataExchange* pDX)
+{
+EFS_BEGIN
+
+	CDialog::DoDataExchange(pDX);
+	//{{AFX_DATA_MAP(CBO_CAT_REG_0800)
+		// NOTE: the ClassWizard will add DDX and DDV calls here
+	//}}AFX_DATA_MAP
+
+EFS_END
+}
+
+
+BEGIN_MESSAGE_MAP(CBO_CAT_REG_0800, CDialog)
+	//{{AFX_MSG_MAP(CBO_CAT_REG_0800)
+	ON_BN_CLICKED(IDC_rB4, OnrB4)
+	ON_BN_CLICKED(IDC_rA4, OnrA4)
+	ON_BN_CLICKED(IDC_rA4_RANDSCAPE, OnrA4RANDSCAPE)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CBO_CAT_REG_0800 message handlers
+
+BOOL CBO_CAT_REG_0800::OnInitDialog() 
+{
+EFS_BEGIN
+
+	CDialog::OnInitDialog();
+	
+	// TODO: Add extra initialization here
+	if (InitESL_Mgr("BO_CAT_REG_0800") < 0)	
+	{
+		AfxMessageBox("InitESL_Mgr Error");
+		return FALSE;
+	}
+
+	CButton * pPart;
+	pPart = (CButton *)GetDlgItem(IDC_rSHELF_PRINT);
+	pPart->SetCheck(1);
+
+	CButton * pA4;
+	pA4 = (CButton *)GetDlgItem(IDC_rA4);
+	pA4->SetCheck(1);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	              // EXCEPTION: OCX Property Pages should return FALSE
+
+EFS_END
+return FALSE;
+
+}
+
+void CBO_CAT_REG_0800::OnOK() 
+{
+EFS_BEGIN
+
+	INT ids = -1;
+	// 도서관 이름
+	CString strLibName;
+	CCatApi_BO CatApi(this);
+	CatApi.GetLibInfo(&CString("LIB_NAME"), &strLibName, 1);
+	strLibName += "의 도서관자료로 아래와 같이 등록함.";
+
+	// 원부 번호로 원부 출력
+	CButton * pPart = (CButton *)GetDlgItem(IDC_rSHELF_PRINT);
+	if ( pPart->GetCheck() == 1 ) 
+	{
+		CSIReportManager SIReportManager(this);
+		SIReportManager.m_fpEventHandler = ( int( CWnd::* )( CSIReportEventInfo *EventInfo  ) )SIReportEventHandler;
+		SIReportManager.SetCONNECTION_INFO(m_pInfo->CONNECTION_INFO);
+		SIReportManager.DeleteTempPageFiles();
+		
+		//A4,B4 선택
+		CButton * pB4;
+		pB4 = (CButton *)GetDlgItem(IDC_rB4);
+		if ( pB4->GetCheck() == 1 ) {
+			CButton * pB4Serial;
+			pB4Serial = (CButton *)GetDlgItem(IDC_ChkSerial);
+			if ( pB4Serial->GetCheck() == 1 ) {
+				SIReportManager.m_nUserPaperSize = -9999;
+				SIReportManager.m_nOrientation = DMORIENT_PORTRAIT;
+				SIReportManager.m_nResolution = 1728;
+			}
+			ids = SIReportManager.GetSIReportFileFromDB("원부출력B4");
+		}
+		else if (static_cast<CButton*>(GetDlgItem(IDC_rA4_RANDSCAPE))->GetCheck() == 1 ) 
+			ids = SIReportManager.GetSIReportFileFromDB("원부출력_가로");
+		else
+			ids = SIReportManager.GetSIReportFileFromDB("원부출력");
+		
+		if (ids < 0) 
+		{
+			AfxMessageBox("DB로 부터 SI Report 정보를 가져오지 못하였습니다.");
+			return;
+		}
+		
+		CString sYear, sAccessionNo;
+		GetControlData( "CM_BO_CAT_REG_0800", "작성년도", sYear );
+		if ( sYear == "" ) {
+			AfxMessageBox( "작성년도를 입력하세요." );
+			return;
+		}
+		GetControlData( "CM_BO_CAT_REG_0800", "원부번호", sAccessionNo );
+		if ( sAccessionNo == "" ) {
+			AfxMessageBox( "원부번호를 입력하세요." );
+			return;
+		}
+
+		//원부정보DM
+		CESL_DataMgr *pDmAccession;
+		pDmAccession = FindDM( "DM_BO_CAT_REG_0800_원부" );
+		if ( pDmAccession == NULL ) {
+			AfxMessageBox( "DM_BO_CAT_REG_0800_원부 error" );
+			return;
+		}
+		CString sAccQuery;
+		sAccQuery.Format( "ACCESSION_REC_NO = '%s' AND ACCESSION_REC_MAKE_YEAR = '%s'", sAccessionNo, sYear );
+		if ( pDmAccession->RefreshDataManager( sAccQuery ) < 0 ) return;
+		m_pInfo->pCodeMgr->ConvertCodeToDescInDM(pDmAccession, "입수구분", "원부입수구분");	
+		int iAccCount = pDmAccession->GetRowCount();
+
+
+		CESL_DataMgr *pDM_RegCode = FindDM( "DM_BO_CAT_REG_0800_01" );
+		if ( pDM_RegCode == NULL ) {
+			AfxMessageBox( "DM_BO_CAT_PROC_0800_01" );
+			return;
+		}
+
+		CString strQuery;
+		//rQuery.Format("ACCESSION_REC_KEY IN(SELECT REC_KEY FROM CO_ACCESSION_REC_TBL WHERE ACCESSION_REC_NO =%s)"
+		//		, sAccessionNo );
+		strQuery.Format("ACCESSION_REC_KEY IN(SELECT REC_KEY FROM CO_ACCESSION_REC_TBL WHERE ACCESSION_REC_NO =%s AND ACCESSION_REC_MAKE_YEAR ='%s')"
+						, sAccessionNo, sYear );
+
+		CString strExtraCondition = pDM_RegCode->EXTRA_CONDITION;
+		pDM_RegCode->EXTRA_CONDITION = "GROUP BY REG_CODE ORDER BY REG_CODE";
+		if ( pDM_RegCode->RefreshDataManager( strQuery ) < 0 ) return;
+
+		pDM_RegCode->EXTRA_CONDITION = strExtraCondition;
+
+		INT nRegCodeCount = pDM_RegCode->GetRowCount();
+		if (nRegCodeCount < 1) 
+		{
+			AfxMessageBox( "검색된 데이터가 없습니다." );
+			return;
+		}
+
+		CESL_DataMgr *pDM_0800_02 = FindDM( "DM_BO_CAT_REG_0800_02" );
+		if ( pDM_0800_02 == NULL ) {
+			AfxMessageBox( "DM_BO_CAT_REG_0800_01" );
+			return;
+		}
+		
+		INT idx = -1;
+		INT nPriceSum = 0;
+		INT nRowCount = 0;
+		INT iSwReg = 0;
+		CString sMinRegNo;
+		CString sMaxRegNo;
+		// 등록구분 별로 출력합니다.
+		for (INT idxRegCode = 0; idxRegCode < nRegCodeCount; idxRegCode++)
+		{
+			CString strRegCode = pDM_RegCode->GetCellData(_T("BB_등록구분"), idxRegCode);
+
+			//등록구분 상관없이
+			//strQuery.Format("I.REC_KEY = S.REC_KEY AND S.REC_KEY = B.SPECIES_KEY AND B.REG_CODE = '%s' "
+			//				"AND ACCESSION_REC_KEY IN(SELECT REC_KEY FROM CO_ACCESSION_REC_TBL WHERE ACCESSION_REC_NO =%s) "
+			//				"ORDER BY B.REG_CODE, B.REG_NO", strRegCode, sAccessionNo );
+			strQuery.Format("I.REC_KEY = S.REC_KEY AND S.REC_KEY = B.SPECIES_KEY AND B.REG_CODE = '%s' "
+							"AND ACCESSION_REC_KEY IN(SELECT REC_KEY FROM CO_ACCESSION_REC_TBL WHERE ACCESSION_REC_NO =%s AND ACCESSION_REC_MAKE_YEAR ='%s') "
+							"ORDER BY B.REG_CODE, B.REG_NO", strRegCode, sAccessionNo, sYear );
+
+			if ( pDM_0800_02->RefreshDataManager( strQuery ) < 0 ) return;
+
+			// 등록구분 설명으로 바꾸자
+			CString strRegCodeDesc;
+			m_pInfo->pCodeMgr->ConvertCodeToDesc("등록구분", strRegCode, strRegCodeDesc);
+
+			nRowCount = pDM_0800_02->GetRowCount();
+			if (nRowCount < 1) continue;
+
+			nPriceSum = 0;
+			iSwReg = 0;
+			for (idx = 0; idx < nRowCount; idx++)
+			{
+				//형태사항 만들기
+				CString sPage = pDM_0800_02->GetCellData( "BB_면장수", idx );
+				CString sPhysical = pDM_0800_02->GetCellData( "BB_물리적특성", idx );
+				CString sBookSize = pDM_0800_02->GetCellData( "BB_크기", idx );
+				CString sAccompMat = pDM_0800_02->GetCellData( "BB_딸림자료", idx );// 소정 추가 2004.10.01 
+				CString sForm = sPage;
+				if ( sPhysical != "" ) {
+					if ( sForm != "" ) {
+						sForm = sForm + " : " + sPhysical;
+					}
+					else {
+						sForm = sPhysical;
+					}
+				}
+				if ( sBookSize != "" ) {
+					if ( sForm != "" ) {
+						sForm = sForm + " ; " + sBookSize;
+					}
+					else {
+						sForm = sBookSize;
+					}				
+				}
+				// 소정 추가 2004.10.01 ++++++++++++++++++++++++++++++++++++
+				// 형식구분에 딸림자료 나오게 추가
+				if ( sAccompMat != "" )
+				{
+					if ( sForm != "" )
+						sForm = sForm + " + " + sAccompMat;
+					else 
+						sForm = sAccompMat;
+				}
+				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+				pDM_0800_02->SetCellData( "형태사항", sForm, idx );
+				//청구기호 만들기
+				CString sShelfCode = pDM_0800_02->GetCellData( "BB_별치기호_코드", idx );
+				CString sClassNo = pDM_0800_02->GetCellData( "BB_분류기호", idx );
+				CString sBookCode = pDM_0800_02->GetCellData( "BB_도서기호", idx );
+				CString sVolCode = pDM_0800_02->GetCellData( "BB_편권차", idx );
+				CString sDupCode = pDM_0800_02->GetCellData( "BB_복본기호", idx );
+				
+				// 별치기호 설명으로 바꾸기
+				if (!sShelfCode.IsEmpty())
+					m_pInfo->pCodeMgr->ConvertCodeToDesc(_T("별치기호"), sShelfCode, sShelfCode);
+				CString sCallNo = sShelfCode;
+				
+				if ( sClassNo != "" ) {
+					if ( sCallNo != "" ) {
+						sCallNo = sCallNo + " " + sClassNo;
+					}
+					else {
+						sCallNo = sClassNo;
+					}
+				}
+				if ( sBookCode != "" ) {
+					if ( sBookCode != "" ) {
+						sCallNo = sCallNo + "-" + sBookCode;
+					}
+					else {
+						sCallNo = sBookCode;
+					}
+				}
+				if ( sVolCode != "" ) {
+					if ( sVolCode != "" ) {
+						sCallNo = sCallNo + "-" + sVolCode;
+					}
+					else {
+						sCallNo = sVolCode;
+					}
+				}
+				if ( sDupCode != "" ) {
+					if ( sDupCode != "" ) {
+						sCallNo = sCallNo + "=" + sDupCode;
+					}
+					else {
+						sCallNo = sDupCode;
+					}
+				}
+				pDM_0800_02->SetCellData( "청구기호", sCallNo, idx );
+				//등록번호
+				CString sRegNo = pDM_0800_02->GetCellData( "BB_등록번호", idx );
+				if ( iSwReg == 0 && sRegNo != "" ) {
+					sMinRegNo = sRegNo;
+					sMaxRegNo = sRegNo;
+					iSwReg = 1;
+				}
+				else {
+					if ( sRegNo < sMinRegNo ) {
+						sMinRegNo = sRegNo;
+					}
+					else if ( sRegNo > sMaxRegNo ) {
+						sMaxRegNo = sRegNo;
+					}
+				}
+				//마크에서 표제저작사항 만들기
+				CString sStreamMarc;			
+				pDM_0800_02->GetCellData( "BS_MARC", idx, sStreamMarc );
+				CMarc marc;
+				m_pInfo->pMarcMgr->Decoding( sStreamMarc, &marc );
+				CString sTitleInfo;		//표제저작사항
+				CString s245a;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$a", s245a );
+				sTitleInfo = s245a;
+
+				CString s245h;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$h", s245h );
+				if ( s245h != "" ) {
+					if ( sTitleInfo != "" ) {
+						sTitleInfo = sTitleInfo + s245h;
+					}
+					else {
+						sTitleInfo = s245h;
+					}
+				}
+				
+				CString s245b;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$b", s245b );
+				if ( s245b != "" ) {
+					if ( sTitleInfo != "" ) {
+						sTitleInfo = sTitleInfo + " : " + s245b;
+					}
+					else {
+						sTitleInfo = s245b;
+					}
+				}
+				CString s245n;
+				//m_pInfo->pMarcMgr->GetItem( &marc, "245$n", s245n );
+				//s245n = pDM_0800_02->GetCellData( "BB_권책기호", idx );
+				s245n = pDM_0800_02->GetCellData( "BB_편권차", idx );
+				if ( s245n != "" ) {
+					sTitleInfo = sTitleInfo + " . " + s245n;
+				}
+				CString s245p;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$p", s245p );
+				s245p = pDM_0800_02->GetCellData( "BB_편제", idx );
+				if ( s245p != "" ) {
+					sTitleInfo = sTitleInfo + " , " + s245p;
+				}
+				CString s245d;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$d", s245d );
+				s245d = pDM_0800_02->GetCellData( "BB_편저자", idx );
+				if ( s245d != "" ) {
+					sTitleInfo = sTitleInfo + " / " + s245d;
+				}
+				/*
+				//++++++++++++++++++++++++++++++++++++++++++++++++++
+                //2003.08.28 이학중 추가 
+				//원부출력시 표제저작사항에 245$e 추가 되도록 수정 
+                CString s245e;
+				CArray<CString,CString&> arr245e ;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$e", s245e ,&arr245e);
+				if ( s245e != "" ) {
+					for(int i = 0 ; i< arr245e.GetSize ();i++) 
+					{
+					   sTitleInfo = sTitleInfo + " ; " +  arr245e.GetAt (i);
+
+					}
+				}                
+				//+++++++++++++++++++++++++++++++++++++++++++++++++++
+				*/
+
+				CString s250a;
+				m_pInfo->pMarcMgr->GetItem( &marc, "250$a", s250a );
+				if ( s250a != "" ) {
+					sTitleInfo = sTitleInfo + " .- " + s250a;
+				}
+				//총서표제,총서편차
+				CString s490a;
+				m_pInfo->pMarcMgr->GetItem( &marc, "490$a", s490a );
+				if ( s490a != "" ) {
+					sTitleInfo = sTitleInfo + " .- ( " + s490a + " )";
+				}
+				else {
+					CString s440;
+					CString s440a;
+					m_pInfo->pMarcMgr->GetItem( &marc, "440$a", s440a );
+					if ( s440a != "" ) {
+						CString s440v;
+						m_pInfo->pMarcMgr->GetItem( &marc, "440$v", s440v );
+						s440 = "( " + s440a + " ; " + s440v + " )";
+					}
+					if ( s440 != "" ) {
+						sTitleInfo = sTitleInfo + " .- " + s440;
+					}
+				}		
+				pDM_0800_02->SetCellData( "IBS_표제사항", sTitleInfo, idx );
+				
+				//발행사항 만들기
+				CString sPublishInfo;		//발행사항
+				CString s260a;
+				m_pInfo->pMarcMgr->GetItem( &marc, "260$a", s260a );
+				sPublishInfo = s260a;
+				
+				CString s260b;
+				m_pInfo->pMarcMgr->GetItem( &marc, "260$b", s260b );
+				if ( s260b != "" ) {
+					if ( sPublishInfo != "" ) {
+						sPublishInfo = sPublishInfo + " : " + s260b;
+					}
+					else {
+						sPublishInfo = s260b;
+					}
+				}
+				CString s260c;
+				m_pInfo->pMarcMgr->GetItem( &marc, "260$c", s260c );
+				if ( s260c != "" ) {
+					if ( sPublishInfo != "" ) {
+						sPublishInfo = sPublishInfo + ", " + s260c;
+					}
+					else {
+						sPublishInfo = s260c;
+					}
+				}
+				pDM_0800_02->SetCellData( "IBS_발행자사항", sPublishInfo, idx );
+				
+				//가격
+				CString sPrice;
+				pDM_0800_02->GetCellData( "BB_가격", idx, sPrice );
+
+				CString sPriceCharacter;
+				pDM_0800_02->GetCellData( "BB_가격특성", idx, sPriceCharacter );
+				
+				if ( sPrice == "0" || sPrice == "")
+				{
+					pDM_0800_02->SetCellData( "BB_가격", sPriceCharacter, idx );
+
+				}
+				else 
+				{
+					nPriceSum += _ttoi(sPrice);
+					//현금 표시 포멧으로 만들기
+					NUMBERFMT nFmt = { 0, 0, 3, ".", ",", 1 };
+					TCHAR szOUT[20];
+					::GetNumberFormat(NULL, NULL, sPrice, &nFmt, szOUT, 20);
+					//sPrice = "\\" + sPrice;
+					/*
+					sPrice.Format("\\%s", szOUT);
+					pDM_0800_02->SetCellData( "BB_가격", sPrice, idx );
+					*/
+					CString sItem, sPriceCode;
+					m_pInfo->pMarcMgr->GetItem( &marc, "950$b", sItem );
+					for ( int i = 0 ; i < sItem.GetLength() ; i++ ) {
+						CString sOneWord = sItem.Mid( i, 1 );
+						if ( sOneWord >= "0" && sOneWord <= "9" ) {
+							break;
+						}
+						sPriceCode = sPriceCode + sOneWord;
+					}
+					if ( sPriceCode != "" ) {
+						sPrice.Format("%s%s", sPriceCode, szOUT);
+					}
+					else {
+						sPrice.Format("\\%s", szOUT);
+					}
+					pDM_0800_02->SetCellData( "BB_가격", sPrice, idx );
+				}			
+
+
+/* 수정 사항 : 원부출력시 같은 종이 나오면 ' " '로 출력하게 수정 +++
+ * 수정 날짜 : 2003.09.03
+ * 수정 사람 : 김홍수 
+ */
+/*
+			CString strSKeyPre = pDM_0800_02->GetCellData( "BB_종키", idx-1 );
+			CString strSKeyNow = pDM_0800_02->GetCellData( "BB_종키", idx );
+
+				if ( strSKeyPre == strSKeyNow ) 
+				{	
+					pDM_0800_02->SetCellData( "IBS_표제사항", "                '' ", idx );
+					pDM_0800_02->SetCellData( "IBS_발행자사항", "           '' ", idx );
+					pDM_0800_02->SetCellData( "형태사항", "            '' ", idx );
+					pDM_0800_02->SetCellData( "BB_가격", "   ''     ", idx );
+					//pDM_0800_02->SetCellData( "청구기호", "     '' ", idx );
+				}
+*/
+// 수정 사항 : 원부출력시 같은 종이 나오면 ' " '로 출력하게 수정 +++
+			}
+			//출력하기
+			CString sAccAcqCode = pDmAccession->GetCellData( "원부입수구분", 0 );
+			CString sPrice;
+			sPrice.Format("%d", nPriceSum);
+
+			CString sRegNo = sMinRegNo + " 부터  " + sMaxRegNo + " 까지";
+			//책수 구하기		
+			CString sBookCount;
+			sBookCount.Format("%d", nRowCount);
+			
+			CString sRegDate = pDmAccession->GetCellData( "원부등록일자", 0 );
+			SIReportManager.SetTempVariable("수입구분", sAccAcqCode);
+			SIReportManager.SetTempVariable("수입년도", sYear);
+			//가격
+			//현금 표시 포멧으로 만들기
+			NUMBERFMT nFmt = { 0, 0, 3, ".", ",", 1 };
+			TCHAR szOUT[20];
+			::GetNumberFormat(NULL, NULL, sPrice, &nFmt, szOUT, 20);
+			CString sPriceFont;		
+			sPriceFont.Format( "%15s", szOUT );
+			SIReportManager.SetTempVariable("가격", sPriceFont);
+			SIReportManager.SetTempVariable("등록구분", strRegCodeDesc);
+			SIReportManager.SetTempVariable("원부번호", sAccessionNo);
+			SIReportManager.SetTempVariable("등록번호", sRegNo);
+
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            //2003.08.23 이학중 수정 
+			//원부출력물에 직명,성명 나오게 설정.
+			CString sClassName,sRegistrant ;
+            strQuery.Format ("select class_name FROM CO_ACCESSION_REC_TBL WHERE  ACCESSION_REC_NO = %s AND ACCESSION_REC_MAKE_YEAR = '%s'", sAccessionNo, sYear);
+            pDmAccession->GetOneValueQuery (strQuery,sClassName);
+            strQuery.Format ("select REGISTRANT FROM CO_ACCESSION_REC_TBL WHERE  ACCESSION_REC_NO = %s AND ACCESSION_REC_MAKE_YEAR = '%s'",sAccessionNo, sYear );
+			pDmAccession->GetOneValueQuery (strQuery,sRegistrant); 
+            
+			SIReportManager.SetTempVariable("직명", sClassName);
+			SIReportManager.SetTempVariable("성명", sRegistrant);
+			//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+			//책수 줄 맞추기
+			CString sBookFont;
+			sBookFont.Format( "%15s", sBookCount );
+			SIReportManager.SetTempVariable("책수", sBookFont);		
+			SIReportManager.SetTempVariable("등록일자", sRegDate);
+			
+			SIReportManager.SetTempVariable("LIB_NAME", strLibName);
+			
+			SIReportManager.SetDataMgr(0, pDM_0800_02);
+			//ids = SIReportManager.MakeXMLPageFiles();
+			ids = SIReportManager.MAKEPAGE_DrawWorkForm(-1);		// 워크폼 Manual 반복 모드
+			// 마지막 수평선을 그림
+			Print_SetLastPageLine();			
+		}
+		ids = SIReportManager.Print2();
+	}
+
+	//등록번호범위 출력
+	CButton * pACCESSIONNO_PRINT;
+	pACCESSIONNO_PRINT = (CButton *)GetDlgItem(IDC_rACCESSIONNO_PRINT);	
+	if ( pACCESSIONNO_PRINT->GetCheck() == 1 )
+	{
+		CString sRegNoStart, sRegNoEnd;		
+		GetControlData( "CM_BO_CAT_REG_0800", "등록번호부터", sRegNoStart );
+		GetControlData( "CM_BO_CAT_REG_0800", "등록번호까지", sRegNoEnd );	
+
+		if ( sRegNoStart == "" || sRegNoEnd == "" ) {
+			AfxMessageBox( "등록번호 범위를 입력하세요." );
+			return;
+		}
+
+		if ( sRegNoStart != "" && sRegNoStart.GetLength() < 12 ) {		
+			if ( sRegNoStart.GetLength() > 2 ) {
+				CString sRight;
+				sRight.Format( "%010s" , sRegNoStart.Mid(2) );
+				sRegNoStart = sRegNoStart.Left(2) + sRight;
+			}
+		}
+		if ( sRegNoEnd != "" && sRegNoEnd.GetLength() < 12 ) {
+			if ( sRegNoEnd.GetLength() > 2 ) {
+				CString sRight;
+				sRight.Format( "%010s" , sRegNoEnd.Mid(2) );
+				sRegNoEnd = sRegNoEnd.Left(2) + sRight;
+			}
+		}
+
+		if ( sRegNoStart.Left(2) != sRegNoEnd.Left(2) ) {
+			AfxMessageBox( "등록구분이 같아야 합니다." );
+			return;
+		}
+
+		CESL_DataMgr *pDM;
+		pDM = FindDM( "DM_BO_CAT_REG_0800_01" );
+		if ( pDM == NULL ) {
+			AfxMessageBox( "DM_BO_CAT_PROC_0800_01" );
+			return;
+		}
+
+		CString strQuery;
+		strQuery.Format( "REG_NO >= '%s' AND REG_NO <= '%s' AND REG_CODE = '%s'", sRegNoStart, sRegNoEnd, sRegNoStart.Left(2) );
+		if ( pDM->RefreshDataManager( strQuery ) < 0 ) return;
+
+		int nRowCount = pDM->GetRowCount();
+		if ( nRowCount < 1 ) {
+			AfxMessageBox( "검색된 데이터가 없습니다." );
+			return;
+		}
+
+		CESL_DataMgr *pDM_0800_02 = FindDM( "DM_BO_CAT_REG_0800_02" );
+		if ( pDM_0800_02 == NULL ) {
+			AfxMessageBox( "DM_BO_CAT_REG_0800_01" );
+			return;
+		}
+
+		CString sRegCode;
+		CString sMinRegNo, sMaxRegNo;
+		CString sRegCodeDes;
+		//책수
+		int iBookCount = 0;
+		for ( int i = 1 ; i <= nRowCount ; i++ ) 
+		{
+			sRegCode = pDM->GetCellData( "BB_등록구분", i-1 );
+			strQuery.Format("I.REC_KEY = S.REC_KEY AND S.REC_KEY = B.SPECIES_KEY "
+							"AND B.REG_NO >= '%s' AND B.REG_NO <= '%s' "
+							"AND B.REG_CODE = '%s' AND B.WORKING_STATUS > 'BOC' ORDER BY B.REG_NO"
+							, sRegNoStart, sRegNoEnd, sRegCode );
+
+			if ( pDM_0800_02->RefreshDataManager( strQuery ) < 0 ) return;
+			sRegCodeDes = pDM->GetCellData( "BB_등록구분", i-1 );
+			int nRowCount = pDM_0800_02->GetRowCount();
+			//책수
+			iBookCount = nRowCount;
+			int iSwReg = 0;
+			for ( int j = 0 ; j < nRowCount ; j ++ ) 
+			{
+				//형태사항 만들기
+				CString sPage = pDM_0800_02->GetCellData( "BB_면장수", j );
+				CString sPhysical = pDM_0800_02->GetCellData( "BB_물리적특성", j );
+				CString sBookSize = pDM_0800_02->GetCellData( "BB_크기", j );
+				CString sAccompMat = pDM_0800_02->GetCellData( "BB_딸림자료", j );// 소정 추가 2004.10.01
+				CString sForm = sPage;
+				if ( sPhysical != "" ) {
+					if ( sForm != "" ) {
+						sForm = sForm + " : " + sPhysical;
+					}
+					else {
+						sForm = sPhysical;
+					}
+				}
+				if ( sBookSize != "" ) {
+					if ( sForm != "" ) {
+						sForm = sForm + " ; " + sBookSize;
+					}
+					else {
+						sForm = sBookSize;
+					}				
+				}
+				// 소정 추가 2004.10.01 ++++++++++++++++++++++++++++++++++++
+				// 형식구분에 딸림자료 나오게 추가
+				if ( sAccompMat != "" )
+				{
+					if ( sForm != "" )
+						sForm = sForm + " + " + sAccompMat;
+					else 
+						sForm = sAccompMat;
+				}
+				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+				pDM_0800_02->SetCellData( "형태사항", sForm, j );
+				//청구기호 만들기
+				CString sShelfCode = pDM_0800_02->GetCellData( "BB_별치기호_코드", j );
+				CString sClassNo = pDM_0800_02->GetCellData( "BB_분류기호", j );
+				CString sBookCode = pDM_0800_02->GetCellData( "BB_도서기호", j );
+				CString sVolCode = pDM_0800_02->GetCellData( "BB_편권차", j );
+				CString sDupCode = pDM_0800_02->GetCellData( "BB_복본기호", j );
+				// 별치기호 설명으로 바꾸기
+				if (!sShelfCode.IsEmpty())
+					m_pInfo->pCodeMgr->ConvertCodeToDesc(_T("별치기호"), sShelfCode, sShelfCode);
+				CString sCallNo = sShelfCode;
+				
+				if ( sClassNo != "" ) {
+					if ( sCallNo != "" ) {
+						sCallNo = sCallNo + " " + sClassNo;
+					}
+					else {
+						sCallNo = sClassNo;
+					}
+				}
+				if ( sBookCode != "" ) {
+					if ( sBookCode != "" ) {
+						sCallNo = sCallNo + "-" + sBookCode;
+					}
+					else {
+						sCallNo = sBookCode;
+					}
+				}
+				if ( sVolCode != "" ) {
+					if ( sVolCode != "" ) {
+						sCallNo = sCallNo + "-" + sVolCode;
+					}
+					else {
+						sCallNo = sVolCode;
+					}
+				}
+				if ( sDupCode != "" ) {
+					if ( sDupCode != "" ) {
+						sCallNo = sCallNo + "=" + sDupCode;
+					}
+					else {
+						sCallNo = sDupCode;
+					}
+				}
+
+				pDM_0800_02->SetCellData( "청구기호", sCallNo, j );
+
+				//등록번호
+				CString sRegNo = pDM_0800_02->GetCellData( "BB_등록번호", j );
+				if ( iSwReg == 0 && sRegNo != "" ) {
+					sMinRegNo = sRegNo;
+					sMaxRegNo = sRegNo;
+					iSwReg = 1;
+				}
+				else {
+					if ( sRegNo < sMinRegNo ) {
+						sMinRegNo = sRegNo;
+					}
+					else if ( sRegNo > sMaxRegNo ) {
+						sMaxRegNo = sRegNo;
+					}
+				}
+
+				//마크에서 표제저작사항 만들기
+				CString sStreamMarc;			
+				pDM_0800_02->GetCellData( "BS_MARC", j, sStreamMarc );
+				CMarc marc;
+				m_pInfo->pMarcMgr->Decoding( sStreamMarc, &marc );
+				CString sTitleInfo;		//표제저작사항
+				CString s245a;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$a", s245a );
+				sTitleInfo = s245a;
+
+				CString s245h;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$h", s245h );
+				if ( s245h != "" ) {
+					if ( sTitleInfo != "" ) {
+						sTitleInfo = sTitleInfo + s245h;
+					}
+					else {
+						sTitleInfo = s245h;
+					}
+				}
+
+				CString s245b;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$b", s245b );
+				if ( s245b != "" ) {
+					if ( sTitleInfo != "" ) {
+						sTitleInfo = sTitleInfo + " : " + s245b;
+					}
+					else {
+						sTitleInfo = s245b;
+					}
+				}
+				CString s245n;
+				//m_pInfo->pMarcMgr->GetItem( &marc, "245$n", s245n );
+				//s245n = pDM_0800_02->GetCellData( "BB_권책기호", j );
+				s245n = pDM_0800_02->GetCellData( "BB_편권차", j );
+				if ( s245n != "" ) {
+					sTitleInfo = sTitleInfo + " . " + s245n;
+				}
+				CString s245p;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$p", s245p );
+				s245p = pDM_0800_02->GetCellData( "BB_편제", j );
+				if ( s245p != "" ) {
+					sTitleInfo = sTitleInfo + " , " + s245p;
+				}
+				CString s245d;
+				m_pInfo->pMarcMgr->GetItem( &marc, "245$d", s245d );
+				s245d = pDM_0800_02->GetCellData( "BB_편저자", j );
+				if ( s245d != "" ) {
+					sTitleInfo = sTitleInfo + " / " + s245d;
+				}			
+				CString s250a;
+				m_pInfo->pMarcMgr->GetItem( &marc, "250$a", s250a );
+				if ( s250a != "" ) {
+					sTitleInfo = sTitleInfo + " .- " + s250a;
+				}
+				//총서표제,총서편차
+				CString s490a;
+				m_pInfo->pMarcMgr->GetItem( &marc, "490$a", s490a );
+				if ( s490a != "" ) {
+					sTitleInfo = sTitleInfo + " .- ( " + s490a + " )";
+				}
+				else {
+					CString s440;
+					CString s440a;
+					m_pInfo->pMarcMgr->GetItem( &marc, "440$a", s440a );
+					if ( s440a != "" ) {
+						CString s440v;
+						m_pInfo->pMarcMgr->GetItem( &marc, "440$v", s440v );
+						s440 = "( " + s440a + " ; " + s440v + " )";
+					}
+					if ( s440 != "" ) {
+						sTitleInfo = sTitleInfo + " .- " + s440;
+					}
+				}		
+				pDM_0800_02->SetCellData( "IBS_표제사항", sTitleInfo, j );
+
+				//발행사항 만들기
+				CString sPublishInfo;		//발행사항
+				CString s260a;
+				m_pInfo->pMarcMgr->GetItem( &marc, "260$a", s260a );
+				sPublishInfo = s260a;
+
+				CString s260b;
+				m_pInfo->pMarcMgr->GetItem( &marc, "260$b", s260b );
+				if ( s260b != "" ) {
+					if ( sPublishInfo != "" ) {
+						sPublishInfo = sPublishInfo + " : " + s260b;
+					}
+					else {
+						sPublishInfo = s260b;
+					}
+				}
+				CString s260c;
+				m_pInfo->pMarcMgr->GetItem( &marc, "260$c", s260c );
+				if ( s260c != "" ) {
+					if ( sPublishInfo != "" ) {
+						sPublishInfo = sPublishInfo + ", " + s260c;
+					}
+					else {
+						sPublishInfo = s260c;
+					}
+				}
+				pDM_0800_02->SetCellData( "IBS_발행자사항", sPublishInfo, j );
+				
+				//가격
+				CString sPrice;
+				pDM_0800_02->GetCellData( "BB_가격", j, sPrice );
+
+				CString sPriceCharacter;
+				pDM_0800_02->GetCellData( "BB_가격특성", j, sPriceCharacter );
+				
+				if ( sPrice == "0" || sPrice == "")
+				{
+					pDM_0800_02->SetCellData( "BB_가격", sPriceCharacter, j );
+
+				}
+				else 
+				{
+					//현금 표시 포멧으로 만들기
+					NUMBERFMT nFmt = { 0, 0, 3, ".", ",", 1 };
+					TCHAR szOUT[20];
+					::GetNumberFormat(NULL, NULL, sPrice, &nFmt, szOUT, 20);
+					//sPrice = "\\" + sPrice;
+					/*
+					sPrice.Format("\\%s", szOUT);
+					pDM_0800_02->SetCellData( "BB_가격", sPrice, j );
+					*/
+					CString sItem, sPriceCode;
+					m_pInfo->pMarcMgr->GetItem( &marc, "950$b", sItem );
+					for ( int i = 0 ; i < sItem.GetLength() ; i++ ) {
+						CString sOneWord = sItem.Mid( i, 1 );
+						if ( sOneWord >= "0" && sOneWord <= "9" ) {
+							break;
+						}
+						sPriceCode = sPriceCode + sOneWord;
+					}
+					if ( sPriceCode != "" ) {
+						sPrice.Format("%s%s", sPriceCode, szOUT);
+					}
+					else {
+						sPrice.Format("\\%s", szOUT);
+					}
+					pDM_0800_02->SetCellData( "BB_가격", sPrice, j );
+				}
+
+				//비고 950$c값을 넣어달라 하셨음
+				CString s950c;
+				m_pInfo->pMarcMgr->GetItem( &marc, "950$c", s950c );
+				pDM_0800_02->SetCellData( "BB_비고", s950c, j );
+
+
+			}			
+		}
+		m_pInfo->pCodeMgr->ConvertCodeToDescInDM(pDM, "등록구분", "BB_등록구분");
+		sRegCodeDes = pDM->GetCellData( "BB_등록구분", 0 );
+		
+		//출력하기
+		CSIReportManager *pSIReportManager = new CSIReportManager(this);
+		pSIReportManager->m_fpEventHandler = ( int( CWnd::* )( CSIReportEventInfo *EventInfo  ) )SIReportEventHandler;
+		if (!pSIReportManager) {
+			AfxMessageBox("Report Manager를 생성하지 못하였습니다.");
+			return;
+		}
+		INT ids;
+		pSIReportManager->SetCONNECTION_INFO(pDM->CONNECTION_INFO);
+		//A4,B4 선택
+		CButton * pB4;
+		pB4 = (CButton *)GetDlgItem(IDC_rB4);
+		if ( pB4->GetCheck() == 1 ) {	
+			CButton * pB4Serial;
+			pB4Serial = (CButton *)GetDlgItem(IDC_ChkSerial);
+			if ( pB4Serial->GetCheck() == 1 ) {
+				pSIReportManager->m_nUserPaperSize = -9999;
+				pSIReportManager->m_nOrientation = DMORIENT_PORTRAIT;
+				pSIReportManager->m_nResolution = 1728;
+			}
+			ids = pSIReportManager->GetSIReportFileFromDB("원부출력B4");
+		}
+		else if (static_cast<CButton*>(GetDlgItem(IDC_rA4_RANDSCAPE))->GetCheck() == 1 ) 
+		{
+			ids = pSIReportManager->GetSIReportFileFromDB("원부출력_가로");
+		}
+		else {
+			ids = pSIReportManager->GetSIReportFileFromDB("원부출력");
+		}
+		
+		if (ids < 0) {
+			AfxMessageBox("DB로 부터 SI Report 정보를 가져오지 못하였습니다.");
+			return;
+		}
+		
+		CString sPrice = pDM->GetCellData( "가격", 0 );
+		CString sRegNo = sMinRegNo + " 부터  " + sMaxRegNo + " 까지";
+		CString sBookCount;
+		sBookCount.Format( "%d", iBookCount );
+		
+		pSIReportManager->SetTempVariable("LIB_NAME", strLibName);
+		//가격
+		//현금 표시 포멧으로 만들기
+		NUMBERFMT nFmt = { 0, 0, 3, ".", ",", 1 };
+		TCHAR szOUT[20];
+		::GetNumberFormat(NULL, NULL, sPrice, &nFmt, szOUT, 20);
+		CString sPriceFont;		
+		sPriceFont.Format( "%15s", szOUT );
+		pSIReportManager->SetTempVariable("가격", sPriceFont);
+		pSIReportManager->SetTempVariable("등록구분", sRegCodeDes);
+		pSIReportManager->SetTempVariable("등록번호", sRegNo);
+
+		//책수 줄 맞추기
+		CString sBookFont;
+		sBookFont.Format( "%15s", sBookCount );
+		pSIReportManager->SetTempVariable("책수", sBookFont);
+		pSIReportManager->SetDataMgr(0, pDM_0800_02);
+		ids = pSIReportManager->MakeXMLPageFiles();
+		// 마지막 수평선을 그림
+		Print_SetLastPageLine();
+		ids = pSIReportManager->Print2();
+		if (pSIReportManager) {
+			delete pSIReportManager;
+			pSIReportManager = NULL;
+		}
+	}
+
+EFS_END
+}
+
+INT CBO_CAT_REG_0800::SIReportEventHandler( CSIReportEventInfo * EventInfo )
+{
+EFS_BEGIN
+
+	CSIReportManager *pSIReportManager = (CSIReportManager *)EventInfo->m_pSIReportManager;
+	if (!pSIReportManager) return -1;
+	return 0;
+
+EFS_END
+return -1;
+
+}
+
+void CBO_CAT_REG_0800::Print_SetLastPageLine(void)
+{
+EFS_BEGIN
+
+	INT ids;
+
+	// XML 과 WorkForm객체를 생성한다.
+	CSIReportXMLIOMgr *pXMLIOMgr = new CSIReportXMLIOMgr(MASTER_IS_MANAGER);
+	CSIReportWorkForm *pPageWorkForm = new CSIReportWorkForm(MASTER_IS_MANAGER);
+	
+	if (pXMLIOMgr == NULL) {
+		AfxMessageBox("XML 처리기 생성에 실패하였습니다.");
+		return;
+	}
+	if (pPageWorkForm == NULL) {
+		AfxMessageBox("중간 XML 처리기 생성에 실패하였습니다.");
+		return;
+	}
+
+	// 현재 마지막 페이지 번호를 가져온다.
+	INT nMaxTmpPageNum = pXMLIOMgr->GetMaxTmpPageNum();
+	if (nMaxTmpPageNum <= 0) {
+		AfxMessageBox("페이지 정보를 찾을 수 없습니다.");
+		return;
+	}
+	CString strFileName;
+	strFileName.Format("rpt_tmp\\page%04d.xml", nMaxTmpPageNum);
+	// 현재 마지막 페이지 파일을 불러온다.
+	ids = pPageWorkForm->LoadWorkForm(strFileName);
+	if (ids != 0) {
+		AfxMessageBox("페이지를 로드 하지 못하였습니다.");
+		return;
+	}
+	// 불러온 WorkForm중에서 First Sheet를 가져온다.(중간 페이지 파일에는 Sheet가 한개뿐이다.)
+	CSIReportWorkSheet *pSheet = pPageWorkForm->FindSheet(0);
+	if (pSheet == NULL) {
+		AfxMessageBox("페이지를 찾을 수 없습니다.");
+		return;
+	}
+	// 마지막 수평줄 처리가 이미 되어 있는지 본다. 이미 처리되어 있다면 두번 할 필요 없다.
+	CSIReportObject * pObject = pSheet->FindObject("추가된마지막수평줄");
+	if (pObject) return;
+	// 외부테이블 과 반복 테이블을 가져온다.(테이블 이름은 상황에 따라 변경할 것)
+	CSIReportObject_Table * pIn = (CSIReportObject_Table*)pSheet->FindObject("테이블_17");
+	CSIReportObject_Table * pOut = (CSIReportObject_Table*)pSheet->FindObject("테이블_43");
+	if (pIn == NULL) return;
+	if (pOut == NULL) return;
+
+	CRect InLeft, InRight, OutLeft, OutRight, NewRect;
+
+	CSIReportObject_Table_Cell *pCell;
+
+	// 반복테이블의 마지막 라인의 왼쪽 처음과 오른쪽 마지막셀의 Rect를 구하고
+	pCell = NULL;
+	pCell = pIn->GetCell(pIn->row_count-1, 0);
+	if (pCell) InLeft = pCell->GetRect();
+	
+	pCell = NULL;
+	pCell = pIn->GetCell(pIn->row_count-1, pIn->col_count-1);
+	if (pCell) InRight = pCell->GetRect();
+
+	// 외부테이블의 마지막 라인의 왼쪽 처음 셀의 Rect를 구한다.
+	pCell = NULL;
+	pCell = pOut->GetCell(pOut->row_count-1, 0);
+	if (pCell) OutLeft = pCell->GetRect();
+
+	// 외부테이블보다 반복테이블이 작으면 마지막 수평줄을 추가해준다.
+	if (InLeft.bottom < OutLeft.bottom) {
+		// 마지막 수평줄의 Rect를 계산한다.
+		NewRect.top = InLeft.bottom;
+		NewRect.bottom = InLeft.bottom;
+		NewRect.left = InLeft.left;
+		NewRect.right = InRight.right;
+
+		// 마지막 수평줄을 중간 페이지 파일에 추가한다.
+		CSIReportObject_Line *pLine = (CSIReportObject_Line *)pSheet->AddNewObject(OBJECT_LINE);
+		if (pLine) {
+			pLine->SetName("추가된마지막수평줄");
+			pLine->SetRect(NewRect);
+		}
+
+		// 변경된 중간페이지 파일을 저장한다.
+		ids = pXMLIOMgr->SaveToXML(pPageWorkForm, strFileName);
+	}
+
+	// 생성된 Object를 해제
+	if (pXMLIOMgr) {
+		delete pXMLIOMgr;
+		pXMLIOMgr = NULL;
+	}
+	if (pPageWorkForm) {
+		delete pPageWorkForm;
+		pPageWorkForm = NULL;
+	}
+	return;
+
+EFS_END
+}
+
+void CBO_CAT_REG_0800::OnrB4() 
+{
+	// TODO: Add your control notification handler code here
+	GetDlgItem(IDC_ChkSerial)->EnableWindow(true);
+}
+
+void CBO_CAT_REG_0800::OnrA4() 
+{
+	// TODO: Add your control notification handler code here
+	GetDlgItem(IDC_ChkSerial)->EnableWindow(false);
+}
+
+void CBO_CAT_REG_0800::OnrA4RANDSCAPE() 
+{
+	// TODO: Add your control notification handler code here
+	GetDlgItem(IDC_ChkSerial)->EnableWindow(false);
+}

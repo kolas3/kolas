@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  CSearchCond</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file E:\kolas2up\Develop\Source\공동목록\UI_SEARCH_DLG\SearchCond.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  <A HREF="#DOC.DOCU">CSearchCond</A></H2></TD></H2></TD></TR></TABLE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=35>
+<param name=classes value="CCSearchCond,MCSearchCond.html">
+<param name=before value="M">
+<param name=after value="M">
+<param name=indent value="0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>AddCond</B> (CString* alias, CString* value)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   void </TD><TD><B>AddSearchValue</B> (char* alias, char* value)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>AddSubCond</B> (<!1><A HREF="CSearchCond.html">CSearchCond</A>* cond)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CSearchCond</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   void </TD><TD><B>InitSearchValue</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>Search</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>SetOutputValue</B> (CString* value)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   </TD><TD><B>~CSearchCond</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Private Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CPtrArray </TD><TD><B>m_CondArray</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   CMap&lt;CString, LPCSTR, CString, LPCSTR&gt;  </TD><TD><B>m_InputValue</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CPtrArray </TD><TD><B>m_SubCondArray</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sCode</B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Private Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>CompareData</B> (char* cond, char* input)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.99.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>CompareData</B> (<!1><A HREF="COND_ELEM.html">COND_ELEM</A>* pElem)<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<DL>
+
+<A NAME="CSearchCond"></A>
+<A NAME="DOC.99.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CSearchCond()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="~CSearchCond"></A>
+<A NAME="DOC.99.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CSearchCond()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_InputValue"></A>
+<A NAME="DOC.99.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   CMap&lt;CString, LPCSTR, CString, LPCSTR&gt;  m_InputValue</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="InitSearchValue"></A>
+<A NAME="DOC.99.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void InitSearchValue()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="AddSearchValue"></A>
+<A NAME="DOC.99.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void AddSearchValue(char* alias, char* value)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="AddCond"></A>
+<A NAME="DOC.99.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int AddCond(CString* alias, CString* value)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="AddSubCond"></A>
+<A NAME="DOC.99.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int AddSubCond(<!1><A HREF="CSearchCond.html">CSearchCond</A>* cond)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetOutputValue"></A>
+<A NAME="DOC.99.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetOutputValue(CString* value)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="Search"></A>
+<A NAME="DOC.99.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString Search()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_CondArray"></A>
+<A NAME="DOC.99.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CPtrArray m_CondArray</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_SubCondArray"></A>
+<A NAME="DOC.99.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CPtrArray m_SubCondArray</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sCode"></A>
+<A NAME="DOC.99.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sCode</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="CompareData"></A>
+<A NAME="DOC.99.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL CompareData(<!1><A HREF="COND_ELEM.html">COND_ELEM</A>* pElem)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="CompareData"></A>
+<A NAME="DOC.99.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL CompareData(char* cond, char* input)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

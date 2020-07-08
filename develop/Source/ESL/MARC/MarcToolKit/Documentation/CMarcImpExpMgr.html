@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CMarcImpExpMgr</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file C:\Kolas2UP\Develop\Source\ESL\MARC\MarcToolKit\MarcImpExpMgr.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CMarcImpExpMgr</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>마크 반입/반출을 위한 클래스 (아직 반출은 지원하지 않는다.) </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=35>
+<param name=classes value="CCMarcImpExpMgr,MCMarcImpExpMgr.html">
+<param name=before value="M">
+<param name=after value="M">
+<param name=indent value="0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>typedef INT </TD><TD><B>(CWnd::*CallBackMarcCheckPtr)</B> (CMarc* pMarc, CString &amp;strCheckErrMsg)<BR>
+<I>마크 체크 콜백 펑션</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CMarcImpExpMgr</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.27"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>CheckMarcSyntax</B> (CMarc* pMarc, CString &amp;strMarcCheckResult)<BR>
+<I>마크 문법 체크</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.24"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DataManager 포인터 추가 관련</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.26"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>GetExcelHeaderInfo</B> (CArray&lt;CString, CString&amp;&gt;* pArray)<BR>
+<I>엑셀 파일의 헤더정보 읽어오기</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>GetLastError</B> () const <BR>
+<I>마지막 에러메시지를 가져옴</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.25"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>ImportFile</B> (CString strFilePath = "")<BR>
+<I> 파일 반입 시작 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.23"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>Init</B> (CWnd* pParentWnd, CMarcMgr* pMarcMgr, INT nFileType, CString strFilePath)<BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>SetCallBackMarcCheck</B> (CallBackMarcCheckPtr pCallBackFunc)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>SetParentWnd</B> (CWnd* pParentWnd)<BR>
+<I>부모 윈도우 설정</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.31"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   </TD><TD><B>~CMarcImpExpMgr</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>마크 메니저 Get/Set</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>마크 스트림이 들어갈 DM Field Alias Get/Set</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>에러 체크하는 DM Field Alias Get/Set</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>책수가 들어갈 DM Field Alias Get/Set</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>파일 경로 Get/Set</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>파일 종류 Get/Set</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.21"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CArray&lt;CString, CString&amp;&gt;  </TD><TD><B>m_arrayExcelHead</B> <BR>
+<I>엑셀 헤더정보 Array</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.20"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CObList </TD><TD><B>m_listDM</B> <BR>
+<I>메이터 메니저 리스트</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>m_nFileType</B> <BR>
+<I>열 파일 타입 : XLS - 엑세파일 TXT - 텍스트 파일</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.22"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CallBackMarcCheckPtr </TD><TD><B>m_pCallBackFunc</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CMarcMgr* </TD><TD><B>m_pMarcMgr</B> <BR>
+<I>마크 메니저 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CWnd* </TD><TD><B>m_pParentWnd</B> <BR>
+<I>부모 윈도우</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.18"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strDMBookCountAlias</B> <BR>
+<I>책수가 들어갈 DM Field Alias</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strDMErrChkAlias</B> <BR>
+<I>에러 체크하는 DM Field Alias</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strDMMarcstreamAlias</B> <BR>
+<I>마크 스트림이 들어갈 DM Field Alias</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strFilePath</B> <BR>
+<I>열 파일 경로</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.19"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_strLastError</B> <BR>
+<I>마지 막 에러 메시지</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.29"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>ImportTxtFile</B> ()<BR>
+<I>텍스트파일 반입</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.28"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>ImportXlsFile</B> ()<BR>
+<I>엑셀파일 반입</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.71.30"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>MakeDM</B> (CMarc* pMarc)<BR>
+<I>반입을 하면서 pMarc를 가지고 DataManager를 만든다.</I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+마크 반입/반출을 위한 클래스 (아직 반출은 지원하지 않는다.)
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CMarcImpExpMgr"></A>
+<A NAME="DOC.71.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CMarcImpExpMgr()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetParentWnd"></A>
+<A NAME="DOC.71.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetParentWnd(CWnd* pParentWnd)</B></TT>
+<DD>부모 윈도우 설정
+<DL><DT><DD></DL><P>
+<A NAME="마크 메니저 Get/Set"></A>
+<A NAME="DOC.71.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 마크 메니저 Get/Set</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetMarcMgr"></A>
+<A NAME="DOC.71.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CMarcMgr* GetMarcMgr() const </B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetMarcMgr"></A>
+<A NAME="DOC.71.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetMarcMgr(CMarcMgr* pMarcMgr)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="파일 경로 Get/Set"></A>
+<A NAME="DOC.71.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 파일 경로 Get/Set</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetFilePath"></A>
+<A NAME="DOC.71.4.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetFilePath() const </B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetFilePath"></A>
+<A NAME="DOC.71.4.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetFilePath(CString strFilePath)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="파일 종류 Get/Set"></A>
+<A NAME="DOC.71.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 파일 종류 Get/Set</B></TT>
+<DD>
+m_nFileType XLS : 엑셀 파일 TXT : 텍스트 파일
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetFileType"></A>
+<A NAME="DOC.71.5.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetFileType() const </B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetFileType"></A>
+<A NAME="DOC.71.5.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetFileType(INT nFileType)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="에러 체크하는 DM Field Alias Get/Set"></A>
+<A NAME="DOC.71.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 에러 체크하는 DM Field Alias Get/Set</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetErrChkAlias"></A>
+<A NAME="DOC.71.6.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetErrChkAlias() const </B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetErrChkAlias"></A>
+<A NAME="DOC.71.6.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetErrChkAlias(CString strAlias)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="마크 스트림이 들어갈 DM Field Alias Get/Set"></A>
+<A NAME="DOC.71.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 마크 스트림이 들어갈 DM Field Alias Get/Set</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetMarcStreamAlias"></A>
+<A NAME="DOC.71.7.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetMarcStreamAlias() const </B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetMarcStreamAlias"></A>
+<A NAME="DOC.71.7.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetMarcStreamAlias(CString strAlias)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="책수가 들어갈 DM Field Alias Get/Set"></A>
+<A NAME="DOC.71.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 책수가 들어갈 DM Field Alias Get/Set</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetBookCountAlias"></A>
+<A NAME="DOC.71.8.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetBookCountAlias() const </B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="SetBookCountAlias"></A>
+<A NAME="DOC.71.8.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetBookCountAlias(CString strAlias)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="GetLastError"></A>
+<A NAME="DOC.71.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetLastError() const </B></TT>
+<DD>마지막 에러메시지를 가져옴
+<DL><DT><DD></DL><P>
+<A NAME="(CWnd::*CallBackMarcCheckPtr)"></A>
+<A NAME="DOC.71.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>typedef INT (CWnd::*CallBackMarcCheckPtr)(CMarc* pMarc, CString &amp;strCheckErrMsg)</B></TT>
+<DD>마크 체크 콜백 펑션
+<DL><DT><DD></DL><P>
+<A NAME="SetCallBackMarcCheck"></A>
+<A NAME="DOC.71.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetCallBackMarcCheck(CallBackMarcCheckPtr pCallBackFunc)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_pMarcMgr"></A>
+<A NAME="DOC.71.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CMarcMgr* m_pMarcMgr</B></TT>
+<DD>마크 메니저 
+<DL><DT><DD></DL><P>
+<A NAME="m_pParentWnd"></A>
+<A NAME="DOC.71.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CWnd* m_pParentWnd</B></TT>
+<DD>부모 윈도우
+<DL><DT><DD></DL><P>
+<A NAME="m_strFilePath"></A>
+<A NAME="DOC.71.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strFilePath</B></TT>
+<DD>열 파일 경로
+<DL><DT><DD></DL><P>
+<A NAME="m_nFileType"></A>
+<A NAME="DOC.71.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nFileType</B></TT>
+<DD>열 파일 타입 : XLS - 엑세파일 TXT - 텍스트 파일
+<DL><DT><DD></DL><P>
+<A NAME="m_strDMErrChkAlias"></A>
+<A NAME="DOC.71.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strDMErrChkAlias</B></TT>
+<DD>에러 체크하는 DM Field Alias
+<DL><DT><DD></DL><P>
+<A NAME="m_strDMMarcstreamAlias"></A>
+<A NAME="DOC.71.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strDMMarcstreamAlias</B></TT>
+<DD>마크 스트림이 들어갈 DM Field Alias
+<DL><DT><DD></DL><P>
+<A NAME="m_strDMBookCountAlias"></A>
+<A NAME="DOC.71.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strDMBookCountAlias</B></TT>
+<DD>책수가 들어갈 DM Field Alias
+<DL><DT><DD></DL><P>
+<A NAME="m_strLastError"></A>
+<A NAME="DOC.71.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strLastError</B></TT>
+<DD>마지 막 에러 메시지
+<DL><DT><DD></DL><P>
+<A NAME="m_listDM"></A>
+<A NAME="DOC.71.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CObList m_listDM</B></TT>
+<DD>메이터 메니저 리스트
+<DL><DT><DD></DL><P>
+<A NAME="m_arrayExcelHead"></A>
+<A NAME="DOC.71.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CArray&lt;CString, CString&amp;&gt;  m_arrayExcelHead</B></TT>
+<DD>엑셀 헤더정보 Array
+<DL><DT><DD></DL><P>
+<A NAME="m_pCallBackFunc"></A>
+<A NAME="DOC.71.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CallBackMarcCheckPtr m_pCallBackFunc</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="Init"></A>
+<A NAME="DOC.71.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT Init(CWnd* pParentWnd, CMarcMgr* pMarcMgr, INT nFileType, CString strFilePath)</B></TT>
+<DD>
+초기화
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - *pParentWnd		부모윈도우
+<BR><B></B> - *pMarcMgr		마크메니저
+<BR><B>nFileType</B> - 		파일 타입
+<BR><B>strFilePath</B> - 		열 파일 경로<BR><DD></DL><P>
+<A NAME="DataManager 포인터 추가 관련"></A>
+<A NAME="DOC.71.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DataManager 포인터 추가 관련</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="InitDMList"></A>
+<A NAME="DOC.71.24.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT InitDMList()</B></TT>
+<DD>DataManager포인터 리스트 초기화
+<DL><DT><DD></DL><P>
+<A NAME="AddDMPtr"></A>
+<A NAME="DOC.71.24.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT AddDMPtr(CESL_DataMgr* pDM)</B></TT>
+<DD>DataManager포인터 추가
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="ImportFile"></A>
+<A NAME="DOC.71.25"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ImportFile(CString strFilePath = "")</B></TT>
+<DD>
+파일 반입 시작
+
+<DL><DT><DT><B>Parameters:</B><DD><B>strFilePath</B> -  파일경로 ""이면 <!1><A HREF="CMarcImpExpMgr.html#DOC.71.14">m_strFilePath</A>를 연다<BR><DD></DL><P>
+<A NAME="GetExcelHeaderInfo"></A>
+<A NAME="DOC.71.26"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetExcelHeaderInfo(CArray&lt;CString, CString&amp;&gt;* pArray)</B></TT>
+<DD>엑셀 파일의 헤더정보 읽어오기
+<DL><DT><DD></DL><P>
+<A NAME="CheckMarcSyntax"></A>
+<A NAME="DOC.71.27"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT CheckMarcSyntax(CMarc* pMarc, CString &amp;strMarcCheckResult)</B></TT>
+<DD>마크 문법 체크
+<DL><DT><DD></DL><P>
+<A NAME="ImportXlsFile"></A>
+<A NAME="DOC.71.28"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ImportXlsFile()</B></TT>
+<DD>엑셀파일 반입
+<DL><DT><DD></DL><P>
+<A NAME="ImportTxtFile"></A>
+<A NAME="DOC.71.29"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ImportTxtFile()</B></TT>
+<DD>텍스트파일 반입
+<DL><DT><DD></DL><P>
+<A NAME="MakeDM"></A>
+<A NAME="DOC.71.30"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void MakeDM(CMarc* pMarc)</B></TT>
+<DD>반입을 하면서 pMarc를 가지고 DataManager를 만든다. 오류, 마크 스트림 등등
+<DL><DT><DD></DL><P>
+<A NAME="~CMarcImpExpMgr"></A>
+<A NAME="DOC.71.31"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CMarcImpExpMgr()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>이종은
+
+<DT><B>Since:</B><DD>2003-04-10 오후 4:27:37
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CCharSetManagementDlg</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file C:\Kolas2UP\Develop\Source\관리\문자변환관리\MngCharSetManagement\CharSetManagementDlg.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CCharSetManagementDlg</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>문자셋 리스트와 데이터를 관리한다. </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCESL_Mgr,M,CCCharSetManagementDlg,MCCharSetManagementDlg.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>ApplyCharSetData</B> ()<BR>
+<I>Apply CharSetDatas To DataBase And Update Versioin</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CCharSetManagementDlg</B> (CESL_Mgr* pParent = NULL)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>BOOL </TD><TD><B>Create</B> (CWnd* pParentWnd)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Display</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Initialize</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Insert / Modify / Delete Operations</B> <BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>MakeDataFile</B> (CString strFilePath, INT nVersion)<BR>
+<I>Make CharSetData File</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Members</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>enum </TD><TD><B></B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>DECLARE_EVENTSINK_MAP </TD><TD><B>()</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CESL_DataMgr* </TD><TD><B>m_pDM_Data</B> <BR>
+<I>CharSet Data DataMgr</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CESL_DataMgr* </TD><TD><B>m_pDM_Manage</B> <BR>
+<I>CharSet Manage DataMgr</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CESL_Grid* </TD><TD><B>m_pGrid_Data</B> <BR>
+<I>Main Grid</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void </TD><TD><B>DoDataExchange</B> (CDataExchange* pDX)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   BOOL </TD><TD><B>OnInitDialog</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnMouseDownGridDataCm</B> (short Button, short Shift, long x, long y)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnSelchangecMANAGE</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.21.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>afx_msg void </TD><TD><B>OnSize</B> (UINT nType, int cx, int cy)<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+문자셋 리스트와 데이터를 관리한다.
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CCharSetManagementDlg"></A>
+<A NAME="DOC.21.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CCharSetManagementDlg(CESL_Mgr* pParent = NULL)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="Create"></A>
+<A NAME="DOC.21.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL Create(CWnd* pParentWnd)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_pGrid_Data"></A>
+<A NAME="DOC.21.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_Grid* m_pGrid_Data</B></TT>
+<DD>Main Grid
+<DL><DT><DD></DL><P>
+<A NAME="m_pDM_Data"></A>
+<A NAME="DOC.21.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_DataMgr* m_pDM_Data</B></TT>
+<DD>CharSet Data DataMgr
+<DL><DT><DD></DL><P>
+<A NAME="m_pDM_Manage"></A>
+<A NAME="DOC.21.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_DataMgr* m_pDM_Manage</B></TT>
+<DD>CharSet Manage DataMgr
+<DL><DT><DD></DL><P>
+<A NAME=""></A>
+<A NAME="DOC.21.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>enum </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="IDD"></A>
+<A NAME="DOC.21.6.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> IDD</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="DoDataExchange"></A>
+<A NAME="DOC.21.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void DoDataExchange(CDataExchange* pDX)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="Initialize"></A>
+<A NAME="DOC.21.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Initialize</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="InitCharSetMangeData"></A>
+<A NAME="DOC.21.8.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT InitCharSetMangeData()</B></TT>
+<DD>Initialize CharSetMangeData
+<DL><DT><DD></DL><P>
+<A NAME="InitCharSetData"></A>
+<A NAME="DOC.21.8.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT InitCharSetData(CString strTableName)</B></TT>
+<DD>Initialize CharSet Data
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Display"></A>
+<A NAME="DOC.21.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Display</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="Display"></A>
+<A NAME="DOC.21.9.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT Display()</B></TT>
+<DD>Display CharSet ManageMent Dialog
+<DL><DT><DD></DL><P>
+<A NAME="DisplayComboBox"></A>
+<A NAME="DOC.21.9.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DisplayComboBox()</B></TT>
+<DD>Display CharSet Group Data To ComboBox 
+<DL><DT><DD></DL><P>
+<A NAME="DisplayMangementInfo"></A>
+<A NAME="DOC.21.9.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DisplayMangementInfo(INT nRow)</B></TT>
+<DD>Display Selected Management Data To Grid
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Insert / Modify / Delete Operations"></A>
+<A NAME="DOC.21.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Insert / Modify / Delete Operations</B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="InsertCharSetData"></A>
+<A NAME="DOC.21.10.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT InsertCharSetData()</B></TT>
+<DD>Insert CharSet Data
+<DL><DT><DD></DL><P>
+<A NAME="ModifyCharSetData"></A>
+<A NAME="DOC.21.10.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ModifyCharSetData()</B></TT>
+<DD>Modify Cahrset Data
+<DL><DT><DD></DL><P>
+<A NAME="DeleteCharSetData"></A>
+<A NAME="DOC.21.10.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DeleteCharSetData()</B></TT>
+<DD>Delete Charset Data
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="ApplyCharSetData"></A>
+<A NAME="DOC.21.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ApplyCharSetData()</B></TT>
+<DD>Apply CharSetDatas To DataBase And Update Versioin
+<DL><DT><DD></DL><P>
+<A NAME="MakeDataFile"></A>
+<A NAME="DOC.21.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT MakeDataFile(CString strFilePath, INT nVersion)</B></TT>
+<DD>Make CharSetData File
+<DL><DT><DD></DL><P>
+<A NAME="OnInitDialog"></A>
+<A NAME="DOC.21.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   BOOL OnInitDialog()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnSelchangecMANAGE"></A>
+<A NAME="DOC.21.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnSelchangecMANAGE()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnMouseDownGridDataCm"></A>
+<A NAME="DOC.21.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnMouseDownGridDataCm(short Button, short Shift, long x, long y)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnSize"></A>
+<A NAME="DOC.21.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnSize(UINT nType, int cx, int cy)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="()"></A>
+<A NAME="DOC.21.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>DECLARE_EVENTSINK_MAP ()()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>이종은
+
+<DT><B>Since:</B><DD>2003-04-14 오후 3:25:59
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

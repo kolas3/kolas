@@ -1,0 +1,12 @@
+; UNION_RETURN_HISTORY.def : Declares the module parameters for the DLL.
+
+LIBRARY      "UNION_RETURN_HISTORY"
+DESCRIPTION  'UNION_RETURN_HISTORY Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

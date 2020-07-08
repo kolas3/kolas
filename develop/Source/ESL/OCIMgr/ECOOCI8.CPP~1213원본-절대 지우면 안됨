@@ -1,0 +1,2226 @@
+
+#include "stdafx.h"
+#include "ECOOCI8.h"
+#include "except.h"
+#include "io.h"
+#include "fcntl.h"
+
+//--------------------------------------------------------------------------
+// 함수명 : OCI8ConnectDB
+// 기  능 : Oracle에 Login, Handle setting, Create & begin User Session 
+//          DB 작업을 하기 위해서는 꼭 이 Function이 선행되어야 한다
+//			Login 계정이 변경되었으면 OCI8DisconnectDB, 
+//			이미 연결되었으면 그냥 리턴,
+//			InitHandles, OCIServerAttach, 
+//			Set the server handle in the service handle : OCIAttrSet(OCI_HTYPE_SVCCTX OCI_ATTR_SERVER),
+//			Set attributes in the authentication handle : OCIAttrSet(OCI_HTYPE_SESSION, OCI_ATTR_USERNAME / OCI_ATTR_PASSWORD),
+//			OCISessionBegin,
+//			Set the authentication handle in the Service handle : OCIAttrSet(OCI_HTYPE_SVCCTX OCI_ATTR_SESSION)
+//			pAccess->bConnect = TRUE
+//          Parameter :
+//            pAccess     : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserName : [I N] 사용자ID
+//            pszPassword : [I N] 사용자Password
+//--------------------------------------------------------------------------
+INT OCI8ConnectDB(ORA_ACCESS_TYPE* pAccess, TCHAR* pszUserName, TCHAR* pszPassword)
+{
+	if (SESSION_USING == pAccess->nStatus) return ERR_SESSION_USING;
+
+	INT ids;
+
+	TCHAR* pAt;
+	TCHAR  szServiceName[64];
+	TCHAR  szUserName   [64];
+
+	pAt = _tcsstr(pszUserName, _T("@"));
+	if (pAt == NULL) return -1;
+
+	_tcsncpy(szUserName, &pszUserName[0], pAt - pszUserName);
+	szUserName[pAt - pszUserName] = _T('\0');
+
+	_tcscpy (szServiceName, &pAt[1]);
+
+	// ID와 Password 변경을 확인한다. 변경되었다면 기존의 연결을 종료하고
+	// 새 ID와 Password로 재연결을 해야한다.
+	if (_tcsicmp(pAccess->szServiceName, szServiceName) != 0 ||
+		_tcsicmp(pAccess->szUserName   , szUserName   ) != 0 ||
+		_tcsicmp(pAccess->szPassWord   , pszPassword  ) != 0	)
+	{
+		if (SESSION_OPENED == pAccess->nStatus) OCI8DisconnectDB(pAccess);
+	}
+	else
+	{
+		if (SESSION_OPENED == pAccess->nStatus) return 0;
+	}
+
+	ids = InitHandles(&pAccess->hpEnv, 
+		              &pAccess->hpSvc, 
+					  &pAccess->hpErr, 
+					  &pAccess->hpSrv, 
+					  &pAccess->hpAut, 
+					  OCI_DEFAULT);
+	if (ids) return -2;
+
+	ids = OCIServerAttach(pAccess->hpSrv,
+		                  pAccess->hpErr, 
+						  (text*) szServiceName, 
+						  (sb4) sizeof(TCHAR) * _tcslen(szServiceName), 
+						  (ub4) OCI_DEFAULT);
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		return -3;
+	}
+
+	// Set the server handle in the service handle
+	ids = OCIAttrSet((dvoid*) pAccess->hpSvc, 
+		             (ub4) OCI_HTYPE_SVCCTX , 
+					 (dvoid*) pAccess->hpSrv, 
+					 (ub4) 0                , 
+					 (ub4) OCI_ATTR_SERVER  , 
+					 pAccess->hpErr          );
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		return -4;
+	}
+
+	// Set attributes in the authentication handle
+	ids = OCIAttrSet((dvoid*) pAccess->hpAut                  , 
+		             (ub4) OCI_HTYPE_SESSION                  , 
+					 (dvoid*) szUserName                      , 
+					 (ub4) sizeof(TCHAR) * _tcslen(szUserName), 
+					 (ub4) OCI_ATTR_USERNAME                  , 
+					 pAccess->hpErr                            );
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		return -5;
+	}
+
+	ids = OCIAttrSet((dvoid*) pAccess->hpAut                   , 
+		             (ub4) OCI_HTYPE_SESSION                   , 
+					 (dvoid*) pszPassword                      , 
+					 (ub4) sizeof(TCHAR) * _tcslen(pszPassword), 
+					 (ub4) OCI_ATTR_PASSWORD                   , 
+					 pAccess->hpErr                             );
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		return -6;
+	}
+
+	ids = OCISessionBegin(pAccess->hpSvc, pAccess->hpErr, pAccess->hpAut, OCI_CRED_RDBMS, OCI_DEFAULT);
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		return -7;
+	}
+
+	// Set the authentication handle in the Service handle
+	ids = OCIAttrSet((dvoid*) pAccess->hpSvc, 
+		             (ub4) OCI_HTYPE_SVCCTX , 
+					 (dvoid*) pAccess->hpAut, 
+					 (ub4) 0                , 
+					 (ub4) OCI_ATTR_SESSION , 
+					 pAccess->hpErr          );
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		return -8;
+	}
+
+
+	//cs++
+	//_tcscpy(pAccess->szServiceName, szServiceName);
+	//_tcscpy(pAccess->szUserName   , szUserName   );
+	//_tcscpy(pAccess->szPassWord   , pszPassword  );
+	//pAccess->bConnect = TRUE;
+	//cs--
+	
+
+	MESSAGE(M$INFORM, MSG_ARGMENT, _T("Oracle Connection As %s."), pszUserName);
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : DisconnectDB
+// 기  능 : Oracle과의 연결을 종료한다
+//          Parameter :
+//				pAccess  : [I N] 오라클 연결 정보 및 프레임 정보
+//          Return :
+//				ERR_SESSION_USING : SESSION_USING 상태라 세션을 닫을 수 없다.
+//--------------------------------------------------------------------------
+INT OCI8DisconnectDB(ORA_ACCESS_TYPE* pAccess)
+{
+	INT ids;
+
+	if (SESSION_USING == pAccess->nStatus) return ERR_SESSION_USING;
+
+	//if (pAccess->bConnect == TRUE)
+	if (SESSION_OPENED == pAccess->nStatus)
+	{
+		ids = OCISessionEnd(pAccess->hpSvc, pAccess->hpErr, pAccess->hpAut, (ub4) 0);
+		if (ids)
+		{
+			OCIErrorReport(pAccess->hpErr);
+			return -1;
+		}
+
+		ids = OCIServerDetach(pAccess->hpSrv, pAccess->hpErr, (ub4) OCI_DEFAULT);
+		if (ids)
+		{
+			OCIErrorReport(pAccess->hpErr);
+			return -2;
+		}
+
+		if (pAccess->hpSrv) (void) OCIHandleFree((dvoid*) pAccess->hpSrv, (ub4) OCI_HTYPE_SERVER );
+		if (pAccess->hpSvc) (void) OCIHandleFree((dvoid*) pAccess->hpSvc, (ub4) OCI_HTYPE_SVCCTX );
+		if (pAccess->hpErr) (void) OCIHandleFree((dvoid*) pAccess->hpErr, (ub4) OCI_HTYPE_ERROR  );
+		if (pAccess->hpAut) (void) OCIHandleFree((dvoid*) pAccess->hpAut, (ub4) OCI_HTYPE_SESSION);
+		if (pAccess->hpEnv) (void) OCIHandleFree((dvoid*) pAccess->hpEnv, (ub4) OCI_HTYPE_ENV    );
+
+		//pAccess->bConnect = FALSE;
+		//pAccess->nStatus = SESSION_CLOSED;
+		//pAccess->nRequestID = -1;
+	}
+
+	return 0;
+}
+
+//---------------------------------------------------------------------------------------------------
+// S E L E C T / I N S E R T / U P D A T E / D E L E T E / E X E C U T E  S Q L
+//---------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------
+// 함수명 : OCI8SelectProc
+// 기  능 : SELECT 문을 수행하여 결과 값을 리턴한다.
+//			OCI8ConnectDB <--- 수행하지 않음, 
+//			OraSQLInit(Handle을 초기화), OraSQLExec(SELECT), 
+//			OraColInfo, OraSQLDefine, OraSQLFetch, FreeOraFieldType, OCIHandleFree(OCI_HTYPE_STMT)
+//          Parameter :
+//            pAccess      : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID    : [I N] 사용자 ID
+//            pszPasswd    : [I N] 사용자 Password
+//            pszSQL       : [I N] SELECT SQL
+//            nRowCount    : [OUT] 결과 Row Count
+//            nColumnCount : [OUT] 결과 Column Count
+//            pOutData     : [OUT] 결과 Data
+//--------------------------------------------------------------------------
+INT  OCI8SelectProc(
+				    ORA_ACCESS_TYPE*      pAccess     ,
+				    TCHAR*                pszUserID   ,
+                    TCHAR*                pszPasswd   ,
+                    TCHAR*                pszSQL      ,
+					INT                   nStartRow   ,
+					INT                   nMaxFetchCnt,
+                    EDBM_DATA_ARRAY_TYPE* pOutData
+                   )
+{
+	INT ids;
+	INT nColumnCount;
+
+	ORA_FIELD_TYPE*     pField = NULL;
+	DB_DATA_ARRAY_TYPE* pData  = NULL;
+	OCIStmt*            hpStmt = NULL;
+
+	// Connect to server
+	//ids = OCI8ConnectDB(pAccess, pszUserID, pszPasswd);
+	//if (ids) return -1;
+
+
+	// Remain Log
+	// 2003-12-01 [박길주] =======================================================
+	//LoggingProcess(OCI_LOG_SQL_FILE_NAME, pszSQL);
+	// 2003-12-01 [박길주] +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//LoggingProcess(_T("OCI_MGR"), pszSQL);
+	// 2003-12-01 [박길주] -------------------------------------------------------
+
+	// Initialize SQL
+	ids = OraSQLInit(pAccess->hpEnv, pAccess->hpErr, &hpStmt, pszSQL);
+	if (ids) return -2;
+
+	// Execute SQL statement but don't fetch yet
+	ids = OraSQLExec(pAccess->hpSvc, pAccess->hpErr, hpStmt, TRUE);
+	if (ids)
+	{
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -3;
+	}
+
+    // Get column info
+	ids = OraColInfo(pAccess->hpEnv, pAccess->hpErr, hpStmt, &nColumnCount, &pField, &pData);
+	if (ids)
+	{
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -4;
+	}
+
+    // Define output buffer
+	ids = OraSQLDefine(hpStmt, pAccess->hpErr, nColumnCount, pField);
+	if (ids)
+	{
+		FreeOraFieldType(pField, nColumnCount);
+		FreeDBDataArrayType(pData, nColumnCount);
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -5;
+	}
+
+    // Fetch selected data
+	pOutData->nColumnCount = nColumnCount;
+	pOutData->nRowCount    = 0;
+
+	ids = OraSQLFetch(pAccess->hpSvc, 
+					  pAccess->hpErr, 
+					  hpStmt, 
+					  nStartRow, 
+					  nMaxFetchCnt, 
+					  nColumnCount, 
+					  pField, 
+					  &pOutData->nRowCount, 
+					  pData);
+	if (OCI_NO_DATA!=ids)
+	{
+		FreeOraFieldType(pField, nColumnCount);
+		FreeDBDataArrayType(pData, nColumnCount);
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] +++
+		return -7;
+		//if (OCI_NO_DATA != ids) return -7;
+		// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] ---
+	}
+
+    // Write Output Data
+	pOutData->pColumnData = pData;
+
+	FreeOraFieldType(pField, nColumnCount);
+	OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OCI8SelectExProc
+// 기  능 : SELECT 문을 수행하여 결과 값을 리턴한다
+//          OCI8SelectProc과는 다르게 모든 결과물을 받지 않고 
+//          OCI8SelectFetchProc을 이용하여 선택적으로 결과 레코드를 받을
+//          수 있다.
+//			InitOraAccessType(?????????), OCI8ConnectDB, <--- 수행하지 않음
+//			OraSQLInit, OraSQLExec(SELECT), 
+//			OraColInfo, OraSQLDefine, 
+//			???? 실제로 Fetch 하지 않는다. ???
+//          Parameter :
+//            pAccess      : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID    : [I N] 사용자 ID
+//            pszPasswd    : [I N] 사용자 Password
+//            pszSQL       : [I N] SELECT SQL
+//            pSelect      : [OUT] 필드 정보
+//            pOutData     : [OUT] 결과 Data
+//--------------------------------------------------------------------------
+INT  OCI8SelectExProc(
+	       			  ORA_ACCESS_TYPE*      pAccess  ,
+				      TCHAR*                pszUserID,
+                      TCHAR*                pszPasswd,
+                      TCHAR*                pszSQL   ,
+					  ORA_SELECT_STRU*      pSelect  ,
+                      EDBM_DATA_ARRAY_TYPE* pOutData
+                     )
+{
+	INT ids;
+
+	pSelect->hpStmt = NULL;
+	pSelect->pField = NULL;
+	pSelect->nColumnCount = 0;
+
+	// Connect to server
+	// ?[2003/8/13] InitOraAccessType(pAccess);
+
+	// ?[2003/8/13] ids = OCI8ConnectDB(pAccess, pszUserID, pszPasswd);
+	// ?[2003/8/13] if (ids) return -1;
+
+	// Remain Log
+	// 2003-12-01 [박길주] =======================================================
+	//LoggingProcess(OCI_LOG_SQL_FILE_NAME, pszSQL);
+	// 2003-12-01 [박길주] +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//LoggingProcess(_T("OCI_MGR"), pszSQL);
+	// 2003-12-01 [박길주] -------------------------------------------------------
+
+	// Initialize SQL
+	ids = OraSQLInit(pAccess->hpEnv, pAccess->hpErr, &pSelect->hpStmt, pszSQL);
+	if (ids)
+	{
+		// ?[2003/8/13] OCI8DisconnectDB(pAccess);
+		return -2;
+	}
+
+	// Execute SQL statement but don't fetch yet
+	ids = OraSQLExec(pAccess->hpSvc, pAccess->hpErr, pSelect->hpStmt, TRUE);
+	if (ids)
+	{
+		OCIHandleFree(pSelect->hpStmt, OCI_HTYPE_STMT);
+		// ?[2003/8/13] OCI8DisconnectDB(pAccess);
+		return -3;
+	}
+
+    // Get column info
+	ids = OraColInfo(pAccess->hpEnv, pAccess->hpErr, pSelect->hpStmt, &pSelect->nColumnCount, &pSelect->pField, &pOutData->pColumnData);
+	if (ids)
+	{
+		OCIHandleFree(pSelect->hpStmt, OCI_HTYPE_STMT);
+		// ?[2003/8/13] OCI8DisconnectDB(pAccess);
+		return -4;
+	}
+
+    // Define output buffer
+	ids = OraSQLDefine(pSelect->hpStmt, pAccess->hpErr, pSelect->nColumnCount, pSelect->pField);
+	if (ids)
+	{
+		FreeOraFieldType (pSelect->pField , pSelect->nColumnCount);
+		FreeDBDataArrayType(pOutData->pColumnData, pSelect->nColumnCount);
+		OCIHandleFree(pSelect->hpStmt, OCI_HTYPE_STMT);
+		// ?[2003/8/13] OCI8DisconnectDB(pAccess);
+		return -5;
+	}
+
+	pOutData->nColumnCount = pSelect->nColumnCount;
+	pOutData->nRowCount = 0;
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OCI8SelectFetchProc
+// 기  능 : SELECT 문을 수행하여 결과 값을 리턴한다
+//          OCI8SelectProc과는 다르게 모든 결과물을 받지 않고 
+//          OCI8SelectFetchProc을 이용하여 선택적으로 결과 레코드를 받을
+//          수 있다.
+//			Initialize EDBM_DATA_ARRAY_TYPE Variable, OraSQLFetch
+//          Parameter :
+//            pAccess      : [I N] 오라클 연결 정보 및 프레임 정보
+//            pSelect      : [I N] 필드 정보
+//            nStartRow    : [I N] 시작 ROW
+//            nMaxFetchCnt : [I N] Fetch 수
+//            pOutData     : [OUT] 결과 Data
+//--------------------------------------------------------------------------
+INT  OCI8SelectFetchProc(
+				         ORA_ACCESS_TYPE* pAccess      ,
+					     ORA_SELECT_STRU* pSelect      ,
+						 INT nStartRow                 ,
+					     INT nMaxFetchCnt              ,
+                         EDBM_DATA_ARRAY_TYPE* pOutData
+                        )
+{
+	INT ids;
+
+	// Initialize EDBM_DATA_ARRAY_TYPE Variable
+	for (INT i = 0; i < pOutData->nColumnCount; i++)
+	{
+		for (INT j = 0; j <	pOutData->pColumnData[i].nRowCount; j++)
+		{
+			switch (pOutData->pColumnData[i].nDataType)
+			{
+				// 2002년06월17일 Binary를 지원하기 위해서 정민이 수정
+				// 수정시작
+			case BINARY:
+				free(pOutData->pColumnData[i].pDBDataUnion[j].BinData.pBinaryData);
+				pOutData->pColumnData[i].pDBDataUnion[j].BinData.pBinaryData = NULL;
+				pOutData->pColumnData[i].pDBDataUnion[j].BinData.nDataSize = 0;
+				break;
+				// 수정끝
+			case NUMERIC :
+			case DATE :
+			case STRING :
+			default :
+				free(pOutData->pColumnData[i].pDBDataUnion[j].pStringData);
+				pOutData->pColumnData[i].pDBDataUnion[j].pStringData = NULL;
+				break;
+
+			}
+		}
+		free(pOutData->pColumnData[i].pDBDataUnion);
+		pOutData->pColumnData[i].pDBDataUnion = NULL;
+	}
+
+	pOutData->nColumnCount = pSelect->nColumnCount;
+	pOutData->nRowCount    = 0;
+
+	ids = OraSQLFetch(pAccess->hpSvc       , 
+		              pAccess->hpErr       , 
+					  pSelect->hpStmt      , 
+					  nStartRow            , 
+					  nMaxFetchCnt         , 
+					  pSelect->nColumnCount, 
+					  pSelect->pField      , 
+					  &pOutData->nRowCount , 
+					  pOutData->pColumnData);
+	if (ids)
+	{
+		FreeOraFieldType (pSelect->pField , pSelect->nColumnCount );
+		FreeDBDataArrayType(pOutData->pColumnData, pOutData->nColumnCount);
+		OCIHandleFree(pSelect->hpStmt, OCI_HTYPE_STMT);
+		// ?[2003/8/13] OCI8DisconnectDB(pAccess);
+		// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] +++
+		if (OCI_NO_DATA == ids) return OCI_NO_DATA;
+		// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] ---
+		return -1;
+	}
+
+	if (pOutData->nRowCount == 0)
+	{
+		FreeOraFieldType(pSelect->pField, pSelect->nColumnCount);
+		pSelect->pField = NULL;
+		OCIHandleFree(pSelect->hpStmt, OCI_HTYPE_STMT);
+		// ?[2003/8/13] OCI8DisconnectDB(pAccess);
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OCI8StmtHandleFree
+// 기  능 : OCIStmt 핸들을 FREE한다.(OCIHandleFree(OCI_HTYPE_STMT))
+//          Parameter :
+//            hpStmt  : [I N] OCIStmt 핸들
+//--------------------------------------------------------------------------
+VOID OCI8StmtHandleFree(OCIStmt* hpStmt)
+{
+	OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : UnSelectProc
+// 기  능 : SELECT가 아닌 DML 커리를 수행한다.
+//			OCI8ConnectDB, 	Convert to PL/SQL, OraSQLInit, 
+//			Binding(OraSQLBindByPos, OraSQLBindByName), OraSQLExec(NON-SELECT), OCIHandleFree
+//          Parameter :
+//            pAccess     : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID   : [I N] 사용자 ID
+//            pszPasswd   : [I N] 사용자 Password
+//            pszSQL      : [I N] DML SQL
+//            nFrameIndex : [I N] 프레임 인덱스 (프레임이 아니라면 -1)
+//--------------------------------------------------------------------------
+INT OCI8UnSelectProc(
+				     ORA_ACCESS_TYPE* pAccess    ,
+                     TCHAR*           pszUserID  ,
+                     TCHAR*           pszPasswd  ,
+                     TCHAR*           pszSQL     ,
+					 INT              nFrameIndex
+                    )
+{
+	INT ids;
+
+	TCHAR*   pSQL   = NULL;
+	OCIStmt* hpStmt = NULL;
+
+	// Connect
+	// ?[2003/8/13] ids = OCI8ConnectDB(pAccess, pszUserID, pszPasswd);
+	// ?[2003/8/13] if (ids) return -1;
+
+	// Convert form in PL/SQL
+	pSQL = (TCHAR*) malloc(sizeof(TCHAR) * (StringLength2(pszSQL) + 32));
+	if (NULL == pSQL) return -2;
+
+	//_stprintf(pSQL, _T("begin %s end;"), pszSQL);
+	_stprintf(pSQL, _T("BEGIN\n%sEND;"), pszSQL);
+
+	// Remain log
+	// 2003-12-01 [박길주] =======================================================
+	//LoggingProcess(OCI_LOG_SQL_FILE_NAME , pszSQL);
+	// 2003-12-01 [박길주] +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//LoggingProcess(_T("OCI_MGR"), pszSQL);
+	//LoggingProcess(_T("OCI_MGR"), sSQL.GetBuffer(0));
+	// 2003-12-01 [박길주] -------------------------------------------------------
+
+	ids = OraSQLInit(pAccess->hpEnv, pAccess->hpErr, &hpStmt, pSQL);
+	if (ids)
+	{
+		free(pSQL);
+		return -3;
+	}
+
+	// Bind
+	if (nFrameIndex == -1)
+	{
+		ids =OraSQLBindByPos(hpStmt, pAccess->hpErr, &pAccess->pNonFrameBindData[0]);
+		if (ids)
+		{
+			free(pSQL);
+			OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+			return -4;
+		}
+		ids = OraSQLBindByName(hpStmt, pAccess->hpErr, &pAccess->pNonFrameNumberData[0]);
+		if (ids)
+		{
+			free(pSQL);
+			OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+			return -5;
+		}
+	}
+	else
+	{
+		ids =OraSQLBindByPos(hpStmt, pAccess->hpErr, &pAccess->pFrameBindData[nFrameIndex]);
+		if (ids)
+		{
+			free(pSQL);
+			OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+			return -6;
+		}
+		ids = OraSQLBindByName(hpStmt, pAccess->hpErr, &pAccess->pFrameNumberData[nFrameIndex]);
+		if (ids)
+		{
+			free(pSQL);
+			OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+			return -7;
+		}
+	}
+
+
+CTime t_start = CTime::GetCurrentTime();
+
+	// Execute SQL statement
+	ids = OraSQLExec(pAccess->hpSvc, pAccess->hpErr, hpStmt, FALSE);
+
+CTime t_end = CTime::GetCurrentTime();
+
+	{
+		CString filename;
+		filename.Format(_T("..\\tunning\\ESL_DM_%04d%02d%02d.txt"), t_start.GetYear(), t_start.GetMonth(), t_start.GetDay());
+		FILE* fp;
+		fp = _tfopen (filename, _T("a+"));
+		if (NULL!=fp)
+		{
+			CString sLogTime;
+			sLogTime.Format(_T("[%04d-%02d-%02d.%02d:%02d:%02d][%d]"), 
+							t_start.GetYear(), t_start.GetMonth(),  t_start.GetDay(), t_start.GetHour(), t_start.GetMinute(), t_start.GetSecond(), 
+							nFrameIndex+1);
+			
+		/*
+			CString sSQL(pSQL);
+			sSQL.MakeUpper();
+			sSQL.Replace(_T("BEGIN "),  sLogTime+_T("BEGIN"));
+			sSQL.Replace(_T("INSERT "), _T("\n")+sLogTime+_T("INSERT "));
+			sSQL.Replace(_T("UPDATE "), _T("\n")+sLogTime+_T("UPDATE "));
+			sSQL.Replace(_T("DELETE "), _T("\n")+sLogTime+_T("DELETE "));
+			sSQL.Replace(_T(" END;"),   _T("\n")+sLogTime+_T("END;"));
+			_ftprintf(fp, _T("[%04d-%02d-%02d.%02d:%02d:%02d][%d]++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"), 
+							t_start.GetYear(), t_start.GetMonth(),  t_start.GetDay(), t_start.GetHour(), t_start.GetMinute(), t_start.GetSecond(), 
+							nFrameIndex+1);
+			_ftprintf(fp, _T("%s\n"), (LPCSTR)sSQL);
+		*/
+
+			_ftprintf(fp, _T("%s++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"), sLogTime);
+			//_ftprintf(fp, _T("%s %s\n"), sLogTime, pSQL);
+			_ftprintf(fp, _T("%s\n"), pSQL);
+			_ftprintf(fp, _T("[%04d-%02d-%02d.%02d:%02d:%02d][%d]--------------------------------------------------------------------\n"), 
+						   t_end.GetYear(), t_end.GetMonth(),  t_end.GetDay(), t_end.GetHour(), t_end.GetMinute(), t_end.GetSecond(), 
+						   nFrameIndex+1);
+			fclose(fp);
+		}
+
+		if (ids)
+		{
+			free(pSQL);
+			OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+			return -8;
+		}
+	}
+
+    // Free statement handle
+	OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+	free(pSQL);
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : InsertProc
+// 기  능 : INSERT 문을 수행한다.
+//			MakeInsertSQL, OCI8UnSelectProc, 필요시 OCI8CommitProc
+//          Parameter :
+//            pAccess          : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID        : [I N] 사용자 ID
+//            pszPasswd        : [I N] 사용자 Password
+//            pszTableName     : [I N] 테이블명
+//            nColumnCount     : [I N] 칼럼수
+//            pszAttributeName : [I N] Attribute명
+//            pszAttributeData : [I N] Attribute Data
+//            pnInDataType     : [I N] Attribute Type
+//            bCommit          : [I N] Commit 여부
+//--------------------------------------------------------------------------
+INT	 OCI8InsertProc(
+				    ORA_ACCESS_TYPE* pAccess         ,
+				    TCHAR*           pszUserID       ,
+                    TCHAR*           pszPasswd       ,
+				    TCHAR*           pszTableName    ,
+				    INT              nColumnCount    ,
+				    TCHAR**          pszAttributeName,
+				    TCHAR**          pszAttributeData,
+				    INT*             pInDataType     ,
+				    BOOL             bCommit
+			       )
+{
+	INT ids;
+
+	CString sSQLStatement;
+
+	// Make Insert DML SQL
+	ids = MakeInsertSQL(pszTableName, nColumnCount, pszAttributeName, pszAttributeData, pInDataType, sSQLStatement, &pAccess->pNonFrameBindData[0]);
+	if (ids)
+	{
+		return -1;
+	}
+
+	// Execute SQL Statement
+	ids = OCI8UnSelectProc(pAccess, pszUserID, pszPasswd, sSQLStatement.GetBuffer(0), -1);
+	if (ids)
+	{
+		MESSAGE(M$WARN, MSG_ARGMENT, _T("<< DB_Access_Proc >> UnSelectProc Error. [%d]"), ids);
+		return -2;
+	}
+
+	// Commit
+	if (bCommit == TRUE)
+	{
+		ids = OCI8CommitProc(pAccess, pszUserID, pszPasswd);
+		if (ids)
+		{
+			return -3;
+		}
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : UpdateProc
+// 기  능 : UPDATE 문을 수행한다.
+//			MakeUpdateSQL, OCI8UnSelectProc, 필요시 OCI8CommitProc
+//          Parameter :
+//            pAccess            : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID          : [I N] 사용자 ID
+//            pszPasswd          : [I N] 사용자 Password
+//            pszTableName       : [I N] 테이블명
+//            nColumnCount       : [I N] 칼럼수
+//            pszAttributeName   : [I N] Attribute명
+//            pszAttributeData   : [I N] Attribute Data
+//            pnInDataType       : [I N] Attribute Type
+//            pszPKAttributeName : [I N] Primary Key Attribute 명
+//            pszTablePrimaryKey : [I N] Primary Key 값
+//            bCommit            : [I N] Commit 여부
+//--------------------------------------------------------------------------
+INT	 OCI8UpdateProc(
+				    ORA_ACCESS_TYPE* pAccess           ,
+				    TCHAR*           pszUserID         ,
+                    TCHAR*           pszPasswd         ,
+				    TCHAR*           pszTableName      ,
+				    INT              nColumnCount      ,
+				    TCHAR**          pszAttributeName  ,
+				    TCHAR**          pszAttributeData  ,
+				    INT*             pInDataType       ,
+				    TCHAR*           pszPKAttributeName,
+				    TCHAR*           pszTablePrimaryKey,
+				    BOOL             bCommit
+			       )
+{
+	INT ids;
+
+	CString sSQLStatement;
+
+	// Make Update DML SQL
+	ids = MakeUpdateSQL(pszTableName, nColumnCount, pszAttributeName, pszAttributeData, pInDataType, pszPKAttributeName, pszTablePrimaryKey, sSQLStatement, &pAccess->pNonFrameBindData[0]);
+	if (ids)
+	{
+		return -1;
+	}
+
+	// Execute SQL Statement
+	ids = OCI8UnSelectProc(pAccess, pszUserID, pszPasswd, sSQLStatement.GetBuffer(0), -1);
+	if (ids)
+	{
+		MESSAGE(M$WARN, MSG_ARGMENT, _T("<< DB_Access_Proc >> UnSelectProc Error. [%d]"), ids);
+		return -2;
+	}
+
+	// Commit
+	if (bCommit == TRUE)
+	{
+		ids = OCI8CommitProc(pAccess, pszUserID, pszPasswd);
+		if (ids)
+		{
+			return -3;
+		}
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : DeleteProc
+// 기  능 : DELETE 문을 수행한다.
+//			Make Delete DML SQL, OCI8UnSelectProc, 필요시 OCI8CommitProc
+//          Parameter :
+//            pAccess            : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID          : [I N] 사용자 ID
+//            pszPasswd          : [I N] 사용자 Password
+//            pszTableName       : [I N] 테이블명
+//            pszPKAttributeName : [I N] Primary Key Attribute 명
+//            pszTablePrimaryKey : [I N] Primary Key 값
+//            bCommit            : [I N] Commit 여부
+//--------------------------------------------------------------------------
+INT	 OCI8DeleteProc(
+				    ORA_ACCESS_TYPE* pAccess           ,
+				    TCHAR*           pszUserID         ,
+                    TCHAR*           pszPasswd         ,
+				    TCHAR*           pszTableName      ,
+				    TCHAR*           pszPKAttributeName,
+				    TCHAR*           pszTablePrimaryKey,
+				    BOOL             bCommit
+			       )
+{
+	INT ids;
+
+	CString sSQLStatement;
+
+	if (StringLength2(pszTableName)			<= 0 || 
+		StringLength2(pszPKAttributeName)	<= 0 || 
+		StringLength2(pszTablePrimaryKey)	<= 0	)
+	{
+		return -1;
+	}
+
+	// Make Delete DML SQL
+	sSQLStatement.Format(_T("DELETE FROM %s WHERE %s = %s;"), pszTableName, pszPKAttributeName, pszTablePrimaryKey);
+
+	// Execute SQL Statement
+	ids = OCI8UnSelectProc(pAccess, pszUserID, pszPasswd, sSQLStatement.GetBuffer(0), -1);
+	if (ids)
+	{
+		MESSAGE(M$WARN, MSG_ARGMENT, _T("<< DB_Access_Proc >> UnSelectProc Error. [%d]"), ids);
+		return -2;
+	}
+
+	// Commit
+	if (bCommit == TRUE)
+	{
+		ids = OCI8CommitProc(pAccess, pszUserID, pszPasswd);
+		if (ids)
+		{
+			return -3;
+		}
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : ExecSQLProc
+// 기  능 : SQL 문을 수행한다.
+//			OCI8UnSelectProc, 필요시 OCI8CommitProc
+//          Parameter :
+//            pAccess            : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID          : [I N] 사용자 ID
+//            pszPasswd          : [I N] 사용자 Password
+//            pszSQL             : [I N] 테이블명
+//            bCommit            : [I N] Commit 여부
+//--------------------------------------------------------------------------
+INT	 OCI8ExecSQLProc(
+				     ORA_ACCESS_TYPE* pAccess  ,
+				     TCHAR*           pszUserID,
+                     TCHAR*           pszPasswd,
+				     TCHAR*           pszSQL   ,
+				     BOOL             bCommit
+				    )
+{
+	INT ids;
+
+	if (StringLength2(pszSQL) <= 0)
+	{
+		return -1;
+	}
+
+	// Execute SQL Statement
+	ids = OCI8UnSelectProc (pAccess, pszUserID, pszPasswd, pszSQL, -1);
+	if (ids)
+	{
+		MESSAGE(M$WARN, MSG_ARGMENT, _T("<< DB_Access_Proc >> UnSelectProc Error. [%d]"), ids);
+		return -2;
+	}
+
+	// Commit
+	if (bCommit == TRUE)
+	{
+		ids = OCI8CommitProc(pAccess, pszUserID, pszPasswd);
+		if (ids)
+		{
+			return -3;
+		}
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : CommitProc
+// 기  능 : Commit 문을 수행한다.(OCITransCommit)
+//          Parameter :
+//            pAccess            : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID          : [I N] 사용자 ID
+//            pszPasswd          : [I N] 사용자 Password
+//--------------------------------------------------------------------------
+INT	 OCI8CommitProc(
+				    ORA_ACCESS_TYPE* pAccess  ,
+				    TCHAR*           pszUserID,
+                    TCHAR*           pszPasswd
+                   )
+{
+	INT ids;
+
+	ids = OCITransCommit(pAccess->hpSvc, pAccess->hpErr, (ub4) 0);
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		return -1;
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OCI8RollbackProc
+// 기  능 : Rollback 문을 수행한다.(OCITransRollback)
+//          Parameter :
+//            pAccess            : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID          : [I N] 사용자 ID
+//            pszPasswd          : [I N] 사용자 Password
+//--------------------------------------------------------------------------
+INT	 OCI8RollbackProc(
+				      ORA_ACCESS_TYPE* pAccess  ,
+				      TCHAR*           pszUserID,
+                      TCHAR*           pszPasswd
+                     )
+{
+	INT ids;
+
+	ids = OCITransRollback(pAccess->hpSvc, pAccess->hpErr, (ub4) 0);
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		return -1;
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : NextNumberProc
+// 기  능 : 번호를 따온다.
+//			OCI8ConnectDB, Make PL/SQL, OraSQLInit, OCIBindByName, OraSQLExec(NON-SELECT), OCIHandleFree
+//			OCIBindByName에 의해 Binding된 변수에 Next Number를 구해 리턴한다.
+//          Parameter :
+//            pAccess            : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID          : [I N] 사용자 ID
+//            pszPasswd          : [I N] 사용자 Password
+//            pszSQL             : [I N] 번호 구하기용 SQL
+//            pszNumberAlias     : [I N] SQL에 있는 번호 Alias
+//            pszNumber          : [OUT] 구해진 번호
+//--------------------------------------------------------------------------
+INT	 OCI8NextNumberProc(
+					    ORA_ACCESS_TYPE* pAccess       ,
+					    TCHAR*           pszUserID     ,
+					    TCHAR*           pszPasswd     ,
+				 	    TCHAR*           pszSQL        ,
+					    TCHAR*           pszNumberAlias,
+					    TCHAR*           pszNumber
+				       )
+{
+	INT ids;
+
+	TCHAR* pSQL = NULL;
+	TCHAR  szTmpBuf[DEFAULT_STRING_SIZE];
+
+	OCIStmt* hpStmt = NULL;
+	OCIBind* hpBind;
+
+	// Connect
+	// ?[2003/8/13] ids = OCI8ConnectDB(pAccess, pszUserID, pszPasswd);
+	// ?[2003/8/13] if (ids) return -1;
+
+	// Check Validation
+	if (StringLength2(pszSQL) <= 0 || StringLength2(pszNumberAlias) <= 0)
+	{
+		return -2;
+	}
+
+	pSQL = (TCHAR*) malloc(sizeof(TCHAR) * (StringLength2(pszSQL) + 36));
+	if (pSQL == NULL)
+	{
+		return -3;
+	}
+
+	_stprintf(pSQL, _T("begin %s end;"), pszSQL);
+
+	// Remain log
+	// 2003-12-01 [박길주] =======================================================
+	//LoggingProcess(OCI_LOG_SQL_FILE_NAME , pszSQL);
+	// 2003-12-01 [박길주] +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//LoggingProcess(_T("OCI_MGR"), pszSQL);
+	// 2003-12-01 [박길주] -------------------------------------------------------
+
+	ids = OraSQLInit(pAccess->hpEnv, pAccess->hpErr, &hpStmt, pSQL);
+	if (ids)
+	{
+		free(pSQL);
+		return -4;
+	}
+
+	// Bind
+	pszNumber[0] = _T('\0');
+	szTmpBuf [0] = _T('\0');
+
+	ids = OCIBindByName(
+		                hpStmt ,
+		                &hpBind ,
+						pAccess->hpErr ,
+						(const text*) pszNumberAlias ,
+                        (sb4) sizeof(TCHAR) * _tcslen(pszNumberAlias),
+						(dvoid*) szTmpBuf ,
+						//sizeof(TCHAR) * _tcslen(pszNumber),
+						sizeof(TCHAR) * DEFAULT_STRING_SIZE,
+						SQLT_STR ,
+						(dvoid*) 0 ,
+                        (ub2*) 0 ,
+						(ub2*) 0 ,
+						(ub4) 0 ,
+						(ub4*) 0 ,
+						OCI_DEFAULT
+					   );
+	if (ids)
+	{
+		free(pSQL);
+		OCIErrorReport(pAccess->hpErr);
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -5;
+	}
+
+    // Execute SQL statement
+	ids = OraSQLExec(pAccess->hpSvc, pAccess->hpErr, hpStmt, FALSE);
+	if (ids)
+	{
+		free(pSQL);
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -5;
+	}
+
+	_tcscpy(pszNumber, szTmpBuf);
+
+    // Free statement handle
+	free(pSQL);
+	OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : GetOneFieldValueProc
+// 기  능 : SELECT의 첫행 첫열을 구한다.
+//			OCI8ConnectDB, <--- 수행하지 않음
+//			OCI8SelectProc
+//			OCI8SelectProc에 의해 가져온 EDBM_DATA_ARRAY_TYPE 변수의 첫번째 행, 열 값을 리턴한다.
+//          Parameter :
+//            pAccess            : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID          : [I N] 사용자 ID
+//            pszPasswd          : [I N] 사용자 Password
+//            pszSQL             : [I N] SELECT SQL
+//            pszReturnValue     : [OUT] 첫번째 Row 첫번째 Column의 값
+//--------------------------------------------------------------------------
+INT  OCI8GetOneFieldValueProc(
+						      ORA_ACCESS_TYPE* pAccess       ,
+						      TCHAR*           pszUserID     ,
+						      TCHAR*           pszPasswd     ,
+						      TCHAR*           pszSQL        ,
+						      TCHAR*           pszReturnValue
+                             )
+{
+	INT ids;
+
+	EDBM_DATA_ARRAY_TYPE OutData;
+
+	// Connect
+	// ?[2003/8/13] ids = OCI8ConnectDB(pAccess, pszUserID, pszPasswd);
+	// ?[2003/8/13] if (ids) return -1;
+
+	// Remain log
+	// 2003-12-01 [박길주] =======================================================
+	//LoggingProcess(OCI_LOG_SQL_FILE_NAME , pszSQL);
+	// 2003-12-01 [박길주] +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//LoggingProcess(_T("OCI_MGR"), pszSQL);
+	// 2003-12-01 [박길주] -------------------------------------------------------
+
+	// SelectProc
+	ids = OCI8SelectProc(pAccess, pszUserID, pszPasswd, pszSQL, 1, 1, &OutData);
+	// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] +++
+	if (OCI_NO_DATA == ids) ids = 0;
+	// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] ---
+	if (ids) return -2;
+
+	if (OutData.nRowCount > 0)
+	{
+		_tcscpy(pszReturnValue, OutData.pColumnData[0].pDBDataUnion->pStringData);
+		ECOStrRTrim(pszReturnValue, pszReturnValue, _T(' '));
+		FreeDBDataArrayType(OutData.pColumnData, OutData.nColumnCount);
+	}
+	else
+	{
+		pszReturnValue[0] = _T('\0');
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OCIErrorReport
+// 기  능 : Cursor의 Error Message를 Log File에 출력한다.
+//			OCIErrorGet, MESSAGE
+//          Parameter :
+//            hpErr : [I N] OCIError 포인터
+//--------------------------------------------------------------------------
+VOID OCIErrorReport(OCIError* hpErr)
+{
+	utext msg[512];
+	sb4   errcode = 0;
+
+	OCIErrorGet((dvoid*) hpErr       ,
+		        (ub4) 1              ,
+				(text*) NULL         ,
+				&errcode             ,
+				(text*) msg          ,
+				(ub4) sizeof(msg)    ,
+				(ub4) OCI_HTYPE_ERROR);
+
+	MESSAGE(M$WARN, MSG_ARGMENT, _T("\n"));
+	MESSAGE(M$WARN, MSG_ARGMENT, _T("◀◀◀ ORACLE ERROR ▶▶▶\n"));
+//	MESSAGE(M$WARN, MSG_ARGMENT, _T("ERROR_CODE = %d\n"), errcode);
+//	MESSAGE(M$WARN, MSG_ARGMENT, _T("%s\n"), msg);
+	MESSAGE(M$WARN, MSG_ARGMENT, _T("%s"), msg);
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : InitHandles
+// 기  능 : OCI Handle을 초기화 한다.
+//			_UNICODE인 경우 -> OCIEnvCreate,
+//			_MBCS인 경우 -> OCIInitialize, OCIEnvInit
+//			OCIHandleAlloc() : OCI_HTYPE_SVCCTX OCI_HTYPE_ERROR OCI_HTYPE_SERVER OCI_HTYPE_SERVER OCI_HTYPE_SESSION
+//          Parameter :
+//            hpEnv    : [OUT] Environmemnt Handle 포인터
+//            hpSvc    : [OUT] Service Handle 포인터
+//            hpErr    : [OUT] Error Handle 포인터
+//            hpSrv    : [OUT] Server Handle 포인터
+//            hpAut    : [OUT] Authentication Handle 포인터
+//            InitMode : [I N] 초기화 모드 종류
+//--------------------------------------------------------------------------
+INT  InitHandles(OCIEnv** hpEnv, 
+				 OCISvcCtx** hpSvc, 
+				 OCIError** hpErr, 
+				 OCIServer** hpSrv, 
+				 OCISession** hpAut, 
+				 ub4 InitMode)
+{
+	// Inititialize the OCI Environment
+#ifdef _UNICODE
+	if (OCIEnvCreate((OCIEnv**) hpEnv, OCI_UTF16, (dvoid*) 0, (dvoid* (*) (dvoid*, size_t)) 0, (dvoid* (*) (dvoid*, dvoid*, size_t)) 0, (dvoid (*) (dvoid*, dvoid*)) 0, (size_t) 0, (void**) 0))
+	{
+		return -1;
+	}
+#elif _MBCS
+	// Initializes the OCI Process environment
+	if (OCIInitialize(InitMode,
+					 (dvoid*) 0,
+					 (dvoid* (*)(dvoid*, size_t)) 0,
+					 (dvoid* (*)(dvoid*, dvoid*, size_t)) 0,
+					 (void (*)(dvoid*, dvoid*)) 0))
+	{
+		return -1;
+	}
+
+	if (OCIEnvInit((OCIEnv**) hpEnv, (ub4) OCI_DEFAULT, (size_t) 0, (dvoid**) 0))
+	{
+		return -2;
+	}
+#endif
+
+	// Allocate a service handle
+	if (OCIHandleAlloc((dvoid*) *hpEnv, (dvoid**) hpSvc, (ub4) OCI_HTYPE_SVCCTX, (size_t) 0, (dvoid**) 0 ))
+	{
+		return -3;
+	}
+
+	// Allocate an error handle
+	if (OCIHandleAlloc((dvoid*) *hpEnv, (dvoid**) hpErr, (ub4) OCI_HTYPE_ERROR, (size_t) 0, (dvoid**) 0 ))
+	{
+		return -4;
+	}
+
+	// Allocate a server handle
+	if (OCIHandleAlloc((dvoid*) *hpEnv, (dvoid**) hpSrv, (ub4) OCI_HTYPE_SERVER, (size_t) 0, (dvoid**) 0 ))
+	{
+		return -5;
+	}
+
+	// Allocate a authentication handle
+	if (OCIHandleAlloc((dvoid*) *hpEnv, (dvoid**) hpAut, (ub4) OCI_HTYPE_SESSION, (size_t) 0, (dvoid**) 0 ))
+	{
+		return -6;
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OraSQLInit
+// 기  능 : SQL 실행시 필요한 Statement Handle을 초기화한다.
+//			Statement Handle이 NULL이면 OCIHandleAlloc() : OCI_HTYPE_STMT,
+//			OCIStmtPrepare
+//          Parameter :
+//            hpEnv    : [I N] Environmemnt Handle 포인터
+//            hpErr    : [I N] Error Handle 포인터
+//            hpStmt   : [OUT] Statement Handle 포인터
+//            pszSQL   : [I N] SQL
+//--------------------------------------------------------------------------
+INT  OraSQLInit(OCIEnv* hpEnv, OCIError* hpErr, OCIStmt** hpStmt, TCHAR* pszSQL)
+{
+	INT ids;
+
+    // Allocate statement handle
+	if (NULL == *hpStmt)
+	{
+		ids = OCIHandleAlloc((dvoid*) hpEnv, (dvoid**) hpStmt, OCI_HTYPE_STMT, 0, NULL);
+		if (ids) return -1;
+	}
+    // Associate statement string with handle
+	ids = OCIStmtPrepare(*hpStmt, 
+						 hpErr, 
+						 (const text*) pszSQL, 
+						 sizeof(TCHAR) * _tcslen(pszSQL), 
+						 OCI_NTV_SYNTAX, 
+						 OCI_DEFAULT);
+	if (ids)
+	{
+		OCIErrorReport(hpErr);
+		OCIHandleFree(*hpStmt, OCI_HTYPE_STMT);
+		return -2;
+	}
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OraSQLBindByPos
+// 기  능 : SQL 에 데이터를 위치 바인딩한다.(OCIBindByPos)
+//          Parameter :
+//            hpStmt    : [I N] Statement Handle 포인터
+//            hpErr     : [I N] Error Handle 포인터
+//            pBindData : [I N] 바인딩 데이터 포함 구조체
+//--------------------------------------------------------------------------
+INT OraSQLBindByPos(OCIStmt* hpStmt, OCIError* hpErr, EDBM_BIND_DATA_TYPE* pBindData)
+{
+	INT i;
+
+	OCIBind* hpBind;
+
+	if (pBindData == NULL) return 0;
+
+	if (pBindData->nCount > 0 && 
+		(NULL == pBindData->pValue || NULL == pBindData->nDataType))
+	{
+		return -1;
+	}
+
+	for (i = 0; i < pBindData->nCount; i++)
+	{
+		hpBind = NULL;
+		switch (pBindData->nDataType[i])
+		{
+		case BINARY:
+			if (NULL == pBindData->pValue[i].BinData.pBinaryData) return -2;
+
+			if (OCIBindByPos(hpStmt, 
+				             &hpBind,
+							 hpErr,
+				             i + 1, 
+							 (dvoid*) pBindData->pValue[i].BinData.pBinaryData,
+							// 2002년06월17일 Binary를 지원하기 위해서 정민이 수정
+							// 원본
+				            /*
+							 (sb4) sizeof(TCHAR) * pBindData->pValue[i].BinData.nDataSize, 
+							*/
+							// 수정시작
+							 (sb4) pBindData->pValue[i].BinData.nDataSize, 
+							// 수정끝
+							 SQLT_LBI,
+				             (dvoid*) 0, 
+							 (ub2*) 0, 
+							 (ub2*) 0,
+				             (ub4) 0, 
+							 (ub4*) 0, 
+							 (ub4) OCI_DEFAULT))
+			{
+				OCIErrorReport(hpErr);
+				return -3;
+			}
+			break;
+		case STRING:
+		default:
+			if (NULL == pBindData->pValue[i].pStringData ) return -4;
+
+CTime t_start = CTime::GetCurrentTime();
+CString filename;
+filename.Format(_T("..\\tunning\\ESL_DM_%04d%02d%02d.txt"), t_start.GetYear(), t_start.GetMonth(), t_start.GetDay());
+FILE* fp;
+fp = _tfopen (filename, _T("a+"));
+if (NULL!=fp)
+{
+	CString sLogTime;
+	sLogTime.Format(_T("[%04d-%02d-%02d.%02d:%02d:%02d][][=BIND]"), 
+					t_start.GetYear(), t_start.GetMonth(),  t_start.GetDay(), t_start.GetHour(), t_start.GetMinute(), t_start.GetSecond());
+	_ftprintf (fp, _T("%s [Pos=%d] ■■■%s■■■\n"), sLogTime, i + 1, pBindData->pValue[i].pStringData);
+	fclose(fp);
+}
+
+			if (OCIBindByPos(hpStmt, 
+				             &hpBind, 
+							 hpErr,
+				             i + 1, 
+							 (dvoid*) pBindData->pValue[i].pStringData,
+				             (sb4) sizeof(TCHAR) * (_tcslen(pBindData->pValue[i].pStringData)+1), 
+							 SQLT_STR,
+				             (dvoid*) 0, 
+							 (ub2*) 0, 
+							 (ub2*) 0,
+				             (ub4) 0, 
+							 (ub4*) 0, 
+							 (ub4) OCI_DEFAULT))
+			{
+				OCIErrorReport(hpErr);
+				return -5;
+			}
+			break;
+		}
+	} // end of for(i)
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OraSQLBindByName
+// 기  능 : SQL 에 데이터를 이름 바인딩한다.(OCIBindByName)
+//          Parameter :
+//            hpStmt    : [I N] Statement Handle 포인터
+//            hpErr     : [I N] Error Handle 포인터
+//            pBindData : [I N] 바인딩 데이터 포함 구조체
+//--------------------------------------------------------------------------
+INT  OraSQLBindByName(OCIStmt* hpStmt, OCIError* hpErr, EDBM_BIND_DATA_TYPE* pBindData)
+{
+	INT i;
+	INT ids;
+	
+	OCIBind* hpBind;
+	
+	if (pBindData == NULL) return 0;
+	
+	if (pBindData->nCount > 0 && (NULL == pBindData->pValue || NULL == pBindData->nDataType))
+	{
+		return -1;
+	}
+	
+	for (i = 0; i < pBindData->nCount; i++)
+	{
+		hpBind = NULL;
+		switch (pBindData->nDataType[i])
+		{
+		case BINARY:
+			if (NULL == pBindData->pValue[i].BinData.pBinaryData) return -2;
+
+			ids = OCIBindByName(hpStmt,
+				                &hpBind,
+								hpErr,
+								(const text*) pBindData->pAlias[i].BinData.pBinaryData,
+								-1,
+								(dvoid*) pBindData->pValue[i].BinData.pBinaryData,
+								sizeof(TCHAR) * pBindData->pValue[i].BinData.nDataSize,
+								SQLT_LBI,
+								(dvoid*) 0,
+								(ub2*) 0,
+								(ub2*) 0,
+								(ub4) 0,
+								(ub4*) 0,
+								OCI_DEFAULT);
+			
+			if (ids)
+			{
+				OCIErrorReport(hpErr);
+				return -2;
+			}
+			break;
+		case STRING:
+		default:
+			if (NULL == pBindData->pValue[i].pStringData ) return -3;
+			
+CTime t_start = CTime::GetCurrentTime();
+CString filename;
+filename.Format(_T("..\\tunning\\ESL_DM_%04d%02d%02d.txt"), t_start.GetYear(), t_start.GetMonth(), t_start.GetDay());
+FILE* fp;
+fp = _tfopen (filename, _T("a+"));
+if (NULL!=fp)
+{
+	CString sLogTime;
+	sLogTime.Format(_T("[%04d-%02d-%02d.%02d:%02d:%02d][][=BIND]"), 
+					t_start.GetYear(), t_start.GetMonth(),  t_start.GetDay(), t_start.GetHour(), t_start.GetMinute(), t_start.GetSecond());
+	_ftprintf (fp, _T("%s [Name=%s] ■■■%s■■■\n"), sLogTime, pBindData->pAlias[i].pStringData, pBindData->pValue[i].pStringData);
+	fclose(fp);
+}
+
+
+			ids = OCIBindByName(hpStmt,
+								&hpBind,
+								hpErr,
+								(const text*) pBindData->pAlias[i].pStringData,
+								(sb4) sizeof(TCHAR) * _tcslen(pBindData->pAlias[i].pStringData),
+								(dvoid*) pBindData->pValue[i].pStringData,
+								sizeof(TCHAR) * DEFAULT_STRING_SIZE,
+								SQLT_STR,
+								(dvoid*) 0,
+								(ub2*) 0,
+								(ub2*) 0,
+								(ub4) 0,
+								(ub4*) 0,
+								OCI_DEFAULT);
+			
+			if (ids)
+			{
+				OCIErrorReport(hpErr);
+				return -4;
+			}
+			break;
+		}
+	} // end of for(i)
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OraSQLDefine
+// 기  능 : SELECT SQL 처리 후 결과 자료가 저장되는 변수를 지정한다.(OCIDefineByPos)
+//          Parameter :
+//            hpStmt    : [I N] Statement Handle 포인터
+//            hpErr     : [I N] Error Handle 포인터
+//            nColumn   : [I N] 칼럼 개수
+//            pField    : [I N] 칼럼 정보 (타입, 사이즈 등)
+//--------------------------------------------------------------------------
+INT  OraSQLDefine(OCIStmt* hpStmt, OCIError* hpErr, INT nColumn, ORA_FIELD_TYPE* pField)
+{
+	INT i;
+	INT ids;
+	OCIDefine* pDefn = NULL; // to hold pointer to field definition
+	
+	for (i = 0; i < nColumn; i++)
+	{
+        // Bind
+		pDefn = NULL;
+		switch (pField[i].nType)
+		{
+		case SQLT_CLOB:
+		case SQLT_BLOB:
+			ids = OCIDefineByPos(hpStmt, 
+				                 &pDefn, 
+								 hpErr, 
+								 (ub4) (i + 1), 
+								 (dvoid*) (&pField[i].pLobLoc),
+				                 (sb4) sizeof(TCHAR) * (pField[i].nSize), 
+								 (ub2) (pField[i].nType),
+				                 (dvoid*) (&pField[i].nInd), 
+								 (ub2*)(&pField[i].nLength),
+				                 NULL, 
+								 OCI_DEFAULT);
+			break;
+		default:
+			ids = OCIDefineByPos(hpStmt, 
+				                 &pDefn, 
+								 hpErr, 
+								 (ub4) (i + 1), 
+								 (dvoid*) (pField[i].pBuffer),
+				                 (sb4) sizeof(TCHAR) * (pField[i].nSize), 
+								 (ub2) (pField[i].nType),
+				                 (dvoid*) (&pField[i].nInd), 
+								 (ub2*) (&pField[i].nLength),
+				                 NULL, 
+								 OCI_DEFAULT);
+			break;
+		} //end of switch(nType)
+		if(0 > ids) 
+		{
+			OCIErrorReport(hpErr);
+			return -1;
+		}
+	} //end of for
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OraSQLExec
+// 기  능 : SQL을 실행한다.
+//			OCIStmtExecute for SELECT or NON-SELECT(i.e DML) Query
+//          Parameter :
+//            hpSvc     : [I N] Service Handle 포인터
+//            hpErr     : [I N] Error Handle 포인터
+//            hpStmt    : [I N] Statement Handle 포인터
+//            bSelect   : [I N] SELECT 문 여부
+//--------------------------------------------------------------------------
+INT  OraSQLExec(OCISvcCtx* hpSvc, OCIError* hpErr, OCIStmt* hpStmt, BOOL bSelect)
+{
+	INT ids;
+
+	if (bSelect)
+	{
+		ids = OCIStmtExecute(hpSvc, hpStmt, hpErr, 0, 0, NULL, NULL, OCI_DEFAULT);
+	} 
+	else 
+	{
+		ids = OCIStmtExecute(hpSvc, hpStmt, hpErr, 1, 0, NULL, NULL, OCI_DEFAULT);
+	}
+	//2003-1201[박길주] ==========================================================
+	//if (ids < 0)
+	//2003-1201[박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	if (OCI_SUCCESS != ids)
+	//2003-1201[박길주] ----------------------------------------------------------
+	{
+		OCIErrorReport(hpErr);
+		return -1;
+	}
+	//if (bSelect && ids == OCI_NO_DATA) return -2;
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OraColInfo
+// 기  능 : SELECT 문 수행시 COLUMN 정보를 구한다.
+//			OCIParamGet(OCI_HTYPE_STMT), 
+//			realloc(DB_DATA_ARRAY_TYPE variable), 
+//			realloc(ORA_FIELD_TYPE varialbe), 
+//			Get data type & size : OCIAttrGet(OCI_DTYPE_PARAM, OCI_ATTR_DATA_TYPE / OCI_ATTR_DATA_SIZE),
+//			Set Output data type, Field type & size for OCIDefineByPos, malloc fetch Buffer of Field
+//          Parameter :
+//            hpEnv     : [I N] Environment Handle 포인터
+//            hpErr     : [I N] Error Handle 포인터
+//            hpStmt    : [I N] Statement Handle 포인터
+//            pColumn   : [OUT] 칼럼 개수
+//            pDBField  : [OUT] 칼럼 정보 (타입, 사이즈 등)
+//            pDBData   : [OUT] 결과 값 저장 변수 (메모리 초기화만 한다)
+//--------------------------------------------------------------------------
+INT  OraColInfo(OCIEnv* hpEnv, OCIError* hpErr, OCIStmt* hpStmt, INT* pColumn, ORA_FIELD_TYPE** pDBField, DB_DATA_ARRAY_TYPE** pDBData)
+{
+	INT ids;
+    //UINT                nNameLen;
+	INT nColumn = 0;
+
+    //TCHAR*              pName;
+
+	OCIParam*           pFieldAttr = NULL;
+	DB_DATA_ARRAY_TYPE* pData      = NULL;
+	ORA_FIELD_TYPE*     pField     = NULL;
+	INT nNameLen = 512;
+	TCHAR *pName = NULL;
+
+	while (TRUE)
+	{
+        // Get pointer to column
+		ids = OCIParamGet(hpStmt, OCI_HTYPE_STMT, hpErr, (dvoid**) &pFieldAttr, nColumn + 1);
+		if (ids)
+		{
+			break;
+		}
+		
+        // Increment column count and Allocate an db data array structure
+		nColumn++;
+		pData = (DB_DATA_ARRAY_TYPE*) realloc(pData, nColumn * sizeof(DB_DATA_ARRAY_TYPE));
+		if ( NULL != pData )
+		{
+			wmemset(&pData[nColumn - 1], 0x00, sizeof(DB_DATA_ARRAY_TYPE));
+		}
+		else
+		{
+			return -1;
+		}
+
+		pField = (ORA_FIELD_TYPE*) realloc(pField, nColumn * sizeof(ORA_FIELD_TYPE));
+		if (NULL != pField)
+		{
+			wmemset(&pField[nColumn - 1], 0x00, sizeof(ORA_FIELD_TYPE));
+		}
+		else
+		{
+			FreeDBDataArrayType(pData, nColumn);
+			return -2;
+		}
+		
+        // Get data type & size
+		ids = OCIAttrGet((dvoid*) pFieldAttr, 
+						 OCI_DTYPE_PARAM, 
+						 (dvoid*) &(pField[nColumn - 1].nType), 
+						 0, 
+						 OCI_ATTR_DATA_TYPE, 
+						 hpErr);
+		if (ids)
+		{
+			FreeOraFieldType (pField, nColumn);
+			FreeDBDataArrayType(pData , nColumn);
+			OCIErrorReport(hpErr);
+			return -3;
+		}
+
+        // for LOBs : 4000, for LONG : 0
+		ids = OCIAttrGet((dvoid*) pFieldAttr, 
+						 OCI_DTYPE_PARAM, 
+						 (dvoid*) &(pField[nColumn - 1].nSize), 
+						 0, 
+						 OCI_ATTR_DATA_SIZE, 
+						 hpErr);
+		if (ids)
+		{
+			FreeOraFieldType (pField, nColumn);
+			FreeDBDataArrayType(pData , nColumn);
+			OCIErrorReport(hpErr);
+			return -4;
+		}
+		pField[nColumn - 1].nSize %= 0xFFFF;
+		
+        // Type conversions to string
+		switch (pField[nColumn-1].nType)
+		{
+		case SQLT_INT:
+		case SQLT_FLT:
+		case SQLT_UIN:
+			pData [nColumn - 1].nDataType = NUMERIC;
+			pField[nColumn - 1].nType = SQLT_STR;
+			pField[nColumn - 1].nSize += 1; // allow for null-terminator
+			break;
+		case SQLT_DAT:
+			pData [nColumn - 1].nDataType = DATE;
+			pField[nColumn - 1].nType = SQLT_STR;
+			pField[nColumn - 1].nSize = DATE_TYPE_LEN + 1;
+			break;
+		case SQLT_LNG:
+			pData [nColumn - 1].nDataType = STRING;
+			pField[nColumn - 1].nSize = LONG_TYPE_LEN + 1;
+			break;
+		case SQLT_CLOB:
+			pData [nColumn - 1].nDataType = STRING;
+			pField[nColumn - 1].nSize = 0;
+			OCIDescriptorAlloc(hpEnv, &pField[nColumn - 1].pLobLoc, OCI_DTYPE_LOB, 0, NULL);
+			break;
+		case SQLT_BLOB:
+			pData [nColumn - 1].nDataType = BINARY;
+			pField[nColumn - 1].nSize = 0;
+			OCIDescriptorAlloc(hpEnv, &pField[nColumn - 1].pLobLoc, OCI_DTYPE_LOB, 0, NULL);
+			break;
+		case SQLT_FILE:
+			FreeOraFieldType (pField, nColumn);
+			FreeDBDataArrayType(pData , nColumn);
+			return -5;
+			break;
+		default:
+			pData [nColumn - 1].nDataType = STRING;
+			pField[nColumn - 1].nType = SQLT_STR;
+			pField[nColumn - 1].nSize += 1; // allow for null-terminator
+			break;
+		}
+		
+        // Get column name and set name
+		/*
+		nNameLen = 512;
+		ids = OCIAttrGet((dvoid*) pFieldAttr, (ub4)OCI_DTYPE_PARAM, (dvoid**)&pName, (ub4*) &nNameLen, (ub4)OCI_ATTR_NAME, (OCIError*)hpErr);	
+		if (ids)
+		{
+			_tcscpy(&pData[nColumn - 1].szColumnName[0], _T("UNKNOWN"));
+		}
+		else
+		{
+			wmemset(&pData[nColumn - 1].szColumnName[0], 0x00, sizeof(pData[nColumn - 1].szColumnName));
+			wmemcpy(&pData[nColumn - 1].szColumnName[0], pName, sizeof(TCHAR) * nNameLen);
+		}	
+		*/
+        // Set size and malloc data buffer
+		if (0 < pField[nColumn-1].nSize)
+		{
+			pField[nColumn-1].pBuffer = (TCHAR*) malloc(sizeof(TCHAR) * pField[nColumn - 1].nSize);
+			if (NULL == pField[nColumn-1].pBuffer)
+			{
+				FreeOraFieldType (pField, nColumn);
+				FreeDBDataArrayType(pData , nColumn);
+				return -6;
+			}
+		}
+	} // end of while
+
+	*pColumn  = nColumn;
+	*pDBData  = pData;
+	*pDBField = pField;
+
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : OraSQLFetch
+// 기  능 : SELECT 문 수행 후 결과값을 구조체에 저장한다.
+//			Fetch one record data : wmemset fetch Buffer of Field of ONE record to ZERO,
+//									OCIStmtFetch(1, OCI_FETCH_NEXT),
+//			Write data to buffer  : realloc(DB_DATA_UNION variable) & wmemset to ZERO,
+//									CLOB Field - OCILobOpen, OCILobGetLength, OCILobRead, OCILobClose -> malloc & set DB_DATA_UNION.pDBDataUnion[nRow].pStringData
+//									BLOB Field - OCILobOpen, OCILobGetLength, OCILobRead, OCILobClose -> malloc & set DB_DATA_UNION.pDBDataUnion[nRow].BinData.pBinaryData
+//									Default - malloc & set DB_DATA_UNION.pDBDataUnion[nRow].pStringData
+//          Parameter :
+//            hpSvc         : [I N] Service Handle 포인터
+//            hpErr         : [I N] Error Handle 포인터
+//            hpStmt        : [I N] Statement Handle 포인터
+//            nFetchStartNo : [I N] Fetch 시작 위치
+//            nFetchCount   : [I N] 최대 Fetch 개수
+//            nColumn       : [I N] 칼럼 개수
+//            pDBField      : [I N] 칼럼 정보 (타입, 사이즈 등)
+//            pRow          : [OUT] 레코드 개수
+//            pDBData       : [OUT] 결과 값 저장 변수 
+//--------------------------------------------------------------------------
+INT  OraSQLFetch(
+				 OCISvcCtx*          hpSvc        ,
+				 OCIError*           hpErr        ,
+				 OCIStmt*            hpStmt       ,
+				 INT                 nFetchStartNo,
+				 INT                 nFetchCount  ,
+				 INT                 nColumn      ,
+				 ORA_FIELD_TYPE*     pField       ,
+				 INT*                pRow         ,
+				 DB_DATA_ARRAY_TYPE* pData
+                )
+{
+	INT  i;
+	INT  nRow = 0;
+	INT	 ids;
+	INT	 nSum;
+	
+	TCHAR* pLobData=NULL;
+	BOOL bAllFetched = FALSE;
+
+	if ( 1 > nFetchStartNo) nFetchStartNo = 1;
+	if (-1 > nFetchCount  ) nFetchCount   = -1;
+	
+	while (TRUE)
+	{
+        // Fetch one record data
+		for (i = 0; i < nColumn; i++)
+		{
+			wmemset(pField[i].pBuffer, 0x00, sizeof(TCHAR) * pField[i].nSize);
+		}
+
+		ids = OCIStmtFetch(hpStmt, hpErr, 1, OCI_FETCH_NEXT, OCI_DEFAULT);
+		if (ids == OCI_NO_DATA) 
+		{
+			bAllFetched = TRUE;
+			break;
+		}
+		if (0 > ids)
+		{
+			OCIErrorReport(hpErr);
+			return -1;
+		}
+        // Write data to buffer
+		nRow++;
+		if (nFetchStartNo > nRow) continue;
+		for (i = 0; i < nColumn; i++)
+		{
+			pData[i].pDBDataUnion = (DB_DATA_UNION*) realloc(pData[i].pDBDataUnion, nRow * sizeof(DB_DATA_UNION));
+			if(NULL == pData[i].pDBDataUnion) return -2;
+			
+			wmemset(&pData[i].pDBDataUnion[nRow - 1], 0x00, sizeof(DB_DATA_UNION));
+			pData[i].nRowCount = nRow;
+			
+			switch (pField[i].nType)
+			{
+				ub4 amt, offset;
+
+			case SQLT_CLOB:
+                // Lob Open nLnd
+				if(pField[i].nInd == 0)
+				{
+					if(0 > OCILobOpen(hpSvc, hpErr, (OCILobLocator*) pField[i].pLobLoc, OCI_LOB_READONLY))
+					{
+						OCIErrorReport(hpErr);
+						return -3;
+					}
+					// Lob Length
+					if(0 > OCILobGetLength(hpSvc, hpErr, (OCILobLocator*) pField[i].pLobLoc, &pData[i].nDataLength))
+					{
+						OCIErrorReport(hpErr);
+						return -4;
+					}
+
+					pData[i].nDataLength++;
+					// Memory Allocation
+					pLobData = (TCHAR*) malloc(sizeof(TCHAR) * pData[i].nDataLength);
+					if(NULL == pLobData) return -5;
+					// Lob Read
+					amt = 0; offset = 1; nSum = 0;
+					while(TRUE)
+					{
+						ub2 clsid = 0;
+
+#ifdef _UNICODE
+                        clsid = OCI_UCS2ID;
+#endif
+						ids = OCILobRead(hpSvc,
+							             hpErr,
+							             (OCILobLocator*) pField[i].pLobLoc,
+							             &amt,
+							             offset,
+							             &pLobData[0] + nSum ,
+							             sizeof(TCHAR) * (pData[i].nDataLength - 1) ,
+							             (dvoid*) 0,
+							             (sb4 (*)(dvoid*, const dvoid*, ub4, ub1)) 0,
+							             (ub2) clsid,
+							             (ub1) SQLCS_IMPLICIT);
+						if (ids == 0) break;
+						else if (ids == 99) nSum += amt;
+						else return -6;
+					}
+					pLobData[pData[i].nDataLength - 1] = _T('\0');
+				}
+				else
+				{
+					pLobData = (TCHAR*) malloc(sizeof(TCHAR) * 1);
+					pLobData[0] = _T('\0');
+				}
+				
+				pData[i].pDBDataUnion[nRow - 1].pStringData = pLobData;
+				OCILobClose(hpSvc, hpErr, (OCILobLocator*) pField[i].pLobLoc);
+				break;
+			
+			case SQLT_BLOB:
+				// 2002년06월17일 Binary를 지원하기 위해서 정민이 수정
+				// 수정시작
+                // Lob Open nLnd
+				if(pField[i].nInd == 0)
+				{
+					if(0 > OCILobOpen(hpSvc, hpErr, (OCILobLocator*) pField[i].pLobLoc, OCI_LOB_READONLY))
+					{
+						OCIErrorReport(hpErr);
+						return -3;
+					}
+					// Lob Length
+					if(0 > OCILobGetLength(hpSvc, hpErr, (OCILobLocator*) pField[i].pLobLoc, &pData[i].nDataLength))
+					{
+						OCIErrorReport(hpErr);
+						return -4;
+					}
+					// Memory Allocation
+					pLobData = (TCHAR*) malloc(pData[i].nDataLength);
+					if(NULL == pLobData) return -5;
+					// Lob Read
+					amt = 0; offset = 1; nSum = 0;
+					while(TRUE)
+					{
+						ids = OCILobRead(hpSvc,
+							             hpErr,
+							             (OCILobLocator*) pField[i].pLobLoc,
+							             &amt,
+							             offset,
+							             &pLobData[0] + nSum ,
+							             pData[i].nDataLength ,
+							             (dvoid*) 0,
+							             (sb4 (*)(dvoid*, const dvoid*, ub4, ub1)) 0,
+							             (ub2) 0,
+							             (ub1) SQLCS_IMPLICIT);
+						if (ids == 0) break;
+						else if (ids == 99) nSum += amt;
+						else return -6;
+					}
+				}
+				else
+				{
+					pLobData = (TCHAR*) malloc(sizeof(TCHAR) * 1);
+					pLobData[0] = _T('\0');
+				}
+				
+				pData[i].pDBDataUnion[nRow - 1].BinData.nDataSize = pData[i].nDataLength;
+				pData[i].pDBDataUnion[nRow - 1].BinData.pBinaryData = pLobData;
+				OCILobClose(hpSvc, hpErr, (OCILobLocator*) pField[i].pLobLoc);
+				// 수정끝
+				break;
+			
+			default:
+                // Get Output Buffer Size
+				pData[i].nDataLength = _tcslen(pField[i].pBuffer) + 1;
+                // Memory Allocation
+				pData[i].pDBDataUnion[nRow - 1].pStringData = (TCHAR*) malloc(sizeof(TCHAR) * pData[i].nDataLength);
+				if( NULL == pData[i].pDBDataUnion[nRow - 1].pStringData ) return -7;
+                // Write Data to Output Buffer
+				wmemcpy(pData[i].pDBDataUnion[nRow - 1].pStringData, pField[i].pBuffer, sizeof(TCHAR) * pData[i].nDataLength);
+				ECOStrRTrim(pData[i].pDBDataUnion[nRow - 1].pStringData, pData[i].pDBDataUnion[nRow - 1].pStringData, _T(' '));
+				ECOStrRTrim(pData[i].pDBDataUnion[nRow - 1].pStringData, pData[i].pDBDataUnion[nRow - 1].pStringData, _T('\t'));
+				break;
+				
+			} //end of switch(nType)
+		} //end of for(i:nColumn)
+		if (-1 != nFetchCount && nFetchCount <= nRow) break;
+	} //end of while
+
+	*pRow = nRow;
+
+	// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] +++
+	if (bAllFetched) return OCI_NO_DATA;
+	// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] ---
+	
+	return 0;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : FreeOraFieldType
+// 기  능 : ORA_FIELD_TYPE 구조체를 Free 한다
+//          Parameter :
+//            pOraFieldType : [I N] 칼럼 정보 구조체
+//            nColumnCount  : [I N] 칼럼 개수
+//--------------------------------------------------------------------------
+VOID FreeOraFieldType(ORA_FIELD_TYPE *pOraFieldType, INT nColumnCount)
+{
+	INT i;
+	
+	if (NULL == pOraFieldType) return;
+	
+	for (i = 0; i < nColumnCount; i++)
+	{
+		if (pOraFieldType[i].pBuffer != NULL)
+		{
+			free(pOraFieldType[i].pBuffer);
+			pOraFieldType[i].pBuffer = NULL;
+		}
+		
+		if (NULL != pOraFieldType[i].pLobLoc)
+			OCIDescriptorFree(pOraFieldType[i].pLobLoc, OCI_DTYPE_LOB);
+	}
+	free(pOraFieldType);
+	pOraFieldType = NULL;
+}
+
+//--------------------------------------------------------------------------
+// 함수명 : InitOraAccessType
+// 기  능 : ORA_ACCESS_TYPE 구조체 변수를 초기화한다
+//          Parameter :
+//            pAccess : [I N] 연결정보 및 프레임 구조체 포인터
+//--------------------------------------------------------------------------
+// Initialize ORA_ACCESS_TYPE variable
+//VOID InitOraAccessType(ORA_ACCESS_TYPE* pAccess)
+VOID InitOraAccessType(ORA_ACCESS_TYPE pAccess[])
+{
+	for (INT i=0 ; i<MAX_SESSION_CNT ; i++)
+	{
+		//pAccess[i].bConnect			= FALSE;
+		pAccess[i].hpEnv				= NULL;
+		pAccess[i].hpSvc				= NULL;
+		pAccess[i].hpAut				= NULL;
+		pAccess[i].hpErr				= NULL;
+		pAccess[i].szServiceName[0]		= _T('\0');
+		pAccess[i].szUserName   [0]		= _T('\0');
+		pAccess[i].szPassWord   [0]		= _T('\0');
+		pAccess[i].nMaxFetchCount		= DEFAULT_MAX_FETCH_CNT;
+		pAccess[i].nOldFrameStreamCount = 0;
+		pAccess[i].nFrameStreamCount	= 0;
+		pAccess[i].pFrameStream			= NULL;
+		pAccess[i].pNonFrameBindData	= NULL;
+		pAccess[i].pFrameBindData		= NULL;
+		pAccess[i].pNonFrameNumberData	= NULL;
+		pAccess[i].pFrameNumberData		= NULL;
+
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		// 멀티세션 [GJPark@eco.co.kr:2003/8/13] 작업시작
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		pAccess[i].nRequestID			= -1;
+		pAccess[i].nStatus				= SESSION_CLOSED;
+		//------------------------------------------------------------------------
+		// 멀티세션 [GJPark@eco.co.kr:2003/8/13] 작업끝
+		//------------------------------------------------------------------------
+	
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		// Array Fetch size [GJPark@eco.co.kr:2003/8/13] 작업시작
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		pAccess[i].nArrayFetchSize		= DEFAULT_ARRAY_FETCH_CNT;
+		//------------------------------------------------------------------------
+		// Array Fetch size [GJPark@eco.co.kr:2003/8/13] 작업끝
+		//------------------------------------------------------------------------
+		
+	}
+}
+
+
+
+// 2002년07월08일 Binary를 지원하기 위해서 정민이 수정
+// 수정시작
+//--------------------------------------------------------------------------
+// 함수명 : UpdateProc
+// 기  능 : UPDATE 문을 수행한다.
+//			Make Update SQL, OCI8ConnectDB, 
+//			Allocate statement handle : OCIHandleAlloc(OCI_HTYPE_STMT),
+//			Associate statement string with handle : OCIStmtPrepare,
+//			OCIBindByPos, OCIStmtExecute, 필요시 OCI8CommitProc, 
+//			OCIHandleFree(OCI_HTYPE_STMT)
+//          Parameter :
+//            pAccess            : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID          : [I N] 사용자 ID
+//            pszPasswd          : [I N] 사용자 Password
+//            pszTableName       : [I N] 테이블명
+//            nColumnCount       : [I N] 칼럼수
+//            pszAttributeName   : [I N] Attribute명
+//            pszAttributeData   : [I N] Attribute Data
+//            pnInDataType       : [I N] Attribute Type
+//            pszPKAttributeName : [I N] Primary Key Attribute 명
+//            pszTablePrimaryKey : [I N] Primary Key 값
+//            bCommit            : [I N] Commit 여부
+//--------------------------------------------------------------------------
+INT	 OCI8UpdateLobProc(
+					   ORA_ACCESS_TYPE* pAccess           ,
+					   TCHAR*           pszUserID         ,
+					   TCHAR*           pszPasswd         ,
+					   TCHAR*           pszTableName      ,
+					   TCHAR*           pszAttributeName  ,
+					   void*            pszLobData        ,
+					   INT              nLobLen           ,
+					   TCHAR*           pszPKAttributeName,
+					   TCHAR*           pszTablePrimaryKey,
+					   BOOL bCommit
+					   )
+{
+	if ( _tcslen(pszTableName) == 0 ) return -1;
+	if ( _tcslen(pszAttributeName) == 0 ) return -1;
+	if ( pszLobData == NULL ) return -1;
+	if ( nLobLen < 0 ) return -1;
+	if ( _tcslen(pszPKAttributeName) == 0 ) return -1;
+	if ( _tcslen(pszTablePrimaryKey) == 0 ) return -1;
+
+    INT ids;
+
+	TCHAR pszSQL[1024];
+	_stprintf(pszSQL, _T("UPDATE %s SET %s = :ALIAS0 WHERE %s = %s"), 
+			  pszTableName, pszAttributeName, pszPKAttributeName, pszTablePrimaryKey);
+
+    // Connect
+	// ?[2003/8/13] ids = OCI8ConnectDB(pAccess, pszUserID, pszPasswd);
+	// ?[2003/8/13] if (ids) return -1;
+
+	// Remain Log
+	// 2003-12-01 [박길주] =======================================================
+	//LoggingProcess(OCI_LOG_SQL_FILE_NAME , pszSQL);
+	// 2003-12-01 [박길주] +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//LoggingProcess(_T("OCI_MGR"), pszSQL);
+	// 2003-12-01 [박길주] -------------------------------------------------------
+
+    // Allocate statement handle
+	OCIStmt* hpStmt = NULL;
+	ids = OCIHandleAlloc(pAccess->hpEnv, (dvoid**) &hpStmt, OCI_HTYPE_STMT, 0, NULL);
+	if (ids) return -2;
+
+    // Associate statement string with handle
+	ids = OCIStmtPrepare(hpStmt, pAccess->hpErr, (const text*) pszSQL, sizeof(TCHAR) * _tcslen(pszSQL), OCI_NTV_SYNTAX, OCI_DEFAULT);
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -3;
+	}
+
+	// Bind
+	OCIBind* hpBind = NULL;
+	if (OCIBindByPos(hpStmt, 
+					 &hpBind,
+					 pAccess->hpErr,
+					 1, 
+					 (dvoid*) pszLobData,
+					 (sb4) nLobLen, 
+					 SQLT_LBI,
+					 (dvoid*) 0, 
+					 (ub2*) 0, 
+					 (ub2*) 0,
+					 (ub4) 0, 
+					 (ub4*) 0, 
+					 (ub4) OCI_DEFAULT)) 
+	{
+		OCIErrorReport(pAccess->hpErr);
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -4;
+	}
+
+    // execute
+	ids = OCIStmtExecute(pAccess->hpSvc, hpStmt, pAccess->hpErr, 1, 0, NULL, NULL, OCI_DEFAULT);
+	//2003-1211[박길주] ==========================================================
+	//if (ids < 0)
+	//2003-1211[박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	if (OCI_SUCCESS != ids)
+	//2003-1211[박길주] ----------------------------------------------------------
+	{
+		OCIErrorReport(pAccess->hpErr);
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -5;
+	}
+
+	// Commit
+	if (bCommit == TRUE)
+	{
+		ids = OCI8CommitProc(pAccess, pszUserID, pszPasswd);
+		if (ids)
+		{
+			return -6;
+		}
+	}
+	
+	OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+    return 0;
+}
+// 수정끝
+
+// 2002년08월13일 DDL(Data Definition Language)를 지원하기 위해서 정민이 수정
+// 수정시작
+//--------------------------------------------------------------------------
+// 함수명 : OCI8UnSelectProcWithoutBeginEnd
+// 기  능 : begin end;로 싸여 있을 경우 drop, alter, create 같은 작업을 할 수 없기 때문에 생성
+//			OCI8ConnectDB, 
+//			Allocate statement handle : OCIHandleAlloc(OCI_HTYPE_STMT),
+//			Associate statement string with handle : OCIStmtPrepare,
+//			OCIStmtExecute(NON-SELECT), 필요시 OCI8CommitProc,
+//			OCIHandleFree(OCI_HTYPE_STMT)
+//          Parameter :
+//            pAccess            : [I N] 오라클 연결 정보 및 프레임 정보
+//            pszUserID          : [I N] 사용자 ID
+//            pszPasswd          : [I N] 사용자 Password
+//            pszSQL             : [I N] SQL
+//            bCommit            : [I N] Commit 여부
+//--------------------------------------------------------------------------
+INT	 OCI8UnSelectProcWithoutBeginEnd(
+				    ORA_ACCESS_TYPE* pAccess           ,
+				    TCHAR*           pszUserID         ,
+                    TCHAR*           pszPasswd         ,
+					TCHAR*           pszSQL            ,
+                    BOOL bCommit
+			       )
+{
+	if ( _tcslen(pszSQL) == 0 ) return -1;
+
+    INT ids;
+
+    // Connect
+	ids = OCI8ConnectDB(pAccess, pszUserID, pszPasswd);
+	if (ids) return -1;
+
+	// Remain Log
+	// 2003-12-01 [박길주] =======================================================
+	//LoggingProcess(OCI_LOG_SQL_FILE_NAME , pszSQL);
+	// 2003-12-01 [박길주] +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//LoggingProcess(_T("OCI_MGR"), pszSQL);
+	// 2003-12-01 [박길주] -------------------------------------------------------
+
+    // Allocate statement handle
+	OCIStmt* hpStmt = NULL;
+	ids = OCIHandleAlloc(pAccess->hpEnv, (dvoid**) &hpStmt, OCI_HTYPE_STMT, 0, NULL);
+	if (ids) return -2;
+
+    // Associate statement string with handle
+	ids = OCIStmtPrepare(hpStmt, pAccess->hpErr, (const text*) pszSQL, sizeof(TCHAR) * _tcslen(pszSQL), OCI_NTV_SYNTAX, OCI_DEFAULT);
+	if (ids)
+	{
+		OCIErrorReport(pAccess->hpErr);
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -3;
+	}
+
+    // execute
+	ids = OCIStmtExecute(pAccess->hpSvc, hpStmt, pAccess->hpErr, 1, 0, NULL, NULL, OCI_DEFAULT);
+	//2003-1211[박길주] ==========================================================
+	//if (ids < 0)
+	//2003-1211[박길주] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	if (OCI_SUCCESS != ids)
+	//2003-1211[박길주] ----------------------------------------------------------
+	{
+		OCIErrorReport(pAccess->hpErr);
+		OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+		return -5;
+	}
+
+	// Commit
+	if (bCommit == TRUE)
+	{
+		ids = OCI8CommitProc(pAccess, pszUserID, pszPasswd);
+		if (ids)
+		{
+			return -6;
+		}
+	}
+	
+	OCIHandleFree(hpStmt, OCI_HTYPE_STMT);
+    return 0;
+}
+// 수정끝
+
+
+
+//--------------------------------------------------------------------------
+// 함수명 : OraSQLFetchEx
+// 기  능 : Sequencial한 Select를 수행.
+//			Fetch one record data : wmemset fetch Buffer of Field of ONE record to ZERO,
+//									OCIStmtFetch(1, OCI_FETCH_NEXT),
+//			Fetch한 데이터를 pField 메개변수에 담아 리턴한다.
+//          Parameter :
+//            hpSvc         : [I N] Service Handle 포인터
+//            hpErr         : [I N] Error Handle 포인터
+//            hpStmt        : [I N] Statement Handle 포인터
+//            nFetchCount   : [I N] 최대 Fetch 개수 -> Not used !!!
+//            nColumn       : [I N] 칼럼 개수
+//            pField		: [OUT] 칼럼 정보 (타입, 사이즈 등) -> Fetch한 레코드 리턴
+//--------------------------------------------------------------------------
+/**********************************************************************************************
+Sequencial한 Select를 위하여 원종이가 추가한 부분
+At : 2002. 12. 14
+**********************************************************************************************/
+INT  OraSQLFetchEx(
+				   OCISvcCtx*          hpSvc        ,
+				   OCIError*           hpErr        ,
+				   OCIStmt*            hpStmt       ,
+				   INT                 nFetchCount  ,
+				   INT                 nColumn      ,
+				   ORA_FIELD_TYPE*     pField       
+				   )
+{
+	INT  i;
+	INT  nRow = 0;
+	INT	 ids;
+	
+	TCHAR* pLobData=NULL;
+
+    // Fetch one record data
+	for (i = 0; i < nColumn; i++)
+	{
+		wmemset(pField[i].pBuffer, 0x00, sizeof(TCHAR) * pField[i].nSize);
+	}
+
+	ids = OCIStmtFetch(hpStmt, hpErr, 1, OCI_FETCH_NEXT, OCI_DEFAULT);
+	
+	// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] +++
+	//if (ids == OCI_NO_DATA) return -1;
+	if (OCI_NO_DATA == ids) return OCI_NO_DATA;
+	// 모든 데이터를 페치한 경우 [GJPark@eco.co.kr:2003/8/18] ---
+	
+	if (0 > ids)
+	{
+		OCIErrorReport(hpErr);
+		return -1;
+	}
+	
+	return 0;
+}
+
+// 원종 추가 끝

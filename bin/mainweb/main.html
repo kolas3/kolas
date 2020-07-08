@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Kolas</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge",chrome=1 />
+	
+	<!-- style -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- html5shiv -->
+    <script src="js/html5shiv.js"></script>
+	
+    <!-- ie checker -->
+    <!--<script src="js/ie-checker.js"></script>-->
+      
+    <!-- jquery -->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		function AddKolasMenu(i_menu_id, i_value, i_description)
+		{
+			$('#' + i_menu_id).append($('<li>').append($('<a>').attr('href', i_value). append(i_description)));
+		}
+	</script>
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+           <h1><img src="img/k_logo.png" alt="코라스"></h1>
+        </header>
+        <!-- //header -->
+        
+        <section id="nav">
+            <div class="nav">
+               <ul class="books_wrap">
+                   <li>
+                      <img src="img/icon/books/img_book_data.png" alt="단행자료">
+                      <p>단행자료</p><span class="books">BOOKS</span>
+                   </li>
+                   <li class="menu">    
+                      <img src="img/icon/books/btn_01.png" alt="수서대상관리">
+                      <p>수서대상관리</p>
+                      <ul class="small_nav">
+                         <li id="b_mng">수서대상관리</li>
+                         <li><a href="event:1110">희망자료관리</a></li>
+                         <li><a href="event:1120">반입자료관리</a></li>
+                         <li><a href="event:1130">재활용자료관리</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <a href="#">
+                        <img src="img/icon/books/btn_02.png" alt="구입">
+                        <p>구입</p>
+                      </a>
+                      <ul class="small_nav">
+                         <li class="b_buy">구입</li>
+                         <li><a href="event:1210">구입자료관리</a></li>
+                         <li><a href="event:1220">검수자료관리</a></li>
+                         <li><a href="event:1230">구입자료출력</a></li>
+                         <li><a href="event:1240">통계</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/books/btn_03.png" alt="기증">
+                      <p>기증</p>
+                      <ul class="small_nav">
+                         <li class="b_dnt">기증</li>
+                         <li><a href="event:1310">기증자료관리</a></li>
+                         <li><a href="event:1320">기증자료출력</a></li>
+                         <li><a href="event:1350">미등록자료관리</a></li>
+                         <li><a href="event:1340">기증자관리</a></li>
+                         <li><a href="event:1330">통계</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/books/btn_04.png" alt="등록">
+                      <p>등록</p>
+                      <ul class="small_nav">
+                         <li class="b_rgstr">등록</li>
+                         <li><a href="event:1410">등록자료관리</a></li>
+                         <li><a href="event:1420">원부대장관리</a></li>          
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/books/btn_05.png" alt="정리">
+                      <p>정리</p>
+                      <ul class="small_nav">
+                         <li class="b_arngm">정리</li>
+                         <li><a href="event:1510">목록완성</a></li>
+                         <li><a href="event:1520">장비출력</a></li>          
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/books/btn_06.png" alt="열람">
+                      <p>열람</p>
+                      <ul class="small_nav">
+                         <li class="b_view">열람</li>
+                         <li><a href="event:1610">배가일자기록</a></li>
+                         <li><a href="event:1620">센터업로드</a></li>   
+                         <li><a href="event:1630">배가자료관리</a></li> 
+                         <li><a href="event:1640">장서점검</a></li> 
+                         <li><a href="event:1650">통계</a></li>        
+                      </ul>
+                   </li>
+               </ul>
+               <!--//books_wrap-->
+               <ul class="serial_wrap">
+                   <li class="menu">
+                      <img src="img/icon/serial/img_serial.png" alt="연속간행물">
+                      <p>연속간행물</p><span class="serial">SERIAL</span>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/serial/btn_01.png" alt="구입">
+                      <p>구입</p>
+                      <ul class="small_nav">
+                         <li class="s_buy">구입</li>
+                         <li><a href="event:2110">구입자료관리</a></li>
+                         <li><a href="event:2120">체크인관리</a></li>
+                         <li><a href="event:2130">결호관리(독촉)</a></li>
+                         <li><a href="event:2140">서지정보관리</a></li>
+                         <li><a href="event:2150">통계</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/serial/btn_02.png" alt="기증">
+                      <p>기증</p>
+                      <ul class="small_nav">
+                         <li class="s_dnt">기증</li>
+                         <li><a href="event:2210">체크인관리</a></li>
+                         <li><a href="event:2220">결호관리(독촉)</a></li>
+                         <li><a href="event:2230">서지정보관리</a></li>
+                         <li><a href="event:2250">기증자관리</a></li>
+                         <li><a href="event:2240">통계</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/serial/btn_03.png" alt="제본"
+                      ><p>제본</p>
+                      <ul class="small_nav">
+                         <li class="s_bdg">제본</li>
+                         <li><a href="event:2310">제본결정</a></li>
+                         <li><a href="event:2320">제본빌주</a></li>
+                         <li><a href="event:2330">제본검수</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/serial/btn_04.png" alt="등록">
+                      <p>등록</p>
+                      <ul class="small_nav">
+                         <li class="s_rgstr">등록</li>
+                         <li><a href="event:2410">등록자료관리</a></li>
+                         <li><a href="event:2420">원부대장관리</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/serial/btn_05.png" alt="정리">
+                      <p>정리</p>
+                      <ul class="small_nav">
+                         <li class="s_arngm">정리</li>
+                         <li><a href="event:2510">목록완성</a></li>
+                         <li><a href="event:2520">장비출력</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/serial/btn_06.png" alt="열람">
+                      <p>열람</p>
+                      <ul class="small_nav">
+                         <li class="s_view">열람</li>
+                         <li><a href="event:2610">실시간자료관리</a></li>
+                         <li><a href="event:2620">배가일자기록</a></li>
+                         <li><a href="event:2630">배가자료관리</a></li>
+                         <li><a href="event:2640">통계</a></li>
+                      </ul>
+                   </li>
+               </ul>
+               <!--//serial_wrap-->
+               
+               <ul class="common_wrap1">
+                   <li class="menu">
+                      <img src="img/icon/common/img_coomon.png" alt="공통">
+                      <p>공통</p><span class="common">COMMON</span>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/common/btn_01.png" alt="대출/반납">
+                      <p>대출/반납</p>
+                      <ul class="small_nav" id="3100">
+                         <li id="c_rtrn">대출/반납</li>
+                         <li><a href="event:3110">대출반납</a></li>
+                         <li><a href="event:3120">대출자료관리</a></li>
+                         <li><a href="event:3130">예약자료관리</a></li>
+                         <li><a href="event:3150">배달자료관리</a></li>
+                         <li><a href="event:3160">통계</a></li>		
+		         <li><a href="event:3180">SMS</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <a href="event:3140"><img src="img/icon/common/btn_02.png" class="size" alt="이용자관리">
+                      <p>이용자관리</p></a>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/common/btn_상호대차.png" alt="상호대차">
+                      <p>상호대차</p>
+                      <ul class="small_nav" id="3700">
+                         <li class="c_list">상호대차</li>
+                         <!--<li><a href="move:http://www.nl.go.kr/nill/user/index.do">책바다</a></li>-->
+			 <!--<li><a href="move:http://www.nl.go.kr/nill/shdcmn/index.jsp">책바다</a></li>-->
+			<li><a href="event:3730">책바다</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/common/btn_04.png" alt="전거통계">
+                      <p>전거통계</p>
+                      <ul class="small_nav" id="3300">
+                         <li class="c_sttst">전거통계</li>
+                         <li><a href="event:3310">전거관리</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <a href="event:3410"><img src="img/icon/common/btn_05.png" alt="분류기호 및 주제명 검색요어">
+                      <p>분류기호 및<br/>주제명검색요어</p></a>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/common/btn_06.png" alt="자료찾기">
+                      <p>자료찾기</p>
+                      <ul class="small_nav" id="3500">
+                         <li class="c_find">자료찾기</li>
+                         <li><a href="event:3510">업무용자료찾기</a></li>			
+                         <li><a href="event:3511">이용자용자료찾기</a></li>
+                      </ul>
+                   </li>
+                   
+               </ul>
+               <!--//common_wrap1-->
+               <ul class="common_wrap2">
+                  <li></li>
+                  <li class="menu">
+		      <a href="event:3670"><img src="img/icon/common/btn_07.png" class="size" alt="국가자료공동목록">
+                      <p>공동목록</p></a>
+			<!--
+                      <img src="img/icon/common/btn_07.png" alt="국가자료공동목록">
+                      <p>공동목록</p>
+                      <ul class="small_nav" id="3600">
+                         <li id="c_mstrlist">국가자료공동목록</li>
+                         <li><a href="event:3610">목록관리</a></li>
+                         <li><a href="event:3620">검색</a></li>
+                         <li><a href="event:3630">도서관정보관리</a></li>
+                         <li><a href="event:3660">통계</a></li>
+                      </ul>
+			-->
+                   </li>
+				   <li class="menu">
+                      <img src="img/icon/common/btn_03.png" alt="목차/초록">
+                      <p>목차/초록</p>
+                      <ul class="small_nav" id="3200">
+                         <li class="c_list">목차/초록</li>
+                         <li><a href="event:3210">단행자료</a></li>
+                         <li><a href="event:3220">연속간행자료</a></li>
+                      </ul>
+                   </li>
+                   <li class="menu">
+                      <img src="img/icon/common/btn_08.png" alt="관리">
+                      <p>관리</p>     
+                      <ul class="small_nav" id="3900">
+                         <li class="c_mgmt">관리</li>
+                         <li><a href="event:3910">업무환경설정</a></li>
+                         <li><a href="event:3920">시스템환경설정</a></li>
+                      </ul>
+                   </li> 
+                   <li></li>
+                   <li></li>
+                   <li></li>
+                   <li></li>
+               </ul>
+            </div>
+            <!--//common_wrap2-->
+        </section>
+        <!-- //nav -->
+        
+        <section id="service_link">
+            <ul class="service_link">
+                <li><a href="move:http://book.nl.go.kr"><img src="img/icon/link/btn_connect.png" alt="책이음서비스"></a></li>                
+		<li><a href="event:3730"><img src="img/icon/link/btn_booksee.png" alt="책바다"></a></li>
+                <li><a href="move:https://www.nl.go.kr/kolisnet/"><img src="img/icon/link/btn_kolis.png" alt="국가자료종합목록시스템"></a></li>
+                <li><a href="move:http://kolas.nl.go.kr"><img src="img/icon/link/btn_center.png" alt="공공도서관 기술정보센터"></a></li>
+            </ul>
+        </section>
+        <!--//service_link-->
+        
+        <footer id="footer">
+            <h3 class="ir">푸터 정보</h3>
+            <div class="footer">
+                <div class="logo">
+                   <img src="img/g_logo.png" alt="국립중앙도서관로고">
+                </div>
+                <p>Copyright&copy; National Library of Korea. All rights reserved.</p>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CDUP_KEY_SETTING</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file D:\KOLAS2UP\Develop\Source\공통\Duplicate_Data_Search\DUP_KEY_SETTING.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CDUP_KEY_SETTING</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>중복/복본조사키를 설정하는 다이얼로그 클래스 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCESL_Mgr,M,CCDUP_KEY_SETTING,MCDUP_KEY_SETTING.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.180.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Constructor / Destructor</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.180.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>설정된 키값과 화면 컨트롤간의 관계설정 메소드</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.180.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DECLARE_MESSAGE_MAP</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.180.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void </TD><TD><B>DoDataExchange</B> (CDataExchange* pDX)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.180.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>멤버변수</B> <BR>
+<I>  </I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+저장된 키설정값을 읽어들여 해당 컨트롤에 반영시켜주며 사용자가 설정값을 저장하였을때 해당 컨트롤을 읽어
+CDuplicateSerachKey클래스를 이용하여 키설정값을 저장하는 역할을 수행한다.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Constructor / Destructor"></A>
+<A NAME="DOC.180.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Constructor / Destructor</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CDUP_KEY_SETTING"></A>
+<A NAME="DOC.180.1.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CDUP_KEY_SETTING( CESL_Mgr* pParent,  CString filename )</B></TT>
+<DD>
+
+<DL><DT><DT><B>Parameters:</B><DD><B>pParent</B> -  [in] 부모 윈도우의 포인터
+<BR><B>filename</B> -  [in] 키설정값을 저장하고 있는 파일의 패스명<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="Create"></A>
+<A NAME="DOC.180.1.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL Create(CWnd* pParentWnd)</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME="설정된 키값과 화면 컨트롤간의 관계설정 메소드"></A>
+<A NAME="DOC.180.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 설정된 키값과 화면 컨트롤간의 관계설정 메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetDisplayData"></A>
+<A NAME="DOC.180.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void GetDisplayData()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="SetDisplayData"></A>
+<A NAME="DOC.180.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void SetDisplayData()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME="DoDataExchange"></A>
+<A NAME="DOC.180.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void DoDataExchange(CDataExchange* pDX)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="멤버변수"></A>
+<A NAME="DOC.180.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 멤버변수</B></TT>
+<DD>
+
+<P>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="OnClose"></A>
+<A NAME="DOC.180.4.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnClose()</B></TT>
+<DD>화면닫기버튼의 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnInitDialog"></A>
+<A NAME="DOC.180.4.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   BOOL OnInitDialog()</B></TT>
+<DD>
+키설정값을 저장하고 있는 파일에서 저장되어진 키설정값을 m_SearchKey에 설정하고 이를 화면 컨트롤에 연결하여 
+출력한다. 
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnOK"></A>
+<A NAME="DOC.180.4.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void OnOK()</B></TT>
+<DD>확인 버튼의 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkAUTHOR"></A>
+<A NAME="DOC.180.4.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkAUTHOR()</B></TT>
+<DD>저작자 체크박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkPUBLISHER"></A>
+<A NAME="DOC.180.4.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkPUBLISHER()</B></TT>
+<DD>발행자 체크박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkPUBLICATEYEAR"></A>
+<A NAME="DOC.180.4.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkPUBLICATEYEAR()</B></TT>
+<DD>발행년 체크박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkTITLE"></A>
+<A NAME="DOC.180.4.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkTITLE()</B></TT>
+<DD>본표제 체크박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkISBN"></A>
+<A NAME="DOC.180.4.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkISBN()</B></TT>
+<DD>낱권ISBN 체크박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkMEDCLASS"></A>
+<A NAME="DOC.180.4.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkMEDCLASS()</B></TT>
+<DD>매체구분 체크박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkVOL"></A>
+<A NAME="DOC.180.4.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkVOL()</B></TT>
+<DD>권서명 체크박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkSEPARATESHELFCODE"></A>
+<A NAME="DOC.180.4.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkSEPARATESHELFCODE()</B></TT>
+<DD>별치기호 체크박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkREGCODE"></A>
+<A NAME="DOC.180.4.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkREGCODE()</B></TT>
+<DD>등록구분 체크박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradALLWORDSEARCH"></A>
+<A NAME="DOC.180.4.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradALLWORDSEARCH()</B></TT>
+<DD>본표제 전단어검색 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradTITLECUTSEARCH"></A>
+<A NAME="DOC.180.4.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradTITLECUTSEARCH()</B></TT>
+<DD>본표제 절취검색 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradTITLERIGHTTRUNCATION"></A>
+<A NAME="DOC.180.4.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradTITLERIGHTTRUNCATION()</B></TT>
+<DD>본표제 우절단 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradTITLEEQUIVALENCE"></A>
+<A NAME="DOC.180.4.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradTITLEEQUIVALENCE()</B></TT>
+<DD>본표제 일치 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradAUTHORRIGHTTRUNCATION"></A>
+<A NAME="DOC.180.4.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradAUTHORRIGHTTRUNCATION()</B></TT>
+<DD>저작자 우절단 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradAUTHOREQUIVALENCE"></A>
+<A NAME="DOC.180.4.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradAUTHOREQUIVALENCE()</B></TT>
+<DD>저작자 일치 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradPUBLISHERRIGHTTRUNCATION"></A>
+<A NAME="DOC.180.4.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradPUBLISHERRIGHTTRUNCATION()</B></TT>
+<DD>발행자 우절단 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradPUBLISHEREQUIVALENCE"></A>
+<A NAME="DOC.180.4.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradPUBLISHEREQUIVALENCE()</B></TT>
+<DD>발행자 일치 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradPUBLICATEYEAREQUIVALENCE"></A>
+<A NAME="DOC.180.4.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradPUBLICATEYEAREQUIVALENCE()</B></TT>
+<DD>발행년 일치 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradISBNEQUIVALENCE"></A>
+<A NAME="DOC.180.4.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradISBNEQUIVALENCE()</B></TT>
+<DD>낱권ISBN 일치 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradMEDIACODEEQUIVALENCE"></A>
+<A NAME="DOC.180.4.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradMEDIACODEEQUIVALENCE()</B></TT>
+<DD>매체구분 일치 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradVOLEQUIVALENCE"></A>
+<A NAME="DOC.180.4.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradVOLEQUIVALENCE()</B></TT>
+<DD>권서명 일치 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradSEPARATECODEEQUIVALENCE"></A>
+<A NAME="DOC.180.4.25"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradSEPARATECODEEQUIVALENCE()</B></TT>
+<DD>별치기호 일치 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnradREGCODEEQUIVALENCE"></A>
+<A NAME="DOC.180.4.26"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnradREGCODEEQUIVALENCE()</B></TT>
+<DD>등록구분 일치 라디오버튼 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnchkTITLETWICESEARCH"></A>
+<A NAME="DOC.180.4.27"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnchkTITLETWICESEARCH()</B></TT>
+<DD>서명 관칭포함 불포함 체그박스 클릭 이벤트처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="m_bInit"></A>
+<A NAME="DOC.180.4.28"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_bInit</B></TT>
+<DD>화면초기화임을 나타냄 OnInitDialog메소드에서 사용
+<DL><DT><DD></DL><P>
+<A NAME="m_SearchKey"></A>
+<A NAME="DOC.180.4.29"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="CDuplicateSearchKey.html">CDuplicateSearchKey</A> m_SearchKey</B></TT>
+<DD>키설정값을 보유하고 있는 CDuplicateSearchKey클래스
+<DL><DT><DD></DL><P>
+<A NAME="m_FileName"></A>
+<A NAME="DOC.180.4.30"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_FileName</B></TT>
+<DD>키설정값이 저장되어있는 파일패스
+<DL><DT><DD></DL><P>
+<A NAME=""></A>
+<A NAME="DOC.180.4.31"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>enum </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="IDD"></A>
+<A NAME="DOC.180.4.31.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> IDD</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="m_chkAuthor"></A>
+<A NAME="DOC.180.4.32"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkAuthor</B></TT>
+<DD>저작자 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_chkISBN"></A>
+<A NAME="DOC.180.4.33"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkISBN</B></TT>
+<DD>낱권ISBN 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_chkMedClass"></A>
+<A NAME="DOC.180.4.34"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkMedClass</B></TT>
+<DD>매체구분 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_chkPubYear"></A>
+<A NAME="DOC.180.4.35"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkPubYear</B></TT>
+<DD>발행년 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_chkPublisher"></A>
+<A NAME="DOC.180.4.36"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkPublisher</B></TT>
+<DD>발행자 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_chkRegCode"></A>
+<A NAME="DOC.180.4.37"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkRegCode</B></TT>
+<DD>등록구분 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_chkShelfCode"></A>
+<A NAME="DOC.180.4.38"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkShelfCode</B></TT>
+<DD>비치기호 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_chkTitle"></A>
+<A NAME="DOC.180.4.39"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkTitle</B></TT>
+<DD>본표제 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_chkTwice"></A>
+<A NAME="DOC.180.4.40"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkTwice</B></TT>
+<DD>관칭포함 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_chkVol"></A>
+<A NAME="DOC.180.4.41"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_chkVol</B></TT>
+<DD>권서명 체크박스의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_radAuthor"></A>
+<A NAME="DOC.180.4.42"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m_radAuthor</B></TT>
+<DD>저작자 검색타입 라디오버튼의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_radISBN"></A>
+<A NAME="DOC.180.4.43"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m_radISBN</B></TT>
+<DD>낱권ISBN 검색타입 라디오버튼의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_radMedCode"></A>
+<A NAME="DOC.180.4.44"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m_radMedCode</B></TT>
+<DD>매체구분 검색타입 라디오버튼의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_radPubYear"></A>
+<A NAME="DOC.180.4.45"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m_radPubYear</B></TT>
+<DD>발행년 검색타입 라디오버튼의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_radPublisher"></A>
+<A NAME="DOC.180.4.46"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m_radPublisher</B></TT>
+<DD>발행자 검색타입 라디오버튼의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_radRegCode"></A>
+<A NAME="DOC.180.4.47"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m_radRegCode</B></TT>
+<DD>등록구분 검색타입 라디오버튼의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_radShelfCode"></A>
+<A NAME="DOC.180.4.48"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m_radShelfCode</B></TT>
+<DD>별치기호 검색타입 라디오버튼의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_radTitle"></A>
+<A NAME="DOC.180.4.49"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m_radTitle</B></TT>
+<DD>본표제 검색타입 라디오버튼의 연결변수
+<DL><DT><DD></DL><P>
+<A NAME="m_radVol"></A>
+<A NAME="DOC.180.4.50"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m_radVol</B></TT>
+<DD>권서명 검색타입 라디오버튼의 연결변수
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="DECLARE_MESSAGE_MAP"></A>
+<A NAME="DOC.180.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DECLARE_MESSAGE_MAP()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CDuplicateSearchField.html">CDuplicateSearchField</A>, <!1><A HREF="CDuplicateSearchKey.html">CDuplicateSearchKey</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

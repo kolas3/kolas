@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by BO_CAT.mak
+
+.\BO_CAT.cpp : \
+	".\StdAfx.h"\
+	
+
+.\BO_CAT.rc : \
+	".\res\BO_CAT.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

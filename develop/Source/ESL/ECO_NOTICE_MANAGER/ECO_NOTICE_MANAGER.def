@@ -1,0 +1,7 @@
+; ECO_NOTICE_MANAGER.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ECO_NOTICE_MANAGER"
+DESCRIPTION  'ECO_NOTICE_MANAGER Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

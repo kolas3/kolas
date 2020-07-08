@@ -1,0 +1,7 @@
+; CXroshotManager.def : Declares the module parameters for the DLL.
+
+LIBRARY      "CXroshotManager"
+DESCRIPTION  'CXroshotManager Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

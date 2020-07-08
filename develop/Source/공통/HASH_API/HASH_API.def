@@ -1,0 +1,7 @@
+; HASH_API.def : Declares the module parameters for the DLL.
+
+LIBRARY      "HASH_API"
+DESCRIPTION  'HASH_API Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

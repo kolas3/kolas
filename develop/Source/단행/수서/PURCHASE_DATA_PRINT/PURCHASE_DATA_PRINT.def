@@ -1,0 +1,11 @@
+; PURCHASE_DATA_PRINT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "PURCHASE_DATA_PRINT"
+DESCRIPTION  'PURCHASE_DATA_PRINT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

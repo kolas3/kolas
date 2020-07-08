@@ -1,0 +1,144 @@
+#  Copyright (c) 1994, 1997, 1998 by Oracle Corporation 
+#    NAME
+#      lx22711.nlt - Example User-Defined Character set definition file
+#    DESCRIPTION
+#      This is an example of a text-format User-Defined Character set 
+#      definition file.  This demo file format is specific to Release  
+#      8.0.4 and beyond. 
+#    MODIFIED   (MM/DD/YY)
+#     chaowang   05/11/98 - Editorial polish for demo file
+#     chaowang   11/02/97 - Add more comments
+#     chaowang   10/31/97 - Creation
+
+# The following is a demo of an Oracle's User-Defined Character set  
+# definition file. You may edit this demo file to create a user  
+# defined character set or copy and modify an existing character set  
+# definition file. The convention used for naming character set  
+# definition (.nlt) files is in the format:  
+# lx2dddd.nlt, where dddd = 4 digit character set ID in hex. 
+# All letters in the definition file are case-insensitive.  
+ 
+# Version number: specify the current loadable data version. 
+# 
+VERSION = 2.1.0.0.0
+
+# The following is the body of the definition file 
+# 
+DEFINE character_set
+
+# Starting in release 8.0.4 the 'base_char_set' feature allows you to 
+# extend an existing Oracle character set. 
+# Generally, you may only need to edit the following fields: 
+ 
+# Name and Id of the character set are required for any character sets. 
+ 
+# Character set name must be specified in a double quoted string. 
+# Rules for choosing a character set name:  
+#          - Cannot use a character set name that is already in use.  
+#            (Each character set must be assigned a unique character set 
+#             name). 
+#          - Must consist of single-byte ASCII or EBCDIC characters only  
+#            (single-byte compiler character set).  
+#          - Cannot contain multibyte characters. 
+#          - Maximum length of 30 characters. 
+#          - Must start with an alphabetic character. 
+#          - Composed of alphanumeric characters only  
+#            (e.g. no periods, dashes, underscore characters allowed) 
+#          - The name is case-insensitive. 
+# To register a unique character set name, send mail to nlsreg@us.oracle.com. 
+# E.g.
+  name = "JA16EUCSUNWEXT1"
+
+# Character set ID is specified as an integer value. 
+# Rules for choosing a character set ID: 
+#         - Cannot use a character set ID that is already in use.  
+#           (Each character set must be assigned a unique character set ID.) 
+#         - Must be in the decimal range of 10000-20000 
+#         - Character set IDs must be registered with Oracle to receive a  
+#            uniquely assigned character set id number. 
+# To register a unique character set id, send mail to nlsreg@us.oracle.com. 
+# E.g. 
+  id = 10001
+
+# The base character set feature was introduced in version 8.0.4.  
+# It allows you to define the new character set based on an existing  
+# Oracle character set. The new character set will inherit all  
+# definitions from the base character set. Therefore, you typically 
+# will need to add only the user defined character data into the  
+# new character set definition file. 
+# The syntax of the base character set is: 
+#       base_char_set = <id> | <name> 
+#  - <id> or <name> should be a valid Oracle NLS character set id or name. 
+#  - All letters are case-insensitive. 
+# Example is: base_char_set = "JA16EUC" or base_char_set = 830 
+# E.g. 
+  base_char_set = 830
+
+# If you use the base_char_set feature, you need to copy your base  
+# character set definition file (text-format or binary) from the $ORA_NLS33  
+# directory into the working directory specified by $ORANLS.  This will 
+# allow the new character set to inherit the definition from the  
+# base character set. 
+# Example to the above is: 
+#  %cp $ORA_NLS33/lx2033e.nlt $ORANLS   (JA16EUC text-format defintion) 
+#  or  
+#  %cp $ORA_NLS33/lx*33e.nlb $ORANLS    (JA16EUC binary defintion) 
+ 
+ 
+# Character data is defined as a list of  <char_value>:<unicode_value>  
+# pairs. <char_value> is a hex number specifying the complete character  
+# value in this character set (e.g. 0xa1b1), while <unicode_value> is a  
+# 16-bit hex number specifying its corresponding Unicode 2.0 character value.  
+# Alternatively, a range of characters can be specified with a corresponding  
+# range of Unicode values. Each successive character in the  
+# <start_char>-<end_char> range will be assigned to each successive  
+# character in the <start_unicode>-<end_unicode> range. There must be  
+# an equal number of characters in each range. 
+# User-defined characters must be assigned to characters in the Unicode 
+# 2.0 private use area, and in particular the range 0xe000 to 0xf4ff.  
+# The remaining 1024 characters in the private use area are reserved  
+# for Oracle private use. 
+# E.g. 
+  character_data = {
+     0x9a41 : 0xe001,
+     0x9a42 : 0xe002,
+  }
+
+
+# A character classification list is used to specify the type of characters.  
+# Valid values: 
+# 	UPPER LOWER DIGIT SPACE PUNCTUATION CONTROL  
+#            HEX_DIGIT LETTER PRINTABLE 
+# E.g. 
+  classification = {
+     0x9a41 = { LETTER, LOWER },
+     0x9a42 = { LETTER, UPPER },
+  }
+
+# Lower-to-Upper case character relationships are defined as pairs, where  
+# the first specifies the value of a character in this character set and the 
+# second specifies its uppercase value in this character set.  Character  
+# ranges are also allowed in the manner described for character data above. 
+# Define this field only if needed. 
+# E.g. 
+  uppercase = {
+     0x9a41 : 0x9a42,
+  }
+
+
+# Upper-to-Lower case character relationships are defined as pairs, where  
+# the first specifies the value of a character in this character set and the 
+# second specifies its lowercase value in this character set.  Character  
+# ranges are also allowed in the manner described for character data above. 
+# Define this field only if needed. 
+# E.g. 
+  lowercase = { 
+     0x9a42 : 0x9a41,
+  }
+
+# There are many more fields in Oracle's character set definition file, 
+# Presumably, you will only need the above mentioned fields at most.  
+# For full details on all fields and keywords, refer to the Oracle 
+# User Defined Character Set white paper. 
+
+ENDDEFINE character_set

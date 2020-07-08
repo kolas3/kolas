@@ -1,0 +1,11 @@
+; BO_BOOK_TRADE_REG.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_BOOK_TRADE_REG"
+DESCRIPTION  'BO_BOOK_TRADE_REG Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by MPropertyGrid.mak
+
+.\MPropertyGrid.cpp : \
+	".\StdAfx.h"\
+	
+
+.\MPropertyGrid.rc : \
+	".\res\MPropertyGrid.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

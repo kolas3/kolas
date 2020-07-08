@@ -1,0 +1,353 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TocEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2004,5,31,55
+ PRODUCTVERSION 2004,5,31,55
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "TocEditor DLL\0"
+            VALUE "FileVersion", "2004, 05, 31, 55\0"
+            VALUE "InternalName", "TocEditor\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "TocEditor.DLL\0"
+            VALUE "ProductName", "TocEditor 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2004, 05, 31, 55\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TOCEDITOR_DIALOG DIALOG DISCARDABLE  0, 0, 348, 318
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_TOCEDITOR,"RICHEDIT20W",WS_BORDER | WS_VSCROLL | WS_HSCROLL | 0x1144,25,1,275,315
+    CONTROL         "List1",IDC_VIEW_OUTPUT,"SysListView32",LVS_REPORT | LVS_SINGLESEL | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,38,209,303,61
+    PUSHBUTTON      "확인",IDOK,216,297,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "취소",IDCANCEL,291,297,50,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_LINE_VIEW,"RICHEDIT20W",WS_DISABLED | WS_BORDER | WS_HSCROLL | WS_TABSTOP | 0x846,2,4,21,311
+    PUSHBUTTON      "초록편집기",IDC_BUTTON_CHOROK,18,297,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "수식편집기",IDC_BUTTON_SOOSIKEDITOR,79,297,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "뷰어",IDC_BUTTON_VIEWER,143,297,50,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_CHOROK_KEY,"RICHEDIT20W",WS_BORDER | 0x804,301,7,40,304
+END
+
+IDD_CHOROKEDITOR_DIALOG DIALOG DISCARDABLE  0, 0, 337, 318
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "확인",IDOK,234,7,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "취소",IDCANCEL,234,24,50,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_CHOROKEDITOR,"RICHEDIT20W",WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP | 0x1144,0,0,337,317
+    PUSHBUTTON      "수식편집기",IDC_SOOSIKEDITOR,234,42,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "뷰어",IDC_VIEWER,234,59,50,14,NOT WS_VISIBLE
+END
+
+IDD_TOCEDITORVIEW_DIALOG DIALOG DISCARDABLE  0, 0, 345, 363
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "뷰어 - 목차"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "닫기",IDCANCEL,289,345,50,14
+    PUSHBUTTON      "<< 이전보기",IDC_BUTTON_PREV,179,345,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "다음보기 >>",IDC_BUTTON_NEXT,234,345,50,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_TOCVIEWER,"RICHEDIT20W",WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP | 0x844,3,3,337,337
+END
+
+IDD_TOCEDITORVIEW_DIALOG_BAK DIALOG DISCARDABLE  0, 0, 295, 343
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "뷰어 - 목차"
+FONT 9, "새굴림"
+BEGIN
+    PUSHBUTTON      "확인",IDOK,238,322,50,14,NOT WS_VISIBLE
+    LTEXT           "",IDC_MY_VIEW_RECT,7,7,281,329,WS_BORDER
+END
+
+IDD_CHOROK_DIALOG DIALOGEX 0, 0, 392, 351
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "연속간행물 초록편집"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "이전",IDC_BUTTON_PREV,15,325,35,14
+    PUSHBUTTON      "다음",IDC_BUTTON_NEXT,54,325,35,14
+    PUSHBUTTON      "파일반입",IDC_BUTTON_FILEIMPORT,105,325,40,14
+    PUSHBUTTON      "뷰어",IDC_BUTTON_VIEWER,149,325,40,14
+    PUSHBUTTON      "수식편집기",IDC_BUTTON_SOOSIK,193,325,50,14
+    PUSHBUTTON      "초록삭제",IDC_BUTTON_DELETE,247,325,40,14
+    DEFPUSHBUTTON   "저장",IDOK,302,325,35,14
+    PUSHBUTTON      "취소",IDCANCEL,342,325,35,14
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,7,320,90,24,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,99,320,193,24,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,295,320,90,24,WS_EX_DLGMODALFRAME
+END
+
+IDD_SYNTAXCHECK_DIALOG DIALOG DISCARDABLE  0, 0, 317, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "오류사항"
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "List1",IDC_REPORT_OUTPUT,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,303,70
+    DEFPUSHBUTTON   "확인",IDOK,260,84,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,203,84,50,14,NOT WS_VISIBLE
+END
+
+IDD_DIALOG_BIBILOGRAPHY DIALOGEX 0, 0, 213, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "서지사항 입력 - 단행물"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_ID,117,9,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_CALL,117,27,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_COUNT,117,45,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_DATE,117,63,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_PUB,117,81,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_SERTITLE,117,99,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_TITLE,117,117,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_TITLE2,117,135,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    DEFPUSHBUTTON   "확인",IDOK,100,158,50,14
+    PUSHBUTTON      "취소",IDCANCEL,157,158,50,14
+    LTEXT           "제어번호",IDC_STATIC0,10,12,47,8
+    LTEXT           "청구기호",IDC_STATIC1,10,30,47,8
+    LTEXT           "총페이지수",IDC_STATIC2,10,48,47,8
+    LTEXT           "년도",IDC_STATIC3,10,66,47,8
+    LTEXT           "발행자",IDC_STATIC4,10,84,47,8
+    LTEXT           "총서명",IDC_STATIC5,10,102,47,8
+    LTEXT           "서명",IDC_STATIC6,10,120,47,8
+    LTEXT           "<id>",IDC_STATIC0_DESC,61,11,40,8
+    LTEXT           "<call>",IDC_STATIC1_DESC,61,29,40,8
+    LTEXT           "<count>",IDC_STATIC2_DESC,61,47,40,8
+    LTEXT           "<date>",IDC_STATIC3_DESC,61,65,40,8
+    LTEXT           "<pub>",IDC_STATIC4_DESC,61,83,40,8
+    LTEXT           "<sertitle>",IDC_STATIC5_DESC,61,101,40,8
+    LTEXT           "<title>",IDC_STATIC6_DESC,61,119,40,8
+    GROUPBOX        "",IDC_STATIC_OUTLINE,3,0,206,154,WS_TABSTOP
+    LTEXT           "서명~",IDC_STATIC7,10,137,47,8
+    LTEXT           "<title>~",IDC_STATIC7_DESC,61,137,40,8
+END
+
+IDD_DIALOG_BODY DIALOG DISCARDABLE  0, 0, 161, 161
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "목차정보 입력"
+FONT 9, "새굴림"
+BEGIN
+    EDITTEXT        IDC_EDIT_BODY,73,22,68,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TABLE,73,67,68,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FIGURE,73,115,68,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "확인",IDOK,105,143,50,14
+    CONTROL         "목차 <body> 있음",IDC_CHECK_BODY,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,14,10,87,8
+    CONTROL         "표목차 <table> 있음",IDC_CHECK_TABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,56,98,8
+    CONTROL         "그림목차 <figure> 있음",IDC_CHECK_FIGURE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,102,102,8
+    LTEXT           "목차명",IDC_STATIC,44,25,29,8
+    LTEXT           "목차명",IDC_STATIC,43,70,29,8
+    LTEXT           "목차명",IDC_STATIC,43,118,29,8
+    PUSHBUTTON      "취소",IDCANCEL,9,143,50,14,NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,4,0,152,42
+    GROUPBOX        "",IDC_STATIC,4,45,152,42
+    GROUPBOX        "",IDC_STATIC,4,92,152,42
+END
+
+IDD_DIALOG_YONSUJI DIALOGEX 0, 0, 213, 193
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "서지사항 입력 - 연속간행물"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_ID,117,9,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_KEY,117,27,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_CALL,117,45,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_COUNT,117,63,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_DATE,117,81,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_PUB,117,99,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_SERTITLE,117,117,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_ISSUE,117,135,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    DEFPUSHBUTTON   "확인",IDOK,99,173,50,14
+    PUSHBUTTON      "취소",IDCANCEL,157,173,50,14
+    LTEXT           "제어번호",IDC_STATIC,10,12,54,8
+    LTEXT           "권호key",IDC_STATIC,10,30,54,8
+    LTEXT           "청구기호",IDC_STATIC,10,48,54,8
+    LTEXT           "총페이지수",IDC_STATIC,10,66,54,8
+    LTEXT           "년도",IDC_STATIC,10,84,54,8
+    LTEXT           "발행자",IDC_STATIC,10,102,54,8
+    LTEXT           "총서명,잡지명",IDC_STATIC,10,120,54,8
+    LTEXT           "호수",IDC_STATIC,10,138,54,8
+    LTEXT           "<id>",IDC_STATIC,70,12,40,8
+    LTEXT           "<key>",IDC_STATIC,70,30,40,8
+    LTEXT           "<call>",IDC_STATIC,70,48,40,8
+    LTEXT           "<count>",IDC_STATIC,70,66,40,8
+    LTEXT           "<date>",IDC_STATIC,70,84,40,8
+    LTEXT           "<pub>",IDC_STATIC,70,102,40,8
+    LTEXT           "<sertitle>",IDC_STATIC,70,120,40,8
+    LTEXT           "<issue>",IDC_STATIC,70,138,40,8
+    GROUPBOX        "",IDC_STATIC,3,0,206,154
+END
+
+IDD_DIALOG_KISA_ADD DIALOGEX 0, 0, 213, 175
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "서지사항 입력 - 기사물"
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_ID,117,9,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    EDITTEXT        IDC_EDIT_CALL,117,27,87,13,ES_AUTOHSCROLL,WS_EX_CONTROLPARENT
+    DEFPUSHBUTTON   "확인",IDOK,99,155,50,14
+    PUSHBUTTON      "취소",IDCANCEL,157,155,50,14
+    LTEXT           "제어번호",-1,10,12,44,8
+    LTEXT           "호 수",-1,10,30,38,8
+    LTEXT           "<id>",-1,70,12,16,8
+    LTEXT           "<vol>",-1,70,30,21,8
+    GROUPBOX        "",-1,3,0,206,136
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CHOROK_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 385
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 344
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_MYCURSOR            CURSOR  DISCARDABLE     "res\\hand.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MATH_DELETE         "수식을 지우겠습니가?"
+    IDS_ERROR_MATH_RUN      "Error\n수식편집기를 찾을수 없습니다"
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\TocEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

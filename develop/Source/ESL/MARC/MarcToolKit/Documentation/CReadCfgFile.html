@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CReadCfgFile</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file C:\Kolas2UP\Develop\Source\ESL\MARC\MarcToolKit\ReadCfgFile.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CReadCfgFile</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>데이터베이스 접속정보를 읽는 클래스 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=35>
+<param name=classes value="CCReadCfgFile,MCReadCfgFile.html">
+<param name=before value="M">
+<param name=after value="M">
+<param name=indent value="0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.31.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sConnection</B> <BR>
+<I>DB접속정보</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.31.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sSequence</B> <BR>
+<I>시퀀스 이름</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.31.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_sUserID</B> <BR>
+<I>엔지니어 아이디</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.31.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CReadCfgFile</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.31.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>GetToken</B> (_TCHAR* line, int pos, _TCHAR* token)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.31.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>ReadCfgFile</B> (CString path)<BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.31.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   </TD><TD><B>~CReadCfgFile</B> ()<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+데이터베이스 접속정보를 읽는 클래스
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CReadCfgFile"></A>
+<A NAME="DOC.31.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CReadCfgFile()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="~CReadCfgFile"></A>
+<A NAME="DOC.31.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CReadCfgFile()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_sConnection"></A>
+<A NAME="DOC.31.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sConnection</B></TT>
+<DD>DB접속정보
+<DL><DT><DD></DL><P>
+<A NAME="m_sUserID"></A>
+<A NAME="DOC.31.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sUserID</B></TT>
+<DD>엔지니어 아이디
+<DL><DT><DD></DL><P>
+<A NAME="m_sSequence"></A>
+<A NAME="DOC.31.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_sSequence</B></TT>
+<DD>시퀀스 이름
+<DL><DT><DD></DL><P>
+<A NAME="ReadCfgFile"></A>
+<A NAME="DOC.31.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ReadCfgFile(CString path)</B></TT>
+<DD>
+ConfigFile을 읽는다. 
+
+<DL><DT><DT><B>Parameters:</B><DD><B>path</B> -  파일 패스 -> ""이면 디폴트 파일패스에서 읽는다.<BR><DD></DL><P>
+<A NAME="GetToken"></A>
+<A NAME="DOC.31.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int GetToken(_TCHAR* line, int pos, _TCHAR* token)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>이종은
+
+<DT><B>Since:</B><DD>2003-04-10 오후 4:19:26
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

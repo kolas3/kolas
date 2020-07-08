@@ -1,0 +1,729 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONTRAST DIALOG DISCARDABLE  0, 0, 154, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Change Image Contrast"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,97,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,97,24,50,14
+    LTEXT           "Contrast:",IDC_STATIC,7,10,29,8
+    LTEXT           "Offset:",IDC_STATIC,7,26,22,8
+    EDITTEXT        IDC_CONTRASTEDIT,42,7,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OFFSETEDIT,42,23,40,14,ES_AUTOHSCROLL
+END
+
+IDD_INTENSITY DIALOG DISCARDABLE  0, 0, 160, 61
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,103,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,103,24,50,14
+    LTEXT           "Intensity:",IDC_STATIC,7,10,29,8
+    LTEXT           "Offset:",IDC_STATIC,7,26,22,8
+    LTEXT           "Exponent:",IDC_STATIC,7,42,33,8
+    EDITTEXT        IDC_INTENSITYEDIT,44,7,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OFFSETEDIT,44,23,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EXPONENTEDIT,44,39,40,14,ES_AUTOHSCROLL
+END
+
+IDD_LIGHTNESS DIALOG DISCARDABLE  0, 0, 156, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Apply Lightness Filter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,99,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,24,50,14
+    LTEXT           "Lightness:",IDC_STATIC,7,10,33,8
+    EDITTEXT        ID_LIGHTNESSEDIT,43,7,43,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CONTRAST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        VERTGUIDE, 42
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+        HORZGUIDE, 14
+        HORZGUIDE, 30
+    END
+
+    IDD_INTENSITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        VERTGUIDE, 44
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+        HORZGUIDE, 14
+        HORZGUIDE, 30
+        HORZGUIDE, 46
+    END
+
+    IDD_LIGHTNESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+        HORZGUIDE, 14
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PALETTE DIALOG DISCARDABLE  0, 0, 202, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Palette"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,145,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,145,24,50,14
+    CONTROL         "",IDC_PALFRAME,"Static",SS_BLACKFRAME,7,7,132,132
+END
+
+IDD_CONVERTTO8BPP DIALOG DISCARDABLE  0, 0, 166, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dither Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,107,42,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,51,42,50,14
+    COMBOBOX        IDC_DITHERPALETTETYPE,58,7,99,78,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DITHERTYPE,58,22,99,85,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Palette Type",IDC_STATIC,7,8,41,8
+    LTEXT           "Dither Type",IDC_STATIC,7,25,38,8
+END
+
+IDD_THRESHOLDFILTER DIALOG DISCARDABLE  0, 0, 186, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Threshold Image"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,128,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,128,24,50,14
+    CONTROL         "&Red",IDC_RED_RADIO,"Button",BS_AUTORADIOBUTTON,63,58,50,10
+    CONTROL         "&Green",IDC_GREEN_RADIO,"Button",BS_AUTORADIOBUTTON,63,69,50,10
+    CONTROL         "&Blue",IDC_BLUE_RADIO,"Button",BS_AUTORADIOBUTTON,63,80,50,10
+    LTEXT           "Threshold  range :",IDC_STATIC,7,7,58,8
+    EDITTEXT        IDC_THRESHOLD_MIN,63,16,40,14,ES_AUTOHSCROLL
+    LTEXT           "Channel",IDC_STATIC,15,58,27,10
+    EDITTEXT        IDC_THRESHOLD_MAX,63,31,40,14,ES_AUTOHSCROLL
+    LTEXT           "Minimum",IDC_STATIC,20,18,30,8
+    LTEXT           "Maximum",IDC_STATIC,20,35,30,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PALETTE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.rc""\r\n"
+    "#include ""afxprint.rc""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CONVERTTO8BPP DLGINIT
+BEGIN
+    IDC_DITHERPALETTETYPE, 0x403, 11, 0
+0x654d, 0x6964, 0x6e61, 0x4320, 0x7475, "\000" 
+    IDC_DITHERPALETTETYPE, 0x403, 16, 0
+0x6f50, 0x7570, 0x616c, 0x6972, 0x7974, 0x5320, 0x726f, 0x0074, 
+    IDC_DITHERPALETTETYPE, 0x403, 16, 0
+0x6544, 0x6166, 0x6c75, 0x2074, 0x6150, 0x656c, 0x7474, 0x0065, 
+    IDC_DITHERTYPE, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_DITHERTYPE, 0x403, 8, 0
+0x724f, 0x6564, 0x6572, 0x0064, 
+    IDC_DITHERTYPE, 0x403, 16, 0
+0x6c46, 0x796f, 0x2d64, 0x7453, 0x6965, 0x626e, 0x7265, 0x0067, 
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROGRESSBAR DIALOG DISCARDABLE  0, 0, 94, 28
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,7,7,80,14
+END
+
+IDD_FILTER DIALOG DISCARDABLE  0, 0, 170, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Apply Filter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,113,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,113,24,50,14
+    LTEXT           "Filter name:",IDC_NAMESTATIC,7,7,99,8
+    LTEXT           "Width:",IDC_STATIC,7,36,22,8
+    LTEXT           "Height:",IDC_STATIC,7,52,24,8
+    CONTROL         "Constrain Proportions",IDC_CONSTRAINCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,20,83,10
+    EDITTEXT        IDC_WIDTHEDIT,44,33,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_HEIGHTEDIT,44,49,40,14,ES_AUTOHSCROLL
+    LTEXT           "Radius:",IDC_RADIUSSTATIC,7,69,25,8
+    EDITTEXT        IDC_RADIUSEDIT,44,66,40,14,ES_AUTOHSCROLL
+END
+
+IDD_CROPFILTER DIALOG DISCARDABLE  0, 0, 205, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Crop Bitmap"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,148,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,148,24,50,14
+    LTEXT           "XMin:",IDC_STATIC,7,10,19,8
+    EDITTEXT        IDC_XMINEDIT,28,7,40,14,ES_AUTOHSCROLL
+    LTEXT           "XMax:",IDC_STATIC,76,10,21,8
+    EDITTEXT        IDC_XMAXEDIT,99,7,40,14,ES_AUTOHSCROLL
+    LTEXT           "YMin:",IDC_STATIC,7,27,19,8
+    EDITTEXT        IDC_YMINEDIT,28,24,40,14,ES_AUTOHSCROLL
+    LTEXT           "YMax:",IDC_STATIC,76,27,21,8
+    EDITTEXT        IDC_YMAXEDIT,99,24,40,14,ES_AUTOHSCROLL
+END
+
+IDD_FILEOPENPREVIEW DIALOGEX 0, 0, 97, 133
+STYLE DS_3DLOOK | DS_NOFAILCREATE | DS_CONTROL | WS_CHILD | WS_VISIBLE | 
+    WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "&Preview",IDC_PREVIEW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,112,45,10
+    CONTROL         "",IDC_IMAGE,"Static",SS_BITMAP | SS_CENTERIMAGE,4,20,89,85,WS_EX_NOPARENTNOTIFY
+    LTEXT           "",stc32,0,0,2,133
+END
+
+IDD_ABOUTBOX DIALOGEX 34, 22, 200, 154
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PicLook Viewer V2.3"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         117,IDC_STATIC,"Static",SS_BITMAP,5,4,137,43
+    DEFPUSHBUTTON   "OK",IDOK,147,4,47,14,WS_GROUP
+    PUSHBUTTON      "Credits",ID_CREDITS,147,26,47,14
+    CTEXT           "JPEGlib © IJG && Thomas G. Lane 1994-98",IDC_STATIC,35,89,135,8
+    CTEXT           "LibPng © its Contributing Authors && Group 42 Inc.",IDC_STATIC,21,99,156,8
+    CTEXT           "LibTiff © SGI && Sam Leffler 1988-97",IDC_STATIC,45,109,114,8
+    CTEXT           "PaintLib © Ulrich von Zadow 1996-98",IDC_STATIC,41,119,120,8
+    CONTROL         103,IDC_STATIC,"Static",SS_BITMAP,175,137,19,10,WS_EX_TRANSPARENT
+    RTEXT           "This program written by Bernard Delmée courtesy of ",IDC_STATIC,5,139,167,8
+    LTEXT           "The latest version of paintlib can be found at :",IDC_STATIC,13,56,167,8
+    CTEXT           "File preview code contributed by Jorge Lodos",IDC_STATIC,31,129,144,8
+    PUSHBUTTON      "Button1",IDC_URL,13,68,167,13,BS_CENTER | BS_VCENTER | BS_FLAT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_FILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        VERTGUIDE, 44
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+        HORZGUIDE, 40
+        HORZGUIDE, 56
+        HORZGUIDE, 73
+    END
+
+    IDD_CROPFILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 198
+        VERTGUIDE, 28
+        VERTGUIDE, 76
+        VERTGUIDE, 99
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+        HORZGUIDE, 14
+        HORZGUIDE, 31
+    END
+
+    IDD_FILEOPENPREVIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 64
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 194
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 147
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\piclook.ico"
+IDR_BMPTYPE             ICON    DISCARDABLE     "res\\colr.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  DISCARDABLE     "res\\toolbar.bmp"
+IDB_DILYS               BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDB_LOGO                BITMAP  DISCARDABLE     "res\\logo.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_ZOOM_MODE
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About PaintLib Viewer...",   ID_APP_ABOUT
+    END
+END
+
+IDR_BMPTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "Save As...\tCtrl+S",          ID_FILE_SAVE
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "Paste\tCtrl-V",               ID_EDIT_PASTE
+        MENUITEM "Undo (not implemented)",      ID_EDIT_UNDO
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Dither",                     ID_VIEW_DITHER, CHECKED
+        MENUITEM "Fit &Image to Window",        ID_VIEW_FITIMAGE
+    END
+    POPUP "Filter"
+    BEGIN
+        MENUITEM "Crop",                        ID_FILTER_CROP
+        MENUITEM SEPARATOR
+        MENUITEM "Convert to Grayscale",        ID_FILTER_GRAYSCALE
+        MENUITEM "Convert to 8 BPP",            ID_CONVERT_TO_8BPP
+        MENUITEM "&Threshold",                  ID_FILTER_THRESHOLD
+        MENUITEM SEPARATOR
+        MENUITEM "&Bilinear Resize",            ID_FILTER_BILINEAR
+        MENUITEM "B&ox Resize",                 ID_FILTER_BOX
+        MENUITEM "&Hamming resize",             ID_FILTER_HAMMING
+        MENUITEM "&Gaussian Resize",            ID_FILTER_GAUSS
+        MENUITEM SEPARATOR
+        MENUITEM "Contrast",                    ID_FILTER_CONTRAST
+        MENUITEM "Intensity",                   ID_FILTER_INTENSITY
+        MENUITEM "Gamma",                       ID_FILTER_GAMMA
+        MENUITEM "Lightness",                   ID_FILTER_LIGHTNESS
+        MENUITEM "Invert lightness",            ID_FILTER_INVERT
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "&Fit to Image\tCtrl+W",       ID_WINDOW_FIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About PaintLib Viewer...",   ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    "W",            ID_WINDOW_FIT,          VIRTKEY, CONTROL, NOINVERT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,1,0,1
+ PRODUCTVERSION 2,1,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "08090000"
+        BEGIN
+            VALUE "Comments", "C++ sources available at http://www.paintlib.de/paintlib/\0"
+            VALUE "CompanyName", "Dilys\0"
+            VALUE "FileDescription", "Multi-format MFC MDI graphics viewer.\0"
+            VALUE "FileVersion", "2.2b\0"
+            VALUE "InternalName", "PicLook\0"
+            VALUE "LegalCopyright", "bdelmee © 1998-2000\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PicLook.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "PaintLib Viewer\0"
+            VALUE "ProductVersion", "2.2b\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x809, 0
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_HAND         CURSOR  DISCARDABLE     "res\\H_point.cur"
+IDC_PULLCURSOR          CURSOR  DISCARDABLE     "res\\cur00001.cur"
+IDC_POINTCURSOR         CURSOR  DISCARDABLE     "res\\cursor2.cur"
+IDC_ZOOMCURSOR          CURSOR  DISCARDABLE     "RES\\Magnify.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "paintlib Viewer"
+    IDR_BMPTYPE             "\n\n\nBMP,JPG,PNG,TIF,EPS,TGA,PCT,WMF,EMF\n.bmp;*.dib;*.rle;*.jpg;*.jpeg;*.jif;*.png;*.tif;*.eps;*.tga;*.pct,*.wmf,*.emf\nGraphFileType\nGraphic File\n"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "paintlib Viewer"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    ID_INDICATOR_ZRATIO     "1:2.34"
+    ID_INDICATOR_PIXELX     "0123"
+    ID_INDICATOR_PIXELY     "9876"
+    ID_BMPINFO              "1234 x 9876; xy bpp; 0000 kb"
+    ID_VIEW_FITIMAGE        "Fit page to current viewable area"
+    ID_VIEW_DITHER          "Use palette dithering if needed"
+    ID_FILTER_HAMMING       "Resizes picture and applies a hamming filter to it"
+    ID_FILTER_BILINEAR      "Resizes picture using bilinear interpolation"
+    ID_FILTER_BOX           "Resizes picture and applies a box filter to it"
+    ID_FILTER_GAUSS         "Resizes picture and applies a gaussian blur to it"
+    ID_FILTER_CROP          "Cuts part of the picture off"
+    ID_FILTER_GRAYSCALE     "Creates a grayscale version of the picture"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    ID_ZOOM_MODE            "Toggles between regular and zoom mode\nZoom Mode"
+    ID_WINDOW_FIT           "Fit the window to the image"
+    ID_FILTER_THRESHOLD     "Apply thresholding on image"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document"
+    ID_FILE_SAVE_AS         "Save the active document with a new name"
+    ID_FILE_PAGE_SETUP      "Change the printing options"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_DESKACCESSORY   "Opens the selected item"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout this program..."
+    ID_APP_EXIT             "Quit the application"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane"
+    ID_PREV_PANE            "Switch back to the previous window pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles"
+    ID_WINDOW_SPLIT         "Split the active window into panes"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode"
+    ID_PROGRESS             ".........."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_COPY            "Copies the bitmap to the Clipboard"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "afxres.rc"
+#include "afxprint.rc"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

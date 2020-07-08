@@ -1,0 +1,8 @@
+; RFID_JOB.def : Declares the module parameters for the DLL.
+
+LIBRARY      "RFID_JOB"
+DESCRIPTION  'RFID_JOB Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+;CreateForm

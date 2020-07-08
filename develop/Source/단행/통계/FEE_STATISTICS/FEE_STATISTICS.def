@@ -1,0 +1,11 @@
+; FEE_STATISTICS.def : Declares the module parameters for the DLL.
+
+LIBRARY      "FEE_STATISTICS"
+DESCRIPTION  'FEE_STATISTICS Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

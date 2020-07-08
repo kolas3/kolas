@@ -1,0 +1,8 @@
+; MNG_CLASS_SIGN_MINI_POPUP.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_CLASS_SIGN_MINI_POPUP"
+DESCRIPTION  'MNG_CLASS_SIGN_MINI_POPUP Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+

@@ -1,0 +1,29 @@
+#ifndef INCL_PLPIXELDEFS
+#define INCL_PLPIXELDEFS
+
+#undef PL_PIXEL_BGRA_ORDER  // MS Windows ordering
+#undef PL_PIXEL_RGBA_ORDER // GNU/Linux (at least)
+
+// We have this pixel byte ordering
+#define @PIXEL_BYTE_ORDER@
+
+#ifdef PL_PIXEL_RGBA_ORDER
+ // To access in RGBA order
+ #define PL_RGBA_RED    0
+ #define PL_RGBA_GREEN  1
+ #define PL_RGBA_BLUE   2
+ #define PL_RGBA_ALPHA  3
+#elif defined(PL_PIXEL_BGRA_ORDER)
+ #define PL_RGBA_BLUE   0
+ #define PL_RGBA_GREEN  1
+ #define PL_RGBA_RED    2
+ #define PL_RGBA_ALPHA  3
+#else
+  #error Pixel RGB bytes order not selected
+#endif
+
+// Note that the preceeding #defines aren't static const ints because
+// this breaks preprocessor tests in several places.
+
+#endif
+

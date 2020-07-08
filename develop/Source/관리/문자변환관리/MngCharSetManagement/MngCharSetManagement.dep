@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by MngCharSetManagement.mak
+
+.\MngCharSetManagement.cpp : \
+	".\StdAfx.h"\
+	
+
+.\MngCharSetManagement.rc : \
+	".\res\MngCharSetManagement.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

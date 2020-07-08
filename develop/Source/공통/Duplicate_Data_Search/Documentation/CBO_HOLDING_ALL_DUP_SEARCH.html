@@ -1,0 +1,340 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  CBO_HOLDING_ALL_DUP_SEARCH</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file D:\KOLAS2UP\Develop\Source\공통\Duplicate_Data_Search\BO_HOLDING_ALL_DUP_SEARCH.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  <A HREF="#DOC.DOCU">CBO_HOLDING_ALL_DUP_SEARCH</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>복본조사/서명복본조사  결과 다이얼로그 </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCESL_Mgr,M,CCBO_HOLDING_ALL_DUP_SEARCH,MCBO_HOLDING_ALL_DUP_SEARCH.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.131.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Constructor / Destructor</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.131.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>기타메소드</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Members</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.131.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>enum </TD><TD><B></B> <BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.131.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>DECLARE_EVENTSINK_MAP </TD><TD><B>()</B> ()<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.131.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>멤버변수</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.131.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void </TD><TD><B>DoDataExchange</B> (CDataExchange* pDX)<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.131.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>이벤트 처리메소드</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+일괄/서명 복본조사에서 복본데이터로 검색된 자료를 해당 그리드에 출력하는 클래스<br>
+복본데이터에 대한 상세보기, 출력, 삭제, 적용 동작을 수행한다.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Constructor / Destructor"></A>
+<A NAME="DOC.131.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Constructor / Destructor</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CBO_HOLDING_ALL_DUP_SEARCH"></A>
+<A NAME="DOC.131.1.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CBO_HOLDING_ALL_DUP_SEARCH( CESL_Mgr* pParent,  INT DuplicateSearchType )</B></TT>
+<DD>
+부모 윈도우의 포인터와 복본조사 타입을 받아서 복본조사/서명복본조사 결과 다이얼로그를 생성한다.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>pParent</B> -  [in] 부모 윈도우 포인터
+<BR><B>DuplicateSearchType</B> -  [in] 복본조사 타입<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME="기타메소드"></A>
+<A NAME="DOC.131.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 기타메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetIsDeleteOperation"></A>
+<A NAME="DOC.131.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL GetIsDeleteOperation()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Returns:</B><DD>  - m_isDeleteOperation
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="GetSpeciesKey"></A>
+<A NAME="DOC.131.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetSpeciesKey()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Returns:</B><DD>  - 종키
+<BR><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="RefreshDMandShowList"></A>
+<A NAME="DOC.131.2.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT RefreshDMandShowList(void)</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME=""></A>
+<A NAME="DOC.131.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>enum </B></TT>
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="IDD"></A>
+<A NAME="DOC.131.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> IDD</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="DoDataExchange"></A>
+<A NAME="DOC.131.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void DoDataExchange(CDataExchange* pDX)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="멤버변수"></A>
+<A NAME="DOC.131.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 멤버변수</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_strSKey"></A>
+<A NAME="DOC.131.5.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strSKey</B></TT>
+<DD>그리드에서 선정 적용되어진 자료의 종키
+<DL><DT><DD></DL><P>
+<A NAME="m_strCMAlias"></A>
+<A NAME="DOC.131.5.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strCMAlias</B></TT>
+<DD>현재 화면의 CM알리아스
+<DL><DT><DD></DL><P>
+<A NAME="m_strDMAlias"></A>
+<A NAME="DOC.131.5.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strDMAlias</B></TT>
+<DD>현재 화면의 DM알리아스
+<DL><DT><DD></DL><P>
+<A NAME="m_DuplicateSearchType"></A>
+<A NAME="DOC.131.5.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_DuplicateSearchType</B></TT>
+<DD>복본조사 타입(CDuplicateSearchMgr클래스에서 정의)
+<DL><DT><DD></DL><P>
+<A NAME="m_isDeleteOperation"></A>
+<A NAME="DOC.131.5.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_isDeleteOperation</B></TT>
+<DD>중복조사 결과 다이얼로그에서 사용자가 삭제동작/복본추기 동작을 수행했는지 여부를 나타낸다
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="이벤트 처리메소드"></A>
+<A NAME="DOC.131.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 이벤트 처리메소드</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="OnbtnDETAIL"></A>
+<A NAME="DOC.131.6.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnDETAIL()</B></TT>
+<DD>
+일괄복본조사(수서/정리)의 경우 현재 선정된 원본자료와 중복자료의 인덱스를 구하여 상세보기 화면(CBO_HOLDING_DUP_DETAIL_INFO)을 출력한다.<br>
+서명복본조사(자동/수동, 수서/정리, 비치희망)의 경우 선정된 원본자료의 인덱스를 구하여 상세보기 화면(CBO_INPUT_DUP_DETAIL_INFO)을 출력한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnPRINT"></A>
+<A NAME="DOC.131.6.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnPRINT()</B></TT>
+<DD>
+검색되어진 복본자료를 출력한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnClose"></A>
+<A NAME="DOC.131.6.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnClose()</B></TT>
+<DD>닫기버튼의 이벤트 처리 메소드
+<DL><DT><DD></DL><P>
+<A NAME="OnInitDialog"></A>
+<A NAME="DOC.131.6.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   BOOL OnInitDialog()</B></TT>
+<DD>
+검색타입(m_DuplicateSearchType)에 따라서 CM과 DM을 설정하고 기능버튼의 SHOW/HIDE속성을 결정한다.<br>
+화면 그리드를 Display(OnTimer메소드)하고 해당 그리드에서 정렬기능을 Disable시킨다.<br>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnTimer"></A>
+<A NAME="DOC.131.6.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnTimer(UINT nIDEvent)</B></TT>
+<DD>
+초기 그리드를 구성한다.(ControlDisplay)
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnCOPYDEL"></A>
+<A NAME="DOC.131.6.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnCOPYDEL()</B></TT>
+<DD>
+CBO_DELETE_Mgr클래스를 사용하여 그리드상에 선정된 자료를 삭제하고 성공시 그리드를 재구성하고 m_isDeleteOperation
+멤버변수를 TRUE로 설정한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnClickgridBOKBONSEARCH"></A>
+<A NAME="DOC.131.6.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnClickgridBOKBONSEARCH()</B></TT>
+<DD>
+그리드 첫번째 컬럼을 클릭했을때 선정표시를 출력할것인지를 결정한다. 중복조사에서는 원본자료만 선정 가능한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnSELSOURCEDATA"></A>
+<A NAME="DOC.131.6.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnSELSOURCEDATA()</B></TT>
+<DD>
+전체 원본자료를 선정한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnbtnAPPLY"></A>
+<A NAME="DOC.131.6.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnbtnAPPLY()</B></TT>
+<DD>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnClickgridINPUTBOKBONSEARCH"></A>
+<A NAME="DOC.131.6.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnClickgridINPUTBOKBONSEARCH()</B></TT>
+<DD>
+그리드 첫번째 컬럼을 클릭했을때 선정표시를 출력할것인지를 결정한다. 중복조사에서는 원본자료만 선정 가능한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P>
+<A NAME="OnCancel"></A>
+<A NAME="DOC.131.6.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void OnCancel()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="OnClickgridSEINPUTBOKBONSEARCH"></A>
+<A NAME="DOC.131.6.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>afx_msg void OnClickgridSEINPUTBOKBONSEARCH()</B></TT>
+<DD>
+그리드 첫번째 컬럼을 클릭했을때 선정표시를 출력할것인지를 결정한다. 중복조사에서는 원본자료만 선정 가능한다.
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DD></DL><P></DL>
+
+<A NAME="()"></A>
+<A NAME="DOC.131.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>DECLARE_EVENTSINK_MAP ()()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>정종석(jungjs@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>0.0.1 by 정종석<br>
+
+<DT><B>Since:</B><DD>2003-04-11 by 정종석<br>
+
+<DT><B>See Also:</B><DD><!1><A HREF="CBO_WORK_DUP_DETAIL_INFO.html">CBO_WORK_DUP_DETAIL_INFO</A>, <!1><A HREF="CDuplicateSearchMgr.html">CDuplicateSearchMgr</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

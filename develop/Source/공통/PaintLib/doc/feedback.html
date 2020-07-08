@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+
+<HEAD>
+  <TITLE>paintlib - Feedback</TITLE>
+  <meta name="robots" content="noindex">
+</HEAD>
+
+<BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000c0" VLINK="#8000ff" ALINK="#ff00ff">
+<accessed silent>
+<table width="350" border="0" cellspacing="0" cellpadding="0" align=right>
+  <tr>
+    <td>
+	  <IMG alt="" border=0 height=60 hspace=0 	 
+         src="pics/feedback.gif" width=350 >
+    <IMG alt="" border=0 height=21 hspace=0 src="pics/whitept.gif" width=31 >
+    </td>
+  </tr>
+</table>
+<br clear=all>
+<p align=left>
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr> 
+    <td width="22"> <img alt="" border=0 height=1 hspace=0 src="pics/whitept.gif" width=21 > 
+    </td>
+    <td> 
+      <p> paintlib grows and lives through the contributions of many people. Because 
+        of this, I have set up a mailing list for discussions about paintlib. 
+        You can use this mailing list to ask for help, to submit bug reports and 
+        fixes, and to discuss additions to the library. To subscribe to the mailing 
+        list, send an empty email to <a href="mailto:paintlib-subscribe@egroups.com">paintlib-subscribe@egroups.com</a>. 
+        You can also browse the list archives by going to <a href="http://www.egroups.com/group/paintlib" target="_top">http://www.egroups.com/group/paintlib</a>. 
+        (Please don't send images or tons of code to the mailing list. If these 
+        are relevant, please send them to me first: <a href="mailto:uzadow@cs.tu-berlin.de">uzadow@cs.tu-berlin.de</a>.) 
+      <p>There's also a project set up at sourceforge (<a href="http://www.sourceforge.net/projects/paintlib/">http://www.sourceforge.net/projects/paintlib/</a>) 
+      <p><b>Contributing Code</b> 
+      <p> paintlib is far from complete. I will implement new features as time 
+        permits, but since Ver 1.3 or so, lots of new features have come from 
+        other contributors. (This is really encouraging and probably the reason 
+        I still support paintlib). There are several ways to contribute code. 
+        In the order of the amount of work they cause me: 
+      <ul>
+        <li>You can get write access to the cvs repository at sourceforge and 
+          upload the changes yourself. Although this makes things very easy for 
+          me, I can't give everyone write access or we'd soon have a trashed repository. 
+          So only those people get write access who I think know what they're 
+          doing. That usually means submitting code in one of the other ways for 
+          a while first.</li>
+        <li>You can submit unix-style patches through the sourceforge patch manager 
+          that I can then integrate into the main development library.</li>
+        <li>You can just send code snippets, but you'll cause lots of work for 
+          me that way. This is true even for small changes!</li>
+      </ul>
+      <p>Some points: </p>
+      <ul>
+        <li>Make sure you've got a current version of paintlib from the sourceforge 
+          cvs repository before you submit stuff. Everything else means major 
+          merging hassles for me.</li>
+        <li>If you think there might be design issues or if it's a large change, 
+          present your idea and ask for input on the mailing list. This kind of 
+          'design review' helps you avoid a lot of work if your code would otherwise 
+          be rejected because of formal or other problems.</li>
+        <li>Avoid using tabs in code you send to me. There's no standard tab width, 
+          so your code will come out looking extremely unformatted on other people's 
+          machines. </li>
+        <li>You can document your code by adding lines starting with //! in front 
+          of public and protected function headers or class declarations. These 
+          lines are recognized by the documentation generation system I use, so 
+          they'll appear in the reference section of the docs automatically. </li>
+        <li>For new features, add an automated test to pltester.cpp that makes 
+          sure this feature stays working. For bug fixes, add a corresponding 
+          test that fails if the bug is there and works if it isn't. These tests 
+          make sure that we don't break anything when we add more features to 
+          the library and redesign internals.</li>
+        <li> If you'd like to contribute stuff to paintlib, please make sure it's 
+          free of copyrights of other people. </li>
+      </ul>
+      <p> There is a ToDo-List that I try to keep current on sourceforge under 
+        'Tasks'. 
+      <p><b>Bug reports</b>
+      <p>If you think you've found a bug, you have several options:
+      <ul>
+        <li>Fix it and send me a patch. This is your best way of getting a stable 
+          paintlib quickly. It really is - bugs are fixed whenever we think it's 
+          fun to fix bugs. Patches are applied immediately.</li>
+        <li>Fix it and don't send me a patch. This is your best way of getting 
+          a version of paintlib that's incompatible with the version we maintain 
+          here. As paintlib changes and features are added, you'll have to reapply 
+          your changes regularly to stay current.</li>
+        <li>Ask on the mailing list.</li>
+      </ul>
+      <p>It helps a lot if you add a test case to pltester.cpp that reproduces 
+        the bug. The section below about 'asking for help' applies to bug reports, 
+        too: We can't diagnose a problem if we don't have clear description.</p>
+      <p><b>Asking for Help</b> </p>
+      <p> I welcome emails. However, there are several things you can do to make 
+        my job easier. The first is to send the help request to the mailing list. 
+        Sometimes (often), other people know more about specific areas of the 
+        library than me, and in that case, you will probably get a better answer 
+        by asking on the list. In addition, a lot of help requests (not all) are 
+        completely vague, so all I can do is reply with questions in return because 
+        I don't know what the problem is. So if you want a clear answer the first 
+        time, please:</p>
+      <ol type="1">
+        <li>tell me what compiler you're using and what system you're compiling 
+          paintlib on (including version numbers), 
+        <li>try to compile and link the example programs first, 
+        <li>if you get compiler or linker errors, copy the first few error messages 
+          into the mail and 
+        <li>if you get asserts or exceptions, copy the message and the call stack 
+          into the mail.</li>
+      </ol>
+      <p> Also, if you can't decode a specific picture, you might want to attach 
+        it <em>to a private email to me</em>. Don't do this, however, if it's 
+        large(&gt;500 kb).</p>
+      <p> Oh, and try not to ask questions that are answered in the documentation. 
+        But if you've read this far, that probably isn't going to be a problem 
+        ;-). 
+      <p><b>Feature Requests and Ideas</b> 
+      <p>The mailing list is the right place for discussions of this sort.&nbsp;
+    </td>
+    <td width="22"> <img alt="" border=0 height=1 hspace=0 src="pics/whitept.gif" width=21 > 
+    </td>
+  </tr>
+</table>
+<p></p>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,22 @@
+# Microsoft Developer Studio Generated Dependency File, included by KOLAS2UP_SETUP.mak
+
+.\KOLAS2UP_SETUP.cpp : \
+	".\KOLAS2UP_SETUP.h"\
+	".\KOLAS2UP_SETUPDlg.h"\
+	".\StdAfx.h"\
+	
+
+.\KOLAS2UP_SETUP.rc : \
+	".\res\KOLAS2UP_SETUP.ico"\
+	".\res\KOLAS2UP_SETUP.rc2"\
+	
+
+.\KOLAS2UP_SETUPDlg.cpp : \
+	".\KOLAS2UP_SETUP.h"\
+	".\KOLAS2UP_SETUPDlg.h"\
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

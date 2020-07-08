@@ -1,0 +1,11 @@
+; BO_CAT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_CAT"
+DESCRIPTION  'SE_CAT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

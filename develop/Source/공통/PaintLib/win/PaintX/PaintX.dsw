@@ -1,0 +1,82 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "PaintX"=.\PaintX.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/PaintX", SQAAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name paintlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VCPaintXDemo"=..\..\..\VCPaintX\VCPaintXDemo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/VCPaintXDemo", HRAAAAAA
+    ..\..\..\vcpaintx
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name PaintX
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "paintlib"=..\paintlib\paintlib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "piclook"=..\piclook\PicLook.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name paintlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

@@ -1,0 +1,7 @@
+; BO_STATICS_5163.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_STATICS_5163"
+DESCRIPTION  'BO_STATICS_5163 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

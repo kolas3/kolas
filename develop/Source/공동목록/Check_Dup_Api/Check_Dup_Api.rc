@@ -1,0 +1,232 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Check_Dup_Api.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,08,12,126
+ PRODUCTVERSION 2005,08,12,126
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "Check_Dup_Api DLL\0"
+            VALUE "FileVersion", "2005, 08, 12, 126\0"
+            VALUE "InternalName", "Check_Dup_Api\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Check_Dup_Api.DLL\0"
+            VALUE "ProductName", "Check_Dup_Api 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 12, 126\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CDA_CURSOR1             CURSOR  DISCARDABLE     "cursor1.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CDA_BITMAP1             BITMAP  DISCARDABLE     "bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIEW_UPLOAD_MARC1 DIALOGEX 0, 0, 474, 353
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION 
+"서지/소장 확인 - 센터에 올라갈 자료를 확인하고 필요한 경우 수정해서 올립니다."
+
+FONT 9, "새굴림", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "UPLOAD",IDOK,351,332,50,15
+    PUSHBUTTON      "취   소",IDCANCEL,410,332,50,15
+    CONTROL         "서지수정",IDC_chCLASS1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,410,4,48,10
+    PUSHBUTTON      "고정장(008)",IDC_bHOLDING_008EDIT,410,178,50,14,NOT WS_VISIBLE
+    CTEXT           "NOK MARC",IDC_STATIC,6,2,48,14,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CTEXT           "소장 MARC",IDC_STATIC,240,178,48,14,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC_5,"Static",SS_BLACKFRAME,6,17,231,308
+    CONTROL         "",IDC_STATIC_2,"Static",SS_BLACKFRAME,240,194,231,131
+    LTEXT           "상태 :",IDC_STATIC,308,4,25,8
+    LTEXT           "상태 :",IDC_STATIC,308,181,25,8
+    LTEXT           "신규/수정",IDC_STATIC_4,336,181,51,8
+    LTEXT           "신규/수정",IDC_STATIC_3,336,4,37,8
+    CONTROL         "",IDC_STATIC_1,"Static",SS_BLACKFRAME,240,17,231,158
+    CTEXT           "서지 MARC",IDC_STATIC,240,2,48,14,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    LTEXT           "* 제어번호가 UB/UH00000000000인 것은 아직 부여되지 않은 상태를 나타냅니다.",IDC_STATIC,9,335,297,8
+    CONTROL         "",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,3,328,468,23,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_CDA_RICHEDIT5,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,7,20,227,301
+    CONTROL         "",IDC_CDA_RICHEDIT1,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,244,21,223,148
+    CONTROL         "",IDC_CDA_RICHEDIT2,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,244,198,222,121
+END
+
+IDD_LOCAL_UPDATE DIALOG DISCARDABLE  0, 0, 447, 343
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "자료 수정"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "수 정",IDOK,334,325,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,390,325,50,14
+    LTEXT           "자료구분",IDC_STATIC,34,14,33,8
+    LTEXT           "보조등록구분",IDC_STATIC,164,14,49,8
+    LTEXT           "매체구분",IDC_STATIC,315,14,33,8
+    LTEXT           "이용대상구분",IDC_STATIC,18,47,49,8
+    LTEXT           "별치기호",IDC_STATIC,34,31,33,8
+    LTEXT           "관리구분",IDC_STATIC,180,31,33,8,NOT WS_VISIBLE
+    LTEXT           "이용제한구분",IDC_STATIC,163,48,49,8
+    LTEXT           "분류표구분",IDC_STATIC,307,31,41,8
+    GROUPBOX        "",IDC_STATIC,6,1,435,64
+    CONTROL         "",IDC_rich_LOCAL_MARC,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_TABSTOP,6,70,435,252
+    COMBOBOX        IDC_cGUBUN_1,70,11,77,80,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cGUBUN_2,214,11,77,80,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cGUBUN_3,349,11,77,80,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cGUBUN_4,70,44,77,80,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cGUBUN_6,70,27,77,80,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cGUBUN_7,214,28,77,80,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cGUBUN_8,214,45,77,80,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cGUBUN_9,350,29,77,80,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "이 전",IDC_bPrev,7,325,50,14
+    PUSHBUTTON      "다 음",IDC_bNext,65,325,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_VIEW_UPLOAD_MARC1, DIALOG
+    BEGIN
+        RIGHTMARGIN, 471
+        VERTGUIDE, 3
+        VERTGUIDE, 6
+        BOTTOMMARGIN, 351
+    END
+
+    IDD_LOCAL_UPDATE, DIALOG
+    BEGIN
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 342
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\Check_Dup_Api.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

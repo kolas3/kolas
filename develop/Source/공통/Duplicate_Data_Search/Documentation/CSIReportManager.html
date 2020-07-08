@@ -1,0 +1,691 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CSIReportManager</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file D:\KOLAS2UP\Develop\Source\공통\Duplicate_Data_Search\../../ESL/SIReportMgr/SIReportManager.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CSIReportManager</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE> CSIReportManager 는 Report출력물을 출력해주는 기능을 합니다<BR> 출력 방향은 화면(미리보기 모드), 혹은 프린터(인쇄모드) 에 따라 출력됩니다.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=35>
+<param name=classes value="CCSIReportManager,MCSIReportManager.html">
+<param name=before value="M">
+<param name=after value="M">
+<param name=indent value="0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Calculate & Print partial sum or(and) total sum</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Event handler variables && member functions</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>For printing sequence variables and functions</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Link data manager manipulate variables and functions</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SIReport manager print member variables</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>WorkForm manipulate variables and functions</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Calculate coordinate and rect functions</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Constructor and Destructor</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Define abstract object kind</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Draw abstract document objects to DC functions</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Draw abstract shape objects to DC functions</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Draw primitive shape objects to DC functions</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Get or Set print environment</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.152.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>application command Main member functions</B> <BR>
+<I> </I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+CSIReportManager 는 Report출력물을 출력해주는 기능을 합니다<BR>
+출력 방향은 화면(미리보기 모드), 혹은 프린터(인쇄모드) 에 따라 출력됩니다.
+For : ESL && Kolas2up
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Constructor and Destructor"></A>
+<A NAME="DOC.152.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Constructor and Destructor</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CSIReportManager"></A>
+<A NAME="DOC.152.1.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CSIReportManager(CWnd* pOwnerWnd=NULL)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="~CSIReportManager"></A>
+<A NAME="DOC.152.1.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CSIReportManager()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="application command Main member functions"></A>
+<A NAME="DOC.152.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> application command Main member functions</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="Print"></A>
+<A NAME="DOC.152.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT Print()</B></TT>
+<DD>
+show print dialog <BR>
+setup printer or print report
+<DL><DT><DD></DL><P>
+<A NAME="PrintDocument"></A>
+<A NAME="DOC.152.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT PrintDocument(INT nCopy=1, INT nFromPage = 0, INT nToPage = 99999, CWnd* pMsg=NULL, CProgressCtrl* pBar=NULL)</B></TT>
+<DD>
+print report to printer(to print document)<BR> 
+<DL><DT><DD></DL><P>
+<A NAME="PreviewDocument"></A>
+<A NAME="DOC.152.2.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT PreviewDocument(CDC* pDC, INT page)</B></TT>
+<DD>
+print report to screen(to preview document)<BR>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="SIReport manager print member variables"></A>
+<A NAME="DOC.152.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> SIReport manager print member variables</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_pd"></A>
+<A NAME="DOC.152.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>PRINTDLG m_pd</B></TT>
+<DD>printer setting
+<DL><DT><DD></DL><P>
+<A NAME="m_printHorzR"></A>
+<A NAME="DOC.152.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_printHorzR</B></TT>
+<DD>paper horizonal resolution(DPI)
+<DL><DT><DD></DL><P>
+<A NAME="m_printVertR"></A>
+<A NAME="DOC.152.3.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_printVertR</B></TT>
+<DD>paper vertical resolution(DPI)
+<DL><DT><DD></DL><P>
+<A NAME="m_drawSize"></A>
+<A NAME="DOC.152.3.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CSize m_drawSize</B></TT>
+<DD>paper size
+<DL><DT><DD></DL><P>
+<A NAME="m_strRPTNAME"></A>
+<A NAME="DOC.152.3.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strRPTNAME</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_strRPTPK"></A>
+<A NAME="DOC.152.3.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strRPTPK</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_strRPTALIAS"></A>
+<A NAME="DOC.152.3.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strRPTALIAS</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_strOriginalWorkFormFileName"></A>
+<A NAME="DOC.152.3.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strOriginalWorkFormFileName</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Event handler variables && member functions"></A>
+<A NAME="DOC.152.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Event handler variables && member functions</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_pOwnerWnd"></A>
+<A NAME="DOC.152.4.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CWnd* m_pOwnerWnd</B></TT>
+<DD>인쇄를 시키는 App의 Wnd
+<DL><DT><DD></DL><P>
+<A NAME="m_EventInfo"></A>
+<A NAME="DOC.152.4.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CSIReportEventInfo m_EventInfo</B></TT>
+<DD>Page event information object
+<DL><DT><DD></DL><P>
+<A NAME="( CWnd::* m_fpEventHandler )"></A>
+<A NAME="DOC.152.4.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ( CWnd::* m_fpEventHandler )( CSIReportEventInfo*  EventInfo )</B></TT>
+<DD>Page event Callback function pointer
+<DL><DT><DD></DL><P>
+<A NAME="SetTableCellText"></A>
+<A NAME="DOC.152.4.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetTableCellText(CString tbl_name, INT rowidx, INT colidx, CString str, INT vert_align, INT horz_align)</B></TT>
+<DD>Draw text to particular cell of particular table
+<DL><DT><DD></DL><P>
+<A NAME="SetBarcodeCaption"></A>
+<A NAME="DOC.152.4.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetBarcodeCaption(CString obj_name, CString strCaption)</B></TT>
+<DD>Set particular caption to barcode ar event handle time
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Draw primitive shape objects to DC functions"></A>
+<A NAME="DOC.152.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Draw primitive shape objects to DC functions</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="DrawTextToCell2"></A>
+<A NAME="DOC.152.5.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawTextToCell2(INT mode, CDC* pDC, CSIReportObject_Table_Cell* pCell, CRect rect)</B></TT>
+<DD>Draw text to DC, string splited by enter
+<DL><DT><DD></DL><P>
+<A NAME="DrawTextToCell"></A>
+<A NAME="DOC.152.5.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawTextToCell(INT mode, CDC* pDC, CSIReportObject_Table_Cell* pCell, CRect rect)</B></TT>
+<DD>Draw text to DC, string splited by line length
+<DL><DT><DD></DL><P>
+<A NAME="DrawTextWithFont"></A>
+<A NAME="DOC.152.5.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawTextWithFont(INT mode, CDC* dc, CString str, CRect rect, LOGFONT logfont, UINT nFormat = DT_TOP|DT_CENTER |DT_WORDBREAK)</B></TT>
+<DD>Draw text to DC, not cut string only word break or single line, use custom font
+<DL><DT><DD></DL><P>
+<A NAME="DrawTextWithFont2"></A>
+<A NAME="DOC.152.5.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawTextWithFont2(INT mode, CDC* dc, CString str, INT char_len, INT char_cy, CRect rect, LOGFONT logfont, UINT nFormat = DT_TOP|DT_CENTER |DT_WORDBREAK)</B></TT>
+<DD>Draw text to DC, cut string to line length and show each line, use custom font
+<DL><DT><DD></DL><P>
+<A NAME="DrawTextWithFont3"></A>
+<A NAME="DOC.152.5.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawTextWithFont3(INT mode, CDC* dc, CString str, CRect rect, LOGFONT logfont, UINT nFormat = DT_TOP|DT_CENTER |DT_WORDBREAK)</B></TT>
+<DD>Draw text to DC, cut string to line-feed length and show each line, use custom font
+<DL><DT><DD></DL><P>
+<A NAME="DrawLine"></A>
+<A NAME="DOC.152.5.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawLine(CDC* pDC, int x1, int y1, int x2, int y2)</B></TT>
+<DD>Draw line to DC, not apply line style
+<DL><DT><DD></DL><P>
+<A NAME="DrawBox"></A>
+<A NAME="DOC.152.5.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawBox(CDC* pDC, INT left, INT top, INT right, INT bottom, BOOL bleft=true, BOOL btop=true, BOOL bright=true, BOOL bbottom=true)</B></TT>
+<DD>Draw Box to DC, not apply line style, you can select each line of box
+<DL><DT><DD></DL><P>
+<A NAME="DrawSlash"></A>
+<A NAME="DOC.152.5.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawSlash(CDC* pDC, CRect rect, INT mode)</B></TT>
+<DD>Draw SlashLine to DC, not apply line style, mode=1-> \, mode=2-> /
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Draw abstract shape objects to DC functions"></A>
+<A NAME="DOC.152.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Draw abstract shape objects to DC functions</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="DrawWorkSheet"></A>
+<A NAME="DOC.152.6.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawWorkSheet(INT mode, CDC* pDC, CSIReportWorkSheet* pSheet)</B></TT>
+<DD>Draw work sheet to DC
+<DL><DT><DD></DL><P>
+<A NAME="DrawObject_Table"></A>
+<A NAME="DOC.152.6.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawObject_Table(INT mode, CDC* pDC, CSIReportObject_Table*  pTable)</B></TT>
+<DD>Draw table object sheet to DC, not child table
+<DL><DT><DD></DL><P>
+<A NAME="DrawObject_Table_Repeat"></A>
+<A NAME="DOC.152.6.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawObject_Table_Repeat(INT mode, CDC* pDC, CSIReportObject_Table*  pTable, CRect rect)</B></TT>
+<DD>Draw child table object sheet to DC, apply link datamanager
+<DL><DT><DD></DL><P>
+<A NAME="DrawObject_Text_Box"></A>
+<A NAME="DOC.152.6.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawObject_Text_Box(INT mode, CDC* pDC, CSIReportObject_Text_Box*  pTextBox)</B></TT>
+<DD>Draw Text box object sheet to DC
+<DL><DT><DD></DL><P>
+<A NAME="DrawObject_Line"></A>
+<A NAME="DOC.152.6.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawObject_Line(INT mode, CDC* pDC, CSIReportObject_Line*  pLine)</B></TT>
+<DD>Draw Line object sheet to DC
+<DL><DT><DD></DL><P>
+<A NAME="DrawObject_Barcode"></A>
+<A NAME="DOC.152.6.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawObject_Barcode(INT mode, CDC* pDC, CSIReportObject_Barcode*  pBarcode)</B></TT>
+<DD>Draw Barcode object sheet to DC
+<DL><DT><DD></DL><P>
+<A NAME="DrawObject_Bitmap"></A>
+<A NAME="DOC.152.6.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawObject_Bitmap(INT mode, CDC* pDC, CSIReportObject_Bitmap*  pBitmap)</B></TT>
+<DD>Draw Bitmap object sheet to DC
+<DL><DT><DD></DL><P>
+<A NAME="AddCopyTextWithFont"></A>
+<A NAME="DOC.152.6.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT AddCopyTextWithFont(CString str, CRect rect, LOGFONT logfont, INT vert_align, INT horz_align)</B></TT>
+<DD>copy and add text with font to new workform
+<DL><DT><DD></DL><P>
+<A NAME="CopyTableRow"></A>
+<A NAME="DOC.152.6.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT CopyTableRow(CSIReportObject_Table*  pSource, INT nSourceRow, CSIReportObject_Table*  pTarget, INT nTargetRow, INT nRectTop, CString strArray[])</B></TT>
+<DD>copy and add table row object to new workform - addin row such as part sum, total sum
+<DL><DT><DD></DL><P>
+<A NAME="CopyTableRow"></A>
+<A NAME="DOC.152.6.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT CopyTableRow(CSIReportObject_Table*  pTarget, INT nTargetRow, INT nRectBottom)</B></TT>
+<DD>copy and add table row object to new workform
+<DL><DT><DD></DL><P>
+<A NAME="GetKeywordString"></A>
+<A NAME="DOC.152.6.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString GetKeywordString(CString str)</B></TT>
+<DD>Get keyword
+<DL><DT><DD></DL><P>
+<A NAME="GetKeywordString_DMData"></A>
+<A NAME="DOC.152.6.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetKeywordString_DMData(CString strDMAlias, CString strDMFieldAlias, INT DMRow, CString &amp;strResult)</B></TT>
+<DD>Get keyword DM data
+<DL><DT><DD></DL><P>
+<A NAME="DM_GetCellData"></A>
+<A NAME="DOC.152.6.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DM_GetCellData(CString strDMs, INT nRow, CString &amp;strResult)</B></TT>
+<DD>Get dm datas
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Draw abstract document objects to DC functions"></A>
+<A NAME="DOC.152.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Draw abstract document objects to DC functions</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="PRINT_DrawWorkForm"></A>
+<A NAME="DOC.152.7.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT PRINT_DrawWorkForm(CDC* pDC, INT nStartPage=1, INT nFinishPage=999999, CWnd* pMsg=NULL, CProgressCtrl* pBar=NULL)</B></TT>
+<DD>Draw work form to DC for print(range of page)
+<DL><DT><DD></DL><P>
+<A NAME="PREVIEW_DrawWorkForm"></A>
+<A NAME="DOC.152.7.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT PREVIEW_DrawWorkForm(CDC* pDC, INT page, INT startpage=1)</B></TT>
+<DD>Draw work form to DC for preview(particular page)
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Calculate coordinate and rect functions"></A>
+<A NAME="DOC.152.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Calculate coordinate and rect functions</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="DrawGetMMToPixel"></A>
+<A NAME="DOC.152.8.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawGetMMToPixel(INT mode, double mm)</B></TT>
+<DD>Convert mm coordinates to  pixel coordinates
+<DL><DT><DD></DL><P>
+<A NAME="GetHeight"></A>
+<A NAME="DOC.152.8.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double GetHeight(CSIReportObject_Table_Cell* pCell, CString str, INT &amp;nLines)</B></TT>
+<DD>Calculate string height(base height + (lines-1)*OneLineHeight)
+<DL><DT><DD></DL><P>
+<A NAME="GetLines"></A>
+<A NAME="DOC.152.8.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetLines(INT char_max, INT char_len, CString str)</B></TT>
+<DD>Calculate how many lines to show string
+<DL><DT><DD></DL><P>
+<A NAME="GetLinesByEnter"></A>
+<A NAME="DOC.152.8.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetLinesByEnter(CString str)</B></TT>
+<DD>Calculate how many lines to show string seperated by enter("\n")
+<DL><DT><DD></DL><P>
+<A NAME="IsCanCut"></A>
+<A NAME="DOC.152.8.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL IsCanCut(CString sStr, INT nPos)</B></TT>
+<DD>Determin nPos can cut string
+<DL><DT><DD></DL><P>
+<A NAME="CalcRectOffSet"></A>
+<A NAME="DOC.152.8.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT CalcRectOffSet(CRect &amp;rect, INT left, INT top, INT right, INT bottom)</B></TT>
+<DD>Calculate CRect OffSet
+<DL><DT><DD></DL><P>
+<A NAME="ConvertRectMMToPixel"></A>
+<A NAME="DOC.152.8.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CRect ConvertRectMMToPixel(INT mode, CRect rect)</B></TT>
+<DD>Calculate&&Convert CRect(MM) to CRect(Pixel)
+<DL><DT><DD></DL><P>
+<A NAME="DrawGetchar_cy"></A>
+<A NAME="DOC.152.8.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawGetchar_cy(INT mode, CDC* pDC, INT nFontHeight, INT flag)</B></TT>
+<DD>Convert font height to DC depend height
+<DL><DT><DD></DL><P>
+<A NAME="DrawGetHorzFormat"></A>
+<A NAME="DOC.152.8.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawGetHorzFormat(INT horz_align)</B></TT>
+<DD>Convert Horizontal Format
+<DL><DT><DD></DL><P>
+<A NAME="CalcNegativeFontHeight"></A>
+<A NAME="DOC.152.8.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT CalcNegativeFontHeight(INT size)</B></TT>
+<DD>Convert font size to DC depend font size
+<DL><DT><DD></DL><P>
+<A NAME="SplitStringWithLen"></A>
+<A NAME="DOC.152.8.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString SplitStringWithLen(CString str, INT char_len, INT char_max)</B></TT>
+<DD>Split string with line length
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="WorkForm manipulate variables and functions"></A>
+<A NAME="DOC.152.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> WorkForm manipulate variables and functions</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_pWorkForm"></A>
+<A NAME="DOC.152.9.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CSIReportWorkForm* m_pWorkForm</B></TT>
+<DD>workform data
+<DL><DT><DD></DL><P>
+<A NAME="m_pPageWorkForm"></A>
+<A NAME="DOC.152.9.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CSIReportWorkForm* m_pPageWorkForm</B></TT>
+<DD>page workform data
+<DL><DT><DD></DL><P>
+<A NAME="m_pXMLIOMgr"></A>
+<A NAME="DOC.152.9.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CSIReportXMLIOMgr* m_pXMLIOMgr</B></TT>
+<DD>page workform XML IO data
+<DL><DT><DD></DL><P>
+<A NAME="LoadWorkForm"></A>
+<A NAME="DOC.152.9.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT LoadWorkForm(CString strRpt)</B></TT>
+<DD>load work form
+<DL><DT><DD></DL><P>
+<A NAME="LoadPageXMLWorkForm"></A>
+<A NAME="DOC.152.9.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT LoadPageXMLWorkForm(INT nPage)</B></TT>
+<DD>load page work form
+<DL><DT><DD></DL><P>
+<A NAME="FreeWorkForm"></A>
+<A NAME="DOC.152.9.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT FreeWorkForm(void)</B></TT>
+<DD>free work form
+<DL><DT><DD></DL><P>
+<A NAME="FreePageWorkForm"></A>
+<A NAME="DOC.152.9.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT FreePageWorkForm(void)</B></TT>
+<DD>free page work form
+<DL><DT><DD></DL><P>
+<A NAME="XML_MODE"></A>
+<A NAME="DOC.152.9.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT XML_MODE</B></TT>
+<DD>OUTPUT mode is XML
+<DL><DT><DD></DL><P>
+<A NAME="m_nCurrentPreviewPage"></A>
+<A NAME="DOC.152.9.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nCurrentPreviewPage</B></TT>
+<DD>Current preview page number
+<DL><DT><DD></DL><P>
+<A NAME="m_strPageHeader"></A>
+<A NAME="DOC.152.9.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strPageHeader</B></TT>
+<DD>Page Header
+<DL><DT><DD></DL><P>
+<A NAME="InitWorkFormFile"></A>
+<A NAME="DOC.152.9.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT InitWorkFormFile(CString strRpt, CString strRptAlias, CString rpt_pk)</B></TT>
+<DD>Init Work form file(download and generate page)
+<DL><DT><DD></DL><P>
+<A NAME="MakeXMLPageFiles"></A>
+<A NAME="DOC.152.9.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT MakeXMLPageFiles(void)</B></TT>
+<DD>Make XML Page to files
+<DL><DT><DD></DL><P>
+<A NAME="ShowXMLFilePage"></A>
+<A NAME="DOC.152.9.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT ShowXMLFilePage(INT mode, CDC* pDC, INT nStartPage, INT nFinishPage)</B></TT>
+<DD>Show XML File to preview windows or printer(print mode) , (if mode is PREVIEW , nFinishPage is discarded)
+<DL><DT><DD></DL><P>
+<A NAME="MakeWorkFormClone"></A>
+<A NAME="DOC.152.9.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CSIReportWorkForm* MakeWorkFormClone(CSIReportWorkForm* pWorkFormSource)</B></TT>
+<DD>Make workform clone - for rpt page 
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Define abstract object kind"></A>
+<A NAME="DOC.152.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Define abstract object kind</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="HaveChild"></A>
+<A NAME="DOC.152.10.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL HaveChild(CSIReportObject_Table* pTable)</B></TT>
+<DD>Determin Table has child
+<DL><DT><DD></DL><P>
+<A NAME="IsChild"></A>
+<A NAME="DOC.152.10.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL IsChild(CSIReportObject_Table* pTable)</B></TT>
+<DD>Determin Table is child
+<DL><DT><DD></DL><P>
+<A NAME="FindTable"></A>
+<A NAME="DOC.152.10.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CSIReportObject_Table* FindTable(CSIReportWorkSheet* pSheet, CString name)</B></TT>
+<DD>Find Table object
+<DL><DT><DD></DL><P>
+<A NAME="FindBarcode"></A>
+<A NAME="DOC.152.10.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CSIReportObject_Barcode* FindBarcode(CSIReportWorkSheet* pSheet, CString obj_name)</B></TT>
+<DD>Find Barcode object
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Link data manager manipulate variables and functions"></A>
+<A NAME="DOC.152.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Link data manager manipulate variables and functions</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_pDM"></A>
+<A NAME="DOC.152.11.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_DataMgr* m_pDM[MAX_DM]</B></TT>
+<DD>Link datamanager
+<DL><DT><DD></DL><P>
+<A NAME="SetDataMgr"></A>
+<A NAME="DOC.152.11.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetDataMgr(INT nPos, CESL_DataMgr* pDM, INT startcursor=0)</B></TT>
+<DD>Set Link datamanager
+<DL><DT><DD></DL><P>
+<A NAME="InitDMArray"></A>
+<A NAME="DOC.152.11.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT InitDMArray(void)</B></TT>
+<DD>Init DataManagerArray
+<DL><DT><DD></DL><P>
+<A NAME="m_DMCursor"></A>
+<A NAME="DOC.152.11.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_DMCursor</B></TT>
+<DD>Link datamanager cursor
+<DL><DT><DD></DL><P>
+<A NAME="m_strCONNECTION_INFO"></A>
+<A NAME="DOC.152.11.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strCONNECTION_INFO</B></TT>
+<DD>Database connection info
+<DL><DT><DD></DL><P>
+<A NAME="SetCONNECTION_INFO"></A>
+<A NAME="DOC.152.11.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT SetCONNECTION_INFO(CString strCONNECTION_INFO)</B></TT>
+<DD>Set Database connection info
+<DL><DT><DD></DL><P>
+<A NAME="GetSIReportFileFromDB"></A>
+<A NAME="DOC.152.11.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSIReportFileFromDB(CString RptAlias)</B></TT>
+<DD>Get SIRport Form & Resource From DB to File with aliasrpt
+<DL><DT><DD></DL><P>
+<A NAME="GetSIReportFileFromDB"></A>
+<A NAME="DOC.152.11.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSIReportFileFromDB(CString RptName, CString tmpFilename, CString &amp;PK)</B></TT>
+<DD>Get SIRport Form & Resource From DB to File
+<DL><DT><DD></DL><P>
+<A NAME="GetSIReportFileFromDBbyPK"></A>
+<A NAME="DOC.152.11.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSIReportFileFromDBbyPK(CString PK, CString RptAlias, CString RptSize)</B></TT>
+<DD>Get SIRport Form & Resource From DB to File with aliasrpt by pk
+<DL><DT><DD></DL><P>
+<A NAME="GetSIReportFileFromDBbyPK"></A>
+<A NAME="DOC.152.11.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetSIReportFileFromDBbyPK(CString PK, CString RptName, CString tmpFilename, CString RptSize)</B></TT>
+<DD>Get SIRport Form & Resource From DB to File by pk
+<DL><DT><DD></DL><P>
+<A NAME="GetLOBToFile"></A>
+<A NAME="DOC.152.11.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetLOBToFile(CESL_DataMgr* pDM, CString table_name, CString PKFieldname, CString PKFieldtype, CString PKData, CString FieldName, INT Size, CString FileName)</B></TT>
+<DD>Get File from DB
+<DL><DT><DD></DL><P>
+<A NAME="DeleteTempBitmapFile"></A>
+<A NAME="DOC.152.11.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DeleteTempBitmapFile(INT MODE)</B></TT>
+<DD>Delete temporary resource files(such as bitmap)
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="For printing sequence variables and functions"></A>
+<A NAME="DOC.152.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> For printing sequence variables and functions</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_nCurrentWorkSheet"></A>
+<A NAME="DOC.152.12.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nCurrentWorkSheet</B></TT>
+<DD>Current print work sheet
+<DL><DT><DD></DL><P>
+<A NAME="pWnd"></A>
+<A NAME="DOC.152.12.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CWnd* pWnd</B></TT>
+<DD>preview dialog's handle
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Get or Set print environment"></A>
+<A NAME="DOC.152.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Get or Set print environment</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="GetWorkFormPaper"></A>
+<A NAME="DOC.152.13.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetWorkFormPaper(void)</B></TT>
+<DD>Current print work sheet
+<DL><DT><DD></DL><P>
+<A NAME="m_strNoMoreStatement"></A>
+<A NAME="DOC.152.13.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strNoMoreStatement</B></TT>
+<DD>No more statement message
+<DL><DT><DD></DL><P>
+<A NAME="m_nNoMoreStatement"></A>
+<A NAME="DOC.152.13.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nNoMoreStatement</B></TT>
+<DD>No more statement message Size(Default 10mm)
+<DL><DT><DD></DL><P>
+<A NAME="m_fNoMoreStatement"></A>
+<A NAME="DOC.152.13.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>LOGFONT m_fNoMoreStatement</B></TT>
+<DD>No more statement message Font
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="Calculate & Print partial sum or(and) total sum"></A>
+<A NAME="DOC.152.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Calculate & Print partial sum or(and) total sum</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="m_strPartSum"></A>
+<A NAME="DOC.152.14.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strPartSum</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_nColPartSum"></A>
+<A NAME="DOC.152.14.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nColPartSum</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_strTotalSum"></A>
+<A NAME="DOC.152.14.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_strTotalSum</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_nColTotalSum"></A>
+<A NAME="DOC.152.14.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT m_nColTotalSum</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="m_bPrintTotal"></A>
+<A NAME="DOC.152.14.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>BOOL m_bPrintTotal</B></TT>
+<DD>have been print total sum(false - printed, true - not yet)
+<DL><DT><DD></DL><P>
+<A NAME="m_fPartSum"></A>
+<A NAME="DOC.152.14.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double m_fPartSum[MAX_COLUMN]</B></TT>
+<DD>Partial(page) sum
+<DL><DT><DD></DL><P>
+<A NAME="m_fTotalSum"></A>
+<A NAME="DOC.152.14.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>double m_fTotalSum[MAX_COLUMN]</B></TT>
+<DD>Total sum
+<DL><DT><DD></DL><P>
+<A NAME="DrawObject_Table_TotalLine"></A>
+<A NAME="DOC.152.14.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT DrawObject_Table_TotalLine(INT mode, CDC* pDC, CSIReportObject_Table*  pTable, INT nRectTop, INT nCol, INT nIsLast, CString strTotal[], INT nBottom = -1)</B></TT>
+<DD>Draw Sum line
+<DL><DT><DD></DL><P>
+<A NAME="InitArray"></A>
+<A NAME="DOC.152.14.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT InitArray(double array[], INT nColumn)</B></TT>
+<DD>Array initialize
+<DL><DT><DD></DL><P></DL>
+</DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Choi won-jong(wjchoi@eco.co.kr)
+
+<DT><B>Version:</B><DD>0.0.1
+
+<DT><B>Since:</B><DD>2002.10 (ECO, Kolas2up)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

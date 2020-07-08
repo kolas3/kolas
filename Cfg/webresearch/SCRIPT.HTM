@@ -1,0 +1,83 @@
+<html>
+
+
+
+
+<body><p><p><FORM METHOD = post NAME = RESEARCH ACTION = http://192.168.1.230/Mailcheck/research.php onsubmit = 'chk();'>
+<p><p>===================================================================<br>
+<B><FONT SYTLE = 돋움 SIZE = 2 >63204043<br>zXcZX<br>zxcZXc<br>YES<br>//<br>NO<br>2004/09/02<br></FONT>
+</B>===================================================================
+<br><br>
+===================================================================
+<br>63204044<br>63204043<br><b>zxcZXc</b><br>서술형<br>
+<TEXTAREA ROWS = 5 COLS = 50 NAME = t1234 > </TEXTAREA><br>20040902<br>1<br>
+===================================================================<br>
+===================================================================
+<br>63204046<br>63204043<br><b>dddddd</b><br>단일선택형<br>
+<INPUT TYPE = RADIO NAME = Q_test VALUE = 2  > ddd<br>
+<INPUT TYPE = RADIO NAME = Q_test VALUE = 3  > ddd<br>20040902<br>2<br>
+===================================================================
+<INPUT TYPE = CHECKBOX NAME = Q_test2 VALUE = 2  > ddd<br>
+<INPUT TYPE = CHECKBOX NAME = Q_test2 VALUE = 3   > 333<br>20040902<br>2<br>
+
+
+<p><input type = submit value = 작성완료 ><input type = reset><p>
+</form><p><p><p><p>
+<SCRIPT LANGUAGE = 'JavaScript'>
+
+function chk()
+{
+	var temp;	
+	
+	/////////////////////////////////////////////////////////////////////////
+	//text 
+	var result1 = document.RESEARCH.t1234.value ;
+	
+	/////////////////////////////////////////////////////////////////////////
+	//radio box 
+	
+	for(i = 0 ; i < 2 ; i++)
+	{
+		//[TYPE,RESEARCH_KEY,QUESTION_INFO_KEY,SELECT]
+		if (document.RESEARCH.Q_test[i].checked) 
+		{
+			temp = i+1 ;
+			alert(temp);
+		}
+	}
+	
+	//////////////////////////////////////////////////////////////////////////
+	//check box
+	for(i = 0 ; i < 2 ; i++)
+	{
+		//[TYPE,RESEARCH_KEY,QUESTION_INFO_KEY,SELECT]
+		if (document.RESEARCH.Q_test2[i].checked == true ) 
+		{
+			temp = i+1 ;
+			alert(temp);
+		}
+	}
+	
+	
+	//////////////////////////////////////////////////////////////////////////
+	//우선순위형(select)
+	
+	var choice = document.RESEARCH.chooser;
+    var url = choice.options[choice.selectedIndex].value;
+    if (url) {
+        location.href = url;
+    }
+
+	
+	
+	
+	
+}
+
+
+
+
+</SCRIPT>
+
+
+</body></html>

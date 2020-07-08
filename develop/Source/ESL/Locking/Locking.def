@@ -1,0 +1,11 @@
+; Locking.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Locking"
+DESCRIPTION  'Locking Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

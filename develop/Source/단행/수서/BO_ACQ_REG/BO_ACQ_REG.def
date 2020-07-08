@@ -1,0 +1,11 @@
+; BO_ACQ_REG.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_ACQ_REG"
+DESCRIPTION  'BO_ACQ_REG Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

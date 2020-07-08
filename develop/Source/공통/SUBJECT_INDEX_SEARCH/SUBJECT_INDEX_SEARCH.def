@@ -1,0 +1,7 @@
+; SUBJECT_INDEX_SEARCH.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SUBJECT_INDEX_SEARCH"
+DESCRIPTION  'SUBJECT_INDEX_SEARCH Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

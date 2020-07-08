@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<RECEIPT>
+	<ITEM>
+		<ALIAS>RESERVATION_EXPIRE_DATE</ALIAS>
+		<FORWARD>[!FH][!FC]</FORWARD>
+		<VALUE>예약만기일 : %예약만기일%</VALUE>
+		<BACKWARD>[!LF][!LC][!LH][!FP][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>TITLE</ALIAS>
+		<FORWARD>[!FH][!FC]</FORWARD>
+		<VALUE>[예약자료 명세표]</VALUE>
+		<BACKWARD>[!LF][!LC][!FP][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>RESERVATION_USER_NO</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 회원번호 : %예약자번호%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>RESERVATION_USER_NAME</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 회원이름 : %예약자이름%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>BOOK_TITLE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 서    명 : %서명%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>BOOK_CALL_NO</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 청구기호 : %청구기호%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>BOOK_REG_NO</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 등록번호 : %등록번호%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>RESERVATION_DATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>		
+		<VALUE>● 예 약 일 : %예약일%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>RESERVATION_DATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>		
+		<VALUE>● SMS 발송일 : %SMS발송일%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>LIB_NAME</ALIAS>
+		<FORWARD>[!FH][!FC]</FORWARD>
+		<VALUE>%도서관명%</VALUE>
+		<BACKWARD>[!LC][!LH][!FP]</BACKWARD>
+	</ITEM>
+</RECEIPT>

@@ -1,0 +1,267 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BO_LOC_3860.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,31,44
+ PRODUCTVERSION 2005,8,31,44
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "BO_LOC_3860 DLL\0"
+            VALUE "FileVersion", "2005, 08, 31, 44\0"
+            VALUE "InternalName", "BO_LOC_3860\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BO_LOC_3860.DLL\0"
+            VALUE "ProductName", "BO_LOC_3860 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 31, 44\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BO_LOC_3860 DIALOG DISCARDABLE  0, 0, 343, 251
+STYLE WS_CHILD
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "",IDC_grid3860_Main,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",NOT WS_VISIBLE | WS_TABSTOP,32,35,157,103
+END
+
+IDD_BO_LOC_3861 DIALOG DISCARDABLE  0, 0, 366, 296
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "검 색"
+FONT 9, "새굴림"
+BEGIN
+    LTEXT           "그룹",IDC_STATIC,12,24,24,12,SS_CENTERIMAGE
+    GROUPBOX        "조건 설정 ",IDC_STATIC,5,5,305,237
+    LTEXT           "소속",IDC_STATIC,12,43,24,12,SS_CENTERIMAGE
+    LTEXT           "직급",IDC_STATIC,12,62,24,12,SS_CENTERIMAGE
+    LTEXT           "이용자번호",IDC_STATIC,12,104,53,12,SS_CENTERIMAGE
+    LTEXT           "E-MAIL",IDC_STATIC,12,123,53,12,SS_CENTERIMAGE
+    LTEXT           "휴대폰번호",IDC_STATIC,12,142,53,12,SS_CENTERIMAGE
+    LTEXT           "입력자료실",IDC_STATIC,12,161,53,12,SS_CENTERIMAGE
+    LTEXT           "생일",IDC_STATIC,12,184,53,12,SS_CENTERIMAGE
+    LTEXT           "등록일",IDC_STATIC,12,203,53,12,SS_CENTERIMAGE
+    LTEXT           "주민등록번호",IDC_staCivilNo,12,222,53,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_cm3861_COND1,72,24,100,196,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cm3861_COND2,72,43,100,196,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cm3861_COND3,72,62,100,196,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edt3861_COND1,72,104,102,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edt3861_COND2,200,104,102,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edt3861_COND3,72,123,102,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edt3861_COND4,72,142,102,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_cm3861_COND4,72,161,100,196,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_edt3861_COND5,72,184,102,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edt3861_COND6,200,184,102,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edt3861_COND7,72,203,102,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edt3861_COND8,200,203,102,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_edt3861_COND9,72,222,102,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "~",IDC_STATIC,183,104,8,12,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATIC,183,184,8,12,SS_CENTERIMAGE
+    LTEXT           "~",IDC_STATIC,183,203,8,12,SS_CENTERIMAGE
+    DEFPUSHBUTTON   "검 색",IDC_btn3861_SEARCH,314,11,46,16
+    PUSHBUTTON      "닫 기",IDC_btn3861_CLOSE,314,31,46,16
+    GROUPBOX        "변경할 그룹 설정 ",IDC_sta3861_HIDE1,5,250,305,35
+    COMBOBOX        IDC_cm3861_COND5,44,263,137,196,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "그룹",IDC_sta3861_HIDE2,15,266,21,8
+    LTEXT           "(좌우절단)",IDC_STATIC,181,123,53,12,SS_CENTERIMAGE
+    LTEXT           "(좌우절단)",IDC_STATIC,181,142,53,12,SS_CENTERIMAGE
+    LTEXT           "(우절단)",IDC_STATIC,181,222,53,12,SS_CENTERIMAGE
+    CONTROL         "추가(체크안하면 삭제)",IDC_chk3861_COND1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,193,265,100,8
+    LTEXT           "관리구분",IDC_STATIC,12,81,29,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_cm3861_COND6,72,81,100,196,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_BO_LOC_3862 DIALOG DISCARDABLE  0, 0, 223, 59
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "검색된 이용자 그룹 일괄 변경"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cm3862_COND1,39,21,117,196,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "추 가",IDC_btn3862_CHANGE,168,4,45,14
+    GROUPBOX        "",IDC_STATIC,4,0,160,54
+    PUSHBUTTON      "닫 기",IDC_btn3862_CLOSE,168,39,45,14
+    LTEXT           "그룹",IDC_STATIC,14,25,18,8
+    PUSHBUTTON      "삭 제",IDC_btn3862_CHANGE2,168,20,45,14
+END
+
+IDD_BO_LOC_3863 DIALOG DISCARDABLE  0, 0, 383, 247
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SQL로 직접 변경"
+FONT 9, "굴림체"
+BEGIN
+    DEFPUSHBUTTON   "변 경",IDC_btn3863_CHANGE,328,10,48,16
+    GROUPBOX        "SQL문 입력",IDC_STATIC,6,6,315,89
+    PUSHBUTTON      "닫 기",IDC_btn3863_CLOSE,328,31,48,16
+    EDITTEXT        IDC_edt3863_COND1,13,20,300,67,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "필드 정보 ",IDC_STATIC,6,103,315,136
+    EDITTEXT        IDC_edt3863Text1,13,118,300,114,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BO_LOC_3860 DLGINIT
+BEGIN
+    IDC_grid3860_Main, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x1c6c, 0x0000, 0x1005, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xab63, 0x00e7, 0xeae5, 0x00f5, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xd9d9, 
+0x00ff, 0xeaea, 0x00ea, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0101, 0x0101, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BO_LOC_3863, DIALOG
+    BEGIN
+        RIGHTMARGIN, 373
+        BOTTOMMARGIN, 236
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\BO_LOC_3860.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<RECEIPT>
+	<ITEM>
+		<ALIAS>TITLE</ALIAS>
+		<FORWARD>[!FH][!FC]</FORWARD>
+		<VALUE>[연체자료 처리 확인증]</VALUE>
+		<BACKWARD>[!LF][!LC][!FP][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>USER_NO</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 회원번호 : %대출자번호%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>USER_NAME</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 회원이름 : %대출자이름%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>USER_NAME</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 처리일시 : %처리일시%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>PAYMENT_DAY</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 대출정지기간 : %대출정지기간%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>STOP_DAY</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 대출정지일수 : %정지일수% 일 (=연체일수)</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>STOP_DAY</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 대출가능일   : %납부일% 일부터</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>DISSOLVE_DAY</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 정지해제일수 : %해제일수% 일</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>DISSOLVE_DAY</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 기본연체료   : 1일 %기본연체료% 원/권당</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>MONEY_PAID</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 납부금액 　　: %납부금액% 원</VALUE>
+		<BACKWARD>[!LR][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>PAYMENT_DAY</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>● 납 부 일 　　: %납부일%</VALUE>
+		<BACKWARD>[!LN][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>SEPERATE</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>━━━━━━━━━━━━━━━━━━━━━</VALUE>
+		<BACKWARD>[!LN][!FP][!FP]</BACKWARD>	
+	</ITEM>
+	<ITEM>
+		<ALIAS>PAYMENT_DAY</ALIAS>
+		<FORWARD>[!FN]</FORWARD>
+		<VALUE>%공간%담당자             (인)</VALUE>
+		<BACKWARD>[!LN][!FP][!FP]</BACKWARD>
+	</ITEM>
+	<ITEM>
+		<ALIAS>LIB_NAME</ALIAS>
+		<FORWARD>[!FH][!FC]</FORWARD>
+		<VALUE>%도서관명%</VALUE>
+		<BACKWARD>[!LC][!LH][!FP]</BACKWARD>
+	</ITEM>
+
+</RECEIPT>

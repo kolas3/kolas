@@ -1,0 +1,11 @@
+; MNG_COMMON_USER_DEFINE_CODE.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MNG_COMMON_USER_DEFINE_CODE"
+DESCRIPTION  'MNG_COMMON_USER_DEFINE_CODE Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

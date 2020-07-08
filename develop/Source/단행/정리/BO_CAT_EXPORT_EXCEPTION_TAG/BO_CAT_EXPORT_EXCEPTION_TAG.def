@@ -1,0 +1,7 @@
+; BO_CAT_EXPORT_EXCEPTION_TAG.def : Declares the module parameters for the DLL.
+
+LIBRARY      "BO_CAT_EXPORT_EXCEPTION_TAG"
+DESCRIPTION  'BO_CAT_EXPORT_EXCEPTION_TAG Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

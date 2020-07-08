@@ -1,0 +1,247 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CSMSContentsEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2008,11,19,61
+ PRODUCTVERSION 2008,11,19,61
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "CSMSContentsEditor DLL\0"
+            VALUE "FileVersion", "2008, 11, 19, 61\0"
+            VALUE "InternalName", "CSMSContentsEditor\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CSMSContentsEditor.DLL\0"
+            VALUE "ProductName", "CSMSContentsEditor 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2008, 11, 19, 61\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_dSMS_CONTENTS_EDIT_DLG_OLD DIALOG DISCARDABLE  0, 0, 185, 381
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "문자 편집"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_cSMS_TYPE,12,20,103,397,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_eSMS_CONTENTS,5,57,174,78,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+    CONTROL         "1. 도서관명",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,163,60,10
+    CONTROL         "2. 이용자명",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,180,55,10
+    CONTROL         "3. 기본메세지",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,197,68,10
+    CONTROL         "4. 반납예정일 / 예약만기일",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,214,120,10
+    CONTROL         "5. 서명",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,231,44,10
+    EDITTEXT        IDC_eRECEIVE_NUMBER,12,278,63,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "DB에 변경적용",IDOK,10,359,60,14
+    PUSHBUTTON      "적 용",IDC_bSMS_SAVE,96,359,40,14
+    PUSHBUTTON      "닫 기",IDCANCEL,140,359,40,14
+    LTEXT           "",IDC_sSMS_TYPE,12,20,163,8,NOT WS_VISIBLE
+    GROUPBOX        "문자 종류",IDC_STATIC,1,4,183,35
+    GROUPBOX        "문자 내용",IDC_sSMS_CONTENTS,1,44,183,101
+    GROUPBOX        "문자 구성",IDC_STATIC,1,150,183,100
+    GROUPBOX        "전화 번호",IDC_STATIC,1,253,183,42
+    GROUPBOX        "",IDC_STATIC_BTN,1,351,183,27
+    LTEXT           "회신번호",IDC_STATIC,12,267,33,8
+    EDITTEXT        IDC_eRECEIVE_NUMBER2,85,278,63,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "수신번호",IDC_sRECEIVER_NUM,85,267,33,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_eURL,43,313,135,14,ES_AUTOHSCROLL
+    GROUPBOX        "발송형태 설정",IDC_STATIC_ARREO,1,299,183,52
+    LTEXT           "URL",IDC_STATIC_URL,7,316,13,8
+    LTEXT           "발송방식",IDC_sSEND_TYPE,7,332,33,8
+    COMBOBOX        IDC_COMBO_SMS1,43,331,135,86,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_dSMS_PROGRESS DIALOG DISCARDABLE  0, 0, 236, 15
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 9, "새굴림"
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | WS_BORDER,0,0,236,15
+END
+
+IDD_dSMS_CONTENTS_EDIT_DLG DIALOG DISCARDABLE  0, 0, 218, 373
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "문자 발송"
+FONT 9, "굴림체"
+BEGIN
+    COMBOBOX        IDC_cSMS_TYPE,18,21,104,397,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "도서관명",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,68,44,10
+    CONTROL         "이용자명",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,76,67,45,10
+    CONTROL         "기본메세지",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,135,68,52,10
+    CONTROL         "반납예정일/예약만기일",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,18,83,110,10
+    CONTROL         "서명",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,135,82,32,10
+    EDITTEXT        IDC_eSMS_CONTENTS,18,121,104,108,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+    EDITTEXT        IDC_edtLIB_NAME,135,121,67,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_eRECEIVE_NUMBER,135,150,67,12,ES_AUTOHSCROLL
+    CONTROL         "선정된 이용자",IDC_radSMSContentsSelect,"Button",BS_AUTORADIOBUTTON,127,281,68,10
+    CONTROL         "검색된 이용자",IDC_radSMSContentsAll,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,127,304,68,10
+    EDITTEXT        IDC_edtSMSContentsPreview,23,274,65,54,ES_MULTILINE | ES_READONLY | ES_WANTRETURN
+    PUSHBUTTON      "발 송",IDC_btnSMSContentsSend,93,344,53,16
+    PUSHBUTTON      "닫 기",IDCANCEL,154,344,53,16
+    GROUPBOX        "문자종류",IDC_STATIC,7,8,202,34
+    GROUPBOX        "문자구성",IDC_STATIC,7,50,202,204
+    LTEXT           "메세지",IDC_STATIC,16,109,25,8
+    LTEXT           "도서관명",IDC_STATIC,135,109,33,8
+    LTEXT           "회신번호",IDC_STATIC,135,138,33,8
+    GROUPBOX        "미리보기",IDC_STATIC,7,259,99,77
+    GROUPBOX        "발송대상",IDC_STATIC,113,259,96,77
+    DEFPUSHBUTTON   "저 장",IDOK,4,350,60,14,NOT WS_VISIBLE
+    PUSHBUTTON      "적 용",IDC_bSMS_SAVE,4,343,40,14,NOT WS_VISIBLE
+    LTEXT           "",IDC_sSMS_TYPE,13,23,189,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_eRECEIVE_NUMBER2,367,205,65,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "수신번호",IDC_sRECEIVER_NUM,320,199,33,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_eURL,324,273,162,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    GROUPBOX        "발송형태 설정",IDC_STATIC_ARREO,279,314,214,52,NOT WS_VISIBLE
+    LTEXT           "URL",IDC_STATIC_URL,286,275,13,8,NOT WS_VISIBLE
+    LTEXT           "발송방식",IDC_sSEND_TYPE,286,291,33,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_SMS1,324,291,162,86,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "BYTE",IDC_staSMSByte,223,235,38,8,NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,7,98,202,155
+    LTEXT           "서명 크기[BYTE]",IDC_STATIC,135,167,61,8
+    EDITTEXT        IDC_edtTitleSize,135,179,67,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "총 크기[BYTE]",IDC_STATIC,135,199,53,8
+    EDITTEXT        IDC_edtAllDataSize,135,211,67,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    LTEXT           "상태 : SMS 단문발송",IDC_STATIC_STATUS,18,236,178,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_dSMS_CONTENTS_EDIT_DLG_OLD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 374
+    END
+
+    IDD_dSMS_CONTENTS_EDIT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 211
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 366
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\CSMSContentsEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

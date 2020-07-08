@@ -1,0 +1,7 @@
+; MN_LOAN_USER_MAIL_INFO.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MN_LOAN_USER_MAIL_INFO"
+DESCRIPTION  'MN_LOAN_USER_MAIL_INFO Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,13 @@
+# Microsoft Developer Studio Generated Dependency File, included by CAT_MARC_IMPORT.mak
+
+.\CAT_MARC_IMPORT.cpp : \
+	".\StdAfx.h"\
+	
+
+.\CAT_MARC_IMPORT.rc : \
+	".\res\CAT_MARC_IMPORT.rc2"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

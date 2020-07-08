@@ -1,0 +1,7 @@
+; CAT_PRINT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "CAT_PRINT"
+DESCRIPTION  'CAT_PRINT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

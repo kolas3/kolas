@@ -1,0 +1,141 @@
+# Microsoft Developer Studio Generated Dependency File, included by BO_MARC_IMPORT.mak
+
+.\BO_MARC_IMPORT.rc : \
+	".\res\BO_MARC_IMPORT.rc2"\
+	
+
+.\MARC_IMPORT.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\..\ESL\ESL\ESLDlg_Confirm.h"\
+	"..\..\ESL\ESL\ESLDlg_Work.h"\
+	"..\..\ESL\MARC\MarcEdit\DlgMarcSyntaxError.h"\
+	"..\..\ESL\MARC\MarcEdit\GridCombo.h"\
+	"..\..\ESL\MARC\MarcEdit\GridEdit.h"\
+	"..\..\ESL\MARC\MarcEdit\MarcEditCtrl.h"\
+	"..\..\ESL\MARC\MarcEdit\MarcEditor.h"\
+	"..\..\ESL\MARC\MarcEdit\MarcGridCtrl.h"\
+	".\MARC_IMPORT.h"\
+	".\MARC_VIEW.h"\
+	
+
+.\MARC_VIEW.cpp : \
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzerror.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\nzt.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci1.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oci8dp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociap.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociapr.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocidfn.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ociextp.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ocixad.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oratypes.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ori.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\orl.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\oro.h"\
+	"..\..\..\..\..\oracle\ora9i\oci\include\ort.h"\
+	"..\..\..\include\ESL\_excelmancontrol.h"\
+	"..\..\..\include\esl\ctrl_strucrdef.h"\
+	"..\..\..\include\esl\db_struct.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEdit.h"\
+	"..\..\..\include\ESL\ECO_ControlDateEditElem.h"\
+	"..\..\..\include\esl\ecooci8.h"\
+	"..\..\..\include\esl\ecoocicomapi.h"\
+	"..\..\..\include\ESL\ESL_CodeMgr.h"\
+	"..\..\..\include\ESL\ESL_Constant.h"\
+	"..\..\..\include\ESL\ESL_Control_Element.h"\
+	"..\..\..\include\ESL\ESL_ControlComboBox.h"\
+	"..\..\..\include\ESL\ESL_ControlEdit.h"\
+	"..\..\..\include\ESL\ESL_ControlMgr.h"\
+	"..\..\..\include\ESL\ESL_ControlMultiComboBox.h"\
+	"..\..\..\include\ESL\ESL_DataMgr.h"\
+	"..\..\..\include\ESL\ESL_DataVerifyMgr.h"\
+	"..\..\..\include\ESL\ESL_DateTimeCtrl.h"\
+	"..\..\..\include\ESL\ESL_Grid.h"\
+	"..\..\..\include\ESL\ESL_GridSelEditor.h"\
+	"..\..\..\include\ESL\ESL_Information.h"\
+	"..\..\..\include\ESL\ESL_Mgr.h"\
+	"..\..\..\include\Esl\esl_worksheet_dlg.h"\
+	"..\..\..\include\ESL\ExcelManager.h"\
+	"..\..\..\include\ESL\Except.h"\
+	"..\..\..\include\ESL\JComboBx.h"\
+	"..\..\..\include\ESL\Marc.h"\
+	"..\..\..\include\ESL\MarcConstant.h"\
+	"..\..\..\include\ESL\MarcInstruction.h"\
+	"..\..\..\include\ESL\MarcMgr.h"\
+	"..\..\..\include\ESL\MarcRelation.h"\
+	"..\..\..\include\ESL\MarcSimpleRelation.h"\
+	"..\..\..\include\ESL\mshflexgrid.h"\
+	"..\..\..\include\esl\mysql.h"\
+	"..\..\..\include\esl\mysql_com.h"\
+	"..\..\..\include\esl\mysql_version.h"\
+	"..\..\..\include\esl\oci_api.h"\
+	"..\..\..\include\ESL\Subfield.h"\
+	"..\..\..\include\ESL\Tag.h"\
+	"..\..\ESL\ESL\ESLDlg_Confirm.h"\
+	"..\..\ESL\ESL\ESLDlg_Work.h"\
+	"..\..\ESL\MARC\MarcEdit\DlgMarcSyntaxError.h"\
+	"..\..\ESL\MARC\MarcEdit\GridCombo.h"\
+	"..\..\ESL\MARC\MarcEdit\GridEdit.h"\
+	"..\..\ESL\MARC\MarcEdit\MarcEditCtrl.h"\
+	"..\..\ESL\MARC\MarcEdit\MarcEditor.h"\
+	"..\..\ESL\MARC\MarcEdit\MarcGridCtrl.h"\
+	".\MARC_VIEW.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	

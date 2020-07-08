@@ -1,0 +1,288 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\DonatorNameGetter.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2005,8,19,68
+ PRODUCTVERSION 2005,8,19,68
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Co., Ltd.\0"
+            VALUE "FileDescription", "DonatorNameGetter DLL\0"
+            VALUE "FileVersion", "2005, 08, 19, 68\0"
+            VALUE "InternalName", "DonatorNameGetter\0"
+            VALUE "LegalCopyright", "Copyright(C) 2011 by THE NATIONAL LIBRARY OF KOLREA. All right reserved.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "DonatorNameGetter.DLL\0"
+            VALUE "ProductName", "DonatorNameGetter 동적 연결 라이브러리\0"
+            VALUE "ProductVersion", "2005, 08, 19, 68\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DonatorNameGetterDlg DIALOG DISCARDABLE  0, 0, 462, 349
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "기증자 관리"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "확 인",IDOK,354,332,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,407,332,50,14
+    PUSHBUTTON      "검 색",IDC_bFIND,248,4,50,14
+    PUSHBUTTON      "입 력",IDC_bINPUT,301,4,50,14
+    PUSHBUTTON      "수 정",IDC_bMODIFY,354,4,50,14
+    PUSHBUTTON      "삭 제",IDC_bDELETE,407,4,50,14
+    CONTROL         "",IDC_mngGRID_1,"{0ECD9B64-23AA-11D0-B351-00A0C9055D8E}",WS_TABSTOP,9,39,440,280
+    GROUPBOX        "기증자 목록",IDC_STATIC,2,22,455,306
+END
+
+IDD_DonatorNameGetter_Search DIALOG DISCARDABLE  0, 0, 213, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "검 색"
+FONT 9, "새굴림"
+BEGIN
+    DEFPUSHBUTTON   "검 색",IDOK,108,119,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,162,119,50,14
+    CONTROL         "ID",IDC_RADIO_1,"Button",BS_AUTORADIOBUTTON,8,20,27,8
+    CONTROL         "이름",IDC_RADIO_2,"Button",BS_AUTORADIOBUTTON,8,71,27,8
+    COMBOBOX        IDC_COMBO1,85,17,39,212,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT1,85,33,36,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,85,49,36,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,135,49,36,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,47,69,59,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,129,69,59,12,ES_AUTOHSCROLL
+    LTEXT           "구    분",IDC_STATIC,47,20,32,8
+    LTEXT           "연    도",IDC_STATIC,47,36,32,8
+    LTEXT           "일련번호",IDC_STATIC,47,52,32,8
+    LTEXT           "~",IDC_STATIC,124,52,8,8
+    LTEXT           "부터",IDC_STATIC,109,71,17,8
+    LTEXT           "까지",IDC_STATIC,191,71,17,8
+    EDITTEXT        IDC_EDIT6,47,100,59,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,129,100,59,12,ES_AUTOHSCROLL
+    LTEXT           "부터",IDC_STATIC,109,100,20,8
+    LTEXT           "까지",IDC_STATIC,191,100,17,8
+    GROUPBOX        "기증자 ",IDC_STATIC,2,4,211,81
+    GROUPBOX        "등록일자",IDC_STATIC,2,89,211,27
+END
+
+IDD_DonatorNameGetter_Input DIALOG DISCARDABLE  0, 0, 252, 205
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 9, "새굴림"
+BEGIN
+    COMBOBOX        IDC_COMBO1,63,20,36,83,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT4,107,20,36,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,155,20,36,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,63,40,63,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,63,60,63,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,63,80,178,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,63,100,178,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,63,120,178,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT11,63,140,178,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,63,160,178,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "이 전",IDC_bBEFORE,1,188,50,14
+    PUSHBUTTON      "다 음",IDC_bNEXT,54,188,50,14
+    DEFPUSHBUTTON   "저 장",IDOK,146,188,50,14
+    PUSHBUTTON      "닫 기",IDCANCEL,200,188,50,14
+    LTEXT           "기증자 ID",IDC_STATIC,11,23,47,8
+    LTEXT           "기증자 이름",IDC_STATIC,11,43,47,8
+    LTEXT           "우편번호",IDC_STATIC,11,63,47,8
+    LTEXT           "주 소",IDC_STATIC,11,83,47,8
+    LTEXT           "전화번호",IDC_STATIC,11,103,47,8
+    LTEXT           "FAX",IDC_STATIC,11,123,47,8
+    LTEXT           "E - Mail",IDC_STATIC,11,143,47,8
+    LTEXT           "비 고",IDC_STATIC,11,163,47,8
+    GROUPBOX        "",IDC_STATIC,1,3,249,180
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DonatorNameGetterDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 455
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 342
+    END
+
+    IDD_DonatorNameGetter_Search, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_DonatorNameGetter_Input, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 245
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DonatorNameGetterDlg DLGINIT
+BEGIN
+    IDC_mngGRID_1, 0x37a, 421, 0
+0x0024, 0x0000, 0x0031, 0x0046, 0x0033, 0x0044, 0x0035, 0x0035, 0x0032, 
+0x0032, 0x002d, 0x0033, 0x0046, 0x0034, 0x0032, 0x002d, 0x0031, 0x0031, 
+0x0064, 0x0031, 0x002d, 0x0042, 0x0032, 0x0046, 0x0041, 0x002d, 0x0030, 
+0x0030, 0x0041, 0x0030, 0x0043, 0x0039, 0x0030, 0x0038, 0x0046, 0x0042, 
+0x0035, 0x0035, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x4f95, 0x0000, 0x2b69, 
+0x0000, 0x6f42, 0x506f, 0x0006, 0x0000, 0x008c, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xffff, 0x00ff, 0xffff, 0x00ff, 0xe1e1, 0x00e1, 0x2424, 0x0024, 
+0x6a31, 0x00c5, 0xffff, 0x00ff, 0xefef, 0x00ef, 0xffff, 0x00ff, 0xc0c0, 
+0x00c0, 0xc0c0, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0xbf80, 
+0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0001, 0x0000, 0x0003, 
+0x0000, 0x0000, 0x0003, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0xffff, 
+0x0001, 0x0000, 0x0000, 0x0100, 0x0001, 0x0001, 0x0004, 0x0000, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0048, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0012, 0x8000, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xc0c0, 0x00c0, 0x0000, 0xbf80, 0x0000, 0xbf80, 0x0000, 
+0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0005, 0xffff, 0x0000, 0xffff, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 0xffff, 
+0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8101, 0x0000, 
+0x0190, 0x5f90, 0x0001, 0xb106, 0xb8bc, 0xc3b2, 0x00bc, 0x0000, 0x0000, 
+0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP  DISCARDABLE     "bitmap1.bmp"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\DonatorNameGetter.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

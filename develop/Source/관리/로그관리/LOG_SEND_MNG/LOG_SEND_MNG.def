@@ -1,0 +1,11 @@
+; LOG_SEND_MNG.def : Declares the module parameters for the DLL.
+
+LIBRARY      "LOG_SEND_MNG"
+DESCRIPTION  'LOG_SEND_MNG Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

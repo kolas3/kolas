@@ -1,0 +1,7 @@
+; SE_API.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SE_API"
+DESCRIPTION  'SE_API Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

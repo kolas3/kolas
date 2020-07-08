@@ -1,0 +1,12 @@
+; SMS_LifeLong.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SMS_LifeLong"
+DESCRIPTION  'SMS_LifeLong Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+CreateForm
+CreateModelessDlg
+ResizeForm
+DeleteForm

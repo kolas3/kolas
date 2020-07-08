@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='euc-kr'?>
+<schema
+  	xmlns:dcm="http://example.org/myapp/">
+
+ 	<dcm:ele name='title' text='제목' type='main' description='본표제' neccesary='Y' index='Y' data_type='STRING' data_length='100' >
+ 		<dcm:marc_env  type= '0' definition='def1' symbol='##aw'/>
+ 		<dcm:marc_env  type= '1' definition='def2' symbol='##few'/>
+ 	</dcm:ele>
+ 	<dcm:ele name='alternative' text='부제' type='qualified' main='title' description='본표제 이외의 표제,부표제,번역표제' neccesary='N' index='N' data_type='STRING' data_length='100' >
+ 	</dcm:ele>
+ 	<dcm:ele name='author' text='저자' type='main' description='저자명' neccesary='Y' index='Y' data_type='STRING' data_length='20' >	
+ 	</dcm:ele>
+ 	<dcm:ele name='subject' text='주제' type='main' description='쉽표로 구분되는 자유 키워드 혹은 주제어들의 리스트' neccesary='Y' index='Y' data_type='STRING' data_length='300' >	
+ 	</dcm:ele>
+  	
+
+ 	 
+ 	<dcm:ele name='publisher' text='발행자' type='main' description='발행자' neccesary='Y' index='Y' data_type='STRING' data_length='20' >	
+ 	</dcm:ele>
+  	<dcm:ele name='date' text='발행년도' type='main' description='발행년도' neccesary='Y' index='Y' data_type='DATE' >	
+ 	</dcm:ele>
+ 	<dcm:ele name='type' text='자료유형' type='main' description='자료유형' neccesary='Y' index='Y' data_type='STRING' data_length='2' >	
+ 	</dcm:ele>
+ 	<dcm:ele name='format' text='형식' type='main' description='시스템에서 사용하는 매체유형, 값은 파일의 확장자' neccesary='Y' index='Y' data_type='STRING' data_length='10' >	
+ 	</dcm:ele>
+
+  	<dcm:ele name='class' text='분류(CLC)' type='main'  description='' neccesary='Y' index='Y' data_type='STRING' data_length='10' >	
+ 	</dcm:ele>
+  	<dcm:ele name='LC' text='LC' type='qualified' main='class' description='' neccesary='Y' index='Y' data_type='STRING' data_length='10' >	
+ 	</dcm:ele>
+  	<dcm:ele name='DDC' text='DDC' type='qualified' main='class' description='' neccesary='Y' index='Y' data_type='STRING' data_length='10' >	
+ 	</dcm:ele>
+   	<dcm:ele name='CSLC' text='CSLC' type='qualified' main='class' description='' neccesary='Y' index='Y' data_type='STRING' data_length='10' >	
+ 	</dcm:ele>
+</schema>	
+ 	
+ 

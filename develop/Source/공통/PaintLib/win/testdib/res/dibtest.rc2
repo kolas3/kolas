@@ -1,0 +1,18 @@
+//
+// DIBTEST.RC2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Add manually edited resources here...
+
+/////////////////////////////////////////////////////////////////////////////
+
+IDR_LOGO              RCDATA   DISCARDABLE     "pics\\logo.jpg"
+IDR_LOGO1             RCDATA   DISCARDABLE     "pics\\logo1.jpg"
+IDR_CANVAS            RCDATA   DISCARDABLE     "pics\\canvas.jpg"
+IDR_LOGOALPH          RCDATA   DISCARDABLE     "pics\\logoalph.pct"

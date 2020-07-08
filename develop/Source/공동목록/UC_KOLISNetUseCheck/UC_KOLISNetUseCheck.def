@@ -1,0 +1,7 @@
+; UC_KOLISNetUseCheck.def : Declares the module parameters for the DLL.
+
+LIBRARY      "UC_KOLISNetUseCheck"
+DESCRIPTION  'UC_KOLISNetUseCheck Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

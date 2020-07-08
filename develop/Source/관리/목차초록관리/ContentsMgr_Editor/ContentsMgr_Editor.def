@@ -1,0 +1,7 @@
+; ContentsMgr_Editor.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ContentsMgr_Editor"
+DESCRIPTION  'ContentsMgr_Editor Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

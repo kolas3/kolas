@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<MenuDS xmlns="http://tempuri.org/MenuDS.xsd">
+  <ENV_TBL>
+    <USER_ID>eco8</USER_ID>
+    <PASSWD>eco&amp;line</PASSWD>
+    <LOCATION>서울</LOCATION>
+    <LIB_URL>http://www.kolas2.net</LIB_URL>
+    <ON_TOP>true</ON_TOP>
+    <CHECK_PATCH>true</CHECK_PATCH>
+    <PATCH_SERVER>http://121.130.29.101</PATCH_SERVER>
+  </ENV_TBL>
+</MenuDS>

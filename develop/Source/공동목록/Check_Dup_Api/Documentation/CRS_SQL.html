@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  AFX_EXT_CLASS CRS_SQL</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+   <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+In file E:\kolas2up\Develop\Source\공동목록\Check_Dup_Api\RS_SQL.h:<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  AFX_EXT_CLASS <A HREF="#DOC.DOCU">CRS_SQL</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>RS MANAGER 사용  </BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="MCESL_Mgr,M,CCRS_SQL,MCRS_SQL.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>char </TD><TD><B>SqlStatement</B> [2056]<BR>
+<I>RS MANAGER 에 전달하는 SQL </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CESL_DataMgr* </TD><TD><B>m_DataMgr</B> <BR>
+<I>DATA MANAGER </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CString </TD><TD><B>m_LibInfo</B> <BR>
+<I>도서관 정보 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.24"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>CESL_DataMgr* </TD><TD><B>m_pDm</B> <BR>
+<I>Data Manager </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>DB_DATA_ARRAY_TYPE* </TD><TD><B>outputdata</B> <BR>
+<I>검색엔진사용시 DATA TYPE</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Constructor / Destructor</B> <BR>
+<I> </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>FindUpdateField</B> (CString )<BR>
+<I>DM 으로 부터 Column 정보를 얻어 온다. </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.21"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>GetDirectUpload</B> (CString &amp;)<BR>
+<I>Direct Upload 여부 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>GetLibraryInfo</B> (CString &amp;)<BR>
+<I>도서관 정보 가져오기  </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>GetOneFieldValue</B> ( CString, CString &amp;)<BR>
+<I>KOLIS-NET 에서 1개의 필드 값만 받아 오기  </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>GetOneValueQuery</B> ( CString cSql, CString &amp;cResult, CString DBAlias)<BR>
+<I>KOLIS-NET에서 1개의 필드 값만 받아 오기  </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.23"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>GetSytemDate</B> (CString &amp;)<BR>
+<I>현재 날짜 시간  </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.20"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>GetTagData</B> ( CHAR* Source, CHAR* alias, CHAR* s_data )<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>Kolinet_DeleteRow</B> (CString strQuery, BOOL commit)<BR>
+<I>KOLIS-NET 에 DELETE Query 실행 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>Kolinet_InsertRow</B> ( CString pszTableName, int nColumnCount, CString pszAttributeName[], CString pszAttributeData[], int* pnInDataType, BOOL bCommitFlag )<BR>
+<I>KOLIS-NET 에 INSERT Query 실행  </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>Kolinet_Select</B> (CESL_DataMgr* pDM, CString sOption, CString DBAlias, int row, int col)<BR>
+<I>KOLIS-NET 에 SELECT 실행후 결과를 로컬 DM 에 받아 온다. </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>Kolinet_UpdateRow</B> (CString strQuery, BOOL commit)<BR>
+<I>KOLIS-NET 에 UPDATE Query 실행  </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.22"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>MakePrimaryKey</B> (CString &amp;)<BR>
+<I>MakePrimaryKey 생성  </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>get_line</B> ( FILE* , CHAR* , INT*  )<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>insert_data</B> ( CESL_DataMgr* pDM, void* pAppend_data_search, int RowCount, CString, int)<BR>
+<I>KOLISE-NET에서 SQL Query 실행 결과 DM에 넣기 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>insert_data</B> ( void* pAppend_data_search, int RowCount, CString, int)<BR>
+<I>KOLISE-NET에서 SQL Query 실행 결과 DM에 넣기 </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>INT </TD><TD><B>next_line</B> ( FILE* , CHAR* , INT*  )<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.19"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>str_rtrim</B> ( CHAR* strln, CHAR* strline1, CHAR var )<BR>
+<I></I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.52.18"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>str_trimall</B> (CHAR* strln, CHAR* strline1, CHAR var )<BR>
+<I></I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+센터에 SQL을 실행후 결과를 가져오기 위해 사용 한다.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Constructor / Destructor"></A>
+<A NAME="DOC.52.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Constructor / Destructor</B></TT>
+<DD>
+
+<DL><DT><DD></DL><P><DL>
+
+<A NAME="CRS_SQL"></A>
+<A NAME="DOC.52.1.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CRS_SQL(CESL_Mgr* pParent = NULL)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="~CRS_SQL"></A>
+<A NAME="DOC.52.1.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~CRS_SQL()</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<A NAME="outputdata"></A>
+<A NAME="DOC.52.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>DB_DATA_ARRAY_TYPE* outputdata</B></TT>
+<DD>검색엔진사용시 DATA TYPE
+<DL><DT><DD></DL><P>
+<A NAME="SqlStatement"></A>
+<A NAME="DOC.52.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>char SqlStatement[2056]</B></TT>
+<DD>RS MANAGER 에 전달하는 SQL 
+<DL><DT><DD></DL><P>
+<A NAME="m_DataMgr"></A>
+<A NAME="DOC.52.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_DataMgr* m_DataMgr</B></TT>
+<DD>DATA MANAGER 
+<DL><DT><DD></DL><P>
+<A NAME="Kolinet_Select"></A>
+<A NAME="DOC.52.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int Kolinet_Select(CESL_DataMgr* pDM, CString sOption, CString DBAlias, int row, int col)</B></TT>
+<DD>KOLIS-NET 에 SELECT 실행후 결과를 로컬 DM 에 받아 온다. 
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [in] pDM 
+<BR><B></B> - [in] sOption  - SELECT Query 
+<BR><B></B> - [in] DBAlias  - DM Alias<BR><DD></DL><P>
+<A NAME="Kolinet_InsertRow"></A>
+<A NAME="DOC.52.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int Kolinet_InsertRow( CString pszTableName, int nColumnCount, CString pszAttributeName[], CString pszAttributeData[], int* pnInDataType, BOOL bCommitFlag )</B></TT>
+<DD>KOLIS-NET 에 INSERT Query 실행  
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [in] pszTableName      - Table Name
+<BR><B></B> - [in] nColumnCount      - Column Count
+<BR><B></B> - [in] pszAttributeName  - Column Name 
+<BR><B></B> - [in] pszAttributeData  - Data
+<BR><B></B> - [in] pnInDataType      - Data Type<BR><DD></DL><P>
+<A NAME="Kolinet_UpdateRow"></A>
+<A NAME="DOC.52.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int Kolinet_UpdateRow(CString strQuery, BOOL commit)</B></TT>
+<DD>KOLIS-NET 에 UPDATE Query 실행  
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [in] - Update Query <BR><DD></DL><P>
+<A NAME="FindUpdateField"></A>
+<A NAME="DOC.52.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT FindUpdateField(CString )</B></TT>
+<DD>DM 으로 부터 Column 정보를 얻어 온다. 
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [in] DM Alias <BR><DD></DL><P>
+<A NAME="Kolinet_DeleteRow"></A>
+<A NAME="DOC.52.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int Kolinet_DeleteRow(CString strQuery, BOOL commit)</B></TT>
+<DD>KOLIS-NET 에 DELETE Query 실행 
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [in] strQuery  - Delete Query 
+<BR><B></B> - [in] commit<BR><DD></DL><P>
+<A NAME="insert_data"></A>
+<A NAME="DOC.52.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int insert_data( void* pAppend_data_search, int RowCount, CString, int)</B></TT>
+<DD>KOLISE-NET에서 SQL Query 실행 결과 DM에 넣기 
+<DL><DT><DD></DL><P>
+<A NAME="insert_data"></A>
+<A NAME="DOC.52.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int insert_data( CESL_DataMgr* pDM, void* pAppend_data_search, int RowCount, CString, int)</B></TT>
+<DD>KOLISE-NET에서 SQL Query 실행 결과 DM에 넣기 
+<DL><DT><DD></DL><P>
+<A NAME="GetOneValueQuery"></A>
+<A NAME="DOC.52.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int GetOneValueQuery( CString cSql, CString &amp;cResult, CString DBAlias)</B></TT>
+<DD>KOLIS-NET에서 1개의 필드 값만 받아 오기  
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [in] cSql 
+<BR><B></B> - [out] cResult
+<BR><B></B> - [in] DBAlias<BR><DD></DL><P>
+<A NAME="GetOneFieldValue"></A>
+<A NAME="DOC.52.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int GetOneFieldValue( CString, CString &amp;)</B></TT>
+<DD>KOLIS-NET 에서 1개의 필드 값만 받아 오기  
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [in] sql
+<BR><B></B> - [out] return value <BR><DD></DL><P>
+<A NAME="m_LibInfo"></A>
+<A NAME="DOC.52.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CString m_LibInfo</B></TT>
+<DD>도서관 정보 
+<DL><DT><DD></DL><P>
+<A NAME="GetLibraryInfo"></A>
+<A NAME="DOC.52.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int GetLibraryInfo(CString &amp;)</B></TT>
+<DD>도서관 정보 가져오기  
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [out] lib_code<BR><DD></DL><P>
+<A NAME="next_line"></A>
+<A NAME="DOC.52.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT next_line( FILE* , CHAR* , INT*  )</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="get_line"></A>
+<A NAME="DOC.52.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT get_line( FILE* , CHAR* , INT*  )</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="str_trimall"></A>
+<A NAME="DOC.52.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void str_trimall(CHAR* strln, CHAR* strline1, CHAR var )</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="str_rtrim"></A>
+<A NAME="DOC.52.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void str_rtrim( CHAR* strln, CHAR* strline1, CHAR var )</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetTagData"></A>
+<A NAME="DOC.52.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>INT GetTagData( CHAR* Source, CHAR* alias, CHAR* s_data )</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="GetDirectUpload"></A>
+<A NAME="DOC.52.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int GetDirectUpload(CString &amp;)</B></TT>
+<DD>Direct Upload 여부 
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [out] result<BR><DD></DL><P>
+<A NAME="MakePrimaryKey"></A>
+<A NAME="DOC.52.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int MakePrimaryKey(CString &amp;)</B></TT>
+<DD>MakePrimaryKey 생성  
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [out] Rec_Key<BR><DD></DL><P>
+<A NAME="GetSytemDate"></A>
+<A NAME="DOC.52.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int GetSytemDate(CString &amp;)</B></TT>
+<DD>현재 날짜 시간  
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - [out] systemdate<BR><DD></DL><P>
+<A NAME="m_pDm"></A>
+<A NAME="DOC.52.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>CESL_DataMgr* m_pDm</B></TT>
+<DD>Data Manager 
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Leehakjoong (hjlee@eco.co.kr)<br> 
+
+<DT><B>Version:</B><DD>3.3.1 by Leehakjoong <br>
+
+<DT><B>Since:</B><DD>2003-03-01 by author1<br>
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>
